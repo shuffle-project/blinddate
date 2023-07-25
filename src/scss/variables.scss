@@ -1,0 +1,56 @@
+@import '@fontsource/source-sans-pro/latin-ext-400.css';
+@import '@fontsource/source-sans-pro/latin-ext-700.css';
+@import '@fontsource/source-serif-pro/latin-ext-400.css';
+@import '@fontsource/source-serif-pro/latin-ext-700.css';
+@import '@fontsource/comic-neue/400.css';
+@import '@fontsource/comic-neue/700.css';
+
+::backdrop {
+	--color-background: rgba(7, 13, 28, 0.6);
+}
+
+:root {
+	--color-white: #ffffff;
+	--color-white-rgb: 255, 255, 255;
+	--color-black: #070d1c;
+	--color-black-rgb: 7, 13, 28;
+	--color-border: #c6c6c6;
+	--color-text: var(--color-black);
+
+	--color-background: var(--color-white);
+	--color-background-body: #fdfdfd;
+
+	--color-coral: #ff9aa2; // Decorative color
+
+	--color-green-dark: #212914;
+	--color-green-light: #fafff2;
+	--color-green: #e2f0cb; // Persona Card Graident Color, Speech Bubble
+	--color-turquoise: #b5ead7; // Persona Card Graident Color, Decorative Color
+
+	--color-peach: #ffb7b2; // Friend Persona Gradient Color, Speech Bubble
+	--color-orange: #ffdac1; // Friend Persona Gradient Color
+
+	--color-lavender: #c7ceea; // Decorative color
+
+	--color-blue: #335bc2; // Important button, Links for bright bg
+	--color-light-blue: #99bef5; // Links for dark/black background
+	--color-border-blue: #283966; // border of calender
+
+	--color-neutral: #f1f1f1; // DIY Component background color
+	--color-red: #d53030; // Background-Color for Skiplink-Button
+
+	--color-gradient-persona: linear-gradient(var(--color-turquoise), var(--color-green));
+	--color-gradient-friend-persona: linear-gradient(var(--color-orange), var(--color-peach));
+	--color-gradient-persona-bg: #e6f4ef;
+	--color-gradient-persona-border: #c8e3da;
+	--color-gradient-friend: linear-gradient(var(--color-peach), var(--color-orange));
+
+	--color-focus-pink: #ff1493;
+
+	--font-sans-serif: 'Source Sans Pro', sans-serif;
+	--font-serif: 'Source Serif Pro', serif; // Persona Card Name and Age
+	--font-persona: 'Comic Neue';
+
+	--content-max-width: 73.11rem; // 73.11rem <--- default from figma
+	--content-element-max-width: 39.24rem;
+}

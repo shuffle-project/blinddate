@@ -1,0 +1,202 @@
+<script lang="ts">
+	import type { Persona } from '../interfaces/persona.interfaces';
+	import Card from './Card.svelte';
+	export let persona: Persona;
+</script>
+
+<div class="background-black">
+	<div class="wrapper">
+		<div class="header-row" id="content">
+			<h1 id="persona-name" class="table-of-contents">{persona.name}</h1>
+			<section aria-label="Inhaltspunkte" class="tags">
+				<ul>
+					{#each persona.tags as tag}
+						<li lang={tag.lang} class="chip">
+							{tag.content}
+						</li>
+					{/each}
+				</ul>
+			</section>
+		</div>
+		<div class="persona-card">
+			<Card {persona} />
+		</div>
+		<div class="general-info">
+			<h2 id="about-me" class="main-heading">Über mich</h2>
+			<!-- role: presentation not possible -> it's a data table -->
+			<!-- https://fae.disability.illinois.edu/rulesets/TABLE_5/ -->
+			<!-- https://www.w3.org/WAI/WCAG21/Techniques/failures/F92.html -->
+			<!-- Using a description list -->
+			<!-- See: https://adrianroselli.com/2022/12/brief-note-on-description-list-support.html -->
+			<dl aria-describedby="about-me">
+				<dt>Alter</dt>
+				<dd>{persona.age + ' Jahre'}</dd>
+				<dt>Studium</dt>
+				<dd>{persona.study}</dd>
+				<dt>Hobbys</dt>
+				<dd>{persona.hobbies}</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.background-black {
+		background: linear-gradient(
+			180deg,
+			var(--color-black) 0%,
+			var(--color-black) 50%,
+			var(--color-background-body) 50%,
+			var(--color-background-body) 100%
+		);
+	}
+
+	.wrapper {
+		color: var(--color-white);
+		max-width: 100%;
+		padding: 0 1.33rem;
+
+		.header-row {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-top: 2.33rem;
+
+			h1 {
+				margin: 0;
+				text-align: center;
+			}
+
+			.tags {
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				.chip {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					color: var(--color-white);
+					background-color: var(--color-black);
+					border: 1px solid var(--color-white);
+					border-radius: 2.77rem;
+					height: 1.66rem;
+					font-size: 0.88rem;
+					padding: 0.22rem 0.61rem;
+				}
+			}
+		}
+		.general-info {
+			margin-top: 3.88rem;
+			color: var(--color-black);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			max-width: 22.2rem;
+			margin-inline: auto;
+
+			h2 {
+				margin: 0;
+				padding-top: 1.55rem;
+				// text-align: center;
+			}
+
+			dl {
+				display: grid;
+				grid-template-columns: max-content auto;
+
+				dt {
+					grid-column-start: 1;
+					font-weight: bold;
+					border-inline-end: 1px solid var(--color-black);
+					padding-inline-end: 1.22rem;
+					text-align: right;
+				}
+
+				dd {
+					grid-column-start: 2;
+					font-weight: 300;
+					margin-inline-start: 1.22rem;
+					&:not(:last-of-type) {
+						padding-block-end: 0.83rem;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 59.3125rem) {
+		.tags {
+			ul {
+				justify-content: center;
+			}
+
+			.chip {
+				margin: 0.33rem;
+			}
+		}
+	}
+
+	@media (min-width: 59.375rem) {
+		.background-black {
+			background: var(--color-black);
+		}
+
+		.persona-card {
+			display: none;
+		}
+
+		.tags {
+			ul {
+				justify-content: right;
+			}
+			.chip {
+				margin: 0.33rem 0 0.33rem 0.66rem;
+			}
+		}
+
+		.wrapper {
+			padding-left: 2.77rem;
+			padding-right: 2.77rem;
+			margin-left: auto;
+			margin-right: auto;
+			padding-bottom: 2rem;
+
+			max-width: var(--content-max-width);
+
+			.general-info {
+				color: var(--color-white);
+				margin-left: 22.79635%;
+				padding-left: 3.33rem;
+				display: block;
+				margin-top: 0rem;
+				max-width: 100%;
+
+				h2 {
+					padding-bottom: 0.66rem;
+				}
+
+				dl {
+					padding-top: 0.66rem;
+
+					dt {
+						border-inline-end: 1px solid rgba(var(--color-white-rgb), 0.5);
+					}
+				}
+			}
+
+			.header-row {
+				flex-direction: row;
+
+				.tags {
+					max-width: 23rem;
+					justify-content: flex-start;
+					align-items: flex-start;
+					align-content: flex-start;
+					margin-bottom: 0rem;
+				}
+			}
+		}
+	}
+</style>
