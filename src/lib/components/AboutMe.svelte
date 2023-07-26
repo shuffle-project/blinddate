@@ -130,6 +130,7 @@
 		.tags {
 			ul {
 				justify-content: center;
+				padding: 0;
 			}
 
 			.chip {
