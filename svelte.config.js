@@ -23,8 +23,8 @@ const config = {
 		}),
 		// TODO Research trailingSlash, commented out after migrating to svelte 4
 		// trailingSlash: 'always',
-		// todo add '/blinddate' for deploy on pages, add '' for local build
-		paths: { base: process.env.NODE_ENV === 'production' ? '' : '' }
+		//  add '/blinddate' for deploy on pages, add '' for local build
+		paths: { base: process.env.NODE_ENV === 'pages' ? '/blinddate' : '' }
 	}
 };
 export default config;
