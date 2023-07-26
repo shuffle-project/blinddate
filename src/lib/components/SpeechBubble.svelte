@@ -20,7 +20,7 @@
 	onMount(() => {
 		if (audioElement) {
 			audioElement.addEventListener('ended', (e) => {
-				playingAudio = !playingAudio;
+				playingAudio = false;
 			});
 		}
 	});

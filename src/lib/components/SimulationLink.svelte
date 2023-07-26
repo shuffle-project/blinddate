@@ -56,6 +56,14 @@
 				aria-describedby="game-explained"
 				src={base + '/personas/gabriel/simulation-game.png'}
 			/>
+
+			<p>
+				Die Strategie mit der ständigen Kopfbewegung spricht Gabriel in dem Screenshot mit den
+				folgenden Worten auch an: "Mit einem eingeschränkten Gesichtsfeld ist die Aufgabe gar nicht
+				so leicht, was? Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem
+				Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es
+				funktioniert. Versuch's mal!"
+			</p>
 		</svelte:fragment>
 	</Modal>
 </div>

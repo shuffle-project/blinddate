@@ -8,7 +8,8 @@
 		{ name: 'Faiza', svg: 'bottle' },
 		{ name: 'Michelle', svg: 'spoon' },
 		{ name: 'Aleksandr', svg: 'sunflower' },
-		{ name: 'Kilian', svg: 'wheelchair' }
+		{ name: 'Kilian', svg: 'wheelchair' },
+		{ name: 'Oliver', svg: 'neurodiversity' }
 	];
 </script>
 
@@ -22,7 +23,7 @@
 			<ul class="icon-list">
 				{#each personaToRender as persona}
 					<li class="icon-list-item">
-						<a href="{base}/personas/{persona.name}">
+						<a href="{base}/personas/{persona.name.toLowerCase()}">
 							<Icon size="medium" img={persona.svg} svg_color="blue" />
 							{persona.name}
 						</a>
