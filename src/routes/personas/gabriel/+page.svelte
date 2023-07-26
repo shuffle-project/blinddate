@@ -281,7 +281,6 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			schneller entnommen werden.
 		</p>
 
-		<div class="spacer" />
 		<p class="no-component-text">
 			In online Video-Konferenzen sollten Bedingungen geschaffen werden, die den Studierenden eine
 			Teilnahme und Konzentration auf die Inhalte erleichtern: Teilnehmende sollten nicht direkt vor
