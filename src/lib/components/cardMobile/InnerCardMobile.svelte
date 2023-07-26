@@ -92,6 +92,7 @@
 			{dialogOpen}
 		/>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 		<dialog
 			inert
 			class:sticky={mobileCardIsSticky}
@@ -124,8 +125,8 @@
 						{#each headings as heading}
 							<li
 								class="heading-link"
-								in:slide={{ duration: 300, easing: sineOut }}
-								out:slide={{ duration: 300, easing: sineIn }}
+								in:slide|global={{ duration: 300, easing: sineOut }}
+								out:slide|global={{ duration: 300, easing: sineIn }}
 							>
 								<a class="focus-indicator" href="#{heading.id}" on:click={toggleDialog}>
 									{heading.innerHTML}
