@@ -1,28 +1,29 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 	import type { Persona } from '../interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 
 	export let persona: Persona;
+	export let audio: string = '';
 
+	let audioElement = new Audio(audio);
 	let playingAudio = false;
-
-	// const SpeechSynthesis = window.SpeechSynthesis;
-	// const speechSynthesis = new SpeechSynthesis();
 
 	let textDiv: HTMLElement;
 
 	const speak = () => {
-		const speechSynthesis = window.speechSynthesis;
-		if (playingAudio) {
-			playingAudio = false;
-			speechSynthesis.cancel();
-		} else {
-			playingAudio = true;
-			const utterance = new SpeechSynthesisUtterance(textDiv.innerHTML);
-			speechSynthesis.speak(utterance);
-		}
+		audioElement.paused ? audioElement.play() : audioElement.pause();
+		playingAudio = !playingAudio;
 	};
+
+	onMount(() => {
+		if (audioElement) {
+			audioElement.addEventListener('ended', (e) => {
+				playingAudio = !playingAudio;
+			});
+		}
+	});
 </script>
 
 <div class="wrapper">
