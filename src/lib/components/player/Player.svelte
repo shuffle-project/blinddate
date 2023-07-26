@@ -7,11 +7,13 @@ subtitles	The track defines subtitles, used to display subtitles in a video
  -->
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { detect } from 'detect-browser';
 	import { onMount } from 'svelte';
 	import type { Video } from '../../interfaces/player.interfaces';
 	import Icon from '../Icon.svelte';
 	import CaptionSettings from './CaptionSettings.svelte';
 	import TempoSettings from './TempoSettings.svelte';
+	const isSafari = detect()!.name == 'safari';
 
 	export let videoData: Video;
 
@@ -45,6 +47,24 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 	// aria live
 	let ariaLiveContent = '';
+
+	let timeProgress: HTMLInputElement;
+	let volumeSlider: HTMLInputElement;
+
+	function handleTimeProgressInput() {
+		if (!isSafari) return;
+		const sliderValue = parseInt(timeProgress.value);
+		const normalizedSliderValue = (sliderValue / duration) * 100;
+		timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
+	}
+
+	$: {
+		if (volumeSlider) {
+			volumeSlider.style.background = `linear-gradient(to right, #99bef5 ${volume * 100}%, #ccc ${
+				volume * 100
+			}%)`;
+		}
+	}
 
 	onMount(() => {
 		// userDeviceIsiOS = /iPhone/.test(navigator.userAgent);
@@ -138,7 +158,9 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		bind:playbackRate
 		bind:volume
 		bind:currentTime
-		class="bg-{captionsBackgroundColor} fc-{captionsFontColor} fs-{captionsFontSize} "
+		class={!userDeviceIsiOS
+			? `bg-${captionsBackgroundColor} fc-${captionsFontColor} fs-${captionsFontSize}`
+			: ''}
 		on:click={onPlayPause}
 		on:dblclick={onToggleFullscreen}
 		tabindex="0"
@@ -159,7 +181,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	</video>
 
 	{#if !userDeviceIsiOS}
-		<div id="video-controls" class="controls">
+		<div id="video-controls" class="controls" class:isSafari>
 			{#if video}
 				<div class="row-1">
 					<input
@@ -168,6 +190,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						class="time-progress"
 						type="range"
 						bind:value={currentTime}
+						bind:this={timeProgress}
+						on:input={(e) => handleTimeProgressInput()}
 						min="0"
 						max={duration}
 						on:keydown={onKeyDownTimeProgress}
@@ -212,6 +236,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 							max="1"
 							step="0.1"
 							bind:value={volume}
+							bind:this={volumeSlider}
 							disabled={muted}
 							class="volume-slider"
 						/>
@@ -372,6 +397,13 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				max-width: 5rem;
 			}
 
+			.time-progress {
+				box-sizing: border-box;
+				width: 100%;
+				margin: 0;
+				cursor: pointer;
+			}
+
 			.playback-rate {
 				font-size: 0.77rem;
 				text-align: center;
@@ -404,12 +436,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 			* {
 				color: white;
-			}
-
-			.time-progress {
-				box-sizing: border-box;
-				width: 100%;
-				margin: 0;
 			}
 
 			.row-2 {
@@ -447,6 +473,56 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					}
 					&:last-of-type {
 						text-align: right;
+					}
+				}
+			}
+			&.isSafari {
+				.volume-slider{
+					margin-top: 0.7rem;
+
+					&:disabled {
+						opacity: 50%;
+					}
+				}
+				.time-progress, .volume-slider {
+					appearance: none;
+					-webkit-appearance: none;
+					width: 100%;
+					outline: none;
+					height: 0.2rem;
+					background-color: var(--color-white);
+					border-radius: 1rem;
+					margin-bottom: 0.8rem;
+				
+					
+					// margin-bottom: 0.8rem;
+
+					cursor: pointer;
+
+					
+
+					&::-webkit-slider-thumb {
+						-webkit-appearance: none;
+ 						 appearance: none;
+						 height: 1.11rem;
+						 width: 1.11rem;
+						 border: 1px solid var(--color-black);
+						 background-color: var(--color-white);
+						 border-radius: 50%;
+
+						 &:hover, &:active {
+							outline: 2px solid var(--color-white);
+							
+							border: 2px solid var(--color-black);
+						 }
+  
+					}
+
+					&:focus-within {
+						&::-webkit-slider-thumb {
+							outline: 2px solid var(--color-white);
+							border: 2px solid var(--color-black);
+						}
 					}
 				}
 			}
