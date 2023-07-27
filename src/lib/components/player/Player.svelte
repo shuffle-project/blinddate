@@ -51,10 +51,14 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	let timeProgress: HTMLInputElement;
 	let volumeSlider: HTMLInputElement;
 
-	function handleTimeProgressInput() {
-		if (!isSafari) return;
-		const normalizedSliderValue = (currentTime / duration) * 100;
-		timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
+	$: {
+		if (isSafari) {
+			let normalizedSliderValue = (currentTime / duration) * 100;
+			normalizedSliderValue = normalizedSliderValue < 0 ? 0 : normalizedSliderValue;
+			if (timeProgress) {
+				timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
+			}
+		}
 	}
 
 	$: {
@@ -104,11 +108,9 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		} else if (ev.key === 'ArrowRight') {
 			ev.preventDefault();
 			currentTime += 10;
-			handleTimeProgressInput();
 		} else if (ev.key === 'ArrowLeft') {
 			ev.preventDefault();
 			currentTime -= 10;
-			handleTimeProgressInput();
 		}
 	}
 
@@ -192,7 +194,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						type="range"
 						bind:value={currentTime}
 						bind:this={timeProgress}
-						on:input={() => handleTimeProgressInput()}
 						min="0"
 						max={duration}
 						on:keydown={onKeyDownTimeProgress}
@@ -223,9 +224,9 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 							on:click={onMute}
 						>
 							{#if muted}
-								<Icon size="parent" img="volume-mute-placeholder" svg_color="white" />
+								<Icon size="parent" img="volume-mute" svg_color="white" />
 							{:else}
-								<Icon size="parent" img="volume-placeholder" svg_color="white" />
+								<Icon size="parent" img="volume" svg_color="white" />
 							{/if}
 						</button>
 
@@ -255,9 +256,9 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 						<button class="player-btn" title="Fullscreen" on:click={onToggleFullscreen}>
 							{#if fullscreen}
-								<Icon size="parent" img="fullscreen-close-placeholder" svg_color="white" />
+								<Icon size="parent" img="fullscreen-close" svg_color="white" />
 							{:else}
-								<Icon size="parent" img="fullscreen-placeholder" svg_color="white" />
+								<Icon size="parent" img="fullscreen" svg_color="white" />
 							{/if}
 						</button>
 					</div>
@@ -296,12 +297,12 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	.wrapper {
 		display: flex;
 		flex-direction: column;
-		width: 100%;
 
 		video {
 			width: 100%;
 			max-height: calc(100% - 5.5rem);
 			border-bottom: none;
+			margin-bottom: -1px;
 
 			// bg color
 			&.bg-black {
@@ -436,7 +437,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			}
 
 			* {
-				color: white;
+				color: var(--color-white);
 			}
 
 			.row-2 {
