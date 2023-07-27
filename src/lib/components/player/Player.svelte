@@ -53,8 +53,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 	function handleTimeProgressInput() {
 		if (!isSafari) return;
-		const sliderValue = parseInt(timeProgress.value);
-		const normalizedSliderValue = (sliderValue / duration) * 100;
+		const normalizedSliderValue = (currentTime / duration) * 100;
 		timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
 	}
 
@@ -105,9 +104,11 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		} else if (ev.key === 'ArrowRight') {
 			ev.preventDefault();
 			currentTime += 10;
+			handleTimeProgressInput();
 		} else if (ev.key === 'ArrowLeft') {
 			ev.preventDefault();
 			currentTime -= 10;
+			handleTimeProgressInput();
 		}
 	}
 
@@ -191,7 +192,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						type="range"
 						bind:value={currentTime}
 						bind:this={timeProgress}
-						on:input={(e) => handleTimeProgressInput()}
+						on:input={() => handleTimeProgressInput()}
 						min="0"
 						max={duration}
 						on:keydown={onKeyDownTimeProgress}
