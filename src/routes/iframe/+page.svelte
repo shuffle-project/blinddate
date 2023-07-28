@@ -462,7 +462,6 @@
 		height: 1.5vw; /*hardstyled*/
 
 		margin-left: 2.5vw; /*hardstyled*/
-		margin-bottom: 0.4vw;
 		font-size: 1.3vw; /*hardstyled*/
 	}
 
