@@ -7,7 +7,7 @@
 			mood: '',
 			description:
 				'Gabriel möchte sich notieren, auf welchen Seiten im Lehrwerk er weiterführende Informationen zu den Inhalten der Folien findet. Der Professor hat diese Verweise geschickt als kleine, rote Infokästen in den Folien integriert. Können Sie Gabriel dabei behilflich sein?',
-			solution: '12'
+			solution: 12
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-02-nl.svg',
@@ -21,42 +21,42 @@
 			mood: base + '/personas/gabriel/gabriel-explaining.svg',
 			description:
 				'“Mit einem eingeschränkten Gesichtsfeld ist die Aufgabe gar nicht so leicht, was? Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es funktioniert. Versuch‘s mal!”',
-			solution: '19'
+			solution: 19
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-04-el-02.svg',
 			mood: base + '/personas/gabriel/gabriel-neutral.svg',
 			description:
 				'“Wie läuft´s? Zugegeben: Ich brauche mehr Zeit als ein Mensch ohne Sehbehinderung, um mit dieser Methode Stück für Stück alle Inhalte in einem Dokument zu erfassen. Außerdem belastet das ständige Bewegen des Kopfes meinen Nacken auf Dauer.”',
-			solution: '22'
+			solution: 22
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-05-el-03.svg',
 			mood: base + '/personas/gabriel/gabriel-sad.svg',
 			description:
 				'“Es wäre einfacher für mich, die Quellen zu überblicken, wenn der Infokasten sich immer an derselben Stelle auf einer Folie befinden würde. Ich werde meinem Dozenten gleich eine E-Mail schreiben und nachfragen, ob er das ändern kann.”',
-			solution: '24'
+			solution: 24
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-06-ll-01.svg',
 			mood: base + '/personas/gabriel/gabriel-happy.svg',
 			description:
 				'“Der Dozent hat die Folien angepasst! In seiner E-Mail teilt er mit, dass die Quelle nun immer rechts neben dem Titel zu finden ist. Du wirst gleich feststellen, wie viel schneller Du jetzt mit den Aufgaben vorankommst.”',
-			solution: '28'
+			solution: 28
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-07-ll-02.svg',
 			mood: base + '/personas/gabriel/gabriel-shrug.svg',
 			description:
 				'“In der Regel komme ich im Studium gut zurecht, da ich mich über die Jahre an die eingeschränkte Sicht gewöhnt habe. Aber mit etwas Unterstützung kann ich in den Veranstaltungen noch effizienter lernen.”',
-			solution: '29'
+			solution: 29
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-08-ll-03.svg',
 			mood: base + '/personas/gabriel/gabriel-neutral.svg',
 			description:
 				'“Übrigens ist mein Gesichtsfeld am Rand nicht wirklich schwarz. Mein Gehirn ergänzt die Stellen, die mein Auge nicht erfasst, mit dem, was es zu sehen erwartet, und fügt das  zu einem Bild zusammen. Daher  übersehe ich häufig Dinge. Aber das Grundproblem und die Strategien sind die gleichen!”',
-			solution: '31'
+			solution: 31
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-09-ende.svg',
@@ -71,7 +71,7 @@
 
 	let checkmarks: {
 		correct: boolean;
-		userAnswer: string;
+		userAnswer: number | null;
 		index: number;
 	}[] = [];
 
@@ -87,48 +87,65 @@
 	let holePosY = '16vw';
 
 	let inputImpossible = false;
-	let input = '';
+	let input: number | null = null;
 
 	let taskIndex = 0;
 	let descriptionText = contentsArray[0].description;
 	let interactionSrc = contentsArray[0].image;
 
+	let inputIsNumber = true;
+	let inputRangeCorrect = true;
+
 	/* functions */
 
+	$: {
+		if (input) {
+			inputIsNumber = true;
+			inputRangeCorrect = true;
+		}
+	}
+
 	function onClick() {
-		if (input !== '') {
-			if (taskIndex == 0) {
-				holeHidden = false;
+		const regex = /^[0-9]+$/;
+
+		inputIsNumber = Number.isInteger(input);
+		if (input !== null) {
+			inputRangeCorrect = input > 0 && input <= 99;
+		}
+
+		if (!inputIsNumber || !inputRangeCorrect) return;
+
+		if (taskIndex == 0) {
+			holeHidden = false;
+		}
+		if (taskIndex == 1) {
+			personaHidden = false;
+			holeMoveable = true;
+		}
+
+		checkmarks = [
+			...checkmarks,
+			{
+				correct: input === contentsArray[taskIndex].solution,
+				userAnswer: input,
+				index: taskIndex + 1
 			}
-			if (taskIndex == 1) {
-				personaHidden = false;
-				holeMoveable = true;
-			}
+		];
 
-			checkmarks = [
-				...checkmarks,
-				{
-					correct: input.trim().toLowerCase() === contentsArray[taskIndex].solution,
-					userAnswer: input,
-					index: taskIndex + 1
-				}
-			];
+		taskIndex++;
 
-			taskIndex++;
+		interactionSrc = contentsArray[taskIndex].image;
+		descriptionText = contentsArray[taskIndex].description;
 
-			interactionSrc = contentsArray[taskIndex].image;
-			descriptionText = contentsArray[taskIndex].description;
+		if (contentsArray[taskIndex].mood !== '') {
+			personaImage = contentsArray[taskIndex].mood;
+		}
 
-			if (contentsArray[taskIndex].mood !== '') {
-				personaImage = contentsArray[taskIndex].mood;
-			}
+		input = null;
 
-			input = '';
-
-			if (taskIndex == 8) {
-				holeHidden = true;
-				inputImpossible = true;
-			}
+		if (taskIndex == 8) {
+			holeHidden = true;
+			inputImpossible = true;
 		}
 	}
 
@@ -198,6 +215,15 @@
 		<div class="notebook" class:mobileVisibility={smallScreen}>
 			<!-- svelte-ignore a11y-missing-attribute -->
 			<img class="notebook-image" src={base + '/games/gabriel/notepad.svg'} />
+
+			<div class="error-message">
+				{#if !inputIsNumber}
+					<p>Nur ganze Zahlen werden akzeptiert</p>
+				{/if}
+				{#if !inputRangeCorrect}
+					<p>Die Zahl muss zwischen 1 und 99 groß sein</p>
+				{/if}
+			</div>
 			<div class="notebook-input">
 				{#each checkmarks as checkmark}
 					<div class="checkmark">
@@ -219,12 +245,19 @@
 					</p>
 					<form on:submit|preventDefault>
 						<input
+							type="number"
 							id="notebook-input-field"
-							type="text"
 							bind:value={input}
 							on:keypress={(e) => handleKeyPress(e)}
+							class="number-inputfield"
+							class:error={!inputIsNumber || !inputRangeCorrect}
 						/>
-						<button id="notebook-input-button" type="button" on:click={onClick}>OK</button>
+						<button
+							id="notebook-input-button"
+							type="button"
+							disabled={!inputIsNumber || !inputRangeCorrect}
+							on:click={onClick}>OK</button
+						>
 					</form>
 				</div>
 			</div>
@@ -364,6 +397,35 @@
 		filter: drop-shadow(3px 3px 3px rgba(var(--color-black-rgb), 0.3));
 	}
 
+	.error-message {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.error-message > p {
+		text-align: center;
+		font-size: 1.3vw;
+		background-color: var(--color-red);
+		color: var(--color-white);
+		margin: 0;
+	}
+
+	.number-inputfield::-webkit-outer-spin-button,
+	.number-inputfield::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	.number-inputfield {
+		-moz-appearance: textfield;
+	}
+
+	.number-inputfield.error {
+		outline: 2px solid var(--color-red);
+	}
+
 	.notebook-input {
 		position: absolute;
 		width: 100%;
@@ -379,7 +441,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 1.7vw;
+		height: 1.6vw;
 		/* margin-bottom: 0.1vw; */
 	}
 
