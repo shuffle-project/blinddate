@@ -23,10 +23,15 @@
 			<ul class="icon-list">
 				{#each personaToRender as persona}
 					<li class="icon-list-item">
-						<a href="{base}/personas/{persona.name.toLowerCase()}">
+						<a style="opacity: 60%; cursor: not-allowed" href="#" aria-disabled="true">
 							<Icon size="medium" img={persona.svg} svg_color="blue" />
 							{persona.name}
 						</a>
+						<!-- usertest -->
+						<!-- <a href="{base}/personas/{persona.name.toLowerCase()}">
+							<Icon size="medium" img={persona.svg} svg_color="blue" />
+							{persona.name}
+						</a> -->
 					</li>
 				{/each}
 			</ul>
@@ -34,7 +39,26 @@
 		<div>
 			<h2>Barrierefreie Angebote</h2>
 			<ul class="icon-list">
-				<li>
+				<!-- usertest -->
+				<li class="icon-list-item">
+					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed">
+						<Icon size="medium" img="/icons/easy-language.svg" svg_color="blue" />
+						Leichte Sprache</a
+					>
+				</li>
+				<li class="icon-list-item">
+					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
+						><Icon size="medium" img="/icons/sign-language.svg" />
+						Gebärdensprache</a
+					>
+				</li>
+				<li class="icon-list-item">
+					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
+						><Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
+						Sitemap</a
+					>
+				</li>
+				<!-- <li>
 					<Icon size="medium" img="/icons/easy-language.svg" svg_color="blue" />
 					Leichte Sprache
 				</li>
@@ -45,7 +69,7 @@
 				<li>
 					<Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
 					Sitemap
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div>
@@ -81,8 +105,19 @@
 	<div class="bottom-part">
 		<nav class="inner" aria-label="Fußnavigation">
 			<ul>
-				<li><a href="{base}/">Erklärung der Barrierefreiheit </a></li>
-				<li><a href="{base}/">Barrieren melden </a></li>
+				<!-- usertest -->
+				<li>
+					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
+						>Erklärung der Barrierefreiheit
+					</a>
+				</li>
+				<li>
+					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
+						>Barrieren melden
+					</a>
+				</li>
+				<!-- <li><a href="{base}/">Erklärung der Barrierefreiheit </a></li>
+				<li><a href="{base}/">Barrieren melden </a></li> -->
 				<li><a href="{base}/legal/imprint">Impressum</a></li>
 				<li><a href="{base}/legal/privacy">Datenschutzerklärung</a></li>
 			</ul>

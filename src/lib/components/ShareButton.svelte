@@ -49,7 +49,7 @@
 		</p>
 	{/if}
 	<button on:keyup={handleKeyPress} class="sharebutton" on:click={onClick} on:blur={handleBlur}>
-		<Icon alt="Seite teilen" size="small" img="share" svg_color="white" />
+		<Icon alt="Seite teilen" size="smedium" img="share" svg_color="white" />
 		<div class="btn-label" aria-hidden="true">Seite teilen</div>
 	</button>
 </div>

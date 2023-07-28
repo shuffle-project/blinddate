@@ -4,7 +4,6 @@
 	import Skiplink from '$lib/components/Skiplink.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
 	import Footer from '../../lib/components/Footer.svelte';
-	import Icon from '../../lib/components/Icon.svelte';
 </script>
 
 <Skiplink />
@@ -12,16 +11,18 @@
 <div class="background-black">
 	<header>
 		<div class="mobile">
+			<div class="user-test">
+				<UserTest />
+			</div>
+
 			<div class="row">
-				<a class="back-link icons" href="{base}/" aria-label="Zurück zur Hauptseite">
+				<!-- usertest -->
+				<!-- <a class="back-link icons" href="{base}/" aria-label="Zurück zur Hauptseite">
 					<Icon svg_color={'white'} img="back" />
-				</a>
+				</a> -->
 				<!-- <SearchBar /> -->
 				<!-- <div class="searchbar"> -->
-				<!-- usertest -->
-				<div class="user-test">
-					<UserTest />
-				</div>
+				<div class="icons"><img src="{base}/icons/logo.svg" alt="Blind Date Logo" /></div>
 
 				<div class="icons">
 					<ShareButton />
@@ -40,14 +41,20 @@
 					<UserTest />
 				</div>
 
-				<a href="{base}/" class="logo">
+				<!-- usertest -->
+				<!-- <a href="{base}/" class="logo">
 					<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zurück zur Startseite" />
-				</a>
+				</a> -->
+				<div class="logo">
+					<img src="{base}/icons/logo.svg" alt="Blind Date Logo" />
+				</div>
 			</div>
 			<div class="second-row">
-				<a href="{base}/" class="back-link">
+				<!-- usertest -->
+				<!-- <a href="{base}/" class="back-link">
 					<Icon svg_color={'white'} img="back">Zurück zur Hauptseite</Icon>
-				</a>
+				</a> -->
+				<div />
 
 				<ShareButton />
 			</div>
@@ -144,6 +151,12 @@
 		}
 
 		.mobile {
+			.user-test {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1rem;
+			}
 			.row {
 				display: flex;
 				justify-content: space-between;
