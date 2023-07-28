@@ -83,8 +83,8 @@
 			<ul>
 				<li><a href="{base}/">Erklärung der Barrierefreiheit </a></li>
 				<li><a href="{base}/">Barrieren melden </a></li>
-				<li><a href="{base}/">Impressum</a></li>
-				<li><a href="{base}/">Datenschutzerklärung</a></li>
+				<li><a href="{base}/legal/imprint">Impressum</a></li>
+				<li><a href="{base}/legal/privacy">Datenschutzerklärung</a></li>
 			</ul>
 			<Icon img="logo" size="big" />
 		</nav>

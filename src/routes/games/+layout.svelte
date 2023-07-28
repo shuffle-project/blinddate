@@ -44,19 +44,16 @@
 	}
 	.back-link {
 		margin-left: 1rem;
-		padding: 0 0.2rem;
-		border: 2px solid transparent;
-		border-radius: 0.33rem;
+		border-radius: 0.22rem;
 		color: var(--color-white);
 		text-decoration: none;
-		outline: none;
 		display: flex;
+		cursor: pointer;
 
 		&:hover,
 		&:focus {
-			cursor: pointer;
-			border: 2px solid var(--color-white);
-			outline: none;
+			outline: 2px solid var(--color-white);
+			outline-offset: 2px;
 		}
 	}
 	.logo {

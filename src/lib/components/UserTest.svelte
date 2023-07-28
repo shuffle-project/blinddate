@@ -9,7 +9,7 @@
 	<button on:click={() => modal.toggleModalDisplay()}> Willkommenstext öffnen </button>
 	<hr aria-hidden="true" />
 	<p>Webseite erkundet und bereit?</p>
-	<a href="/">Zur Umfrage</a>
+	<a href="https://survey.hdm-stuttgart.de/227497?lang=de">Zur Umfrage</a>
 </div>
 
 <Modal bind:this={modal}>

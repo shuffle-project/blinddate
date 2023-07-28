@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import ShareButton from '$lib/components/ShareButton.svelte';
 	import Footer from '../lib/components/Footer.svelte';
-	import SearchBar from '../lib/components/SearchBar.svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +8,7 @@
 </svelte:head>
 
 <div class="background-black">
-	<header>
+	<!-- <header>
 		<div class="first-row">
 			<div />
 			<SearchBar />
@@ -23,15 +21,15 @@
 			<div>
 				<ShareButton />
 			</div>
-			<!-- <hr aria-hidden="true" class="seperator" /> -->
+			<hr aria-hidden="true" class="seperator" /> 
 		</div>
-	</header>
+	</header> -->
 
-	<br />
+	<!-- <br /> -->
 </div>
 
 <div class="content" id="content">
-	<h1>Das sind die verfügbaren Studierenden</h1>
+	<h1 class="responsive">Studierende</h1>
 
 	<ul>
 		{#each ['gabriel'] as persona}
@@ -43,6 +41,8 @@
 <Footer />
 
 <style lang="scss">
+
+	
 	.content {
 		margin-left: auto;
 		margin-right: auto;
@@ -53,6 +53,7 @@
 
 	.background-black {
 		background-color: var(--color-black);
+		height: 30vh;
 	}
 
 	header {
