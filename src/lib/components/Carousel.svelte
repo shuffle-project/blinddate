@@ -127,7 +127,7 @@
 		</section>
 	</div>
 
-	<img class="buttom_wave" src={base + '/decorations/buttom_blue_wave.svg'} alt="" />
+	<img class="bottom_wave" src={base + '/decorations/bottom_blue_wave.svg'} alt="" />
 </div>
 
 <style lang="scss">
@@ -300,7 +300,7 @@
 		}
 
 		.top_wave,
-		.buttom_wave {
+		.bottom_wave {
 			display: none;
 		}
 
@@ -326,7 +326,7 @@
 		}
 
 		.top_wave,
-		.buttom_wave {
+		.bottom_wave {
 			max-width: 100%;
 		}
 	}

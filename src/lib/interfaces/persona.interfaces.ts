@@ -13,4 +13,5 @@ export interface Persona {
 	previousPersona: string;
 	week?: Week; // needed for Week.svelte
 	visualDescription: string;
+	shortVisualDescription: string;
 }

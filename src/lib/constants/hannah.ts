@@ -85,5 +85,6 @@ export const HANNAH: Persona = {
 	previousPersona: 'Gabriel',
 	nextPersona: 'Maxi',
 	week: hannahsWeek,
-	visualDescription: ''
+	visualDescription: '',
+	shortVisualDescription: ''
 };

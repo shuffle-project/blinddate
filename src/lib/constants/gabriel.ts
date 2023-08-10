@@ -18,5 +18,7 @@ export const GABRIEL: Persona = {
 	previousPersona: 'Maxi',
 	nextPersona: 'Hannah',
 	visualDescription:
-		'Hi, ich bin Gabriel. Ich bin 1,80 m groß und habe lockige, braune Haare. Heute trage ich ein orangefarbenes Hemd über einem weißen T-Shirt. Meistens krempel ich die Ärmel hoch bis zu den Ellenbogen. Und eigentlich habe ich auch immer eine Sonnenbrille dabei, die ich an den Kragen vom T-Shirt hänge.'
+		'Hi, ich bin Gabriel. Ich bin 1,80 m groß und habe lockige, braune Haare. Heute trage ich ein orangefarbenes Hemd über einem weißen T-Shirt. Meistens krempel ich die Ärmel hoch bis zu den Ellenbogen. Und eigentlich habe ich auch immer eine Sonnenbrille dabei, die ich an den Kragen vom T-Shirt hänge.',
+	shortVisualDescription:
+		'Er trägt ein knall-leuchtendes orangenes Hemd und hält in seiner linken Hand eine Sonnenbrille. Trotz leicht abgeneigter Kopfrichtung schaut Gabriel sie mit einem seitlichen Blick direkt an'
 };
