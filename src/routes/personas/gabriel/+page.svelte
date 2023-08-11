@@ -25,6 +25,7 @@
 			{
 				title: 'Video',
 				videoPathMp4: '/media/sehen.mp4',
+				poster: '/media/sehen-preview-image.jpg',
 				captionsArray: [
 					{
 						path: '/media/sehen-untertitel.vtt',
@@ -390,7 +391,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			checks={[
 				'Ich informiere mich über digitale Barrierefreiheit',
 				'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
-				'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann gelesen oder mithilfe eines Screenreaders gehört werden, gesprochene Texte haben Untertitel oder ein Transkript.',
+				'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann gelesen oder mithilfe eines Screenreaders gehört werden, gesprochene Texte haben Untertitel oder ein Transkript',
 				'Ich beschreibe Bilder und Grafiken und erstelle Alternativtexte',
 				'Ich überprüfe die Barrierefreiheit meiner Dokumente mit den eingebauten Prüfhilfen (z.B. in MS Office oder LibreOffice)',
 				'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
