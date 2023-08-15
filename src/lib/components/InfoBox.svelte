@@ -16,8 +16,8 @@
 </script>
 
 <span>
-	<button class="term-btn " on:click={() => toggleDialogDisplay()}>
-		<span lang={langTerm}>{term}</span>
+	<button class="term-btn" on:click={() => toggleDialogDisplay()}>
+		<span lang={langTerm}>{@html term}</span>
 	</button>
 </span>
 
@@ -39,6 +39,8 @@
 		background-color: transparent;
 		font-size: 1rem;
 		font-weight: bold;
+
+		text-align: left;
 
 		cursor: pointer;
 

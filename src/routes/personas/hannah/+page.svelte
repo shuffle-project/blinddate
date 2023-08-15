@@ -9,7 +9,7 @@
 	import { HANNAH } from '$lib/constants/hannah';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Checklist from '../../../lib/components/checklist/Checklist.svelte';
-	import Week from '../../../lib/components/Week.svelte';
+	import Week from '../../../lib/components/week/index.svelte';
 	const persona = HANNAH;
 
 	const extendedPlayerConfigOffline: ExtendedPlayerConfig = {
@@ -121,8 +121,8 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<h2 class="main-heading" id="lectures">Lehrveranstaltungen</h2>
 		<p class="no-component-text">
 			<InfoBox
-				term="Gebärdensprachdolmetschende"
-				definition="Personen mit Hörbeeinträchtigung haben in bestimmten Bereichen einen rechtlichen Anspruch auf Schrift- oder Gebärdensprachdolmetschende. Diese Bereiche umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen staatliche Stellen die Kosten.
+				term="Gebärdensprach<wbr/>dolmet<wbr/>schende"
+				definition="Personen mit Hörbeeinträchtigung haben in bestimmten Bereichen einen rechtlichen Anspruch auf Schrift- oder Gebärdensprach<wbr/>dolmet<wbr/>schende. Diese Bereiche umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen staatliche Stellen die Kosten.
 				Sind dolmetschende Personen direkt in der Kommunikationssituation anwesend, dolmetschen sie simultan. Sind Personen schwerhörig oder später ertaubt und beherrschen u.U. die deutsche Gebärdensprache (DGS) nicht, können Dolmetscher*innen das gesprochene Wort auch in Schrift übersetzen.
 				Dolmetscher*innen können über die Dolmetscher*innenvermittlung der Landesverbände engagiert werden. 
 				"
@@ -228,7 +228,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<div class="spacer" />
 
 		<h2 class="main-heading" id="week">Eine Woche im Leben von Hannah</h2>
-		<p>
+		<p class="no-component-text">
 			Hannah befindet sich im zweiten Jahr ihres BSc. Mathematikstudiums an der Technischen
 			Hochschule Dortmund. Dies ist die zweite Woche des WS22 und Hannah hat eine volle Auslastung
 			von 5 Kursen.
