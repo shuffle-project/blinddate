@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LectureRoom from '$lib/components/LectureRoom.svelte';
+	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import Footer from '../lib/components/Footer.svelte';
 </script>
 

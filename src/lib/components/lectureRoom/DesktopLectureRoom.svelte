@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { GABRIEL } from '$lib/constants/gabriel';
-	import { HANNAH } from '$lib/constants/hannah';
+	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-	const personas = [HANNAH, GABRIEL];
+	export let personas: Persona[];
 </script>
 
 <div class="wrapper">
