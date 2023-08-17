@@ -6,6 +6,11 @@
 </script>
 
 <div class="wrapper">
+	<div class="toggle-all-names">
+		<input id="toggle-all-names" type="checkbox" />
+		<label for="toggle-all-names">Alle Namen anzeigen</label>
+	</div>
+
 	<div class="lecture-room">
 		<ul aria-label="Vorlesungssaal mit Studierenden">
 			{#each personas as persona}
@@ -51,8 +56,15 @@
 		padding: 0 1rem;
 		background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		.toggle-all-names {
+			label {
+				color: var(--color-white);
+			}
+		}
 
 		.lecture-room {
 			width: 100%;

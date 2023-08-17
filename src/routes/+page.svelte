@@ -8,8 +8,7 @@
 </svelte:head>
 
 <div class="content" id="content">
-	<h1>Studierende kennenlernen</h1>
-
+	<h1 class="responsive">Studierende kennenlernen</h1>
 	<LectureRoom />
 </div>
 
@@ -27,5 +26,12 @@
 
 		max-width: var(--content-max-width);
 		margin-inline: auto;
+		text-align: center;
+	}
+
+	@media (min-width: 50rem) {
+		h1 {
+			text-align: left;
+		}
 	}
 </style>
