@@ -159,6 +159,14 @@
 					}
 				}
 
+				&.maxi {
+					top: 5%;
+
+					img {
+						width: min(20vw, 16rem);
+					}
+				}
+
 				a {
 					position: relative;
 
