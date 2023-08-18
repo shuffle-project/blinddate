@@ -305,14 +305,12 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			checks={[
 				'Ich informiere mich über digitale Barrierefreiheit',
 				'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
-				'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann gelesen oder mithilfe eines Screenreaders gehört werden, gesprochene Texte haben Untertitel oder ein Transkript',
-				'Ich achte darauf, beim Sprechen nicht mit dem Rücken zu den Studierenden zu stehen',
-				'Ich achte darauf, dass nicht mehrere Personen durcheinander reden',
-				'Ich benutze portable Funkmikrofone oder denke daran, die Induktionsanlage einzuschalten',
-				'Ich organisiere Gebärdensprachdolmetschende für meine Vorlesung',
-				'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
-				'Ich mache ausreichend Pausen in langen Vorlesungsblöcken',
-				'Wenn Studierende einen Nachteilsausgleich haben, bemühe ich mich um eine faire Umsetzung'
+				'Ich verwende das Mehrsinne-Prinzip und erstelle Material bspw. auditiv und visuell',
+				'Ich achte darauf, deutlich zu Sprechen und dass mein Mundbild gut sichtbar ist',
+				'Bei Diskussionen achten wir gemeinsam darauf, dass nacheinander gesprochen wird',
+				'Im Hörsaal oder online nutze ich ein externe Mikrofon. Störgeräusche versuche ich zu vermeiden, z.B. indem die Fenster geschlossen sind',
+				'Ich zeichne meine Veranstaltungen auf und stelle sie digital zur Verfügung',
+				'Für Aufzeichnungen und Videos erstelle ich Untertitel. Automatisch erstellte Untertitel korrigiere ich'
 			]}
 			{persona}
 		/>
