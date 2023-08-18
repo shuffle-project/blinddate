@@ -222,6 +222,8 @@
 		.week-figure {
 			width: 100%;
 			max-width: 8rem;
+			height: 100%;
+			max-height: 28rem;;
 			z-index: 2;
 			
 			transform: translateX(35%) translateY(10%);

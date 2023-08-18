@@ -264,6 +264,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 				image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
 				warningtext="Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe 'Informationen zum Spiel'."
 				pathtext={base + '/games/gabriel'}
+				personaID={persona.id}
 			/>
 		</div>
 
@@ -442,16 +443,5 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 	.more-info-list {
 		list-style-type: none;
 		margin-left: -2rem;
-	}
-
-	.user-test {
-		background-color: var(--color-black);
-		margin-top: 5rem;
-		margin-inline: 3.66rem;
-		padding: 2rem 1rem;
-		border-radius: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 </style>

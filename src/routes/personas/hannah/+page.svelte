@@ -4,6 +4,7 @@
 	import PersonaContent from '$lib/components/PersonaContent.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
+	import SimulationLink from '$lib/components/SimulationLink.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import { HANNAH } from '$lib/constants/hannah';
@@ -223,6 +224,17 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			schwer zu verstehen ist, sehr anstrengend ist und ich danach erst einmal eine Pause brauche.
 		</SpeechBubble>
 
+		<SpeechBubble {persona}>
+			Lorem Ipsum ... Beispiel im Folgenden ... Nicht akkurat, aber so verständlich ...
+		</SpeechBubble>
+
+		<SimulationLink
+			image=""
+			warningtext="Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe 'Informationen zum Spiel'."
+			pathtext=""
+			personaID={persona.id}
+		/>
+
 		<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOnline} />
 
 		<div class="spacer" />
@@ -304,5 +316,38 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			]}
 			{persona}
 		/>
+
+		<h2 class="main-heading" id="more-info">Weitere Informationen</h2>
+		<ul class="more-info-list">
+			<li>
+				<Recommendation
+					link="https://www.deutsche-gesellschaft.de/fokus/einige-informationen-zum-thema-hoerschaedigung"
+				>
+					<svelte:fragment slot="linkText">
+						Einige Informationen zum Thema Hörschädigung
+					</svelte:fragment>
+					<svelte:fragment slot="textAfter">
+						von der Deutschen Gesellschaft der Hörbehinderten - Selbsthilfe und Fachverbände e.V.
+					</svelte:fragment>
+				</Recommendation>
+			</li>
+			<li>
+				<Recommendation
+					link="https://www.schwerhoerigen-netz.de/fileadmin/user_upload/dsb/Dokumente/Information/Service/Ratgeber/Ratgeber1_Hoerschaedigung-Was_kann_ich_dagegen_tun.pdf"
+				>
+					<svelte:fragment slot="linkText">
+						Hörschädigung - Was kann ich dagegen tun? (PDF)
+					</svelte:fragment>
+					<svelte:fragment slot="textAfter">vom Deutschen Schwerhörigenbund e.V.</svelte:fragment>
+				</Recommendation>
+			</li>
+		</ul>
 	</svelte:fragment>
 </PersonaContent>
+
+<style lang="scss">
+	.more-info-list {
+		list-style-type: none;
+		margin-left: -2rem;
+	}
+</style>
