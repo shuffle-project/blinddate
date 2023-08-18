@@ -301,6 +301,12 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		</p>
 
 		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
+
+		<p class="no-component-text">
+			Hier ist eine Auflistung von schnellen und einfachen Tipps, wie Sie Gabriel und viele weitere
+			Menschen unterstützen können.
+		</p>
+
 		<Checklist
 			checks={[
 				'Ich informiere mich über digitale Barrierefreiheit',
