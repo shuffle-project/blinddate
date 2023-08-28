@@ -14,5 +14,6 @@ export const MAXI: Persona = {
 	disability_icon: 'mental-health',
 	previousPersona: 'Hannah',
 	nextPersona: 'Gabriel',
-	visualDescription: ''
+	visualDescription: '',
+	shortVisualDescription: ''
 };
