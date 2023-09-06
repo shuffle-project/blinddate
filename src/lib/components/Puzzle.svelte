@@ -3,20 +3,22 @@
 	import { onDestroy, onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 
+	export let topLeft = '';
+	export let topRight = '';
+	export let bottomLeft = '';
+	export let bottomRight = '';
+
 	const pieceLabels = ['denke', 'sage', 'fühle', 'mache'];
 	const pieceIcon = ['think-bubble', 'speech-bubble', 'heart', 'hand'];
 	const puzzlePieces = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
-	const smBreakpoint = 400;
+	const smBreakpoint = 350;
 	const mdBreakpoint = 480;
 
 	const puzzle = {
-		topLeft:
-			'"Lorem ipsum dolor sit amet consectetur. Volutpat etiam ipsum phasellus lacus orci egestas."',
-		topRight: '"Volutpat etiam ipsum phasellus lacus orci egestas."',
-		bottomLeft:
-			'"Volutpat etiam ipsum phasellus lacus orci egestas. Volutpat etiam ipsum phasellus."',
-		bottomRight:
-			'"Lorem ipsum dolor sit amet consectetur. Volutpat etiam ipsum phasellus lacus orci egestas. Volutpat etiam ipsum phasellus lacus orci egestas."'
+		topLeft: topLeft,
+		topRight: topRight,
+		bottomLeft: bottomLeft,
+		bottomRight: bottomRight
 	};
 
 	let text = puzzle.topLeft;
@@ -153,7 +155,7 @@
 					on:click={() => onPiecePressed(puzzlePieces[i])}
 					on:keydown={onKeypressed}
 				>
-					<Icon img={pieceIcon[i]} size="medium" />
+					<Icon img={pieceIcon[i]} size="parent" />
 					<p>Was ich <br role="presentation" /><strong>{pieceLabels[i]}</strong></p>
 				</button>
 				<img
@@ -177,12 +179,13 @@
 	.padding-bottom-div {
 		height: 0px;
 		width: 100%;
-		// background-color: red;
 		transition: all 0.4s ease-in-out;
 	}
 
 	button {
 		background-color: transparent;
+		color: var(--color-black);
+
 		border: none;
 		position: absolute;
 		display: flex;
@@ -199,6 +202,7 @@
 		max-width: 8.77rem;
 		max-height: 8.77rem;
 		font-size: 1rem;
+		cursor: pointer;
 
 		&#btn-0 {
 			border-top-left-radius: 1.11rem;
@@ -216,14 +220,17 @@
 			border-bottom-right-radius: 1.11rem;
 		}
 
+		&:focus,
 		&:hover {
-			border: 3px solid var(--color-blue);
+			outline: 3px solid var(--color-blue);
+			outline-offset: -8px;
+			transition: outline 0.1s ease-out;
 		}
 
 		p {
 			padding: 0;
 			margin: 0;
-			margin-top: 0.5rem;
+			margin-top: 0.27rem;
 		}
 	}
 
@@ -252,12 +259,20 @@
 			z-index: 1;
 			width: 100%;
 			max-width: 17.63rem;
-			margin: 0;
 			padding: 1rem;
 			border: 1px solid var(--color-black);
 			border-radius: 0.55rem;
 			box-sizing: border-box;
 			text-align: center;
+
+			p {
+				&::before {
+					content: open-quote;
+				}
+				&::after {
+					content: close-quote;
+				}
+			}
 
 			&.hidden {
 				visibility: hidden;
@@ -367,7 +382,7 @@
 				.puzzle-piece {
 					&.piece-0 {
 						&.active {
-							top: 3.5rem;
+							top: 4rem;
 						}
 					}
 
@@ -379,20 +394,20 @@
 
 					&.piece-2 {
 						&.active {
-							bottom: 2rem;
+							bottom: 3rem;
 						}
 					}
 
 					&.piece-3 {
 						&.active {
-							bottom: 3rem;
+							bottom: 3.5rem;
 						}
 					}
 				}
 			}
 		}
 	}
-	@media (max-width: 400px) {
+	@media (max-width: 350px) {
 		img {
 			width: 8rem;
 			height: 8rem;
@@ -425,8 +440,9 @@
 			margin-top: 4rem;
 
 			.text {
-				max-width: 13rem;
-				padding: 0.5rem;
+				max-width: calc(100% - 2.33rem);
+				margin-inline: 1.33rem;
+				padding: 0;
 			}
 
 			.puzzle {
@@ -441,13 +457,13 @@
 
 					&.piece-1 {
 						&.active {
-							top: 2rem;
+							top: 1.5rem;
 						}
 					}
 
 					&.piece-2 {
 						&.active {
-							bottom: 1.5rem;
+							bottom: 2rem;
 						}
 					}
 
@@ -458,6 +474,12 @@
 					}
 				}
 			}
+		}
+	}
+
+	@media (max-width: 59.3125rem) {
+		.wrapper {
+			margin-inline: auto;
 		}
 	}
 </style>

@@ -13,7 +13,7 @@
 	}
 </script>
 
-<div class="sl-container">
+<div class="sl-container" id="simulation-link-gabriel">
 	<div class="sl-content">
 		<img class="sl-img" src={image} alt="" role="presentation" />
 		<div class="text-container">
@@ -25,12 +25,12 @@
 				{warningtext}
 			</p>
 
-			<a class="sim-link" href={pathtext}>Zum Spiel</a>
+			<a class="sim-link" href={pathtext}>Zur Simulation</a>
 		</div>
 	</div>
-	<button on:click={() => toggleModalDisplay()}>Informationen zum Spiel</button>
+	<button on:click={() => toggleModalDisplay()}>Informationen zur Simulation</button>
 	<Modal bind:this={modal}>
-		<svelte:fragment slot="headline">Informationen zum Spiel</svelte:fragment>
+		<svelte:fragment slot="headline">Informationen zur Simulation</svelte:fragment>
 		<svelte:fragment slot="content">
 			<p>
 				Das vorliegende Spiel ist aufgrund seiner spezifischen Spielmechanik leider nicht
@@ -143,23 +143,18 @@
 		}
 
 		.sim-link {
-			border: 2px solid var(--color-white);
 			border-radius: 1.8rem;
-			background-color: var(--color-white);
-			color: var(--color-black);
+			background-color: var(--color-blue);
+			color: var(--color-white);
 			text-decoration: none;
 			text-align: center;
 			font-weight: 600;
 			padding: 0.5rem 1rem;
-			transition: 0.2s ease;
-
+			cursor: pointer;
 			&:hover,
 			&:focus {
-				border-color: var(--color-blue);
-
-				box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.1);
-				transition: 0.1s ease;
-				cursor: pointer;
+				outline: 2px solid var(--color-blue);
+				outline-offset: 2px;
 			}
 		}
 	}
