@@ -61,17 +61,17 @@
 		align-items: center;
 		gap: 0.5rem;
 		background-color: transparent;
-		border: 2px solid transparent;
+		border: none;
 		color: var(--color-white);
 		font-size: medium;
-		border-radius: 0.4rem;
+		border-radius: 1rem;
 		padding: 0.2rem 0.4rem;
+		cursor: pointer;
 
 		&:hover,
 		&:focus {
-			cursor: pointer;
-			border: 2px solid var(--color-white);
-			outline: none;
+			outline: 2px solid var(--color-white);
+			outline-offset: 2px;
 		}
 	}
 

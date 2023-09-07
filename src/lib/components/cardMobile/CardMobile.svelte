@@ -55,6 +55,7 @@
 		margin-inline: auto;
 		z-index: 15;
 		padding-top: 0.5rem;
+		margin-top: 4rem;
 		width: 100%;
 
 		&.sticky {
@@ -76,6 +77,7 @@
 		align-items: center;
 
 		transform: translateY(-1.5rem);
+		margin-bottom: 4rem;
 
 		padding: 2rem 1.33rem 1rem 1.33rem;
 

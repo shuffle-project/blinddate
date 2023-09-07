@@ -1,12 +1,18 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { GABRIEL } from '$lib/constants/gabriel';
-	import { HANNAH } from '$lib/constants/hannah';
+	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-	const personas = [HANNAH, GABRIEL];
+	export let personas: Persona[];
+
+	let toggleAllNames = false;
 </script>
 
 <div class="wrapper">
+	<div class="toggle-all-names">
+		<input id="toggle-all-names" type="checkbox" bind:checked={toggleAllNames} />
+		<label for="toggle-all-names">Alle Namen anzeigen</label>
+	</div>
+
 	<div class="lecture-room">
 		<ul aria-label="Vorlesungssaal mit Studierenden">
 			{#each personas as persona}
@@ -15,6 +21,7 @@
 						href="{base}/personas/{persona.id}"
 						aria-label={persona.name}
 						aria-describedby="{persona.id}-image"
+						class:show-all-names={toggleAllNames}
 					>
 						<div class="persona-info-wrapper" aria-hidden="true">
 							<div class="persona-info">
@@ -52,15 +59,78 @@
 		padding: 0 1rem;
 		background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		.toggle-all-names {
+			width: 100%;
+			max-width: var(--content-max-width);
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			gap: 0.55rem;
+
+			margin-right: 3rem;
+
+			input {
+			-webkit-appearance: none;
+			appearance: none;
+			background-color: var(--color-black);
+
+			margin: 0;
+
+			height: 1.33rem;
+			width: 1.33rem;
+			aspect-ratio: 1;
+
+			border-radius: 0.33rem;
+			border: 2px solid var(--color-white);
+
+			cursor: pointer;
+
+			display: grid;
+			place-content: center;
+
+			&:checked:before {
+				content: '';
+				width: 0.8rem;
+				height: 0.8rem;
+				box-shadow: inset 1rem 1rem var(--color-white);
+
+				transform-origin: bottom left;
+				clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
+			}
+
+			&:checked {
+				background-color: var(--color-black);
+				
+			}
+
+			&:focus,
+			&:hover {
+				outline: 2px solid var(--color-white);
+				outline-offset: 2px;
+			}
+			}
+
+			label {
+				color: var(--color-white);
+			}
+		}
 
 		.lecture-room {
 			width: 100%;
 			max-width: var(--content-max-width);
-
+			
 			border-radius: 2rem;
 			position: relative;
+
+			margin-top: 0.55rem;
+
+			ul {
+				margin: 0;
+			}
 
 			.lecture-room-img {
 				border-radius: 2rem;
@@ -83,6 +153,14 @@
 				&.hannah {
 					bottom: 40%;
 					right: 23%;
+
+					img {
+						width: min(20vw, 16rem);
+					}
+				}
+
+				&.maxi {
+					top: 5%;
 
 					img {
 						width: min(20vw, 16rem);
@@ -124,7 +202,8 @@
 					}
 
 					&:hover,
-					&:focus {
+					&:focus,
+					&.show-all-names {
 						.persona-info {
 							opacity: 100%;
 
@@ -154,11 +233,11 @@
 								transition: opacity 0.8s ease-out;
 							}
 
-							.icon {
-								display: flex;
-								align-items: center;
-								justify-content: center;
-							}
+							// .icon {
+							// 	display: flex;
+							// 	align-items: center;
+							// 	justify-content: center;
+							// }
 						}
 					}
 

@@ -27,13 +27,23 @@
 </script>
 
 <div class="wrapper">
-	<div class="persona_img_container">
-		<img
-			class="persona-img"
-			src="{base}/personas/{persona.id}/{persona.id}.svg"
-			alt=""
-			role="presentation"
-		/>
+	<div class="mobile-card">
+		<div class="img-wrapper">
+			<div class="img">
+				<Icon size="parent" img="/personas/{persona.id}/{persona.id}" />
+			</div>
+		</div>
+		<button
+			class="playbutton-mobil"
+			on:click={speak}
+			aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
+		>
+			{#if playingAudio}
+				<Icon size="smedium" img="pause" />
+			{:else}
+				<Icon size="smedium" img="play" />
+			{/if}
+		</button>
 	</div>
 
 	<div class="decorative-outline">
@@ -43,7 +53,7 @@
 	</div>
 
 	<button
-		class="playbutton"
+		class="playbutton-desktop"
 		on:click={speak}
 		aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
 	>
@@ -64,8 +74,11 @@
 		position: relative;
 		padding-left: 1.66rem;
 		padding-top: 0.85rem;
-		margin-top: 2rem;
-		margin-right: 7.66rem;
+		margin: 2rem 0 1rem 0;
+
+		.mobile-card {
+			display: none;
+		}
 
 		.decorative-outline {
 			position: absolute;
@@ -108,7 +121,7 @@
 			}
 		}
 
-		.playbutton {
+		.playbutton-desktop {
 			cursor: pointer;
 			background-color: var(--color-turquoise);
 			border: 2px solid transparent;
@@ -118,12 +131,14 @@
 			position: absolute;
 			top: -1rem;
 			left: 3.33rem;
-			padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+			
 			display: flex;
 			justify-content: center;
+			align-items: center;
 
-			width: 2.2rem;
-			height: 2.2rem;
+			
+			width: 2.5rem;
+			height: 2rem;
 
 			&:hover,
 			&:focus {
@@ -134,9 +149,60 @@
 
 	@media (max-width: 59.3125rem) {
 		.wrapper {
-			padding-left: 0rem;
-			margin-inline: auto;
+			margin: 3rem auto 1rem auto;
 			padding: 0 1.33rem;
+
+			.mobile-card {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0.33rem;
+				box-sizing: border-box;
+
+				height: 3.5rem;
+				max-width: 6.5rem;
+
+				position: absolute;
+				inset: -2rem 0 0 0;
+				z-index: 2;
+				margin-inline: auto;
+
+
+				box-shadow: 0 6px 10px 0 rgba(var(--color-black-rgb), 0.15);
+				border-radius: 2.3rem;
+				background: var(--color-gradient-persona);
+
+				.playbutton-mobil {
+					background: none;
+					border: none;
+					border-radius: 50%;
+					aspect-ratio: 1;
+					width: 2.5rem;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+					&:hover, &:focus {
+						outline: 2px solid var(--color-blue);
+					}
+				}
+
+				.img-wrapper {
+					width: 2.8rem;
+					height: 2.8rem;
+					border: 3px solid var(--color-white);
+					border-radius: 50%;
+					overflow: hidden;
+					box-sizing: border-box;
+
+					.img {
+						transform: translateY(0rem) translateX(-0.1rem);
+						width: 3rem;
+						height: 3rem;
+					}
+				}
+			}
 
 			.decorative-outline {
 				display: none;
@@ -168,8 +234,8 @@
 				padding-top: 2rem;
 			}
 
-			.playbutton {
-				margin-top: 2.2rem;
+			.playbutton-desktop {
+				display: none;
 			}
 		}
 	}

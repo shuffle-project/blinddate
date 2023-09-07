@@ -16,8 +16,8 @@
 
 <div class="wrapper">
 	<header>
-		<a class="back-link" href="{base}/personas/gabriel">
-			<Icon svg_color={'white'} img="back">Zurück zur Gabriel</Icon>
+		<a class="back-link" href="{base}/personas/gabriel/#simulation-link-gabriel" autofocus>
+			<Icon svg_color={'white'} img="back">Zurück zu Gabriel</Icon>
 		</a>
 		<div class="logo">
 			<div class="img">
@@ -43,8 +43,9 @@
 		// justify-content: space-between;
 	}
 	.back-link {
-		margin-left: 1rem;
-		border-radius: 0.22rem;
+		margin-left: 0.6rem;
+		border-radius: 1rem;
+		padding: 0.2rem 0.4rem;
 		color: var(--color-white);
 		text-decoration: none;
 		display: flex;

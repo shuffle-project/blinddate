@@ -118,8 +118,16 @@ button {
 	}
 }
 
-.spacer {
-	height: 2rem;
+@media (min-width: 59.375rem) {
+	.no-component-text-wrapper {
+		max-width: var(--content-element-max-width);
+		padding-inline: 3.33rem;
+		box-sizing: border-box;
+
+		.no-margin-top {
+			margin-top: 0;
+		}
+	}
 }
 
 @media (max-width: 59.3125rem) {
