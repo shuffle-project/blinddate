@@ -47,13 +47,27 @@
 <PersonaContent {persona}>
 	<svelte:fragment slot="content">
 		<SpeechBubble {persona}>
-			Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik im Bachelor in Dortmund.
-			Ich wohne gemeinsam mit meinen zwei Mitbewohnern, Till und Simon, in einer WG und fühle mich
-			hier richtig wohl. In meiner Freizeit spiele ich Handball mit einer Gruppe aus Hörenden und
-			Hörbeeinträchtigten, gehe gerne Essen und bin ein Serienjunkie. Ich bin von Geburt an
-			hochgradig hörbeeinträchtigt auf beiden Ohren. Ich trage links ein Hörgerät und rechts ein
-			Cochlea-Implantat, und nutze sowohl die Lautsprache als auch die Gebärdensprache. Allgemein
-			bevorzuge ich eher die Kommunikation in Lautsprache.
+			Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik auf Lehramt im Bachelor in
+			Dortmund. Ich wohne gemeinsam mit meinen zwei Mitbewohnern, Till und Simon, in einer WG und
+			fühle mich hier richtig wohl. Eigentlich komm ich vom Dorf, aber hier in der Stadt gefällt es
+			mir besser. Da ist einfach mehr los und ich kann meine Interessen ausleben. Ich spiele
+			Handball mit einer gemischten Gruppe aus Leuten mit und ohne Hörbeeinträchtigung. Wir spielen
+			in einer kleinen lokalen Liga – deshalb verbringe ich jeden zweiten Sonntag in einer miefigen
+			Turnhalle. Durch den Verein habe ich hier direkt Anschluss gefunden. Nach dem Training machen
+			wir oft noch was zusammen, grillen, essen oder einfach abhängen. Immer Montags ist abends
+			Fitnessrunde im Westfalenpark. Ich bin ein Serienjunkie...ist aber ganz gut, dass ich wegen
+			vielen Terminen nicht jeden Abend auf der Couch verbringen kann. Bei Serien ist mir Vieles
+			wichtig – besonders aber die Qualität der Untertitel.
+		</SpeechBubble>
+
+		<SpeechBubble {persona}>
+			Ich bin nämlich von Geburt an hochgradig hörbeeinträchtigt auf beiden Ohren. Ich trage links
+			ein Hörgerät und rechts ein Cochlea-Implantat...wenn ich die Haare offen trage, sieht man
+			davon allerdings kaum was. Ich verwende sowohl die Lautsprache als auch die deutsche
+			Gebärdensprache. Dadurch, dass ich jetzt viel mehr Kontakt mit anderen DGS-Nutzenden habe, bin
+			ich viel, viel besser geworden und nutze gerade jede Gelegenheit um zu gebärden. Irgendwie
+			verbindet mich das mit Leuten. Ich fühle mich als Teil der DGS Community. Das ist cool. Im
+			Alltag und an der Uni nutze ich vor allem Lautsprache.
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="tools">Technologien und Strategien</h2>
@@ -100,64 +114,79 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		</div>
 
 		<SpeechBubble {persona}>
-			Es ist ein Irrtum, dass schwerhörige Menschen nur die Lautsprache und gehörlose Menschen nur
-			die Gebärdensprache nutzen! Manche Menschen haben beide Sprachen gelernt und es ist
-			situationsabhängig, wann welche Sprache genutzt wird. Ich kann beide Sprachen und unterhalte
-			mich mit meinen Freunden häufig in Gebärdensprache, wenn es zu viele Hintergrundgeräusche
-			gibt.
+			Dass Gebärdensprache nur von gehörlosen Menschen genutzt wird, ist ein Irrtum. Manche
+			hörbehinderte Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann
+			situationsabhängig. Und natürlich kommt es auch auf den Gesprächspartner an. Leider ist es so,
+			dass auch nicht alle gehörlosen und schwerhörigen Menschen die Gebärdensprache gut
+			beherrschen. Das hat ziemlich viel mit der Geschichte hier in Deutschland zu tun und dass
+			Gebärdensprache lange nicht als eigene Sprache anerkannt war. Aber das ist eine andere
+			Story.... Als Lehrerin habe ich aber fest vor, DGS im Schulsystem zu fördern. Ich spreche
+			beide Sprachen. Mit meinen DGS-kompetenten Freunden gebärde ich viel. Das ist auch sehr
+			praktisch wenn es mal laut ist, oder wir nicht wollen, dass direkt alle alles mitbekommen.
 		</SpeechBubble>
 
 		<SpeechBubble {persona}>
 			Und viele Menschen denken, dass ich – da ich Hörhilfen trage – alles genauso höre, wie sie.
 			Das stimmt aber nicht. Viele Hintergrundgeräusche, wie Vogelgezwitscher oder das sich nähernde
-			Auto, nehme ich nicht oder sehr spät wahr. Außerdem ist Störschall immer ein Problem.
+			Auto, nehme ich nicht oder sehr spät wahr. Auch ist es für mich schwierig selektiv zu hören,
+			also einige Geräusche oder vor allem Stimmen auszublenden. Bei mir kommt quasi alles gleich
+			laut an. Und dann gibt es noch Störschall.
 		</SpeechBubble>
 
 		<SpeechBubble {persona}>
-			Wenn ich ins Kino gehe und es keine Angebote zu Filmen mit Untertiteln gibt, nutze ich eine
-			App, die Untertitel für Filme auf dem Handy anzeigt. Das ist aber ziemlich anstrengend, da ich
-			ja nicht gleichzeitig auf mein Handy und die Leinwand schauen kann.
+			Mittlerweile gibt es recht viele Filme, die auch mit Untertiteln gezeigt werden. Also
+			zumindest hier in Dortmund ist das Angebot okay. Es gibt auch die Möglichkeit, mir Untertitel
+			über eine App auf dem Handy anzeigen zu lassen. Die Idee ist ja nett, aber das ist wenig
+			praktikabel. Statt auf die Leinwand, guck ich kann nur auf mein Handy.
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="lectures">Lehrveranstaltungen</h2>
-		<p class="no-component-text">
-			<InfoBox
-				term="Gebärdensprach<wbr/>dolmet<wbr/>schende"
-				definition="Personen mit Hörbeeinträchtigung haben in bestimmten Bereichen einen rechtlichen Anspruch auf Schrift- oder Gebärdensprach<wbr/>dolmet<wbr/>schende. Diese Bereiche umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen staatliche Stellen die Kosten.
+
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				<InfoBox
+					term="Gebärdensprach<wbr/>dolmet<wbr/>schende"
+					definition="Personen mit Hörbeeinträchtigung haben in bestimmten Bereichen einen rechtlichen Anspruch auf Schrift- oder Gebärdensprach<wbr/>dolmet<wbr/>schende. Diese Bereiche umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen staatliche Stellen die Kosten.
 				Sind dolmetschende Personen direkt in der Kommunikationssituation anwesend, dolmetschen sie simultan. Sind Personen schwerhörig oder später ertaubt und beherrschen u.U. die deutsche Gebärdensprache (DGS) nicht, können Dolmetscher*innen das gesprochene Wort auch in Schrift übersetzen.
 				Dolmetscher*innen können über die Dolmetscher*innenvermittlung der Landesverbände engagiert werden. 
 				"
-				sources={[
-					{
-						title: 'Gebärdensprachdolmetscher von einfach teilhaben',
-						url: 'https://www.einfach-teilhaben.de/DE/AS/Ratgeber/Gebaerdensprachdolmetscher/Gebaerdensprachdolmetscher_node.html'
-					}
-				]}
-			/>
-			können für Übersetzungen (Online oder Präsenz) gebucht werden. Damit die Dolmetschenden gut gesehen
-			werden können, sollten gute Lichtverhältnisse herrschen, denn neben der Mimik und Gestik ist auch
-			das Mundbild ein wichtiger Bestandteil der Gebärdensprache.
-		</p>
-		<div class="spacer" />
-		<p class="no-component-text">
-			Auch das Mundbild der dozierenden Person sollte immer gut erkennbar sein, da das Menschen mit
-			Hörbeeinträchtigung beim Verstehen hilft. Allerdings können selbst unter den besten
-			Bedingungen (Lichtverhältnisse, nicht verdeckt, deutliche Aussprache) und von geübten
-			„Lippenlesern“ nur bis zu maximal 30% der Inhalte entnommen werden.
-		</p>
+					sources={[
+						{
+							title: 'Gebärdensprachdolmetscher von einfach teilhaben',
+							url: 'https://www.einfach-teilhaben.de/DE/AS/Ratgeber/Gebaerdensprachdolmetscher/Gebaerdensprachdolmetscher_node.html'
+						}
+					]}
+				/>
+				können für Übersetzungen (Online oder Präsenz) gebucht werden. Damit die Dolmetschenden gut gesehen
+				werden können, müssen gute Lichtverhältnisse herrschen, denn neben der Mimik und Gestik ist auch
+				das Mundbild ein wichtiger Bestandteil der Gebärdensprache.
+			</p>
+
+			<p class="no-component-text">
+				Auch das Mundbild der dozierenden Person muss immer gut erkennbar sein, da das Menschen mit
+				Hörbeeinträchtigung beim Verstehen hilft. Allerdings können selbst unter den besten
+				Bedingungen (Lichtverhältnisse, nicht verdeckt, deutliche Aussprache) und von geübten
+				„Lippenlesern“ nur bis zu maximal 30% der Inhalte entnommen werden.
+			</p>
+		</div>
 
 		<SpeechBubble {persona}>
-			Manche Lehrende verstehen nicht, dass ihr Mundbild für mich sehr wichtig ist und drehen sich
-			zum Whiteboard und reden weiter. Auch geöffnete Fenster oder andere Hintergrundgeräusche sind
-			sehr störend und machen es für mich manchmal unmöglich, dem Gesagten zu folgen.
+			Manche Lehrende verstehen nicht, dass ihr Mundbild für mich sehr wichtig ist. Weil ich eben
+			nicht gut höre, brauche ich Zusatzinformationen, die ich durch das Ablesen von Mund und Lippen
+			bekomme. Wenn Lehrende sich wegdrehen und sprechen, ihren Mund verdecken oder zu weit weg
+			sind, fehlen mir diese Infos. Das heißt, ich versuche irgendwie mitzuhören und auszugleichen,
+			wenn ich etwas nicht verstehe. Gerade bei Mathe-Vorlesungen mit vielen Fachwörtern ist das
+			hinderlich. Da hilft mir auch, wenn Lehrende ans Whiteboard schreiben oder eine Präsi haben,
+			die relativ selbsterklärend ist. So verliere ich nicht den Faden.
 		</SpeechBubble>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Höranlagen sind technische Einrichtungen, die manchen Menschen mit Hörbeeinträchtigungen das
-			Verstehen in öffentlichen Räumen, wie zum Beispiel Kino, Theater, Kirche oder Vortragssaal,
-			erleichtern.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Höranlagen sind technische Einrichtungen, die manchen Menschen mit Hörbeeinträchtigungen das
+				Verstehen in öffentlichen Räumen, wie zum Beispiel Kino, Theater, Kirche oder Vortragssaal,
+				erleichtern.
+			</p>
+		</div>
 
 		<Recommendation link="{base}/media/Infografik_Roger_Hoeranlage.pdf">
 			<svelte:fragment slot="linkText">
@@ -169,59 +198,73 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			</svelte:fragment>
 		</Recommendation>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Sowohl Hörgeräte als auch CIs können mit Höranlagen verbunden werden, sodass über Mikrofone
-			akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob ein
-			Gebärdendolmetscher oder eine Übertragungsanlage genutzt werden sollte, hängt von der
-			Hörschädigung der Anwesenden ab.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Sowohl Hörgeräte als auch CIs können mit Höranlagen verbunden werden, sodass über Mikrofone
+				akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob ein
+				Gebärdendolmetscher oder eine Übertragungsanlage genutzt werden sollte, hängt von der
+				Hörschädigung der Anwesenden ab.
+			</p>
+		</div>
 
 		<SpeechBubble {persona}>
-			Ich kann meine Hörhilfen mit der Höranlage verbinden und dadurch wird das Gesagte direkt an
-			mein CI übertragen. Leider werden aber auch Störgeräusche aufgenommen, wenn die Mikrofone
-			beispielsweise nicht richtig genutzt werden.
+			Ich kann meine Hörhilfen mit der Höranlage verbinden und dadurch wird das, was die Lehrperson
+			sagt direkt an mein CI übertragen. Leider werden aber auch Störgeräusche übertragen, wenn die
+			Mikrofone zum Beispiel nicht vorsichtig abgelegt werden oder das Mikro dauernd mit was in
+			Berührung kommt. Und es gibt an der Uni nicht genug Höranlagen – deshalb steht mir nicht immer
+			eine zur Verfügung. Aber im nächsten Semester sollen neue angeschafft werden.
 		</SpeechBubble>
 
 		<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOffline} />
 
 		<h2 class="main-heading" id="material">Lernmaterial</h2>
-		<p class="no-component-text">
-			Werden die Informationen einer Veranstaltung überwiegend visuell (Gebärdensprachdolmetscher
-			oder durch das Fokussieren der Lippen) entnommen, ist es schwierig, gleichzeitig Notizen zu
-			machen oder Präsentationen zu betrachten. Daher ist es sehr hilfreich, wenn Folien, Skripte
-			oder Transkripte (am besten bereits im Voraus) zur Verfügung gestellt werden. Das frühzeitige
-			zur Verfügung stellen der Inhalte ist eine hilfreiche Maßnahme für viele Studierende.
-		</p>
-		<div class="spacer" />
-		<p class="no-component-text">
-			Eine weitere Hilfe kann das Mitschreiben/Erstellen von Skripten der Veranstaltungsgespräche
-			durch Mitschreibkräfte, meist Mitstudierende sein. Generell sollten auditive Informationen
-			auch in einer anderen Form verfügbar sein (Transkripte, schriftliche Anmerkungen an Folien,
-			Untertitel in Videos).
-		</p>
-		<div class="spacer" />
-		<p class="no-component-text">
-			Werden Videos in Veranstaltungen genutzt, sollte darauf geachtet werden, dass Untertitel
-			bereits vorhanden sind oder nachträglich hinzugefügt werden können.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				Werden die Informationen einer Veranstaltung überwiegend visuell (Gebärdensprachdolmetscher
+				oder durch das Fokussieren der Lippen) entnommen, ist es schwierig, gleichzeitig Notizen zu
+				machen oder Präsentationen zu betrachten. Daher sollten Folien, Skripte oder Transkripte (am
+				besten bereits im Voraus) zur Verfügung gestellt werden. Eine weitere Hilfe kann das
+				Erstellen von Skripten der Veranstaltungsgespräche durch Mitschreibkräfte (meist
+				Mitstudierende oder Tutor*innen) sein.
+			</p>
+
+			<p class="no-component-text">
+				Generell sollten auditive Informationen auch in einer anderen Form verfügbar sein
+				(Transkripte, schriftliche Anmerkungen an Folien, Untertitel in Videos).
+			</p>
+
+			<p class="no-component-text">
+				Werden Videos in Veranstaltungen genutzt, muss darauf geachtet werden, dass Untertitel
+				bereits vorhanden und korrekt sind oder nachträglich hinzugefügt werden können.
+			</p>
+		</div>
 		<SpeechBubble {persona}>
 			Ich wünsche mir überall Untertitel, ohne dass ich extra danach fragen muss! Das sollte
-			Standard sein für kurze Videos und längere Filme. Außerdem wünsche ich mir mehr Geduld und
-			Verständnis, wenn etwas akustisch nicht verstanden wird. Für mich ist das Nachfragen auch
-			nicht angenehm!
+			Standard sein, weil alle Menschen einen Anspruch auf barrierefrei zugängliche Informationen
+			haben. Mittlerweile kann man die doch automatisch erstellen lassen. Das kostet nichts. Nur
+			etwas Zeit, um sie dann zu verbessern – das muss man halt schon machen. Weil schlechte,
+			automatisch generierte Untertitel furchtbar verwirren können. Es würde auch helfen, wenn Leute
+			externe Mikrofone benutzen. Das ist lauter und online deutlicher. Außerdem wünsche ich mir
+			mehr Geduld und Verständnis, wenn ich etwas akustisch nicht verstehe. Für mich ist das
+			Nachfragen auch nicht angenehm!
 		</SpeechBubble>
-		<div class="spacer" />
-		<p class="no-component-text">
-			Automatische Untertitelungen bei Videos gibt es mittlerweile häufig, sie haben aber oft viele
-			Fehler. Untertitel für Menschen mit Hörschädigungen sollten außerdem nicht nur das Gesprochene
-			wiedergeben. Die Identifikation der sprechenden Person im Video und auch Erläuterung von
-			Hintergrundgeräuschen etc. sind wichtige Informationen, die sonst verloren gehen.
-		</p>
+
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Automatische Untertitelungen bei Videos gibt es mittlerweile häufig, sie haben aber oft
+				viele Fehler. Untertitel für Menschen mit Hörschädigungen dürfen außerdem nicht nur das
+				Gesprochene wiedergeben. Die Identifikation der sprechenden Person im Video und auch
+				Erläuterung von Hintergrundgeräuschen etc. sind wichtige Informationen, die sonst verloren
+				gehen.
+			</p>
+		</div>
 
 		<SpeechBubble {persona}>
-			Häufig wird nicht verstanden, dass ein Vortrag, der 90 Minuten dauert und für mich akustisch
-			schwer zu verstehen ist, sehr anstrengend ist und ich danach erst einmal eine Pause brauche.
+			Ein 90-minütiger Vortrag, der für mich akustisch schlecht zu verstehen ist, ist anstrengend.
+			Die ganze Zeit habe ich quasi Ausfälle, wenn ich Wörter nicht verstehe oder die von anderen
+			Geräuschen überdeckt werden. Ich bin dann die ganze Zeit hochkonzentriert und versuche, immer
+			aus dem Kontext irgendwie abzuleiten, um was es gerade geht. Danach brauch ich erstmal eine
+			Pause. Dazu schalte ich dann auch meine Hörhilfen ab.
 		</SpeechBubble>
 
 		<SpeechBubble {persona}>
@@ -237,8 +280,6 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 
 		<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOnline} />
 
-		<div class="spacer" />
-
 		<h2 class="main-heading" id="week">Eine Woche im Leben von Hannah</h2>
 		<p class="no-component-text">
 			Hannah befindet sich im zweiten Jahr ihres BSc. Mathematikstudiums an der Technischen
@@ -249,13 +290,15 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<Week {persona} />
 
 		<h2 class="main-heading" id="interaction">Interaktion und Kommunikation</h2>
-		<p class="no-component-text">
-			Ob die Lautsprache oder die Gebärdensprache genutzt wird, wird beeinflusst von vielen
-			verschiedenen Faktoren, unter anderem die Situation, die Art der Hörbeeinträchtigung, die
-			bevorzugte Kommunikation etc. Da die akustische Rückmeldung über die eigene Aussprache
-			mitunter fehlt, kann es zu einer undeutlichen Lautsprache bei einzelnen Menschen mit
-			Hörschädigungen kommen.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				Ob die Lautsprache oder die Gebärdensprache genutzt wird, wird beeinflusst von vielen
+				verschiedenen Faktoren, unter anderem die (Gruppen-)Situation, die Art der
+				Hörbeeinträchtigung, die bevorzugte Kommunikation etc. Da die akustische Rückmeldung über
+				die eigene Aussprache mitunter fehlt, kann es zu einer undeutlichen Lautsprache bei
+				einzelnen Menschen mit Hörschädigungen kommen.
+			</p>
+		</div>
 
 		<SpeechBubble {persona}>
 			Es ist mir manchmal unangenehm, dass meine Aussprache von Anderen nicht verstanden wird. Ich
@@ -263,42 +306,47 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			Aussprache verwaschen war.
 		</SpeechBubble>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Damit in Veranstaltungen eine dolmetschende Person anwesend sein kann, ist eine klare
-			Absprache, schnelle Kontaktaufnahme und auch eine gewisse Verbindlichkeit sehr wichtig. Ebenso
-			müssen Veranstaltungen rechtzeitig terminiert sein, damit Gebärdensprachdolmetschende
-			rechtzeitig beauftragt werden können, denn hier ist eine gewisse Vorlaufzeit für die Planung
-			wichtig. Die dolmetschenden Personen sollten das Vortragsmaterial vorab und rechtzeitig
-			erhalten, sodass sie sich auf entsprechende Fachbegriffe etc. gezielt vorbereiten können.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Damit in Veranstaltungen eine dolmetschende Person anwesend sein kann, ist eine klare
+				Absprache, schnelle Kontaktaufnahme und auch eine gewisse Verbindlichkeit sehr wichtig.
+				Ebenso müssen Veranstaltungen rechtzeitig terminiert sein, damit Gebärdensprachdolmetschende
+				rechtzeitig beauftragt werden können, denn hier ist eine gewisse Vorlaufzeit für die Planung
+				wichtig. Die dolmetschenden Personen benötigen das Vortragsmaterial vorab und rechtzeitig,
+				sodass sie sich auf entsprechende Fachbegriffe etc. gezielt vorbereiten können.
+			</p>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Gruppensituationen, in denen viele Menschen durcheinanderreden, können sehr anstrengend sein.
-			Werden die Mikrofone der Höranlage nicht weitergereicht oder reden Menschen gleichzeitig,
-			können Informationen in Gruppendiskussionen nicht entnommen werden. Das erschwert eine
-			Teilnahme und Schwerhörige fühlen sich dadurch schnell ausgeschlossen.
-		</p>
+			<p class="no-component-text">
+				Gruppensituationen, in denen viele Menschen durcheinanderreden, können sehr anstrengend
+				sein. Werden die Mikrofone der Höranlage nicht weitergereicht oder reden Menschen
+				gleichzeitig, können Informationen in Gruppendiskussionen nicht entnommen werden. Das
+				erschwert eine Teilnahme und Schwerhörige fühlen sich dadurch schnell ausgeschlossen.
+			</p>
+		</div>
 
 		<SpeechBubble {persona}>
 			Mit meinen Kommiliton*innen aus dem Gebärdensprachkurs kommuniziere ich mit der
-			Gebärdensprache. Hier bin ich der Profi und kann Vielen noch etwas beibringen. Außerdem ist es
-			auf lauten Partys total praktisch, sich über den Raum hinweg mit meinen Freunden nonverbal
-			unterhalten zu können.
+			Gebärdensprache. Ich werde immer besser. Mittlerweile kann ich auch anderen was beibringen.
+			Mich interessiert auch, wie neue Gebärden entstehen, zum Beispiel für neue Technologien oder
+			Ausdrücke aus der Jugendsprache. Auf Partys ist es praktisch zu gebärden, dann müssen wir
+			nicht brüllen. Aber ich habe auch gemerkt, dass mich dann andere, hörende Leute eher nicht
+			ansprechen. Durch die Leute, die ich kennengelernt habe, gehe ich auch zu Events, bei denen
+			DGS die dominante Sprache ist.
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="exams">Prüfungen</h2>
-		<p class="no-component-text">
-			Studierende können einen Nachteilsausgleich beantragen. Diese Anpassungen werden zunächst mit
-			den Beauftragten für Studierende mit Beeinträchtigungen besprochen und durch das Prüfungsamts
-			genehmigt werden. Wichtig ist, dass der Nachteilsausgleich rechtzeitig angemeldet wird, damit
-			er in Prüfungen berücksichtigt werden kann. In dem Nachteilsausgleich werden Anpassungen
-			festgehalten, die den Studierenden gleiche Voraussetzungen für die inhaltliche Bearbeitung der
-			Prüfung ermöglichen. Zudem sollten in Prüfungssituationen ähnliche Aspekte berücksichtigt
-			werden, die ebenfalls in Veranstaltungen gelten – wie beispielsweise geschlossene Fenster, um
-			Störgeräusche zu vermeiden.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				Studierende können einen Nachteilsausgleich beantragen. Diese Anpassungen werden zunächst
+				mit den Beauftragten für Studierende mit Beeinträchtigungen besprochen und durch das
+				Prüfungsamts genehmigt werden. Wichtig ist, dass der Nachteilsausgleich rechtzeitig
+				angemeldet wird, damit er in Prüfungen berücksichtigt werden kann. In dem Nachteilsausgleich
+				werden Anpassungen festgehalten, die den Studierenden gleiche Voraussetzungen für die
+				inhaltliche Bearbeitung der Prüfung ermöglichen. Zudem müssen in Prüfungssituationen
+				ähnliche Aspekte berücksichtigt werden, die ebenfalls in Veranstaltungen gelten – wie
+				beispielsweise geschlossene Fenster, um Störgeräusche zu vermeiden.
+			</p>
+		</div>
 
 		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
 

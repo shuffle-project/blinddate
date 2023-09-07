@@ -130,7 +130,7 @@
 		</FriendBubble>
 
 		<FriendBubble>
-			Meine Therapeutin hat mir spezielle Übungen beigebracht. Und ich hab‘ die immer wieder geübt,
+			Meine Therapeutin hat mir spezielle Übungen beigebracht. Und ich hab' die immer wieder geübt,
 			damit ich sie anwenden kann, wenn meine Gedanken außer Kontrolle geraten. Eine Übung ist zum
 			Beispiel, alle Dinge aufzuzählen, die ich in dem Moment höre oder sehe. Das lenkt mich dann ab
 			und idealerweise kann ich mich so selbst beruhigen. Mittlerweile kennen die anderen die Übung
