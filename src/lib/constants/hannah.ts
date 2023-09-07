@@ -72,10 +72,11 @@ export const HANNAH: Persona = {
 	id: 'hannah',
 	name: 'Hannah',
 	tags: [
-		{ content: 'Schwerhörigkeit', lang: 'de' },
-		{ content: 'Höranlage', lang: 'de' },
-		{ content: 'Screenreader', lang: 'en' },
-		{ content: 'Gebärdensprache', lang: 'de' }
+		{ content: 'Hörbeeinträchtigung', lang: 'de' },
+		{ content: 'Cochlea-Implantat', lang: 'de' },
+		{ content: 'Unteritel', lang: 'en' },
+		{ content: 'Gebärdensprache', lang: 'de' },
+		{ content: 'Mundbild', lang: 'de' }
 	],
 	age: 25,
 	hobbies: 'Handball spielen, Essen gehen, Filme und Serien schauen',
