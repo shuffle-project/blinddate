@@ -360,9 +360,9 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 				'Ich informiere mich über digitale Barrierefreiheit',
 				'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 				'Ich verwende das Mehrsinne-Prinzip und erstelle Material bspw. auditiv und visuell',
-				'Ich achte darauf, deutlich zu Sprechen und dass mein Mundbild gut sichtbar ist',
-				'Bei Diskussionen achten wir gemeinsam darauf, dass nacheinander gesprochen wird',
-				'Im Hörsaal oder online nutze ich ein externe Mikrofon. Störgeräusche versuche ich zu vermeiden, z.B. indem die Fenster geschlossen sind',
+				'Ich spreche deutlich und zeige mein Mundbild gut sichtbar',
+				'Damit mich alle gut verstehen, nutze ich ein externes Mikrofon',
+				'Um Störgeräusche zu vermeiden, schließe ich die Fenster',
 				'Ich zeichne meine Veranstaltungen auf und stelle sie digital zur Verfügung',
 				'Für Aufzeichnungen und Videos erstelle ich Untertitel. Automatisch erstellte Untertitel korrigiere ich'
 			]}
