@@ -93,14 +93,9 @@
 			</ToolCard>
 
 			<ToolCard title="Probleme erkennen" image="{base}/tools/identify-problem.svg">
-				Eine wichtige Strategie kann sein, sich seine Krankheit einzugestehen. Solche wichtigen
-				Strategien lernt man bei Therapeut*innen, sie sind sehr persönlich und schwer zu
-				generalisieren.
-			</ToolCard>
-
-			<ToolCard title="Medienkonsum einschränken" image="{base}/tools/media-consumption.svg">
-				Den Medienkonsum einzuschränken kann manchmal auch helfen – Soziale Medien können
-				regelrechte Depressionsbeschleuniger sein.
+				Eine mögliche Strategie kann sein, sich eine Krankheit einzugestehen und sich therapeutisch
+				beraten zu lassen Strategien können bei Therapeut*innen erlernt werden, sie sind sehr
+				persönlich und schwer zu generalisieren.
 			</ToolCard>
 		</div>
 
@@ -167,8 +162,8 @@
 				Einer Vorlesung über 90 Minuten aufmerksam zuzuhören, ist anstrengend.
 				Konzentrationsschwierigkeiten, belastende Gedanken und Selbstzweifel machen es Menschen, die
 				Depressionen haben, umso schwerer dem Gesagten zu folgen. Werden Vorlesungsfolien und
-				Arbeitsmaterial frühzeitig online hochgeladen, kann das die Angst vor Inhalten auf
-				unbekannten Folien, die eine triggernde Wirkung haben könnten, reduzieren.
+				Arbeitsmaterial frühzeitig online hochgeladen, hilft das bei einem klaren Zeitmanagement und
+				kann den Druck nehmen, sich parallel ausführliche Notizen machen zu müssen.
 			</p>
 		</div>
 
@@ -226,8 +221,10 @@
 
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text">
-				Es gibt also keine Musterlösung, ein sensibler Umgang mit Daten und eine vertrauensvolle
-				Atmosphäre und ggf. individuelle Lösungen können hier förderlich sein.
+				Es gibt also keine Musterlösung und eine Absprache mit Studierenden zu Beginn eines
+				Semesters oder einer Veranstaltung kann Unsicherheiten nehmen. Ein sensibler Umgang mit
+				Daten und eine vertrauensvolle Atmosphäre und individuelle Lösungen sind daher Voraussetzung
+				für ein barrierefreies Lernen.
 			</p>
 		</div>
 
@@ -279,7 +276,7 @@
 			machen. Das will keiner hören. Niemand will hören, dass ich in eine Klinik musste. Oder dass
 			ich in einer depressiven Phase mehrere Tage nicht mal duschen oder das Haus verlassen konnte.
 			Wie mies ich von mir selber denke und wie sehr mich das behindert. Und dass das ganze auch
-			irgendwie unerklärlich ist. Das ist unangenehm. Niemand hört gerne „Es geht mir NICHT gut.
+			irgendwie unerklärlich ist. Das ist unangenehm. Niemand hört gerne „Es geht mir NICHT gut“.
 		</SpeechBubble>
 
 		<div class="no-component-text-wrapper">
@@ -336,9 +333,9 @@
 			<p class="no-component-text no-margin-top">
 				Da der Name “Behindertenbeauftragte” an vielen Hochschulen noch genutzt wird, wenden sich
 				Studierende, die keine offiziell diagnostizierte Behinderung haben, aber in ihrem Studium
-				dennoch starke Barrieren erfahren, nicht an diese Personen. Um eine psychische Erkrankung
-				offiziell diagnostizieren und dann auch ein Nachteilsausgleich beantragen zu können, müssen
-				die Ansprechpersonen also klar erkennbar sein.
+				dennoch Barrieren erfahren, nicht an diese Personen. Um eine psychische Erkrankung offiziell
+				diagnostizieren und dann auch einen Nachteilsausgleich beantragen zu können, müssen die
+				Ansprechpersonen also klar erkennbar sein.
 			</p>
 		</div>
 
@@ -384,11 +381,11 @@
 		<Checklist
 			checks={[
 				'Ich informiere mich über digitale Barrierefreiheit',
-				'Ich mache Studierende auf Ansprechpersonen und Unterstützungsangebote aufmerksam. Zum Beispiel auf meinen Folien',
-				'Ich kenne Stellen, an die sich Studierende mit psychischen Problemen wenden können',
+				'Ich mache Studierende auf Unterstützungsangebote aufmerksam, z.B. auf Veranstaltungsfolien oder in Informationen',
+				'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit psychischen Problemen wenden können',
 				'Ich stelle meine Lernmaterialien vorab und digital zur Verfügung',
 				'Ich ermögliche eine asynchrone oder remote Teilnahme an der Veranstaltung',
-				'Ich gestatte verlängerte Abgabefristen oder alternative Prüfungsformen',
+				'Nachteilsausgleiche setze ich in meiner Lehre und in Prüfungen bedarfsgerecht und fair um',
 				'Ich mache ausreichend Pausen in langen Veranstaltungen'
 			]}
 			{persona}

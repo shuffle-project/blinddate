@@ -279,10 +279,10 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text">
 				Für Diagramme oder Bilder, die in Lehrveranstaltungen genutzt werden, sind Alternativtexte
-				bzw. Bildbeschreibungen, die Screenreader vorlesen können, essentiell wichtig. Wenn die
-				Lehrperson zusätzlich beschreibt, was auf der Abbildung zu sehen ist und die Beschriftung
-				einzelner Elemente zusätzlich als Text vorhanden ist, können die inhaltlichen Informationen
-				schneller entnommen werden.
+				bzw. Bildbeschreibungen, die Screenreader vorlesen können, essentiell wichtig. Lehrpersonen
+				sollten zusätzlich beschreiben, was auf der Abbildung zu sehen ist. Die Beschriftung
+				einzelner Elemente innerhalb einer Abbildung sollte als Text vorhanden sein, dass die
+				inhaltlichen Informationen schneller entnommen werden.
 			</p>
 
 			<p class="no-component-text">
@@ -311,11 +311,11 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text">
 				Generell gibt es ein paar einfache Tricks, um Dokumente für viele Studierende zugänglich und
-				dadurch barrierefreier zu gestalten. Transkripte der aufgenommenen Veranstaltungen helfen,
-				um im individuellen Tempo die Inhalte vor- oder nachzubereiten. Auch mit den nötigen
-				Anpassungen – bspw. in Kontrast und Größe – sollte man nicht außer Acht lassen, dass das
-				visuelle Arbeiten für Studierende mit Sehbeeinträchtigungen mit viel Anstrengung verbunden
-				sein kann und regelmäßige Pause benötigt.
+				dadurch barrierefrei zu gestalten. Transkripte der aufgenommenen Veranstaltungen sind
+				wichtig, um im individuellen Tempo die Inhalte vor- oder nachbereiten zu können. Auch mit
+				den nötigen Anpassungen – bspw. in Kontrast und Größe – sollte man nicht außer Acht lassen,
+				dass das visuelle Arbeiten für Studierende mit Sehbeeinträchtigungen mit viel Anstrengung
+				verbunden sein kann und regelmäßige Pause benötigt.
 			</p>
 		</div>
 
@@ -328,8 +328,8 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 				Sehbeeinträchtigung und der kleinen Kacheln die Mimik und Gestik der Sprechenden unter
 				Umständen nicht gut oder gar nicht wahrnehmen. Einige nonverbale Kommunikationselemente
 				können dadurch verloren gehen. Ein direktes Ansprechen der Personen und eine Verbalisierung
-				der Geschehnisse kann daher sowohl in online Settings, als auch in Präsenz sehr hilfreich
-				sein.
+				der Geschehnisse sollte daher sowohl in online Settings, als auch in Präsenz ein
+				selbstverständliches Kommunikationselement sein.
 			</p>
 		</div>
 
@@ -347,9 +347,9 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text">
-				Werden gewisse Dinge, wie frühzeitiges Bereitstellen der Veranstaltungsfolien, klar
-				eingescannte Dokumente oder eingefügte Bildbeschreibungen, vor einer Veranstaltung bedacht,
-				erspart dies ein erneutes Erinnern von Seiten der Studierenden.
+				Das frühzeitige Bereitstellen der Veranstaltungsfolien, klar eingescannte Dokumente oder
+				eingefügte Bildbeschreibungen, sind Maßnahmen, die für eine barrierefreie Lehre unumgänglich
+				sind.
 			</p>
 		</div>
 
@@ -357,19 +357,20 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			Ich nehme zu Beginn jedes Semesters Kontakt mit den Lehrpersonen auf und versuche, zu
 			erklären, wie ich arbeite und was ich benötige. Häufig muss ich während des Semesters erneut
 			dran erinnern, weil Dokumente nicht frühzeitig zum Bearbeiten da sind etc. Ich weiß, Gabriel
-			ist es Leid, immer wieder zu erinnern. Aber es hilft ja nichts. Ich bleibe da hintendran.
+			ist es Leid, immer wieder zu erinnern. Aber wir haben ja einen Anspruch auf barrierefrei
+			zugängliches Material. Deshalb muss ich da ja dranbleiben.
 		</FriendBubble>
 
 		<h2 class="main-heading" id="exams">Prüfungen</h2>
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text no-margin-top">
 				Auch für Prüfungen haben Studierende mit visuellen Beeinträchtigungen einen Anspruch auf
-				einen Nachteilsausgleich. Dieser soll gewährleisten, dass sie die gleichen Voraussetzungen
+				einen Nachteilsausgleich. Dieser muss gewährleisten, dass sie die gleichen Voraussetzungen
 				zum inhaltlichen Bearbeiten der Aufgaben haben, wie ihre Mitstudierenden. Wird
 				beispielsweise mehr Zeit benötigt, um einen Überblick über Dokumente zu erlangen, da ein
 				„Überfliegen“ des Textes nicht möglich ist und ist zusätzlich die Lesegeschwindigkeit
 				beeinträchtigt, können individuelle Zeitzugaben Teil eines Nachteilsausgleichs sein.
-				Außerdem sollte gewährleistet sein, dass Bildern eine entsprechende Beschreibung bzw. ein
+				Außerdem muss gewährleistet sein, dass Bildern eine entsprechende Beschreibung bzw. ein
 				Alternativtext beigefügt wird.
 			</p>
 		</div>
@@ -410,7 +411,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 				'Ich überprüfe die Barrierefreiheit meiner Dokumente mit den eingebauten Prüfhilfen (z.B. in MS Office oder LibreOffice)',
 				'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
 				'Ich achte darauf, dass Scans von Dokumenten qualitativ hochwertig und mit einer OCR Software (Texterkennungssoftware) aufgenommen sind',
-				'Wenn Studierende einen Nachteilsausgleich haben, bemühe ich mich um eine faire Umsetzung'
+				'Nachteilsausgleiche setze ich in meiner Lehre und in Prüfungen bedarfsgerecht und fair um'
 			]}
 			{persona}
 		/>

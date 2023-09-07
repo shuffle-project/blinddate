@@ -28,8 +28,8 @@
 <style lang="scss">
 	.switch-button {
 		position: absolute;
-		right: 0.7rem;
-		top: 0.4rem;
+		right: 0.5rem;
+		top: 0.3rem;
 		z-index: 5;
 
 		border: none;
@@ -43,12 +43,10 @@
 
 		cursor: pointer;
 
-		border: 2px solid transparent;
 		outline: 2px solid transparent;
 
 		&:hover,
 		&:focus {
-			border: 2px solid transparent;
 			outline: 2px solid var(--color-blue);
 		}
 	}
@@ -58,8 +56,8 @@
 		align-items: center;
 		justify-content: center;
 
-		width: 2.2rem;
-		height: 2rem;
+		width: 2.4rem;
+		height: 2.2rem;
 		background-color: var(--color-white);
 		border-radius: 120% 50% 100% 100% / 100% 100% 80% 60%;
 
