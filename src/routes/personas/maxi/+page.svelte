@@ -5,7 +5,7 @@
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
-	import { ALEX } from '$lib/constants/alex';
+	import { ALEX_FRIEND } from '$lib/constants/alex';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import SpeechBubble from '../../../lib/components/SpeechBubble.svelte';
@@ -14,7 +14,7 @@
 	import type { Persona } from '../../../lib/interfaces/persona.interfaces';
 
 	const persona: Persona = MAXI;
-	const friendPersona: FriendPersona = ALEX;
+	const friendPersona: FriendPersona = ALEX_FRIEND;
 
 	const extendedPlayerConfig: ExtendedPlayerConfig = {
 		title: 'Videotitel Platzhalter',
