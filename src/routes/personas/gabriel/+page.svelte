@@ -203,18 +203,21 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_02.mp3'}>
 			Ich kann zwar teilweise noch sehen, aber mein Gesichtsfeld ist seitlich eingeschränkt, also
-			ist es für mich schwieriger einen schnellen Überblick über Websites oder Dokumente zu
+			ist es für mich schwieriger, einen schnellen Überblick über Websites oder Dokumente zu
 			gewinnen. Deswegen nutze ich Kopfbewegungen, um mein Gesichtsfeld zu bewegen und mich so zu
 			orientieren. Sieht komisch aus, hilft mir aber sehr!
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="lectures">Lehrveranstaltungen</h2>
 
-		<p class="no-component-text">
-			Stellen Dozierende die Lernmaterialien oder Vorlesungsunterlagen frühzeitig online zur
-			Verfügung, haben Studierende die Möglichkeit, diese auf ihrem Tablet oder Laptop zu öffnen,
-			sich einen Überblick zu verschaffen und ggf. Kontraste und Größe individuell anzupassen.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				Stellen Dozierende die Lernmaterialien oder Vorlesungsunterlagen frühzeitig online zur
+				Verfügung, haben Studierende die Möglichkeit, diese auf ihrem Tablet oder Laptop zu öffnen,
+				sich einen Überblick zu verschaffen und ggf. Kontraste und Größe individuell anzupassen.
+			</p>
+		</div>
+
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_03.mp3'}>
 			Habe ich die Vorlesungsunterlagen bereits vor der Vorlesung, kann ich sie im Vorfeld für mich
 			anpassen und der Veranstaltung dann besser folgen. Außerdem kann ich dann selbst entscheiden,
@@ -245,11 +248,12 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			<svelte:fragment slot="textAfter">von Microsoft</svelte:fragment>
 		</Recommendation>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Sind die Veranstaltungsunterlagen in ihrer Grundstruktur immer gleich aufgebaut, erleichtert
-			das den Studierenden eine schnellere Orientierung und Bearbeitung.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Sind die Veranstaltungsunterlagen in ihrer Grundstruktur immer gleich aufgebaut, erleichtert
+				das den Studierenden eine schnellere Orientierung und Bearbeitung.
+			</p>
+		</div>
 
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_04.mp3'}>
 			Ich habe im Folgenden mal ein Beispiel vorbereitet, wie eine Herausforderung in meinem
@@ -261,7 +265,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 		<div>
 			<SimulationLink
 				image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
-				warningtext="Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe 'Informationen zum Spiel'."
+				warningtext="Mobile Geräte werden nicht unterstützt. Die Simulation ist leider nicht barrierefrei, siehe 'Informationen zur Simulation'."
 				pathtext={base + '/games/gabriel'}
 			/>
 		</div>
@@ -272,27 +276,30 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			rechts unten immer den roten Infokasten finde und verliere nicht so viel Zeit mit Suchen.
 		</SpeechBubble>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Für Diagramme oder Bilder, die in Lehrveranstaltungen genutzt werden, sind Alternativtexte
-			bzw. Bildbeschreibungen, die Screenreader vorlesen können, essentiell wichtig. Wenn die
-			Lehrperson zusätzlich beschreibt, was auf der Abbildung zu sehen ist und die Beschriftung
-			einzelner Elemente zusätzlich als Text vorhanden ist, können die inhaltlichen Informationen
-			schneller entnommen werden.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Für Diagramme oder Bilder, die in Lehrveranstaltungen genutzt werden, sind Alternativtexte
+				bzw. Bildbeschreibungen, die Screenreader vorlesen können, essentiell wichtig. Lehrpersonen
+				sollten zusätzlich beschreiben, was auf der Abbildung zu sehen ist. Die Beschriftung
+				einzelner Elemente innerhalb einer Abbildung sollte als Text vorhanden sein, dass die
+				inhaltlichen Informationen schneller entnommen werden.
+			</p>
 
-		<p class="no-component-text">
-			In online Video-Konferenzen sollten Bedingungen geschaffen werden, die den Studierenden eine
-			Teilnahme und Konzentration auf die Inhalte erleichtern: Teilnehmende sollten nicht direkt vor
-			einem Fenster stehen oder in diesem Fall Vorhänge benutzen. Ein einfarbiger Hintergrund ohne
-			Motive und eine gute Beleuchtung des Raumes erleichtern das Erkennen der Gesichter.
-		</p>
+			<p class="no-component-text">
+				In online Video-Konferenzen sollten Bedingungen geschaffen werden, die den Studierenden eine
+				Teilnahme und Konzentration auf die Inhalte erleichtern: Teilnehmende sollten nicht direkt
+				vor einem Fenster stehen oder in diesem Fall Vorhänge benutzen. Ein einfarbiger Hintergrund
+				ohne Motive und eine gute Beleuchtung des Raumes erleichtern das Erkennen der Gesichter.
+			</p>
+		</div>
 
 		<h2 class="main-heading" id="material">Lernmaterial</h2>
-		<p class="no-component-text">
-			Damit ein Screenreader ein Dokument vorlesen kann, muss der Scan eine gute Qualität haben –
-			das heißt beispielsweise: keine mitgescannten Finger, scharfe Umrisse, keine Doppelseiten.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				Damit ein Screenreader ein Dokument vorlesen kann, muss der Scan eine gute Qualität haben –
+				das heißt beispielsweise: keine mitgescannten Finger, scharfe Umrisse, keine Doppelseiten.
+			</p>
+		</div>
 
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_06.mp3'}>
 			Leider sind die Scans, die wir von Lehrpersonen bekommen, um uns auf kommende Veranstaltungen
@@ -301,27 +308,30 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			sie das Dokument erneut einscannen kann. Beides kostet Zeit und ist auch einfach vermeidbar.
 		</SpeechBubble>
 
-		<div class="spacer" />
-
-		<p class="no-component-text">
-			Generell gibt es ein paar einfache Tricks, um Dokumente für viele Studierende zugänglich und
-			dadurch barrierefreier zu gestalten. Transkripte der aufgenommenen Veranstaltungen helfen, um
-			im individuellen Tempo die Inhalte vor- oder nachzubereiten. Auch mit den nötigen Anpassungen
-			– bspw. in Kontrast und Größe – sollte man nicht außer Acht lassen, dass das visuelle Arbeiten
-			für Studierende mit Sehbeeinträchtigungen mit viel Anstrengung verbunden sein kann und
-			regelmäßige Pause benötigt.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Generell gibt es ein paar einfache Tricks, um Dokumente für viele Studierende zugänglich und
+				dadurch barrierefrei zu gestalten. Transkripte der aufgenommenen Veranstaltungen sind
+				wichtig, um im individuellen Tempo die Inhalte vor- oder nachbereiten zu können. Auch mit
+				den nötigen Anpassungen – bspw. in Kontrast und Größe – sollte man nicht außer Acht lassen,
+				dass das visuelle Arbeiten für Studierende mit Sehbeeinträchtigungen mit viel Anstrengung
+				verbunden sein kann und regelmäßige Pause benötigt.
+			</p>
+		</div>
 
 		<PlayerExtended {extendedPlayerConfig} />
 
 		<h2 class="main-heading" id="interaction">Interaktion und Kommunikation</h2>
-		<p class="no-component-text">
-			In Video-Konferenzen können Studierende mit Sehbeeinträchtigung aufgrund der
-			Sehbeeinträchtigung und der kleinen Kacheln die Mimik und Gestik der Sprechenden unter
-			Umständen nicht gut oder gar nicht wahrnehmen. Einige nonverbale Kommunikationselemente können
-			dadurch verloren gehen. Ein direktes Ansprechen der Personen und eine Verbalisierung der
-			Geschehnisse kann daher sowohl in online Settings, als auch in Präsenz sehr hilfreich sein.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				In Video-Konferenzen können Studierende mit Sehbeeinträchtigung aufgrund der
+				Sehbeeinträchtigung und der kleinen Kacheln die Mimik und Gestik der Sprechenden unter
+				Umständen nicht gut oder gar nicht wahrnehmen. Einige nonverbale Kommunikationselemente
+				können dadurch verloren gehen. Ein direktes Ansprechen der Personen und eine Verbalisierung
+				der Geschehnisse sollte daher sowohl in online Settings, als auch in Präsenz ein
+				selbstverständliches Kommunikationselement sein.
+			</p>
+		</div>
 
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_07.mp3'}>
 			Wenn ich meinen benötigten Abstand zum Bildschirm einnehme, ist mein Gesicht in extremer
@@ -335,30 +345,35 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			stellt. So weiß ich sofort, dass sie mit mir spricht. Das ist für mich sehr hilfreich.
 		</SpeechBubble>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Werden gewisse Dinge, wie frühzeitiges Bereitstellen der Veranstaltungsfolien, klar
-			eingescannte Dokumente oder eingefügte Bildbeschreibungen, vor einer Veranstaltung bedacht,
-			erspart dies ein erneutes Erinnern von Seiten der Studierenden.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Das frühzeitige Bereitstellen der Veranstaltungsfolien, klar eingescannte Dokumente oder
+				eingefügte Bildbeschreibungen, sind Maßnahmen, die für eine barrierefreie Lehre unumgänglich
+				sind.
+			</p>
+		</div>
 
 		<FriendBubble {friendPersona}>
 			Ich nehme zu Beginn jedes Semesters Kontakt mit den Lehrpersonen auf und versuche, zu
 			erklären, wie ich arbeite und was ich benötige. Häufig muss ich während des Semesters erneut
 			dran erinnern, weil Dokumente nicht frühzeitig zum Bearbeiten da sind etc. Ich weiß, Gabriel
-			ist es Leid, immer wieder zu erinnern. Aber es hilft ja nichts. Ich bleibe da hintendran.
+			ist es Leid, immer wieder zu erinnern. Aber wir haben ja einen Anspruch auf barrierefrei
+			zugängliches Material. Deshalb muss ich da ja dranbleiben.
 		</FriendBubble>
 
 		<h2 class="main-heading" id="exams">Prüfungen</h2>
-		<p class="no-component-text">
-			Auch für Prüfungen haben Studierende mit visuellen Beeinträchtigungen einen Anspruch auf einen
-			Nachteilsausgleich. Dieser soll gewährleisten, dass sie die gleichen Voraussetzungen zum
-			inhaltlichen Bearbeiten der Aufgaben haben, wie ihre Mitstudierenden. Wird beispielsweise mehr
-			Zeit benötigt, um einen Überblick über Dokumente zu erlangen, da ein „Überfliegen“ des Textes
-			nicht möglich ist und ist zusätzlich die Lesegeschwindigkeit beeinträchtigt, können
-			individuelle Zeitzugaben Teil eines Nachteilsausgleichs sein. Außerdem sollte gewährleistet
-			sein, dass Bildern eine entsprechende Beschreibung bzw. einen Alternativtext beigefügt wird.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text no-margin-top">
+				Auch für Prüfungen haben Studierende mit visuellen Beeinträchtigungen einen Anspruch auf
+				einen Nachteilsausgleich. Dieser muss gewährleisten, dass sie die gleichen Voraussetzungen
+				zum inhaltlichen Bearbeiten der Aufgaben haben, wie ihre Mitstudierenden. Wird
+				beispielsweise mehr Zeit benötigt, um einen Überblick über Dokumente zu erlangen, da ein
+				„Überfliegen“ des Textes nicht möglich ist und ist zusätzlich die Lesegeschwindigkeit
+				beeinträchtigt, können individuelle Zeitzugaben Teil eines Nachteilsausgleichs sein.
+				Außerdem muss gewährleistet sein, dass Bildern eine entsprechende Beschreibung bzw. ein
+				Alternativtext beigefügt wird.
+			</p>
+		</div>
 
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_09.mp3'}>
 			Im letzten Semester habe ich eine Prüfung geschrieben, die leider keine Bildbeschreibungen
@@ -366,16 +381,17 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			Zeit hat mir dann bei anderen Aufgaben gefehlt.
 		</SpeechBubble>
 
-		<div class="spacer" />
-		<p class="no-component-text">
-			Sind diese Vorkehrungen nicht gegeben und wird beispielsweise ein noch unbekanntes Programm
-			für die Bearbeitung einer Prüfung verwendet, kann das den bereits vorhandenen Prüfungsstress
-			erhöhen und dafür sorgen, dass Studierende an der Prüfung nicht oder nur mit deutlichen
-			Nachteilen teilnehmen können.
-		</p>
+		<div class="no-component-text-wrapper">
+			<p class="no-component-text">
+				Sind diese Vorkehrungen nicht gegeben und wird beispielsweise ein noch unbekanntes Programm
+				für die Bearbeitung einer Prüfung verwendet, kann das den bereits vorhandenen Prüfungsstress
+				erhöhen und dafür sorgen, dass Studierende an der Prüfung nicht oder nur mit deutlichen
+				Nachteilen teilnehmen können.
+			</p>
+		</div>
 
 		<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_10.mp3'}>
-			Wenn ich Prüfungen online schreibe und neue Programme dafür verwendet werden, hilft es mir
+			Wenn ich Prüfungen online schreibe und neue Programme dafür verwendet werden, hilft es mir,
 			Probe-Prüfungen zu schreiben, um das Programm und das Vorgehen ohne Druck kennenzulernen.
 		</SpeechBubble>
 
@@ -395,7 +411,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 				'Ich überprüfe die Barrierefreiheit meiner Dokumente mit den eingebauten Prüfhilfen (z.B. in MS Office oder LibreOffice)',
 				'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
 				'Ich achte darauf, dass Scans von Dokumenten qualitativ hochwertig und mit einer OCR Software (Texterkennungssoftware) aufgenommen sind',
-				'Wenn Studierende einen Nachteilsausgleich haben, bemühe ich mich um eine faire Umsetzung'
+				'Nachteilsausgleiche setze ich in meiner Lehre und in Prüfungen bedarfsgerecht und fair um'
 			]}
 			{persona}
 		/>

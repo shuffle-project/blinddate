@@ -4,8 +4,11 @@ export const MAXI: Persona = {
 	id: 'maxi',
 	name: 'Maxi',
 	tags: [
-		{ content: 'nichts', lang: 'de' },
-		{ content: 'da', lang: 'de' }
+		{ content: 'Depression', lang: 'de' },
+		{ content: 'Unsichtbare Beeinträchtigung', lang: 'de' },
+		{ content: 'Beratung', lang: 'de' },
+		{ content: 'Erschöpfung', lang: 'de' },
+		{ content: 'Trigger', lang: 'de' }
 	],
 	age: 29,
 	hobbies: 'Serien schauen, Skaten, Fotografieren und Zeit in der Natur verbringen',
@@ -14,5 +17,6 @@ export const MAXI: Persona = {
 	disability_icon: 'mental-health',
 	previousPersona: 'Hannah',
 	nextPersona: 'Gabriel',
-	visualDescription: ''
+	visualDescription: '',
+	shortVisualDescription: ''
 };

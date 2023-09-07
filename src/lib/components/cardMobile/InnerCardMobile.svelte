@@ -115,7 +115,7 @@
 							aria-expanded={showTableOfContents}
 							on:click|stopPropagation={() => toggleTableOfContents()}
 						>
-							<Icon img="list" size="medium">Inhaltsverzeichnis</Icon>
+							<Icon img="list-subtle" size="medium">Inhaltsverzeichnis</Icon>
 							<div class="arrow-icon" class:contents_open={showTableOfContents}>
 								<Icon size="tiny" img="arrow-toright" />
 							</div>
@@ -140,7 +140,9 @@
 							class="disability-btn btn-with-arrow"
 							on:click|stopPropagation={() => modal.toggleModalDisplay()}
 						>
-							<Icon img={persona.disability_icon} size="medium">{persona.disability}</Icon>
+							<Icon svg_color="black" img={persona.disability_icon} size="medium"
+								>{persona.disability}</Icon
+							>
 							<Icon size="tiny" img="arrow-toright" />
 						</button>
 					</li>

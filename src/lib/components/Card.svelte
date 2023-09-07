@@ -67,6 +67,7 @@
 
 					<a href="#tips" class="second">
 						<Icon img="light-bulb" size="medium" svg_color="white">Tipps zur Unterstützung</Icon>
+
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
 					</a>
 				</div>
@@ -197,15 +198,15 @@
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
-
-						border: 2px solid transparent;
-						outline: 2px solid transparent;
+						border: none;
 
 						&:hover,
 						&:focus {
-							border: 2px solid var(--color-green);
+							outline-offset: 2px;
 							outline: 2px solid var(--color-blue);
 						}
+
+						
 					}
 
 					.first {

@@ -13,7 +13,7 @@
 	};
 </script>
 
-<div class="container">
+<div class="container" class:with-mobile-card={friendPersona.id !== 'placeholder'}>
 	{#if friendPersona.id !== 'placeholder'}
 		<div class="card">
 			<FriendPersonaCard {friendPersona} />
@@ -40,6 +40,11 @@
 	.container {
 		display: flex;
 		position: relative;
+		margin-bottom: 1rem;
+
+		&.with-mobile-card {
+			margin-top: 3rem;
+		}
 	}
 
 	.card,
@@ -50,7 +55,7 @@
 	.mobile-card {
 		position: absolute;
 		z-index: 2;
-		right: 3.5rem;
+		right: 2.5rem;
 		top: -1.7rem;
 	}
 
@@ -59,7 +64,6 @@
 
 		position: relative;
 
-		margin-top: 2rem;
 		padding-left: 1.33rem;
 		padding-right: 1.33rem;
 		margin-inline: auto;
@@ -92,6 +96,11 @@
 	}
 
 	@media (min-width: 83.75rem) {
+		.container {
+			&.with-mobile-card {
+				margin-top: 1rem;
+			}
+		}
 		.mobile-card {
 			display: none;
 		}
@@ -125,7 +134,7 @@
 			padding-right: 0;
 			padding-top: 0.85rem;
 			margin: 0;
-			margin-top: 2rem;
+			margin-top: 1rem;
 
 			.text {
 				padding: 1.11rem 1.66rem;

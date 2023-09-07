@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import SearchBar from '$lib/components/SearchBar.svelte';
+	import ShareButton from '$lib/components/ShareButton.svelte';
+	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import Footer from '../lib/components/Footer.svelte';
 </script>
 
@@ -7,88 +10,151 @@
 	<title>BlindDate</title>
 </svelte:head>
 
-<div class="background-black">
-	<!-- <header>
+<header>
+	<div class="mobile">
+		<div class="user-test"></div>
+
 		<div class="first-row">
-			<div />
-			<SearchBar />
-			<a href="{base}/">
-				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zurück zur Startseite" />
+			<a href="{base}/" class="logo">
+				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zur Startseite" />
+				<span aria-hidden="true">BlindDate</span>
 			</a>
+
+			<!-- <ShareButton /> -->
 		</div>
+		<!-- <hr aria-hidden="true" class="separator" /> -->
 		<div class="second-row">
-			<div />
-			<div>
-				<ShareButton />
-			</div>
-			<hr aria-hidden="true" class="seperator" /> 
+			<div class="space" />
+			<SearchBar />
+			<ShareButton />
 		</div>
-	</header> -->
 
-	<!-- <br /> -->
-</div>
+		<hr aria-hidden="true" class="separator" />
+	</div>
 
-<div class="content" id="content">
-	<h1 class="responsive">Studierende</h1>
+	<div class="desktop">
+		<div class="first-row">
+			<a href="{base}/" class="logo">
+				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zur Startseite" />
+				<span aria-hidden="true">BlindDate</span>
+			</a>
 
-	<ul>
-		{#each ['gabriel'] as persona}
-			<li><a href="{base}/personas/{persona}">{persona}</a></li>
-		{/each}
-	</ul>
-</div>
+			<div class="searchbar">
+				<SearchBar />
+			</div>
+
+			<ShareButton />
+		</div>
+
+		<hr aria-hidden="true" class="separator" />
+	</div>
+</header>
+
+<main class="content" id="content">
+	<h1 class="responsive">Studierende kennenlernen</h1>
+	<LectureRoom />
+</main>
+
+<div class="spacer" />
 
 <Footer />
 
 <style lang="scss">
-
-	
 	.content {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: var(--content-max-width);
-		padding-left: 2.77rem;
-		padding-right: 2.77rem;
-	}
-
-	.background-black {
 		background-color: var(--color-black);
-		height: 30vh;
+		padding-top: 4rem;
+	}
+	h1 {
+		color: var(--color-white);
+
+		margin: 0;
+		padding-bottom: 2rem;
+		padding-inline: 1.33rem;
+
+		max-width: var(--content-max-width);
+		margin-inline: auto;
+		text-align: center;
 	}
 
 	header {
 		background-color: var(--color-black);
-		padding-left: 2.77rem;
-		padding-right: 2.77rem;
-		margin-left: auto;
-		margin-right: auto;
-		max-width: var(--content-max-width);
-		// max-width: 600px;
+	}
 
-		.first-row {
-			display: flex;
-			color: var(--color-white);
-			justify-content: space-between;
-			align-items: center;
-			padding-top: 1.33rem;
+	.separator {
+		margin-top: 0.22rem;
+		margin: 0;
+		color: rgba(var(--color-white-rgb), 0.5);
+	}
+
+	.logo {
+		color: var(--color-white);
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+
+		font-size: 1.11rem;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	@media (min-width: 59.375rem) {
+		h1 {
+			text-align: left;
+			padding-bottom: 1rem;
 		}
 
-		.second-row {
-			display: flex;
-			color: var(--color-white);
-			justify-content: right;
-			padding-top: 2.05rem;
-			padding-bottom: 0.55rem;
+		.mobile {
+			display: none;
+		}
 
-			a {
-				text-decoration: none;
-				color: var(--color-white);
+		.desktop {
+			padding-inline: 1.33rem;
+			margin-inline: auto;
+			max-width: var(--content-max-width);
+
+			.first-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding-top: 1.33rem;
+				padding-bottom: 1rem;
 			}
 		}
+	}
 
-		.seperator {
-			margin-top: 0.22rem;
-			margin: 0;
+	@media (max-width: 59.3125rem) {
+		.desktop {
+			display: none;
+		}
+
+		.mobile {
+			.first-row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 1.33rem 1.33rem 0 1.33rem;
+			}
+
+			.second-row {
+				display: flex;
+				justify-content: space-between;
+				gap: 0.55rem;
+
+				padding: 1.33rem 1rem;
+
+				.space {
+					min-width: 2.77rem;
+					min-height: 2.77rem;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 32.75rem) {
+		.mobile {
+			.second-row {
+				padding: 1.33rem 0.55rem;
+			}
 		}
 	}
 </style>

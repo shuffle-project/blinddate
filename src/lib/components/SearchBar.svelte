@@ -18,32 +18,34 @@
 <!-- </div> -->
 <style lang="scss">
 	.search {
-		display: flex;
-		align-items: center;
-
 		position: relative;
 
 		max-width: 19.5rem;
 		width: 100%;
 
-
 		input {
 			box-sizing: border-box;
-			background-color: var(--color-background-body);
+			background-color: var(--color-white);
 			color: var(--color-black);
-			border-radius: 3.33rem;
+
 			width: 100%;
 
 			font-weight: bold;
 			font-size: 1rem;
 
-			padding: 0px;
 			border: none;
+			border-radius: 2rem;
+
 			padding-left: 1.4rem;
 			padding-right: 2.4rem;
 
 			min-height: 2.8rem;
-			flex-grow: 1;
+
+			&:hover,
+			&:focus {
+				outline-offset: 2px;
+				outline: 2px solid var(--color-white);
+			}
 		}
 
 		.image {
