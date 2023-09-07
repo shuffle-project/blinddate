@@ -149,7 +149,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 >
 	<!-- svelte-ignore a11y-media-has-caption -->
 	<video
-		poster="{base}/media/sehen-preview-image.jpg"
+		poster={base + videoData.poster}
 		id="video"
 		controls={userDeviceIsiOS}
 		preload="auto"

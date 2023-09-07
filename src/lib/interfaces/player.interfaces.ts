@@ -7,6 +7,7 @@ export interface Caption {
 export interface Video {
 	title: string;
 	videoPathMp4: string;
+	poster: string;
 	captionsArray: Caption[];
 }
 

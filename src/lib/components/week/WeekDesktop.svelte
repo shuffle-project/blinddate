@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import type { Persona } from '../interfaces/persona.interfaces';
-	import type { Day } from '../interfaces/week.interfaces';
-	import Icon from './Icon.svelte';
-	import Switch from './Switch.svelte';
+	import type { Persona } from '../../interfaces/persona.interfaces';
+	import type { Day } from '../../interfaces/week.interfaces';
+	import Icon from '../Icon.svelte';
+	import Switch from '../Switch.svelte';
 
 	export let persona: Persona;
 
@@ -35,88 +35,93 @@
 	<div class="wrapper">
 		<div class="calender">
 			<h3 id="tablist-1">{persona.week?.month} {persona.week?.year}</h3>
-			{#key days}
-				<table role="presentation">
-					<tr aria-hidden="true">
-						{#each days as day}
-							<th class="day">{day.day}</th>
-						{/each}
-					</tr>
-					<tr>
-						{#each days as day}
-							<td aria-hidden="true" class="smiley-date-cell">
+
+			<table role="presentation">
+				<tr aria-hidden="true">
+					{#each days as day}
+						<th class="day">{day.day}</th>
+					{/each}
+				</tr>
+				<tr>
+					{#each days as day}
+						<td aria-hidden="true" class="smiley-date-cell">
+							{#if day.smiley === 'sad'}
 								<div class="smiley">
-									<Icon size="smedium" img={day.smiley} svg_color="green" />
+									<Icon size="smedium" img="sad" svg_color="green" />
 								</div>
-								{day.date}
-							</td>
-						{/each}
-					</tr>
-					<tr role="tablist">
-						{#each days as day, i}
-							<td class="activity-cell">
-								<button
-									tabindex={i === detailedDay ? 0 : -1}
-									class="activity"
-									class:active={detailedDay === i}
-									id="weektab-{i + 1}"
-									role="tab"
-									aria-controls="tabpanel-{i + 1}"
-									aria-selected={detailedDay === i}
-									aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
-										/\&shy;/gi,
-										''
-									)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
-									on:click={() => onOpenDayDetails(day)}
-									on:keydown={onKeypressed}
-								>
-									{@html day.activity}
-								</button>
-							</td>
-						{/each}
-					</tr>
-				</table>
-			{/key}
+							{:else}
+								<div class="smiley">
+									<Icon size="smedium" img="happy" svg_color="green" />
+								</div>
+							{/if}
+
+							{day.date}
+						</td>
+					{/each}
+				</tr>
+				<tr role="tablist">
+					{#each days as day, i}
+						<td class="activity-cell">
+							<button
+								tabindex={i === detailedDay ? 0 : -1}
+								class="activity"
+								class:active={detailedDay === i}
+								id="weektab-{i + 1}"
+								role="tab"
+								aria-controls="tabpanel-{i + 1}"
+								aria-selected={detailedDay === i}
+								aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
+									/\&shy;/gi,
+									''
+								)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
+								on:click={() => onOpenDayDetails(day)}
+								on:keydown={onKeypressed}
+							>
+								{@html day.activity}
+							</button>
+						</td>
+					{/each}
+				</tr>
+			</table>
 		</div>
-		{#key detailedDay}
-			<div
-				class="detailed-day"
-				id="tabpanel-{detailedDay + 1}"
-				role="tabpanel"
-				aria-labelledby="weektab-{detailedDay + 1}"
-			>
-				<img
-					class="week-day-indicator"
-					style="left:{20 * detailedDay + 3}%"
-					src="{base}/decorations/week-day-indicator.svg"
-					alt=""
-					aria-hidden="true"
+
+		<div
+			class="detailed-day"
+			id="tabpanel-{detailedDay + 1}"
+			role="tabpanel"
+			aria-labelledby="weektab-{detailedDay + 1}"
+		>
+			<img
+				class="week-day-indicator"
+				style="left:{20 * detailedDay + 3}%"
+				src="{base}/decorations/week-day-indicator.svg"
+				alt=""
+				aria-hidden="true"
+			/>
+			<div class="header">
+				<Icon size="smedium" img="happy" svg_color="green" />
+				<Switch
+					option1="happy"
+					option1Label="Guter Tag"
+					option2="sad"
+					option2Label="Schlechter Tag"
+					bind:value={days[detailedDay].smiley}
 				/>
-				<div class="header">
-					<Icon size="smedium" img="happy" svg_color="green" />
-					<Switch
-						option1="happy"
-						option1Label="Guter Tag"
-						option2="sad"
-						option2Label="Schlechter Tag"
-						bind:value={days[detailedDay].smiley}
-					/>
-					<Icon size="smedium" img="sad" svg_color="green" />
-				</div>
-				<div class="body">
-					<p>
-						{days[detailedDay].time}
-					</p>
-					<p>
-						{#if days[detailedDay].smiley === 'happy'}
-							{days[detailedDay].text_happy}
-						{:else}
-							{days[detailedDay].text_sad}
-						{/if}
-					</p>
-				</div>
+				<Icon size="smedium" img="sad" svg_color="green" />
 			</div>
-		{/key}
+			<div class="body">
+				<p>
+					{days[detailedDay].time}
+				</p>
+				<p>
+					{#if days[detailedDay].smiley === 'happy'}
+						{days[detailedDay].text_happy}
+					{:else}
+						{days[detailedDay].text_sad}
+					{/if}
+				</p>
+			</div>
+		</div>
 	</div>
 
 	<div
@@ -153,6 +158,14 @@
 				</div>
 			</div>
 		</div>
+
+		<p class="week-figure-text" aria-hidden="true">
+			{#if days.filter((obj) => obj.smiley === 'happy').length >= 3}
+				{days.filter((obj) => obj.smiley === 'happy').length} von 5 Tage waren gut
+			{:else}
+				{days.filter((obj) => obj.smiley === 'sad').length} von 5 Tage waren schlecht
+			{/if}
+		</p>
 	</div>
 </div>
 
@@ -161,16 +174,27 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		// align-items: center;
 
 		.week-figure-wrapper {
 			perspective: 1000px;
-			margin-left: auto;
-			margin-right: auto;
+			margin-inline: auto;
 			margin-top: 1.5rem;
 			width: 13.8rem;
-			height: 20rem;
-			margin-bottom: 7rem;
+			height: 34rem;
+		}
+
+		.week-figure-text {
+			text-align: center;
+			margin: 0;
+			margin-inline: auto;
+			
+			padding: 0.22rem;
+			font-size: 0.88rem;
+			
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
 		}
 
 		.week-figure-inner {
@@ -186,8 +210,7 @@
 		.week-figure-front,
 		.week-figure-back {
 			position: absolute;
-			width: 100%;
-			height: 100%;
+	
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 		}
@@ -198,8 +221,11 @@
 
 		.week-figure {
 			width: 100%;
-			max-width: 8.33rem;
+			max-width: 8rem;
+			height: 100%;
+			max-height: 28rem;;
 			z-index: 2;
+			
 			transform: translateX(35%) translateY(10%);
 			opacity: 100%;
 			transition: all 0s;
@@ -304,15 +330,15 @@
 
 						padding: 6px;
 
-						outline: 3px solid var(--color-black);
-						border: 1px solid var(--color-black);
+					
 						&.active {
 							text-decoration: underline;
 						}
+						
 						&:focus,
 						&:hover {
-							outline: 3px solid var(--color-focus-pink);
-							border: 1px solid var(--color-black);
+							outline: 2px solid var(--color-white);
+							outline-offset: 2px;
 						}
 
 						cursor: pointer;
@@ -323,37 +349,37 @@
 
 		.detailed-day {
 			margin: 2rem 1.33rem;
-			border: 1px solid black;
+			border: 1px solid var(--color-black);
 			border-top: none;
 			border-radius: 1.11rem;
 			position: relative;
+		
 
 			.week-day-indicator {
 				position: absolute;
 				top: -1rem;
-				transition: 1s;
+				transition: all 0.3s ease-out;
 			}
 
 			.header {
-				border: 1px solid black;
+				border: 1px solid var(--color-black);
 				border-radius: 1.11rem 1.11rem 0 0;
 
 				background-color: var(--color-black);
 				color: var(--color-white);
 				display: flex;
+				gap: 0.55rem;
 				padding-top: 1.52rem;
 				padding-left: 1.93rem;
 				padding-bottom: 1.08rem;
 			}
 
 			.body {
-				padding-top: 0.86rem;
-				padding-bottom: 0.86rem;
-				padding-left: 1.93rem;
-				padding-right: 1.54rem;
+				padding: 0.86rem 1.11rem;
 
 				p {
 					margin: 0;
+				
 				}
 			}
 		}

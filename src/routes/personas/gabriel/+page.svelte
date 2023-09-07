@@ -25,6 +25,7 @@
 			{
 				title: 'Video',
 				videoPathMp4: '/media/sehen.mp4',
+				poster: '/media/sehen-preview-image.jpg',
 				captionsArray: [
 					{
 						path: '/media/sehen-untertitel.vtt',
@@ -267,6 +268,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 				image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
 				warningtext="Mobile Geräte werden nicht unterstützt. Die Simulation ist leider nicht barrierefrei, siehe 'Informationen zur Simulation'."
 				pathtext={base + '/games/gabriel'}
+				personaID={persona.id}
 			/>
 		</div>
 
@@ -406,7 +408,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			checks={[
 				'Ich informiere mich über digitale Barrierefreiheit',
 				'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
-				'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann gelesen oder mithilfe eines Screenreaders gehört werden, gesprochene Texte haben Untertitel oder ein Transkript.',
+				'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann gelesen oder mithilfe eines Screenreaders gehört werden, gesprochene Texte haben Untertitel oder ein Transkript',
 				'Ich beschreibe Bilder und Grafiken und erstelle Alternativtexte',
 				'Ich überprüfe die Barrierefreiheit meiner Dokumente mit den eingebauten Prüfhilfen (z.B. in MS Office oder LibreOffice)',
 				'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
@@ -457,16 +459,5 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 	.more-info-list {
 		list-style-type: none;
 		margin-left: -2rem;
-	}
-
-	.user-test {
-		background-color: var(--color-black);
-		margin-top: 5rem;
-		margin-inline: 3.66rem;
-		padding: 2rem 1rem;
-		border-radius: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 </style>

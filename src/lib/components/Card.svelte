@@ -10,6 +10,7 @@
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 	import Glaucoma from './disabilityExplanation/Glaucoma.svelte';
+	import HardOfHearing from './disabilityExplanation/HardOfHearing.svelte';
 
 	export let persona: Persona;
 
@@ -42,6 +43,8 @@
 	<svelte:fragment slot="content">
 		{#if persona.name === 'Gabriel'}
 			<Glaucoma />
+		{:else if persona.name === 'Hannah'}
+			<HardOfHearing />
 		{/if}
 	</svelte:fragment>
 </Modal>

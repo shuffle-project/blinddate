@@ -5,6 +5,7 @@
 	export let image: string;
 	export let warningtext: string;
 	export let pathtext: string;
+	export let personaID: string;
 
 	let modal: Modal;
 
@@ -32,38 +33,42 @@
 	<Modal bind:this={modal}>
 		<svelte:fragment slot="headline">Informationen zur Simulation</svelte:fragment>
 		<svelte:fragment slot="content">
-			<p>
-				Das vorliegende Spiel ist aufgrund seiner spezifischen Spielmechanik leider nicht
-				vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit einem
-				Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um die
-				Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
-				derselben
-			</p>
+			{#if personaID === 'gabriel'}
+				<p>
+					Das vorliegende Spiel ist aufgrund seiner spezifischen Spielmechanik leider nicht
+					vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit einem
+					Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um die
+					Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
+					derselben
+				</p>
 
-			<p id="game-explained">
-				In diesem Simulationsspiel hat die spielende Person die Aufgabe, aus einem Foliensatz aus
-				Gabriels Vorlesung "Ethik 1" im Studiengang "Soziale Arbeit" einige Quellen
-				herauszuschreiben. Die vermeintlich einfache Aufgabe wird plötzlich erschwert, als das
-				Sichtfeld des Spielers eingeschränkt wird (siehe <span lang="en">Screenshot</span> unten). Erst
-				mit der Hilfe von Gabriel und dessen Strategie der ständigen Kopfbewegung können die Folien Stück
-				für Stück aufgedeckt und die Aufgaben gelöst werden. Der Spieler bekommt ein Gefühl dafür, wie
-				hilfreich eine gute Strukturierung der Folien ist, damit Gabriel die gesuchten Inhalte zügiger
-				auffinden kann.
-			</p>
+				<p id="game-explained">
+					In diesem Simulationsspiel hat die spielende Person die Aufgabe, aus einem Foliensatz aus
+					Gabriels Vorlesung "Ethik 1" im Studiengang "Soziale Arbeit" einige Quellen
+					herauszuschreiben. Die vermeintlich einfache Aufgabe wird plötzlich erschwert, als das
+					Sichtfeld des Spielers eingeschränkt wird (siehe <span lang="en">Screenshot</span> unten).
+					Erst mit der Hilfe von Gabriel und dessen Strategie der ständigen Kopfbewegung können die Folien
+					Stück für Stück aufgedeckt und die Aufgaben gelöst werden. Der Spieler bekommt ein Gefühl dafür,
+					wie hilfreich eine gute Strukturierung der Folien ist, damit Gabriel die gesuchten Inhalte
+					zügiger auffinden kann.
+				</p>
 
-			<img
-				alt="Screenshot aus Gabriels Simulationsspiel"
-				aria-describedby="game-explained"
-				src={base + '/personas/gabriel/simulation-game.png'}
-			/>
+				<img
+					alt="Screenshot aus Gabriels Simulationsspiel"
+					aria-describedby="game-explained"
+					src={base + '/personas/gabriel/simulation-game.png'}
+				/>
 
-			<p>
-				Die Strategie mit der ständigen Kopfbewegung spricht Gabriel in dem Screenshot mit den
-				folgenden Worten auch an: "Mit einem eingeschränkten Gesichtsfeld ist die Aufgabe gar nicht
-				so leicht, was? Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem
-				Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es
-				funktioniert. Versuch's mal!"
-			</p>
+				<p>
+					Die Strategie mit der ständigen Kopfbewegung spricht Gabriel in dem Screenshot mit den
+					folgenden Worten auch an: "Mit einem eingeschränkten Gesichtsfeld ist die Aufgabe gar
+					nicht so leicht, was? Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem
+					Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es
+					funktioniert. Versuch's mal!"
+				</p>
+			{:else if personaID === 'hannah'}
+				<p>Just a test</p>
+			{/if}
 		</svelte:fragment>
 	</Modal>
 </div>
