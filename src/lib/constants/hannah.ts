@@ -80,7 +80,7 @@ export const HANNAH: Persona = {
 	],
 	age: 25,
 	hobbies: 'Handball spielen, Essen gehen, Filme und Serien schauen',
-	study: 'Mathematik im Bachelor',
+	study: 'Mathematik auf Lehramt',
 	disability: 'Hochgradige Schwerhörigkeit',
 	disability_icon: 'ear',
 	previousPersona: 'Gabriel',

@@ -208,8 +208,6 @@
 							outline-offset: 2px;
 							outline: 2px solid var(--color-blue);
 						}
-
-						
 					}
 
 					.first {

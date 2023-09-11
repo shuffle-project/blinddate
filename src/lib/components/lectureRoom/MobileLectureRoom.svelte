@@ -24,7 +24,7 @@
 			case 'Gabriel':
 				return 'explaining';
 			case 'Maxi':
-				return 'sad';
+				return 'neutral';
 			default:
 				return 'neutral';
 		}

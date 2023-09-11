@@ -5,6 +5,7 @@
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import { ALEX_FRIEND } from '$lib/constants/alex';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
@@ -17,25 +18,16 @@
 	const friendPersona: FriendPersona = ALEX_FRIEND;
 
 	const extendedPlayerConfig: ExtendedPlayerConfig = {
-		title: 'Videotitel Platzhalter',
+		title: 'Platzhaltertitel',
 		videos: [
 			{
 				title: 'Video',
-				videoPathMp4: '/media/sehen.mp4',
-				captionsArray: [],
-				poster: ''
+				videoPathMp4: '/media/psyche.mp4',
+				poster: '/media/psyche-preview-image.png',
+				captionsArray: []
 			}
 		],
-		transcripts: [
-			{
-				title: 'Video mit Audiodeskription',
-				body: 'Eine Audiodeskription liegt für dieses Video nicht vor.'
-			},
-			{
-				title: 'Transkript',
-				body: 'Hier könnte ihre Werbung stehen.'
-			}
-		]
+		transcripts: []
 	};
 </script>
 
@@ -327,6 +319,8 @@
 			helfen zu lassen. Also wirklich mit jemanden zusammen eine Email zu schreiben oder mich zur
 			Sprechstunde bringen zu lassen.
 		</SpeechBubble>
+
+		<PlayerExtended {extendedPlayerConfig} />
 
 		<h2 class="main-heading" id="exams">Prüfungen</h2>
 

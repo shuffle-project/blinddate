@@ -14,7 +14,7 @@
 	const persona = HANNAH;
 
 	const extendedPlayerConfigOffline: ExtendedPlayerConfig = {
-		title: 'Platzhaltertitel',
+		title: 'Studierende erklären den Umgang mit Höranlagen in Präsenzveranstaltungen',
 		videos: [
 			{
 				title: 'Video',
@@ -27,7 +27,7 @@
 	};
 
 	const extendedPlayerConfigOnline: ExtendedPlayerConfig = {
-		title: 'Platzhaltertitel',
+		title: 'Studierende geben Hinweise zu online Veranstaltungen',
 		videos: [
 			{
 				title: 'Video',
@@ -54,7 +54,7 @@
 			Handball mit einer gemischten Gruppe aus Leuten mit und ohne Hörbeeinträchtigung. Wir spielen
 			in einer kleinen lokalen Liga – deshalb verbringe ich jeden zweiten Sonntag in einer miefigen
 			Turnhalle. Durch den Verein habe ich hier direkt Anschluss gefunden. Nach dem Training machen
-			wir oft noch was zusammen, grillen, essen oder einfach abhängen. Immer Montags ist abends
+			wir oft noch was zusammen, grillen, essen oder einfach abhängen. Immer montags ist abends
 			Fitnessrunde im Westfalenpark. Ich bin ein Serienjunkie...ist aber ganz gut, dass ich wegen
 			vielen Terminen nicht jeden Abend auf der Couch verbringen kann. Bei Serien ist mir Vieles
 			wichtig – besonders aber die Qualität der Untertitel.
@@ -65,7 +65,7 @@
 			ein Hörgerät und rechts ein Cochlea-Implantat...wenn ich die Haare offen trage, sieht man
 			davon allerdings kaum was. Ich verwende sowohl die Lautsprache als auch die deutsche
 			Gebärdensprache. Dadurch, dass ich jetzt viel mehr Kontakt mit anderen DGS-Nutzenden habe, bin
-			ich viel, viel besser geworden und nutze gerade jede Gelegenheit um zu gebärden. Irgendwie
+			ich viel, viel besser geworden und nutze gerade jede Gelegenheit, um zu gebärden. Irgendwie
 			verbindet mich das mit Leuten. Ich fühle mich als Teil der DGS Community. Das ist cool. Im
 			Alltag und an der Uni nutze ich vor allem Lautsprache.
 		</SpeechBubble>
@@ -83,7 +83,7 @@
 				<InfoBox
 					term="Cochlea-Implantat (CI)"
 					definition="Ist der Hörnerv einer Person unbeschadet, die Verstärkung der Schallwellen durch ein Hörgerät aber nicht ausreichend, kann ein elektrisches Cochlea-Implantat (CI) eingesetzt werden.
-Das Implantat übernimmt dann die Funktion eines Teils des Innenohrs – der Hörschnecke (oder Chochlea). Hierbei werden die Schallwellen in elektrische Impulse umgewandelt und an den Hörnerv geleitet. 
+Das Implantat übernimmt dann die Funktion eines Teils des Innenohrs – der Hörschnecke (oder Cochlea). Hierbei werden die Schallwellen in elektrische Impulse umgewandelt und an den Hörnerv geleitet. 
 Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, die mittels Magneten auf der Haut hinter dem Ohr platziert sind. Unter der Haut liegt die Empfangsspule, welche die elektrischen Signale an die Elektroden in der Cochlea weiterleitet. Der äußere Teil des CIs ist abnehmbar."
 					sources={[
 						{
@@ -116,7 +116,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<SpeechBubble {persona}>
 			Dass Gebärdensprache nur von gehörlosen Menschen genutzt wird, ist ein Irrtum. Manche
 			hörbehinderte Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann
-			situationsabhängig. Und natürlich kommt es auch auf den Gesprächspartner an. Leider ist es so,
+			situationsabhängig. Und natürlich kommt es auch auf die Gesprächsperson an. Leider ist es so,
 			dass auch nicht alle gehörlosen und schwerhörigen Menschen die Gebärdensprache gut
 			beherrschen. Das hat ziemlich viel mit der Geschichte hier in Deutschland zu tun und dass
 			Gebärdensprache lange nicht als eigene Sprache anerkannt war. Aber das ist eine andere
@@ -128,7 +128,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<SpeechBubble {persona}>
 			Und viele Menschen denken, dass ich – da ich Hörhilfen trage – alles genauso höre, wie sie.
 			Das stimmt aber nicht. Viele Hintergrundgeräusche, wie Vogelgezwitscher oder das sich nähernde
-			Auto, nehme ich nicht oder sehr spät wahr. Auch ist es für mich schwierig selektiv zu hören,
+			Auto, nehme ich nicht oder sehr spät wahr. Auch ist es für mich schwierig, selektiv zu hören,
 			also einige Geräusche oder vor allem Stimmen auszublenden. Bei mir kommt quasi alles gleich
 			laut an. Und dann gibt es noch Störschall.
 		</SpeechBubble>
@@ -201,9 +201,9 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text">
 				Sowohl Hörgeräte als auch CIs können mit Höranlagen verbunden werden, sodass über Mikrofone
-				akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob ein
-				Gebärdendolmetscher oder eine Übertragungsanlage genutzt werden sollte, hängt von der
-				Hörschädigung der Anwesenden ab.
+				akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob
+				Gebärdensprachdolmetschende oder eine Übertragungsanlage genutzt werden sollte, hängt von
+				der Hörschädigung der Anwesenden ab.
 			</p>
 		</div>
 
@@ -220,12 +220,12 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<h2 class="main-heading" id="material">Lernmaterial</h2>
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text no-margin-top">
-				Werden die Informationen einer Veranstaltung überwiegend visuell (Gebärdensprachdolmetscher
-				oder durch das Fokussieren der Lippen) entnommen, ist es schwierig, gleichzeitig Notizen zu
-				machen oder Präsentationen zu betrachten. Daher sollten Folien, Skripte oder Transkripte (am
-				besten bereits im Voraus) zur Verfügung gestellt werden. Eine weitere Hilfe kann das
-				Erstellen von Skripten der Veranstaltungsgespräche durch Mitschreibkräfte (meist
-				Mitstudierende oder Tutor*innen) sein.
+				Werden die Informationen einer Veranstaltung überwiegend visuell
+				(Gebärdensprachdolmetschende oder durch das Fokussieren der Lippen) entnommen, ist es
+				schwierig, gleichzeitig Notizen zu machen oder Präsentationen zu betrachten. Daher sollten
+				Folien, Skripte oder Transkripte (am besten bereits im Voraus) zur Verfügung gestellt
+				werden. Eine weitere Hilfe kann das Erstellen von Skripten der Veranstaltungsgespräche durch
+				Mitschreibkräfte (meist Mitstudierende oder Tutor*innen) sein.
 			</p>
 
 			<p class="no-component-text">
@@ -282,9 +282,8 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 
 		<h2 class="main-heading" id="week">Eine Woche im Leben von Hannah</h2>
 		<p class="no-component-text">
-			Hannah befindet sich im zweiten Jahr ihres BSc. Mathematikstudiums an der Technischen
-			Hochschule Dortmund. Dies ist die zweite Woche des WS22 und Hannah hat eine volle Auslastung
-			von 5 Kursen.
+			Hannah befindet sich im zweiten Jahr ihres Lehramt Mathematik Studiums in Dortmund. Dies ist
+			die zweite Woche des WS22 und Hannah hat eine volle Auslastung von 5 Kursen.
 		</p>
 
 		<Week {persona} />
@@ -337,22 +336,21 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<h2 class="main-heading" id="exams">Prüfungen</h2>
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text no-margin-top">
-				Studierende können einen Nachteilsausgleich beantragen. Diese Anpassungen werden zunächst
-				mit den Beauftragten für Studierende mit Beeinträchtigungen besprochen und durch das
-				Prüfungsamts genehmigt werden. Wichtig ist, dass der Nachteilsausgleich rechtzeitig
-				angemeldet wird, damit er in Prüfungen berücksichtigt werden kann. In dem Nachteilsausgleich
-				werden Anpassungen festgehalten, die den Studierenden gleiche Voraussetzungen für die
-				inhaltliche Bearbeitung der Prüfung ermöglichen. Zudem müssen in Prüfungssituationen
-				ähnliche Aspekte berücksichtigt werden, die ebenfalls in Veranstaltungen gelten – wie
-				beispielsweise geschlossene Fenster, um Störgeräusche zu vermeiden.
+				Studierende mit Beeinträchtigungen können einen Nachteilsausgleich beantragen. Diese
+				Anpassungen werden zunächst mit den Beauftragten für Studierende mit Beeinträchtigungen
+				besprochen und durch das Prüfungsamts genehmigt. Wichtig ist, dass der Nachteilsausgleich
+				rechtzeitig angemeldet wird, damit er in Prüfungen berücksichtigt werden kann. In dem
+				Nachteilsausgleich werden Anpassungen festgehalten, die den Studierenden gleiche
+				Voraussetzungen für die inhaltliche Bearbeitung der Prüfung ermöglichen. Zudem müssen in
+				Prüfungssituationen ähnliche Aspekte berücksichtigt werden, die ebenfalls in Veranstaltungen
+				gelten – wie beispielsweise geschlossene Fenster, um Störgeräusche zu vermeiden.
 			</p>
 		</div>
 
 		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
 
 		<p class="no-component-text">
-			Hier ist eine Auflistung von schnellen und einfachen Tipps, wie Sie Gabriel und viele weitere
-			Menschen unterstützen können.
+			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</p>
 
 		<Checklist
