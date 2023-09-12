@@ -2,10 +2,11 @@
 	import { GABRIEL } from '$lib/constants/gabriel';
 	import { HANNAH } from '$lib/constants/hannah';
 	import { MAXI } from '$lib/constants/maxi';
+	import { MICHELLE } from '$lib/constants/michelle';
 	import DesktopLectureRoom from './DesktopLectureRoom.svelte';
 	import MobileLectureRoom from './MobileLectureRoom.svelte';
 
-	const personas = [MAXI, HANNAH, GABRIEL];
+	const personas = [MAXI, MICHELLE, HANNAH, GABRIEL];
 </script>
 
 <div class="desktop">

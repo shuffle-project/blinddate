@@ -74,44 +74,43 @@
 			margin-right: 3rem;
 
 			input {
-			-webkit-appearance: none;
-			appearance: none;
-			background-color: var(--color-black);
-
-			margin: 0;
-
-			height: 1.33rem;
-			width: 1.33rem;
-			aspect-ratio: 1;
-
-			border-radius: 0.33rem;
-			border: 2px solid var(--color-white);
-
-			cursor: pointer;
-
-			display: grid;
-			place-content: center;
-
-			&:checked:before {
-				content: '';
-				width: 0.8rem;
-				height: 0.8rem;
-				box-shadow: inset 1rem 1rem var(--color-white);
-
-				transform-origin: bottom left;
-				clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
-			}
-
-			&:checked {
+				-webkit-appearance: none;
+				appearance: none;
 				background-color: var(--color-black);
-				
-			}
 
-			&:focus,
-			&:hover {
-				outline: 2px solid var(--color-white);
-				outline-offset: 2px;
-			}
+				margin: 0;
+
+				height: 1.33rem;
+				width: 1.33rem;
+				aspect-ratio: 1;
+
+				border-radius: 0.33rem;
+				border: 2px solid var(--color-white);
+
+				cursor: pointer;
+
+				display: grid;
+				place-content: center;
+
+				&:checked:before {
+					content: '';
+					width: 0.8rem;
+					height: 0.8rem;
+					box-shadow: inset 1rem 1rem var(--color-white);
+
+					transform-origin: bottom left;
+					clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
+				}
+
+				&:checked {
+					background-color: var(--color-black);
+				}
+
+				&:focus,
+				&:hover {
+					outline: 2px solid var(--color-white);
+					outline-offset: 2px;
+				}
 			}
 
 			label {
@@ -122,7 +121,7 @@
 		.lecture-room {
 			width: 100%;
 			max-width: var(--content-max-width);
-			
+
 			border-radius: 2rem;
 			position: relative;
 
@@ -147,6 +146,15 @@
 
 					img {
 						width: min(18vw, 14rem);
+					}
+				}
+
+				&.michelle {
+					left: 38%;
+					top: 1%;
+
+					img {
+						width: min(14vw, 10.3rem);
 					}
 				}
 
