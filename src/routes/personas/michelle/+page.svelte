@@ -2,6 +2,7 @@
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import PersonaContent from '$lib/components/PersonaContent.svelte';
+	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
@@ -305,5 +306,34 @@
 			]}
 			{persona}
 		/>
+
+		<h2 class="main-heading" id="more-info">Weitere Informationen</h2>
+		<ul class="more-info-list">
+			<li>
+				<Recommendation link="https://www.dccv.de/die-dccv/aktiv-werden/aktiv-bei-studiced/">
+					<svelte:fragment slot="linkText">Aktiv werden bei studiCED</svelte:fragment>
+					<svelte:fragment slot="textAfter">
+						von der Deutschen Morbus Crohn / Colitis ulcerosa Vereinigung e.V.
+					</svelte:fragment>
+				</Recommendation>
+			</li>
+			<li>
+				<Recommendation
+					link="https://www.dccv.de/betroffene-angehoerige/medizinische-grundlagen/was-ist-morbus-crohn/"
+				>
+					<svelte:fragment slot="linkText">Morbus Crohn</svelte:fragment>
+					<svelte:fragment slot="textAfter"
+						>von der Deutschen Morbus Crohn / Colitis ulcerosa Vereinigung e.V.</svelte:fragment
+					>
+				</Recommendation>
+			</li>
+		</ul>
 	</svelte:fragment>
 </PersonaContent>
+
+<style lang="scss">
+	.more-info-list {
+		list-style-type: none;
+		margin-left: -2rem;
+	}
+</style>
