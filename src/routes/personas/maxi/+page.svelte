@@ -87,7 +87,7 @@
 
 			<ToolCard title="Probleme erkennen" image="{base}/tools/identify-problem.svg">
 				Eine mögliche Strategie kann sein, sich eine Krankheit einzugestehen und sich therapeutisch
-				beraten zu lassen Strategien können bei Therapeut*innen erlernt werden, sie sind sehr
+				beraten zu lassen. Strategien können bei Therapeut*innen erlernt werden, sie sind sehr
 				persönlich und schwer zu generalisieren.
 			</ToolCard>
 		</div>
@@ -98,7 +98,7 @@
 			Wenn es gut läuft, leg ich mich dann etwas hin oder gehe ein bisschen raus oder skaten. Danach
 			geht es mir besser, ich kann mich wieder konzentrieren und weiter machen. Wenn es schlecht
 			läuft... dann kommt eben sofort eine Stimme, die mir sagt, dass ich nur faul bin und dass die
-			anderen das ja auch problemlos hinbekommen. Das ich es nur versuchen muss. Dass ich sonst
+			anderen das ja auch problemlos hinbekommen. Dass ich es nur versuchen muss. Dass ich sonst
 			durchfalle. Dass ich keinen Job kriege. Und dann werde ich immer gestresster. Und dann geht
 			nichts mehr.
 		</SpeechBubble>
@@ -115,8 +115,8 @@
 
 		<FriendBubble {friendPersona}>
 			Hi, ich bin Alex, Maxis Mitbewohner und Freund und Studienkollege. Also wir machen alles
-			zusammen. Ich habe eine Angststörung.. Es gibt Phasen, da geht es mir ähnlich wie Maxi. Ich
-			bin echt froh, dass Maxi und ich uns gefunden haben und so gut verstehen. Und natürlich unsere
+			zusammen. Ich habe eine Angststörung. Es gibt Phasen, da geht es mir ähnlich wie Maxi. Ich bin
+			echt froh, dass Maxi und ich uns gefunden haben und so gut verstehen. Und natürlich unsere
 			Mitbewohner. Da hab ich dann Leute um mich rum, denen ich auch sagen kann, wenn es gerade
 			schlecht geht.
 		</FriendBubble>
@@ -225,12 +225,12 @@
 
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text no-margin-top">
-				Klare Informationen zu Anforderungen und auch Prüfungsleistungen bei einer Teilname an einer
-				Veranstaltung sind wichtig, um Unsicherheiten abzubauen. Sind beispielsweise Exkursionen
-				geplant, wird eine besondere Form der Prüfungsleistung erwartet, werden Materialien immer zu
-				einer bestimmten Zeit hochgeladen, hat diese Veranstaltung eine besondere Struktur, oder
-				wird es unterschiedliche Lehrpersonen geben, sollte dies zu Beginn des Semesters
-				kommuniziert werden.
+				Klare Informationen zu Anforderungen und auch Prüfungsleistungen bei einer Teilnahme an
+				einer Veranstaltung sind wichtig, um Unsicherheiten abzubauen. Sind beispielsweise
+				Exkursionen geplant, wird eine besondere Form der Prüfungsleistung erwartet, werden
+				Materialien immer zu einer bestimmten Zeit hochgeladen, hat diese Veranstaltung eine
+				besondere Struktur, oder wird es unterschiedliche Lehrpersonen geben, sollte dies zu Beginn
+				des Semesters kommuniziert werden.
 			</p>
 
 			<p class="no-component-text">
@@ -254,13 +254,12 @@
 			<p class="no-component-text no-margin-top">
 				Lehrende sind in der Regel keine Therapeut*innen und sollten diese Rolle auch nicht
 				übernehmen. Umso wichtiger ist es, dass klar kommuniziert wird, an wen sich Studierende mit
-				psychischen Belastungen wenden können. So ist eine Auflistung von Kontaktpersonen – wie
-				beispielsweise eine psycho-soziale Beratungsstelle und die Beauftragten für Studierende mit
-				Beeinträchtigungen der Hochschule - beispielsweise auf der ersten Vorlesungsfolie oder an
-				einem für alle zugänglichen Ort eine sinnvolle Unterstützung. Der Hinweis auf
-				Beratungsstellen zeigt, dass Lehrende sich bewusst sind, dass es auch „unsichtbare“
-				Beeinträchtigungen gibt und diese genauso Unterstützung erfahren, wie „sichtbare“
-				Beeinträchtigungen.
+				psychischen Belastungen wenden können. So ist eine Auflistung von Kontaktpersonen – wie eine
+				psycho-soziale Beratungsstelle und die Beauftragten für Studierende mit Beeinträchtigungen
+				der Hochschule - beispielsweise auf der ersten Vorlesungsfolie oder an einem für alle
+				zugänglichen Ort eine sinnvolle Unterstützung. Der Hinweis auf Beratungsstellen zeigt, dass
+				Lehrende sich bewusst sind, dass es auch „unsichtbare“ Beeinträchtigungen gibt und diese
+				genauso Unterstützung erfahren, wie „sichtbare“ Beeinträchtigungen.
 			</p>
 		</div>
 
@@ -369,8 +368,7 @@
 		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
 
 		<p class="no-component-text">
-			Hier ist eine Auflistung von schnellen und einfachen Tipps, wie Sie Gabriel und viele weitere
-			Menschen unterstützen können.
+			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</p>
 
 		<Checklist

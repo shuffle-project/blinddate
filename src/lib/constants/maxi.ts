@@ -11,9 +11,9 @@ export const MAXI: Persona = {
 		{ content: 'Trigger', lang: 'de' }
 	],
 	age: 29,
-	hobbies: 'Serien schauen, Skaten, Fotografieren und Zeit in der Natur verbringen',
+	hobbies: 'Skaten und Naturfotografie',
 	study: 'Architektur im Master',
-	disability: 'Schwere Depression & Angststörung',
+	disability: 'Psychische Erkrankung',
 	disability_icon: 'mental-health',
 	previousPersona: 'Hannah',
 	nextPersona: 'Gabriel',
