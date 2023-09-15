@@ -132,13 +132,12 @@
 		<div class="week-figure-inner">
 			<div class="week-figure-front">
 				<div class="week-figure-background">
-					<!-- src="{base}/personas/{persona.name.toLowerCase()}/{persona.name.toLowerCase()}_happy.svg" -->
 					<img
 						class="week-figure {days.filter((obj) => obj.smiley === 'happy').length < 3
 							? 'hidden'
 							: ''}"
 						aria-hidden={days.filter((obj) => obj.smiley === 'happy').length < 3}
-						src="{base}/personas/maxi/maxi_happy.svg"
+						src="{base}/personas/{persona.id}/{persona.id}-happy.svg"
 						alt="{persona.name} ist zufrieden, da {days.filter((obj) => obj.smiley === 'happy')
 							.length} von 5 Tagen in dieser Woche gut verliefen."
 					/>
@@ -146,11 +145,10 @@
 			</div>
 			<div class="week-figure-back">
 				<div class="week-figure-background">
-					<!-- src="{base}/personas/{persona.name.toLowerCase()}/{persona.name.toLowerCase()}_sad.svg" -->
 					<img
 						class="week-figure"
 						aria-hidden={days.filter((obj) => obj.smiley === 'sad').length < 3}
-						src="{base}/personas/maxi/maxi_sad.svg"
+						src="{base}/personas/{persona.id}/{persona.id}-sad.svg"
 						alt="{persona.name} steht in einer erschöpften Pose da, da {days.filter(
 							(obj) => obj.smiley === 'sad'
 						).length} von 5 Tagen in dieser Woche schlecht verliefen"
@@ -187,10 +185,10 @@
 			text-align: center;
 			margin: 0;
 			margin-inline: auto;
-			
+
 			padding: 0.22rem;
 			font-size: 0.88rem;
-			
+
 			position: absolute;
 			bottom: 0;
 			right: 0;
@@ -210,7 +208,7 @@
 		.week-figure-front,
 		.week-figure-back {
 			position: absolute;
-	
+
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 		}
@@ -221,12 +219,12 @@
 
 		.week-figure {
 			width: 100%;
-			max-width: 8rem;
+			// max-width: 8rem;
 			height: 100%;
-			max-height: 28rem;;
+			max-height: 28rem;
 			z-index: 2;
-			
-			transform: translateX(35%) translateY(10%);
+
+			transform: translateY(10%);
 			opacity: 100%;
 			transition: all 0s;
 			transition-delay: 0.2s;
@@ -330,11 +328,10 @@
 
 						padding: 6px;
 
-					
 						&.active {
 							text-decoration: underline;
 						}
-						
+
 						&:focus,
 						&:hover {
 							outline: 2px solid var(--color-white);
@@ -353,7 +350,6 @@
 			border-top: none;
 			border-radius: 1.11rem;
 			position: relative;
-		
 
 			.week-day-indicator {
 				position: absolute;
@@ -379,7 +375,6 @@
 
 				p {
 					margin: 0;
-				
 				}
 			}
 		}

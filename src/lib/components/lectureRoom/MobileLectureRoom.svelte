@@ -25,6 +25,8 @@
 				return 'explaining';
 			case 'Maxi':
 				return 'neutral';
+			case 'Hannah':
+				return 'happy';
 			default:
 				return 'neutral';
 		}
