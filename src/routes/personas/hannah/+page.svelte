@@ -20,7 +20,13 @@
 				title: 'Video',
 				videoPathMp4: '/media/hoeren-offline.mp4',
 				poster: '/media/hoeren-offline-preview-image.png',
-				captionsArray: []
+				captionsArray: [
+					{
+						path: '/media/hoeren-offline-untertitel.vtt',
+						lang: 'de',
+						label: 'Deutsche Untertitel'
+					}
+				]
 			}
 		],
 		transcripts: []
@@ -33,7 +39,13 @@
 				title: 'Video',
 				videoPathMp4: '/media/hoeren-online.mp4',
 				poster: '/media/hoeren-online-preview-image.png',
-				captionsArray: []
+				captionsArray: [
+					{
+						path: '/media/hoeren-online-untertitel.vtt',
+						lang: 'de',
+						label: 'Deutsche Untertitel'
+					}
+				]
 			}
 		],
 		transcripts: []
@@ -272,7 +284,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		</SpeechBubble>
 
 		<SimulationLink
-			image=""
+			image="{base}/personas/hannah/hannah-explaining-circle.svg"
 			warningtext="Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe 'Informationen zum Spiel'."
 			pathtext=""
 			personaID={persona.id}
