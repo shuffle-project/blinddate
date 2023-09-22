@@ -74,7 +74,7 @@ export const HANNAH: Persona = {
 	tags: [
 		{ content: 'Hörbeeinträchtigung', lang: 'de' },
 		{ content: 'Cochlea-Implantat', lang: 'de' },
-		{ content: 'Unteritel', lang: 'en' },
+		{ content: 'Untertitel', lang: 'de' },
 		{ content: 'Gebärdensprache', lang: 'de' },
 		{ content: 'Mundbild', lang: 'de' }
 	],

@@ -160,7 +160,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			Mittlerweile gibt es recht viele Filme, die auch mit Untertiteln gezeigt werden. Also
 			zumindest hier in Dortmund ist das Angebot okay. Es gibt auch die Möglichkeit, mir Untertitel
 			über eine App auf dem Handy anzeigen zu lassen. Die Idee ist ja nett, aber das ist wenig
-			praktikabel. Statt auf die Leinwand, guck ich kann nur auf mein Handy.
+			praktikabel. Statt auf die Leinwand, guck ich dann nur auf mein Handy.
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="lectures">Lehrveranstaltungen</h2>
