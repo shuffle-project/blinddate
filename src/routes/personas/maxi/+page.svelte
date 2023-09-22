@@ -7,6 +7,7 @@
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import { ALEX_FRIEND } from '$lib/constants/alex';
+	import { PSYCHE_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import SpeechBubble from '../../../lib/components/SpeechBubble.svelte';
@@ -33,7 +34,12 @@
 				]
 			}
 		],
-		transcripts: []
+		transcripts: [
+			{
+				title: 'Transkript',
+				body: PSYCHE_TRANSKRIPT
+			}
+		]
 	};
 </script>
 
@@ -371,7 +377,7 @@
 			ja gar nicht.
 		</SpeechBubble>
 
-		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
+		<h2 class="main-heading" id="tips">Barrierefreiheit umsetzen</h2>
 
 		<p class="no-component-text">
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.

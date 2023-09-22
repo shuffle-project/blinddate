@@ -15,8 +15,8 @@ export const MAXI: Persona = {
 	study: 'Architektur im Master',
 	disability: 'Psychische Erkrankung',
 	disability_icon: 'mental-health',
-	previousPersona: 'Hannah',
-	nextPersona: 'Gabriel',
+	previousPersona: 'Gabriel',
+	nextPersona: 'Hannah',
 	visualDescription: '',
 	shortVisualDescription: ''
 };

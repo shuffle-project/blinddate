@@ -6,6 +6,7 @@
 	import UserTest from '$lib/components/UserTest.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
+	import { SEHEN_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import SimulationLink from '../../../lib/components/SimulationLink.svelte';
@@ -42,42 +43,7 @@
 			},
 			{
 				title: 'Transkript',
-				body: `<p>[Studierende läuft in das Gebäude der Hochschule]</p>
-<p>Also, ich komme sehr gut zurecht.
-Die Räume sind gut ausgeschildert, einmal vergrößert, aber auch in Braille-Form
-...bis auf die Treppen, wenn sie nicht markiert sind. Einfach, weil ich den Anfang nicht unbedingt erkenne, das Ende sehe ich nicht unbedingt und die Treppen verschwimmen so ein bisschen wie so ein Wasserfall ineinander.</p>
-
-<p>[Studierende sitzt in einem Vorlesungssaal in einer Tischreihe]</p>
-<p>Wenn Dozierende mich unterstützen möchten, dann würde es mir sehr helfen,
-wenn sie mich ansprechen, da ich einfach nur die Blickrichtung erkennen kann.
-Aber ich kann nicht erkennen, wen die Dozenten quasi gerade anschauen. 
-Und dadurch würde es mir sehr viel helfen, wenn sie einfach meinen Namen nennen.</p>
-
-<p>In der Vorlesung komme ich an sich super zurecht. Wenn ich die Vorlesungen vorab habe, dann brauche ich keine Hilfe.
-Was mir aber in der Vorlesung viel bringt, wenn z.B. Diagramme sind,
-dass der Dozent oder die Dozentin eben mitspricht, was gerade zu sehen ist, 
-worauf der Fokus gerade liegt, da ich einfach auch Aspekte nicht unbedingt in Diagrammen oder in Videos erkenne.</p>
-
-<p>Was ich brauche, ist, dass die Vorlesung vorher hochgeladen wird, bzw. die PowerPoint-Präsentation.
-Also wenn ich, z.B. hier hinten sitze, dann kann ich die PowerPoint vorne gar nicht erkennen.
-[Verschwommene Ansicht auf Folien am Kopfende des Vorlesungssaals, dann Sicht auf Folien auf einem Laptop-Bildschirm]
-Wenn ich die Folien vorab bekommen habe, dann kann ich sie mir vergrößern, kann sie mir so zugänglich machen,
-dass ich mich auf jedem Stuhl hinsetzen kann, bei meinen Freunden sitzen kann - und eben nicht auffalle.</p>
-
-
-<p>Bei Büchern ist das Problem - ich brauche es digital, da die Schrift in den Büchern mir zu klein ist.
-Da ist es gut, wenn die Scans klar sind, wenn sie gerade sind, die Kontraste gut erhöht sind.
-[Sicht auf Negativbeispiele von unscharf und schräg gescannten Bücherseiten]
-Das hilft mir sehr. Und um Dozierende zu unterstützen, gibt es auch den Umsetzungsdienst.
-Der ist zwar primär für die Studierenden, aber wenn Dozent*innen zu dem Umsetzungsdienst kommen, helfen wir da gerne.</p>
-
-<p>[Studierende ist in der Bibliothek an einem Scanner und drückt auf den "OCR"-Knopf]<p/>
-<p>Es gibt in der Bibliothek auch gute Anleitungen, z.B. die Scanner haben auch eine OCR Software.
-Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach damit die auditive Zugänglichkeit gesichert ist.</p>
-
-<p>[Studierende sitzt an einem Schreibtisch vor einem Bildschirm]</p>
-<p>Und das Beste ist, dass es mir sogar auch digital hilft. Denn dann muss ich nicht so rangehen [bewegt das Gesicht nahe an die Kamera].</p>
-`
+				body: SEHEN_TRANSKRIPT
 			}
 		]
 	};
@@ -397,7 +363,7 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 			Probe-Prüfungen zu schreiben, um das Programm und das Vorgehen ohne Druck kennenzulernen.
 		</SpeechBubble>
 
-		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
+		<h2 class="main-heading" id="tips">Barrierefreiheit umsetzen</h2>
 
 		<p class="no-component-text">
 			Hier ist eine Auflistung von schnellen und einfachen Tipps, wie Sie Gabriel und viele weitere
@@ -459,5 +425,15 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 	.more-info-list {
 		list-style-type: none;
 		margin-left: -2rem;
+	}
+
+	.user-test {
+		background-color: var(--color-black);
+		border-radius: 0.85rem;
+		padding: 1rem;
+		margin: 2rem 0 0 3.33rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

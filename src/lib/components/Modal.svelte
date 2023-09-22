@@ -114,12 +114,17 @@
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 		<div class="content" tabindex="0">
 			<slot name="content" />
-			<div class="spacer" />
+			{#if bottomSheet}
+				<div class="spacer" />
+			{/if}
 		</div>
 	</div>
 </dialog>
 
 <style lang="scss">
+	.spacer {
+		height: 2rem;
+	}
 	h2 {
 		margin: 1rem 0;
 	}

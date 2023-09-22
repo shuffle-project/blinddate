@@ -8,6 +8,7 @@
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import { HANNAH } from '$lib/constants/hannah';
+	import { HOEREN_OFFLINE_TRANSKRIPT, HOEREN_ONLINE_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Checklist from '../../../lib/components/checklist/Checklist.svelte';
 	import Week from '../../../lib/components/week/index.svelte';
@@ -29,7 +30,12 @@
 				]
 			}
 		],
-		transcripts: []
+		transcripts: [
+			{
+				title: 'Transkript',
+				body: HOEREN_OFFLINE_TRANSKRIPT
+			}
+		]
 	};
 
 	const extendedPlayerConfigOnline: ExtendedPlayerConfig = {
@@ -48,7 +54,12 @@
 				]
 			}
 		],
-		transcripts: []
+		transcripts: [
+			{
+				title: 'Transkript',
+				body: HOEREN_ONLINE_TRANSKRIPT
+			}
+		]
 	};
 </script>
 
@@ -359,7 +370,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			</p>
 		</div>
 
-		<h2 class="main-heading" id="tips">Tipps zur Unterstützung</h2>
+		<h2 class="main-heading" id="tips">Barrierefreiheit umsetzen</h2>
 
 		<p class="no-component-text">
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.

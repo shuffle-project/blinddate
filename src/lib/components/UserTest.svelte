@@ -1,15 +1,31 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 
 	let modal: Modal;
+
+	let persona = '';
+	let linkToPersonaQuestionnaire = '';
+
+	$: {
+		let url = $page.url.pathname;
+
+		if (url.includes('gabriel')) {
+			persona = 'Gabriel-';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/227497?lang=de';
+		} else {
+			persona = '';
+			linkToPersonaQuestionnaire = '';
+		}
+	}
 </script>
 
 <div class="wrapper">
 	<button on:click={() => modal.toggleModalDisplay()}> Willkommenstext öffnen </button>
 	<hr aria-hidden="true" />
-	<p>Webseite erkundet und bereit?</p>
-	<a href="https://survey.hdm-stuttgart.de/227497?lang=de">Zur Umfrage</a>
+	<p>{persona}Seite erkundet und bereit?</p>
+	<a href={linkToPersonaQuestionnaire}>Zur {persona} Umfrage</a>
 </div>
 
 <Modal bind:this={modal}>
@@ -58,6 +74,10 @@
 </Modal>
 
 <style lang="scss">
+	.spacer {
+		height: 2rem;
+	}
+
 	.signature {
 		margin-bottom: 0;
 	}

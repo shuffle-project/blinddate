@@ -83,8 +83,8 @@ export const HANNAH: Persona = {
 	study: 'Mathematik auf Lehramt',
 	disability: 'Hochgradige Schwerhörigkeit',
 	disability_icon: 'ear',
-	previousPersona: 'Gabriel',
-	nextPersona: 'Maxi',
+	previousPersona: 'Maxi',
+	nextPersona: 'Gabriel',
 	week: hannahsWeek,
 	visualDescription: '',
 	shortVisualDescription: ''

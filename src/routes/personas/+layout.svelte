@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import Icon from '$lib/components/Icon.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import Skiplink from '$lib/components/Skiplink.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
@@ -50,11 +51,9 @@
 				</div>
 			</div>
 			<div class="second-row">
-				<!-- usertest -->
-				<!-- <a href="{base}/" class="back-link">
+				<a href="{base}/" class="back-link">
 					<Icon svg_color={'white'} img="back">Zurück zur Hauptseite</Icon>
-				</a> -->
-				<div />
+				</a>
 
 				<ShareButton />
 			</div>
@@ -78,16 +77,15 @@
 	}
 
 	.back-link {
-		border: 2px solid transparent;
-		border-radius: 0.33rem;
-		outline: none;
+		border-radius: 1rem;
 		display: flex;
+		padding: 0.2rem 0.4rem;
+		cursor: pointer;
 
 		&:hover,
 		&:focus {
-			cursor: pointer;
-			border: 2px solid var(--color-white);
-			outline: none;
+			outline: 2px solid var(--color-white);
+			outline-offset: 2px;
 		}
 	}
 

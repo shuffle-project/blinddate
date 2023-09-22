@@ -148,7 +148,8 @@
 					</li>
 					<li>
 						<a href="#tips" on:click={toggleDialog} class="tips-btn btn-with-arrow">
-							<Icon img="light-bulb" size="medium" svg_color="white">Tipps zur Unterstützung</Icon>
+							<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon
+							>
 							<Icon size="tiny" img="arrow-toright" svg_color="white" />
 						</a>
 					</li>

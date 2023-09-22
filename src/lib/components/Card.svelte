@@ -4,6 +4,7 @@
 </script>
 
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import type { Persona } from '../interfaces/persona.interfaces';
@@ -69,7 +70,7 @@
 					</button>
 
 					<a href="#tips" class="second">
-						<Icon img="light-bulb" size="medium" svg_color="white">Tipps zur Unterstützung</Icon>
+						<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon>
 
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
 					</a>
@@ -102,13 +103,10 @@
 	</div>
 	<div class="other-personas-container">
 		<div class="other-personas">
-			<!-- usertest -->
-			<button disabled>{persona.previousPersona}</button>
-			<button disabled>{persona.nextPersona}</button>
-			<!-- <a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
+			<a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
 				>{persona.previousPersona}</a
 			>
-			<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a> -->
+			<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a>
 		</div>
 	</div>
 </div>
@@ -136,23 +134,25 @@
 				display: flex;
 				justify-content: space-between;
 
-				a,
-				button {
+				a {
 					text-decoration: none;
 					flex-grow: 1;
 
-					// usertest
-					color: rgba(var(--color-black-rgb), 0.5);
-					// color: var(--color-black);
-
+					color: var(--color-black);
 					background-color: var(--color-white);
 					border: 1px solid var(--color-border);
 					border-radius: 2.22rem;
+
 					font-size: 0.88rem;
-					box-shadow: 0px 6px 10px rgba(7, 13, 28, 0.15);
+					box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
 					text-align: center;
 					padding: 0.11rem 0;
 					max-width: 6.11rem;
+
+					&:hover,
+					&:focus {
+						outline: 2px solid var(--color-blue);
+					}
 				}
 			}
 		}

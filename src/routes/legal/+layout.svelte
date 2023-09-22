@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import Footer from '$lib/components/Footer.svelte';
 	import Icon from '../../lib/components/Icon.svelte';
 </script>
 
 <div class="wrapper">
 	<div class="header">
-		<!-- USERTEST  -->
-		<!-- <a href="/"><Icon svg_color="white" img="back">Zurück zur Hauptseite</Icon></a> -->
-		<a href={base + '/personas/gabriel'}
-			><Icon svg_color="white" img="back">Zurück zu Gabriel</Icon></a
-		>
+		<button on:click={() => history.back()}>
+			<Icon svg_color="white" img="back">Zurück</Icon>
+		</button>
 		<div class="logo">
 			<div class="img">
 				<Icon size="parent" alt="BlindDate Logo" img="logo" />
@@ -52,10 +49,16 @@
 		max-inline-size: min(90vw, 44.4rem);
 		margin-bottom: 1rem;
 
-		a {
+		button {
 			color: var(--color-white);
+			background-color: var(--color-black);
 			text-decoration: none;
-			border-radius: 0.22rem;
+			cursor: pointer;
+
+			padding: 0.2rem 0.4rem;
+
+			border-radius: 1em;
+			border: none;
 
 			&:focus,
 			&:hover {

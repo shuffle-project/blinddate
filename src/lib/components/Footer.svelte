@@ -23,15 +23,17 @@
 			<ul class="icon-list">
 				{#each personaToRender as persona}
 					<li class="icon-list-item">
-						<a style="opacity: 60%; cursor: not-allowed" href="#" aria-disabled="true">
-							<Icon size="medium" img={persona.svg} svg_color="blue" />
-							{persona.name}
-						</a>
-						<!-- usertest -->
-						<!-- <a href="{base}/personas/{persona.name.toLowerCase()}">
-							<Icon size="medium" img={persona.svg} svg_color="blue" />
-							{persona.name}
-						</a> -->
+						{#if persona.name === 'Hannah' || persona.name === 'Gabriel' || persona.name === 'Maxi'}
+							<a href="{base}/personas/{persona.name.toLowerCase()}" class="focus-indicator">
+								<Icon size="medium" img={persona.svg} svg_color="blue" />
+								{persona.name}
+							</a>
+						{:else}
+							<a style="opacity: 60%; cursor: not-allowed" href="#" aria-disabled="true">
+								<Icon size="medium" img={persona.svg} svg_color="blue" />
+								{persona.name}
+							</a>
+						{/if}
 					</li>
 				{/each}
 			</ul>
@@ -171,7 +173,6 @@
 			.icon-list {
 				list-style-type: none;
 				margin-left: -2rem;
-				line-height: 2.5rem;
 				color: var(--color-blue);
 			}
 			.icon-list li {
@@ -183,6 +184,13 @@
 				display: flex;
 				gap: 0.5rem;
 				vertical-align: baseline;
+				margin-bottom: 1rem;
+				border-radius: 2rem;
+
+				&:focus {
+					outline: 2px solid var(--color-blue);
+					outline-offset: 4px;
+				}
 			}
 		}
 
