@@ -19,7 +19,7 @@
 			<FriendPersonaCard {friendPersona} />
 		</div>
 	{/if}
-	<div class="speech-bubble">
+	<div class="speech-bubble" aria-label={friendPersona.name + ' Sprechblase:'}>
 		{#if friendPersona.id !== 'placeholder'}
 			<div class="mobile-card">
 				<MobileFriendCard {friendPersona} />

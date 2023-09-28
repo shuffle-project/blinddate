@@ -291,49 +291,46 @@
 
 			.puzzle-piece {
 				position: absolute;
-				transition: all 0.4s ease-in-out;
+				transition: transform 0.4s ease-in-out;
+				will-change: transform;
 
 				&.piece-0 {
 					top: 0;
 					left: 0;
+					transform: rotate(0deg);
 
 					&.active {
-						top: 4rem;
-						left: -1rem;
-						transform: rotateZ(-5deg);
+						transform: rotate(-5deg) translateX(-1rem) translateY(4rem);
 					}
 				}
 
 				&.piece-1 {
 					top: 0;
 					right: 0;
+					transform: rotate(0deg);
 
 					&.active {
-						top: 3rem;
-						right: -1rem;
-						transform: rotateZ(5deg);
+						transform: rotate(5deg) translateX(1rem) translateY(3rem);
 					}
 				}
 
 				&.piece-2 {
 					bottom: 0;
 					left: 0;
+					transform: rotate(0deg);
 
 					&.active {
-						bottom: 2.5rem;
-						left: -1rem;
-						transform: rotateZ(5deg);
+						transform: rotate(5deg) translateX(-1rem) translateY(-2.5rem);
 					}
 				}
 
 				&.piece-3 {
 					bottom: 0;
 					right: 0;
+					transform: rotate(0deg);
 
 					&.active {
-						bottom: 3.5rem;
-						right: -1rem;
-						transform: rotateZ(-5deg);
+						transform: rotate(-5deg) translateX(1rem) translateY(-3.5rem);
 					}
 				}
 			}
@@ -372,8 +369,8 @@
 			margin-top: 5rem;
 
 			.text {
-				max-width: 15.32rem;
-				padding: 0.75rem;
+				max-width: 15rem;
+				padding: 0.55rem;
 			}
 
 			.puzzle {
@@ -382,25 +379,25 @@
 				.puzzle-piece {
 					&.piece-0 {
 						&.active {
-							top: 4rem;
+							transform: rotate(-5deg) translateX(-1rem) translateY(4rem);
 						}
 					}
 
 					&.piece-1 {
 						&.active {
-							top: 2.5rem;
+							transform: rotate(5deg) translateX(1rem) translateY(2.5rem);
 						}
 					}
 
 					&.piece-2 {
 						&.active {
-							bottom: 3rem;
+							transform: rotate(5deg) translateX(-1rem) translateY(-3rem);
 						}
 					}
 
 					&.piece-3 {
 						&.active {
-							bottom: 3.5rem;
+							transform: rotate(-5deg) translateX(1rem) translateY(-3.5rem);
 						}
 					}
 				}
@@ -451,25 +448,25 @@
 				.puzzle-piece {
 					&.piece-0 {
 						&.active {
-							top: 3rem;
+							transform: rotate(-5deg) translateX(-1rem) translateY(3rem);
 						}
 					}
 
 					&.piece-1 {
 						&.active {
-							top: 1.5rem;
+							transform: rotate(5deg) translateX(1rem) translateY(1.5rem);
 						}
 					}
 
 					&.piece-2 {
 						&.active {
-							bottom: 2rem;
+							transform: rotate(5deg) translateX(-1rem) translateY(-2rem);
 						}
 					}
 
 					&.piece-3 {
 						&.active {
-							bottom: 2.5rem;
+							transform: rotate(-5deg) translateX(1rem) translateY(-2.5rem);
 						}
 					}
 				}

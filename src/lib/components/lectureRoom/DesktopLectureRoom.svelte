@@ -159,10 +159,11 @@
 				}
 
 				&.maxi {
-					top: 5%;
+					top: 4.8%;
+					left: 6%;
 
 					img {
-						width: min(20vw, 16rem);
+						width: min(20vw, 15rem);
 					}
 				}
 

@@ -26,7 +26,7 @@
 	});
 </script>
 
-<div class="wrapper">
+<div class="wrapper" aria-label={persona.name + ' Sprechblase:'}>
 	<div class="mobile-card">
 		<div class="img-wrapper">
 			<div class="img">
@@ -36,7 +36,7 @@
 		<button
 			class="playbutton-mobil"
 			on:click={speak}
-			aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
+			aria-label={!playingAudio ? 'Sprechblase vorlesen' : 'Vorlesen stoppen'}
 		>
 			{#if playingAudio}
 				<Icon size="smedium" img="pause" />
@@ -55,7 +55,7 @@
 	<button
 		class="playbutton-desktop"
 		on:click={speak}
-		aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
+		aria-label={!playingAudio ? 'Sprechblase vorlesen' : 'Vorlesen stoppen'}
 	>
 		{#if playingAudio}
 			<Icon size="smedium" img="pause" />
@@ -131,12 +131,11 @@
 			position: absolute;
 			top: -1rem;
 			left: 3.33rem;
-			
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
-			
 			width: 2.5rem;
 			height: 2rem;
 
@@ -167,7 +166,6 @@
 				z-index: 2;
 				margin-inline: auto;
 
-
 				box-shadow: 0 6px 10px 0 rgba(var(--color-black-rgb), 0.15);
 				border-radius: 2.3rem;
 				background: var(--color-gradient-persona);
@@ -182,8 +180,9 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					
-					&:hover, &:focus {
+
+					&:hover,
+					&:focus {
 						outline: 2px solid var(--color-blue);
 					}
 				}

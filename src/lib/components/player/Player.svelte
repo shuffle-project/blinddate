@@ -84,6 +84,19 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			captionsFontColor = window.localStorage.getItem('captionsFontColor') || 'white';
 			captionsFontSize = window.localStorage.getItem('captionsFontSize') || 'medium';
 		}
+
+		[
+			'fullscreenchange',
+			'webkitfullscreenchange',
+			'mozfullscreenchange',
+			'msfullscreenchange'
+		].forEach((eventType) =>
+			document.addEventListener(eventType, (e) => {
+				if (e.target === videoWrapper) {
+					fullscreen = !fullscreen;
+				}
+			})
+		);
 	});
 
 	// functions
@@ -96,6 +109,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		}
 		ariaLiveContent = paused ? 'Pausiert' : 'Gestartet';
 	}
+
 	function onMute() {
 		muted = !muted;
 		ariaLiveContent = muted ? 'Stummgeschalten' : 'Ton aktiviert';
@@ -117,10 +131,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	function onToggleFullscreen() {
 		if (document.fullscreenElement || (document as any).webkitFullscreenElement) {
 			exitFullscreen();
-			fullscreen = false;
 		} else {
 			enterFullscreen();
-			fullscreen = true;
 		}
 	}
 
@@ -140,6 +152,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
 	class="wrapper"
 	bind:this={videoWrapper}
@@ -479,14 +492,15 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				}
 			}
 			&.isSafari {
-				.volume-slider{
+				.volume-slider {
 					margin-top: 0.7rem;
 
 					&:disabled {
 						opacity: 50%;
 					}
 				}
-				.time-progress, .volume-slider {
+				.time-progress,
+				.volume-slider {
 					appearance: none;
 					-webkit-appearance: none;
 					width: 100%;
@@ -495,29 +509,26 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					background-color: var(--color-white);
 					border-radius: 1rem;
 					margin-bottom: 0.8rem;
-				
-					
+
 					// margin-bottom: 0.8rem;
 
 					cursor: pointer;
 
-					
-
 					&::-webkit-slider-thumb {
 						-webkit-appearance: none;
- 						 appearance: none;
-						 height: 1.11rem;
-						 width: 1.11rem;
-						 border: 1px solid var(--color-black);
-						 background-color: var(--color-white);
-						 border-radius: 50%;
+						appearance: none;
+						height: 1.11rem;
+						width: 1.11rem;
+						border: 1px solid var(--color-black);
+						background-color: var(--color-white);
+						border-radius: 50%;
 
-						 &:hover, &:active {
+						&:hover,
+						&:active {
 							outline: 2px solid var(--color-white);
-							
+
 							border: 2px solid var(--color-black);
-						 }
-  
+						}
 					}
 
 					&:focus-within {

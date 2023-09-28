@@ -291,7 +291,10 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		</SpeechBubble>
 
 		<SpeechBubble {persona}>
-			Lorem Ipsum ... Beispiel im Folgenden ... Nicht akkurat, aber so verständlich ...
+			Ich studiere zwar Mathematik, aber manche Vorlesungsaufnahmen sind auch für mich
+			unberechenbar. Wortwitze beiseite: Das ist tatsächlich nicht nur für mich so, sondern auch für
+			die anderen im Kurs ohne Beeinträchtigung. Manchmal gibt es einfach gewisse Audio-Probleme.
+			Die folgende Simulation versucht das auf etwas abstrahierte Weise zu veranschaulichen.
 		</SpeechBubble>
 
 		<SimulationLink

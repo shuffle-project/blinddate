@@ -366,8 +366,7 @@
 		<h2 class="main-heading" id="tips">Barrierefreiheit umsetzen</h2>
 
 		<p class="no-component-text">
-			Hier ist eine Auflistung von schnellen und einfachen Tipps, wie Sie Gabriel und viele weitere
-			Menschen unterstützen können.
+			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</p>
 
 		<Checklist
