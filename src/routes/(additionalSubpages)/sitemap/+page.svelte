@@ -24,7 +24,7 @@
 			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi</a>
 		</li>
 		<li>
-			<a href="/" class="focus-indicator">Startseite</a>
+			<a href={base + '/'} class="focus-indicator">Startseite</a>
 		</li>
 	</ul>
 </div>
