@@ -1,18 +1,18 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Footer from '$lib/components/Footer.svelte';
 	import Icon from '../../lib/components/Icon.svelte';
 </script>
 
 <div class="wrapper">
 	<div class="header">
-		<button on:click={() => history.back()}>
-			<Icon svg_color="white" img="back">Zurück</Icon>
-		</button>
+		<a href="{base}/" class="back-link">
+			<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
+		</a>
 		<div class="logo">
 			<div class="img">
 				<Icon size="parent" alt="BlindDate Logo" img="logo" />
 			</div>
-			<p>BlindDate</p>
 		</div>
 	</div>
 
@@ -49,19 +49,16 @@
 		max-inline-size: min(90vw, 44.4rem);
 		margin-bottom: 1rem;
 
-		button {
-			color: var(--color-white);
-			background-color: var(--color-black);
-			text-decoration: none;
-			cursor: pointer;
-
+		.back-link {
+			border-radius: 1rem;
+			display: flex;
 			padding: 0.2rem 0.4rem;
+			cursor: pointer;
+			text-decoration: none;
+			color: var(--color-white);
 
-			border-radius: 1em;
-			border: none;
-
-			&:focus,
-			&:hover {
+			&:hover,
+			&:focus {
 				outline: 2px solid var(--color-white);
 				outline-offset: 2px;
 			}
@@ -70,21 +67,13 @@
 
 	.logo {
 		display: flex;
-
 		align-items: center;
-
 		gap: 1rem;
+		margin: 0 0.4rem;
 
 		.img {
-			height: 3rem;
-			width: 3rem;
-		}
-
-		p {
-			color: var(--color-white);
-			font-weight: bold;
-			font-size: 1.22rem;
-			margin: 0;
+			height: 2.5rem;
+			width: 2.5rem;
 		}
 	}
 
@@ -99,5 +88,7 @@
 		overflow: hidden;
 		box-shadow: 0 0 2rem rgba(var(--color-black-rgb), 0.2);
 		margin-inline: auto;
+		padding-bottom: 2rem;
+		width: 100%;
 	}
 </style>

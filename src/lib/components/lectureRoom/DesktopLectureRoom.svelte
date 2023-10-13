@@ -38,7 +38,7 @@
 						<img
 							class="persona-img"
 							src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
-							alt={persona.shortVisualDescription}
+							alt=""
 							id="{persona.id}-image"
 						/>
 					</a>
@@ -141,11 +141,11 @@
 				list-style: none;
 
 				&.gabriel {
-					bottom: 1.8%;
+					bottom: 2.7%;
 					left: 12%;
 
 					img {
-						width: min(18vw, 14rem);
+						width: min(17.5vw, 13rem);
 					}
 				}
 

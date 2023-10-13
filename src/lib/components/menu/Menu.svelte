@@ -15,7 +15,6 @@
 		x = Math.min(window.innerWidth - rect.width, x);
 		if (y > window.innerHeight - rect.height) y -= rect.height;
 	};
-	// (x, y);
 
 	const dispatch = createEventDispatcher();
 
@@ -65,6 +64,7 @@
 
 <svelte:body on:click={onPageClick} />
 
+<!-- svelte-ignore a11y-interactive-supports-focus -->
 <div
 	role="menu"
 	transition:fade={{ duration: 100 }}

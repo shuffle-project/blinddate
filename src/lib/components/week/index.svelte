@@ -6,11 +6,12 @@
 
 	export let persona: Persona;
 
-	const viewportBreakpoint = window.matchMedia(`(max-width: 510px)`);
+	let viewportBreakpoint: MediaQueryList;
 
 	let smallViewport = true;
 
 	onMount(() => {
+		viewportBreakpoint = window.matchMedia(`(max-width: 510px)`);
 		smallViewport = window.innerWidth < 510;
 
 		viewportBreakpoint.addEventListener('change', (e) => {

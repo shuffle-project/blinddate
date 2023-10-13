@@ -1,7 +1,7 @@
-<h1>Datenschutzerklärung</h1>
+<h1 class="responsive">Datenschutzerklärung</h1>
 
 <h2>Inhaltsübersicht</h2>
-<ol style="list-style-type: none;">
+<ol class="table-of-contents" style="list-style-type: none;">
 	<li>
 		<a class="focus-indicator" href="#vorbemerkung-nutzungskonzept"
 			>1. Vorbemerkung (Nutzungskonzept)</a
@@ -287,3 +287,13 @@
 	<a class="focus-indicator" href="mailto:poststelle@lfdi.bwl.de">poststelle@lfdi.bwl.de</a>)
 	eingelegt werden.
 </p>
+
+<style lang="scss">
+	.table-of-contents {
+		margin-left: -2rem;
+
+		li {
+			margin: 0.33rem 0rem;
+		}
+	}
+</style>

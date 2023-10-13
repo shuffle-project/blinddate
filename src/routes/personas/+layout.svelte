@@ -17,13 +17,9 @@
 			</div>
 
 			<div class="row">
-				<!-- usertest -->
-				<!-- <a class="back-link icons" href="{base}/" aria-label="Zurück zur Hauptseite">
-					<Icon svg_color={'white'} img="back" />
-				</a> -->
-				<!-- <SearchBar /> -->
-				<!-- <div class="searchbar"> -->
-				<div class="icons"><img src="{base}/icons/logo.svg" alt="Blind Date Logo" /></div>
+				<a href="{base}/" class="back-link">
+					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
+				</a>
 
 				<div class="icons">
 					<ShareButton />
@@ -35,10 +31,8 @@
 
 		<div class="desktop">
 			<div class="first-row">
-				<!-- <div class="searchbar"> -->
 				<!-- usertest -->
 				<div class="user-test">
-					<!-- <SearchBar /> -->
 					<UserTest />
 				</div>
 
@@ -52,7 +46,7 @@
 			</div>
 			<div class="second-row">
 				<a href="{base}/" class="back-link">
-					<Icon svg_color={'white'} img="back">Zurück zur Hauptseite</Icon>
+					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
 				</a>
 
 				<ShareButton />
@@ -81,6 +75,8 @@
 		display: flex;
 		padding: 0.2rem 0.4rem;
 		cursor: pointer;
+		color: var(--color-white);
+		text-decoration: none;
 
 		&:hover,
 		&:focus {
@@ -117,11 +113,6 @@
 				align-items: center;
 				padding-top: 1.33rem;
 				padding-bottom: 0.55rem;
-
-				.searchbar {
-					position: absolute;
-					left: calc(50% - 9.75rem);
-				}
 			}
 
 			.second-row {
@@ -134,10 +125,6 @@
 				a {
 					text-decoration: none;
 					color: var(--color-white);
-				}
-
-				.back-link {
-					padding: 0 0.33rem;
 				}
 			}
 		}
@@ -159,21 +146,7 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				padding: 0.66rem 0;
-
-				.back-link {
-					height: 2.77rem;
-					width: 2.77rem;
-					border-radius: 50%;
-					aspect-ratio: 1;
-
-					display: flex;
-					align-items: center;
-					justify-content: center;
-				}
-				.icons {
-					margin: 0 0.8rem;
-				}
+				padding: 0.66rem 1rem;
 			}
 		}
 	}

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import SearchBar from '$lib/components/SearchBar.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
+	import { HOSTNAME } from '$lib/constants/hostname';
+	import { MetaTags } from 'svelte-meta-tags';
 	import Footer from '../lib/components/Footer.svelte';
 </script>
 
@@ -10,37 +11,54 @@
 	<title>BlindDate</title>
 </svelte:head>
 
+<MetaTags
+	title="Barrierefreies BlindDate"
+	description="Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und nützliches Allgemeinwissen für eine bessere Lehre."
+	additionalMetaTags={[
+		{
+			property: 'keywords',
+			content: 'Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Lehre, Studierende'
+		}
+	]}
+	openGraph={{
+		url: HOSTNAME,
+		title: 'Barrierefreies BlindDate',
+		description:
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und nützliches Allgemeinwissen für eine bessere Lehre.',
+		siteName: 'BlindDate',
+		images: [
+			{
+				url: `${HOSTNAME}decorations/mainpage-teaser.jpg`
+			}
+		]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+
+		title: 'Barrierefreies BlindDate',
+		description:
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und nützliches Allgemeinwissen für eine bessere Lehre.',
+		image: `${HOSTNAME}decorations/mainpage-teaser.jpg`
+	}}
+/>
+
 <header>
 	<div class="mobile">
-		<div class="user-test"></div>
-
-		<div class="first-row">
-			<a href="{base}/" class="logo">
-				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zur Startseite" />
+		<div class="row">
+			<div class="logo">
+				<img src="{base}/icons/logo.svg" alt="Blind Date Logo" />
 				<span aria-hidden="true">BlindDate</span>
-			</a>
-
-			<!-- <ShareButton /> -->
-		</div>
-		<!-- <hr aria-hidden="true" class="separator" /> -->
-		<div class="second-row">
-			<div class="space" />
-			<SearchBar />
+			</div>
 			<ShareButton />
 		</div>
-
 		<hr aria-hidden="true" class="separator" />
 	</div>
 
 	<div class="desktop">
 		<div class="first-row">
-			<a href="{base}/" class="logo">
-				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zur Startseite" />
+			<div class="logo">
+				<img src="{base}/icons/logo.svg" alt="Blind Date Logo" />
 				<span aria-hidden="true">BlindDate</span>
-			</a>
-
-			<div class="searchbar">
-				<SearchBar />
 			</div>
 
 			<ShareButton />
@@ -94,7 +112,6 @@
 
 		font-size: 1.11rem;
 		font-weight: bold;
-		text-decoration: none;
 	}
 
 	@media (min-width: 59.375rem) {
@@ -128,24 +145,12 @@
 		}
 
 		.mobile {
-			.first-row {
+			.row {
 				display: flex;
 				justify-content: center;
-				align-items: center;
-				padding: 1.33rem 1.33rem 0 1.33rem;
-			}
-
-			.second-row {
-				display: flex;
 				justify-content: space-between;
-				gap: 0.55rem;
-
+				align-items: center;
 				padding: 1.33rem 1rem;
-
-				.space {
-					min-width: 2.77rem;
-					min-height: 2.77rem;
-				}
 			}
 		}
 	}

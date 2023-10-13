@@ -55,23 +55,11 @@
 					>
 				</li>
 				<li class="icon-list-item">
-					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
+					<a href="{base}/sitemap" aria-disabled="true" class="focus-indicator"
 						><Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
 						Sitemap</a
 					>
 				</li>
-				<!-- <li>
-					<Icon size="medium" img="/icons/easy-language.svg" svg_color="blue" />
-					Leichte Sprache
-				</li>
-				<li>
-					<Icon size="medium" img="/icons/sign-language.svg" />
-					Gebärdensprache
-				</li>
-				<li>
-					<Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
-					Sitemap
-				</li> -->
 			</ul>
 		</div>
 		<div>

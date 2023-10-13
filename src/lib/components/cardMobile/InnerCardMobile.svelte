@@ -45,25 +45,25 @@
 		showTableOfContents = !showTableOfContents;
 	}
 
-	const dialogAttrObserver = new MutationObserver((mutations, observer) => {
-		mutations.forEach((mutation) => {
-			if (mutation.attributeName === 'open') {
-				const dialog: any = mutation.target;
-				const isOpen = dialog.hasAttribute('open');
-
-				if (!isOpen) return;
-
-				dialog.removeAttribute('inert');
-
-				//set focus
-				const focusTarget = dialog.querySelector('[autofocus]');
-				focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
-			}
-		});
-	});
-
 	onMount(() => {
 		headings = document.querySelectorAll('h1, h2.main-heading');
+
+		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName === 'open') {
+					const dialog: any = mutation.target;
+					const isOpen = dialog.hasAttribute('open');
+
+					if (!isOpen) return;
+
+					dialog.removeAttribute('inert');
+
+					//set focus
+					const focusTarget = dialog.querySelector('[autofocus]');
+					focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
+				}
+			});
+		});
 
 		dialogAttrObserver.observe(dialog, {
 			attributes: true

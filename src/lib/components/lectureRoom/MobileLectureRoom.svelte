@@ -71,7 +71,7 @@
 				>
 					<img
 						src="{base}/personas/{persona.id}/{persona.id}-{getPersonaEmotion(persona.name)}.svg"
-						alt={persona.shortVisualDescription}
+						alt=""
 						class="persona-img"
 						id="{persona.id}-image"
 					/>

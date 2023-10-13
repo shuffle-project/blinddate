@@ -1,18 +1,21 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import InfoBox from '$lib/components/InfoBox.svelte';
+	import MetaTags from '$lib/components/MetaTags.svelte';
 	import PersonaContent from '$lib/components/PersonaContent.svelte';
-	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SimulationLink from '$lib/components/SimulationLink.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
+	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import { HANNAH } from '$lib/constants/hannah';
 	import { HOEREN_OFFLINE_TRANSKRIPT, HOEREN_ONLINE_TRANSKRIPT } from '$lib/constants/transcripts';
+	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Checklist from '../../../lib/components/checklist/Checklist.svelte';
 	import Week from '../../../lib/components/week/index.svelte';
-	const persona = HANNAH;
+
+	const persona: Persona = HANNAH;
 
 	const extendedPlayerConfigOffline: ExtendedPlayerConfig = {
 		title: 'Studierende erklären den Umgang mit Höranlagen in Präsenzveranstaltungen',
@@ -66,6 +69,8 @@
 <svelte:head>
 	<title>Hannah - BlindDate</title>
 </svelte:head>
+
+<MetaTags {persona} />
 
 <PersonaContent {persona}>
 	<svelte:fragment slot="content">
@@ -137,15 +142,15 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		</div>
 
 		<SpeechBubble {persona}>
-			Dass Gebärdensprache nur von gehörlosen Menschen genutzt wird, ist ein Irrtum. Manche
-			hörbehinderte Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann
-			situationsabhängig. Und natürlich kommt es auch auf die Gesprächsperson an. Leider ist es so,
-			dass auch nicht alle gehörlosen und schwerhörigen Menschen die Gebärdensprache gut
-			beherrschen. Das hat ziemlich viel mit der Geschichte hier in Deutschland zu tun und dass
-			Gebärdensprache lange nicht als eigene Sprache anerkannt war. Aber das ist eine andere
-			Story.... Als Lehrerin habe ich aber fest vor, DGS im Schulsystem zu fördern. Ich spreche
-			beide Sprachen. Mit meinen DGS-kompetenten Freunden gebärde ich viel. Das ist auch sehr
-			praktisch wenn es mal laut ist, oder wir nicht wollen, dass direkt alle alles mitbekommen.
+			Dass gehörlose Menschen nur Gebärdensprache benutzen, ist ein Irrtum. Manche hörbehinderte
+			Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann situationsabhängig.
+			Und natürlich kommt es auch auf die Gesprächsperson an. Leider ist es so, dass auch nicht alle
+			gehörlosen und schwerhörigen Menschen die Gebärdensprache gut beherrschen. Das hat ziemlich
+			viel mit der Geschichte hier in Deutschland zu tun und dass Gebärdensprache lange nicht als
+			eigene Sprache anerkannt war. Aber das ist eine andere Story.... Als Lehrerin habe ich aber
+			fest vor, DGS im Schulsystem zu fördern. Ich spreche beide Sprachen. Mit meinen
+			DGS-kompetenten Freunden gebärde ich viel. Das ist auch sehr praktisch wenn es mal laut ist,
+			oder wir nicht wollen, dass direkt alle alles mitbekommen.
 		</SpeechBubble>
 
 		<SpeechBubble {persona}>
@@ -154,13 +159,6 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			Auto, nehme ich nicht oder sehr spät wahr. Auch ist es für mich schwierig, selektiv zu hören,
 			also einige Geräusche oder vor allem Stimmen auszublenden. Bei mir kommt quasi alles gleich
 			laut an. Und dann gibt es noch Störschall.
-		</SpeechBubble>
-
-		<SpeechBubble {persona}>
-			Mittlerweile gibt es recht viele Filme, die auch mit Untertiteln gezeigt werden. Also
-			zumindest hier in Dortmund ist das Angebot okay. Es gibt auch die Möglichkeit, mir Untertitel
-			über eine App auf dem Handy anzeigen zu lassen. Die Idee ist ja nett, aber das ist wenig
-			praktikabel. Statt auf die Leinwand, guck ich dann nur auf mein Handy.
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="lectures">Lehrveranstaltungen</h2>
@@ -230,14 +228,6 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			</p>
 		</div>
 
-		<SpeechBubble {persona}>
-			Ich kann meine Hörhilfen mit der Höranlage verbinden und dadurch wird das, was die Lehrperson
-			sagt direkt an mein CI übertragen. Leider werden aber auch Störgeräusche übertragen, wenn die
-			Mikrofone zum Beispiel nicht vorsichtig abgelegt werden oder das Mikro dauernd mit was in
-			Berührung kommt. Und es gibt an der Uni nicht genug Höranlagen – deshalb steht mir nicht immer
-			eine zur Verfügung. Aber im nächsten Semester sollen neue angeschafft werden.
-		</SpeechBubble>
-
 		<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOffline} />
 
 		<h2 class="main-heading" id="material">Lernmaterial</h2>
@@ -266,10 +256,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			Standard sein, weil alle Menschen einen Anspruch auf barrierefrei zugängliche Informationen
 			haben. Mittlerweile kann man die doch automatisch erstellen lassen. Das kostet nichts. Nur
 			etwas Zeit, um sie dann zu verbessern – das muss man halt schon machen. Weil schlechte,
-			automatisch generierte Untertitel furchtbar verwirren können. Es würde auch helfen, wenn Leute
-			externe Mikrofone benutzen. Das ist lauter und online deutlicher. Außerdem wünsche ich mir
-			mehr Geduld und Verständnis, wenn ich etwas akustisch nicht verstehe. Für mich ist das
-			Nachfragen auch nicht angenehm!
+			automatisch generierte Untertitel furchtbar verwirren können.
 		</SpeechBubble>
 
 		<div class="no-component-text-wrapper">
@@ -300,7 +287,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<SimulationLink
 			image="{base}/personas/hannah/hannah-explaining-circle.svg"
 			warningtext="Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe 'Informationen zum Spiel'."
-			pathtext=""
+			pathtext={base + '/iframe/hannah'}
 			personaID={persona.id}
 		/>
 
@@ -355,8 +342,7 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 			Mich interessiert auch, wie neue Gebärden entstehen, zum Beispiel für neue Technologien oder
 			Ausdrücke aus der Jugendsprache. Auf Partys ist es praktisch zu gebärden, dann müssen wir
 			nicht brüllen. Aber ich habe auch gemerkt, dass mich dann andere, hörende Leute eher nicht
-			ansprechen. Durch die Leute, die ich kennengelernt habe, gehe ich auch zu Events, bei denen
-			DGS die dominante Sprache ist.
+			ansprechen.
 		</SpeechBubble>
 
 		<h2 class="main-heading" id="exams">Prüfungen</h2>

@@ -87,5 +87,8 @@ export const HANNAH: Persona = {
 	nextPersona: 'Gabriel',
 	week: hannahsWeek,
 	visualDescription: '',
-	shortVisualDescription: ''
+	metaDescription:
+		'Hannah zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit auditiver Einschränkung gestalten kann.',
+	metaKeywords:
+		'Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Hörbeeinträchtigung, Gebärdensprache, Cochlea-Implantat'
 };

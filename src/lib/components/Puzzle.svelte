@@ -33,11 +33,15 @@
 	let paddingBottom = 0;
 	let textBoxSpace = 0;
 
-	let innerWidth = window.innerWidth;
-	const smMq = window.matchMedia(`(max-width: ${smBreakpoint}px)`);
-	const mdMq = window.matchMedia(`(max-width: ${mdBreakpoint}px)`);
+	let innerWidth = 0;
+	let smMq: MediaQueryList;
+	let mdMq: MediaQueryList;
 
 	onMount(() => {
+		innerWidth = window.innerWidth;
+		smMq = window.matchMedia(`(max-width: ${smBreakpoint}px)`);
+		mdMq = window.matchMedia(`(max-width: ${mdBreakpoint}px)`);
+
 		smMq.addEventListener('change', onMediaQueryChange);
 		mdMq.addEventListener('change', onMediaQueryChange);
 
@@ -45,8 +49,8 @@
 	});
 
 	onDestroy(() => {
-		smMq.removeEventListener('change', onMediaQueryChange);
-		mdMq.removeEventListener('change', onMediaQueryChange);
+		if (smMq) smMq.removeEventListener('change', onMediaQueryChange);
+		if (mdMq) mdMq.removeEventListener('change', onMediaQueryChange);
 	});
 
 	function switchTextBoxSpace() {

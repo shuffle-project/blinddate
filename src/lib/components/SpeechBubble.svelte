@@ -7,17 +7,23 @@
 	export let persona: Persona;
 	export let audio: string = '';
 
-	let audioElement = new Audio(audio);
+	let audioElement: HTMLAudioElement;
 	let playingAudio = false;
 
 	let textDiv: HTMLElement;
 
 	const speak = () => {
-		audioElement.paused ? audioElement.play() : audioElement.pause();
-		playingAudio = !playingAudio;
+		if (audioElement) {
+			audioElement.paused ? audioElement.play() : audioElement.pause();
+			playingAudio = !playingAudio;
+		}
 	};
 
 	onMount(() => {
+		if (audio !== '') {
+			audioElement = new Audio(audio);
+		}
+
 		if (audioElement) {
 			audioElement.addEventListener('ended', (e) => {
 				playingAudio = false;

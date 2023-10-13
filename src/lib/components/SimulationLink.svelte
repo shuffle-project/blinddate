@@ -14,7 +14,7 @@
 	}
 </script>
 
-<div class="sl-container" id="simulation-link-gabriel">
+<div class="sl-container" id="simulation-link-{personaID}">
 	<div class="sl-content">
 		<img class="sl-img" src={image} alt="" role="presentation" />
 		<div class="text-container">

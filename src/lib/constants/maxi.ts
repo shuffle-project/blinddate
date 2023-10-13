@@ -18,5 +18,8 @@ export const MAXI: Persona = {
 	previousPersona: 'Gabriel',
 	nextPersona: 'Hannah',
 	visualDescription: '',
-	shortVisualDescription: ''
+	metaDescription:
+		'Maxi zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit psychischer Erkrankung gestalten kann.',
+	metaKeywords:
+		'Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Unsichtbare Beeinträchtigung, Trigger'
 };

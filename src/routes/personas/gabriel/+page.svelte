@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import InfoBox from '$lib/components/InfoBox.svelte';
+	import MetaTags from '$lib/components/MetaTags.svelte';
 	import PersonaContent from '$lib/components/PersonaContent.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
@@ -9,6 +10,7 @@
 	import { SEHEN_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
+
 	import SimulationLink from '../../../lib/components/SimulationLink.svelte';
 	import SpeechBubble from '../../../lib/components/SpeechBubble.svelte';
 	import ToolCard from '../../../lib/components/ToolCard.svelte';
@@ -51,46 +53,9 @@
 
 <svelte:head>
 	<title>Gabriel - BlindDate</title>
-
-	<!-- Primary Meta Tags -->
-	<!-- <meta name="title" content="Gabriel - Blindate" />
-	<meta
-		name="description"
-		content="Gabriel zeigt dir, wie man eine Vorlesung barrierefreier für Menschen mit visuellen Einschränkungen gestalten kann."
-	/>
-	<meta
-		name="keywords"
-		content="Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Screenreader"
-	/> -->
-
-	<!-- Open Graph / Facebook -->
-	<!-- <meta property="og:type" content="website" />
-	<meta property="og:url" content={document.URL} />
-	<meta property="og:title" content="Gabriel - Blindate" />
-	<meta property="og:site_name" content="Blinddate" />
-	<meta
-		property="og:description"
-		content="Gabriel zeigt dir, wie man eine Vorlesung barrierefreier für Menschen mit visuellen Einschränkungen gestalten kann."
-	/>
-
-	<meta
-		property="og:image"
-		content="https://shuffle.pages.mi.hdm-stuttgart.de/blinddate/personas/gabriel/gabriel-teaser.png"
-	/> -->
-
-	<!-- Twitter -->
-	<!-- <meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content={document.URL} />
-	<meta property="twitter:title" content="Gabriel - Blindate" />
-	<meta
-		property="twitter:description"
-		content="Gabriel zeigt dir, wie man eine Vorlesung barrierefreier für Menschen mit visuellen Einschränkungen gestalten kann."
-	/>
-	<meta
-		property="twitter:image"
-		content="https://shuffle.pages.mi.hdm-stuttgart.de/blinddate/personas/gabriel/gabriel-teaser.png"
-	/> -->
 </svelte:head>
+
+<MetaTags {persona} />
 
 <PersonaContent {persona}>
 	<svelte:fragment slot="content">
@@ -233,7 +198,7 @@
 			<SimulationLink
 				image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
 				warningtext="Mobile Geräte werden nicht unterstützt. Die Simulation ist leider nicht barrierefrei, siehe 'Informationen zur Simulation'."
-				pathtext={base + '/games/gabriel'}
+				pathtext={base + '/iframe/gabriel'}
 				personaID={persona.id}
 			/>
 		</div>
@@ -434,5 +399,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+
+	@media (max-width: 59.3125rem) {
+		.user-test {
+			margin: 2rem 1.33rem;
+		}
 	}
 </style>

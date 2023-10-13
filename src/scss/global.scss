@@ -17,13 +17,13 @@ html {
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 3.7rem;
 	font-weight: 700;
 	line-height: 150%;
 	letter-spacing: -0.01em;
 
 	&.responsive {
-		font-size: clamp(2.5rem, 8vw + 0.5rem, 4rem);
+		font-size: clamp(2.5rem, 8vw + 0.5rem, 3.7rem);
 	}
 }
 
