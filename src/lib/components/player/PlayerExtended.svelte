@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import type { ExtendedPlayerConfig } from '../../interfaces/player.interfaces';
-	import Icon from '../Icon.svelte';
 	import Player from './Player.svelte';
 
 	export let extendedPlayerConfig: ExtendedPlayerConfig;
@@ -46,13 +45,7 @@
 				on:click={() => onSelectTab(index)}
 				on:keydown={onKeydownTab}
 			>
-				{#if !video.title.includes('Audiodeskription')}
-					<div class="icon">
-						<Icon size="parent" svg_color={selectedTab === index ? 'white' : 'black'} img="video" />
-					</div>
-				{/if}
-
-				<p>{video.title}</p>
+				{video.title}
 			</button>
 		{/each}
 
@@ -66,25 +59,10 @@
 				on:click={() => onSelectTab(index)}
 				on:keydown={onKeydownTab}
 			>
-				<!-- just for marburg, move up afterwards -->
-				{#if transcript.title.includes('Audiodeskription')}
-					<div class="ad" aria-hidden="true">AD</div>
-				{/if}
-				{#if !transcript.title.includes('Audiodeskription')}
-					<div class="icon">
-						<Icon
-							size="parent"
-							svg_color={selectedTab === index ? 'white' : 'black'}
-							img="transcript"
-						/>
-					</div>
-				{/if}
-				<p>{transcript.title}</p>
+				{transcript.title}
 			</button>
 		{/each}
 	</div>
-
-	<div class="seperator" />
 
 	{#each extendedPlayerConfig.videos as video, i}
 		{@const index = i + 1}
@@ -124,10 +102,6 @@
 		width: 100%;
 		overflow: hidden;
 
-		.video {
-			margin-top: 1rem;
-		}
-
 		h3 {
 			max-width: 31.04rem;
 			padding: 0 1.33rem;
@@ -135,31 +109,37 @@
 		}
 
 		.buttonslist {
-			max-width: 31.04rem;
-			padding: 0 1.33rem;
-			margin-inline: auto;
-
 			display: flex;
-			flex-direction: column;
+			flex-wrap: wrap;
+			gap: 0.66rem;
+			margin: 0 1.33rem 1rem 1.33rem;
 
 			button {
 				cursor: pointer;
 
-				display: flex;
-				align-items: center;
-
 				color: var(--color-black);
-				background-color: transparent;
+				background-color: var(--color-background-body);
 
-				&[aria-selected='true'] {
-					background-color: var(--color-black);
-					color: var(--color-white);
+				border-radius: 1rem;
+
+				padding: 0.22rem 0.66rem;
+
+				border: 1px solid var(--color-black);
+				font-size: 0.88rem;
+
+				&:hover,
+				&:focus {
+					outline: 2px solid var(--color-blue);
+					outline-offset: 2px;
 				}
 
-				p {
-					margin: 0;
-					font-size: 0.88rem;
-					text-align: left;
+				&[aria-selected='true'] {
+					color: var(--color-white);
+					background-color: var(--color-black);
+				}
+				&[aria-selected='false'] {
+					color: var(--color-black);
+					background-color: var(--color-background-white);
 				}
 			}
 		}
@@ -175,43 +155,9 @@
 
 		.transcript {
 			margin-inline: 1.33rem;
-			margin-top: 1rem;
 			padding: 0.33rem;
-
 			border: 1px solid var(--color-black);
-			border-radius: 0.5rem;
-		}
-
-		button {
-			border-radius: 0.5rem;
-			margin-bottom: 0.33rem;
-			padding: 0.2rem 0;
-
-			border: 2px solid transparent;
-			outline: 2px solid transparent;
-
-			&:focus,
-			&:hover {
-				border: 2px solid var(--color-white);
-				outline: 2px solid var(--color-blue);
-			}
-
-			.ad,
-			.icon {
-				display: block;
-				margin-left: 1.33rem;
-				margin-right: 0.5rem;
-				height: 1.5rem;
-				width: 1.5rem;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.ad {
-				font-weight: bold;
-				font-size: 1rem;
-			}
+			border-radius: 1.11rem;
 		}
 	}
 	@media (min-width: 59.375rem) {
@@ -219,82 +165,22 @@
 			display: flex;
 			flex-direction: column;
 			max-width: calc(var(--content-element-max-width) - 1.66rem);
-			margin-top: 3.33rem;
-			margin-left: 1.66rem;
+			margin: 3.33rem 0 0 1.66rem;
+
+			.buttonslist {
+				margin: 0 1.66rem 1rem 1.66rem;
+			}
 
 			.transcript {
 				padding: 0.33rem 1rem;
 				border: 1px solid var(--color-black);
-				border-top: none;
 				border-radius: 1.11rem;
-				border-top-left-radius: 0rem;
-				border-top-right-radius: 0rem;
 			}
 
 			h3 {
 				margin-left: 1.66rem;
 				padding: 0;
 				margin-top: 0;
-			}
-
-			.buttonslist {
-				display: flex;
-				flex-direction: row;
-				margin: 0;
-				padding: 0;
-			}
-
-			button {
-				border-radius: 10px 10px 0px 0px;
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
-
-				background-color: var(--color-background-white);
-				margin-right: 0.2rem;
-				padding: 0.2rem 1rem;
-
-				border: none;
-
-				position: relative;
-
-				&:focus {
-					text-decoration: underline;
-				}
-
-				&:hover {
-					::before {
-						content: '';
-						width: 80%;
-						height: 6px;
-						position: absolute;
-						top: -10px;
-						left: 0;
-						right: 0;
-						margin-inline: auto;
-						border-radius: 1rem;
-
-						background-color: var(--color-black);
-					}
-				}
-
-				.ad,
-				.icon {
-					display: none;
-				}
-
-				&[aria-selected='true'] {
-					color: var(--color-white);
-					background-color: var(--color-black);
-				}
-				&[aria-selected='false'] {
-					color: var(--color-black);
-					background-color: var(--color-background-white);
-				}
-			}
-
-			.seperator {
-				margin: 0;
-				border-top: 1px solid var(--color-black);
 			}
 		}
 	}

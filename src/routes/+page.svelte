@@ -13,18 +13,19 @@
 
 <MetaTags
 	title="Barrierefreies BlindDate"
-	description="Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und nützliches Allgemeinwissen für eine bessere Lehre."
+	description="Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre."
 	additionalMetaTags={[
 		{
 			property: 'keywords',
-			content: 'Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Lehre, Studierende'
+			content:
+				'Barrierefreiheit, Inklusion, Vorlesung, Lehre, Studierende, Hochschule, Studium und Behinderung, Didaktik, Barrierefreie Lehre'
 		}
 	]}
 	openGraph={{
 		url: HOSTNAME,
 		title: 'Barrierefreies BlindDate',
 		description:
-			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und nützliches Allgemeinwissen für eine bessere Lehre.',
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre.',
 		siteName: 'BlindDate',
 		images: [
 			{
@@ -37,7 +38,7 @@
 
 		title: 'Barrierefreies BlindDate',
 		description:
-			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und nützliches Allgemeinwissen für eine bessere Lehre.',
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre.',
 		image: `${HOSTNAME}decorations/mainpage-teaser.jpg`
 	}}
 />

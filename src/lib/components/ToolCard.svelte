@@ -41,7 +41,7 @@
 				margin-right: 3.33rem;
 				flex-direction: row;
 				align-items: center;
-				border: 1px solid var(--color-border);
+				border: 1px solid var(--color-lavender);
 
 				box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 

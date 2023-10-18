@@ -77,8 +77,8 @@
 			line-height: 150%;
 			color: var(--color-black);
 			border: 1px solid var(--color-black);
+			background-color: var(--color-orange);
 			border-radius: 0.85rem;
-			background-color: var(--color-orange); /* maybe use the gradient here */
 			box-shadow: 0px 4px 4px rgba(var(--color-black-rgb), 0.1);
 
 			&.with-card {

@@ -144,11 +144,11 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<SpeechBubble {persona}>
 			Dass gehörlose Menschen nur Gebärdensprache benutzen, ist ein Irrtum. Manche hörbehinderte
 			Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann situationsabhängig.
-			Und natürlich kommt es auch auf die Gesprächsperson an. Leider ist es so, dass auch nicht alle
-			gehörlosen und schwerhörigen Menschen die Gebärdensprache gut beherrschen. Das hat ziemlich
-			viel mit der Geschichte hier in Deutschland zu tun und dass Gebärdensprache lange nicht als
-			eigene Sprache anerkannt war. Aber das ist eine andere Story.... Als Lehrerin habe ich aber
-			fest vor, DGS im Schulsystem zu fördern. Ich spreche beide Sprachen. Mit meinen
+			Und natürlich kommt es auch auf die Gesprächspartner an. Leider ist es so, dass auch nicht
+			alle gehörlosen und schwerhörigen Menschen die Gebärdensprache gut beherrschen. Das hat
+			ziemlich viel mit der Geschichte hier in Deutschland zu tun und dass Gebärdensprache lange
+			nicht als eigene Sprache anerkannt war. Aber das ist eine andere Story.... Als Lehrerin habe
+			ich aber fest vor, DGS im Schulsystem zu fördern. Ich spreche beide Sprachen. Mit meinen
 			DGS-kompetenten Freunden gebärde ich viel. Das ist auch sehr praktisch wenn es mal laut ist,
 			oder wir nicht wollen, dass direkt alle alles mitbekommen.
 		</SpeechBubble>

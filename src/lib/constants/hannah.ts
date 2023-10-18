@@ -86,9 +86,10 @@ export const HANNAH: Persona = {
 	previousPersona: 'Maxi',
 	nextPersona: 'Gabriel',
 	week: hannahsWeek,
-	visualDescription: '',
+	visualDescription:
+		'Ich bin Hannah. Ich habe mittelblonde Haare, bin sportlich gebaut und knapp 1,80m groß. Meine Haare hab ich meistens zum Pferdeschwanz gebunden, so wie heute auch. Ich trage ein knielanges oranges Kleid mit kurzem Arm. Und an den Füßen noch weiße Sneaker.',
 	metaDescription:
-		'Hannah zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit auditiver Einschränkung gestalten kann.',
+		'Hannah zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit Hörbehinderung gestalten kann.',
 	metaKeywords:
-		'Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Hörbeeinträchtigung, Gebärdensprache, Cochlea-Implantat'
+		'Barrierefreiheit, Inklusion, Vorlesung,  Hörbeeinträchtigung, Studium mit Hörbeeinträchtigung, Gebärdensprache, Cochlea-Implantat, Barrierefreie Lehre, assistive Technologien'
 };

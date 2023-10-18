@@ -303,10 +303,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		width: 0px;
 	}
 
-	button[aria-pressed='true'] {
-		background-color: darkblue;
-	}
-
 	.wrapper {
 		display: flex;
 		flex-direction: column;
@@ -546,11 +542,19 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		#video-controls {
 			border-radius: 0;
 		}
+
+		video {
+			border-radius: 0;
+		}
 	}
 
 	@media (min-width: 42.3125rem) {
 		#video-controls {
 			border-radius: 0 0 1.11rem 1.11rem;
+		}
+
+		video {
+			border-radius: 1.11rem 1.11rem 0 0;
 		}
 	}
 </style>

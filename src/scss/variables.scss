@@ -20,9 +20,6 @@
 	--color-background: var(--color-white);
 	--color-background-body: #fdfdfd;
 
-	--color-coral: #ff9aa2; // Decorative color
-
-	--color-green-dark: #212914;
 	--color-green-light: #fafff2;
 	--color-green: #e2f0cb; // Persona Card Graident Color, Speech Bubble
 	--color-turquoise: #b5ead7; // Persona Card Graident Color, Decorative Color
@@ -40,7 +37,7 @@
 	--color-red: #d53030; // Background-Color for Skiplink-Button
 
 	--color-gradient-persona: linear-gradient(var(--color-turquoise), var(--color-green));
-	--color-gradient-friend-persona: linear-gradient(var(--color-orange), var(--color-peach));
+	--color-gradient-friend-persona: linear-gradient(var(--color-orange) -10%, var(--color-peach)) 45%;
 	--color-gradient-persona-bg: #e6f4ef;
 	--color-gradient-persona-border: #c8e3da;
 	--color-gradient-friend: linear-gradient(var(--color-peach), var(--color-orange));

@@ -220,9 +220,12 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			gap: 1rem;
+			margin-bottom: 0.55rem;
 
 			h2 {
 				font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+				margin: 0;
 			}
 		}
 
@@ -274,7 +277,6 @@
 			padding-top: 0.2rem;
 		}
 		h2 {
-			margin: 0.2rem 0;
 			font-size: 1rem !important;
 		}
 	}

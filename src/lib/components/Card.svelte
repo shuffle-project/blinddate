@@ -140,7 +140,7 @@
 
 					color: var(--color-black);
 					background-color: var(--color-white);
-					border: 1px solid var(--color-border);
+					border: 1px solid var(--color-lavender);
 					border-radius: 2.22rem;
 
 					font-size: 0.88rem;

@@ -6,6 +6,7 @@
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import Glaucoma from '../disabilityExplanation/Glaucoma.svelte';
+	import HardOfHearing from '../disabilityExplanation/HardOfHearing.svelte';
 	import { handleBackdropClick } from '../utils';
 	import ToggleButton from './ToggleButton.svelte';
 
@@ -174,6 +175,9 @@
 	<svelte:fragment slot="content">
 		{#if persona.name === 'Gabriel'}
 			<Glaucoma />
+		{/if}
+		{#if persona.name === 'Hannah'}
+			<HardOfHearing />
 		{/if}
 	</svelte:fragment>
 </Modal>

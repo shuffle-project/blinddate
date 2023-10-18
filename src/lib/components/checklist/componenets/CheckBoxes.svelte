@@ -61,7 +61,7 @@
 		margin-inline: auto;
 		max-width: 26rem;
 		width: 100%;
-		border: 1px solid var(--color-border);
+		border: 1px solid var(--color-lavender);
 		border-radius: 10px;
 
 		.checkbox {

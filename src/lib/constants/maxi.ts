@@ -17,9 +17,10 @@ export const MAXI: Persona = {
 	disability_icon: 'mental-health',
 	previousPersona: 'Gabriel',
 	nextPersona: 'Hannah',
-	visualDescription: '',
+	visualDescription:
+		'Hallo, ich bin Maxi. Dass ich gerne skateboarde, seht ihr schon an meinen Klamotten. Ich trage weite Jeans, flache Turnschuhe und einen weiten Kapuzenpulli. Ich bin eine weiße Person. Meine Haare sind jetzt gerade pink gefärbt und kurz. Sie gucken unter meinem schwarzen Beanie hervor . Ich bin relativ klein und ... irgendwie weder dick noch dünn. ',
 	metaDescription:
-		'Maxi zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit psychischer Erkrankung gestalten kann.',
+		'Maxi zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit psychischen Erkrankungen gestalten kann.',
 	metaKeywords:
-		'Barrierefreiheit, Inklusion, Vorlesung, Unterricht, Unsichtbare Beeinträchtigung, Trigger'
+		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, Trigger, Studium mit psychischer Krankheit, Depression, Barrierefreie Lehre'
 };
