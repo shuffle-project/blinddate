@@ -23,7 +23,7 @@
 			{
 				title: 'Video',
 				videoPathMp4: '/media/hoeren-offline.mp4',
-				poster: '/media/hoeren-offline-preview-image.png',
+				poster: '/media/hoeren-offline-preview-image.jpg',
 				captionsArray: [
 					{
 						path: '/media/hoeren-offline-untertitel.vtt',
@@ -47,7 +47,7 @@
 			{
 				title: 'Video',
 				videoPathMp4: '/media/hoeren-online.mp4',
-				poster: '/media/hoeren-online-preview-image.png',
+				poster: '/media/hoeren-online-preview-image.jpg',
 				captionsArray: [
 					{
 						path: '/media/hoeren-online-untertitel.vtt',

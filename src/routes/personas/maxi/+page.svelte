@@ -25,7 +25,7 @@
 			{
 				title: 'Video',
 				videoPathMp4: '/media/psyche.mp4',
-				poster: '/media/psyche-preview-image.png',
+				poster: '/media/psyche-preview-image.jpg',
 				captionsArray: [
 					{
 						path: '/media/psyche-untertitel.vtt',
