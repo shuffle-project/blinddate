@@ -2,6 +2,10 @@
 	import { base } from '$app/paths';
 </script>
 
+<svelte:head>
+	<title>Sitemap - BlindDate</title>
+</svelte:head>
+
 <div class="wrapper">
 	<h1 class="responsive">Sitemap</h1>
 	<p>Diese Sitemap listet alle Seiten auf.</p>

@@ -39,7 +39,7 @@
 					vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit einem
 					Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um die
 					Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
-					derselben
+					derselben.
 				</p>
 
 				<p id="game-explained">

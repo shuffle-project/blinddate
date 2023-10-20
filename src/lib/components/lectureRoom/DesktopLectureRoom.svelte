@@ -56,12 +56,13 @@
 
 <style lang="scss">
 	.wrapper {
-		padding: 0 1rem;
 		background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 0 1rem;
+		margin-bottom: -5px;
 
 		.toggle-all-names {
 			width: 100%;
@@ -70,7 +71,6 @@
 			justify-content: end;
 			align-items: center;
 			gap: 0.55rem;
-
 			margin-right: 3rem;
 
 			input {
@@ -232,12 +232,6 @@
 								opacity: 100%;
 								transition: opacity 0.8s ease-out;
 							}
-
-							// .icon {
-							// 	display: flex;
-							// 	align-items: center;
-							// 	justify-content: center;
-							// }
 						}
 					}
 

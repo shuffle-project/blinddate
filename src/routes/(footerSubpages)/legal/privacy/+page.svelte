@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Datenschutzerklärung - BlindDate</title>
+</svelte:head>
+
 <h1 class="responsive">Datenschutzerklärung</h1>
 
 <h2>Inhaltsübersicht</h2>

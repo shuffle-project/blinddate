@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Impressum - BlindDate</title>
+</svelte:head>
+
 <h1 class="responsive">Impressum</h1>
 
 <h2>Projektbeteiligte:</h2>
