@@ -1,11 +1,8 @@
 <script lang="ts">
-	import { GABRIEL } from '$lib/constants/gabriel';
-	import { HANNAH } from '$lib/constants/hannah';
-	import { MAXI } from '$lib/constants/maxi';
+	import { PERSONAS } from '$lib/constants/personas';
 	import DesktopLectureRoom from './DesktopLectureRoom.svelte';
 	import MobileLectureRoom from './MobileLectureRoom.svelte';
-
-	const personas = [MAXI, HANNAH, GABRIEL];
+	const personas = PERSONAS;
 </script>
 
 <div class="desktop">

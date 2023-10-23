@@ -117,6 +117,22 @@ button {
 	}
 }
 
+.back-to-startpage {
+	border-radius: 1rem;
+	display: flex;
+	padding: 0.2rem 0.4rem;
+	cursor: pointer;
+	color: var(--color-white);
+	text-decoration: none;
+	font-size: 0.88rem;
+
+	&:hover,
+	&:focus {
+		outline: 2px solid var(--color-white);
+		outline-offset: 2px;
+	}
+}
+
 @media (min-width: 59.375rem) {
 	.no-component-text-wrapper {
 		max-width: var(--content-element-max-width);
@@ -140,7 +156,7 @@ button {
 	h2 {
 		&.main-heading {
 			padding-top: 5rem;
-			text-align: center;
+			// text-align: center;
 		}
 	}
 }

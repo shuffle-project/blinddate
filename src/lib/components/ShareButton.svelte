@@ -1,14 +1,27 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { PERSONAS } from '$lib/constants/personas';
+	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { backIn, backOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import Icon from './Icon.svelte';
 
-	let visible = false;
+	const personas = PERSONAS;
 
-	// TODO Persona name is hardcoded, make it dynamic
+	let visible = false;
+	let currentSite = 'BlindDate'; // the starting page
+
+	$: {
+		let url = $page.url.pathname;
+
+		personas.forEach((persona: Persona) => {
+			if (url.includes(persona.id)) currentSite = persona.name;
+		});
+	}
+
 	const data = {
 		title: 'BlindDate',
-		text: 'Lerne Gabriel kennen und gib Feedback:',
+		text: `Lerne ${currentSite} und barrierefreie (Hochschul) Lehre kennen`,
 		url: ''
 	};
 
@@ -26,7 +39,6 @@
 
 	const onClick = () => {
 		data.url = document.URL;
-		// TODO Custom persona text in data
 
 		if (navigator.share) {
 			navigator.share(data);
@@ -37,7 +49,7 @@
 	};
 </script>
 
-<div>
+<div class="wrapper">
 	{#if visible}
 		<p
 			in:scale={{ duration: 200, easing: backOut }}
@@ -49,12 +61,15 @@
 		</p>
 	{/if}
 	<button on:keyup={handleKeyPress} class="sharebutton" on:click={onClick} on:blur={handleBlur}>
-		<Icon alt="Seite teilen" size="smedium" img="share" svg_color="white" />
+		<Icon alt="Seite teilen" size="small" img="share" svg_color="white" />
 		<div class="btn-label" aria-hidden="true">Seite teilen</div>
 	</button>
 </div>
 
 <style lang="scss">
+	.wrapper {
+		position: relative;
+	}
 	.sharebutton {
 		display: flex;
 		justify-content: center;
@@ -63,8 +78,8 @@
 		background-color: transparent;
 		border: none;
 		color: var(--color-white);
-		font-size: medium;
 		border-radius: 1rem;
+		font-size: 0.88rem;
 		padding: 0.2rem 0.4rem;
 		cursor: pointer;
 
@@ -77,14 +92,21 @@
 
 	.sharetext-container {
 		position: absolute;
+		inset: 0 0 -3.33rem -2.55rem;
+
 		font-weight: bold;
 		font-size: 0.88rem;
-		margin-top: -3rem;
-		margin-left: -1rem;
-		font-size: medium;
-		padding: 1rem 0.6rem;
-		color: var(--color-black);
-		background-image: url('/decorations/share-rectangle.svg');
+
+		min-width: 9rem;
+		min-height: 2rem;
+
+		background-image: url('/decorations/share-rectangle-mobile.svg');
+
+		display: flex;
+		align-items: end;
+		justify-content: center;
+		padding: 0 0.4rem 0.2rem 0.4rem;
+
 		background-size: 100%;
 		background-repeat: no-repeat;
 		background-position: bottom;
@@ -95,7 +117,6 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			border: 2px solid transparent;
 			border-radius: 50%;
 			height: 2.77rem;
 			width: 2.77rem;
@@ -107,11 +128,7 @@
 			}
 		}
 		.sharetext-container {
-			margin-top: 2.5rem;
-			margin-left: -6.5rem;
-			z-index: 2;
-			background-image: url('/decorations/share-rectangle-mobile.svg');
-			background-position: center 0.45rem;
+			inset: 0 0 -3.33rem -6.65rem;
 		}
 	}
 </style>
