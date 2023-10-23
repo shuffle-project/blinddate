@@ -10,18 +10,19 @@
 
 	let visible = false;
 	let currentSite = 'BlindDate'; // the starting page
+	let text = '';
 
 	$: {
 		let url = $page.url.pathname;
-
 		personas.forEach((persona: Persona) => {
 			if (url.includes(persona.id)) currentSite = persona.name;
 		});
+		text = `Lerne ${currentSite} und barrierefreie (Hochschul) Lehre kennen:`;
 	}
 
 	const data = {
 		title: 'BlindDate',
-		text: `Lerne ${currentSite} und barrierefreie (Hochschul) Lehre kennen`,
+		text,
 		url: ''
 	};
 
