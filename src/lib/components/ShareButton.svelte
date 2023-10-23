@@ -22,7 +22,7 @@
 
 	const data = {
 		title: 'BlindDate',
-		text,
+		text: '',
 		url: ''
 	};
 
@@ -40,6 +40,7 @@
 
 	const onClick = () => {
 		data.url = document.URL;
+		data.text = text;
 
 		if (navigator.share) {
 			navigator.share(data);
