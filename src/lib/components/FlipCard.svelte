@@ -26,7 +26,7 @@
 	<div class="speech-bubble">
 		<p>
 			<span class="name" aria-hidden="true">{personaName + ': '}</span>
-			<span class="text">Was ich auch schon immer mal sagen wollte:</span>
+			<span class="text">Was ich schon immer mal sagen wollte:</span>
 		</p>
 	</div>
 </div>

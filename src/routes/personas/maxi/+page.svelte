@@ -105,17 +105,6 @@
 		</div>
 
 		<SpeechBubble {persona}>
-			Manchmal ist es echt schwierig, auf die eigenen Bedürfnisse zu hören und rechtzeitig und
-			ausreichend Pausen zu machen. Ich weiß ja, dass das nötig ist und ich das unbedingt brauche.
-			Wenn es gut läuft, leg ich mich dann etwas hin oder gehe ein bisschen raus oder skaten. Danach
-			geht es mir besser, ich kann mich wieder konzentrieren und weiter machen. Wenn es schlecht
-			läuft... dann kommt eben sofort eine Stimme, die mir sagt, dass ich nur faul bin und dass die
-			anderen das ja auch problemlos hinbekommen. Dass ich es nur versuchen muss. Dass ich sonst
-			durchfalle. Dass ich keinen Job kriege. Und dann werde ich immer gestresster. Und dann geht
-			nichts mehr.
-		</SpeechBubble>
-
-		<SpeechBubble {persona}>
 			Ich habe herausgefunden, dass es mir hilft, dass ich für Vorlesungen zwar an die Hochschule
 			gehe, aber Projektarbeiten mache ich lieber von zu Hause. Wenn andere dabei sind... Dann habe
 			ich sofort komische Gedanken: Die können alles besser, die sind viel schneller, die sind viel
@@ -128,31 +117,27 @@
 		<FriendBubble {friendPersona}>
 			Hi, ich bin Alex, Maxis Mitbewohner und Freund und Studienkollege. Also wir machen alles
 			zusammen. Ich habe eine Angststörung. Es gibt Phasen, da geht es mir ähnlich wie Maxi. Ich bin
-			echt froh, dass Maxi und ich uns gefunden haben und so gut verstehen. Und natürlich unsere
-			Mitbewohner. Da hab ich dann Leute um mich rum, denen ich auch sagen kann, wenn es gerade
-			schlecht geht.
+			echt froh, dass Maxi und ich uns gefunden haben und so gut verstehen.
 		</FriendBubble>
 
 		<FriendBubble>
 			Meine Therapeutin hat mir spezielle Übungen beigebracht. Und ich hab' die immer wieder geübt,
 			damit ich sie anwenden kann, wenn meine Gedanken außer Kontrolle geraten. Eine Übung ist zum
 			Beispiel, alle Dinge aufzuzählen, die ich in dem Moment höre oder sehe. Das lenkt mich dann ab
-			und idealerweise kann ich mich so selbst beruhigen. Mittlerweile kennen die anderen die Übung
-			auch und schlagen sie mir manchmal vor, wenn sie merken, dass ich mich unwohl fühle.
+			und idealerweise kann ich mich so selbst beruhigen.
 		</FriendBubble>
 
 		<SpeechBubble {persona}>
 			Ja, solche Übungen kenn' ich auch. Ok, mittlerweile kennen die alle. Achtsamkeit ist ja
-			Mainstream. Die Übungen helfen mir aber eher nur, wenn es mir schon ziemlich gut geht. Wenn
-			ich in einer depressiven Phase bin, schaffe ich das nicht... Oder vielleicht haben die Übungen
-			dann keinen Effekt.
+			Mainstream. Solche Übungen helfen mir aber nicht. Wenn ich in einer depressiven Phase bin,
+			schaffe ich das nicht... Oder vielleicht haben die Übungen dann keinen Effekt. Es wäre ja auch
+			ein bisschen einfach, wenn man nur Sachen aufzählen muss und meine Angst würde verpuffen.
 		</SpeechBubble>
 
 		<FriendBubble {friendPersona}>
-			Geht mir genau so. Das wäre ja auch ein bisschen einfach, wenn ich nur Sachen aufzählen muss
-			und meine Panikattacken verpuffen. Ich nehme mittlerweile auch Medikamente, die mir helfen.
-			Die haben leider Nebenwirkungen, aber es geht mir damit echt besser. Und zur Therapie gehe ich
-			auch. Auf den Platz musste ich ganz schön lange warten.
+			Die Übungen sind ja auch nur ein Teil meiner Strategien. Ich nehme mittlerweile auch
+			Medikamente, die mir helfen. Die haben leider Nebenwirkungen, aber es geht mir damit echt
+			besser. Und zur Therapie gehe ich auch. Auf den Platz musste ich ganz schön lange warten.
 		</FriendBubble>
 
 		<FlipCard
@@ -299,17 +284,9 @@
 			Ich finde es wichtig, dass bei Gruppenarbeiten von den Lehrenden geschaut wird, dass alle
 			einen Platz finden. Mich kostet es sehr viel Überwindung, mich bei jemanden zu melden oder in
 			eine feste Gruppe zu gehen, die immer zusammen arbeiten. Ich studiere so langsam. Alle, die
-			mit mir angefangen haben, sind schon längst fertig. Und ich bin ja in recht wenigen
-			Veranstaltungen. Also die Leute in meinem Semester kenne ich einfach nicht. Mir würde es
-			helfen, einfach zugeteilt zu werden.
+			mit mir angefangen haben, sind schon längst fertig. Mir würde es helfen, einfach zugeteilt zu
+			werden.
 		</SpeechBubble>
-
-		<FriendBubble {friendPersona}>
-			Mir hilft es total, wenn ich die Möglichkeit habe, mich mit Mitstudierenden vor oder nach der
-			Vorlesung auszutauschen – ob das in Präsenz oder online ist. Manchmal konnte ich mehrere
-			Wochen nicht an einer Veranstaltung teilnehmen und habe den Anschluss verloren. Ein direkter
-			Austausch hilft da total!
-		</FriendBubble>
 
 		<div class="no-component-text-wrapper">
 			<p class="no-component-text">
@@ -352,31 +329,21 @@
 			also Behinderung... gar nicht für mich zuständig ist. Ich habe eine psychische Krankheit. Das
 			ist ja keine Behinderung. Mittlerweile denke ich anders. Die Krankheit beeinträchtigt mich
 			stark. Und deshalb kann und darf ich auch die Hilfen der Hochschule in Anspruch nehmen. Das
-			muss ich mir immer wieder selbst sagen. Allerdings war es viel bürokratischer Aufwand, bis
-			alles geregelt war. Dabei hat mir aber die Beauftragte sehr geholfen. Auch, in dem sie mit mir
-			Emails geschrieben hat. Ich musste Atteste besorgen, zum Prüfungsamt, Formulare ausfüllen. Das
-			ist anstrengend, wenn es einem nicht gut geht, wenn man nicht so viel schafft – und wenn man
-			selbst ständig hinterfragt, ob man das überhaupt haben darf. Was mir wirklich geholfen hätte?
-			Vielleicht, wenn ich Informationen früher gehabt hätte. Wenn ich gewusst hätte, dass ich mich
-			an die Beauftragte wenden kann. Wo ich die finde und so. Überhaupt, dass es Stellen gibt, an
-			die ich mich wenden kann.
+			muss ich mir immer wieder selbst sagen. Außerdem war es viel bürokratischer Aufwand, bis das
+			mit dem individuellen Studienverlauf geregelt war. Ich musste Atteste besorgen, zum
+			Prüfungsamt, Formulare ausfüllen. Das ist anstrengend, – gerade wenn man selbst ständig
+			hinterfragt, ob man das überhaupt haben darf. Was mir wirklich geholfen hätte? Vielleicht,
+			wenn ich Informationen früher gehabt hätte. Wenn ich gewusst hätte, dass ich mich an die
+			Beauftragte wenden kann. Wo ich die finde und so.
 		</SpeechBubble>
 
 		<FriendBubble {friendPersona}>
-			Je nachdem, wie es mir gerade geht, habe ich mit Prüfungen echt Probleme und bekomme
-			Panikattacken. Aber ich habe mit dem Nachteilsausgleich eine Zeitverlängerung bekommen, was
-			mir sehr hilft. Sonst wäre ich schon ziemlich oft durchgefallen, obwohl ich ultra viel gelernt
-			habe. Ich benötige die Zeit, um mich immer wieder zu beruhigen, um dann weiterschreiben zu
-			können. Ich brauche die Zeitverlängerung nicht immer. Aber es nimmt mir den Druck.
+			Und ich war über die Infos von Maxi dann sehr dankbar. Je nachdem, wie es mir gerade geht,
+			habe ich nämlich mit Prüfungen echt Probleme und bekomme Panikattacken. Aber ich habe mit dem
+			Nachteilsausgleich eine Zeitverlängerung bekommen, was mir sehr hilft. Sonst wäre ich schon
+			ziemlich oft durchgefallen, obwohl ich ultra viel gelernt habe. Ich benötige die Zeit, um mich
+			immer wieder zu beruhigen, um dann weiterschreiben zu können.
 		</FriendBubble>
-
-		<SpeechBubble {persona}>
-			Ich kann mich maximal eine Stunde am Stück konzentrieren und brauche dann mindestens zwei
-			Stunden Pause. Auf eine Klausur lernen – wie soll das gehen? Vor allem, wenn alle anderen sich
-			den ganzen Tag in Lerngruppen treffen oder die Nacht durchbüffeln. Das kann ich doch gar
-			nicht. Das macht mir immer Angst. Wie soll ich das denn schaffen? So viele Stunden hat ein Tag
-			ja gar nicht.
-		</SpeechBubble>
 
 		<h2 class="main-heading" id="tips">Barrierefreiheit umsetzen</h2>
 
