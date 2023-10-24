@@ -5,8 +5,6 @@
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
-	import Glaucoma from '../disabilityExplanation/Glaucoma.svelte';
-	import HardOfHearing from '../disabilityExplanation/HardOfHearing.svelte';
 	import { handleBackdropClick } from '../utils';
 	import ToggleButton from './ToggleButton.svelte';
 
@@ -141,7 +139,7 @@
 							class="disability-btn btn-with-arrow"
 							on:click|stopPropagation={() => modal.toggleModalDisplay()}
 						>
-							<Icon svg_color="black" img={persona.disability_icon} size="medium"
+							<Icon svg_color="black" img={persona.disabilityIcon} size="medium"
 								>{persona.disability}</Icon
 							>
 							<Icon size="tiny" img="arrow-toright" />
@@ -173,12 +171,7 @@
 		{persona.disability}
 	</svelte:fragment>
 	<svelte:fragment slot="content">
-		{#if persona.name === 'Gabriel'}
-			<Glaucoma />
-		{/if}
-		{#if persona.name === 'Hannah'}
-			<HardOfHearing />
-		{/if}
+		<svelte:component this={persona.disabilityExplanation} />
 	</svelte:fragment>
 </Modal>
 

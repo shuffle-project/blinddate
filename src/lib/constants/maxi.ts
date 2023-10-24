@@ -14,7 +14,7 @@ export const MAXI: Persona = {
 	hobbies: 'Skaten und Naturfotografie',
 	study: 'Architektur im Master',
 	disability: 'Psychische Erkrankung',
-	disability_icon: 'mental-health',
+	disabilityIcon: 'mental-health',
 	previousPersona: 'Gabriel',
 	nextPersona: 'Hannah',
 	visualDescription:

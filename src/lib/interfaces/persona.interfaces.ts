@@ -1,3 +1,4 @@
+import type { ComponentType } from 'svelte';
 import type { Week } from './week.interfaces';
 
 export interface Persona {
@@ -8,7 +9,8 @@ export interface Persona {
 	hobbies: string;
 	study: string;
 	disability: string;
-	disability_icon: string;
+	disabilityIcon: string;
+	disabilityExplanation: ComponentType;
 	nextPersona: string;
 	previousPersona: string;
 	week?: Week; // needed for Week.svelte

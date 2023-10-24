@@ -25,13 +25,6 @@
 					>
 						<div class="persona-info-wrapper" aria-hidden="true">
 							<div class="persona-info">
-								<!-- <div class="icon">
-									<Icon
-										img="{base}/icons/{persona.disability_icon}"
-										size="medium"
-										svg_color="white"
-									/>
-								</div> -->
 								<p class="persona-name">{persona.name}</p>
 							</div>
 						</div>
@@ -193,6 +186,11 @@
 
 							transition: all 0.2s ease-out;
 
+							p {
+								margin: 0;
+								font-size: 1.22rem;
+							}
+
 							p,
 							.icon {
 								opacity: 0%;
@@ -212,19 +210,15 @@
 							padding: 0.55rem 1rem;
 							border-radius: 2rem;
 
-							width: auto;
+							width: 5rem;
 							margin-bottom: 0;
 
 							transition: all 0.3s ease-out;
 
 							display: flex;
 							align-items: center;
+							justify-content: center;
 							gap: 0.55rem;
-
-							p {
-								margin: 0;
-								font-size: 1.22rem;
-							}
 
 							p,
 							.icon {

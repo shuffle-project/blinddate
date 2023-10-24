@@ -1,3 +1,4 @@
+import Glaucoma from '$lib/components/disabilityExplanation/Glaucoma.svelte';
 import type { Persona } from '../interfaces/persona.interfaces';
 
 export const GABRIEL: Persona = {
@@ -14,7 +15,8 @@ export const GABRIEL: Persona = {
 	study: 'Soziale Arbeit im Master',
 	hobbies: 'Klavier spielen, Podcast hören, Freunde treffen',
 	disability: 'Grüner Star (Glaukom)',
-	disability_icon: 'glaucoma',
+	disabilityIcon: 'glaucoma',
+	disabilityExplanation: Glaucoma,
 	previousPersona: 'Hannah',
 	nextPersona: 'Maxi',
 	visualDescription:

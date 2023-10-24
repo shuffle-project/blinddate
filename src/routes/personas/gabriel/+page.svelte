@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import InfoBox from '$lib/components/InfoBox.svelte';
-	import MetaTags from '$lib/components/MetaTags.svelte';
 	import PersonaContent from '$lib/components/PersonaContent.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
@@ -54,8 +53,6 @@
 <svelte:head>
 	<title>Gabriel - BlindDate</title>
 </svelte:head>
-
-<MetaTags {persona} />
 
 <PersonaContent {persona}>
 	<svelte:fragment slot="content">

@@ -1,3 +1,4 @@
+import HardOfHearing from '$lib/components/disabilityExplanation/HardOfHearing.svelte';
 import type { Persona } from '../interfaces/persona.interfaces';
 import type { Week } from '../interfaces/week.interfaces';
 
@@ -82,7 +83,8 @@ export const HANNAH: Persona = {
 	hobbies: 'Handball spielen, Essen gehen, Filme und Serien schauen',
 	study: 'Mathematik auf Lehramt',
 	disability: 'Hochgradige Schwerhörigkeit',
-	disability_icon: 'ear',
+	disabilityIcon: 'ear',
+	disabilityExplanation: HardOfHearing,
 	previousPersona: 'Maxi',
 	nextPersona: 'Gabriel',
 	week: hannahsWeek,

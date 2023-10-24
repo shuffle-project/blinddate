@@ -7,7 +7,7 @@
 		id: 'placeholder',
 		name: '',
 		disability: '',
-		disability_icon: '',
+		disabilityIcon: '',
 		relation: '',
 		relation_to: ''
 	};

@@ -10,8 +10,6 @@
 	import type { Persona } from '../interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
-	import Glaucoma from './disabilityExplanation/Glaucoma.svelte';
-	import HardOfHearing from './disabilityExplanation/HardOfHearing.svelte';
 
 	export let persona: Persona;
 
@@ -42,11 +40,7 @@
 		{persona.disability}
 	</svelte:fragment>
 	<svelte:fragment slot="content">
-		{#if persona.name === 'Gabriel'}
-			<Glaucoma />
-		{:else if persona.name === 'Hannah'}
-			<HardOfHearing />
-		{/if}
+		<svelte:component this={persona.disabilityExplanation} />
 	</svelte:fragment>
 </Modal>
 
@@ -65,7 +59,7 @@
 				<PersonaPortrait {persona} />
 				<div class="card-body">
 					<button class="first" on:click={() => toggleModalDisplay()}>
-						<Icon img={persona.disability_icon} size="medium">{persona.disability}</Icon>
+						<Icon img={persona.disabilityIcon} size="medium">{persona.disability}</Icon>
 						<Icon img="arrow-toright" size="tiny" />
 					</button>
 

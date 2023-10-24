@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
-	import MetaTags from '$lib/components/MetaTags.svelte';
 	import PersonaContent from '$lib/components/PersonaContent.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
@@ -47,8 +46,6 @@
 <svelte:head>
 	<title>Maxi - BlindDate</title>
 </svelte:head>
-
-<MetaTags {persona} />
 
 <PersonaContent {persona}>
 	<svelte:fragment slot="content">

@@ -2,9 +2,12 @@
 	import AboutMe from '$lib/components/AboutMe.svelte';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import Card from './Card.svelte';
+	import MetaTags from './MetaTags.svelte';
 	import CardMobile from './cardMobile/CardMobile.svelte';
 	export let persona: Persona;
 </script>
+
+<MetaTags {persona} />
 
 <main>
 	<AboutMe {persona} />
