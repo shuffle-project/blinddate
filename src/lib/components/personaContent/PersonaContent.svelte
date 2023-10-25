@@ -1,9 +1,12 @@
 <script lang="ts">
 	import AboutMe from '$lib/components/AboutMe.svelte';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import Card from './Card.svelte';
-	import MetaTags from './MetaTags.svelte';
-	import CardMobile from './cardMobile/CardMobile.svelte';
+	import Card from '../Card.svelte';
+	import MetaTags from '../MetaTags.svelte';
+	import CardMobile from '../cardMobile/CardMobile.svelte';
+	import MainHeading from './MainHeading.svelte';
+	import TextSection from './TextSection.svelte';
+
 	export let persona: Persona;
 </script>
 
@@ -19,7 +22,7 @@
 		</div>
 		<div class="content-column">
 			<CardMobile {persona} />
-			<slot name="content" />
+			<slot {MainHeading} {TextSection} />
 			<div class="footer-padding" />
 		</div>
 	</div>

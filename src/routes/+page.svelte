@@ -204,10 +204,6 @@
 			margin-bottom: 2rem;
 		}
 
-		h2 {
-			text-align: center;
-		}
-
 		.lower-content {
 			.lecturers,
 			.glossary {

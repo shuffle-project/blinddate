@@ -220,11 +220,10 @@
 		}
 
 		.week-figure {
-			width: 100%;
 			max-height: 28rem;
 
 			z-index: 2;
-			transform: translateY(10%);
+			transform: translateY(5%);
 			opacity: 100%;
 			transition: all 0s;
 			transition-delay: 0.2s;
@@ -239,6 +238,8 @@
 			background: var(--color-gradient-persona);
 			width: 13.8rem;
 			border-radius: 2.22rem;
+			display: flex;
+			justify-content: center;
 		}
 	}
 
