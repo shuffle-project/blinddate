@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import SubpageTitle from '$lib/components/SubpageTitle.svelte';
 </script>
 
 <svelte:head>
 	<title>Sitemap - BlindDate</title>
 </svelte:head>
 
+<SubpageTitle>Sitemap</SubpageTitle>
 <div class="wrapper">
-	<h1 class="responsive">Sitemap</h1>
-	<p>Diese Sitemap listet alle Seiten auf.</p>
-
 	<h2>Alle Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
@@ -35,6 +34,10 @@
 
 <style lang="scss">
 	.wrapper {
+		max-width: 31.04rem;
+		padding-inline: 1.33rem;
+		margin-inline: auto;
+
 		h1 {
 			margin-bottom: 0;
 		}
