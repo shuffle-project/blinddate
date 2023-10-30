@@ -108,16 +108,24 @@
 			und die Hörbahn intakt sind, kann ein
 			<InfoBox
 				term="Cochlea-Implantat (CI)"
-				definition="Ist der Hörnerv einer Person unbeschadet, die Verstärkung der Schallwellen durch ein Hörgerät aber nicht ausreichend, kann ein elektrisches Cochlea-Implantat (CI) eingesetzt werden.
-Das Implantat übernimmt dann die Funktion eines Teils des Innenohrs – der Hörschnecke (oder Cochlea). Hierbei werden die Schallwellen in elektrische Impulse umgewandelt und an den Hörnerv geleitet. 
-Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, die mittels Magneten auf der Haut hinter dem Ohr platziert sind. Unter der Haut liegt die Empfangsspule, welche die elektrischen Signale an die Elektroden in der Cochlea weiterleitet. Der äußere Teil des CIs ist abnehmbar."
 				sources={[
 					{
 						title: 'Cochlea-Impantat von HNO-Ärzte im Netz',
 						url: 'https://www.hno-aerzte-im-netz.de/therapien/cochlea-implantat.html'
 					}
 				]}
-			/>
+			>
+				<p>
+					Ist der Hörnerv einer Person unbeschadet, die Verstärkung der Schallwellen durch ein
+					Hörgerät aber nicht ausreichend, kann ein elektrisches <b>Cochlea-Implantat (CI)</b> eingesetzt
+					werden. Das Implantat übernimmt dann die Funktion eines Teils des Innenohrs – der Hörschnecke
+					(oder Cochlea). Hierbei werden die Schallwellen in elektrische Impulse umgewandelt und an den
+					Hörnerv geleitet. Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule,
+					die mittels Magneten auf der Haut hinter dem Ohr platziert sind. Unter der Haut liegt die Empfangsspule,
+					welche die elektrischen Signale an die Elektroden in der Cochlea weiterleitet. Der äußere Teil
+					des CIs ist abnehmbar.
+				</p>
+			</InfoBox>
 
 			eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
 			Sprachprozessor, der Schallwellen in elektrische Impulse umwandelt. Der Sprachprozessor ist
@@ -165,17 +173,25 @@ Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule, 
 		<Text noTopMargin>
 			<InfoBox
 				term="Gebärdensprach<wbr/>dolmet<wbr/>schende"
-				definition="Personen mit Hörbeeinträchtigung haben in bestimmten Bereichen einen rechtlichen Anspruch auf Schrift- oder Gebärdensprach<wbr/>dolmet<wbr/>schende. Diese Bereiche umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen staatliche Stellen die Kosten.
-				Sind dolmetschende Personen direkt in der Kommunikationssituation anwesend, dolmetschen sie simultan. Sind Personen schwerhörig oder später ertaubt und beherrschen u.U. die deutsche Gebärdensprache (DGS) nicht, können Dolmetscher*innen das gesprochene Wort auch in Schrift übersetzen.
-				Dolmetscher*innen können über die Dolmetscher*innenvermittlung der Landesverbände engagiert werden. 
-				"
 				sources={[
 					{
 						title: 'Gebärdensprachdolmetscher von einfach teilhaben',
 						url: 'https://www.einfach-teilhaben.de/DE/AS/Ratgeber/Gebaerdensprachdolmetscher/Gebaerdensprachdolmetscher_node.html'
 					}
 				]}
-			/>
+			>
+				<p>
+					Personen mit Hörbeeinträchtigung haben in bestimmten Bereichen einen rechtlichen Anspruch
+					auf Schrift- oder <b>Gebärdensprach<wbr />dolmet<wbr />schende</b>. Diese Bereiche
+					umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele
+					sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier
+					übernehmen staatliche Stellen die Kosten. Sind dolmetschende Personen direkt in der
+					Kommunikationssituation anwesend, dolmetschen sie simultan. Sind Personen schwerhörig oder
+					später ertaubt und beherrschen u.U. die deutsche Gebärdensprache (DGS) nicht, können
+					Dolmetscher*innen das gesprochene Wort auch in Schrift übersetzen. Dolmetscher*innen
+					können über die Dolmetscher*innenvermittlung der Landesverbände engagiert werden.
+				</p>
+			</InfoBox>
 			können für Übersetzungen (Online oder Präsenz) gebucht werden. Damit die Dolmetschenden gut gesehen
 			werden können, müssen gute Lichtverhältnisse herrschen, denn neben der Mimik und Gestik ist auch
 			das Mundbild ein wichtiger Bestandteil der Gebärdensprache.

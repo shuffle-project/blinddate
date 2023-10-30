@@ -83,10 +83,12 @@
 			große Bildschirme und ein gut beleuchteter Arbeitsplatz ohne blendende Lampen sehr hilfreich
 			sein, um die vorhandene Sehfähigkeit bestens nutzen zu können. Tablets und Laptops mit neuster
 			Software sind dabei hilfreich, jedoch können sich das nicht alle Studierende leisten. Ist das
-			<InfoBox
-				term="Gesichtsfeld"
-				definition="Das Gesichtsfeld ist der Bereich, der wahrgenommen wird, wenn der Blick geradeaus gerichtet ist und die Augen nicht bewegt werden."
-			/>
+			<InfoBox term="Gesichtsfeld">
+				<p>
+					Das <b>Gesichtsfeld</b> ist der Bereich, der wahrgenommen wird, wenn der Blick geradeaus gerichtet
+					ist und die Augen nicht bewegt werden.
+				</p>
+			</InfoBox>
 			eingeschränkt oder erschwert ein Nystagmus (Augenzittern) das Fokussieren des Geschriebenen, kann
 			ein Orientieren im Text zudem mehr Zeit in Anspruch nehmen.
 		</ToolCard>
@@ -96,17 +98,26 @@
 			<InfoBox
 				langTerm="en"
 				term="Screenreader"
-				definition="Ein Screenreader ist ein Hilfsmittel, das alle digitalen Informationen einer Webseite oder eines Dokuments erfasst. Diese Informationen können in Textform oder auch als Beschriftungen oder Navigationselemente eines Menüs vorliegen. Eine Computerstimme liest diese Informationen dann vor und/oder gibt sie als Brailleschrift an der am Computer angeschlossenen Braillezeile aus. So können alle visuellen Elemente für Menschen mit Sehbeeinträchtigungen zugänglich gemacht werden. 
-				Wichtig dafür ist, dass Bilder Beschreibungen und Alternativtexte enthalten, die vorgelesen werden können. Außerdem müssen Programme, Dokumente und Webseiten barrierefrei erstellt werden, um die Inhalte in einer logischen Reihenfolge entnehmen zu können."
 				sources={[
 					{
 						title: 'Braillezeile & Screenreader von der Stiftung barrierefrei kommunizieren',
 						url: 'https://www.stiftung-barrierefrei-kommunizieren.de/unsere-arbeit/erlebnisparcours/braillezeile-screenreader'
 					}
 				]}
-			/>. Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften oder Menüs
-			– wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht oder nur
-			fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.
+			>
+				<p>
+					Ein <b lang="en">Screenreader</b> ist ein Hilfsmittel, das alle digitalen Informationen einer
+					Webseite oder eines Dokuments erfasst. Diese Informationen können in Textform oder auch als
+					Beschriftungen oder Navigationselemente eines Menüs vorliegen. Eine Computerstimme liest diese
+					Informationen dann vor und/oder gibt sie als Brailleschrift an der am Computer angeschlossenen
+					Braillezeile aus. So können alle visuellen Elemente für Menschen mit Sehbeeinträchtigungen
+					zugänglich gemacht werden. Wichtig dafür ist, dass Bilder Beschreibungen und Alternativtexte
+					enthalten, die vorgelesen werden können. Außerdem müssen Programme, Dokumente und Webseiten
+					barrierefrei erstellt werden, um die Inhalte in einer logischen Reihenfolge entnehmen zu können.
+				</p>
+			</InfoBox>. Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften
+			oder Menüs – wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht
+			oder nur fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.
 		</ToolCard>
 	</div>
 
@@ -347,9 +358,10 @@
 	<ul class="more-info-list">
 		<li>
 			<Recommendation link="https://www.dbsv.org/gruener-star-glaukom.html">
-				<svelte:fragment slot="linkText">
-					Deutscher Blinden und Sehbehinderten Verband
-				</svelte:fragment>
+				<svelte:fragment slot="linkText">Grüner Star (Glaukom)</svelte:fragment>
+				<svelte:fragment slot="textAfter"
+					>vom Deutschen Blinden und Sehbehinderten Verband</svelte:fragment
+				>
 			</Recommendation>
 		</li>
 		<li>

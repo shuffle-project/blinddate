@@ -102,7 +102,7 @@
 				box-sizing: border-box;
 
 				.img {
-					transform: translateY(0rem) translateX(-0.1rem);
+					transform: translateY(0.2rem) translateX(-0.1rem);
 					width: 3rem;
 					height: 3rem;
 				}

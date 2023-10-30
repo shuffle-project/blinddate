@@ -12,6 +12,9 @@
 	<h2>Alle Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
+			<a href={base + '/personas/aleksandr'} class="focus-indicator">Aleksandr</a>
+		</li>
+		<li>
 			<a href={base + '/legal/privacy'} class="focus-indicator">Datenschutzerklärung</a>
 		</li>
 		<li>

@@ -196,7 +196,7 @@
 
 		dialog {
 			border: none;
-			border-radius: 1.11rem;
+			border-radius: 1.77rem;
 
 			max-block-size: min(80vh, 100%);
 			max-block-size: min(80dvb, 100%);

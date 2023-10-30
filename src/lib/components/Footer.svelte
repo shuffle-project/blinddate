@@ -23,7 +23,7 @@
 			<ul class="icon-list">
 				{#each personaToRender as persona}
 					<li class="icon-list-item">
-						{#if persona.name === 'Hannah' || persona.name === 'Gabriel' || persona.name === 'Maxi'}
+						{#if persona.name === 'Hannah' || persona.name === 'Gabriel' || persona.name === 'Maxi' || persona.name === 'Aleksandr'}
 							<a href="{base}/personas/{persona.name.toLowerCase()}" class="focus-indicator">
 								<Icon size="medium" img={persona.svg} svg_color="blue" />
 								{persona.name}

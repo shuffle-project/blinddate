@@ -5,7 +5,7 @@
 
 	export let term: string;
 	export let langTerm = 'de';
-	export let definition: string;
+	export let inSpeechBubble = false;
 	export let sources: Source[] = [];
 
 	let modal: Modal;
@@ -16,14 +16,20 @@
 </script>
 
 <span>
-	<button class="term-btn" on:click={() => toggleDialogDisplay()}>
-		<span lang={langTerm}>{@html term}</span>
+	<button
+		lang={langTerm}
+		class="term-btn"
+		class:inSpeechBubble
+		on:click|stopPropagation={() => toggleDialogDisplay()}
+	>
+		{@html term}
 	</button>
 </span>
 
 <Modal bind:this={modal} bottomSheet {term}>
 	<svelte:fragment slot="content">
-		<p>{@html definition.replace(term, `<b lang=${langTerm}>` + term + '</b>')}</p>
+		<!-- <p>{@html definition.replace(term, `<b lang=${langTerm}>` + term + '</b>')}</p> -->
+		<slot />
 		{#if sources.length > 0}
 			<Sources {sources} />
 		{/if}
@@ -44,19 +50,21 @@
 
 		cursor: pointer;
 
-		span {
-			text-decoration: underline;
-			text-decoration-color: var(--color-blue);
-			text-underline-offset: 0.1rem;
-			text-decoration-thickness: 2px;
-			text-decoration-skip-ink: auto;
-			transition: text-decoration-thickness 0.2s ease;
+		text-decoration: underline;
+		text-decoration-color: var(--color-blue);
+		text-underline-offset: 0.1rem;
+		text-decoration-thickness: 2px;
+		text-decoration-skip-ink: auto;
+		transition: text-decoration-thickness 0.2s ease;
 
-			&:hover,
-			&:focus {
-				text-decoration-thickness: 4px;
-				text-decoration-skip-ink: none;
-			}
+		&:hover,
+		&:focus {
+			text-decoration-thickness: 4px;
+			text-decoration-skip-ink: none;
+		}
+
+		&.inSpeechBubble {
+			font-family: var(--font-persona);
 		}
 	}
 </style>
