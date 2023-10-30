@@ -79,7 +79,7 @@
 	inert
 	class:bottomSheet
 	bind:this={modal}
-	on:click={(e) => handleBackdropClick(e, modal)}
+	on:click|stopPropagation={(e) => handleBackdropClick(e, modal)}
 >
 	<div class="modal-content">
 		{#if !bottomSheet}
@@ -91,7 +91,7 @@
 					<button
 						aria-label="Dialog schließen"
 						aria-describedby="headline-{randomId}"
-						on:click={() => toggleModalDisplay()}
+						on:click|stopPropagation={() => toggleModalDisplay()}
 						><Icon img="close" size="big" svg_color="white" /></button
 					>
 				</div>
@@ -101,7 +101,7 @@
 			<div class="header">
 				<button
 					class="close-btn"
-					on:click={() => toggleModalDisplay()}
+					on:click|stopPropagation={() => toggleModalDisplay()}
 					aria-label={term !== ''
 						? term + ' Definition, Dialog schließen'
 						: 'Über ' + friendPersona.name + ', Dialog schließen'}
@@ -136,8 +136,8 @@
 	dialog {
 		display: block;
 		border: transparent;
-		border-radius: 1rem;
-		padding: 1rem 0;
+		border-radius: 1.77rem;
+		padding: 2rem 0 1rem;
 		box-sizing: border-box;
 		max-inline-size: min(90vw, 44.4rem);
 		max-block-size: min(80vh, 100%);
@@ -270,6 +270,12 @@
 		position: absolute;
 		right: 0.5rem;
 		top: 0.5rem;
+	}
+
+	@media (min-width: 23.0625rem) and (max-width: 35rem) {
+		dialog {
+			padding-top: 1rem;
+		}
 	}
 
 	@media (max-width: 23rem) {

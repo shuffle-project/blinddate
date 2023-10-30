@@ -142,6 +142,15 @@
 					}
 				}
 
+				&.aleksandr {
+					bottom: 41.5%;
+					left: 29%;
+
+					img {
+						width: min(21vw, 16rem);
+					}
+				}
+
 				&.hannah {
 					bottom: 41.5%;
 					right: 28%;

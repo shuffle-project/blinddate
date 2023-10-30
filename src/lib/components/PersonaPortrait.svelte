@@ -58,7 +58,7 @@
 			display: flex;
 			justify-content: center;
 
-			width: 70%;
+			width: 80%;
 			bottom: 6%;
 			left: 0;
 			right: 0;

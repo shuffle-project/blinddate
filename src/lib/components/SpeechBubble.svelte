@@ -42,7 +42,7 @@
 		<button
 			class="playbutton-mobil"
 			on:click={speak}
-			aria-label={!playingAudio ? 'Sprechblase vorlesen' : 'Vorlesen stoppen'}
+			aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
 		>
 			{#if playingAudio}
 				<Icon size="smedium" img="pause" />
@@ -61,7 +61,7 @@
 	<button
 		class="playbutton-desktop"
 		on:click={speak}
-		aria-label={!playingAudio ? 'Sprechblase vorlesen' : 'Vorlesen stoppen'}
+		aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
 	>
 		{#if playingAudio}
 			<Icon size="smedium" img="pause" />
@@ -202,7 +202,7 @@
 					box-sizing: border-box;
 
 					.img {
-						transform: translateY(0rem) translateX(-0.1rem);
+						transform: translateY(0.2rem) translateX(-0.1rem);
 						width: 3rem;
 						height: 3rem;
 					}

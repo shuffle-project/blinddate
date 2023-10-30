@@ -85,7 +85,7 @@ export const HANNAH: Persona = {
 	disability: 'Hochgradige Schwerhörigkeit',
 	disabilityIcon: 'ear',
 	disabilityExplanation: HardOfHearing,
-	previousPersona: 'Maxi',
+	previousPersona: 'Aleksandr',
 	nextPersona: 'Gabriel',
 	week: hannahsWeek,
 	visualDescription:
