@@ -1,16 +1,9 @@
-<script>
+<script lang="ts">
 	import { base } from '$app/paths';
+	import { ENVIRONMENT } from '../constants/environment';
 	import Icon from './Icon.svelte';
-	const personaToRender = [
-		{ name: 'Hannah', svg: 'ear' },
-		{ name: 'Gabriel', svg: 'glaucoma' },
-		{ name: 'Maxi', svg: 'mental-health' },
-		{ name: 'Faiza', svg: 'bottle' },
-		{ name: 'Michelle', svg: 'spoon' },
-		{ name: 'Aleksandr', svg: 'sunflower' },
-		{ name: 'Kilian', svg: 'wheelchair' },
-		{ name: 'Oliver', svg: 'neurodiversity' }
-	];
+
+	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 
 <footer>
@@ -19,25 +12,21 @@
 	</div>
 	<div class="top-part">
 		<div>
-			<h2>Studierende</h2>
-			<ul class="icon-list">
-				{#each personaToRender as persona}
-					<li class="icon-list-item">
-						{#if persona.name === 'Hannah' || persona.name === 'Gabriel' || persona.name === 'Maxi' || persona.name === 'Aleksandr'}
+			{#if ENVIRONMENT.footerPersonas}
+				<h2>Studierende</h2>
+				<ul class="icon-list">
+					{#each personas as persona}
+						<li class="icon-list-item">
 							<a href="{base}/personas/{persona.name.toLowerCase()}" class="focus-indicator">
-								<Icon size="medium" img={persona.svg} svg_color="blue" />
+								<Icon size="medium" img={persona.disabilityIcon} svg_color="blue" />
 								{persona.name}
 							</a>
-						{:else}
-							<a style="opacity: 60%; cursor: not-allowed" href="#" aria-disabled="true">
-								<Icon size="medium" img={persona.svg} svg_color="blue" />
-								{persona.name}
-							</a>
-						{/if}
-					</li>
-				{/each}
-			</ul>
+						</li>
+					{/each}
+				</ul>
+			{/if}
 		</div>
+
 		<div>
 			<h2>Barrierefreie Angebote</h2>
 			<ul class="icon-list">
@@ -54,12 +43,22 @@
 						Gebärdensprache</a
 					>
 				</li>
-				<li class="icon-list-item">
-					<a href="{base}/sitemap" aria-disabled="true" class="focus-indicator"
-						><Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
-						Sitemap</a
-					>
-				</li>
+
+				{#if ENVIRONMENT.sitemap}
+					<li class="icon-list-item">
+						<a href="{base}/sitemap" class="focus-indicator"
+							><Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
+							Sitemap</a
+						>
+					</li>
+				{:else}
+					<li class="icon-list-item">
+						<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
+							><Icon size="medium" img="/icons/sitemap.svg" svg_color="blue" />
+							Sitemap</a
+						>
+					</li>
+				{/if}
 			</ul>
 		</div>
 		<div>
