@@ -5,6 +5,7 @@
 
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import type { Persona } from '../interfaces/persona.interfaces';
@@ -95,14 +96,18 @@
 			</div>
 		{/if}
 	</div>
-	<div class="other-personas-container">
-		<div class="other-personas">
-			<a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
-				>{persona.previousPersona}</a
-			>
-			<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a>
+
+	{#if ENVIRONMENT.personaCardOtherPersonas}
+		<div class="other-personas-container">
+			<div class="other-personas">
+				<a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
+					>{persona.previousPersona}</a
+				>
+				<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a
+				>
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 
 <style lang="scss">

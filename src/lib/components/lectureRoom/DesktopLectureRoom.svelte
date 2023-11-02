@@ -160,6 +160,15 @@
 					}
 				}
 
+				&.kilian {
+					bottom: 41.5%;
+					right: 7%;
+
+					img {
+						width: min(21vw, 12rem);
+					}
+				}
+
 				&.maxi {
 					top: 4.8%;
 					left: 6%;

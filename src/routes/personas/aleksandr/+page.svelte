@@ -46,7 +46,7 @@
 
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
-		<ToolCard title="Überblick verschaffen" image="{base}/tools/calender.svg">
+		<ToolCard title="Platzhaltertitel" image="{base}/tools/calender.svg">
 			Menschen auf dem Autismus-Spektrum nehmen ihre Umwelt anders wahr als neurotypische Menschen.
 			Das Orientieren und Navigieren im Studienalltag, den Überblick zu behalten und das soziale
 			Miteinander zu meistern, kann Studierende mit ASS vor Herausforderungen stellen. Eine
@@ -56,14 +56,14 @@
 			erschwert. Gerade der Übergang von eher strukturiertem Alltag in der Schule zu häufig
 			unstrukturiertem Alltag im Studium kann eine Hürde darstellen.
 		</ToolCard>
-		<ToolCard title="Tagesplan" image="{base}/tools/day-plan.svg">
+		<ToolCard title="Platzhaltertitel" image="{base}/tools/day-plan.svg">
 			Das Orientieren an Details und ein sogenannter Hyper-Fokus auf Themen können für ein Studium
 			von Vorteil sein. Manchmal nehmen diese Spezialinteressen aber auch viel Zeit und
 			Aufmerksamkeit in Anspruch. Deshalb kann es für Studierende mit ASS wichtig sein, sich klare
 			Strukturen und feste Routinen in den Alltag einzubauen, um andere Bereiche nicht zu
 			vernachlässigen.
 		</ToolCard>
-		<ToolCard title="Stimming" langTitle="en" image="{base}/">
+		<ToolCard title="Platzhaltertitel" langTitle="en" image="{base}/">
 			Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize. So
 			können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
 			Überstimulation führen. Reizarm gestaltete Räume oder das Tragen von Geräusch-unterdrückenden
@@ -108,7 +108,7 @@
 			</InfoBox>
 			, um andere Reize auszublenden.
 		</ToolCard>
-		<ToolCard title="Selbststimulierung" image="{base}/">
+		<ToolCard title="Platzhaltertitel" image="{base}/">
 			Neben der Überstimulierung durch verschiedene Reize ist auch eine Unterstimulation ein
 			bekanntes Symptom bei Menschen auf dem Autismus-Spektrum. Stimming, also die bewusste
 			Wiederholung von physischen Bewegungen oder Lauten, aber auch Sport oder das Hantieren mit
