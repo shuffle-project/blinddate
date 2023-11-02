@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import Diy from '$lib/components/DIY.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
@@ -73,6 +74,8 @@
 		<svelte:fragment slot="linkText">Fünf Filme zeigen die Welt mit Sehbehinderung</svelte:fragment>
 		<svelte:fragment slot="textAfter">von der Woche des Sehens</svelte:fragment>
 	</Recommendation>
+
+	<Diy content="keyboard" />
 
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">

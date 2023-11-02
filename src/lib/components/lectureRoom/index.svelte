@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { PERSONAS } from '$lib/constants/personas';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import DesktopLectureRoom from './DesktopLectureRoom.svelte';
 	import MobileLectureRoom from './MobileLectureRoom.svelte';
-	const personas = PERSONAS;
+	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 
 <div class="desktop">

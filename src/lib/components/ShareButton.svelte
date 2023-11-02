@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { PERSONAS } from '$lib/constants/personas';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { backIn, backOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import Icon from './Icon.svelte';
 
-	const personas = PERSONAS;
+	const personas = ENVIRONMENT.accessiblePersonas;
 
 	let visible = false;
 	let currentSite = 'BlindDate'; // the starting page
