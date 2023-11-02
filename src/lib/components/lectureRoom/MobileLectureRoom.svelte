@@ -69,13 +69,12 @@
 					href="{base}/personas/{persona.id}"
 					aria-labelledby="{persona.id}-name"
 					tabindex={selectedIndex !== index ? -1 : 0}
-					aria-describedby="{persona.id}-image"
 				>
 					<img
 						src="{base}/personas/{persona.id}/{persona.id}-{getPersonaEmotion(persona.name)}.svg"
 						alt=""
 						class="persona-img"
-						id="{persona.id}-image"
+						aria-hidden="true"
 					/>
 					<div aria-hidden="true">
 						<p class="persona-name" id="{persona.id}-name">{persona.name}</p>

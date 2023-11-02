@@ -1,4 +1,4 @@
-import { ENVIRONMENT } from '$lib/constants/environment.js';
+import { ENVIRONMENT } from '$lib/constants/environment.ts';
 import { redirect } from '@sveltejs/kit';
 
 export const prerender = true;
