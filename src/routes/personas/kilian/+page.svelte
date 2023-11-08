@@ -14,11 +14,11 @@
 	<SpeechBubble {persona}>
 		Hallo und Guten Tag. Mein Name ist Kilian, ich bin 21 Jahre alt und wohne, nicht ganz
 		freiwillig, mit meinen Eltern und vielen Kühen in einem Vorort von Oldenburg. An der Uni
-		Oldenburg studiere ich im 2. Semester Fr. Eine brotlose Kunst, aber ich liebe eben Fremdsprachen
-		und Literatur. Gerade arbeite ich mich durch Beowulf und sogar das gefällt mir gut. Wie schon
-		erwähnt, ich wohne nicht ganz freiwillig zu Hause. Aber es gibt nur sehr wenige barrierefreie
-		Appartements vom Studierendenwerk. Da bin ich nun auf der Warteliste für eine rollstuhlgerechte
-		Behausung
+		Oldenburg studiere ich im 2. Semester Anglistik. Eine brotlose Kunst, aber ich liebe eben
+		Fremdsprachen und Literatur. Gerade arbeite ich mich durch Beowulf und sogar das gefällt mir
+		gut. Wie schon erwähnt, ich wohne nicht ganz freiwillig zu Hause. Aber es gibt nur sehr wenige
+		barrierefreie Appartements vom Studierendenwerk. Da bin ich nun auf der Warteliste für eine
+		rollstuhlgerechte Behausung.
 	</SpeechBubble>
 	<SpeechBubble {persona}>
 		Ach so, ich nutze einen Rollstuhl, Orthesen und noch ein paar andere Geräte aus dem Rehabedarf.
@@ -39,7 +39,7 @@
 			motorischen Beeinträchtigungen – wie beispielsweise einer Zerebralparese - kommt es zu einer
 			muskulären Spastik, die sich in erhöhter oder unkontrollierbarer Muskelspannung zeigt.
 			Außerdem können verschiedene Bereiche bzw. Extremitäten betroffen sein. Mithilfe von
-			angepassten Tastaturen, Computer-Mäusen und anderen Eingabegeräten, Orthesen und speziellen
+			angepassten Tastaturen, Computer-Mäusen und anderen Eingabegeräten sowie speziellen
 			Schreibtischstühlen können Arbeitsplätze so ausgestattet werden, dass die Muskelspannung und
 			chronische Schmerzen reduziert werden.
 		</ToolCard>
@@ -50,11 +50,11 @@
 		</ToolCard>
 		<ToolCard title="Platzhaltertitel" image="{base}/">
 			Um die Muskelspannung und dadurch auftretende Schmerzen zu reduzieren, können eine passende
-			Medikation, regelmäßige Physiotherapie und eine Versorgung mit Orthesen helfen.
+			Medikation, Wärme, regelmäßige Physiotherapie und Orthesen helfen.
 		</ToolCard>
 	</div>
 	<SpeechBubble {persona}>
-		Zu Hause habe ich einen Trackball und eine Großfeldtastatur. Die sieht halt aus wie für Rentner.
+		Zu Hause habe ich einen Trackball und eine Großfeldtastatur. Die sieht halt aus wie für Omas.
 		Aber so schaffe ich es, zuverlässig die richtige Taste zu treffen, was auf einer normalen
 		Tastatur wegen der Spastik eher ein Glücksspiel ist. Häufig nutze ich auch die Spracheingabe.
 		Das geht manchmal einfach schneller - oder auch nicht, je nachdem, was meine Sprachmuskulatur
@@ -63,18 +63,12 @@
 	<SpeechBubble {persona}>
 		Da die Lähmung meiner rechten Körperhälfte nicht zu stark ausgeprägt ist, kann ich kurze
 		Strecken laufen. Ich wackel dabei aber ziemlich viel und laufe mit einem Spitzfuß. Und langsam
-		bin ich auch noch. Laufen ist für mich einfach sehr anstrengend und – das klingt jetzt
-		vielleicht blöd – aber mir stehen am Tag nur soundsoviel Meter zur Verfügung, die ich einteilen
-		muss. Wenn ich viel laufen muss, bin ich einfach fertig und dann gehen andere Dinge nicht mehr.
-		Wenn ich mich schnell und grazil fortbewegen möchte, nutze ich meinen Rollstuhl. Das ist ein
-		Aktiv-Rollstuhl – der ist klein und wendig und ich kann ihn mit einem Arm antreiben. Der
-		begleitet mich auch immer an die Uni. Die Leute gucken ganz schön blöd, wenn ich im Rollstuhl
-		irgendwo ankomme und dann laufe. Ich nenne das, den Lazarus Effekt. Aber ich habe auch nicht
-		immer Lust zu erklären, warum es manchmal geht und manchmal eben rollt
-	</SpeechBubble>
-	<SpeechBubble {persona}>
-		Meine Strategie bei Schmerzen ist - neben den Medikamenten – eine Wärmflasche mitzunehmen. Die
-		Wärme reduziert meine Schmerzen etwas.
+		bin ich auch noch. Laufen ist für mich einfach sehr anstrengend. Wenn ich mich schnell und
+		grazil fortbewegen möchte, nutze ich meinen Aktiv-Rollstuhl – der ist klein und wendig und ich
+		kann ihn mit einem Arm antreiben. Der begleitet mich auch immer an die Uni. Die Leute gucken
+		ganz schön blöd, wenn ich im Rollstuhl irgendwo ankomme und dann laufe. Ich nenne das den
+		Lazarus Effekt. Aber ich habe auch nicht immer Lust zu erklären, warum es manchmal geht und
+		manchmal eben rollt.
 	</SpeechBubble>
 
 	<MainHeading heading="Lehrveranstaltungen" />
@@ -88,16 +82,15 @@
 
 	<SpeechBubble {persona}>
 		Wenn ich Präsenzveranstaltungen habe, fahre ich oft mit einem Taxi an die Uni. Das ist eine
-		Leistung, die ich bekomme, weil wir auf dem Dorf nicht gut angebunden sind. Mit dem Aufzug, der
-		in der hintersten Ecke des jeweiligen Gebäudes ist, muss ich dann zur richtigen Etage fahren und
-		noch zum jeweiligen Raum rollen. Für den Aufzug braucht man einen Schlüssel, den muss ich mir
-		immer vom Hausmeister holen. Also ist meine erste Aufgabe, den zu finden. Das kostet Zeit und
-		Kilometer. Und das geht auch nur in Gebäuden, die tatsächlich ansatzweise barrierefrei sind.
-		Andere Gebäude an der Uni sind für mich einfach nicht zugänglich. Dazu gehören auch Büros von
-		Lehrenden oder der Unisport. Wegen des ganzen Hickhacks bin ich schon oft zu spät zu Vorlesungen
-		gekommen. Das ist ganz schön peinlich, weil ich ja zusätzlich noch auf dem Präsentierteller
-		sitzen muss – also in der ersten Reihe, weil da ein Rollstuhlplatz ist. Wenigstens kennen mich
-		jetzt alle....
+		Leistung, die ich bekomme, weil wir nicht gut angebunden sind. Mit dem Aufzug, der in der
+		hintersten Ecke des Gebäudes ist, muss ich zur richtigen Etage fahren und dann noch zum
+		richtigen Raum. Für den Aufzug braucht man einen Schlüssel, den muss ich mir immer vom
+		Hausmeister holen. Also ist meine erste Aufgabe, den zu finden. Das kostet Zeit. Und das geht
+		auch nur in Gebäuden, die tatsächlich ansatzweise barrierefrei sind. Andere Gebäude sind für
+		mich einfach nicht zugänglich. Dazu gehören auch Büros von Lehrenden oder der Unisport. Wegen
+		des ganzen Hickhacks bin ich schon oft zu spät zu Vorlesungen gekommen. Das ist ganz schön
+		peinlich, weil ich ja zusätzlich noch auf dem Präsentierteller sitzen muss – also in der ersten
+		Reihe, weil da ein Rollstuhlplatz ist.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -141,14 +134,12 @@
 		</Text>
 	</TextSection>
 	<SpeechBubble {persona}>
-		Ich gehe sehr gerne in die Bibliothek. Nicht nur zum lernen, auch einfach um Bücher zu
-		schmökern, mir Inspiration zu holen, mich zu fragen, ob mein Buch auch irgendwann mal im Regal
-		steht. Allerdings kann ich mich nicht nur geistig in den Büchern verlieren – mein
-		Orientierungssinn ist so schlecht, dass ich mich in der großen Bib nicht zurecht finde. Es sieht
-		halt doch alles gleich aus. Bevor ich, wie Hänsel und Gretel, eine Spur Brotkrumen legen muss,
-		gehe ich immer mit Freundinnen aus meinem Kurs. Das ist unser Ding. Und ich weiß auch, dass die
-		mich nicht vergessen und ich bis an mein Lebensende in der Bib herumirren muss. Es gibt auch
-		einen Bibliotheksservice - dort kann ich Mitarbeitende fragen, ob sie mir helfen, ein Buch
+		Ich gehe sehr gerne in die Bibliothek. Nicht nur zum lernen, auch einfach um Bücher zu schmökern
+		oder mir Inspiration zu holen. Allerdings kann ich mich nicht nur in den Büchern verlieren –
+		mein Orientierungssinn ist so schlecht, dass ich mich in der großen Bib nicht zurecht finde.
+		Bevor ich, wie Hänsel und Gretel, eine Spur Brotkrumen legen muss, gehe ich lieber mit
+		Freundinnen aus meinem Kurs. Da weiß ich, dass die mich nicht vergessen. Es gibt auch einen
+		Bibliotheksservice - dort kann ich Mitarbeitende fragen, ob sie mir helfen, ein Buch
 		rauszusuchen. Das ist prima, wenn ich einfach nur schnell etwas brauche.
 	</SpeechBubble>
 
@@ -198,18 +189,19 @@
 	<SpeechBubble {persona}>
 		Ich bin schon vor Beginn des Studiums zum Beauftragten für Studierende mit Beeinträchtigungen
 		gegangen. Dort wurde mir gesagt, was ich alles besorgen muss, damit ich accommodations kriege.
-		Veranstaltungen, an denen ich teilnehme, müssen in barrierefrei zugänglichen Räumen stattfinden.
 		Ich habe einen Nachteilsausgleich, der mir eine Zeitverlängerung bei Prüfungen und Abgaben gibt.
 		Ich brauch wegen der Spastik einfach länger zum Schreiben oder Tippen. Und ab und zu muss ich
 		etwas Pause machen, um meine Muskeln zu entspannen. Auch für mündliche Prüfungen oder Referate
 		brauch ich mehr Zeit, da ich langsam spreche. Bisher hat das alles gut geklappt. Was mich
-		allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss alle Lehrenden kontaktieren, bei
-		jeder Prüfung zum Prüfungsamt. Wenn Räume nicht barrierefrei sind, muss ich das melden und
-		jemand muss dann einen anderen Raum organisieren. Dazu kommt noch, dass immer noch nicht alle
-		Hilfsmittel, die ich fürs Studium brauche, bewilligt wurden. Und den Fahrdienst muss ich auch
-		jeden Monat planen und mir einteilen, da der ja nicht unbegrenzt zur Verfügung steht. Das ist
-		eigentlich ein kompletter Nebenjob, der nervt und nicht bezahlt wird. Ich glaube, dass es da
-		einfachere Lösungen gäbe, wenn man wollte.
+		allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss bei jeder Prüfung zum
+		Prüfungsamt. Wenn Räume nicht barrierefrei sind, muss ich das melden.
+	</SpeechBubble>
+	<SpeechBubble {persona}>
+		Mir wurden nicht alle Hilfsmittel, die ich fürs Studium brauche, sofort oder überhaupt
+		bewilligt. Den Fahrdienst muss ich auch jeden Monat planen und mir einteilen, da der ja nicht
+		unbegrenzt zur Verfügung steht. Die ständige Organisation ist eigentlich ein kompletter
+		Nebenjob, der nicht bezahlt wird. Ich glaube, dass es da einfachere Lösungen gäbe, wenn man
+		wollte.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -223,17 +215,10 @@
 	</TextSection>
 
 	<SpeechBubble {persona}>
-		Wenn ich aufgeregt bin vor einer Prüfung, kann sich das auf die Spastik in meiner Hand und
-		meinem Bein auswirken. Und vor Prüfungen bin ich immer aufgeregt. Manchmal helfen mir
-		Runterkomm-Übungen.
-	</SpeechBubble>
-
-	<SpeechBubble {persona}>
-		Mein Motto ist: be prepared. Deshalb schreibe ich vor jeder Prüfung die Lehrenden, die die
-		Prüfung machen und Hausmeister, die für die Raumzuteilung zuständig sind, an. In der Email
-		erinnere ich daran, welche Anpassungen in meinem NTA stehen und dass ich einen barrierefreien
-		Raum brauche. So versuche ich im Voraus Stress zu vermeiden. Oder improvisierte Lösungen, die
-		vor allem für mich schlecht sind.
+		Mein Motto ist: be prepared. So versuche ich im Voraus Stress zu vermeiden. Oder improvisierte
+		Lösungen, die vor allem für mich schlecht sind - und unter Umständen unangenehm oder sogar
+		gefährlich für mich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu
+		wollen.
 	</SpeechBubble>
 
 	<MainHeading heading="Barrierefreiheit umsetzen" />

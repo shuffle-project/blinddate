@@ -14,12 +14,16 @@ interface Environment {
 	personaCardOtherPersonas: boolean;
 	sitemap: boolean;
 	footerPersonas: boolean;
+	backLinkToStartpage: boolean;
 }
 
 export const ENVIRONMENT: Environment = {
 	accessiblePersonas: [MAXI, ALEKSANDR, HANNAH, KILIAN, GABRIEL],
-	redirectToStartpage: false,
+	redirectToStartpage: true,
 	personaCardOtherPersonas: true,
 	sitemap: true,
-	footerPersonas: true
+	footerPersonas: true,
+	backLinkToStartpage: true
 };
+
+// zurück zur hauptseite link auch togglen

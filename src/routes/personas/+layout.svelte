@@ -4,6 +4,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import Skiplink from '$lib/components/Skiplink.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import Footer from '../../lib/components/Footer.svelte';
 </script>
 
@@ -16,9 +17,13 @@
 		</div>
 
 		<div class="row">
-			<a href="{base}/" class="back-to-startpage">
-				<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
-			</a>
+			{#if ENVIRONMENT.backLinkToStartpage}
+				<a href="{base}/" class="back-to-startpage">
+					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
+				</a>
+			{:else}
+				<div />
+			{/if}
 
 			<div class="icons">
 				<ShareButton />

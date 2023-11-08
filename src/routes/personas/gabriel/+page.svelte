@@ -56,7 +56,7 @@
 </svelte:head>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_01.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-01.mp3'}>
 		Hallo, ich bin Gabriel. Ich bin 27 Jahre alt und studiere Soziale Arbeit im Master. Seit zwei
 		Jahren lebe ich alleine in einer Wohnung mit meinem Kater Henry. Ich spiele Klavier und übe
 		dafür auch regelmäßig. Und wenn ich gerade keine <span lang="en">True-Crime</span> Podcasts höre
@@ -139,7 +139,7 @@
 		Als Ausgabe nutze ich auch mal gerne die Braillezeile, anstatt immer nur per Audio.
 	</FriendBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_02.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-02.mp3'}>
 		Ich kann zwar teilweise noch sehen, aber mein Gesichtsfeld ist seitlich eingeschränkt, also ist
 		es für mich schwieriger, einen schnellen Überblick über Websites oder Dokumente zu gewinnen.
 		Deswegen nutze ich Kopfbewegungen, um mein Gesichtsfeld zu bewegen und mich so zu orientieren.
@@ -156,7 +156,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_03.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-03.mp3'}>
 		Habe ich die Vorlesungsunterlagen bereits vor der Vorlesung, kann ich sie im Vorfeld für mich
 		anpassen und der Veranstaltung dann besser folgen. Außerdem kann ich dann selbst entscheiden, wo
 		ich mich mit meinen Freunden und Freundinnen hinsetzen möchte. Ich muss dann nicht in der ersten
@@ -194,7 +194,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_04.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-04.mp3'}>
 		Ich habe im Folgenden mal ein Beispiel vorbereitet, wie eine Herausforderung in meinem
 		Studienalltag so aussehen kann. Die Simulation des Glaukoms ist natürlich nicht ganz
 		realistisch, aber seine Auswirkungen auf mein Studium kann ich dir so, denke ich, besser
@@ -210,7 +210,7 @@
 		/>
 	</div>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_05.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-05.mp3'}>
 		Eine einheitliche Gestaltung, eine klare Struktur und nicht überfrachtete Folien helfen mir und
 		auch meinen Mitstudierenden in der Orientierung sehr. So weiß ich beispielsweise, dass ich
 		rechts unten immer den roten Infokasten finde und verliere nicht so viel Zeit mit Suchen.
@@ -240,7 +240,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_06.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-06.mp3'}>
 		Leider sind die Scans, die wir von Lehrpersonen bekommen, um uns auf kommende Veranstaltungen
 		vorzubereiten, häufig sehr unscharf. Manchmal muss ich dann in die Bücherei gehen, um die Texte
 		erneut einzuscannen. Wenn ich die Quelle nicht finde, muss ich die Lehrperson fragen, ob sie das
@@ -273,14 +273,14 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_07.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-07.mp3'}>
 		Wenn ich meinen benötigten Abstand zum Bildschirm einnehme, ist mein Gesicht in extremer
 		Nahaufnahme zu sehen, was mir meist eher unangenehm ist. Ich habe also folgende Optionen: Ich
 		kann nichts oder nur schlecht sehen. Ich kann die Nahaufnahme meiner Nase zeigen. Oder ich
 		schalte die Kamera aus und und bekomme doofe Kommentare.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_08.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-08.mp3'}>
 		Ich habe eine Dozentin, die uns immer direkt mit unseren Namen anspricht, wenn sie eine Frage
 		stellt. So weiß ich sofort, dass sie mit mir spricht. Das ist für mich sehr hilfreich.
 	</SpeechBubble>
@@ -314,7 +314,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_09.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-09.mp3'}>
 		Im letzten Semester habe ich eine Prüfung geschrieben, die leider keine Bildbeschreibungen
 		enthielt. Es hat mich daher sehr viel Zeit gekostet, die Aufgaben dazu zu bearbeiten und diese
 		Zeit hat mir dann bei anderen Aufgaben gefehlt.
@@ -329,7 +329,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb_10.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-10.mp3'}>
 		Wenn ich Prüfungen online schreibe und neue Programme dafür verwendet werden, hilft es mir,
 		Probe-Prüfungen zu schreiben, um das Programm und das Vorgehen ohne Druck kennenzulernen.
 	</SpeechBubble>

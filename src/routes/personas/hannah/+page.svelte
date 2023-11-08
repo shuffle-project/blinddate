@@ -71,7 +71,7 @@
 </svelte:head>
 
 <PersonaContent {persona} let:MainHeading>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-01.mp3'}>
 		Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik auf Lehramt im Bachelor in
 		Dortmund. Ich wohne gemeinsam mit meinen zwei Mitbewohnern, Till und Simon, in einer WG und
 		fühle mich hier richtig wohl. Eigentlich komm ich vom Dorf, aber hier in der Stadt gefällt es
@@ -85,7 +85,7 @@
 		aber die Qualität der Untertitel.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-02.mp3'}>
 		Ich bin nämlich von Geburt an hochgradig hörbeeinträchtigt auf beiden Ohren. Ich trage links ein
 		Hörgerät und rechts ein Cochlea-Implantat...wenn ich die Haare offen trage, sieht man davon
 		allerdings kaum was. Ich verwende sowohl die Lautsprache als auch die deutsche Gebärdensprache.
@@ -147,7 +147,7 @@
 		</ToolCard>
 	</div>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-03.mp3'}>
 		Dass gehörlose Menschen nur Gebärdensprache benutzen, ist ein Irrtum. Manche hörbehinderte
 		Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann situationsabhängig. Und
 		natürlich kommt es auch auf die Gesprächspartner an. Leider ist es so, dass auch nicht alle
@@ -159,7 +159,7 @@
 		direkt alle alles mitbekommen.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-04.mp3'}>
 		Und viele Menschen denken, dass ich – da ich Hörhilfen trage – alles genauso höre, wie sie. Das
 		stimmt aber nicht. Viele Hintergrundgeräusche, wie Vogelgezwitscher oder das sich nähernde Auto,
 		nehme ich nicht oder sehr spät wahr. Auch ist es für mich schwierig, selektiv zu hören, also
@@ -205,7 +205,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-05.mp3'}>
 		Manche Lehrende verstehen nicht, dass ihr Mundbild für mich sehr wichtig ist. Weil ich eben
 		nicht gut höre, brauche ich Zusatzinformationen, die ich durch das Ablesen von Mund und Lippen
 		bekomme. Wenn Lehrende sich wegdrehen und sprechen, ihren Mund verdecken oder zu weit weg sind,
@@ -266,7 +266,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-06.mp3'}>
 		Ich wünsche mir überall Untertitel, ohne dass ich extra danach fragen muss! Das sollte Standard
 		sein, weil alle Menschen einen Anspruch auf barrierefrei zugängliche Informationen haben.
 		Mittlerweile kann man die doch automatisch erstellen lassen. Das kostet nichts. Nur etwas Zeit,
@@ -283,7 +283,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-07.mp3'}>
 		Ein 90-minütiger Vortrag, der für mich akustisch schlecht zu verstehen ist, ist anstrengend. Die
 		ganze Zeit habe ich quasi Ausfälle, wenn ich Wörter nicht verstehe oder die von anderen
 		Geräuschen überdeckt werden. Ich bin dann die ganze Zeit hochkonzentriert und versuche, immer
@@ -291,11 +291,11 @@
 		Pause. Dazu schalte ich dann auch meine Hörhilfen ab.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-08.mp3'}>
 		Ich studiere zwar Mathematik, aber manche Vorlesungsaufnahmen sind auch für mich unberechenbar.
 		Wortwitze beiseite: Das ist tatsächlich nicht nur für mich so, sondern auch für die anderen im
-		Kurs ohne Beeinträchtigung. Manchmal gibt es einfach gewisse Audio-Probleme. Die folgende
-		Simulation versucht das auf etwas abstrahierte Weise zu veranschaulichen.
+		Kurs ohne Behinderung. Manchmal gibt es einfach gewisse Audio-Probleme. Die folgende Simulation
+		versucht das auf etwas abstrahierte Weise zu veranschaulichen.
 	</SpeechBubble>
 
 	<SimulationLink
@@ -328,7 +328,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-09.mp3'}>
 		Es ist mir manchmal unangenehm, dass meine Aussprache von Anderen nicht verstanden wird. Ich
 		kann mich selbst kaum hören und merke daher häufig nur an den fragenden Gesichtern, dass meine
 		Aussprache verwaschen war.
@@ -351,7 +351,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/sb-10.mp3'}>
 		Mit meinen Kommiliton*innen aus dem Gebärdensprachkurs kommuniziere ich mit der Gebärdensprache.
 		Ich werde immer besser. Mittlerweile kann ich auch anderen was beibringen. Mich interessiert
 		auch, wie neue Gebärden entstehen, zum Beispiel für neue Technologien oder Ausdrücke aus der

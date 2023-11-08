@@ -48,28 +48,27 @@
 </svelte:head>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-01.mp3'}>
 		Hallo, mein Name ist Maxi und ich bin 29 Jahre alt. Ich studiere Architektur in Mannheim – und
-		bin endlich im Master angekommen. Das war ein steiniger Weg. Ich wohne im Wohnheim in einer 4er
-		WG, im Zimmer direkt neben Alex. Mit dem studier' ich auch.... In guten wie in schlechten
-		Zeiten. Zusammen kriegen wir das hin. Ich hab zwei Hobbies - das ist für mich ziemlich gut, weil
-		lange Zeit nicht mal das ging. Ich geh gerne Skateboarden. Nicht so mit schwierigen Tricks, aber
-		ein paar Sachen krieg ich schon hin. Und ich fotografiere – am liebsten Nester, Höhlen und
-		Unterschlüpfe von Tieren. Diese Bauten inspirieren mich fürs Studium und hoffentlich auch mal
-		meinen Beruf. Ein großes Plus: Wenn ich fotografiere, bin ich draußen in der Natur unterwegs.
-		Das tut mir gut.
+		bin endlich auch im Master angekommen. Das war ein steiniger Weg. Ich wohne im Wohnheim in einer
+		4er WG, im Zimmer direkt neben Alex. Mit dem studier‘ ich auch.... In guten wie in schlechten
+		Zeiten. Zusammen kriegen wir das irgendwie hin. Ich hab zwei Hobbies - das ist für mich ziemlich
+		gut, weil lange Zeit nicht mal das mehr ging. Ich geh gerne Skaten. Nicht mit so schwierigen
+		Tricks, aber ein paar Sachen krieg ich schon noch hin. Und ich fotografiere auch gerne – am
+		liebsten Nester, Höhlen und Unterschlüpfe von Tieren. Diese Bauten inspirieren mich fürs Studium
+		und hoffentlich auch mal für meinen Beruf. Ein großes Plus: Wenn ich fotografiere, bin ich
+		draußen in der Natur unterwegs. Und das tut mir sehr gut.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-02.mp3'}>
 		Mein Studium ist nicht gerade sehr gradlinig verlaufen. Ich habe Depressionen und
 		Angststörungen. Deshalb habe ich so lange gebraucht. Viele Zweitversuche, viele Semester mit nur
-		zwei Kursen, viele Veranstaltungen musste ich zweimal belegen, die Frist für meine
-		Bachelorarbeit musste ich verlängern lassen. Zwischendurch war es so schlimm, dass ich ein
-		Krankheitssemester nehmen musste. In der Zeit war ich auch in einer Tagesklinik. Das war echt
-		ein Tiefpunkt. Aber da habe ich auch Hilfe bekommen. Und aktuell geht es mir jetzt besser. Am
-		Anfang des Semesters bin ich sogar zur Beauftragen für Menschen mit Beeinträchtigung gegangen.
-		Jetzt habe ich einen Nachteilsausgleich für Prüfungen. Und einen individuellen
-		Studienverlaufsplan. Das nimmt mir viel Druck.
+		zwei Kursen, die Frist für meine Bachelorarbeit musste ich auch verlängern. Zwischendrin war es
+		so schlimm, dass ich ein Krankheitssemester nehmen musste. In der Zeit war ich auch in einer
+		Tagesklinik. Das war ein richtiger Tiefpunkt für mich. Aber da habe ich immerhin auch Hilfe
+		bekommen. Und aktuell geht es mir jetzt besser. Am Anfang des Semesters bin ich sogar zur
+		Beauftragen für Menschen mit Beeinträchtigung gegangen. Jetzt habe ich einen Nachteilsausgleich
+		für Prüfungen. Und auch einen individuellen Studienverlaufsplan. Das nimmt mir viel Druck weg.
 	</SpeechBubble>
 
 	<MainHeading heading="Technologien und Strategien" />
@@ -103,14 +102,14 @@
 		</ToolCard>
 	</div>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-03.mp3'}>
 		Ich habe herausgefunden, dass es mir hilft, dass ich für Vorlesungen zwar an die Hochschule
-		gehe, aber Projektarbeiten mache ich lieber von zu Hause. Wenn andere dabei sind... Dann habe
-		ich sofort komische Gedanken: Die können alles besser, die sind viel schneller, die sind viel
-		schlauer. Oder ich habe das Gefühl, ich sag oder mach die ganze Zeit was Dummes. Zu Hause ist
-		niemand da, der mir über die Schulter guckt. Das beruhigt mein Gedankenkarussell. Andererseits
-		bin ich deswegen natürlich viel alleine. Hab wenig Austausch. Und ich hab nicht so guten Kontakt
-		zu den Leuten in meinem Studiengang. Da fühl ich mich manchmal außen vor.
+		gehe, aber Projektarbeiten mache ich dann doch lieber von zu Hause aus. Wenn andere dabei
+		sind... Dann habe ich ganz oft komische Gedanken: Die können alles besser, die sind viel
+		schneller, die sind viel schlauer. Oder ich habe das Gefühl, ich sag oder mach die ganze Zeit
+		was Dummes. Zu Hause ist niemand da, der mir über die Schulter guckt. Das beruhigt mein
+		Gedankenkarussell. Andererseits bin ich deswegen auch viel alleine und hab wenig Austausch. Und
+		ich hab nicht so guten Kontakt zu den Leuten in meinem Studiengang.
 	</SpeechBubble>
 
 	<FriendBubble {friendPersona}>
@@ -126,12 +125,12 @@
 		und idealerweise kann ich mich so selbst beruhigen.
 	</FriendBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-04.mp3'}>
 		Ja, solche Übungen kenn' ich auch. Ok, mittlerweile kennen die alle. Achtsamkeit ist ja
-		Mainstream. Solche Übungen helfen mir aber nicht. Wenn ich in einer depressiven Phase bin,
-		schaffe ich das nicht... Oder vielleicht haben die Übungen dann keinen Effekt. Es wäre ja auch
-		ein bisschen einfach, wenn man nur Sachen aufzählen muss und meine Angst würde verpuffen.
-	</SpeechBubble>
+		Mainstream. Die Übungen helfen mir aber nicht. Wenn ich in einer depressiven Phase bin, schaffe
+		ich das nicht... Oder die Übungen haben dann gar keinen Effekt. Es wäre ja auch ein bisschen
+		einfach, wenn ich nur Sachen aufzählen müsste und – Puff! - meine Angst wäre einfach weg.</SpeechBubble
+	>
 
 	<FriendBubble {friendPersona}>
 		Die Übungen sind ja auch nur ein Teil meiner Strategien. Ich nehme mittlerweile auch
@@ -157,20 +156,20 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
-		Manchmal schaffe ich es einfach nicht, einer Vorlesung zu folgen. Egal ob online oder in
-		Präsenz. Ich kann mich dann schlecht konzentrieren – und dann bemühe ich mich, aber das
-		Gedankenkarussell kommt direkt dazwischen: Oh jetzt hab ich die vorherige Folie verpasst, jetzt
-		kenn' ich das Wort hier nicht, was hat die Dozentin gerade gesagt? Die Gedanken sind lähmend.
-		Ich schaffe es nicht, dann zuzuhören oder sie beiseite zu schieben. Nichts, was die Dozentin
-		sagt, bleibt hängen. Und in mir wächst die Panik. Dann schau ich mich um und sehe die anderen –
-		die folgen mühelos der Vorlesung, machen Notizen, malen Skizzen. Und in mir kommt dann in
-		Großbuchstaben die Frage, warum ich das nicht kann. Warum kann ich nicht mal in einer Vorlesung
-		sitzen und zuhören? Wenn es ganz schlimm wird .... Also ich musste deswegen schon mal aus einer
-		Vorlesung rausgehen. Sowas ist dann nur noch eine Bestätigung für mein schlechtes Selbstbild und
-		füttert meine Angst, das Studium nicht zu schaffen. Wenn es mir richtig schlecht geht, schaffe
-		ich nicht mal den Weg zur Hochschule. Dann geht nur Decke anstarren und weinen. Warten, dass es
-		vorbei geht.
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-05.mp3'}>
+		Manchmal schaffe ich es einfach nicht, einer Vorlesung zu folgen. Es ist egal ob online oder in
+		Präsenz. Ich kann mich dann einfach schlecht konzentrieren – Ich bemühe mich, aber das
+		Gedankenkarussell kommt direkt dazwischen: Oh, jetzt hab ich die vorherige Folie verpasst, jetzt
+		kenn' ich das Wort hier nicht, was hat die Dozentin gerade gesagt? Die Gedanken sind so lähmend.
+		Ich schaffe es dann nicht, sie beiseite zu schieben und zuzuhören. Nichts, was die Dozentin
+		sagt, bleibt dann hängen. Und in mir wächst die Panik. Dann schau ich mich um und ich sehe die
+		anderen – die folgen mühelos der Vorlesung, machen Notizen und malen Skizzen. Und in mir kommt
+		in Großbuchstaben die Frage, warum ich das nicht kann. Warum kann ich nicht mal in einer
+		Vorlesung sitzen und einfach zuhören? Wenn es ganz schlimm wird .... Also, ich musste schon mal
+		aus einer Vorlesung rausgehen. Sowas ist dann nur noch eine Bestätigung für mein schlechtes
+		Selbstbild und füttert meine Angst, das Studium nicht zu schaffen. Wenn es mir richtig schlecht
+		geht, schaffe ich nicht mal mehr den Weg zur Hochschule. Dann geht nur Decke anstarren und
+		weinen. Warten, dass es vorbei geht.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -194,11 +193,11 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
-		Letzte Woche hatte ich wieder so eine Situation. Ich hab meine Kamera dann einfach
-		eingeschaltet. Gleichzeitig hab ich mir dann aber gedacht - oh, jetzt können ja die anderen das
-		Bild von mir einfach groß stellen. Oder Screenshots machen. Da hab ich mich direkt unwohl
-		gefühlt. Und mein Kopf hat aber entschieden, dass die das bestimmt machen. Obwohl ich ja auch
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-06.mp3'}>
+		Letzte Woche erst hatte ich wieder so eine Situation. Ich hab meine Kamera dann einfach
+		eingeschaltet. Gleichzeitig hab ich mir dann aber gedacht - Oh, jetzt können ja die anderen
+		einfach das Bild von mir groß stellen. Oder Screenshots machen. Da hab ich mich direkt unwohl
+		gefühlt. Mein Kopf hat dann entschieden, dass die das bestimmt machen. Obwohl ich ja auch
 		irgendwie weiß, dass das nicht der Fall ist. Ich hab direkt Stress gekriegt.
 	</SpeechBubble>
 
@@ -260,12 +259,12 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
-		Wenn ich mich... oder wenn ich meine Krankheit erklären will, muss ich mich quasi nackig machen.
-		Das will keiner hören. Niemand will hören, dass ich in eine Klinik musste. Oder dass ich in
-		einer depressiven Phase mehrere Tage nicht mal duschen oder das Haus verlassen konnte. Wie mies
-		ich von mir selber denke und wie sehr mich das behindert. Und dass das ganze auch irgendwie
-		unerklärlich ist. Das ist unangenehm. Niemand hört gerne „Es geht mir NICHT gut“.
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-07.mp3'}>
+		Wenn ich mich... oder wenn ich meine Krankheit erklären will, dann mache ich mich ja quasi
+		nackt. Das will keiner hören. Niemand will hören, dass ich in eine Klinik musste. Oder dass ich
+		in einer depressiven Phase mehrere Tage nicht mal duschen oder das Haus verlassen konnte. Wie
+		mies ich von mir selber denke und wie sehr mich das behindert. Und dass das Ganze auch irgendwie
+		unerklärlich ist. Das ist so unangenehm. Niemand hört gerne: „Es geht mir NICHT gut“.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -279,7 +278,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-08.mp3'}>
 		Ich finde es wichtig, dass bei Gruppenarbeiten von den Lehrenden geschaut wird, dass alle einen
 		Platz finden. Mich kostet es sehr viel Überwindung, mich bei jemanden zu melden oder in eine
 		feste Gruppe zu gehen, die immer zusammen arbeiten. Ich studiere so langsam. Alle, die mit mir
@@ -296,7 +295,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-09.mp3'}>
 		Wenn es mir schlecht geht, ist es einfach eine zu große Aufgabe, noch Kontakt mit Lehrenden
 		aufzunehmen. Dann geht es halt wieder los: Die denken, du bist dumm. Das muss man doch schaffen.
 		Die anderen fragen das auch nicht. Man muss auch Leistung bringen, um zu studieren. Deshalb hab
@@ -321,16 +320,16 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-10.mp3'}>
 		Ich habe genau sechs Semester gebraucht, bis ich mich getraut habe, mich an die Beauftragte für
 		Studierende mit Behinderung zu wenden. Am Anfang dachte ich, dass die wegen des Namens.... also
-		Behinderung... gar nicht für mich zuständig ist. Ich habe eine psychische Krankheit. Das ist ja
-		keine Behinderung. Mittlerweile denke ich anders. Die Krankheit beeinträchtigt mich stark. Und
-		deshalb kann und darf ich auch die Hilfen der Hochschule in Anspruch nehmen. Das muss ich mir
-		immer wieder selbst sagen. Außerdem war es viel bürokratischer Aufwand, bis das mit dem
-		individuellen Studienverlauf geregelt war. Ich musste Atteste besorgen, zum Prüfungsamt,
-		Formulare ausfüllen. Das ist anstrengend, – gerade wenn man selbst ständig hinterfragt, ob man
-		das überhaupt haben darf. Was mir wirklich geholfen hätte? Vielleicht, wenn ich Informationen
+		Behinderung... gar nicht für mich zuständig ist. Ich habe ja eine psychische Krankheit. Das ist
+		ja keine Behinderung. Mittlerweile denke ich da aber anders. Denn die Krankheit beeinträchtigt
+		mich stark. Und deshalb kann und darf ich auch die Hilfen der Hochschule in Anspruch nehmen. Das
+		muss ich mir immer wieder selbst sagen. Außerdem war es viel bürokratischer Aufwand, bis das mit
+		dem individuellen Studienverlauf geregelt war. Ich musste Atteste besorgen, zum Prüfungsamt,
+		Formulare ausfüllen. Das ist anstrengend – gerade wenn man selbst ständig hinterfragt, ob man
+		das überhaupt machen darf. Was mir wirklich geholfen hätte? Vielleicht, wenn ich Informationen
 		früher gehabt hätte. Wenn ich gewusst hätte, dass ich mich an die Beauftragte wenden kann. Wo
 		ich die finde und so.
 	</SpeechBubble>
