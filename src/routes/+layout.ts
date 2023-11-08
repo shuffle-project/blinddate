@@ -1,3 +1,4 @@
+import { base } from '$app/paths';
 import { ENVIRONMENT } from '$lib/constants/environment.ts';
 import { redirect } from '@sveltejs/kit';
 
@@ -12,7 +13,7 @@ export const load = async (event) => {
 		);
 
 		if (!allowedSubpath && pathname !== '/') {
-			throw redirect(301, '/');
+			throw redirect(301, `${base}/`);
 		}
 	}
 };
