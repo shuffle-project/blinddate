@@ -35,10 +35,10 @@
 		<svelte:fragment slot="content">
 			{#if personaID === 'gabriel'}
 				<p>
-					Das vorliegende Spiel ist aufgrund seiner spezifischen Spielmechanik leider nicht
-					vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit einem
-					Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um die
-					Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
+					Das vorliegende Simulationsspiel ist aufgrund seiner spezifischen Spielmechanik leider
+					nicht vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit
+					einem Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um
+					die Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
 					derselben.
 				</p>
 
@@ -66,6 +66,7 @@
 					Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es
 					funktioniert. Versuch's mal!"
 				</p>
+				<div class="spacer" />
 			{:else if personaID === 'hannah'}
 				<p>Just a test</p>
 			{/if}
@@ -74,6 +75,10 @@
 </div>
 
 <style lang="scss">
+	.spacer {
+		height: 1rem;
+	}
+
 	img {
 		max-width: 100%;
 		aspect-ratio: 16/9;

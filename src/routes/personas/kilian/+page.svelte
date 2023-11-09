@@ -236,7 +236,7 @@
 			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnun',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an Veranstaltungen',
 			'Ich mache ausreichend Pausen in langen Veranstaltungen',
-			'Nachteilsausgleiche setze ich in meiner Lehre und in Prüfungen bedarfsgerecht und fair um'
+			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 	/>
 </PersonaContent>

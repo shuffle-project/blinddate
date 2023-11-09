@@ -357,7 +357,7 @@
 			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit psychischen Problemen wenden können',
 			'Ich stelle meine Lernmaterialien vorab und digital zur Verfügung',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an der Veranstaltung',
-			'Nachteilsausgleiche setze ich in meiner Lehre und in Prüfungen bedarfsgerecht und fair um',
+			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung',
 			'Ich mache ausreichend Pausen in langen Veranstaltungen'
 		]}
 		{persona}

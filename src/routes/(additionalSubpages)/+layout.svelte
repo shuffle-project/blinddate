@@ -1,15 +1,20 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import Footer from '$lib/components/Footer.svelte';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import Icon from '../../lib/components/Icon.svelte';
 </script>
 
 <div class="background-black">
 	<header>
 		<div class="row">
-			<a href="{base}/" class="back-to-startpage">
-				<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
-			</a>
+			{#if ENVIRONMENT.backLinkToStartpage}
+				<a href="{base}/" class="back-to-startpage">
+					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
+				</a>
+			{:else}
+				<div />
+			{/if}
 
 			<div class="logo">
 				<div class="img">

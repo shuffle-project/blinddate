@@ -177,6 +177,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		class={!userDeviceIsiOS
 			? `bg-${captionsBackgroundColor} fc-${captionsFontColor} fs-${captionsFontSize}`
 			: ''}
+		class:userDeviceIsiOS
 		on:click={onPlayPause}
 		on:dblclick={onToggleFullscreen}
 		tabindex="0"
@@ -432,16 +433,15 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				justify-content: center;
 
 				background-color: transparent;
+				border: none;
 
-				border: 2px solid transparent;
-				outline: 2px solid transparent;
 				border-radius: 50%;
 				cursor: pointer;
 
 				&:hover,
 				&:focus {
-					border: 2px solid transparent;
 					outline: 2px solid var(--color-white);
+					outline-offset: 2px;
 				}
 			}
 
@@ -555,6 +555,10 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 		video {
 			border-radius: 1.11rem 1.11rem 0 0;
+
+			&.userDeviceIsiOS {
+				border-radius: 1.11rem;
+			}
 		}
 	}
 </style>

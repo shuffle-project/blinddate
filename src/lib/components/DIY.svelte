@@ -10,7 +10,7 @@
 	<div class="card">
 		<p class="text">
 			{#if content === 'keyboard'}
-				Blind Date wurde ebenfalls barrierefrei umgesestzt. Das heißt, dass Sie auch hier direkt die
+				BlindDate wurde ebenfalls barrierefrei umgesestzt. Das heißt, dass Sie auch hier direkt die
 				Tastatursteuerung ausprobieren können. Benutzen Sie die <b>Tabulatortaste</b>
 				<span class="key">
 					<Icon svg_color="white" img="tab-key" />

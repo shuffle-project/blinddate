@@ -75,8 +75,6 @@
 		<svelte:fragment slot="textAfter">von der Woche des Sehens</svelte:fragment>
 	</Recommendation>
 
-	<Diy content="keyboard" />
-
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
 		<ToolCard title="Hardware" image="{base}/tools/tablet.svg">
@@ -236,7 +234,8 @@
 	<TextSection let:Text>
 		<Text noTopMargin>
 			Damit ein Screenreader ein Dokument vorlesen kann, muss der Scan eine gute Qualität haben –
-			das heißt beispielsweise: keine mitgescannten Finger, scharfe Umrisse, keine Doppelseiten.
+			das heißt beispielsweise: keine mitgescannten Finger, scharfe Umrisse, keine Doppelseiten und
+			vor allem kein Abspeichern als Bilddatei, sondern Nutzen einer Texterkennungssoftware (OCR).
 		</Text>
 	</TextSection>
 
@@ -334,6 +333,8 @@
 		Probe-Prüfungen zu schreiben, um das Programm und das Vorgehen ohne Druck kennenzulernen.
 	</SpeechBubble>
 
+	<Diy content="keyboard" />
+
 	<MainHeading heading="Barrierefreiheit umsetzen" />
 
 	<TextSection let:Text>
@@ -351,7 +352,7 @@
 			'Ich überprüfe die Barrierefreiheit meiner Dokumente mit den eingebauten Prüfhilfen (z.B. in MS Office oder LibreOffice)',
 			'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
 			'Ich achte darauf, dass Scans von Dokumenten qualitativ hochwertig und mit einer OCR Software (Texterkennungssoftware) aufgenommen sind',
-			'Nachteilsausgleiche setze ich in meiner Lehre und in Prüfungen bedarfsgerecht und fair um'
+			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 		{persona}
 	/>

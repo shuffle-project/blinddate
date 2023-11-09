@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { HOSTNAME } from '$lib/constants/hostname';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Footer from '../lib/components/Footer.svelte';
@@ -66,57 +67,59 @@
 		<p class="call-to-action">Jetzt die Studierenden kennenlernen:</p>
 	</div>
 	<LectureRoom />
-	<div class="lower-content-wrapper">
-		<div class="lower-content">
-			<div class="lecturers">
-				<h2>Für Lehrende</h2>
-				<p>
-					BlindDate ist eine virtuelle Begegnugsplatform um Studierende mit individuellen Bedarfen
-					in Form von Personas kennenzulernen.
-				</p>
-				<p>
-					Lehre ist nicht einfach und Barrierefreiheit kostet Zeit. Was Sie als lehrende Person auf
-					BlindDate beachten sollten, erklären wir auf der folgenden Seite:
-				</p>
-				<a href="{base}/lecturers" class="focus-indicator">Informationen für Lehrende</a>
-			</div>
-			<div class="personas">
-				<img
-					class="top-wave"
-					src="{base}/decorations/top-blue-wave.svg"
-					alt=""
-					aria-hidden="true"
-				/>
-				<div class="personas-content">
-					<h2>Was sind Personas?</h2>
+	{#if ENVIRONMENT.displayLowerStartpageContent}
+		<div class="lower-content-wrapper">
+			<div class="lower-content">
+				<div class="lecturers">
+					<h2>Für Lehrende</h2>
 					<p>
-						Personas sind keine reale Personen, aber durchaus realistisch. Unsere Personas basieren
-						auf Daten, Interviews und vor allem Erfahrungen echter Studierender mit individuellen
-						Bedarfen.
+						BlindDate ist eine virtuelle Begegnugsplatform um Studierende mit individuellen Bedarfen
+						in Form von Personas kennenzulernen.
 					</p>
-					<div class="to-persona-development">
-						<a href="{base}/development" class="focus-indicator"
-							>Die Persona-Entwicklung im Detail</a
-						>
-					</div>
+					<p>
+						Lehre ist nicht einfach und Barrierefreiheit kostet Zeit. Was Sie als lehrende Person
+						auf BlindDate beachten sollten, erklären wir auf der folgenden Seite:
+					</p>
+					<a href="{base}/lecturers" class="focus-indicator">Informationen für Lehrende</a>
 				</div>
-				<img
-					class="bottom-wave"
-					src="{base}/decorations/bottom-blue-wave.svg"
-					alt=""
-					aria-hidden="true"
-				/>
-			</div>
-			<div class="glossary">
-				<h2>Glossar</h2>
-				<p>
-					Was bedeutet "Barrierefreiheit" eigentlich genau und wie sieht die gesetzliche Lage aus?
-					Auf der folgenden Unterseite gehen wir auf diese und weitere Frage ein:
-				</p>
-				<a href="{base}/glossary" class="focus-indicator">Zum Glossar</a>
+				<div class="personas">
+					<img
+						class="top-wave"
+						src="{base}/decorations/top-blue-wave.svg"
+						alt=""
+						aria-hidden="true"
+					/>
+					<div class="personas-content">
+						<h2>Was sind Personas?</h2>
+						<p>
+							Personas sind keine reale Personen, aber durchaus realistisch. Unsere Personas
+							basieren auf Daten, Interviews und vor allem Erfahrungen echter Studierender mit
+							individuellen Bedarfen.
+						</p>
+						<div class="to-persona-development">
+							<a href="{base}/development" class="focus-indicator"
+								>Die Persona-Entwicklung im Detail</a
+							>
+						</div>
+					</div>
+					<img
+						class="bottom-wave"
+						src="{base}/decorations/bottom-blue-wave.svg"
+						alt=""
+						aria-hidden="true"
+					/>
+				</div>
+				<div class="glossary">
+					<h2>Glossar</h2>
+					<p>
+						Was bedeutet "Barrierefreiheit" eigentlich genau und wie sieht die gesetzliche Lage aus?
+						Auf der folgenden Unterseite gehen wir auf diese und weitere Frage ein:
+					</p>
+					<a href="{base}/glossary" class="focus-indicator">Zum Glossar</a>
+				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 </main>
 
 <div class="spacer" />

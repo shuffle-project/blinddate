@@ -25,6 +25,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{personaName} Simulationsspiel - BlindDate</title>
+</svelte:head>
+
 <div class="wrapper">
 	<header>
 		<a class="back-link" href="{base}/personas/{persona}/#simulation-link-{persona}" autofocus>

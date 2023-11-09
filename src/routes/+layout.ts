@@ -8,9 +8,17 @@ export const trailingSlash = 'always';
 export const load = async (event) => {
 	if (ENVIRONMENT.redirectToStartpage) {
 		const pathname = event.url.pathname;
-		const allowedSubpath = ENVIRONMENT.accessiblePersonas.some((persona) =>
+		let allowedSubpath = ENVIRONMENT.accessiblePersonas.some((persona) =>
 			pathname.includes(persona.id)
 		);
+
+		if (ENVIRONMENT.allowImprintPage && !allowedSubpath) {
+			allowedSubpath = pathname.includes('imprint');
+		}
+
+		if (ENVIRONMENT.allowPrivacyPage && !allowedSubpath) {
+			allowedSubpath = pathname.includes('privacy');
+		}
 
 		if (!allowedSubpath && pathname !== '/') {
 			throw redirect(301, `${base}/`);
