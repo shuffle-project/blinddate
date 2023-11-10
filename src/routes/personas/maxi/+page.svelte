@@ -281,8 +281,8 @@
 	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-08.mp3'}>
 		Ich finde es wichtig, dass bei Gruppenarbeiten von den Lehrenden geschaut wird, dass alle einen
 		Platz finden. Mich kostet es sehr viel Überwindung, mich bei jemanden zu melden oder in eine
-		feste Gruppe zu gehen, die immer zusammen arbeiten. Ich studiere so langsam. Alle, die mit mir
-		angefangen haben, sind schon längst fertig. Mir würde es helfen, einfach zugeteilt zu werden.
+		feste Gruppe zu gehen, die immer zusammen arbeiten. Mir würde es helfen, einfach zugeteilt zu
+		werden.
 	</SpeechBubble>
 
 	<TextSection let:Text>

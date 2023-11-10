@@ -41,9 +41,9 @@
 		</div>
 	</header>
 
-	<div class="game-wrapper">
+	<main class="game-wrapper">
 		<slot />
-	</div>
+	</main>
 </div>
 
 <style lang="scss">

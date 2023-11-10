@@ -59,12 +59,13 @@
 
 <main class="content-wrapper" id="content">
 	<div class="upper-content">
-		<h1 class="responsive title">Barrierefreie Lehre verstehen</h1>
+		<h1 class="responsive title">Eine Hochschule für alle</h1>
 		<p class="subtitle">
-			Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung
-			barrierefreier (Hochschul) Lehre.
+			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren
+			Studienalltag. Konkrete Handlungsempfehlungen helfen Ihnen, Barrieren in der eigenen Lehre
+			abzubauen.
 		</p>
-		<p class="call-to-action">Jetzt die Studierenden kennenlernen:</p>
+		<p class="call-to-action">Lernen Sie jetzt die Studierenden kennen:</p>
 	</div>
 	<LectureRoom />
 	{#if ENVIRONMENT.displayLowerStartpageContent}

@@ -16,7 +16,6 @@
 	</div>
 	<div class="content-wrapper">
 		<div class="content"></div>
-		<img alt="" src="{base}/personas/kilian/kilian-neutral.svg" />
 	</div>
 </div>
 

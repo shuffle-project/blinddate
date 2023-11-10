@@ -14,6 +14,9 @@
 		if (url.includes('gabriel')) {
 			persona = 'Gabriel-';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/227497?lang=de';
+		} else if (url.includes('hannah')) {
+			persona = 'Hannah-';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/282499?lang=de';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';
