@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+
+	/* tasks */
 
 	const contentsArray = [
 		{
@@ -163,7 +166,6 @@
 	}
 
 	/*no fun on mobile*/
-	import { onMount } from 'svelte';
 
 	let smallScreen: boolean;
 	let smallScreenMessage =
