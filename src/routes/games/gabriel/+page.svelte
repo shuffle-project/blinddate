@@ -13,14 +13,14 @@
 			image: base + '/games/gabriel/UI/moodle-02-nl.svg',
 			mood: '',
 			description:
-				'Oh, was ist denn jetzt passiert? Ihr Bildschirm scheint eine Fehlfunktion zu haben und zeigt nur noch einen kleinen Ausschnitt der Folien. Können Sie trotzdem die Quelle ermitteln?',
+				'Die Aufgabe ist gar nicht mehr so leicht, wenn das eigene Gesichtsfeld eingeschränkt ist. Das ist bei Gabriel durch sein Glaukom der Fall. Das bedeutet, dass es ihm schwerer fällt, das, was vor ihm liegt, schnell zu überblicken.',
 			solution: 'NONE'
 		},
 		{
 			image: base + '/games/gabriel/UI/moodle-03-el-01.svg',
 			mood: base + '/personas/gabriel/gabriel-explaining.svg',
 			description:
-				'“Mit einem eingeschränkten Gesichtsfeld ist die Aufgabe gar nicht so leicht, was? Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es funktioniert. Versuch‘s mal!”',
+				'“Keine Sorge: Mit der Zeit entwickelt man Strategien, um mit einer Sehbeeinträchtigung zurecht zu kommen. Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es funktioniert. Versuch‘s mal!”',
 			solution: 19
 		},
 		{
