@@ -64,13 +64,15 @@
 			vernachlässigen.
 		</ToolCard>
 		<ToolCard title="Platzhaltertitel" langTitle="en" image="{base}/">
-			Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize. So
-			können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
-			Überstimulation führen. Reizarm gestaltete Räume oder das Tragen von Geräusch-unterdrückenden
-			Kopfhörern können Strategien sein, um einer Reizüberflutung vorzubeugen. Eine Reizüberflutung
-			kann unterschiedliche Reaktionen hervorrufen. Manche Menschen mit ASS „erstarren“ und wirken
-			auf die Umwelt nicht ansprechbar, andere versuchen sich dieser Situation schnell zu entziehen
-			oder nutzen
+			<span
+				>Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize.
+				So können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
+				Überstimulation führen. Reizarm gestaltete Räume oder das Tragen von
+				Geräusch-unterdrückenden Kopfhörern können Strategien sein, um einer Reizüberflutung
+				vorzubeugen. Eine Reizüberflutung kann unterschiedliche Reaktionen hervorrufen. Manche
+				Menschen mit ASS „erstarren“ und wirken auf die Umwelt nicht ansprechbar, andere versuchen
+				sich dieser Situation schnell zu entziehen oder nutzen
+			</span>
 			<InfoBox term="Stimming" langTerm="en">
 				<p>
 					Der Begriff <b lang="en">„Stimming“</b> kommt aus dem Englischen und ist eine Abkürzung
@@ -106,7 +108,7 @@
 					der Bewegungen und die Intensität unterschiedlich ausgeprägt.
 				</p>
 			</InfoBox>
-			, um andere Reize auszublenden.
+			<span class="toolcard-span">, um andere Reize auszublenden.</span>
 		</ToolCard>
 		<ToolCard title="Platzhaltertitel" image="{base}/">
 			Neben der Überstimulierung durch verschiedene Reize ist auch eine Unterstimulation ein

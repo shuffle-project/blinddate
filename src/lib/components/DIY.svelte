@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
+	import TextSection from './personaContent/TextSection.svelte';
 
 	type Content = 'keyboard';
 
@@ -7,26 +8,32 @@
 </script>
 
 <div class="wrapper">
+	<TextSection let:Text>
+		<Text>
+			BlindDate wurde ebenfalls barrierefrei umgesestzt. Das heißt, dass Sie auch hier direkt die
+			Tastatursteuerung ausprobieren können.
+		</Text>
+	</TextSection>
+
 	<div class="card">
 		<p class="text">
 			{#if content === 'keyboard'}
-				BlindDate wurde ebenfalls barrierefrei umgesestzt. Das heißt, dass Sie auch hier direkt die
-				Tastatursteuerung ausprobieren können. Benutzen Sie die <b>Tabulatortaste</b>
-				<span class="key">
+				Benutzen Sie die <b>Tabulatortaste</b>
+				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="tab-key" />
 				</span>
 				, um damit durch die Website zu navigieren. Oder <b>Shift</b>
-				<span class="key">
+				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="shift-key" />
 				</span>
 				+ Tabulatortaste, um so das vorherige interaktive Element zu erreichen. Mit der
 				<b>Leertaste</b>
-				<span class="key">
+				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="spacebar-key" />
 				</span>
 				können Sie zum Beispiel Auswahlkästchen aktivieren oder deaktivieren. Mithilfe der
 				<b>Entertaste</b>
-				<span class="key">
+				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="enter-key" />
 				</span>
 				können Sie einen Button betätigen oder einen Link zu öffnen.
@@ -45,11 +52,13 @@
 	.wrapper {
 		width: 100%;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 4rem;
+		margin-top: 2rem;
 	}
 	.card {
+		margin: 1rem 1.33rem 0;
 		background-color: var(--color-neutral);
 		border-radius: 20px;
 		max-width: 26rem;

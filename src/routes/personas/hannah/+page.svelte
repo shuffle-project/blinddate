@@ -117,8 +117,10 @@
 		</ToolCard>
 
 		<ToolCard title="Cochlea-Implantat (CI)" image="{base}/tools/cochlea-implant.svg">
-			Bei bestimmten Hörbehinderungen (z.B. einer Innenohrschwerhörigkeit) und wenn der Hörnerv und
-			die Hörbahn intakt sind, kann ein
+			<span
+				>Bei bestimmten Hörbehinderungen (z.B. einer Innenohrschwerhörigkeit) und wenn der Hörnerv
+				und die Hörbahn intakt sind, kann ein</span
+			>
 			<InfoBox
 				term="Cochlea-Implantat (CI)"
 				sources={[
@@ -139,10 +141,11 @@
 					des CIs ist abnehmbar.
 				</p>
 			</InfoBox>
-
-			eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
-			Sprachprozessor, der Schallwellen in elektrische Impulse umwandelt. Der Sprachprozessor ist
-			abnehmbar, zum Beispiel beim Schlafen oder Schwimmen.
+			<span class="toolcard-span"
+				>eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
+				Sprachprozessor, der Schallwellen in elektrische Impulse umwandelt. Der Sprachprozessor ist
+				abnehmbar, zum Beispiel beim Schlafen oder Schwimmen.</span
+			>
 		</ToolCard>
 
 		<ToolCard title="Gebärdensprache" image="{base}/tools/sign-language.svg">

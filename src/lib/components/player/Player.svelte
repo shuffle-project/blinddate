@@ -403,6 +403,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			width: 100%;
 
 			padding: 0.5rem;
+			height: 5.5rem;
 
 			.volume-slider {
 				cursor: pointer;

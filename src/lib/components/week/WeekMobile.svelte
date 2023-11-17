@@ -295,8 +295,6 @@
 
 							cursor: pointer;
 
-							// transition: all 0.2s ease-out;
-
 							&.active {
 								background-color: var(--color-turquoise);
 								border: 1px solid var(--color-black);

@@ -175,24 +175,21 @@
 
 		.week-figure-wrapper {
 			perspective: 1000px;
-			margin-inline: auto;
 			margin-top: 1.5rem;
+			margin-inline: auto;
 			width: 13.8rem;
 			height: 34rem;
 		}
 
 		.week-figure-text {
 			text-align: center;
-			margin: 0;
-			margin-inline: auto;
+			margin: 0 auto;
 
 			padding: 0.22rem;
 			font-size: 0.88rem;
 
 			position: absolute;
-			bottom: 0;
-			right: 0;
-			left: 0;
+			inset: auto 0 0 0;
 		}
 
 		.week-figure-inner {
@@ -248,7 +245,7 @@
 		.calender {
 			color: rgba(var(--color-white-rgb), 0.8);
 			background-color: var(--color-black);
-			margin: 0px 1.33rem;
+			margin-inline: 1.33rem;
 			border-radius: 1.11rem;
 
 			h3 {
@@ -259,6 +256,7 @@
 
 			table {
 				width: 100%;
+
 				tr {
 					display: flex;
 					* {

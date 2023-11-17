@@ -78,24 +78,31 @@
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
 		<ToolCard title="Hardware" image="{base}/tools/tablet.svg">
-			Zum Arbeiten mit Texten, für Recherchen und um aufgenommene Veranstaltungen erneut anzusehen,
-			nutzen viele Studierende ein Tablet. Es bietet die Freiheit, Texte zu vergrößern oder den
-			Kontrast zu erhöhen und ermöglicht ein flexibles Arbeiten auch unterwegs. Zusätzlich können
-			große Bildschirme und ein gut beleuchteter Arbeitsplatz ohne blendende Lampen sehr hilfreich
-			sein, um die vorhandene Sehfähigkeit bestens nutzen zu können. Tablets und Laptops mit neuster
-			Software sind dabei hilfreich, jedoch können sich das nicht alle Studierende leisten. Ist das
+			<span
+				>Zum Arbeiten mit Texten, für Recherchen und um aufgenommene Veranstaltungen erneut
+				anzusehen, nutzen viele Studierende ein Tablet. Es bietet die Freiheit, Texte zu vergrößern
+				oder den Kontrast zu erhöhen und ermöglicht ein flexibles Arbeiten auch unterwegs.
+				Zusätzlich können große Bildschirme und ein gut beleuchteter Arbeitsplatz ohne blendende
+				Lampen sehr hilfreich sein, um die vorhandene Sehfähigkeit bestens nutzen zu können. Tablets
+				und Laptops mit neuster Software sind dabei hilfreich, jedoch können sich das nicht alle
+				Studierende leisten. Ist das
+			</span>
 			<InfoBox term="Gesichtsfeld">
 				<p>
 					Das <b>Gesichtsfeld</b> ist der Bereich, der wahrgenommen wird, wenn der Blick geradeaus gerichtet
 					ist und die Augen nicht bewegt werden.
 				</p>
 			</InfoBox>
-			eingeschränkt oder erschwert ein Nystagmus (Augenzittern) das Fokussieren des Geschriebenen, kann
-			ein Orientieren im Text zudem mehr Zeit in Anspruch nehmen.
+			<span class="toolcard-span">
+				eingeschränkt oder erschwert ein Nystagmus (Augenzittern) das Fokussieren des Geschriebenen,
+				kann ein Orientieren im Text zudem mehr Zeit in Anspruch nehmen.
+			</span>
 		</ToolCard>
 		<ToolCard title="Screenreader" langTitle="en" image="{base}/tools/screenreader.svg">
-			Sowohl zur Orientierung, als auch um eine langsamere Lesegeschwindigkeit auszugleichen, nutzen
-			Studierende mit einer visuellen Einschränkung häufig einen sogenannten
+			<span>
+				Sowohl zur Orientierung, als auch um eine langsamere Lesegeschwindigkeit auszugleichen,
+				nutzen Studierende mit einer visuellen Einschränkung häufig einen sogenannten
+			</span>
 			<InfoBox
 				langTerm="en"
 				term="Screenreader"
@@ -116,10 +123,13 @@
 					enthalten, die vorgelesen werden können. Außerdem müssen Programme, Dokumente und Webseiten
 					barrierefrei erstellt werden, um die Inhalte in einer logischen Reihenfolge entnehmen zu können.
 				</p>
-			</InfoBox>. Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften
-			oder Menüs – wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht
-			oder nur fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.
-		</ToolCard>
+			</InfoBox>.
+			<span class="toolcard-span">
+				Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften oder Menüs –
+				wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht oder nur
+				fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.
+			</span></ToolCard
+		>
 	</div>
 
 	<FriendBubble {friendPersona}>
