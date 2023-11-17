@@ -13,16 +13,30 @@
 	export let option2Label: string;
 
 	export let value: string;
+
+	let randomNumber = Math.random();
 </script>
 
 <fieldset class="radio-switch" role="radiogroup">
 	<legend>Guter oder Schlechter Tag</legend>
-	<input type="radio" id="option1" name="Toggle" value={option1} bind:group={value} />
-	<label class={option1 === value ? 'focus-within' : ''} for="option1">
+	<input
+		type="radio"
+		id="option1-{randomNumber}"
+		name="Toggle"
+		value={option1}
+		bind:group={value}
+	/>
+	<label class={option1 === value ? 'focus-within' : ''} for="option1-{randomNumber}">
 		{option1Label}
 	</label>
-	<input type="radio" id="option2" name="Toggle" value={option2} bind:group={value} />
-	<label class={option2 === value ? 'focus-within' : ''} for="option2">
+	<input
+		type="radio"
+		id="option2-{randomNumber}"
+		name="Toggle"
+		value={option2}
+		bind:group={value}
+	/>
+	<label class={option2 === value ? 'focus-within' : ''} for="option2-{randomNumber}">
 		{option2Label}
 	</label>
 </fieldset>
