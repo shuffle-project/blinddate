@@ -6,16 +6,23 @@
 	let modal: Modal;
 
 	let persona = '';
+	let malePersona = false;
+	let disability: 'Hörbehinderung' | 'Sehbeeinträchtigung' | '' = '';
+
 	let linkToPersonaQuestionnaire = '';
 
 	$: {
 		let url = $page.url.pathname;
 
 		if (url.includes('gabriel')) {
-			persona = 'Gabriel-';
+			persona = 'Gabriel';
+			malePersona = true;
+			disability = 'Sehbeeinträchtigung';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/227497?lang=de';
 		} else if (url.includes('hannah')) {
-			persona = 'Hannah-';
+			persona = 'Hannah';
+			malePersona = false;
+			disability = 'Hörbehinderung';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/282499?lang=de';
 		} else {
 			persona = '';
@@ -27,31 +34,33 @@
 <div class="wrapper">
 	<button on:click={() => modal.toggleModalDisplay()}> Willkommenstext öffnen </button>
 	<hr aria-hidden="true" />
-	<p>{persona}Seite erkundet und bereit?</p>
-	<a href={linkToPersonaQuestionnaire}>Zur {persona} Umfrage</a>
+	<p>{persona}-Seite erkundet und bereit?</p>
+	<a href={linkToPersonaQuestionnaire}>Zur {persona}-Umfrage</a>
 </div>
 
 <Modal bind:this={modal}>
 	<svelte:fragment slot="headline">Herzlich Willkommen auf BlindDate</svelte:fragment>
 	<svelte:fragment slot="content">
-		<p>Auf dieser Webseite werden Sie <b>Gabriel</b> kennenlernen.</p>
+		<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>
 		<p>
-			Gabriel ist eine von insgesamt 8 virtuellen Persona, die Ihnen von sich und ihrem
-			Studienalltag erzählt.
+			{persona} ist eine von mehreren virtuellen Personas, die Ihnen von sich und ihrem Studienalltag
+			erzählt.
 		</p>
 		<p>
-			Gabriel wird Ihnen seine Strategien erklären, die er im Studienalltag nutzt. Er kann Ihnen
-			Tipps und Tricks an die Hand geben, damit digitale Lehre für Studierende mit einer
-			Sehbeeinträchtigung barrierefreier wird.
+			{persona} wird Ihnen {malePersona ? 'seine' : 'ihre'} Strategien erklären, die {malePersona
+				? 'er'
+				: 'sie'} im Studienalltag nutzt. {malePersona ? 'Er' : 'Sie'} kann Ihnen Tipps und Tricks an
+			die Hand geben, damit digitale Lehre für Studierende mit einer {disability} barrierefreier wird.
 		</p>
 		<p>
-			Obwohl Gabriel nur virtuell existiert, ist er aus realen Erfahrungen von Studierenden mit
-			einer Sehbeeinträchtigung entstanden. Mithilfe einer großen Datenerhebung, qualitativen
+			Obwohl {persona} nur virtuell existiert, ist {malePersona ? 'er' : 'sie'} aus realen Erfahrungen
+			von Studierenden mit einer {disability} entstanden. Mithilfe einer großen Datenerhebung, qualitativen
 			Interviews und in ständigen <span lang="en">Feedback-Loops</span> mit Studierenden mit einer
-			Sehbeeinträchtigung haben wir – das Team des Forschungsprojekt
-			<span lang="en">SHUFFLE</span> - diese verschiedenen Perspektiven sammeln können. Damit nicht nur
-			Gabriel zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie neben Gabriels persönlichen
-			Erläuterungen auch allgemein gehaltene Textpassagen.
+			{disability} haben wir – das Team des Forschungsprojekt
+			<span lang="en">SHUFFLE</span> - diese verschiedenen Perspektiven sammeln können. Damit nicht
+			nur
+			{persona} zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie neben {persona}s
+			persönlichen Erläuterungen auch allgemein gehaltene Textpassagen.
 		</p>
 
 		<div class="hint-wrapper">
