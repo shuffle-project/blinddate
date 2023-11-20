@@ -11,9 +11,11 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	import { onMount } from 'svelte';
 	import type { Video } from '../../interfaces/player.interfaces';
 	import Icon from '../Icon.svelte';
+	import { getRandomId } from '../utils';
 	import CaptionSettings from './CaptionSettings.svelte';
 	import TempoSettings from './TempoSettings.svelte';
 	const isSafari = detect()!.name == 'safari';
+	const randomId = getRandomId();
 
 	export let videoData: Video;
 
@@ -163,7 +165,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	<!-- svelte-ignore a11y-media-has-caption -->
 	<video
 		poster={base + videoData.poster}
-		id="video"
+		id="video-{randomId}"
 		controls={userDeviceIsiOS}
 		preload="auto"
 		width="100%"
@@ -230,7 +232,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						</button>
 
 						<button
-							id="mute"
+							id="mute-{randomId}"
 							aria-label="Ton stummschalten"
 							title="Ton stummschalten"
 							aria-pressed={muted}

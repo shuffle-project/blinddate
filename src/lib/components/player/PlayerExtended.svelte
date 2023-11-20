@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import type { ExtendedPlayerConfig } from '../../interfaces/player.interfaces';
+	import { getRandomId } from '../utils';
 	import Player from './Player.svelte';
 
 	export let extendedPlayerConfig: ExtendedPlayerConfig;
+
+	const randomId = getRandomId();
 
 	let selectedTab: number | null = 1;
 	let selectedTabTemp = 1;
@@ -38,7 +41,7 @@
 		{#each extendedPlayerConfig.videos as video, i}
 			{@const index = i + 1}
 			<button
-				id="playertab-{i + 1}"
+				id="playertab-{i + 1}-{randomId}"
 				role="tab"
 				aria-selected={selectedTab === index}
 				tabindex={selectedTab === index ? 0 : -1}
@@ -52,7 +55,7 @@
 		{#each extendedPlayerConfig.transcripts as transcript, i}
 			{@const index = extendedPlayerConfig.videos.length + i + 1}
 			<button
-				id="playertab-{index}"
+				id="playertab-{index}-{randomId}"
 				role="tab"
 				aria-selected={selectedTab === index}
 				tabindex={selectedTab === index ? 0 : -1}
@@ -69,7 +72,7 @@
 		{#if selectedTab === index}
 			<div
 				class="video"
-				id="panel-{index}"
+				id="panel-{index}-{randomId}"
 				in:slide={{ duration: 400 }}
 				out:slide={{ duration: 400 }}
 				on:outroend={setSelectedTab}
@@ -83,7 +86,7 @@
 		{@const index = extendedPlayerConfig.videos.length + i + 1}
 		{#if selectedTab === index}
 			<div
-				id="panel-{index}"
+				id="panel-{index}-{randomId}"
 				in:slide={{ duration: 400 }}
 				out:slide={{ duration: 400 }}
 				on:outroend={setSelectedTab}

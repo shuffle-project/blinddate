@@ -4,8 +4,11 @@
 	import type { Day } from '../../interfaces/week.interfaces';
 	import Icon from '../Icon.svelte';
 	import Switch from '../Switch.svelte';
+	import { getRandomId } from '../utils';
 
 	export let persona: Persona;
+
+	const randomId = getRandomId();
 
 	const month: string = persona.week!.month;
 	const days: Day[] = persona.week!.days;
@@ -19,12 +22,12 @@
 	function onKeypressed(event: KeyboardEvent) {
 		if (event.code === 'ArrowLeft') {
 			event.preventDefault();
-			let element = document.getElementById('weektab-' + (detailedDay + 1 - 1));
+			let element = document.getElementById(`weektab-${detailedDay + 1 - 1}-${randomId}`);
 			element?.focus();
 			element?.click();
 		} else if (event.code === 'ArrowRight') {
 			event.preventDefault();
-			let element = document.getElementById('weektab-' + (detailedDay + 1 + 1));
+			let element = document.getElementById(`weektab-${detailedDay + 1 + 1}-${randomId}`);
 			element?.focus();
 			element?.click();
 		}
@@ -49,9 +52,9 @@
 							<button
 								tabindex={i === detailedDay ? 0 : -1}
 								class:active={detailedDay === i}
-								id="weektab-{i + 1}"
+								id="weektab-{i + 1}-{randomId}"
 								role="tab"
-								aria-controls="tabpanel-{i + 1}"
+								aria-controls="tabpanel-{i + 1}-{randomId}"
 								aria-selected={detailedDay === i}
 								aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
 									/\&shy;/gi,
@@ -83,9 +86,9 @@
 
 		<div
 			class="detailed-day"
-			id="tabpanel-{detailedDay + 1}"
+			id="tabpanel-{detailedDay + 1}-{randomId}"
 			role="tabpanel"
-			aria-labelledby="weektab-{detailedDay + 1}"
+			aria-labelledby="weektab-{detailedDay + 1}-{randomId}"
 		>
 			<img
 				class="week-day-indicator"
