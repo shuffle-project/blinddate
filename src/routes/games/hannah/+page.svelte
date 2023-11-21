@@ -358,7 +358,7 @@
 
 	.playbutton {
 		position: absolute;
-		top: 88.5%;
+		top: 89.5%;
 		left: 37.5%;
 		width: 3%;
 		height: 5%;
