@@ -112,7 +112,7 @@
 	let checkmarkFalse =
 		'<div style="display: flex; align-items: center; height: 2.5vw"><p style="font-size: 1.6vw; font-family: var(--font-sans-serif);">Aufgabe {index}</p><img src="UI/check-false.png" width="8%" style="margin-left: auto; margin-right: 10vw;" /></div>';
 
-	let checkmarks = [];
+	let checkmarks: string[] = [];
 
 	/* variables */
 
@@ -293,8 +293,8 @@
 
 	.persona {
 		position: absolute;
-		height: 120%; /*hardstyled*/
-		transform: translate(-20%, 10%); /*hardstyled*/
+		height: 105%; /*hardstyled*/
+		transform: translate(10%, 25%); /*hardstyled*/
 		filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
 		z-index: 3;
 	}
@@ -392,5 +392,19 @@
 
 	.mobileVisibility {
 		display: none;
+	}
+
+	/*wip-info*/
+
+	:global(.wip-info) {
+		display: none !important;
+	}
+
+	:global(html) {
+		scrollbar-width: none;
+	}
+
+	:global(html::-webkit-scrollbar) {
+		width: 0;
 	}
 </style>
