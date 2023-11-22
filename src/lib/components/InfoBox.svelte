@@ -28,7 +28,6 @@
 
 <Modal bind:this={modal} bottomSheet {term}>
 	<svelte:fragment slot="content">
-		<!-- <p>{@html definition.replace(term, `<b lang=${langTerm}>` + term + '</b>')}</p> -->
 		<slot />
 		{#if sources.length > 0}
 			<Sources {sources} />
@@ -37,12 +36,16 @@
 </Modal>
 
 <style lang="scss">
+	span {
+		line-height: 150%;
+	}
 	.term-btn {
 		color: var(--color-blue);
 		border: none;
 		padding: 0;
 
 		background-color: transparent;
+
 		font-size: 1rem;
 		font-weight: bold;
 

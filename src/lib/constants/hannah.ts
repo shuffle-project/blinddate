@@ -22,7 +22,7 @@ const hannahsWeek: Week = {
 			day: 'Di',
 			dayFull: 'Dienstag',
 			date: 11,
-			activity: 'Gebärdensprachkurs',
+			activity: 'Infoveranstaltung',
 			smiley: 'sad',
 			time: '17:45 Uhr',
 			text_happy:

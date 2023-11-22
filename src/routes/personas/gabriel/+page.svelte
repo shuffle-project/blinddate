@@ -41,7 +41,7 @@
 		transcripts: [
 			{
 				title: 'Video mit Audiodeskription',
-				body: '<p>Eine Audiodeskription liegt für dieses Video nicht vor.</p>'
+				body: '<p>Eine Audiodeskription liegt für dieses Video nicht vor. Das Bildgeschehen ist für das Verständnis nicht erforderlich. Falls Sie denoch einen Eindruck vom Bildgeschehen haben möchten, empfehlen wir das Transkript. </p>'
 			},
 			{
 				title: 'Transkript',
@@ -56,7 +56,7 @@
 </svelte:head>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-01.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-01.mp3'}>
 		Hallo, ich bin Gabriel. Ich bin 27 Jahre alt und studiere Soziale Arbeit im Master. Seit zwei
 		Jahren lebe ich alleine in einer Wohnung mit meinem Kater Henry. Ich spiele Klavier und übe
 		dafür auch regelmäßig. Und wenn ich gerade keine <span lang="en">True-Crime</span> Podcasts höre
@@ -78,24 +78,31 @@
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
 		<ToolCard title="Hardware" image="{base}/tools/tablet.svg">
-			Zum Arbeiten mit Texten, für Recherchen und um aufgenommene Veranstaltungen erneut anzusehen,
-			nutzen viele Studierende ein Tablet. Es bietet die Freiheit, Texte zu vergrößern oder den
-			Kontrast zu erhöhen und ermöglicht ein flexibles Arbeiten auch unterwegs. Zusätzlich können
-			große Bildschirme und ein gut beleuchteter Arbeitsplatz ohne blendende Lampen sehr hilfreich
-			sein, um die vorhandene Sehfähigkeit bestens nutzen zu können. Tablets und Laptops mit neuster
-			Software sind dabei hilfreich, jedoch können sich das nicht alle Studierende leisten. Ist das
+			<span
+				>Zum Arbeiten mit Texten, für Recherchen und um aufgenommene Veranstaltungen erneut
+				anzusehen, nutzen viele Studierende ein Tablet. Es bietet die Freiheit, Texte zu vergrößern
+				oder den Kontrast zu erhöhen und ermöglicht ein flexibles Arbeiten auch unterwegs.
+				Zusätzlich können große Bildschirme und ein gut beleuchteter Arbeitsplatz ohne blendende
+				Lampen sehr hilfreich sein, um die vorhandene Sehfähigkeit bestens nutzen zu können. Tablets
+				und Laptops mit neuster Software sind dabei hilfreich, jedoch können sich das nicht alle
+				Studierende leisten. Ist das
+			</span>
 			<InfoBox term="Gesichtsfeld">
 				<p>
 					Das <b>Gesichtsfeld</b> ist der Bereich, der wahrgenommen wird, wenn der Blick geradeaus gerichtet
 					ist und die Augen nicht bewegt werden.
 				</p>
 			</InfoBox>
-			eingeschränkt oder erschwert ein Nystagmus (Augenzittern) das Fokussieren des Geschriebenen, kann
-			ein Orientieren im Text zudem mehr Zeit in Anspruch nehmen.
+			<span class="toolcard-span">
+				eingeschränkt oder erschwert ein Nystagmus (Augenzittern) das Fokussieren des Geschriebenen,
+				kann ein Orientieren im Text zudem mehr Zeit in Anspruch nehmen.
+			</span>
 		</ToolCard>
 		<ToolCard title="Screenreader" langTitle="en" image="{base}/tools/screenreader.svg">
-			Sowohl zur Orientierung, als auch um eine langsamere Lesegeschwindigkeit auszugleichen, nutzen
-			Studierende mit einer visuellen Einschränkung häufig einen sogenannten
+			<span>
+				Sowohl zur Orientierung, als auch um eine langsamere Lesegeschwindigkeit auszugleichen,
+				nutzen Studierende mit einer visuellen Einschränkung häufig einen sogenannten
+			</span>
 			<InfoBox
 				langTerm="en"
 				term="Screenreader"
@@ -116,10 +123,13 @@
 					enthalten, die vorgelesen werden können. Außerdem müssen Programme, Dokumente und Webseiten
 					barrierefrei erstellt werden, um die Inhalte in einer logischen Reihenfolge entnehmen zu können.
 				</p>
-			</InfoBox>. Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften
-			oder Menüs – wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht
-			oder nur fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.
-		</ToolCard>
+			</InfoBox>.
+			<span class="toolcard-span">
+				Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften oder Menüs –
+				wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht oder nur
+				fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.
+			</span></ToolCard
+		>
 	</div>
 
 	<FriendBubble {friendPersona}>
@@ -137,12 +147,14 @@
 		Als Ausgabe nutze ich auch mal gerne die Braillezeile, anstatt immer nur per Audio.
 	</FriendBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-02.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-02.mp3'}>
 		Ich kann zwar teilweise noch sehen, aber mein Gesichtsfeld ist seitlich eingeschränkt, also ist
 		es für mich schwieriger, einen schnellen Überblick über Websites oder Dokumente zu gewinnen.
 		Deswegen nutze ich Kopfbewegungen, um mein Gesichtsfeld zu bewegen und mich so zu orientieren.
 		Sieht komisch aus, hilft mir aber sehr!
 	</SpeechBubble>
+
+	<Diy content="keyboard" />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 
@@ -154,7 +166,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-03.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-03.mp3'}>
 		Habe ich die Vorlesungsunterlagen bereits vor der Vorlesung, kann ich sie im Vorfeld für mich
 		anpassen und der Veranstaltung dann besser folgen. Außerdem kann ich dann selbst entscheiden, wo
 		ich mich mit meinen Freunden und Freundinnen hinsetzen möchte. Ich muss dann nicht in der ersten
@@ -192,7 +204,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-04.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-04.mp3'}>
 		Ich habe im Folgenden mal ein Beispiel vorbereitet, wie eine Herausforderung in meinem
 		Studienalltag so aussehen kann. Die Simulation des Glaukoms ist natürlich nicht ganz
 		realistisch, aber seine Auswirkungen auf mein Studium kann ich dir so, denke ich, besser
@@ -208,7 +220,7 @@
 		/>
 	</div>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-05.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-05.mp3'}>
 		Eine einheitliche Gestaltung, eine klare Struktur und nicht überfrachtete Folien helfen mir und
 		auch meinen Mitstudierenden in der Orientierung sehr. So weiß ich beispielsweise, dass ich
 		rechts unten immer den roten Infokasten finde und verliere nicht so viel Zeit mit Suchen.
@@ -239,7 +251,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-06.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-06.mp3'}>
 		Leider sind die Scans, die wir von Lehrpersonen bekommen, um uns auf kommende Veranstaltungen
 		vorzubereiten, häufig sehr unscharf. Manchmal muss ich dann in die Bücherei gehen, um die Texte
 		erneut einzuscannen. Wenn ich die Quelle nicht finde, muss ich die Lehrperson fragen, ob sie das
@@ -272,14 +284,14 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-07.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-07.mp3'}>
 		Wenn ich meinen benötigten Abstand zum Bildschirm einnehme, ist mein Gesicht in extremer
 		Nahaufnahme zu sehen, was mir meist eher unangenehm ist. Ich habe also folgende Optionen: Ich
 		kann nichts oder nur schlecht sehen. Ich kann die Nahaufnahme meiner Nase zeigen. Oder ich
 		schalte die Kamera aus und und bekomme doofe Kommentare.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-08.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-08.mp3'}>
 		Ich habe eine Dozentin, die uns immer direkt mit unseren Namen anspricht, wenn sie eine Frage
 		stellt. So weiß ich sofort, dass sie mit mir spricht. Das ist für mich sehr hilfreich.
 	</SpeechBubble>
@@ -313,7 +325,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-09.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-09.mp3'}>
 		Im letzten Semester habe ich eine Prüfung geschrieben, die leider keine Bildbeschreibungen
 		enthielt. Es hat mich daher sehr viel Zeit gekostet, die Aufgaben dazu zu bearbeiten und diese
 		Zeit hat mir dann bei anderen Aufgaben gefehlt.
@@ -328,12 +340,10 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/sb-10.mp3'}>
+	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-10.mp3'}>
 		Wenn ich Prüfungen online schreibe und neue Programme dafür verwendet werden, hilft es mir,
 		Probe-Prüfungen zu schreiben, um das Programm und das Vorgehen ohne Druck kennenzulernen.
 	</SpeechBubble>
-
-	<Diy content="keyboard" />
 
 	<MainHeading heading="Barrierefreiheit umsetzen" />
 
@@ -390,7 +400,7 @@
 
 	<!-- usertest -->
 	<div class="user-test">
-		<UserTest />
+		<UserTest bottomOfPage />
 	</div>
 </PersonaContent>
 

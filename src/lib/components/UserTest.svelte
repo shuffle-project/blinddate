@@ -1,80 +1,114 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 
+	export let bottomOfPage = false;
+
 	let modal: Modal;
+	let modalButton: HTMLButtonElement;
 
 	let persona = '';
+	let malePersona = false;
+	let disability: 'Hörbehinderung' | 'Sehbeeinträchtigung' | '' = '';
+
 	let linkToPersonaQuestionnaire = '';
 
 	$: {
 		let url = $page.url.pathname;
 
 		if (url.includes('gabriel')) {
-			persona = 'Gabriel-';
+			persona = 'Gabriel';
+			malePersona = true;
+			disability = 'Sehbeeinträchtigung';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/227497?lang=de';
 		} else if (url.includes('hannah')) {
-			persona = 'Hannah-';
+			persona = 'Hannah';
+			malePersona = false;
+			disability = 'Hörbehinderung';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/282499?lang=de';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';
 		}
 	}
+
+	function handleClosingModal() {
+		localStorage.setItem('welcomeModalViewed', 'true');
+	}
+
+	onMount(() => {
+		if (!bottomOfPage) {
+			const welcomeModalViewed = Boolean(localStorage.getItem('welcomeModalViewed'));
+
+			if (!welcomeModalViewed) {
+				modalButton?.focus();
+				modalButton?.click();
+			}
+		}
+	});
 </script>
 
 <div class="wrapper">
-	<button on:click={() => modal.toggleModalDisplay()}> Willkommenstext öffnen </button>
-	<hr aria-hidden="true" />
-	<p>{persona}Seite erkundet und bereit?</p>
-	<a href={linkToPersonaQuestionnaire}>Zur {persona} Umfrage</a>
+	{#if !bottomOfPage}
+		<button bind:this={modalButton} on:click={() => modal.toggleModalDisplay()}>
+			Willkommenstext öffnen
+		</button>
+		<hr aria-hidden="true" />
+	{/if}
+	<p>{persona}-Seite erkundet und bereit?</p>
+	<a href={linkToPersonaQuestionnaire}>Zur {persona}-Umfrage</a>
 </div>
 
-<Modal bind:this={modal}>
-	<svelte:fragment slot="headline">Herzlich Willkommen auf BlindDate</svelte:fragment>
-	<svelte:fragment slot="content">
-		<p>Auf dieser Webseite werden Sie <b>Gabriel</b> kennenlernen.</p>
-		<p>
-			Gabriel ist eine von insgesamt 8 virtuellen Persona, die Ihnen von sich und ihrem
-			Studienalltag erzählt.
-		</p>
-		<p>
-			Gabriel wird Ihnen seine Strategien erklären, die er im Studienalltag nutzt. Er kann Ihnen
-			Tipps und Tricks an die Hand geben, damit digitale Lehre für Studierende mit einer
-			Sehbeeinträchtigung barrierefreier wird.
-		</p>
-		<p>
-			Obwohl Gabriel nur virtuell existiert, ist er aus realen Erfahrungen von Studierenden mit
-			einer Sehbeeinträchtigung entstanden. Mithilfe einer großen Datenerhebung, qualitativen
-			Interviews und in ständigen <span lang="en">Feedback-Loops</span> mit Studierenden mit einer
-			Sehbeeinträchtigung haben wir – das Team des Forschungsprojekt
-			<span lang="en">SHUFFLE</span> - diese verschiedenen Perspektiven sammeln können. Damit nicht nur
-			Gabriel zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie neben Gabriels persönlichen
-			Erläuterungen auch allgemein gehaltene Textpassagen.
-		</p>
-
-		<div class="hint-wrapper">
-			<div class="hint">
-				<Icon img="attention" size="smedium" />
-				<p>Hinweis</p>
-			</div>
-
-			<p class="hint-text">
-				BlindDate sollte auf allen Endgeräten mit einem aktuellen und gängigen Browser nutzbar sein.
-				Bis auf das Simulationsspiel sind alle Inhalte barrierefrei zugänglich. Sollten Sie dennoch
-				auf Barrieren stoßen, melden Sie sich bitte bei uns.
+{#if !bottomOfPage}
+	<Modal bind:this={modal} on:close={() => handleClosingModal()}>
+		<svelte:fragment slot="headline">Herzlich Willkommen auf BlindDate</svelte:fragment>
+		<svelte:fragment slot="content">
+			<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>
+			<p>
+				{persona} ist eine von mehreren virtuellen Personas, die Ihnen von sich und ihrem Studienalltag
+				erzählt.
 			</p>
-		</div>
-		<b>
-			Bitte teilen Sie uns Ihre Gedanken und Rückmeldungen mit und nutzen die Links zur Umfrage am
-			Anfang oder am Ende der Seite.
-		</b>
-		<p class="signature">Das <span lang="en">SHUFFLE</span>-BlindDate-Team</p>
-		<p class="shuffle-url">www.shuffle-projekt.de</p>
-		<div class="spacer" />
-	</svelte:fragment>
-</Modal>
+			<p>
+				{persona} wird Ihnen {malePersona ? 'seine' : 'ihre'} Strategien erklären, die {malePersona
+					? 'er'
+					: 'sie'} im Studienalltag nutzt. {malePersona ? 'Er' : 'Sie'} kann Ihnen Tipps und Tricks an
+				die Hand geben, damit digitale Lehre für Studierende mit einer {disability} barrierefreier wird.
+			</p>
+			<p>
+				Obwohl {persona} nur virtuell existiert, ist {malePersona ? 'er' : 'sie'} aus realen Erfahrungen
+				von Studierenden mit einer {disability} entstanden. Mithilfe einer großen Datenerhebung, qualitativen
+				Interviews und in ständigen <span lang="en">Feedback-Loops</span> mit Studierenden mit einer
+				{disability} haben wir – das Team des Forschungsprojekt
+				<span lang="en">SHUFFLE</span> - diese verschiedenen Perspektiven sammeln können. Damit
+				nicht nur
+				{persona} zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie neben {persona}s
+				persönlichen Erläuterungen auch allgemein gehaltene Textpassagen.
+			</p>
+
+			<div class="hint-wrapper">
+				<div class="hint">
+					<Icon img="attention" size="smedium" />
+					<p>Hinweis</p>
+				</div>
+
+				<p class="hint-text">
+					BlindDate sollte auf allen Endgeräten mit einem aktuellen und gängigen Browser nutzbar
+					sein. Bis auf das Simulationsspiel sind alle Inhalte barrierefrei zugänglich. Sollten Sie
+					dennoch auf Barrieren stoßen, melden Sie sich bitte bei uns.
+				</p>
+			</div>
+			<b>
+				Bitte teilen Sie uns Ihre Gedanken und Rückmeldungen mit und nutzen die Links zur Umfrage am
+				Anfang oder am Ende der Seite.
+			</b>
+			<p class="signature">Das <span lang="en">SHUFFLE</span>-BlindDate-Team</p>
+			<p class="shuffle-url">www.shuffle-projekt.de</p>
+			<div class="spacer" />
+		</svelte:fragment>
+	</Modal>
+{/if}
 
 <style lang="scss">
 	.spacer {
