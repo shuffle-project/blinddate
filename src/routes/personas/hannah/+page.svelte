@@ -175,6 +175,16 @@
 		direkt alle alles mitbekommen
 	</SpeechBubble>
 
+	<Recommendation link="https://nicht-stumm.de/" marginBottom>
+		<svelte:fragment slot="textBefore">Das Projekt</svelte:fragment>
+		<svelte:fragment slot="linkText">nicht stumm!</svelte:fragment>
+
+		<svelte:fragment slot="textAfter"
+			>setzt sich mit den klassischen Klischees gegenüber hörbehinderte Menschen und der
+			Gebärdensprache auseinander.
+		</svelte:fragment>
+	</Recommendation>
+
 	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-04.mp3'}>
 		Und viele Menschen denken, dass ich – da ich Hörhilfen trage – alles genauso höre, wie sie. Das
 		stimmt aber nicht. Viele Hintergrundgeräusche, wie Vogelgezwitscher oder das sich nähernde Auto,
@@ -439,7 +449,7 @@
 
 	<!-- usertest -->
 	<div class="user-test">
-		<UserTest />
+		<UserTest bottomOfPage />
 	</div>
 </PersonaContent>
 

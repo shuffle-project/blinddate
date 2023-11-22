@@ -400,7 +400,7 @@
 
 	<!-- usertest -->
 	<div class="user-test">
-		<UserTest />
+		<UserTest bottomOfPage />
 	</div>
 </PersonaContent>
 

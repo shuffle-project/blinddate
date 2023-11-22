@@ -10,7 +10,7 @@
 <div class="wrapper">
 	<TextSection let:Text>
 		<Text>
-			BlindDate wurde ebenfalls barrierefrei umgesestzt. Das heißt, dass Sie auch hier direkt die
+			BlindDate wurde ebenfalls barrierefrei umgesetzt. Das heißt, dass Sie auch hier direkt die
 			Tastatursteuerung ausprobieren können.
 		</Text>
 	</TextSection>
