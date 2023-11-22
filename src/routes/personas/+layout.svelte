@@ -2,13 +2,10 @@
 	import { base } from '$app/paths';
 	import Icon from '$lib/components/Icon.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
-	import Skiplink from '$lib/components/Skiplink.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import Footer from '../../lib/components/Footer.svelte';
 </script>
-
-<Skiplink />
 
 <div class="background-black">
 	<header>
