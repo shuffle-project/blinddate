@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+
+	/* tasks */
 
 	const contentsArray = [
 		{
@@ -163,7 +166,6 @@
 	}
 
 	/*no fun on mobile*/
-	import { onMount } from 'svelte';
 
 	let smallScreen: boolean;
 	let smallScreenMessage =
@@ -315,8 +317,8 @@
 
 	.persona {
 		position: absolute;
-		height: 120%; /*hardstyled*/
-		transform: translate(-20%, 10%); /*hardstyled*/
+		height: 105%; /*hardstyled*/
+		transform: translate(10%, 25%); /*hardstyled*/
 		filter: drop-shadow(3px 3px 3px rgba(var(--color-black-rgb), 0.3));
 		z-index: 3;
 	}
