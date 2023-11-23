@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { welcomeTextShown } from '$lib/store';
 	import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
@@ -33,19 +34,11 @@
 			linkToPersonaQuestionnaire = '';
 		}
 	}
-
-	function handleClosingModal() {
-		localStorage.setItem('welcomeModalViewed', 'true');
-	}
-
 	onMount(() => {
-		if (!bottomOfPage) {
-			const welcomeModalViewed = Boolean(localStorage.getItem('welcomeModalViewed'));
-
-			if (!welcomeModalViewed) {
-				modalButton?.focus();
-				modalButton?.click();
-			}
+		if (!bottomOfPage && !$welcomeTextShown) {
+			welcomeTextShown.set(true);
+			modalButton?.focus();
+			modalButton?.click();
 		}
 	});
 </script>
@@ -62,7 +55,7 @@
 </div>
 
 {#if !bottomOfPage}
-	<Modal bind:this={modal} on:close={() => handleClosingModal()}>
+	<Modal bind:this={modal}>
 		<svelte:fragment slot="headline">Herzlich Willkommen auf BlindDate</svelte:fragment>
 		<svelte:fragment slot="content">
 			<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>

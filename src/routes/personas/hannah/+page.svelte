@@ -180,7 +180,7 @@
 		<svelte:fragment slot="linkText">nicht stumm!</svelte:fragment>
 
 		<svelte:fragment slot="textAfter"
-			>setzt sich mit den klassischen Klischees gegenüber hörbehinderte Menschen und der
+			>setzt sich mit den klassischen Klischees gegenüber hörbehinderten Menschen und der
 			Gebärdensprache auseinander.
 		</svelte:fragment>
 	</Recommendation>
