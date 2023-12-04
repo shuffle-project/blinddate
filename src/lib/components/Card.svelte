@@ -4,13 +4,13 @@
 </script>
 
 <script lang="ts">
+	import { base } from '$app/paths';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import type { Persona } from '../interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
-	import Glaucoma from './disabilityExplanation/Glaucoma.svelte';
-	import HardOfHearing from './disabilityExplanation/HardOfHearing.svelte';
 
 	export let persona: Persona;
 
@@ -41,11 +41,7 @@
 		{persona.disability}
 	</svelte:fragment>
 	<svelte:fragment slot="content">
-		{#if persona.name === 'Gabriel'}
-			<Glaucoma />
-		{:else if persona.name === 'Hannah'}
-			<HardOfHearing />
-		{/if}
+		<svelte:component this={persona.disabilityExplanation} />
 	</svelte:fragment>
 </Modal>
 
@@ -64,12 +60,12 @@
 				<PersonaPortrait {persona} />
 				<div class="card-body">
 					<button class="first" on:click={() => toggleModalDisplay()}>
-						<Icon img={persona.disability_icon} size="medium">{persona.disability}</Icon>
+						<Icon img={persona.disabilityIcon} size="medium">{persona.disability}</Icon>
 						<Icon img="arrow-toright" size="tiny" />
 					</button>
 
 					<a href="#tips" class="second">
-						<Icon img="light-bulb" size="medium" svg_color="white">Tipps zur Unterstützung</Icon>
+						<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon>
 
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
 					</a>
@@ -100,17 +96,18 @@
 			</div>
 		{/if}
 	</div>
-	<div class="other-personas-container">
-		<div class="other-personas">
-			<!-- usertest -->
-			<button disabled>{persona.previousPersona}</button>
-			<button disabled>{persona.nextPersona}</button>
-			<!-- <a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
-				>{persona.previousPersona}</a
-			>
-			<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a> -->
+
+	{#if ENVIRONMENT.personaCardOtherPersonas}
+		<div class="other-personas-container">
+			<div class="other-personas">
+				<a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
+					>{persona.previousPersona}</a
+				>
+				<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a
+				>
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -136,23 +133,25 @@
 				display: flex;
 				justify-content: space-between;
 
-				a,
-				button {
+				a {
 					text-decoration: none;
 					flex-grow: 1;
 
-					// usertest
-					color: rgba(var(--color-black-rgb), 0.5);
-					// color: var(--color-black);
-
+					color: var(--color-black);
 					background-color: var(--color-white);
-					border: 1px solid var(--color-border);
+					border: 1px solid var(--color-lavender);
 					border-radius: 2.22rem;
+
 					font-size: 0.88rem;
-					box-shadow: 0px 6px 10px rgba(7, 13, 28, 0.15);
+					box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
 					text-align: center;
 					padding: 0.11rem 0;
 					max-width: 6.11rem;
+
+					&:hover,
+					&:focus {
+						outline: 2px solid var(--color-blue);
+					}
 				}
 			}
 		}

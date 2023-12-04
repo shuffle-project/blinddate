@@ -14,7 +14,7 @@
 	}
 </script>
 
-<div class="sl-container" id="simulation-link-gabriel">
+<div class="sl-container" id="simulation-link-{personaID}">
 	<div class="sl-content">
 		<img class="sl-img" src={image} alt="" role="presentation" />
 		<div class="text-container">
@@ -35,22 +35,22 @@
 		<svelte:fragment slot="content">
 			{#if personaID === 'gabriel'}
 				<p>
-					Das vorliegende Spiel ist aufgrund seiner spezifischen Spielmechanik leider nicht
-					vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit einem
-					Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um die
-					Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
-					derselben
+					Das vorliegende Simulationsspiel ist aufgrund seiner spezifischen Spielmechanik leider
+					nicht vollständig barrierefrei. Die Simulation einer visuellen Beeinträchtigung kann mit
+					einem Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um
+					die Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
+					derselben.
 				</p>
 
 				<p id="game-explained">
 					In diesem Simulationsspiel hat die spielende Person die Aufgabe, aus einem Foliensatz aus
 					Gabriels Vorlesung "Ethik 1" im Studiengang "Soziale Arbeit" einige Quellen
 					herauszuschreiben. Die vermeintlich einfache Aufgabe wird plötzlich erschwert, als das
-					Sichtfeld des Spielers eingeschränkt wird (siehe <span lang="en">Screenshot</span> unten).
-					Erst mit der Hilfe von Gabriel und dessen Strategie der ständigen Kopfbewegung können die Folien
-					Stück für Stück aufgedeckt und die Aufgaben gelöst werden. Der Spieler bekommt ein Gefühl dafür,
-					wie hilfreich eine gute Strukturierung der Folien ist, damit Gabriel die gesuchten Inhalte
-					zügiger auffinden kann.
+					Sichtfeld der spielenden Person eingeschränkt wird (siehe <span lang="en">Screenshot</span
+					> unten). Erst mit der Hilfe von Gabriel und dessen Strategie der ständigen Kopfbewegung können
+					die Folien Stück für Stück aufgedeckt und die Aufgaben gelöst werden. Die spielende Person
+					bekommt ein Gefühl dafür, wie hilfreich eine gute Strukturierung der Folien ist, damit Gabriel
+					die gesuchten Inhalte zügiger auffinden kann.
 				</p>
 
 				<img
@@ -66,14 +66,49 @@
 					Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es
 					funktioniert. Versuch's mal!"
 				</p>
+				<div class="spacer" />
 			{:else if personaID === 'hannah'}
-				<p>Just a test</p>
+				<p>
+					Das vorliegende Simulationsspiel ist aufgrund seiner spezifischen Spielmechanik leider
+					nicht vollständig barrierefrei. Die Simulation einer Hörbeeinträchtigung kann mit einem
+					Screenreader oder ähnlichen Hilfsmitteln nicht vollständig nachempfunden werden. Um die
+					Spielinhalte dennoch zugänglich zu machen, folgt hier eine detaillierte Beschreibung
+					derselben.
+				</p>
+
+				<p id="game-explained">
+					In diesem Simulationsspiel hat die spielende Person die Aufgabe, einfache Matheaufgaben
+					der Vorlesung „Grundschulmathematik 1“ zu lösen, die in einem Video von einer Dozentin
+					diktiert werden. Die vermeintlich einfache Aufgabe wird plötzlich erschwert, als die
+					Audiospuren von einem starken Rauschen überlagert werden. Erst mit der Hilfe von Hannah
+					und deren Strategie, die Untertitel der Videos zu lesen, können die Aufgaben erneut
+					verstanden und gelöst werden. Die spielende Person bekommt ein Gefühl dafür, wie hilfreich
+					gute Untertitelung ist, damit Hannah das Gesagte ohne Raten verstehen kann.
+				</p>
+
+				<img
+					alt="Screenshot aus Hannahs Simulationsspiel"
+					aria-describedby="game-explained"
+					src={base + '/personas/hannah/simulation-game.png'}
+				/>
+
+				<p>
+					Die Strategie, auf Untertitel zurückzugreifen, spricht Hannah in dem Screenshot mit den
+					folgenden Worten auch an: "Gib’s zu, das hast Du geraten! Aber keine Sorge: Moderne
+					Techniken bergen viele Hilfsmittel. Für dieses Video beispielsweise stehen automatische
+					Untertitel zur Verfügung, auf die auch ich häufig zurückgreife. Ich schalte sie Dir ein. "
+				</p>
+				<div class="spacer" />
 			{/if}
 		</svelte:fragment>
 	</Modal>
 </div>
 
 <style lang="scss">
+	.spacer {
+		height: 1rem;
+	}
+
 	img {
 		max-width: 100%;
 		aspect-ratio: 16/9;

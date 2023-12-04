@@ -1,3 +1,7 @@
+export function getRandomId() {
+	return Math.random().toString(16).slice(2);
+}
+
 export function handleBackdropClick(e: MouseEvent, dialog: HTMLDialogElement) {
 	const dialogDimensions = dialog.getBoundingClientRect();
 	if (

@@ -1,31 +1,29 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import { onMount } from 'svelte';
 	import WeekDesktop from './WeekDesktop.svelte';
 	import WeekMobile from './WeekMobile.svelte';
 
 	export let persona: Persona;
-
-	const viewportBreakpoint = window.matchMedia(`(max-width: 510px)`);
-
-	let smallViewport = true;
-
-	onMount(() => {
-		smallViewport = window.innerWidth < 510;
-
-		viewportBreakpoint.addEventListener('change', (e) => {
-			smallViewport = e.matches;
-		});
-	});
 </script>
 
 <div class="wrapper">
-	{#if !smallViewport}
+	<div class="desktop">
 		<WeekDesktop {persona} />
-	{:else}
+	</div>
+	<div class="mobile">
 		<WeekMobile {persona} />
-	{/if}
+	</div>
 </div>
 
 <style lang="scss">
+	@media (min-width: 31.9375rem) {
+		.mobile {
+			display: none;
+		}
+	}
+	@media (max-width: 31.875rem) {
+		.desktop {
+			display: none;
+		}
+	}
 </style>

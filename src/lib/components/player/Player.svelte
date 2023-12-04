@@ -11,9 +11,11 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	import { onMount } from 'svelte';
 	import type { Video } from '../../interfaces/player.interfaces';
 	import Icon from '../Icon.svelte';
+	import { getRandomId } from '../utils';
 	import CaptionSettings from './CaptionSettings.svelte';
 	import TempoSettings from './TempoSettings.svelte';
 	const isSafari = detect()!.name == 'safari';
+	const randomId = getRandomId();
 
 	export let videoData: Video;
 
@@ -84,6 +86,19 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			captionsFontColor = window.localStorage.getItem('captionsFontColor') || 'white';
 			captionsFontSize = window.localStorage.getItem('captionsFontSize') || 'medium';
 		}
+
+		[
+			'fullscreenchange',
+			'webkitfullscreenchange',
+			'mozfullscreenchange',
+			'msfullscreenchange'
+		].forEach((eventType) =>
+			document.addEventListener(eventType, (e) => {
+				if (e.target === videoWrapper) {
+					fullscreen = !fullscreen;
+				}
+			})
+		);
 	});
 
 	// functions
@@ -96,6 +111,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		}
 		ariaLiveContent = paused ? 'Pausiert' : 'Gestartet';
 	}
+
 	function onMute() {
 		muted = !muted;
 		ariaLiveContent = muted ? 'Stummgeschalten' : 'Ton aktiviert';
@@ -117,10 +133,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	function onToggleFullscreen() {
 		if (document.fullscreenElement || (document as any).webkitFullscreenElement) {
 			exitFullscreen();
-			fullscreen = false;
 		} else {
 			enterFullscreen();
-			fullscreen = true;
 		}
 	}
 
@@ -140,6 +154,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	}
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
 	class="wrapper"
 	bind:this={videoWrapper}
@@ -150,7 +165,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	<!-- svelte-ignore a11y-media-has-caption -->
 	<video
 		poster={base + videoData.poster}
-		id="video"
+		id="video-{randomId}"
 		controls={userDeviceIsiOS}
 		preload="auto"
 		width="100%"
@@ -164,6 +179,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		class={!userDeviceIsiOS
 			? `bg-${captionsBackgroundColor} fc-${captionsFontColor} fs-${captionsFontSize}`
 			: ''}
+		class:userDeviceIsiOS
 		on:click={onPlayPause}
 		on:dblclick={onToggleFullscreen}
 		tabindex="0"
@@ -216,7 +232,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						</button>
 
 						<button
-							id="mute"
+							id="mute-{randomId}"
 							aria-label="Ton stummschalten"
 							title="Ton stummschalten"
 							aria-pressed={muted}
@@ -288,10 +304,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		opacity: 0%;
 		height: 0px;
 		width: 0px;
-	}
-
-	button[aria-pressed='true'] {
-		background-color: darkblue;
 	}
 
 	.wrapper {
@@ -393,6 +405,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			width: 100%;
 
 			padding: 0.5rem;
+			height: 5.5rem;
 
 			.volume-slider {
 				cursor: pointer;
@@ -423,16 +436,15 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				justify-content: center;
 
 				background-color: transparent;
+				border: none;
 
-				border: 2px solid transparent;
-				outline: 2px solid transparent;
 				border-radius: 50%;
 				cursor: pointer;
 
 				&:hover,
 				&:focus {
-					border: 2px solid transparent;
 					outline: 2px solid var(--color-white);
+					outline-offset: 2px;
 				}
 			}
 
@@ -479,14 +491,15 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				}
 			}
 			&.isSafari {
-				.volume-slider{
+				.volume-slider {
 					margin-top: 0.7rem;
 
 					&:disabled {
 						opacity: 50%;
 					}
 				}
-				.time-progress, .volume-slider {
+				.time-progress,
+				.volume-slider {
 					appearance: none;
 					-webkit-appearance: none;
 					width: 100%;
@@ -495,29 +508,26 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					background-color: var(--color-white);
 					border-radius: 1rem;
 					margin-bottom: 0.8rem;
-				
-					
+
 					// margin-bottom: 0.8rem;
 
 					cursor: pointer;
 
-					
-
 					&::-webkit-slider-thumb {
 						-webkit-appearance: none;
- 						 appearance: none;
-						 height: 1.11rem;
-						 width: 1.11rem;
-						 border: 1px solid var(--color-black);
-						 background-color: var(--color-white);
-						 border-radius: 50%;
+						appearance: none;
+						height: 1.11rem;
+						width: 1.11rem;
+						border: 1px solid var(--color-black);
+						background-color: var(--color-white);
+						border-radius: 50%;
 
-						 &:hover, &:active {
+						&:hover,
+						&:active {
 							outline: 2px solid var(--color-white);
-							
+
 							border: 2px solid var(--color-black);
-						 }
-  
+						}
 					}
 
 					&:focus-within {
@@ -535,11 +545,23 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		#video-controls {
 			border-radius: 0;
 		}
+
+		video {
+			border-radius: 0;
+		}
 	}
 
 	@media (min-width: 42.3125rem) {
 		#video-controls {
 			border-radius: 0 0 1.11rem 1.11rem;
+		}
+
+		video {
+			border-radius: 1.11rem 1.11rem 0 0;
+
+			&.userDeviceIsiOS {
+				border-radius: 1.11rem;
+			}
 		}
 	}
 </style>

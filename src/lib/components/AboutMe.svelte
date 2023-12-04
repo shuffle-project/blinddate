@@ -68,6 +68,7 @@
 			}
 
 			.tags {
+				margin-bottom: 1rem;
 				ul {
 					display: flex;
 					flex-wrap: wrap;
@@ -77,9 +78,9 @@
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					color: var(--color-white);
+					color: rgba(var(--color-white-rgb), 0.85);
 					background-color: var(--color-black);
-					border: 1px solid var(--color-white);
+					border: 1px solid rgba(var(--color-white-rgb), 0.5);
 					border-radius: 2.77rem;
 					height: 1.66rem;
 					font-size: 0.88rem;

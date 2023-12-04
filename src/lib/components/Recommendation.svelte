@@ -1,8 +1,9 @@
 <script lang="ts">
 	export let link: string;
+	export let marginBottom = false;
 </script>
 
-<div class="container">
+<div class="container" class:marginBottom>
 	<div class="line" />
 
 	<div class="content">
@@ -40,6 +41,10 @@
 		display: flex;
 		gap: 1.65rem;
 		margin-top: 2rem;
+
+		&.marginBottom {
+			margin-bottom: 1.33rem;
+		}
 	}
 
 	.line {

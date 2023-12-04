@@ -17,13 +17,13 @@ html {
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 3.7rem;
 	font-weight: 700;
 	line-height: 150%;
 	letter-spacing: -0.01em;
 
 	&.responsive {
-		font-size: clamp(2.5rem, 8vw + 0.5rem, 4rem);
+		font-size: clamp(2.5rem, 7vw + 0.5rem, 3.7rem);
 	}
 }
 
@@ -40,25 +40,25 @@ h3 {
 	line-height: 150%;
 }
 
-h1,
-h2,
-h3 {
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	overflow-wrap: anywhere;
+// h1,
+// h2,
+// h3 {
+// 	word-wrap: break-word;
+// 	overflow-wrap: break-word;
+// 	overflow-wrap: anywhere;
 
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
-}
+// 	-webkit-hyphens: auto;
+// 	-moz-hyphens: auto;
+// 	hyphens: auto;
+// }
 
 .subtitle {
-	font-size: 1.5rem;
-	font-weight: 400;
+	font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
 	line-height: 150%;
 }
 
-p {
+p,
+.toolcard-span {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 155%;
@@ -118,30 +118,18 @@ button {
 	}
 }
 
-@media (min-width: 59.375rem) {
-	.no-component-text-wrapper {
-		max-width: var(--content-element-max-width);
-		padding-inline: 3.33rem;
-		box-sizing: border-box;
+.back-to-startpage {
+	border-radius: 1rem;
+	display: flex;
+	padding: 0.2rem 0.4rem;
+	cursor: pointer;
+	color: var(--color-white);
+	text-decoration: none;
+	font-size: 0.88rem;
 
-		.no-margin-top {
-			margin-top: 0;
-		}
-	}
-}
-
-@media (max-width: 59.3125rem) {
-	.no-component-text,
-	.main-heading {
-		max-width: 31.04rem;
-		margin-inline: auto;
-		padding-inline: 1.33rem;
-	}
-
-	h2 {
-		&.main-heading {
-			padding-top: 5rem;
-			text-align: center;
-		}
+	&:hover,
+	&:focus {
+		outline: 2px solid var(--color-white);
+		outline-offset: 2px;
 	}
 }

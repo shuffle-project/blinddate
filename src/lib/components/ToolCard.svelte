@@ -18,43 +18,81 @@
 </div>
 
 <style lang="scss">
-	@media (min-width: 40.625rem) {
-		.wrapper {
-			max-width: var(--content-element-max-width);
+	.wrapper {
+		position: relative;
+		max-width: var(--content-element-max-width);
 
-			@for $i from 0 through 20 {
-				&:nth-of-type(#{$i}) {
-					.background::after {
-						content: url('/decorations/toolCardBackground/toolCard_background_#{$i%3}.svg');
-						position: absolute;
-						top: 75%;
-						right: 1rem;
+		.content {
+			background-color: var(--color-white);
+			border: 1px solid var(--color-lavender);
+			border-radius: 0.85rem;
 
-						@if $i%2 == 0 {
-							left: 1rem;
-						}
+			max-width: calc(var(--content-element-max-width) - 6.66rem);
+			padding: 1rem 1.66rem;
+			box-sizing: border-box;
+			margin: 0 3.33rem 1.66rem 3.33rem;
+
+			display: flex;
+			justify-content: space-between;
+			gap: 2rem;
+
+			position: relative;
+			z-index: 2;
+
+			box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.1);
+
+			p {
+				margin: 0;
+			}
+
+			h3 {
+				margin: 0 0 0.22rem;
+			}
+		}
+
+		@for $i from 0 through 20 {
+			&:nth-of-type(#{$i}) {
+				.background::after {
+					content: url('/decorations/toolCardBackground/toolCard_background_#{$i%3}.svg');
+					position: absolute;
+					top: 75%;
+					right: 0rem;
+
+					@if $i%2 == 0 {
+						left: 1rem;
 					}
 				}
 			}
-			.content {
-				margin-left: 3.33rem;
-				margin-right: 3.33rem;
-				flex-direction: row;
-				align-items: center;
-				border: 1px solid var(--color-border);
+		}
 
-				box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
-
-				.image {
-					margin-left: 2.27rem;
-				}
+		&:nth-last-of-type(1) {
+			.background::after {
+				display: none;
 			}
 		}
 	}
 
-	@media (max-width: 40.625rem) {
+	@media (max-width: 59.3125rem) {
 		.wrapper {
-			max-width: 100%;
+			margin-inline: auto;
+			padding: 0 1.33rem;
+
+			.content {
+				max-width: 31.04rem;
+				margin-inline: auto;
+			}
+		}
+	}
+
+	@media (max-width: 38rem) {
+		.wrapper {
+			.content {
+				box-shadow: none;
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+				padding-bottom: 1.11rem;
+			}
 
 			@for $i from 0 through 20 {
 				&:nth-of-type(#{$i}) {
@@ -68,58 +106,6 @@
 							left: -5rem;
 						}
 					}
-				}
-			}
-			.content {
-				margin-left: 1.33rem;
-				margin-right: 1.33rem;
-				flex-direction: column;
-				align-items: center;
-				border: 1px solid var(--color-lavender);
-
-				.image {
-					margin-top: 1.11rem;
-				}
-			}
-		}
-	}
-
-	@media (min-width: 40.625rem) and (max-width: 59.375rem) {
-		.wrapper {
-			margin-inline: auto;
-		}
-	}
-
-	.wrapper {
-		position: relative;
-
-		&:nth-last-of-type(1) {
-			.background::after {
-				display: none;
-			}
-		}
-
-		.content {
-			position: relative;
-			z-index: 2;
-			margin-bottom: 1.66rem;
-			background-color: var(--color-white);
-
-			border-radius: 1.11rem;
-
-			padding: 1.11rem 1.33rem;
-
-			display: flex;
-
-			.text {
-				position: relative;
-				z-index: 2;
-				h3 {
-					margin: 0;
-					margin-bottom: 0.2rem;
-				}
-				p {
-					margin: 0;
 				}
 			}
 		}

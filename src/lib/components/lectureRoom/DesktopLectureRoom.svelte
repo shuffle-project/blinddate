@@ -25,20 +25,13 @@
 					>
 						<div class="persona-info-wrapper" aria-hidden="true">
 							<div class="persona-info">
-								<!-- <div class="icon">
-									<Icon
-										img="{base}/icons/{persona.disability_icon}"
-										size="medium"
-										svg_color="white"
-									/>
-								</div> -->
 								<p class="persona-name">{persona.name}</p>
 							</div>
 						</div>
 						<img
 							class="persona-img"
 							src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
-							alt={persona.shortVisualDescription}
+							alt=""
 							id="{persona.id}-image"
 						/>
 					</a>
@@ -56,12 +49,13 @@
 
 <style lang="scss">
 	.wrapper {
-		padding: 0 1rem;
 		background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 0 1rem;
+		margin-bottom: -5px;
 
 		.toggle-all-names {
 			width: 100%;
@@ -70,7 +64,6 @@
 			justify-content: end;
 			align-items: center;
 			gap: 0.55rem;
-
 			margin-right: 3rem;
 
 			input {
@@ -141,11 +134,20 @@
 				list-style: none;
 
 				&.gabriel {
-					bottom: 1.8%;
+					bottom: 2.7%;
 					left: 12%;
 
 					img {
-						width: min(18vw, 14rem);
+						width: min(17.5vw, 13rem);
+					}
+				}
+
+				&.aleksandr {
+					bottom: 41.5%;
+					left: 29%;
+
+					img {
+						width: min(21vw, 16rem);
 					}
 				}
 
@@ -159,19 +161,29 @@
 				}
 
 				&.hannah {
-					bottom: 40%;
-					right: 23%;
+					bottom: 41.5%;
+					right: 28%;
 
 					img {
-						width: min(20vw, 16rem);
+						width: min(13.5vw, 10.3rem);
+					}
+				}
+
+				&.kilian {
+					bottom: 41.95%;
+					right: 7%;
+
+					img {
+						width: min(15.5vw, 11.9rem);
 					}
 				}
 
 				&.maxi {
-					top: 5%;
+					top: 4.8%;
+					left: 6%;
 
 					img {
-						width: min(20vw, 16rem);
+						width: min(20vw, 15rem);
 					}
 				}
 
@@ -201,6 +213,11 @@
 
 							transition: all 0.2s ease-out;
 
+							p {
+								margin: 0;
+								font-size: 1.22rem;
+							}
+
 							p,
 							.icon {
 								opacity: 0%;
@@ -220,19 +237,15 @@
 							padding: 0.55rem 1rem;
 							border-radius: 2rem;
 
-							width: auto;
+							width: 5rem;
 							margin-bottom: 0;
 
 							transition: all 0.3s ease-out;
 
 							display: flex;
 							align-items: center;
+							justify-content: center;
 							gap: 0.55rem;
-
-							p {
-								margin: 0;
-								font-size: 1.22rem;
-							}
 
 							p,
 							.icon {
@@ -240,12 +253,6 @@
 								opacity: 100%;
 								transition: opacity 0.8s ease-out;
 							}
-
-							// .icon {
-							// 	display: flex;
-							// 	align-items: center;
-							// 	justify-content: center;
-							// }
 						}
 					}
 

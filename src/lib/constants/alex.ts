@@ -4,7 +4,7 @@ export const ALEX_FRIEND: FriendPersona = {
 	id: 'alex',
 	name: 'Alex',
 	disability: 'Depression',
-	disability_icon: 'mental-health',
+	disabilityIcon: 'mental-health',
 	relation: 'Mitbewohner und Kommilitone',
 	relation_to: 'Maxi'
 };

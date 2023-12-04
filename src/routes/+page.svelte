@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import SearchBar from '$lib/components/SearchBar.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
+	import { ENVIRONMENT } from '$lib/constants/environment';
+	import { HOSTNAME } from '$lib/constants/hostname';
+	import { MetaTags } from 'svelte-meta-tags';
 	import Footer from '../lib/components/Footer.svelte';
 </script>
 
@@ -10,49 +12,115 @@
 	<title>BlindDate</title>
 </svelte:head>
 
+<MetaTags
+	title="Barrierefreies BlindDate"
+	description="Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre."
+	additionalMetaTags={[
+		{
+			property: 'keywords',
+			content:
+				'Barrierefreiheit, Inklusion, Vorlesung, Lehre, Studierende, Hochschule, Studium und Behinderung, Didaktik, Barrierefreie Lehre'
+		}
+	]}
+	openGraph={{
+		url: HOSTNAME,
+		title: 'Barrierefreies BlindDate',
+		description:
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre.',
+		siteName: 'BlindDate',
+		images: [
+			{
+				url: `${HOSTNAME}decorations/mainpage-teaser.jpg`
+			}
+		]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+
+		title: 'Barrierefreies BlindDate',
+		description:
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre.',
+		image: `${HOSTNAME}decorations/mainpage-teaser.jpg`
+	}}
+/>
+
 <header>
-	<div class="mobile">
-		<div class="user-test"></div>
-
-		<div class="first-row">
-			<a href="{base}/" class="logo">
-				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zur Startseite" />
+	<div>
+		<div class="row">
+			<div class="logo">
+				<img src="{base}/icons/logo.svg" alt="Blind Date Logo" />
 				<span aria-hidden="true">BlindDate</span>
-			</a>
-
-			<!-- <ShareButton /> -->
-		</div>
-		<!-- <hr aria-hidden="true" class="separator" /> -->
-		<div class="second-row">
-			<div class="space" />
-			<SearchBar />
-			<ShareButton />
-		</div>
-
-		<hr aria-hidden="true" class="separator" />
-	</div>
-
-	<div class="desktop">
-		<div class="first-row">
-			<a href="{base}/" class="logo">
-				<img src="{base}/icons/logo.svg" alt="Blind Date Logo, zur Startseite" />
-				<span aria-hidden="true">BlindDate</span>
-			</a>
-
-			<div class="searchbar">
-				<SearchBar />
 			</div>
-
 			<ShareButton />
 		</div>
-
 		<hr aria-hidden="true" class="separator" />
 	</div>
 </header>
 
-<main class="content" id="content">
-	<h1 class="responsive">Studierende kennenlernen</h1>
+<main class="content-wrapper" id="content">
+	<div class="upper-content">
+		<h1 class="responsive title">Eine Hochschule für alle</h1>
+		<p class="subtitle">
+			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren
+			Studienalltag. Konkrete Handlungsempfehlungen helfen Ihnen, Barrieren in der eigenen Lehre
+			abzubauen.
+		</p>
+		<p class="call-to-action">Lernen Sie jetzt die Studierenden kennen:</p>
+	</div>
 	<LectureRoom />
+	{#if ENVIRONMENT.displayLowerStartpageContent}
+		<div class="lower-content-wrapper">
+			<div class="lower-content">
+				<div class="lecturers">
+					<h2>Für Lehrende</h2>
+					<p>
+						BlindDate ist eine virtuelle Begegnugsplatform um Studierende mit individuellen Bedarfen
+						in Form von Personas kennenzulernen.
+					</p>
+					<p>
+						Lehre ist nicht einfach und Barrierefreiheit kostet Zeit. Was Sie als lehrende Person
+						auf BlindDate beachten sollten, erklären wir auf der folgenden Seite:
+					</p>
+					<a href="{base}/lecturers" class="focus-indicator">Informationen für Lehrende</a>
+				</div>
+				<div class="personas">
+					<img
+						class="top-wave"
+						src="{base}/decorations/top-blue-wave.svg"
+						alt=""
+						aria-hidden="true"
+					/>
+					<div class="personas-content">
+						<h2>Was sind Personas?</h2>
+						<p>
+							Personas sind keine reale Personen, aber durchaus realistisch. Unsere Personas
+							basieren auf Daten, Interviews und vor allem Erfahrungen echter Studierender mit
+							individuellen Bedarfen.
+						</p>
+						<div class="to-persona-development">
+							<a href="{base}/development" class="focus-indicator"
+								>Die Persona-Entwicklung im Detail</a
+							>
+						</div>
+					</div>
+					<img
+						class="bottom-wave"
+						src="{base}/decorations/bottom-blue-wave.svg"
+						alt=""
+						aria-hidden="true"
+					/>
+				</div>
+				<div class="glossary">
+					<h2>Glossar</h2>
+					<p>
+						Was bedeutet "Barrierefreiheit" eigentlich genau und wie sieht die gesetzliche Lage aus?
+						Auf der folgenden Unterseite gehen wir auf diese und weitere Frage ein:
+					</p>
+					<a href="{base}/glossary" class="focus-indicator">Zum Glossar</a>
+				</div>
+			</div>
+		</div>
+	{/if}
 </main>
 
 <div class="spacer" />
@@ -60,101 +128,169 @@
 <Footer />
 
 <style lang="scss">
-	.content {
-		background-color: var(--color-black);
-		padding-top: 4rem;
+	:root {
+		--text-section-max-width: 31rem;
 	}
-	h1 {
-		color: var(--color-white);
-
-		margin: 0;
-		padding-bottom: 2rem;
-		padding-inline: 1.33rem;
-
-		max-width: var(--content-max-width);
-		margin-inline: auto;
-		text-align: center;
-	}
-
 	header {
 		background-color: var(--color-black);
-	}
 
-	.separator {
-		margin-top: 0.22rem;
-		margin: 0;
-		color: rgba(var(--color-white-rgb), 0.5);
-	}
-
-	.logo {
-		color: var(--color-white);
-		display: flex;
-		align-items: center;
-		gap: 0.55rem;
-
-		font-size: 1.11rem;
-		font-weight: bold;
-		text-decoration: none;
-	}
-
-	@media (min-width: 59.375rem) {
-		h1 {
-			text-align: left;
-			padding-bottom: 1rem;
-		}
-
-		.mobile {
-			display: none;
-		}
-
-		.desktop {
-			padding-inline: 1.33rem;
-			margin-inline: auto;
+		.row {
+			display: flex;
+			justify-content: center;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1.33rem 1rem;
 			max-width: var(--content-max-width);
+			margin-inline: auto;
+		}
 
-			.first-row {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding-top: 1.33rem;
-				padding-bottom: 1rem;
+		.separator {
+			max-width: var(--content-max-width);
+			margin: 0 auto 0 auto;
+			color: rgba(var(--color-white-rgb), 0.5);
+		}
+
+		.logo {
+			color: var(--color-white);
+			display: flex;
+			align-items: center;
+			gap: 0.55rem;
+
+			font-size: 1.11rem;
+			font-weight: bold;
+		}
+	}
+	.content-wrapper {
+		padding-top: 4rem;
+		background-color: var(--color-black);
+
+		.upper-content {
+			max-width: var(--content-max-width);
+			margin-inline: auto;
+			padding: 0 1rem;
+
+			.title {
+				padding: 0;
+			}
+
+			h1,
+			.subtitle,
+			.call-to-action {
+				color: var(--color-white);
+			}
+			h1 {
+				margin: 0;
+			}
+		}
+
+		.lower-content-wrapper {
+			background-color: var(--color-background-body);
+
+			h2 {
+				margin: 0;
 			}
 		}
 	}
 
-	@media (max-width: 59.3125rem) {
-		.desktop {
-			display: none;
+	@media (max-width: 49.9375rem) {
+		h1,
+		.subtitle,
+		.call-to-action {
+			text-align: center;
 		}
 
-		.mobile {
-			.first-row {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 1.33rem 1.33rem 0 1.33rem;
+		.subtitle {
+			max-width: 100%;
+			margin: 2rem 0;
+		}
+
+		.call-to-action {
+			margin-bottom: 2rem;
+		}
+
+		.lower-content {
+			.lecturers,
+			.glossary {
+				max-width: var(--text-section-max-width);
+				padding: 7rem 1.33rem 5rem 1.33rem;
+				margin-inline: auto;
 			}
+		}
 
-			.second-row {
-				display: flex;
-				justify-content: space-between;
-				gap: 0.55rem;
+		.personas {
+			display: flex;
+			flex-direction: column;
 
-				padding: 1.33rem 1rem;
+			.top-wave,
+			.bottom-wave {
+				width: 100%;
+				max-width: 100%;
+			}
+			.personas-content {
+				padding: 2rem 0;
+				background-color: var(--color-lavender);
 
-				.space {
-					min-width: 2.77rem;
-					min-height: 2.77rem;
+				p,
+				.to-persona-development,
+				h2 {
+					max-width: var(--text-section-max-width);
+					padding: 0 1.33rem;
+					margin-inline: auto;
+				}
+
+				a {
+					color: var(--color-black);
+					text-decoration-color: var(--color-black);
+
+					&:focus {
+						outline: 2px solid var(--color-black);
+					}
 				}
 			}
 		}
 	}
 
-	@media (max-width: 32.75rem) {
-		.mobile {
-			.second-row {
-				padding: 1.33rem 0.55rem;
+	@media (min-width: 50rem) {
+		.subtitle {
+			max-width: 80%;
+		}
+
+		.lower-content-wrapper {
+			background-image: url('/decorations/startpage-path.svg');
+			background-repeat: no-repeat;
+			background-position: center -1rem;
+
+			.lower-content {
+				max-width: var(--content-max-width);
+				margin-inline: auto;
+				padding-inline: 1rem;
+				display: flex;
+				flex-direction: column;
+
+				.lecturers {
+					padding-top: 11rem;
+					margin-left: 2rem;
+					max-width: clamp(20rem, 40vw + 1rem, var(--text-section-max-width));
+				}
+
+				.personas {
+					max-width: clamp(20rem, 40vw + 1rem, var(--text-section-max-width));
+					align-self: flex-end;
+					padding-top: 6rem;
+					margin-right: 1rem;
+				}
+
+				.glossary {
+					max-width: clamp(26rem, 40vw + 1rem, var(--text-section-max-width));
+					padding: 12rem 0;
+					margin-left: 2rem;
+				}
 			}
+		}
+
+		.bottom-wave,
+		.top-wave {
+			display: none;
 		}
 	}
 </style>

@@ -4,8 +4,11 @@
 	import type { Day } from '../../interfaces/week.interfaces';
 	import Icon from '../Icon.svelte';
 	import Switch from '../Switch.svelte';
+	import { getRandomId } from '../utils';
 
 	export let persona: Persona;
+
+	const randomId = getRandomId();
 
 	const month: string = persona.week!.month;
 	const days: Day[] = persona.week!.days;
@@ -19,12 +22,12 @@
 	function onKeypressed(event: KeyboardEvent) {
 		if (event.code === 'ArrowLeft') {
 			event.preventDefault();
-			let element = document.getElementById('weektab-' + (detailedDay + 1 - 1));
+			let element = document.getElementById(`weektab-${detailedDay + 1 - 1}-${randomId}`);
 			element?.focus();
 			element?.click();
 		} else if (event.code === 'ArrowRight') {
 			event.preventDefault();
-			let element = document.getElementById('weektab-' + (detailedDay + 1 + 1));
+			let element = document.getElementById(`weektab-${detailedDay + 1 + 1}-${randomId}`);
 			element?.focus();
 			element?.click();
 		}
@@ -49,9 +52,9 @@
 							<button
 								tabindex={i === detailedDay ? 0 : -1}
 								class:active={detailedDay === i}
-								id="weektab-{i + 1}"
+								id="weektab-{i + 1}-{randomId}"
 								role="tab"
-								aria-controls="tabpanel-{i + 1}"
+								aria-controls="tabpanel-{i + 1}-{randomId}"
 								aria-selected={detailedDay === i}
 								aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
 									/\&shy;/gi,
@@ -83,9 +86,9 @@
 
 		<div
 			class="detailed-day"
-			id="tabpanel-{detailedDay + 1}"
+			id="tabpanel-{detailedDay + 1}-{randomId}"
 			role="tabpanel"
-			aria-labelledby="weektab-{detailedDay + 1}"
+			aria-labelledby="weektab-{detailedDay + 1}-{randomId}"
 		>
 			<img
 				class="week-day-indicator"
@@ -132,13 +135,12 @@
 		<div class="week-figure-inner">
 			<div class="week-figure-front">
 				<div class="week-figure-background">
-					<!-- src="{base}/personas/{persona.name.toLowerCase()}/{persona.name.toLowerCase()}_happy.svg" -->
 					<img
 						class="week-figure {days.filter((obj) => obj.smiley === 'happy').length < 3
 							? 'hidden'
 							: ''}"
 						aria-hidden={days.filter((obj) => obj.smiley === 'happy').length < 3}
-						src="{base}/personas/maxi/maxi_happy.svg"
+						src="{base}/personas/{persona.id}/{persona.id}-happy.svg"
 						alt="{persona.name} ist zufrieden, da {days.filter((obj) => obj.smiley === 'happy')
 							.length} von 5 Tagen in dieser Woche gut verliefen."
 					/>
@@ -146,11 +148,10 @@
 			</div>
 			<div class="week-figure-back">
 				<div class="week-figure-background">
-					<!-- src="{base}/personas/{persona.name.toLowerCase()}/{persona.name.toLowerCase()}_sad.svg" -->
 					<img
 						class="week-figure"
 						aria-hidden={days.filter((obj) => obj.smiley === 'sad').length < 3}
-						src="{base}/personas/maxi/maxi_sad.svg"
+						src="{base}/personas/{persona.id}/{persona.id}-sad.svg"
 						alt="{persona.name} steht in einer erschöpften Pose da, da {days.filter(
 							(obj) => obj.smiley === 'sad'
 						).length} von 5 Tagen in dieser Woche schlecht verliefen"
@@ -179,25 +180,23 @@
 			margin-inline: auto;
 			margin-top: 1.5rem;
 			width: 13.8rem;
-			
+
 			height: 34rem;
-			
 		}
 
 		.week-figure-text {
 			text-align: center;
 			margin: 0;
 			margin-inline: auto;
-			
+
 			padding: 0.22rem;
 			font-size: 0.88rem;
-			
+
 			position: absolute;
 			bottom: 0;
 			right: 0;
 			left: 0;
 		}
-
 
 		.week-figure-inner {
 			position: relative;
@@ -214,7 +213,7 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-		
+
 			-webkit-backface-visibility: hidden;
 			backface-visibility: hidden;
 		}
@@ -224,11 +223,10 @@
 		}
 
 		.week-figure {
-			width: 100%;
-			max-width: 8rem;
-			
+			max-height: 28rem;
+
 			z-index: 2;
-			transform: translateX(35%) translateY(10%);
+			transform: translateY(5%);
 			opacity: 100%;
 			transition: all 0s;
 			transition-delay: 0.2s;
@@ -243,6 +241,8 @@
 			background: var(--color-gradient-persona);
 			width: 13.8rem;
 			border-radius: 2.22rem;
+			display: flex;
+			justify-content: center;
 		}
 	}
 
@@ -280,9 +280,8 @@
 					.activity-selection-cell {
 						width: 100%;
 						display: flex;
-					    justify-content: center;
+						justify-content: center;
 						padding-bottom: 0.55rem;
-						
 
 						button {
 							background-color: transparent;
@@ -299,8 +298,6 @@
 
 							cursor: pointer;
 
-							// transition: all 0.2s ease-out;
-						
 							&.active {
 								background-color: var(--color-turquoise);
 								border: 1px solid var(--color-black);
@@ -308,7 +305,8 @@
 								font-weight: bold;
 							}
 
-							&:hover, &:focus {
+							&:hover,
+							&:focus {
 								outline: 2px solid var(--color-white);
 								outline-offset: 2px;
 							}
@@ -321,7 +319,6 @@
 						align-items: center;
 						justify-content: center;
 
-						
 						.activity-text {
 							background-color: var(--color-turquoise);
 							color: var(--color-black);
@@ -338,19 +335,14 @@
 							-moz-hyphens: auto;
 							hyphens: auto;
 						}
-
-				
-						
 					}
 
 					&.activity-wrapper {
 						overflow: hidden;
-						
+
 						border-top: 1px solid var(--color-border-blue);
 						padding: 0.55rem 0.27rem;
 					}
-
-					
 				}
 			}
 		}
@@ -380,7 +372,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				
+
 				padding-top: 1.11rem;
 				padding-bottom: 1.11rem;
 

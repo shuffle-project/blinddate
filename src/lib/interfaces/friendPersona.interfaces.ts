@@ -2,7 +2,7 @@ export interface FriendPersona {
 	id: string;
 	name: string;
 	disability: string;
-	disability_icon: string;
+	disabilityIcon: string;
 	relation: string;
 	relation_to: string;
 }

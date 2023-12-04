@@ -10,7 +10,7 @@
 		id: 'placeholder',
 		name: '',
 		disability: '',
-		disability_icon: '',
+		disabilityIcon: '',
 		relation: '',
 		relation_to: ''
 	};
@@ -37,24 +37,24 @@
 		}
 	}
 
-	const dialogAttrObserver = new MutationObserver((mutations, observer) => {
-		mutations.forEach((mutation) => {
-			if (mutation.attributeName === 'open') {
-				const dialog: any = mutation.target;
-				const isOpen = dialog.hasAttribute('open');
-
-				if (!isOpen) return;
-
-				dialog.removeAttribute('inert');
-
-				//set focus
-				const focusTarget = dialog.querySelector('[autofocus]');
-				focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
-			}
-		});
-	});
-
 	onMount(() => {
+		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName === 'open') {
+					const dialog: any = mutation.target;
+					const isOpen = dialog.hasAttribute('open');
+
+					if (!isOpen) return;
+
+					dialog.removeAttribute('inert');
+
+					//set focus
+					const focusTarget = dialog.querySelector('[autofocus]');
+					focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
+				}
+			});
+		});
+
 		dialogAttrObserver.observe(modal, {
 			attributes: true
 		});
@@ -79,7 +79,7 @@
 	inert
 	class:bottomSheet
 	bind:this={modal}
-	on:click={(e) => handleBackdropClick(e, modal)}
+	on:click|stopPropagation={(e) => handleBackdropClick(e, modal)}
 >
 	<div class="modal-content">
 		{#if !bottomSheet}
@@ -91,7 +91,7 @@
 					<button
 						aria-label="Dialog schließen"
 						aria-describedby="headline-{randomId}"
-						on:click={() => toggleModalDisplay()}
+						on:click|stopPropagation={() => toggleModalDisplay()}
 						><Icon img="close" size="big" svg_color="white" /></button
 					>
 				</div>
@@ -101,7 +101,7 @@
 			<div class="header">
 				<button
 					class="close-btn"
-					on:click={() => toggleModalDisplay()}
+					on:click|stopPropagation={() => toggleModalDisplay()}
 					aria-label={term !== ''
 						? term + ' Definition, Dialog schließen'
 						: 'Über ' + friendPersona.name + ', Dialog schließen'}
@@ -114,12 +114,17 @@
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 		<div class="content" tabindex="0">
 			<slot name="content" />
-			<div class="spacer" />
+			{#if bottomSheet}
+				<div class="spacer" />
+			{/if}
 		</div>
 	</div>
 </dialog>
 
 <style lang="scss">
+	.spacer {
+		height: 2rem;
+	}
 	h2 {
 		margin: 1rem 0;
 	}
@@ -131,8 +136,8 @@
 	dialog {
 		display: block;
 		border: transparent;
-		border-radius: 1rem;
-		padding: 1rem 0;
+		border-radius: 1.77rem;
+		padding: 2rem 0 1rem;
 		box-sizing: border-box;
 		max-inline-size: min(90vw, 44.4rem);
 		max-block-size: min(80vh, 100%);
@@ -215,9 +220,12 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			gap: 1rem;
+			margin-bottom: 0.55rem;
 
 			h2 {
 				font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+				margin: 0;
 			}
 		}
 
@@ -264,12 +272,17 @@
 		top: 0.5rem;
 	}
 
+	@media (min-width: 23.0625rem) and (max-width: 35rem) {
+		dialog {
+			padding-top: 1rem;
+		}
+	}
+
 	@media (max-width: 23rem) {
 		dialog {
 			padding-top: 0.2rem;
 		}
 		h2 {
-			margin: 0.2rem 0;
 			font-size: 1rem !important;
 		}
 	}

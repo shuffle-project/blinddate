@@ -10,7 +10,7 @@
 	<PersonaPortrait persona={friendPersona} />
 	<div class="card-content">
 		<div>
-			<Icon img={friendPersona.disability_icon} size="medium" alt="Beeinträchtigung"
+			<Icon img={friendPersona.disabilityIcon} size="medium" alt="Beeinträchtigung"
 				>{friendPersona.disability}</Icon
 			>
 		</div>

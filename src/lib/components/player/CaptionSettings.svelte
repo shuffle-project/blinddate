@@ -256,17 +256,23 @@
 	.cc-btn {
 		background-color: transparent;
 		color: var(--color-white);
-		border: 2px solid transparent;
+		border: none;
 		outline: none;
-		border-radius: 0.33rem;
+		border-radius: 50%;
 		font-weight: bold;
 		font-size: 1rem;
 		height: 1.8rem;
+		width: 1.8rem;
 		cursor: pointer;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&:focus,
 		&:hover {
-			border: 2px solid var(--color-white);
+			outline: 2px solid var(--color-white);
+			outline-offset: 2px;
 		}
 	}
 

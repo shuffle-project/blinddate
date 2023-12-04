@@ -4,7 +4,7 @@
 
 <div class="error-container">
 	<h1>404 Seite nicht gefunden</h1>
-	<a href="{base}/../">Zurück zur Hauptseite</a>
+	<a href="{base}/../">Zurück zur Startseite</a>
 </div>
 
 <style>

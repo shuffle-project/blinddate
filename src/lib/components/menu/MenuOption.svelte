@@ -4,13 +4,9 @@
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 
-	// const { dispatchClick } = getContext(key);
-
 	function onHandleClick() {
 		if (isDisabled) return;
-
 		dispatch('click');
-		// dispatchClick();
 	}
 </script>
 
@@ -25,7 +21,7 @@
 		display: flex;
 		align-items: right;
 		justify-content: start;
-		border: 2px solid white;
+		border: 2px solid var(--color-white);
 		border-radius: 5px;
 		margin: 3px;
 		padding: 2px 5px;
@@ -33,17 +29,15 @@
 		box-sizing: border-box;
 	}
 	button:focus {
-		/* outline: 2px solid deeppink; */
 		outline: 2px solid var(--color-black);
 	}
 	button:hover {
-		/* outline: 2px solid deeppink; */
 		outline: 2px solid var(--color-black);
 	}
 	button.disabled {
-		color: #0006;
+		color: var(--color-black);
 	}
 	button.disabled:hover {
-		background: white;
+		background: var(--color-white);
 	}
 </style>

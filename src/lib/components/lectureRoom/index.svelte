@@ -1,12 +1,8 @@
 <script lang="ts">
-	import { GABRIEL } from '$lib/constants/gabriel';
-	import { HANNAH } from '$lib/constants/hannah';
-	import { MAXI } from '$lib/constants/maxi';
-	import { MICHELLE } from '$lib/constants/michelle';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import DesktopLectureRoom from './DesktopLectureRoom.svelte';
 	import MobileLectureRoom from './MobileLectureRoom.svelte';
-
-	const personas = [MAXI, MICHELLE, HANNAH, GABRIEL];
+	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 
 <div class="desktop">

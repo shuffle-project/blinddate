@@ -5,7 +5,6 @@
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
-	import Glaucoma from '../disabilityExplanation/Glaucoma.svelte';
 	import { handleBackdropClick } from '../utils';
 	import ToggleButton from './ToggleButton.svelte';
 
@@ -45,25 +44,25 @@
 		showTableOfContents = !showTableOfContents;
 	}
 
-	const dialogAttrObserver = new MutationObserver((mutations, observer) => {
-		mutations.forEach((mutation) => {
-			if (mutation.attributeName === 'open') {
-				const dialog: any = mutation.target;
-				const isOpen = dialog.hasAttribute('open');
-
-				if (!isOpen) return;
-
-				dialog.removeAttribute('inert');
-
-				//set focus
-				const focusTarget = dialog.querySelector('[autofocus]');
-				focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
-			}
-		});
-	});
-
 	onMount(() => {
 		headings = document.querySelectorAll('h1, h2.main-heading');
+
+		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName === 'open') {
+					const dialog: any = mutation.target;
+					const isOpen = dialog.hasAttribute('open');
+
+					if (!isOpen) return;
+
+					dialog.removeAttribute('inert');
+
+					//set focus
+					const focusTarget = dialog.querySelector('[autofocus]');
+					focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
+				}
+			});
+		});
 
 		dialogAttrObserver.observe(dialog, {
 			attributes: true
@@ -140,7 +139,7 @@
 							class="disability-btn btn-with-arrow"
 							on:click|stopPropagation={() => modal.toggleModalDisplay()}
 						>
-							<Icon svg_color="black" img={persona.disability_icon} size="medium"
+							<Icon svg_color="black" img={persona.disabilityIcon} size="medium"
 								>{persona.disability}</Icon
 							>
 							<Icon size="tiny" img="arrow-toright" />
@@ -148,7 +147,8 @@
 					</li>
 					<li>
 						<a href="#tips" on:click={toggleDialog} class="tips-btn btn-with-arrow">
-							<Icon img="light-bulb" size="medium" svg_color="white">Tipps zur Unterstützung</Icon>
+							<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon
+							>
 							<Icon size="tiny" img="arrow-toright" svg_color="white" />
 						</a>
 					</li>
@@ -171,9 +171,7 @@
 		{persona.disability}
 	</svelte:fragment>
 	<svelte:fragment slot="content">
-		{#if persona.name === 'Gabriel'}
-			<Glaucoma />
-		{/if}
+		<svelte:component this={persona.disabilityExplanation} />
 	</svelte:fragment>
 </Modal>
 
@@ -198,7 +196,7 @@
 
 		dialog {
 			border: none;
-			border-radius: 1.11rem;
+			border-radius: 1.77rem;
 
 			max-block-size: min(80vh, 100%);
 			max-block-size: min(80dvb, 100%);

@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { detect } from 'detect-browser';
 	const isSafari = detect()!.name == 'safari';
 	let flipped = false;
 
 	export let front: string;
 	export let back: string;
+	export let personaName: string;
 
 	function onKeydown(ev: KeyboardEvent) {
 		if (ev.key === ' ' || ev.key === 'Enter') {
@@ -13,6 +15,21 @@
 		}
 	}
 </script>
+
+<div class="speech-bubble-wrapper" aria-label={personaName + ' Sprechblase:'}>
+	<div aria-hidden="true" class="decorative-figure">
+		<img src="{base}/decorations/decorative-figure.svg" alt="" />
+	</div>
+	<div class="speech-bubble-indicator">
+		<img src="{base}/decorations/speech-bubble-indicator-green.svg" alt="" />
+	</div>
+	<div class="speech-bubble">
+		<p>
+			<span class="name" aria-hidden="true">{personaName + ': '}</span>
+			<span class="text">Was ich schon immer mal sagen wollte:</span>
+		</p>
+	</div>
+</div>
 
 <div class="wrapper" aria-live={isSafari ? 'polite' : null}>
 	<div
@@ -40,18 +57,88 @@
 </div>
 
 <style lang="scss">
+	.speech-bubble-wrapper {
+		position: relative;
+		isolation: isolate;
+		margin-top: 5rem;
+		margin-inline: auto;
+		transform: rotateZ(-5deg) translateY(1rem);
+
+		.speech-bubble {
+			background-color: var(--color-green);
+			border: 1px solid var(--color-black);
+			border-radius: 0.83rem;
+			padding: 0 1.66rem 1.11rem 1.66rem;
+			font-family: var(--font-persona);
+			line-height: 150%;
+			max-width: 17rem;
+			box-sizing: border-box;
+
+			p {
+				.text {
+					&::before {
+						content: open-quote;
+					}
+
+					&::after {
+						content: close-quote;
+					}
+				}
+			}
+		}
+
+		.speech-bubble-indicator {
+			display: none;
+		}
+
+		.decorative-figure {
+			position: absolute;
+			top: -2.9rem;
+			z-index: -1;
+			width: 100%;
+			max-width: 17rem;
+			box-sizing: border-box;
+
+			display: flex;
+			justify-content: center;
+		}
+	}
+
 	@media (min-width: 59.375rem) {
 		.wrapper {
 			max-width: calc(var(--content-element-max-width) - 1.66rem);
 			width: 100%;
 			margin-left: 1.66rem;
 		}
+
+		.speech-bubble-wrapper {
+			transform: rotateZ(-5deg) translateY(3rem);
+			margin: 5rem 0 3rem 6rem;
+
+			.speech-bubble-indicator {
+				display: block;
+				position: absolute;
+				top: 1rem;
+				left: -16.5px;
+			}
+
+			.decorative-figure {
+				max-width: 15rem;
+			}
+
+			.speech-bubble {
+				max-width: 15rem;
+				p {
+					.name {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 
 	.wrapper {
 		width: 100%;
-		margin-top: 3rem;
-		margin-bottom: 3rem;
 		display: flex;
 		justify-content: center;
 	}

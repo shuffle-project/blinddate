@@ -4,7 +4,7 @@ export const BEA: FriendPersona = {
 	id: 'bea',
 	name: 'Bea',
 	disability: 'Blind',
-	disability_icon: 'blind',
+	disabilityIcon: 'blind',
 	relation: 'Freundin',
 	relation_to: 'Gabriel'
 };

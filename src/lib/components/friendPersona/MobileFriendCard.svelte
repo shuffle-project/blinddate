@@ -68,6 +68,9 @@
 			p {
 				margin: 0;
 				margin-left: 0.33rem;
+				font-family: var(--font-serif);
+				font-weight: bold;
+				font-size: 1.22rem;
 			}
 		}
 

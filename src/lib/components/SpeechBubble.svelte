@@ -7,17 +7,23 @@
 	export let persona: Persona;
 	export let audio: string = '';
 
-	let audioElement = new Audio(audio);
+	let audioElement: HTMLAudioElement;
 	let playingAudio = false;
 
 	let textDiv: HTMLElement;
 
 	const speak = () => {
-		audioElement.paused ? audioElement.play() : audioElement.pause();
-		playingAudio = !playingAudio;
+		if (audioElement) {
+			audioElement.paused ? audioElement.play() : audioElement.pause();
+			playingAudio = !playingAudio;
+		}
 	};
 
 	onMount(() => {
+		if (audio !== '') {
+			audioElement = new Audio(audio);
+		}
+
 		if (audioElement) {
 			audioElement.addEventListener('ended', (e) => {
 				playingAudio = false;
@@ -26,7 +32,7 @@
 	});
 </script>
 
-<div class="wrapper">
+<div class="wrapper" aria-label={persona.name + ' Sprechblase:'}>
 	<div class="mobile-card">
 		<div class="img-wrapper">
 			<div class="img">
@@ -131,12 +137,11 @@
 			position: absolute;
 			top: -1rem;
 			left: 3.33rem;
-			
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
-			
 			width: 2.5rem;
 			height: 2rem;
 
@@ -167,7 +172,6 @@
 				z-index: 2;
 				margin-inline: auto;
 
-
 				box-shadow: 0 6px 10px 0 rgba(var(--color-black-rgb), 0.15);
 				border-radius: 2.3rem;
 				background: var(--color-gradient-persona);
@@ -182,8 +186,9 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					
-					&:hover, &:focus {
+
+					&:hover,
+					&:focus {
 						outline: 2px solid var(--color-blue);
 					}
 				}
@@ -197,7 +202,7 @@
 					box-sizing: border-box;
 
 					.img {
-						transform: translateY(0rem) translateX(-0.1rem);
+						transform: translateY(0.2rem) translateX(-0.1rem);
 						width: 3rem;
 						height: 3rem;
 					}
