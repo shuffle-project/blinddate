@@ -29,6 +29,8 @@
 				return 'happy';
 			case 'Aleksandr':
 				return 'neutral';
+			case 'Michelle':
+				return 'shrug';
 			default:
 				return 'neutral';
 		}

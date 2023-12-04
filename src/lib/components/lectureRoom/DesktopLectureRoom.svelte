@@ -151,6 +151,15 @@
 					}
 				}
 
+				&.michelle {
+					left: 38%;
+					top: 1.5%;
+
+					img {
+						width: min(11.8vw, 9rem);
+					}
+				}
+
 				&.hannah {
 					bottom: 41.5%;
 					right: 28%;
@@ -161,7 +170,7 @@
 				}
 
 				&.kilian {
-					bottom: 41.95%;
+					bottom: 41.7%;
 					right: 7%;
 
 					img {
@@ -174,7 +183,7 @@
 					left: 6%;
 
 					img {
-						width: min(20vw, 15rem);
+						width: min(19.6vw, 15rem);
 					}
 				}
 

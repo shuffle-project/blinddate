@@ -33,17 +33,6 @@
 			linkToPersonaQuestionnaire = '';
 		}
 	}
-
-	onMount(() => {
-		if (!bottomOfPage) {
-			const welcomeModalViewed = Boolean(localStorage.getItem('welcomeModalViewed'));
-
-			if (!welcomeModalViewed) {
-				modalButton?.focus();
-				modalButton?.click();
-			}
-		}
-	});
 </script>
 
 <div class="wrapper">

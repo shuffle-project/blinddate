@@ -9,6 +9,7 @@
 		| 'Prüfungen'
 		| 'Barrierefreiheit umsetzen'
 		| 'Weitere Informationen'
+		| 'Allgemeine Informationen'
 		| '' = '';
 
 	let id:
@@ -20,6 +21,7 @@
 		| 'exams'
 		| 'tips'
 		| 'more-info'
+		| 'general'
 		| '' = '';
 
 	switch (heading) {
@@ -46,6 +48,9 @@
 			break;
 		case 'Weitere Informationen':
 			id = 'more-info';
+			break;
+		case 'Allgemeine Informationen':
+			id = 'general';
 			break;
 	}
 </script>

@@ -7,6 +7,7 @@ import { GABRIEL } from './gabriel';
 import { HANNAH } from './hannah';
 import { KILIAN } from './kilian';
 import { MAXI } from './maxi';
+import { MICHELLE } from './michelle';
 
 interface Environment {
 	accessiblePersonas: Persona[];
@@ -21,7 +22,7 @@ interface Environment {
 }
 
 export const ENVIRONMENT: Environment = {
-	accessiblePersonas: [MAXI, ALEKSANDR, HANNAH, KILIAN, GABRIEL],
+	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL],
 	redirectToStartpage: false,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
