@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 	import { handleBackdropClick } from './utils';
 
@@ -23,9 +23,6 @@
 	export function toggleModalDisplay() {
 		displayModal = !displayModal;
 	}
-
-	// usertest
-	const dispatch = createEventDispatcher();
 
 	$: {
 		if (modal) {
@@ -65,9 +62,6 @@
 		if (modal) {
 			modal.addEventListener('close', (e) => {
 				displayModal = false;
-
-				//usertest
-				dispatch('close');
 			});
 		}
 	});

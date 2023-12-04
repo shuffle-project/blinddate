@@ -156,16 +156,16 @@
 					right: 28%;
 
 					img {
-						width: min(13.5vw, 10.5rem);
+						width: min(13.5vw, 10.3rem);
 					}
 				}
 
 				&.kilian {
-					bottom: 41.5%;
+					bottom: 41.95%;
 					right: 7%;
 
 					img {
-						width: min(21vw, 12rem);
+						width: min(15.5vw, 11.9rem);
 					}
 				}
 

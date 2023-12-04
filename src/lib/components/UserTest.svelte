@@ -34,10 +34,6 @@
 		}
 	}
 
-	function handleClosingModal() {
-		localStorage.setItem('welcomeModalViewed', 'true');
-	}
-
 	onMount(() => {
 		if (!bottomOfPage) {
 			const welcomeModalViewed = Boolean(localStorage.getItem('welcomeModalViewed'));
@@ -62,7 +58,7 @@
 </div>
 
 {#if !bottomOfPage}
-	<Modal bind:this={modal} on:close={() => handleClosingModal()}>
+	<Modal bind:this={modal}>
 		<svelte:fragment slot="headline">Herzlich Willkommen auf BlindDate</svelte:fragment>
 		<svelte:fragment slot="content">
 			<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>
