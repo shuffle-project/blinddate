@@ -72,19 +72,21 @@
 				ul {
 					display: flex;
 					flex-wrap: wrap;
+					list-style: none;
 				}
 
 				.chip {
 					display: flex;
-					justify-content: center;
 					align-items: center;
 					color: rgba(var(--color-white-rgb), 0.85);
 					background-color: var(--color-black);
 					border: 1px solid rgba(var(--color-white-rgb), 0.5);
+
 					border-radius: 2.77rem;
-					height: 1.66rem;
+					min-height: 1.66rem;
 					font-size: 0.88rem;
-					padding: 0.22rem 0.61rem;
+					padding: 0.22rem 0.66rem;
+					text-align: center;
 				}
 			}
 		}
@@ -100,7 +102,6 @@
 			h2 {
 				margin: 0;
 				padding-top: 1.55rem;
-				// text-align: center;
 			}
 
 			dl {
@@ -123,6 +124,14 @@
 						padding-block-end: 0.83rem;
 					}
 				}
+			}
+		}
+	}
+
+	@media (max-width: 24.25rem) {
+		.tags {
+			.chip {
+				max-width: 12rem;
 			}
 		}
 	}
