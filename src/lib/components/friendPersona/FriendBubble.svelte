@@ -3,29 +3,24 @@
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import FriendPersonaCard from './FriendPersonaCard.svelte';
 	import MobileFriendCard from './MobileFriendCard.svelte';
-	export let friendPersona: FriendPersona = {
-		id: 'placeholder',
-		name: '',
-		disability: '',
-		disabilityIcon: '',
-		relation: '',
-		relation_to: ''
-	};
+	export let friendPersona: FriendPersona;
+	export let hidePersonaCard = false;
 </script>
 
-<div class="container" class:with-mobile-card={friendPersona.id !== 'placeholder'}>
-	{#if friendPersona.id !== 'placeholder'}
+<div role="separator" aria-label="Anfang der {friendPersona.name} Sprechblase" />
+<div class="container" class:with-mobile-card={!hidePersonaCard}>
+	{#if !hidePersonaCard}
 		<div class="card">
 			<FriendPersonaCard {friendPersona} />
 		</div>
 	{/if}
-	<div class="speech-bubble" aria-label={friendPersona.name + ' Sprechblase:'}>
-		{#if friendPersona.id !== 'placeholder'}
+	<div class="speech-bubble">
+		{#if !hidePersonaCard}
 			<div class="mobile-card">
 				<MobileFriendCard {friendPersona} />
 			</div>
 		{/if}
-		<p class="text" class:with-card={friendPersona.id !== 'placeholder'}>
+		<p class="text" class:with-card={!hidePersonaCard}>
 			<slot />
 		</p>
 		<div class="decorative-outline">
@@ -35,6 +30,7 @@
 		</div>
 	</div>
 </div>
+<div role="separator" aria-label="Ende der {friendPersona.name} Sprechblase" />
 
 <style lang="scss">
 	.container {

@@ -111,12 +111,12 @@
 					/>
 				</div>
 				<div class="glossary">
-					<h2>Glossar</h2>
+					<h2>Wichtige Begriffe</h2>
 					<p>
 						Was bedeutet "Barrierefreiheit" eigentlich genau und wie sieht die gesetzliche Lage aus?
 						Auf der folgenden Unterseite gehen wir auf diese und weitere Frage ein:
 					</p>
-					<a href="{base}/glossary" class="focus-indicator">Zum Glossar</a>
+					<a href="{base}/glossary" class="focus-indicator">Zu den wichtigen Begriffen</a>
 				</div>
 			</div>
 		</div>

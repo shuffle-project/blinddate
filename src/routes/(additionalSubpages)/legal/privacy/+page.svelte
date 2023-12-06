@@ -311,10 +311,10 @@
 	}
 
 	.table-of-contents {
-		margin-left: -2rem;
+		padding: 0;
 
 		li {
-			margin: 0.33rem 0rem;
+			margin: 0.55rem 0rem;
 		}
 	}
 </style>

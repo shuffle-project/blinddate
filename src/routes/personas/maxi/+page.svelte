@@ -118,7 +118,7 @@
 		echt froh, dass Maxi und ich uns gefunden haben und so gut verstehen.
 	</FriendBubble>
 
-	<FriendBubble>
+	<FriendBubble {friendPersona} hidePersonaCard>
 		Meine Therapeutin hat mir spezielle Übungen beigebracht. Und ich hab' die immer wieder geübt,
 		damit ich sie anwenden kann, wenn meine Gedanken außer Kontrolle geraten. Eine Übung ist zum
 		Beispiel, alle Dinge aufzuzählen, die ich in dem Moment höre oder sehe. Das lenkt mich dann ab

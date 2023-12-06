@@ -139,7 +139,7 @@
 		einfacher!
 	</FriendBubble>
 
-	<FriendBubble>
+	<FriendBubble {friendPersona} hidePersonaCard>
 		Beispielsweise kann ich den Cursor der Maus auf dem Desktop natürlich nicht sehen. Daher nutze
 		ich Tastenkombinationen und insbesondere die Tabulatortaste – das ist die Tab-Taste mit den
 		beiden Pfeilen in unterschiedliche Richtungen am linken Rand der Tastatur. Ich benutze also die
