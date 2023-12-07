@@ -123,8 +123,6 @@
 	{/if}
 </main>
 
-<div class="spacer" />
-
 <Footer />
 
 <style lang="scss">

@@ -66,7 +66,6 @@
 					Dokument zurechtzufinden. Das mag für Außenstehende zunächst ungewöhnlich wirken, aber es
 					funktioniert. Versuch's mal!"
 				</p>
-				<div class="spacer" />
 			{:else if personaID === 'hannah'}
 				<p>
 					Das vorliegende Simulationsspiel ist aufgrund seiner spezifischen Spielmechanik leider
@@ -98,17 +97,12 @@
 					Techniken bergen viele Hilfsmittel. Für dieses Video beispielsweise stehen automatische
 					Untertitel zur Verfügung, auf die auch ich häufig zurückgreife. Ich schalte sie Dir ein. "
 				</p>
-				<div class="spacer" />
 			{/if}
 		</svelte:fragment>
 	</Modal>
 </div>
 
 <style lang="scss">
-	.spacer {
-		height: 1rem;
-	}
-
 	img {
 		max-width: 100%;
 		aspect-ratio: 16/9;

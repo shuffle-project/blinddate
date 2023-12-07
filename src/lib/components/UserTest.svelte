@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 
@@ -90,16 +89,11 @@
 			</b>
 			<p class="signature">Das <span lang="en">SHUFFLE</span>-BlindDate-Team</p>
 			<p class="shuffle-url">www.shuffle-projekt.de</p>
-			<div class="spacer" />
 		</svelte:fragment>
 	</Modal>
 {/if}
 
 <style lang="scss">
-	.spacer {
-		height: 2rem;
-	}
-
 	.signature {
 		margin-bottom: 0;
 	}

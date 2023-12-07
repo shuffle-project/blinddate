@@ -32,6 +32,12 @@
 						label: 'Deutsche Untertitel'
 					}
 				]
+			},
+			{
+				title: 'Video mit Audiodeskription',
+				videoPathMp4: '/media/psyche-ad.mp4',
+				poster: '/media/psyche-preview-image.jpg',
+				captionsArray: []
 			}
 		],
 		transcripts: [
