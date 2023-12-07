@@ -11,7 +11,7 @@
 </script>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-01.mp3'}>
 		Hallo und Guten Tag. Mein Name ist Kilian, ich bin 21 Jahre alt und wohne, nicht ganz
 		freiwillig, mit meinen Eltern und vielen Kühen in einem Vorort von Oldenburg. An der Uni
 		Oldenburg studiere ich im 2. Semester Anglistik. Eine brotlose Kunst, aber ich liebe eben
@@ -20,10 +20,10 @@
 		barrierefreie Appartements vom Studierendenwerk. Da bin ich nun auf der Warteliste für eine
 		rollstuhlgerechte Behausung.
 	</SpeechBubble>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-02.mp3'}>
 		Ach so, ich nutze einen Rollstuhl, Orthesen und noch ein paar andere Geräte aus dem Rehabedarf.
 		Ich habe eine Zerebralparese und dadurch eine Spastik in der rechten Körperhälfte. Eine
-		Zerebralparese ist eine angeborene Beeinträchtigung der Nerven. Die schlägt mir auch aufs
+		Zerebralparese ist eine angeborene Beeinträchtigung der Nerven. Die schlägt mir auch auf‘s
 		Gleichgewicht und meinen Orientierungssinn. Kurz gesagt: Meine rechte Körperhälfte macht halt,
 		was sie will – und ich den Rest mit links. Nicht nur in meinem Studium, auch außerhalb
 		interessiere ich mich sehr für Sprachen. Deshalb versuche ich auch oft im Ausland unterwegs zu
@@ -53,14 +53,14 @@
 			Medikation, Wärme, regelmäßige Physiotherapie und Orthesen helfen.
 		</ToolCard>
 	</div>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-03.mp3'}>
 		Zu Hause habe ich einen Trackball und eine Großfeldtastatur. Die sieht halt aus wie für Omas.
 		Aber so schaffe ich es, zuverlässig die richtige Taste zu treffen, was auf einer normalen
 		Tastatur wegen der Spastik eher ein Glücksspiel ist. Häufig nutze ich auch die Spracheingabe.
 		Das geht manchmal einfach schneller - oder auch nicht, je nachdem, was meine Sprachmuskulatur
 		gerade so macht.
 	</SpeechBubble>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-04.mp3'}>
 		Da die Lähmung meiner rechten Körperhälfte nicht zu stark ausgeprägt ist, kann ich kurze
 		Strecken laufen. Ich wackel dabei aber ziemlich viel und laufe mit einem Spitzfuß. Und langsam
 		bin ich auch noch. Laufen ist für mich einfach sehr anstrengend. Wenn ich mich schnell und
@@ -80,17 +80,17 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
-		Wenn ich Präsenzveranstaltungen habe, fahre ich oft mit einem Taxi an die Uni. Das ist eine
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-05.mp3'}>
+		Wenn ich Präsenzveranstaltungen habe, dann fahre ich oft mit einem Taxi an die Uni. Das ist eine
 		Leistung, die ich bekomme, weil wir nicht gut angebunden sind. Mit dem Aufzug, der in der
 		hintersten Ecke des Gebäudes ist, muss ich zur richtigen Etage fahren und dann noch zum
 		richtigen Raum. Für den Aufzug braucht man einen Schlüssel, den muss ich mir immer vom
 		Hausmeister holen. Also ist meine erste Aufgabe, den zu finden. Das kostet Zeit. Und das geht
 		auch nur in Gebäuden, die tatsächlich ansatzweise barrierefrei sind. Andere Gebäude sind für
-		mich einfach nicht zugänglich. Dazu gehören auch Büros von Lehrenden oder der Unisport. Wegen
-		des ganzen Hickhacks bin ich schon oft zu spät zu Vorlesungen gekommen. Das ist ganz schön
-		peinlich, weil ich ja zusätzlich noch auf dem Präsentierteller sitzen muss – also in der ersten
-		Reihe, weil da ein Rollstuhlplatz ist.
+		mich einfach nicht zugänglich. Dazu gehören auch Büros von Lehrenden. Wegen des ganzen Hickhacks
+		bin ich schon oft zu spät zu Vorlesungen gekommen. Das ist ganz schön peinlich, weil ich ja
+		zusätzlich noch auf dem Präsentierteller sitzen muss – also in der ersten Reihe, weil da ein
+		Rollstuhlplatz ist. Naja, jetzt kennen mich immerhin alle!
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -102,7 +102,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-06.mp3'}>
 		Viele Gebäude und Räume der Uni sind offiziell barrierefrei zugänglich. Das ist aber irgendwie
 		Interpretationssache. Bei uns gibt es zum Beispiel eine Rampe, die so steil ist, dass ich
 		rückwärts runterrollen würde, wenn niemand hinter mir ist. Die Tür zum Gebäude geht dann auch
@@ -133,8 +133,8 @@
 			wichtig.
 		</Text>
 	</TextSection>
-	<SpeechBubble {persona}>
-		Ich gehe sehr gerne in die Bibliothek. Nicht nur zum lernen, auch einfach um Bücher zu schmökern
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-07.mp3'}>
+		Ich gehe sehr gerne in die Bibliothek. Nicht nur zum Lernen, auch einfach um Bücher zu schmökern
 		oder mir Inspiration zu holen. Allerdings kann ich mich nicht nur in den Büchern verlieren –
 		mein Orientierungssinn ist so schlecht, dass ich mich in der großen Bib nicht zurecht finde.
 		Bevor ich, wie Hänsel und Gretel, eine Spur Brotkrumen legen muss, gehe ich lieber mit
@@ -154,10 +154,10 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-08.mp3'}>
 		Die Zerebralparese ist mit einer erhöhten Muskelspannung verbunden. Die betrifft auch meine
 		Stimmbänder und daher spreche ich etwas langsamer. Anstrengender ist es auch noch. Manchmal
-		haben es Menschen beim zuhören eilig. Dann vervollständigen sie schnell meine Sätze oder hören
+		haben es Menschen beim Zuhören eilig. Dann vervollständigen sie schnell meine Sätze oder hören
 		nach zwei Worten direkt weg. Das nervt echt. Und da erwarte ich mehr Geduld und Respekt mir
 		gegenüber.
 	</SpeechBubble>
@@ -186,18 +186,18 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-09.mp3'}>
 		Ich bin schon vor Beginn des Studiums zum Beauftragten für Studierende mit Beeinträchtigungen
 		gegangen. Dort wurde mir gesagt, was ich alles besorgen muss, damit ich accommodations kriege.
-		Ich habe einen Nachteilsausgleich, der mir eine Zeitverlängerung bei Prüfungen und Abgaben gibt.
-		Ich brauch wegen der Spastik einfach länger zum Schreiben oder Tippen. Und ab und zu muss ich
-		etwas Pause machen, um meine Muskeln zu entspannen. Auch für mündliche Prüfungen oder Referate
-		brauch ich mehr Zeit, da ich langsam spreche. Bisher hat das alles gut geklappt. Was mich
-		allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss bei jeder Prüfung zum
+		Ich habe jetzt einen Nachteilsausgleich, der mir eine Zeitverlängerung bei Prüfungen und Abgaben
+		gibt. Ich brauche wegen der Spastik einfach länger zum Schreiben oder Tippen. Und ab und zu muss
+		ich etwas Pause machen, um meine Muskeln zu entspannen. Auch für mündliche Prüfungen oder
+		Referate brauche ich mehr Zeit, da ich langsam spreche. Bisher hat das alles gut geklappt. Was
+		mich allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss bei jeder Prüfung zum
 		Prüfungsamt. Wenn Räume nicht barrierefrei sind, muss ich das melden.
 	</SpeechBubble>
-	<SpeechBubble {persona}>
-		Mir wurden nicht alle Hilfsmittel, die ich fürs Studium brauche, sofort oder überhaupt
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-10.mp3'}>
+		Mir wurden nicht alle Hilfsmittel, die ich für‘s Studium brauche, sofort oder überhaupt
 		bewilligt. Den Fahrdienst muss ich auch jeden Monat planen und mir einteilen, da der ja nicht
 		unbegrenzt zur Verfügung steht. Die ständige Organisation ist eigentlich ein kompletter
 		Nebenjob, der nicht bezahlt wird. Ich glaube, dass es da einfachere Lösungen gäbe, wenn man
@@ -214,11 +214,10 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-11.mp3'}>
 		Mein Motto ist: be prepared. So versuche ich im Voraus Stress zu vermeiden. Oder improvisierte
 		Lösungen, die vor allem für mich schlecht sind - und unter Umständen unangenehm oder sogar
-		gefährlich für mich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu
-		wollen.
+		gefährlich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
 	<MainHeading heading="Barrierefreiheit umsetzen" />
