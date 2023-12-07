@@ -68,6 +68,10 @@
 			attributes: true
 		});
 
+		// const documentAttrObserver = new MutationObserver((mutations, observer) => {
+		// 	mutations.forEach((mutation) => )
+		// })
+
 		if (dialog) {
 			dialog.addEventListener('close', (e) => {
 				dialogOpen = false;

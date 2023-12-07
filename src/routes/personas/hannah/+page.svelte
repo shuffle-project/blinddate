@@ -149,11 +149,10 @@
 		</ToolCard>
 
 		<ToolCard title="Gebärdensprache" image="{base}/tools/sign-language.svg">
-			Neben den Hörhilfen, die es ermöglichen, die Lautsprache zu verstehen, lernen manche Menschen
-			mit Hörbehinderungen zusätzlich die Gebärdensprache. Diese visuelle Sprache besitzt eine
-			eigene Grammatik und einen ganz anderen Satzbau – ist also eine eigenständige Sprache, die
-			erlernt werden muss. Für gehörlose Menschen, die mit der Gebärdensprache als Muttersprache
-			aufgewachsen sind, kann die Laut- und Schriftsprache schwer zu erlernen sein.
+			Die Gebärdensprache ist eine natürliche Sprache, die ein vollwertiges Sprachsystem mit einer
+			eigenen Grammatik darstellt. Für gehörlose Menschen, die sie von Geburt an erlernen, ist sie
+			eine Muttersprache. Aber auch Menschen mit einer Hörbehinderung, die Hörhilfen verwenden,
+			erlernen und verwenden die Gebärdensprache.
 		</ToolCard>
 
 		<ToolCard title="Untertitel" image="{base}/tools/subtitles.svg">
@@ -218,9 +217,9 @@
 					können über die Dolmetscher*innenvermittlung der Landesverbände engagiert werden.
 				</p>
 			</InfoBox>
-			können für Übersetzungen (Online oder Präsenz) gebucht werden. Damit die Dolmetschenden gut gesehen
-			werden können, müssen gute Lichtverhältnisse herrschen, denn neben der Mimik und Gestik ist auch
-			das Mundbild ein wichtiger Bestandteil der Gebärdensprache.
+			können für Online- als auch für Präsenzveranstaltungen gebucht werden. Damit die Dolmetschenden
+			gut gesehen werden können, müssen gute Lichtverhältnisse herrschen, denn neben der Mimik und Gestik
+			ist auch das Mundbild ein wichtiger Bestandteil der Gebärdensprache.
 		</Text>
 
 		<Text>
@@ -263,8 +262,8 @@
 		<Text>
 			Sowohl Hörgeräte als auch CIs können mit Höranlagen verbunden werden, sodass über Mikrofone
 			akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob
-			Gebärdensprachdolmetschende oder eine Übertragungsanlage genutzt werden sollte, hängt von der
-			Hörschädigung der Anwesenden ab.
+			Gebärdensprachdolmetschende oder eine Übertragungsanlage zur Übertragung der Lautsprache
+			eingesetzt werden, hängt von der bevorzugten Sprache der Anwesenden mit Hörbehinderung ab.
 		</Text>
 	</TextSection>
 
@@ -347,10 +346,10 @@
 	<TextSection let:Text>
 		<Text noTopMargin>
 			Ob die Lautsprache oder die Gebärdensprache genutzt wird, wird beeinflusst von vielen
-			verschiedenen Faktoren, unter anderem die (Gruppen-)Situation, die Art der Hörbehinderung, die
-			bevorzugte Kommunikation etc. Da die akustische Rückmeldung über die eigene Aussprache
-			mitunter fehlt, kann es zu einer undeutlichen Lautsprache bei einzelnen Menschen mit
-			Hörschädigungen kommen.
+			verschiedenen Faktoren: Unter anderem von der (Gruppen-)Situation, von der Art der
+			Hörbehinderung, von der bevorzugten Kommunikation etc. Da die akustische Rückmeldung über die
+			eigene Aussprache mitunter fehlt, kann es zu einer undeutlichen Lautsprache bei einzelnen
+			Menschen mit Hörschädigungen kommen.
 		</Text>
 	</TextSection>
 
@@ -372,8 +371,8 @@
 		<Text>
 			Gruppensituationen, in denen viele Menschen durcheinanderreden, können sehr anstrengend sein.
 			Werden die Mikrofone der Höranlage nicht weitergereicht oder reden Menschen gleichzeitig,
-			können Informationen in Gruppendiskussionen nicht entnommen werden. Das erschwert eine
-			Teilnahme und Schwerhörige fühlen sich dadurch schnell ausgeschlossen.
+			können Informationen aus Gruppendiskussionen nicht entnommen werden. Das erschwert eine
+			Teilnahme und Schwerhörige sind dadurch schnell ausgeschlossen.
 		</Text>
 	</TextSection>
 

@@ -65,6 +65,7 @@
 					</button>
 
 					<a href="#tips" class="second">
+						<!-- <Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon> -->
 						<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon>
 
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
@@ -170,8 +171,7 @@
 
 			z-index: 1;
 
-			margin-left: auto;
-			margin-right: auto;
+			margin-inline: auto;
 
 			.side-1 {
 				display: flex;
@@ -188,18 +188,19 @@
 
 					.first,
 					.second {
-						width: 94%;
-						margin-bottom: 0.5rem;
+						margin-bottom: 0.55rem;
 						text-align: start;
 						box-sizing: border-box;
-
+						margin-inline: 0.33rem;
 						padding: 0.33rem 0.55rem 0.33rem 0.33rem;
 						font-size: 0.88rem;
 						cursor: pointer;
+						min-height: 2.55rem;
 
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
+						gap: 0.55rem;
 						border: none;
 
 						&:hover,
@@ -213,6 +214,14 @@
 						border-radius: 40px;
 						background-color: transparent;
 						color: var(--color-black);
+
+						word-wrap: break-word;
+						overflow-wrap: break-word;
+						overflow-wrap: anywhere;
+
+						-webkit-hyphens: auto;
+						-moz-hyphens: auto;
+						hyphens: auto;
 					}
 					.second {
 						border-radius: 40px;

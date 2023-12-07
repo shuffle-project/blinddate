@@ -38,6 +38,7 @@
 		.card-content {
 			display: flex;
 			flex-direction: column;
+			gap: 0.22rem;
 			margin: 0 1rem 1rem 1rem;
 		}
 	}

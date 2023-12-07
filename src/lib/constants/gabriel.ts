@@ -14,7 +14,7 @@ export const GABRIEL: Persona = {
 	age: 27,
 	study: 'Soziale Arbeit im Master',
 	hobbies: 'Klavier spielen, Podcast hören, Freunde treffen',
-	disability: 'Grüner Star (Glaukom)',
+	disability: 'Sehbeeinträchtigung',
 	disabilityIcon: 'glaucoma',
 	disabilityExplanation: Glaucoma,
 	previousPersona: 'Kilian',
