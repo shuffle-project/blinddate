@@ -65,7 +65,7 @@
 	on:emblaInit={onInit}
 >
 	<div class="embla__container">
-		{#each personas as persona, index}
+		{#each personas as persona, index (persona.name)}
 			<div class="embla__slide" aria-roledescription="Folie" aria-hidden={selectedIndex !== index}>
 				<a
 					href="{base}/personas/{persona.id}"
@@ -156,7 +156,7 @@
 
 			.persona-name {
 				position: absolute;
-				left: -2rem;
+				left: -1.66rem;
 				top: 0.55rem;
 
 				background-color: var(--color-white);

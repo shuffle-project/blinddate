@@ -23,10 +23,10 @@
 		Hallo, mein Name ist Aleksandr, aber ich bevorzuge Sasha. Ich bin 23 Jahre alt. Ich wohne in
 		Frankfurt. Etwas weiter draußen. Ich interessiere mich sehr für die Funktionsweise des
 		menschlichen Gehirns – wie Verhaltensweisen das Resultat elektrischer Signale sind. Deshalb
-		studiere ich Neurowissenschaften.Angefangen habe ich mit einem Fernstudium. Ich dachte, für mich
-		ist das besser. Soziale Interaktionen, viele Leute um mich herum, große Gebäude. Das ist für
-		mich anstrengend. Das ist, weil ich Autist bin. Aber ich habe das Fernstudium abgebrochen. Das
-		Fach Psychologie war nicht richtig für mich. Und die Selbstorganisation war zu viel. Das hat
+		studiere ich Neurowissenschaften. Angefangen habe ich mit einem Fernstudium. Ich dachte, für
+		mich ist das besser. Soziale Interaktionen, viele Leute um mich herum, große Gebäude. Das ist
+		für mich anstrengend. Das ist, weil ich Autist bin. Aber ich habe das Fernstudium abgebrochen.
+		Das Fach Psychologie war nicht richtig für mich. Und die Selbstorganisation war zu viel. Das hat
 		nicht gut geklappt. Damit habe ich Probleme. Jetzt studiere ich an der Goethe-Universität in
 		Frankfurt. Ich habe auch einen Job als wissenschaftliche Hilfskraft für 15 Stunden im Monat.
 		Meine Aufgabe ist das Codieren von Daten für eine große Studie.

@@ -100,7 +100,6 @@
 		{:else}
 			<div class="header">
 				<button
-					class="close-btn"
 					on:click|stopPropagation={() => toggleModalDisplay()}
 					aria-label={term !== ''
 						? term + ' Definition, Dialog schließen'
@@ -114,36 +113,37 @@
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 		<div class="content" tabindex="0">
 			<slot name="content" />
-			{#if bottomSheet}
-				<div class="spacer" />
-			{/if}
+			<!-- <div style="height: 2rem"></div> -->
 		</div>
 	</div>
 </dialog>
 
 <style lang="scss">
-	.spacer {
-		height: 2rem;
-	}
-	h2 {
-		margin: 1rem 0;
-	}
 	dialog::backdrop {
 		background-color: var(--color-background);
 		transition: all 0.3s ease;
 	}
 
+	// normal dialog stylesheets
 	dialog {
 		display: block;
-		border: transparent;
+
+		border: none;
 		border-radius: 1.77rem;
-		padding: 2rem 0 1rem;
+
+		padding: 0;
+
 		box-sizing: border-box;
 		max-inline-size: min(90vw, 44.4rem);
 		max-block-size: min(80vh, 100%);
 		max-block-size: min(80dvb, 100%);
+
 		overflow: hidden;
 		box-shadow: 0 0 2rem rgba(var(--color-black-rgb), 0.2);
+
+		opacity: 100%;
+		position: fixed;
+		inset: 0;
 
 		@keyframes animation-scale-in {
 			from {
@@ -158,23 +158,80 @@
 			animation: animation-scale-in 0.3s ease-out forwards;
 		}
 
+		.header {
+			padding: 2rem max(1.33rem, 7%) 0;
+			.header-content {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1rem;
+				margin-bottom: 0.55rem;
+
+				h2 {
+					font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+					margin: 0;
+				}
+			}
+
+			button {
+				aspect-ratio: 1;
+				min-width: 2rem;
+				border-radius: 50%;
+				background-color: var(--color-blue);
+				border: 2px solid var(--color-white);
+				outline: 2px solid var(--color-white);
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				cursor: pointer;
+
+				&:hover,
+				&:focus {
+					border: 2px solid var(--color-white);
+					outline: 2px solid var(--color-blue);
+				}
+			}
+		}
+
+		.content {
+			overflow-y: auto;
+			max-block-size: 100%; /* safari */
+			padding-inline: max(1.33rem, 7%);
+			padding-bottom: 1rem;
+		}
+	}
+
+	// bottomsheet dialog stylesheets
+	dialog {
 		&.bottomSheet {
-			margin-block-end: 0;
+			margin-block-end: 0rem;
 			border-bottom-left-radius: 0rem;
 			border-bottom-right-radius: 0rem;
-			padding: 0rem;
+			z-index: 100%;
 
 			.header {
 				margin: 0;
 				padding: 0;
-				height: 0px;
+				height: 0;
+
+				button {
+					position: absolute;
+					right: 0.5rem;
+					top: 0.5rem;
+				}
 			}
 
 			.content {
-				padding-top: 2.5rem;
+				&::before {
+					content: '';
+					min-height: 2.5rem;
+					display: block;
+				}
 			}
 
-			@keyframes animation-slide-in-up {
+			@keyframes animation-slide-in-bottom {
 				from {
 					transform: translateY(100%);
 				}
@@ -183,14 +240,8 @@
 				}
 			}
 			&[open] {
-				animation: animation-slide-in-up 0.4s ease-out;
+				animation: animation-slide-in-bottom 0.4s ease-out;
 			}
-		}
-
-		.content {
-			overflow-y: auto;
-			max-block-size: 100%; /* safari */
-			padding: 0 max(1.33rem, 7%);
 		}
 	}
 
@@ -214,76 +265,25 @@
 		max-block-size: 80vh;
 	}
 
-	.header {
-		padding: 0 max(1.33rem, 7%);
-		.header-content {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 1rem;
-			margin-bottom: 0.55rem;
-
-			h2 {
-				font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
-				margin: 0;
-			}
-		}
-
-		button {
-			aspect-ratio: 1;
-			min-width: 2rem;
-			border-radius: 50%;
-			background-color: var(--color-blue);
-			border: 2px solid var(--color-white);
-			outline: 2px solid var(--color-white);
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			cursor: pointer;
-
-			&:hover,
-			&:focus {
-				border: 2px solid var(--color-white);
-				outline: 2px solid var(--color-blue);
-			}
-		}
-	}
-
-	.close-btn {
-		aspect-ratio: 1;
-		min-width: 2rem;
-		border-radius: 50%;
-		background-color: var(--color-blue);
-		border: 2px solid var(--color-white);
-		outline: 2px solid var(--color-white);
-
-		cursor: pointer;
-
-		&:hover,
-		&:focus {
-			border: 2px solid var(--color-white);
-			outline: 2px solid var(--color-blue);
-		}
-
-		position: absolute;
-		right: 0.5rem;
-		top: 0.5rem;
-	}
-
 	@media (min-width: 23.0625rem) and (max-width: 35rem) {
 		dialog {
-			padding-top: 1rem;
+			.header {
+				padding-top: 1rem;
+			}
 		}
 	}
 
 	@media (max-width: 23rem) {
 		dialog {
-			padding-top: 0.2rem;
-		}
-		h2 {
-			font-size: 1rem !important;
+			.header {
+				padding-top: 0.2rem;
+
+				.header-content {
+					h2 {
+						font-size: 1rem;
+					}
+				}
+			}
 		}
 	}
 </style>
