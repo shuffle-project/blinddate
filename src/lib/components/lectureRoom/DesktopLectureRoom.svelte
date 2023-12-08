@@ -1,10 +1,21 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
+	import { onMount } from 'svelte';
 
 	export let personas: Persona[];
 
 	let toggleAllNames = false;
+	let durations = ['0.3s', '0.7s', '1.2s', '2s'];
+	function randomIntFromInterval() {
+		return Math.floor(Math.random() * (3 - 0 + 1) + 0);
+	}
+
+	let mounted = false;
+
+	onMount(() => {
+		mounted = true;
+	});
 </script>
 
 <div class="wrapper">
@@ -16,7 +27,11 @@
 	<div class="lecture-room">
 		<ul aria-label="Vorlesungssaal mit Studierenden">
 			{#each personas as persona}
-				<li class="persona {persona.id}">
+				<li
+					class="persona {persona.id}"
+					class:mounted
+					style="transition-duration: {durations[randomIntFromInterval()]}"
+				>
 					<a
 						href="{base}/personas/{persona.id}"
 						aria-label={persona.name}
@@ -56,15 +71,20 @@
 		justify-content: center;
 		padding: 0 1rem;
 		margin-bottom: -5px;
+		position: relative;
+		height: min(49vw, 38rem);
 
 		.toggle-all-names {
 			width: 100%;
 			max-width: var(--content-max-width);
+
 			display: flex;
 			justify-content: end;
 			align-items: center;
 			gap: 0.55rem;
-			margin-right: 3rem;
+
+			padding-right: 2rem;
+			box-sizing: border-box;
 
 			input {
 				-webkit-appearance: none;
@@ -112,12 +132,14 @@
 		}
 
 		.lecture-room {
-			width: 100%;
 			max-width: var(--content-max-width);
-
+			width: 100%;
 			border-radius: 2rem;
 			position: relative;
 
+			margin-inline: auto;
+
+			box-sizing: border-box;
 			margin-top: 0.55rem;
 
 			ul {
@@ -132,9 +154,15 @@
 				z-index: 1;
 				position: absolute;
 				list-style: none;
+				opacity: 0%;
+				transition: opacity ease-in-out;
+
+				&.mounted {
+					opacity: 100%;
+				}
 
 				&.gabriel {
-					bottom: 2.7%;
+					bottom: 2.5%;
 					left: 12%;
 
 					img {
@@ -143,7 +171,7 @@
 				}
 
 				&.aleksandr {
-					bottom: 41.5%;
+					top: 27.5%;
 					left: 29%;
 
 					img {

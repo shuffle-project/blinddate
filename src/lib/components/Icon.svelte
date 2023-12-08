@@ -31,7 +31,6 @@
 	.icon-component {
 		display: flex;
 		align-items: center;
-		// background-color: red;
 
 		// COLORS generator : https://codepen.io/sosuke/pen/Pjoqqp
 		.svg-black {

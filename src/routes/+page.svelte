@@ -68,6 +68,7 @@
 		<p class="call-to-action">Lernen Sie jetzt die Studierenden kennen:</p>
 	</div>
 	<LectureRoom />
+
 	{#if ENVIRONMENT.displayLowerStartpageContent}
 		<div class="lower-content-wrapper">
 			<div class="lower-content">
@@ -156,6 +157,11 @@
 
 			font-size: 1.11rem;
 			font-weight: bold;
+
+			img {
+				width: 3rem;
+				height: 3rem;
+			}
 		}
 	}
 	.content-wrapper {

@@ -65,7 +65,6 @@
 					</button>
 
 					<a href="#tips" class="second">
-						<!-- <Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon> -->
 						<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon>
 
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
@@ -197,10 +196,13 @@
 						cursor: pointer;
 						min-height: 2.55rem;
 
+						width: 92%;
+
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
 						gap: 0.55rem;
+
 						border: none;
 
 						&:hover,
