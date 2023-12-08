@@ -1,3 +1,4 @@
+import MentalDisorder from '$lib/components/disabilityExplanation/MentalDisorder.svelte';
 import type { Persona } from '../interfaces/persona.interfaces';
 
 export const MAXI: Persona = {
@@ -15,6 +16,7 @@ export const MAXI: Persona = {
 	study: 'Architektur im Master',
 	disability: 'Psychische Erkrankung',
 	disabilityIcon: 'mental-health',
+	disabilityExplanation: MentalDisorder,
 	previousPersona: 'Gabriel',
 	nextPersona: 'Michelle',
 	visualDescription:

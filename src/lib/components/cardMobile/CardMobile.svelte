@@ -44,10 +44,10 @@
 		bind:checked={mobileCardScrolling}
 		on:click={toggleMobileCardScrolling}
 	/>
-	<label for="scroll"
-		>Komponente scrollt mit <span class="sr-only">,für Screenreader Nutzende nicht empfohlen</span
-		></label
-	>
+	<label for="scroll">
+		<span aria-hidden="true">Komponente scrollt mit</span>
+		<span class="sr-only">Komponente scrollt mit, für Screenreader Nutzende nicht empfohlen</span>
+	</label>
 </div>
 
 <style lang="scss">

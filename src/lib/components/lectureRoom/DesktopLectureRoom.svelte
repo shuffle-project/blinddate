@@ -156,7 +156,7 @@
 					top: 1.5%;
 
 					img {
-						width: min(11.8vw, 9rem);
+						width: min(12vw, 9rem);
 					}
 				}
 

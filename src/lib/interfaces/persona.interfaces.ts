@@ -13,7 +13,7 @@ export interface Persona {
 	disabilityExplanation: ComponentType;
 	nextPersona: string;
 	previousPersona: string;
-	week?: Week; // needed for Week.svelte
+	week?: Week;
 	visualDescription: string;
 	metaDescription: string;
 	metaKeywords: string;

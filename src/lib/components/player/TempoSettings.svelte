@@ -62,6 +62,7 @@
 		<Icon svg_color="white" size="parent" img="tempo" />
 	</button>
 
+	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<dialog bind:this={dialog} on:keyup={(e) => handleKeyEvent(e)}>
 		<header>
 			<h4>Tempo</h4>

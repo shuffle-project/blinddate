@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
+	import Recommendation from '$lib/components/Recommendation.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
@@ -368,4 +369,37 @@
 		]}
 		{persona}
 	/>
+
+	<MainHeading heading="Weitere Informationen" />
+	<ul class="more-info-list">
+		<li>
+			<Recommendation
+				link="https://www.deutsche-depressionshilfe.de/depression-infos-und-hilfe/was-ist-eine-depression/diagnose-der-depression"
+			>
+				<svelte:fragment slot="linkText">Diagnose der Depression</svelte:fragment>
+				<svelte:fragment slot="textAfter"
+					>von der Stiftung Deutsche Depressionshilfe und Suizidprävention</svelte:fragment
+				>
+			</Recommendation>
+		</li>
+		<li>
+			<Recommendation
+				link="https://www.rki.de/DE/Content/GesundAZ/P/Psychische_Gesundheit/EBH_Bericht_Psyschiche_Gesundheit.pdf?__blob=publicationFile"
+			>
+				<svelte:fragment slot="linkText"
+					>Psychische Gesundheit in Deutschland - Teil 1 Erwachsene (PDF)</svelte:fragment
+				>
+				<svelte:fragment slot="textAfter"
+					>von dem Robert Koch-Institut (Hrsg) (2021)
+				</svelte:fragment>
+			</Recommendation>
+		</li>
+	</ul>
 </PersonaContent>
+
+<style lang="scss">
+	.more-info-list {
+		list-style-type: none;
+		padding: 0;
+	}
+</style>
