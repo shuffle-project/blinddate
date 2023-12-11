@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import type { Persona } from '../interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 
@@ -28,6 +28,12 @@
 			audioElement.addEventListener('ended', (e) => {
 				playingAudio = false;
 			});
+		}
+	});
+
+	onDestroy(() => {
+		if (audioElement && !audioElement.paused) {
+			audioElement.pause();
 		}
 	});
 </script>
