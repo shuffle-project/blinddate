@@ -156,9 +156,11 @@
 				list-style: none;
 				opacity: 0%;
 				transition: opacity ease-in-out;
+				pointer-events: none;
 
 				&.mounted {
 					opacity: 100%;
+					pointer-events: initial;
 				}
 
 				&.gabriel {
