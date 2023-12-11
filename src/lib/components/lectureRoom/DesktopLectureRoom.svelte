@@ -25,6 +25,7 @@
 	</div>
 
 	<div class="lecture-room">
+		<div class="loading-indicator" class:not-mounted={!mounted}></div>
 		<ul aria-label="Vorlesungssaal mit Studierenden">
 			{#each personas as persona}
 				<li
@@ -148,6 +149,35 @@
 
 			.lecture-room-img {
 				border-radius: 2rem;
+			}
+
+			.loading-indicator {
+				width: 2rem;
+				height: 2rem;
+				background-color: transparent;
+				position: absolute;
+				inset: 1rem 1rem auto auto;
+				margin: auto;
+				opacity: 0%;
+				transition: opacity 0.3s ease-in-out;
+
+				@keyframes spin {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate(360deg);
+					}
+				}
+
+				border: 0.33rem solid transparent;
+				border-top: 0.33rem solid var(--color-black);
+				border-radius: 50%;
+				animation: spin 1.3s linear infinite;
+
+				&.not-mounted {
+					opacity: 100%;
+				}
 			}
 
 			.persona {

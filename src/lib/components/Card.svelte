@@ -164,7 +164,7 @@
 			aspect-ratio: 5/7;
 
 			position: relative;
-			box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+			box-shadow: 0 4px 10px 0 rgba(var(--color-black-rgb), 0.15);
 			border-radius: 40px;
 			background: var(--color-gradient-persona);
 
