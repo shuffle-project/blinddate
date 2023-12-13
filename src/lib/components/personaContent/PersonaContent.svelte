@@ -67,7 +67,8 @@
 
 				.hovering-card {
 					position: sticky;
-					top: 18rem;
+					top: 50vh;
+					transform: translateY(-50%);
 				}
 			}
 			.content-column {

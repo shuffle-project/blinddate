@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Diy from '$lib/components/DIY.svelte';
+	import BackgroundInfo from '$lib/components/BackgroundInfo.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
@@ -154,7 +154,7 @@
 		Sieht komisch aus, hilft mir aber sehr!
 	</SpeechBubble>
 
-	<Diy content="keyboard" />
+	<BackgroundInfo content="keyboard" />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 

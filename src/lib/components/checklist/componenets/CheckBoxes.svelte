@@ -40,6 +40,7 @@
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		max-width: var(--content-element-max-width);
 	}
 
 	.checked {

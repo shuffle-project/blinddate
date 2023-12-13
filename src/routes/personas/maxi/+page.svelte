@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import BackgroundInfo from '$lib/components/BackgroundInfo.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
@@ -20,7 +21,7 @@
 	const friendPersona: FriendPersona = ALEX_FRIEND;
 
 	const extendedPlayerConfig: ExtendedPlayerConfig = {
-		title: 'Platzhaltertitel',
+		title: 'Efahrungsbericht einer Studentin mit einer psychischen Krankheit',
 		videos: [
 			{
 				title: 'Video',
@@ -369,6 +370,8 @@
 		]}
 		{persona}
 	/>
+
+	<BackgroundInfo content="support" />
 
 	<MainHeading heading="Weitere Informationen" />
 	<ul class="more-info-list">

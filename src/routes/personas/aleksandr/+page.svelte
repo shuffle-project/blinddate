@@ -153,9 +153,7 @@
 		„Meltdown“ nennt. Dann habe ich mein Verhalten nicht mehr unter Kontrolle. Als Kind hatte ich
 		das oft. Da habe ich geschrien und auch um mich getreten oder geschlagen. Heute beiße ich mir in
 		die Hand. Das ist autoaggressives Verhalten. Das tut weh, aber in der Situation hilft mir das.
-		Am besten lässt man mich dann in Ruhe. Meine Eltern helfen mir, in dem sie mich der Situation
-		entziehen oder mir Gegenstände geben, die mich beruhigen. Zum Beispiel eine Decke mit Gewicht.
-		Und weg von Lärm und Reizen.
+		Am besten lässt man mich dann in Ruhe.
 	</SpeechBubble>
 
 	<FlipCard personaName={persona.name} front="Platz-halter" back="Platzhalter" />
@@ -227,14 +225,11 @@
 
 	<FriendBubble {friendPersona}>
 		Ich treff mich immer mal mit Sasha am Nachmittag zum Lernen. Ich studiere was ganz anderes, aber
-		das kann man ja trotzdem zusammen machen. Das ist für mich auch gut, dann habe ich einen festen
-		Termin. Ich schau immer etwas auf Sasha, dass er nicht stundenlang irgendwas Komisches googelt
-		oder in Fachberichten abtaucht. Dass er sich nicht so schnell ablenken lässt. Aber ich bin halt
-		auch nur ein Freund und manchmal hab ich auch Bock zu quatschen oder ein Kartenspiel zu zocken.
-		Schwierig wird es, wenn Sasha nach unserem Lern-Date noch einen anderen Termin hat. Ich hab dann
-		das Gefühl er sitzt da wie bestellt und nicht abgeholt und wartet eigentlich nur darauf, dass er
-		jetzt zu dem Termin losgehen kann. Auf etwas anderes konzentrieren kann er sich dann nicht mehr,
-		obwohl er erst in einer Stunde oder so los muss.
+		das kann man ja trotzdem zusammen machen. Schwierig wird es, wenn Sasha nach unserem Lern-Date
+		noch einen anderen Termin hat. Ich hab dann das Gefühl er sitzt da wie bestellt und nicht
+		abgeholt und wartet eigentlich nur darauf, dass er jetzt zu dem Termin losgehen kann. Auf etwas
+		anderes konzentrieren kann er sich dann nicht mehr, obwohl er erst in einer Stunde oder so los
+		muss.
 	</FriendBubble>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
@@ -310,13 +305,11 @@
 	</TextSection>
 
 	<SpeechBubble {persona}>
-		Ich muss mich sehr konzentrieren, wenn ich mich auf dem Campus bewege. Ich navigiere zu
-		bekannten Punkten. Und wenn ich zu einem neuen Raum muss, gehe ich mit bekannten Personen. Ich
-		versuche sehr stark, nicht aufzufallen. Die Umwelt ist eher für neurotypische Menschen
-		gestaltet. Deshalb ist das nicht so einfach. Man braucht viele Strategien. Aber es verursacht
-		mir Stress und Aufregung. Eigentlich die ganze Zeit. An der Uni sind oft viele Leute oder es
-		gibt eine Baustelle oder irgendeine Aktion, bei denen Leute einen was fragen. Ein Halbmarathon
-		zu laufen ist für mich einfacher. Nach einem ganzen Uni-Tag bin ich müde.
+		Die Umwelt ist eher für neurotypische Menschen gestaltet. Deshalb ist das nicht so einfach. Man
+		braucht viele Strategien. Aber es verursacht mir Stress und Aufregung. Eigentlich die ganze
+		Zeit. An der Uni sind oft viele Leute oder es gibt eine Baustelle oder irgendeine Aktion, bei
+		denen Leute einen was fragen. Ein Halbmarathon zu laufen ist für mich einfacher. Nach einem
+		ganzen Uni-Tag bin ich müde.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -363,8 +356,7 @@
 		aber Prüfungen in einem separaten Raum schreiben. So muss ich nicht so viel ausblenden. Aber die
 		Zeit ist die gleiche. Nächstes Semester habe ich eine wichtige Gruppenarbeit. Vielleicht sollte
 		ich mich um einen Nachteilsausgleich bemühen. Mit mir unbekannten Studierenden so
-		zusammenarbeiten. Da werde ich kein gutes Ergebnis erzielen, weil ich die Organisation in der
-		Gruppe undurchsichtig finde. Und was ist, wenn Teile nicht klar zugeteilt werden?
+		zusammenarbeiten. Da werde ich kein gutes Ergebnis erzielen.
 	</SpeechBubble>
 
 	<TextSection let:Text>
