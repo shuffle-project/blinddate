@@ -345,7 +345,7 @@
 		Probe-Prüfungen zu schreiben, um das Programm und das Vorgehen ohne Druck kennenzulernen.
 	</SpeechBubble>
 
-	<MainHeading heading="Barrierefreiheit umsetzen" />
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
 		<Text noTopMargin>

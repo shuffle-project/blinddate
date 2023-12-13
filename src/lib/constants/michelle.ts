@@ -62,8 +62,8 @@ const michellesWeek: Week = {
 export const MICHELLE: Persona = {
 	id: 'michelle',
 	name: 'Michelle',
+	subheading: 'Studieren mit chronischer Erkrankung',
 	tags: [
-		{ content: 'Chronisch entzündliche Darmerkrankungen', lang: 'de' },
 		{ content: 'Selbsthilfe', lang: 'de' },
 		{ content: 'Spoon theory', lang: 'en' },
 		{ content: 'Unsichtbare Beeinträchtigung', lang: 'de' }
@@ -71,6 +71,7 @@ export const MICHELLE: Persona = {
 	age: 19,
 	hobbies: 'Schlagzeug spielen und Kleidung nähen',
 	study: 'Popmusikdesign',
+	pronouns: 'Sie / ihr',
 	disability: 'Morbus Crohn',
 	disabilityIcon: 'spoon',
 	disabilityExplanation: MorbusCrohn,

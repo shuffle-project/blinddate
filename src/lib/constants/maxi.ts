@@ -4,8 +4,8 @@ import type { Persona } from '../interfaces/persona.interfaces';
 export const MAXI: Persona = {
 	id: 'maxi',
 	name: 'Maxi',
+	subheading: 'Studieren mit psychischer Erkrankung',
 	tags: [
-		{ content: 'Depression', lang: 'de' },
 		{ content: 'Unsichtbare Beeinträchtigung', lang: 'de' },
 		{ content: 'Beratung', lang: 'de' },
 		{ content: 'Erschöpfung', lang: 'de' },
@@ -14,7 +14,8 @@ export const MAXI: Persona = {
 	age: 29,
 	hobbies: 'Skaten und Naturfotografie',
 	study: 'Architektur im Master',
-	disability: 'Psychische Erkrankung',
+	pronouns: 'They / them',
+	disability: 'Depressionen',
 	disabilityIcon: 'mental-health',
 	disabilityExplanation: MentalDisorder,
 	previousPersona: 'Gabriel',

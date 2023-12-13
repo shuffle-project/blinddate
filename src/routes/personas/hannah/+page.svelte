@@ -398,7 +398,7 @@
 		</Text>
 	</TextSection>
 
-	<MainHeading heading="Barrierefreiheit umsetzen" />
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
 		<Text noTopMargin>

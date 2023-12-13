@@ -388,7 +388,7 @@
 		dann oder der Stressball.
 	</SpeechBubble>
 
-	<MainHeading heading="Barrierefreiheit umsetzen" />
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
 		<Text noTopMargin>

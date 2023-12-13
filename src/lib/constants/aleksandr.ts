@@ -4,8 +4,8 @@ import type { Persona } from '$lib/interfaces/persona.interfaces';
 export const ALEKSANDR: Persona = {
 	id: 'aleksandr',
 	name: 'Aleksandr',
+	subheading: 'Studieren mit Autismus-Spektrum-Störung',
 	tags: [
-		{ content: 'Autismus-Spektrum-Störung', lang: 'de' },
 		{ content: 'Stimming', lang: 'en' },
 		{ content: 'Masking', lang: 'en' },
 		{ content: 'Reizregulation', lang: 'de' },
@@ -14,6 +14,7 @@ export const ALEKSANDR: Persona = {
 	age: 23,
 	hobbies: 'Joggen, Kraftsport und strategische Brettspiele',
 	study: 'Neurowissenschaften',
+	pronouns: 'Er / ihm',
 	disability: 'Autismus-Spektrum-Störung (ASS)',
 	disabilityIcon: 'sunflower',
 	disabilityExplanation: Ass,

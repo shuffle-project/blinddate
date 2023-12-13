@@ -246,7 +246,7 @@
 
 	<Puzzle
 		topLeft="Ich verstehe die Vorlesung einfach nicht! Warum hat sonst niemand Fragen? Warum bin nur ich so unglaublich dumm?! Ich werde durchfallen und alle werden mich auslachen! Ich hasse mich!"
-		topRight="Was, eine Lerngruppe heute Nachmittag? Oh, nein, tut mir leid, da habe ich keine Zeit."
+		topRight="Was, eine Lerngruppe nach der Vorlesung? Oh, nein, tut mir leid, da habe ich keine Zeit."
 		bottomLeft="Ich fühle, wie Panik in mir hochsteigt. Mein Puls beschleunigt sich und mein Brustkorb fühlt sich eng an. In meinen Ohren rauscht es, sodass ich den Dozenten nicht mehr verstehe."
 		bottomRight="Ich sitze still an meinem Platz im Vorlesungssaal. Ich würde gerne den Raum verlassen, aber dafür müsste ich mich an drei Studierenden vorbeidrängen."
 	/>
@@ -349,7 +349,7 @@
 		immer wieder zu beruhigen, um dann weiterschreiben zu können.
 	</FriendBubble>
 
-	<MainHeading heading="Barrierefreiheit umsetzen" />
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
 		<Text noTopMargin>

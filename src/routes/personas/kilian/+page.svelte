@@ -220,7 +220,7 @@
 		gefährlich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
-	<MainHeading heading="Barrierefreiheit umsetzen" />
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
 		<Text noTopMargin>

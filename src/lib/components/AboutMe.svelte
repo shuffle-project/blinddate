@@ -7,7 +7,10 @@
 <div class="background-black">
 	<div class="wrapper">
 		<div class="header-row" id="content">
-			<h1 id="persona-name" class="table-of-contents">{persona.name}</h1>
+			<div class="heading-section">
+				<h1 class="heading" id="persona-name">{persona.name}</h1>
+				<p class="subheading">{persona.subheading}</p>
+			</div>
 			<section aria-label="Inhaltspunkte" class="tags">
 				<ul>
 					{#each persona.tags as tag}
@@ -35,6 +38,8 @@
 				<dd>{persona.study}</dd>
 				<dt>Hobbys</dt>
 				<dd>{persona.hobbies}</dd>
+				<dt>Pronomen</dt>
+				<dd lang={persona.id === 'maxi' ? 'en' : 'de'}>{persona.pronouns}</dd>
 			</dl>
 		</div>
 	</div>
@@ -60,11 +65,26 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			padding-top: 2.33rem;
+			padding-block: 2.33rem;
 
-			h1 {
-				margin: 0;
-				text-align: center;
+			.heading-section {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 1.11rem;
+
+				.heading {
+					margin: 1rem 0 0.55rem 0;
+					display: inline-block;
+					line-height: 100%;
+				}
+
+				.subheading {
+					margin: 0;
+					color: rgba(var(--color-white-rgb), 0.75);
+					font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+					text-align: center;
+				}
 			}
 
 			.tags {
@@ -78,7 +98,7 @@
 				.chip {
 					display: flex;
 					align-items: center;
-					color: rgba(var(--color-white-rgb), 0.85);
+					color: rgba(var(--color-white-rgb), 0.75);
 					background-color: var(--color-black);
 					border: 1px solid rgba(var(--color-white-rgb), 0.5);
 
@@ -175,6 +195,16 @@
 			padding-bottom: 2rem;
 
 			max-width: var(--content-max-width);
+
+			.header-row {
+				.heading-section {
+					align-items: self-start;
+
+					.subheading {
+						text-align: initial;
+					}
+				}
+			}
 
 			.general-info {
 				color: var(--color-white);

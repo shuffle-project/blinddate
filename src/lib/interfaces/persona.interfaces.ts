@@ -4,10 +4,12 @@ import type { Week } from './week.interfaces';
 export interface Persona {
 	id: string;
 	name: string;
+	subheading: string;
 	tags: { content: string; lang: string }[];
 	age: number;
 	hobbies: string;
 	study: string;
+	pronouns: 'They / them' | 'Sie / ihr' | 'Er / ihm';
 	disability: string;
 	disabilityIcon: string;
 	disabilityExplanation: ComponentType;

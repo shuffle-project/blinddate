@@ -1,12 +1,12 @@
 <script lang="ts">
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import { MICHELLE } from '$lib/constants/michelle';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import Week from '../../../lib/components/week/index.svelte';
@@ -148,7 +148,7 @@
 		auch immer was zu trinken für mich dabei.
 	</SpeechBubble>
 
-	<FlipCard front="Lorem Ipsum" back="Lorem Ipsum" />
+	<FlipCard front="Lorem Ipsum" back="Lorem Ipsum" personaName={persona.name} />
 
 	<TextSection let:Text>
 		<Text>
@@ -283,7 +283,7 @@
 		</Text>
 	</TextSection>
 
-	<MainHeading heading="Barrierefreiheit umsetzen" />
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
 		<Text noTopMargin>

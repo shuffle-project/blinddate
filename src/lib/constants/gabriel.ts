@@ -4,8 +4,8 @@ import type { Persona } from '../interfaces/persona.interfaces';
 export const GABRIEL: Persona = {
 	id: 'gabriel',
 	name: 'Gabriel',
+	subheading: 'Studieren mit Sehbeeinträchtigung',
 	tags: [
-		{ content: 'Glaukom', lang: 'de' },
 		{ content: 'Screenreader', lang: 'en' },
 		{ content: 'Vergrößerung', lang: 'de' },
 		{ content: 'Dokumentenstruktur', lang: 'de' },
@@ -14,7 +14,8 @@ export const GABRIEL: Persona = {
 	age: 27,
 	study: 'Soziale Arbeit im Master',
 	hobbies: 'Klavier spielen, Podcast hören, Freunde treffen',
-	disability: 'Sehbeeinträchtigung',
+	pronouns: 'Er / ihm',
+	disability: 'Grüner Star (Glaukom)',
 	disabilityIcon: 'glaucoma',
 	disabilityExplanation: Glaucoma,
 	previousPersona: 'Kilian',

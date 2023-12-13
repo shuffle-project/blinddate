@@ -7,7 +7,7 @@
 		| 'Eine Woche im Leben von'
 		| 'Interaktion und Kommunikation'
 		| 'Prüfungen'
-		| 'Barrierefreiheit umsetzen'
+		| 'Selbstcheck Barrierefreiheit'
 		| 'Weitere Informationen'
 		| 'Allgemeine Informationen'
 		| '' = '';
@@ -43,7 +43,7 @@
 		case 'Prüfungen':
 			id = 'exams';
 			break;
-		case 'Barrierefreiheit umsetzen':
+		case 'Selbstcheck Barrierefreiheit':
 			id = 'tips';
 			break;
 		case 'Weitere Informationen':

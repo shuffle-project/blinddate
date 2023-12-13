@@ -65,7 +65,9 @@
 					</button>
 
 					<a href="#tips" class="second">
-						<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon>
+						<Icon img="light-bulb" size="medium" svg_color="white"
+							>Selbstcheck Barrierefreiheit</Icon
+						>
 
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
 					</a>

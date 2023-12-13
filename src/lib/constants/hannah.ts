@@ -72,8 +72,8 @@ const hannahsWeek: Week = {
 export const HANNAH: Persona = {
 	id: 'hannah',
 	name: 'Hannah',
+	subheading: 'Studieren mit Hörbehinderung',
 	tags: [
-		{ content: 'Hörbeeinträchtigung', lang: 'de' },
 		{ content: 'Cochlea-Implantat', lang: 'de' },
 		{ content: 'Untertitel', lang: 'de' },
 		{ content: 'Gebärdensprache', lang: 'de' },
@@ -82,6 +82,7 @@ export const HANNAH: Persona = {
 	age: 25,
 	hobbies: 'Handball spielen, Essen gehen, Filme und Serien schauen',
 	study: 'Mathematik auf Lehramt',
+	pronouns: 'Sie / ihr',
 	disability: 'Hochgradige Schwerhörigkeit',
 	disabilityIcon: 'ear',
 	disabilityExplanation: HardOfHearing,

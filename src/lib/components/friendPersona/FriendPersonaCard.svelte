@@ -9,11 +9,13 @@
 <div class="card">
 	<PersonaPortrait persona={friendPersona} />
 	<div class="card-content">
-		<div>
-			<Icon img={friendPersona.disabilityIcon} size="medium" alt="Beeinträchtigung"
-				>{friendPersona.disability}</Icon
-			>
-		</div>
+		{#if friendPersona.disability !== 'Keine Beeinträchtigung'}
+			<div>
+				<Icon img={friendPersona.disabilityIcon} size="medium" alt="Beeinträchtigung"
+					>{friendPersona.disability}</Icon
+				>
+			</div>
+		{/if}
 		<div>
 			<Icon img="relation" alt="Beziehung zu {friendPersona.relation_to}" size="medium"
 				>{friendPersona.relation}</Icon

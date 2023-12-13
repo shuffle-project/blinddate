@@ -4,8 +4,8 @@ import type { Persona } from '$lib/interfaces/persona.interfaces';
 export const KILIAN: Persona = {
 	id: 'kilian',
 	name: 'Kilian',
+	subheading: 'Studieren mit motorischer Beeinträchtigung',
 	tags: [
-		{ content: 'Zerebralparese', lang: 'de' },
 		{ content: 'Eingabehilfen', lang: 'de' },
 		{ content: 'Zeitmanagement', lang: 'de' },
 		{ content: 'Erschöpfung', lang: 'de' },
@@ -14,6 +14,7 @@ export const KILIAN: Persona = {
 	age: 21,
 	hobbies: 'Blog über persönliche Reise-Erfahrungen',
 	study: 'Anglistik',
+	pronouns: 'Er / ihm',
 	disability: 'Zerebralparese',
 	disabilityIcon: 'wheelchair',
 	disabilityExplanation: CerebralPalsy,
