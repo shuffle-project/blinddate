@@ -229,6 +229,8 @@
 
 			.header-row {
 				flex-direction: row;
+				padding-top: 2.33rem;
+				padding-bottom: 4.44rem;
 
 				.tags {
 					max-width: 23rem;

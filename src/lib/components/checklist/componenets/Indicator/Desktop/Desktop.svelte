@@ -53,6 +53,7 @@
 	ul {
 		list-style: none;
 		margin: 0;
+		padding: 0;
 	}
 
 	.wrapper {
@@ -78,7 +79,8 @@
 
 	.background-pattern-1 {
 		background-color: #fdfdfd;
-		background: radial-gradient(
+		background:
+			radial-gradient(
 				circle,
 				transparent 20%,
 				#fdfdfd 20%,
@@ -97,7 +99,11 @@
 				20px 20px,
 			linear-gradient(#070d1c 1.6px, transparent 1.6px) 0 -0.8px,
 			linear-gradient(90deg, #070d1c 1.6px, #fdfdfd 1.6px) -0.8px 0;
-		background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
+		background-size:
+			40px 40px,
+			40px 40px,
+			20px 20px,
+			20px 20px;
 	}
 
 	.background-pattern-2 {
