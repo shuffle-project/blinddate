@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
@@ -19,19 +20,20 @@
 </svelte:head>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-01.mp3'}>
 		Hi, mein Name ist Chelle – eigentlich Michelle. Ich studiere Popmusikdesign an der Popakademie
-		in Mannheim. Ich spiele Schlagzeug in einer Band – also ihr könnt mich im Proberaum finden.
-		Alternativ falle ich euch aber in der Mensa auf, weil ich wahrscheinlich die einzige Person bin,
-		die ihr Tablett voller neutraler Kartoffelprodukte hat. Was anderes vertrag ich nämlich nicht,
-		da ich Morbus Crohn habe. Ach so – ich bin 19 Jahre alt und wohne in der Nähe von Hannover bei
-		meinem Vater. Mit 9 Jahren hab ich eine Nähmaschine bekommen, fleißig geübt und mittlerweile
-		nähe ich ziemlich viel meiner Kleidung selbst. Ich gehe super-gerne auf Konzerte und wegen dem
-		Morbus Crohn auch super oft auf die Toilette. Wenn ihr also mal Tipps braucht, wo man gute Musik
-		hören kann und es auch super Sanitäranlagen gibt, wendet euch an mich.
+		in Mannheim. Ich spiele Schlagzeug in einer Band – also ihr könnt mich oft im Proberaum finden.
+		Alternativ falle ich euch aber auch in der Mensa auf, weil ich wahrscheinlich die einzige Person
+		bin, die ihr Tablett voller neutraler Kartoffelprodukte hat. Was anderes vertrag ich nämlich
+		nicht, da ich Morbus Crohn habe. Ach so – ich bin 19 Jahre alt und wohne in der Nähe von
+		Mannheim bei meinem Vater. Mit 9 Jahren hab ich eine Nähmaschine bekommen, fleißig geübt und
+		mittlerweile nähe ich ziemlich viel meiner Kleidung selbst. Ich gehe super-gerne auf Konzerte
+		und wegen dem Morbus Crohn auch super oft auf die Toilette. Wenn ihr also mal Tipps braucht, wo
+		man gute Musik hören kann und es auch schöne Sanitäranlagen gibt, wendet euch vertrauensvoll an
+		mich.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-02.mp3'}>
 		Als ich angefangen habe zu studieren, habe ich die Gruppe studiCED gefunden. Das ist eine
 		Selbsthilfevereinigung von Studierenden, die von CED betroffen sind. CED ist die Abkürzung für
 		chronisch entzündliche Darmerkrankungen. Bei mir wurde Morbus Crohn mit 15 Jahren nach einer
@@ -106,20 +108,21 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
-		Ich muss mit meiner Energie immer haushalten. Das wird schwierig, wenn viele wichtige Sachen an
-		einem Tag anstehen oder ich mehrere Tage hintereinander funktionieren muss. Am besten kann ich
-		das mir – und auch andren – mit der Spoon Theorie erklären. An guten Tagen, hab ich viele
-		Löffel, an schlechten eben wenig. Manchmal kosten mich die selben Aktivitäten viel oder wenig
-		Löffel. Wenn ich alle meine Löffel verbraucht habe, geht‘s mir halt beschissen. Wenn die Löffel
-		weg sind, dann wird auch kochen, einkaufen oder einfache Tätigkeiten zu viel
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-03.mp3'}>
+		Ich muss mit meiner Energie immer haushalten. Das wird schwierig, wenn viele Sachen an einem Tag
+		anstehen oder ich mehrere Tage hintereinander funktionieren muss. Am besten kann ich das mir –
+		und auch anderen – mit der Spoon Theorie erklären. An guten Tagen hab ich viele Löffel, an
+		schlechten eben wenig. Manchmal kosten mich die selben Aktivitäten viele oder wenige Löffel.
+		Wenn ich alle Löffel verbraucht habe, geht‘s mir halt beschissen. Wenn die Löffel weg sind, dann
+		wird auch kochen, einkaufen oder einfache Tätigkeiten zu viel.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-04.mp3'}>
 		Ich plane meine Tage immer im Voraus – Katastrophen-Planung quasi. Wenn ich das Haus verlasse,
-		muss ich vorher wissen, wo ich hingehe und ob dort eine Toilette in der Nähe ist. Denn, wenn es
-		richtig blöd läuft, renne ich halt 12 mal pro Stunde aufs Klo. Das ist absolut unkontrollierbar,
-		bereitet mir Schmerzen und ist halt auch gefährlich.
+		muss ich vorher wissen, wo ich hingehe und ob dort eine Toilette in der Nähe ist. In Vorlesungen
+		sitze ich immer am Rand, damit ich notfalls schnell raus kann. Und in meinem Kopf kalkuliere ich
+		schon mal den Weg zum Klo. Wenn es mir schlecht geht, muss ich auch mal 12 mal in der Stunde zur
+		Toilette.
 	</SpeechBubble>
 
 	<MainHeading heading="Lehrveranstaltungen" />
@@ -139,13 +142,13 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-05.mp3'}>
 		Ich bin richtig frustriert, wenn ich mitbekomme, dass Leute hinter meinem Rücken Kommentare
 		darüber machen, dass ich schon wieder den Raum verlasse oder ja kaum da bin. Oder noch besser:
 		Wenn mich Leute davon abhalten wollen, die barrierefreie Toilette zu benutzen. Aber es gibt auch
-		die andere Seite: Meine Uni-Freunde sammeln immer meine Sachen ein, wenn ich mal wieder auf dem
-		Klo statt in der Vorlesung bin,teilen ihre Notizen mit mir, fragen wie es mir geht und haben
-		auch immer was zu trinken für mich dabei.
+		andere Seiten: Meine Uni-Freunde sammeln immer meine Sachen ein, wenn ich mal wieder auf dem Klo
+		statt in der Vorlesung bin, teilen ihre Notizen mit mir, fragen wie es mir geht und haben auch
+		immer was zu Trinken für mich dabei.
 	</SpeechBubble>
 
 	<FlipCard front="Lorem Ipsum" back="Lorem Ipsum" personaName={persona.name} />
@@ -160,10 +163,10 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-06.mp3'}>
 		Ja, Morbus Crohn ist körperlich belastend. Aber es geht auch auf die Psyche – ich habe oft Angst
-		einen Schub zu bekommen und dann in einer unangenehmen Situation zu sein. Es stresst mich, dass
-		ich aus Veranstaltung renne und alle mich anschauen. Dazu kommt ein permanent schlechtes
+		einen Schub zu bekommen und dann in einer unangenehmen Situation zu sein. Es stresst mich, wenn
+		ich aus Veranstaltung renne und mich alle anschauen. Dazu kommt ein permanent schlechtes
 		Gewissen, dass ich an einer Veranstaltung nicht teilnehmen kann, nicht genug bei Gruppenarbeiten
 		beitrage und ich immer das Gefühl habe, die anderen denken schlecht von mir.
 	</SpeechBubble>
@@ -179,13 +182,13 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-07.mp3'}>
 		Die Medikamente, die ich nehmen muss, machen mich oft sehr müde. Außerdem ist mein Körper durch
 		die Krämpfe und Schmerzen geschlaucht. Ich muss viele Pausen einlegen und mit meinen Ressourcen
 		gut haushalten.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-08.mp3'}>
 		Ich bin immer saufroh, wenn irgendein Lernmaterial online verfügbar ist. Ich kann nicht immer
 		vor Ort sein, auch wenn ich es gerne wäre. Ich muss oft zum Arzt. Ich muss immer wieder ins
 		Krankenhaus. Deshalb verpasse ich Veranstaltungen. Digitales Lernmaterial bedeutet für mich,
@@ -223,12 +226,10 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-09.mp3'}>
 		Mittlerweile spreche ich sehr offen über meine Erkrankung und die Symptome. Ich will, dass die
 		Menschen sensibler für unsichtbare Beeinträchtigungen werden. Und das geht nur, wenn man darüber
-		aufklärt. Vielleicht bekomme ich dann irgendwann keine Kommentare oder komische Blicke mehr,
-		wenn ich die Toilette für Menschen mit Behinderungen nutze oder mich zurückziehen muss, weil
-		mein Darm krampft.
+		aufklärt.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -239,7 +240,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-10.mp3'}>
 		Kontakt zu Mitstudierenden ist für mich recht schwierig. Das liegt daran, dass ich einfach
 		unzuverlässig bin – aber halt nicht mit Absicht. Ich bin nicht jeden Tag an der Uni, ich kann
 		nicht fest zusagen, ob ich zu einer Party komme und bei Gruppenarbeiten werde ich nicht zu jedem
@@ -263,12 +264,12 @@
 	<Week {persona} />
 
 	<MainHeading heading="Prüfungen" />
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-11.mp3'}>
 		Obwohl ich einen Nachteilsausgleich habe, muss ich trotzdem immer wieder mit Lehrenden
 		diskutieren und mich erklären. Das nervt. Es wäre viel konstruktiver, wenn wir darüber reden
 		könnten, wie man meinen NTA sinnvoll umsetzt, anstatt darüber, ob ich den jetzt auch wirklich
-		brauche. Und das jedes Semester – das zieht Energie. Ich renne nicht zum Spaß während einer
-		Prüfung 5mal auf die Toilette! Und dann muss ich mich ja auch immer wieder neu reindenken!
+		brauche. Und das jedes Semester – das zieht echt Energie. Ich renne nicht zum Spaß während einer
+		Prüfung 5 mal auf die Toilette! Und dann muss ich mich ja auch immer wieder neu reindenken!
 	</SpeechBubble>
 
 	<TextSection let:Text>
