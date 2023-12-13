@@ -57,7 +57,9 @@
 
 					ist rund um die Uhr erreichbar, anonym und kostenlos. Alternativ steht Dir ein Chat unter
 					<span>
-						<a href="online.telefonseelsorge.de" class="focus-indicator">Onlineseelsorge</a>
+						<a href="https://online.telefonseelsorge.de/" class="focus-indicator">
+							Onlineseelsorge
+						</a>
 					</span>
 					zur Verfügung. Wenn Du in einem anderen Land wohnst oder in einer anderen Sprache kommunizieren
 					möchtest, findest Du auf der Webseite der Telefonseelsorge (
