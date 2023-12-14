@@ -15,7 +15,7 @@ export const ALEKSANDR: Persona = {
 	hobbies: 'Joggen, Kraftsport und strategische Brettspiele',
 	study: 'Neurowissenschaften',
 	pronouns: 'Er / ihm',
-	disability: 'Autismus-Spektrum-Störung (ASS)',
+	disability: 'Autismus-Spektrum-Störung',
 	disabilityIcon: 'sunflower',
 	disabilityExplanation: Ass,
 	previousPersona: 'Michelle',

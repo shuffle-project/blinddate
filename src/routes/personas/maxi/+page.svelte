@@ -21,7 +21,7 @@
 	const friendPersona: FriendPersona = ALEX_FRIEND;
 
 	const extendedPlayerConfig: ExtendedPlayerConfig = {
-		title: 'Efahrungsbericht einer Studentin mit einer psychischen Krankheit',
+		title: 'Efahrungsbericht einer Studentin mit psychischer Erkrankung',
 		videos: [
 			{
 				title: 'Video',
