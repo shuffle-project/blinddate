@@ -112,13 +112,13 @@
 
 	<div style="overflow:hidden;">
 		<ToolCard title="Hörgeräte" image="{base}/tools/hearing-aid.svg">
-			Bei einigen Hörbehinderungen können Hörgeräte eingesetzt werden. Diese verstärken Schallwellen
+			Bei einigen Hörschädigungen können Hörgeräte eingesetzt werden. Diese verstärken Schallwellen
 			und lenken sie ins Innenohr.
 		</ToolCard>
 
 		<ToolCard title="Cochlea-Implantat (CI)" image="{base}/tools/cochlea-implant.svg">
 			<span
-				>Bei bestimmten Hörbehinderungen (z.B. einer Innenohrschwerhörigkeit) und wenn der Hörnerv
+				>Bei bestimmten Hörschädigungen (z.B. einer Innenohrschwerhörigkeit) und wenn der Hörnerv
 				und die Hörbahn intakt sind, kann ein</span
 			>
 			<InfoBox
@@ -174,13 +174,11 @@
 		direkt alle alles mitbekommen
 	</SpeechBubble>
 
-	<Recommendation link="https://nicht-stumm.de/" marginBottom>
-		<svelte:fragment slot="textBefore">Das Projekt</svelte:fragment>
-		<svelte:fragment slot="linkText">nicht stumm!</svelte:fragment>
-
+	<Recommendation link="https://taubenschlag.de/" marginBottom>
+		<svelte:fragment slot="linkText">Taubenschlag</svelte:fragment>
 		<svelte:fragment slot="textAfter"
-			>setzt sich mit den klassischen Klischees gegenüber hörbehinderte Menschen und der
-			Gebärdensprache auseinander.
+			>ist eine Website für Taube und Schwerhörige, aber auch für Hörende. Sie bietet Informationen
+			und Einblicke in die Welt der Hörgeschädigten.
 		</svelte:fragment>
 	</Recommendation>
 
