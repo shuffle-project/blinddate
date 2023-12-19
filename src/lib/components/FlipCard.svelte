@@ -95,6 +95,7 @@
 			position: absolute;
 			top: -2.9rem;
 			z-index: -1;
+
 			width: 100%;
 			max-width: 17rem;
 			box-sizing: border-box;
@@ -148,22 +149,13 @@
 		width: 17rem;
 		height: 27rem;
 		perspective: 1000px;
-		outline: 4px solid transparent;
 		border-radius: 1.11rem;
-		border: 2px solid transparent;
-
 		cursor: pointer;
 
-		&:focus-within {
-			outline: 4px solid var(--color-blue);
-			border-radius: 1.11rem;
-			border: 2px solid transparent;
-		}
-
+		&:focus-within,
 		&:hover {
 			outline: 4px solid var(--color-blue);
-			border-radius: 1.11rem;
-			border: 2px solid transparent;
+			outline-offset: 2px;
 		}
 	}
 
@@ -171,7 +163,7 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		text-align: center;
+
 		transition: transform 0.8s;
 		transform-style: preserve-3d;
 		@media prefers-reduced-motion {
@@ -187,16 +179,19 @@
 	.flip-card-back {
 		position: absolute;
 		width: 100%;
+		max-width: 100%;
 		height: 100%;
+		max-height: 100%;
+
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		border-radius: 1.11rem;
-		box-shadow: 0px 6px 10px rgba(7, 13, 28, 0.15);
+		box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
 
 		display: flex;
 		flex-direction: column;
 		text-align: start;
-		padding: 1.66rem 2.77rem;
+		padding: 1.66rem;
 		box-sizing: border-box;
 
 		.site-info {
@@ -214,8 +209,16 @@
 		border: 1px solid var(--color-white);
 
 		.main {
-			font-size: 4rem;
-			line-height: 110%;
+			font-size: 2.7rem;
+			line-height: 120%;
+
+			// word-wrap: break-word;
+			// overflow-wrap: break-word;
+			// overflow-wrap: anywhere;
+
+			// -webkit-hyphens: auto;
+			// -moz-hyphens: auto;
+			// hyphens: auto;
 		}
 	}
 

@@ -13,17 +13,26 @@
 	function toggleDialogDisplay() {
 		if (modal) modal.toggleModalDisplay();
 	}
+
+	function keyboardToggleDialogDisplay(e: KeyboardEvent) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			if (modal) modal.toggleModalDisplay();
+		}
+	}
 </script>
 
-<span>
-	<button
-		lang={langTerm}
-		class="term-btn"
-		class:inSpeechBubble
-		on:click|stopPropagation={() => toggleDialogDisplay()}
-	>
-		{@html term}
-	</button>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<span
+	class="term-btn"
+	lang={langTerm}
+	class:inSpeechBubble
+	role="button"
+	tabindex="0"
+	on:click|stopPropagation={() => toggleDialogDisplay()}
+	on:keypress|stopPropagation={(e) => keyboardToggleDialogDisplay(e)}
+>
+	{@html term}
 </span>
 
 <Modal bind:this={modal} bottomSheet {term}>
@@ -36,15 +45,17 @@
 </Modal>
 
 <style lang="scss">
-	span {
-		line-height: 150%;
-	}
 	.term-btn {
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+
 		color: var(--color-blue);
 		border: none;
 		padding: 0;
 
 		background-color: transparent;
+
+		line-height: 150%;
 
 		font-size: 1rem;
 		font-weight: bold;

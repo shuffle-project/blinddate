@@ -152,7 +152,7 @@
 	</SpeechBubble>
 
 	<FlipCard
-		front="Ich bin nicht desinteressiert an der Vorlesung!"
+		front="Ich bin nicht des&shy;interessiert an der Vorlesung!"
 		back="Ich habe eine chronische Darmerkrankung, die mich dazu zwingt, die Toilette auch während der Vorlesungszeiten öfter aufzusuchen."
 		personaName={persona.name}
 	/>

@@ -195,7 +195,7 @@
 	<TextSection let:Text>
 		<Text noTopMargin>
 			<InfoBox
-				term="Gebärdensprach<wbr/>dolmet<wbr/>schende"
+				term="Gebärdensprach&shy;dolmet&shy;schende"
 				sources={[
 					{
 						title: 'Gebärdensprachdolmetscher von einfach teilhaben',
@@ -205,7 +205,7 @@
 			>
 				<p>
 					Personen mit Hörbehinderung haben in bestimmten Bereichen einen rechtlichen Anspruch auf
-					Schrift- oder <b>Gebärdensprach<wbr />dolmet<wbr />schende</b>. Diese Bereiche umfassen
+					Schrift- oder <b>Gebärdensprach&shy;dolmet&shy;schende</b>. Diese Bereiche umfassen
 					staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind
 					Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen
 					staatliche Stellen die Kosten. Sind dolmetschende Personen direkt in der
