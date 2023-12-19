@@ -84,10 +84,11 @@
 		<ToolCard title="Regelmäßige Pausen" image="{base}/tools/regular-breaks.svg">
 			Psychische Erkrankungen sind Beeinträchtigungen, die oft als solche nicht wahrgenommen werden,
 			da Symptome für Außenstehende häufig nicht sichtbar sind. Die unterschiedlichen Symptome
-			psychischer Erkrankungen – wie beispielsweise Konzentrations- und Schlafstörungen, oder auch
-			soziale Ängste - können sich erheblich auf den (Studien-)Alltag von Studierenden auswirken.
-			Eine Strategie, um der Erschöpfung und dem Belastungsgefühl entgegenzuwirken, ist, regelmäßig
-			Pausen einzubauen.
+			psychischer Erkrankungen – wie Konzentrations- und Schlafstörungen, oder auch soziale Ängste -
+			können sich erheblich auf den (Studien-)Alltag von Studierenden auswirken. Depressionen
+			beispielsweise können das Erinnerungsvermögen beeinträchtigen und somit die Lernleistung
+			beeinflussen. Eine Strategie, um Erschöpfung und Belastungsgefühlen entgegenzuwirken, ist,
+			regelmäßig Pausen einzubauen.
 		</ToolCard>
 
 		<ToolCard title="Tagesplan" image="{base}/tools/day-plan.svg">
@@ -104,9 +105,11 @@
 		</ToolCard>
 
 		<ToolCard title="Probleme erkennen" image="{base}/tools/identify-problem.svg">
-			Eine mögliche Strategie kann sein, sich eine Krankheit einzugestehen und sich therapeutisch
+			Eine mögliche Strategie kann sein, sich die Krankheit einzugestehen und sich therapeutisch
 			beraten zu lassen. Strategien können bei Therapeut*innen erlernt werden, sie sind sehr
-			persönlich und schwer zu generalisieren.
+			persönlich und schwer zu generalisieren. Termine bei Therapeut*innen sind schwer zu bekommen
+			und nicht selten mit viel Wartezeit verbunden. So kann der Zugang zu einer offiziellen
+			Diagnose und Medikamenten zusätzlich erschwert sein.
 		</ToolCard>
 	</div>
 
@@ -190,7 +193,10 @@
 			Klare Strukturen, sowohl auf Vorlesungsfolien, als auch im generellen Vorgehen während des
 			Semesters – wie beispielsweise verbindliche Zeiten, zu denen Inhalte auf Plattformen
 			hochgeladen werden (Infos zu Prüfungen, zu Teilnahme, ...) - geben Sicherheit und
-			Vorhersehbarkeit.
+			Vorhersehbarkeit. Das Setzen von „Trigger-Warnungen“ in Vorlesungsinhalten wird viel
+			diskutiert. Generell gilt: Das Warnen vor Inhalten, die in dem Kontext eher nicht erwartet
+			werden und starke Emotionen auslösen können, kann vielen Studierenden helfen und Sicherheit
+			geben.
 		</Text>
 
 		<Text>
@@ -278,10 +284,10 @@
 	<TextSection let:Text>
 		<Text>
 			Online-Veranstaltungen bringen Vorteile wie zeitliche und örtliche Flexibilität mit sich. Ein
-			daraus entstehender Nachteil kann aber auch die Isolation sein. Der direkte Austausch mit
-			Mitstudierenden ist häufig erschwert oder wird schlichtweg vergessen. Auch wenn der direkte
-			Vergleich mit Mitstudierenden eventuell wegfällt, ist die positive Wirkung eines persönlichen
-			Austauschs nicht zu vernachlässigen. Regelmäßige Austauschangebote vor oder nach
+			daraus entstehender Nachteil kann aber auch die soziale Isolation sein. Der direkte Austausch
+			mit Mitstudierenden ist häufig erschwert oder wird schlichtweg vergessen. Auch wenn der
+			direkte Vergleich mit Mitstudierenden eventuell wegfällt, ist die positive Wirkung eines
+			persönlichen Austauschs nicht zu vernachlässigen. Regelmäßige Austauschangebote vor oder nach
 			Online-Veranstaltungen (auch ohne Anwesenheit der Lehrperson) können hilfreich sein.
 		</Text>
 	</TextSection>
@@ -322,9 +328,8 @@
 		<Text noTopMargin>
 			Da der Name “Behindertenbeauftragte” an vielen Hochschulen noch genutzt wird, wenden sich
 			Studierende, die keine offiziell diagnostizierte Behinderung haben, aber in ihrem Studium
-			dennoch Barrieren erfahren, nicht an diese Personen. Um eine psychische Erkrankung offiziell
-			diagnostizieren und dann auch einen Nachteilsausgleich beantragen zu können, müssen die
-			Ansprechpersonen also klar erkennbar sein.
+			dennoch Barrieren erfahren, nicht an diese Personen. Um einen Nachteilsausgleich beantragen zu
+			können, müssen die Ansprechpersonen also klar benannt sein.
 		</Text>
 	</TextSection>
 
@@ -347,7 +352,10 @@
 		ich nämlich mit Prüfungen echt Probleme und bekomme Panikattacken. Aber ich habe mit dem
 		Nachteilsausgleich eine Zeitverlängerung bekommen, was mir sehr hilft. Sonst wäre ich schon
 		ziemlich oft durchgefallen, obwohl ich ultra viel gelernt habe. Ich benötige die Zeit, um mich
-		immer wieder zu beruhigen, um dann weiterschreiben zu können.
+		immer wieder zu beruhigen, um dann weiterschreiben zu können. Außerdem ist das Präsentieren vor
+		einer Gruppe von Personen für mich eine riesige Herausforderung. Ich kann mich nicht auf den
+		Inhalt konzentrieren und bin komplett gelähmt. Hier hilft mir sehr, wenn ich ein alternatives
+		Prüfungsformat nutzen kann.
 	</FriendBubble>
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />

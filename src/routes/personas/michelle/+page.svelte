@@ -69,12 +69,12 @@
 
 			<span
 				>kommen häufig in Schüben. Diese Schübe können auch stressbedingt auftreten, sich
-				verschlimmern und nicht selten mit starken Schmerzen verbunden. Krankenhausaufenthalte und
-				langfristigere Ausfälle sorgen dafür, dass Studierende Studieninhalte verpassen und diese
-				nachholen müssen. Es ist also nicht selten, dass Studienzeiten verlängert werden müssen.
-				Neben Bauchkrämpfen sind auch Durchfälle und Müdigkeit häufige Symptome von CED. Deshalb
-				sind Pausen entweder wichtig, um Energie zu tanken oder durch Schmerzen oder Toilettengänge
-				schlichtweg unumgänglich.
+				verschlimmern und sind nicht selten mit starken Schmerzen verbunden. Krankenhausaufenthalte
+				und langfristigere Ausfälle sorgen dafür, dass Studierende Studieninhalte verpassen und
+				diese nachholen müssen. Es ist also nicht selten, dass Studienzeiten verlängert werden
+				müssen. Neben Bauchkrämpfen sind auch Durchfälle und Müdigkeit häufige Symptome von CED.
+				Deshalb sind Pausen entweder wichtig, um Energie zu tanken oder durch Schmerzen oder
+				Toilettengänge schlichtweg unumgänglich.
 			</span>
 		</Text>
 		<Text>
@@ -151,7 +151,11 @@
 		immer was zu Trinken für mich dabei.
 	</SpeechBubble>
 
-	<FlipCard front="Lorem Ipsum" back="Lorem Ipsum" personaName={persona.name} />
+	<FlipCard
+		front="Ich bin nicht desinteressiert an der Vorlesung!"
+		back="Ich habe eine chronische Darmerkrankung, die mich dazu zwingt, die Toilette auch während der Vorlesungszeiten öfter aufzusuchen."
+		personaName={persona.name}
+	/>
 
 	<TextSection let:Text>
 		<Text>
@@ -199,14 +203,14 @@
 
 	<Accordion title="Fragen und Antworten - Platzhaltertitel">
 		<AccordionItem id="1">
-			<span slot="title"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr? </span>
+			<span slot="title">Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</span>
 
 			<p slot="content">
-				dsaddsad Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-				tempor invidunt ut labore et dolore. Lorem ipsum dolor sit amet, consetetur sadipscing
-				elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore. Lorem ipsum dolor sit
-				amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-				dolore. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+				Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker stellen,
+				die kommen, wann sie wollen - auch mal mitten auf dem Weg zur Uni. Wenn dann gerade keine
+				öffentliche Toilette in der Nähe ist, hilft auch keine große, körperliche Anstrengung, um
+				etwas zurückzuhalten. Nach so einem "Unfall" habe ich mich eine Zeit lang kaum noch aus dem
+				Haus getraut!
 			</p>
 		</AccordionItem>
 
