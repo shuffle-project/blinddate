@@ -62,16 +62,16 @@
 						</a>
 					</span>
 					zur Verfügung. Wenn Du in einem anderen Land wohnst oder in einer anderen Sprache kommunizieren
-					möchtest, findest Du auf der Webseite der Telefonseelsorge (
+					möchtest, findest Du auf der Webseite der Telefonseelsorge eine Liste
 					<span>
 						<a
 							href="https://www.telefonseelsorge.de/international-helplines/"
 							class="focus-indicator"
 						>
-							Internationale Hilfestellen
+							Internationaler Hilfestellen
 						</a>
 					</span>
-					) eine Liste ausländischer Hotlines.
+					.
 				</p>
 			{/if}
 		</p>
