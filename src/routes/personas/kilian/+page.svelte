@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import FlipCard from '$lib/components/FlipCard.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
@@ -33,7 +34,7 @@
 	</SpeechBubble>
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
-		<ToolCard title="Platzhaltertitel" image="{base}/tools/orthotic.svg">
+		<ToolCard title="Eingabehilfen" image="{base}/">
 			Die benötigten Hilfsmittel und Strategien, die Personen mit motorischen Beeinträchtigungen
 			nutzen, sind stark von der Ausprägung der Beeinträchtigung abhängig. Bei verschiedenen
 			motorischen Beeinträchtigungen – wie beispielsweise einer Zerebralparese - kommt es zu einer
@@ -43,12 +44,12 @@
 			Schreibtischstühlen können Arbeitsplätze so ausgestattet werden, dass die Muskelspannung und
 			chronische Schmerzen reduziert werden.
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" image="{base}/">
+		<ToolCard title="Energie-Management" image="{base}/tools/calender.svg">
 			Die unkontrollierbaren Anspannungen der Muskulatur verbrauchen sehr viel Energie und sind
 			dadurch häufig sehr ermüdend. Regelmäßige Pausen, Aufteilen von Aufgaben in kleinere
 			„Häppchen“ und ein gutes Energie-Management sind daher wichtige Strategien.
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" image="{base}/">
+		<ToolCard title="Muskelspannung reduzieren" image="{base}/tools/orthotic.svg">
 			Um die Muskelspannung und dadurch auftretende Schmerzen zu reduzieren, können eine passende
 			Medikation, Wärme, regelmäßige Physiotherapie und Orthesen helfen.
 		</ToolCard>
@@ -220,6 +221,12 @@
 		gefährlich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
+	<FlipCard
+		front="Ich bin nicht geistig behindert!"
+		back="Ich spreche nur langsamer, weil die Zerebralparese - und nicht ich - meine Sprechmuskulatur kontrolliert."
+		personaName={persona.name}
+	/>
+
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
@@ -232,7 +239,7 @@
 		{persona}
 		checks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
-			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnun',
+			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnung',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an Veranstaltungen',
 			'Ich mache ausreichend Pausen in langen Veranstaltungen',
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'

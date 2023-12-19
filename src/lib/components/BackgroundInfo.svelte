@@ -68,7 +68,7 @@
 							href="https://www.telefonseelsorge.de/international-helplines/"
 							class="focus-indicator"
 						>
-							Internationaler Hilfestellen
+							internationaler Hilfestellen
 						</a>
 					</span>
 					.
