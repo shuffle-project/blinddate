@@ -5,7 +5,6 @@
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
-	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import { MICHELLE } from '$lib/constants/michelle';
@@ -201,23 +200,23 @@
 		zeigt mir auch, dass ich mein Studium schaffe.
 	</SpeechBubble>
 
-	<Accordion title="Fragen und Antworten - Platzhaltertitel">
-		<AccordionItem id="1">
+	<Accordion title="Fragen und Antworten - Platzhaltertitel" let:AccordionItem>
+		<AccordionItem id="1" let:PersonaAnswer>
 			<span slot="title">Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</span>
 
-			<p slot="content">
+			<PersonaAnswer personaId={persona.id} personaName={persona.name}>
 				Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker stellen,
 				die kommen, wann sie wollen - auch mal mitten auf dem Weg zur Uni. Wenn dann gerade keine
 				öffentliche Toilette in der Nähe ist, hilft auch keine große, körperliche Anstrengung, um
 				etwas zurückzuhalten. Nach so einem "Unfall" habe ich mich eine Zeit lang kaum noch aus dem
 				Haus getraut!
-			</p>
+			</PersonaAnswer>
 		</AccordionItem>
 
 		<AccordionItem id="2">
 			<span slot="title"> Lorem ipsum dolor sit amet, consetetur sadipscing? </span>
 
-			<p slot="content">dsaddsad</p>
+			<p>dsaddsad</p>
 		</AccordionItem>
 	</Accordion>
 

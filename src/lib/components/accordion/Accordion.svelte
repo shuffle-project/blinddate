@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AccordionItem from './AccordionItem.svelte';
 	export let title: string;
 </script>
 
@@ -7,7 +8,7 @@
 		{title}
 	</h3>
 	<div class="items">
-		<slot />
+		<slot {AccordionItem} />
 	</div>
 </div>
 

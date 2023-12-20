@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="speech-bubble-wrapper" aria-label={personaName + ' Sprechblase:'}>
+<div class="speech-bubble-wrapper">
 	<div aria-hidden="true" class="decorative-figure">
 		<img src="{base}/decorations/decorative-figure.svg" alt="" />
 	</div>
@@ -25,8 +25,7 @@
 	</div>
 	<div class="speech-bubble">
 		<p>
-			<span class="name" aria-hidden="true">{personaName + ': '}</span>
-			<span class="text">Was ich schon immer mal sagen wollte:</span>
+			<span class="text">Ich, {personaName}, wollte schon immer mal sagen:</span>
 		</p>
 	</div>
 </div>
@@ -211,14 +210,6 @@
 		.main {
 			font-size: 2.7rem;
 			line-height: 120%;
-
-			// word-wrap: break-word;
-			// overflow-wrap: break-word;
-			// overflow-wrap: anywhere;
-
-			// -webkit-hyphens: auto;
-			// -moz-hyphens: auto;
-			// hyphens: auto;
 		}
 	}
 

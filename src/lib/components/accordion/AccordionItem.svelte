@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import Icon from '../Icon.svelte';
+	import PersonaAnswer from './PersonaAnswer.svelte';
 	export let id: string;
 	let isOpen = false;
 
@@ -36,7 +37,7 @@
 	<div id="sect{id}" role="region" aria-labelledby="accordion{id}id" aria-hidden={!isOpen}>
 		{#if isOpen}
 			<div transition:slide={{ duration: 500 }} class="content">
-				<slot name="content" />
+				<slot {PersonaAnswer} />
 			</div>
 		{/if}
 	</div>
@@ -64,7 +65,7 @@
 		font-size: 1rem;
 		line-height: 150%;
 
-		padding: 1rem 1.33rem 1rem 1.875rem;
+		padding: 1rem 1rem;
 		border-radius: 0.85rem;
 
 		height: 100%;
@@ -75,6 +76,8 @@
 		align-items: center;
 		gap: 0.5rem;
 		width: 100%;
+
+		text-align: left;
 
 		border: none;
 
@@ -106,6 +109,16 @@
 	}
 
 	.content {
-		padding: 1rem 1.875rem;
+		padding: 1rem 0rem 0rem;
+	}
+
+	@media (min-width: 27.5rem) {
+		.button {
+			padding: 1rem 1.875rem 1rem 1.875rem;
+		}
+
+		.content {
+			padding: 1rem 1.875rem;
+		}
 	}
 </style>
