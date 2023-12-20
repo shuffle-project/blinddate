@@ -433,20 +433,18 @@
 		</li>
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=6TlLUjGmJXU">
-				<svelte:fragment slot="textBefore">Ein Video zu</svelte:fragment>
 				<svelte:fragment slot="linkText"
 					>Was ist eigentlich Masking im Autismus? | InsideAut</svelte:fragment
 				>
-				<svelte:fragment slot="textAfter">von InsideAut</svelte:fragment>
+				<svelte:fragment slot="textAfter">ein Video von InsideAut</svelte:fragment>
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=-E7WqWHGsko">
-				<svelte:fragment slot="textBefore">Ein Video zu</svelte:fragment>
 				<svelte:fragment slot="linkText"
 					>Das Autismus-Spektrum erklärt – So kannst du es dir vorstellen | InsideAut</svelte:fragment
 				>
-				<svelte:fragment slot="textAfter">von InsideAut</svelte:fragment>
+				<svelte:fragment slot="textAfter">ein Video von InsideAut</svelte:fragment>
 			</Recommendation>
 		</li>
 	</ul>

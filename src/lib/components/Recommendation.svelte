@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { getRandomId } from './utils';
+
 	export let link: string;
 	export let marginBottom = false;
+	const randomId = getRandomId();
 </script>
 
 <div class="container" class:marginBottom>
@@ -8,13 +11,21 @@
 
 	<div class="content">
 		<p class="text">
-			<slot name="textBefore" />
-
-			<a class="link focus-indicator" href={link}>
-				<slot name="linkText" />
-			</a>
-
-			<slot name="textAfter" />
+			<span id="text-before-{randomId}">
+				<slot name="textBefore" />
+			</span>
+			<span>
+				<a
+					class="link focus-indicator"
+					href={link}
+					aria-describedby="text-before-{randomId} text-after-{randomId}"
+				>
+					<slot name="linkText" />
+				</a>
+			</span>
+			<span id="text-after-{randomId}">
+				<slot name="textAfter" />
+			</span>
 		</p>
 	</div>
 </div>
@@ -52,9 +63,11 @@
 		border-radius: 1rem;
 		background-color: var(--color-lavender);
 	}
+
 	.text {
 		display: inline;
 	}
+
 	.link {
 		font-weight: 600;
 	}
