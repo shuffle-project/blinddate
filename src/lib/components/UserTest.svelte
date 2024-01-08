@@ -10,6 +10,7 @@
 
 	let persona = '';
 	let malePersona = false;
+	let simulationGame = false;
 	let disability: 'Hörbehinderung' | 'Sehbeeinträchtigung' | '' = '';
 
 	let linkToPersonaQuestionnaire = '';
@@ -20,13 +21,18 @@
 		if (url.includes('gabriel')) {
 			persona = 'Gabriel';
 			malePersona = true;
+			simulationGame = true;
 			disability = 'Sehbeeinträchtigung';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/227497?lang=de';
 		} else if (url.includes('hannah')) {
 			persona = 'Hannah';
 			malePersona = false;
+			simulationGame = true;
 			disability = 'Hörbehinderung';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/282499?lang=de';
+		} else if (url.includes('maxi')) {
+			persona = 'Maxi';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/434893?lang=de';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';
@@ -49,27 +55,50 @@
 	<Modal bind:this={modal}>
 		<svelte:fragment slot="headline">Herzlich Willkommen auf BlindDate</svelte:fragment>
 		<svelte:fragment slot="content">
-			<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>
-			<p>
-				{persona} ist eine von mehreren virtuellen Personas, die Ihnen von sich und ihrem Studienalltag
-				erzählt.
-			</p>
-			<p>
-				{persona} wird Ihnen {malePersona ? 'seine' : 'ihre'} Strategien erklären, die {malePersona
-					? 'er'
-					: 'sie'} im Studienalltag nutzt. {malePersona ? 'Er' : 'Sie'} kann Ihnen Tipps und Tricks an
-				die Hand geben, damit digitale Lehre für Studierende mit einer {disability} barrierefreier wird.
-			</p>
-			<p>
-				Obwohl {persona} nur virtuell existiert, ist {malePersona ? 'er' : 'sie'} aus realen Erfahrungen
-				von Studierenden mit einer {disability} entstanden. Mithilfe einer großen Datenerhebung, qualitativen
-				Interviews und in ständigen <span lang="en">Feedback-Loops</span> mit Studierenden mit einer
-				{disability} haben wir – das Team des Forschungsprojekt
-				<span lang="en">SHUFFLE</span> - diese verschiedenen Perspektiven sammeln können. Damit
-				nicht nur
-				{persona} zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie neben {persona}s
-				persönlichen Erläuterungen auch allgemein gehaltene Textpassagen.
-			</p>
+			{#if persona === 'Maxi'}
+				<p>Auf dieser Unterseite werden Sie Maxi kennenlernen.</p>
+				<p>
+					Maxi ist eine von mehreren virtuellen Studierenden, die Ihnen von sich und ihrem
+					Studienalltag erzählen. Maxi ist eine „Persona“ mit einer psychischen Erkrankung und
+					erklärt Ihnen genutzte Strategien und gibt Ihnen Tipps und Tricks an die Hand, um digitale
+					Lehre für Studierende mit psychischen Erkrankungen barriereärmer zu gestalten.
+				</p>
+				<p>
+					Obwohl Maxi nur virtuell existiert, wurden für die Entwicklung reale Erfahrungen von
+					Studierenden mit psychischen Erkrankungen herangezogen. Mithilfe einer großen
+					Datenerhebung, qualitativen Interviews und in ständigen Feedback-Loops mit Studierenden
+					mit verschiedenen, studienerschwerenden Beeinträchtigungen haben wir – das Team des
+					Forschungsprojekt SHUFFLE – diese Perspektiven sammeln können.
+				</p>
+				<p>
+					Damit nicht nur Maxi zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie
+					neben Maxis persönlichen Erläuterungen auch allgemein gehaltene Textpassagen.
+				</p>
+			{:else}
+				<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>
+				<p>
+					{persona} ist eine von mehreren virtuellen Personas, die Ihnen von sich und ihrem Studienalltag
+					erzählt.
+				</p>
+				<p>
+					{persona} wird Ihnen {malePersona ? 'seine' : 'ihre'} Strategien erklären, die {malePersona
+						? 'er'
+						: 'sie'} im Studienalltag nutzt. {malePersona ? 'Er' : 'Sie'} kann Ihnen Tipps und Tricks
+					an die Hand geben, damit digitale Lehre für Studierende mit einer {disability} barrierefreier
+					wird.
+				</p>
+				<p>
+					Obwohl {persona} nur virtuell existiert, ist {malePersona ? 'er' : 'sie'} aus realen Erfahrungen
+					von Studierenden mit einer {disability} entstanden. Mithilfe einer großen Datenerhebung, qualitativen
+					Interviews und in ständigen <span lang="en">Feedback-Loops</span> mit Studierenden mit
+					einer
+					{disability} haben wir – das Team des Forschungsprojekt
+					<span lang="en">SHUFFLE</span> - diese verschiedenen Perspektiven sammeln können. Damit
+					nicht nur
+					{persona} zu Wort kommt, sondern mehr Vielfalt dargestellt wird, finden Sie neben {persona}s
+					persönlichen Erläuterungen auch allgemein gehaltene Textpassagen.
+				</p>
+			{/if}
 
 			<div class="hint-wrapper">
 				<div class="hint">
@@ -77,11 +106,19 @@
 					<p>Hinweis</p>
 				</div>
 
-				<p class="hint-text">
-					BlindDate sollte auf allen Endgeräten mit einem aktuellen und gängigen Browser nutzbar
-					sein. Bis auf das Simulationsspiel sind alle Inhalte barrierefrei zugänglich. Sollten Sie
-					dennoch auf Barrieren stoßen, melden Sie sich bitte bei uns.
-				</p>
+				{#if simulationGame}
+					<p class="hint-text">
+						BlindDate sollte auf allen Endgeräten mit einem aktuellen und gängigen Browser nutzbar
+						sein. Bis auf das Simulationsspiel sind alle Inhalte barrierefrei zugänglich. Sollten
+						Sie dennoch auf Barrieren stoßen, melden Sie sich bitte bei uns.
+					</p>
+				{:else}
+					<p class="hint-text">
+						BlindDate sollte auf allen Endgeräten mit einem aktuellen und gängigen Browser nutzbar
+						sein. Alle Inhalte sind barrierefrei zugänglich. Sollten Sie dennoch auf Barrieren
+						stoßen, melden Sie sich bitte bei uns.
+					</p>
+				{/if}
 			</div>
 			<b>
 				Bitte teilen Sie uns Ihre Gedanken und Rückmeldungen mit und nutzen die Links zur Umfrage am

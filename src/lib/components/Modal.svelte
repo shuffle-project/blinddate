@@ -126,8 +126,6 @@
 
 	// normal dialog stylesheets
 	dialog {
-		display: block;
-
 		border: none;
 		border-radius: 1.77rem;
 
