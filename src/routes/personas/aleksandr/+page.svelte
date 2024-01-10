@@ -20,16 +20,16 @@
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
 	<SpeechBubble {persona}>
-		Hallo, mein Name ist Aleksandr, aber ich bevorzuge Sasha. Ich bin 23 Jahre alt. Ich wohne in
-		Frankfurt. Etwas weiter draußen. Ich interessiere mich sehr für die Funktionsweise des
-		menschlichen Gehirns – wie Verhaltensweisen das Resultat elektrischer Signale sind. Deshalb
-		studiere ich Neurowissenschaften. Angefangen habe ich mit einem Fernstudium. Ich dachte, für
-		mich ist das besser. Soziale Interaktionen, viele Leute um mich herum, große Gebäude. Das ist
-		für mich anstrengend. Das ist, weil ich Autist bin. Aber ich habe das Fernstudium abgebrochen.
-		Das Fach Psychologie war nicht richtig für mich. Und die Selbstorganisation war zu viel. Das hat
-		nicht gut geklappt. Damit habe ich Probleme. Jetzt studiere ich an der Goethe-Universität in
-		Frankfurt. Ich habe auch einen Job als wissenschaftliche Hilfskraft für 15 Stunden im Monat.
-		Meine Aufgabe ist das Codieren von Daten für eine große Studie.
+		Hallo, mein Name ist Aleksandr, aber ich bevorzuge Sasha. Ich bin 23 Jahre alt. Ich wohne etwas
+		außerhalb von Frankfurt. Ich interessiere mich sehr für die Funktionsweise des menschlichen
+		Gehirns – wie Verhaltensweisen das Resultat elektrischer Signale sind. Deshalb studiere ich
+		Neurowissenschaften. Angefangen habe ich mit einem Fernstudium. Ich dachte, für mich sei das
+		besser. Soziale Interaktionen, viele Leute um mich herum, große Gebäude. Das ist für mich
+		anstrengend. Das ist, weil ich Autist bin. Aber ich habe das Fernstudium abgebrochen. Die
+		Selbstorganisation war zu viel. Das hat nicht gut geklappt. Damit habe ich Probleme. Jetzt
+		studiere ich an der Goethe-Universität in Frankfurt. Ich habe auch einen Job als
+		wissenschaftliche Hilfskraft für 15 Stunden im Monat. Meine Aufgabe ist das Codieren von Daten
+		für eine große Studie.
 	</SpeechBubble>
 
 	<SpeechBubble {persona}>
@@ -38,10 +38,9 @@
 		an der Uni. Ab 8:30Uhr. Dort besuche ich Veranstaltungen und lerne auch. Ich mache auch viel
 		Sport. Zweimal in der Woche gehe ich Joggen. Für meine kardiovaskuläre Fitness. Und ich mache
 		Calisthenics für Flexibilität und Muskelaufbau. Das ist Kraftsport mit dem eigenen
-		Körpergewicht. In Frankfurt gibt es dafür mehrere Außenanlagen. Strategische Brettspiele mag ich
-		auch. Zum Beispiel Age of Sigmar, das früher Warhammer hieß. Die Legenden von Andor. Oder
-		Dune:Imperium. Ich spiele gerne zusammen mit Valentin. Weil er das mag, auch mal Siedler von
-		Catan.
+		Körpergewicht. Strategische Brettspiele mag ich auch. Zum Beispiel Age of Sigmar, das früher
+		Warhammer hieß. Die Legenden von Andor. Oder Dune:Imperium. Ich spiele gerne zusammen mit
+		Valentin. Weil er das mag, auch mal Siedler von Catan.
 	</SpeechBubble>
 
 	<MainHeading heading="Technologien und Strategien" />
@@ -59,9 +58,10 @@
 		<ToolCard title="Platzhaltertitel" image="{base}/tools/day-plan.svg">
 			Das Orientieren an Details und ein sogenannter Hyper-Fokus auf Themen können für ein Studium
 			von Vorteil sein. Manchmal nehmen diese Spezialinteressen aber auch viel Zeit und
-			Aufmerksamkeit in Anspruch. Deshalb kann es für Studierende mit ASS wichtig sein, sich klare
-			Strukturen und feste Routinen in den Alltag einzubauen, um andere Bereiche nicht zu
-			vernachlässigen.
+			Aufmerksamkeit in Anspruch. Andere wichtige Aktivitäten – wie Essen oder Termine – können
+			dadurch komplett in den Hintergrund rutschen Deshalb kann es für Studierende mit ASS wichtig
+			sein, sich klare Strukturen und feste Routinen in den Alltag einzubauen, um andere Bereiche
+			nicht zu vernachlässigen.
 		</ToolCard>
 		<ToolCard title="Platzhaltertitel" langTitle="en" image="{base}/">
 			<span
@@ -118,23 +118,6 @@
 			selbststimulierenden Verhaltens.
 		</ToolCard>
 	</div>
-	<SpeechBubble {persona}>
-		Wenn ich etwas interessant finde, will ich mehr herausfinden. Stundenlang kann ich dann
-		recherchieren. Das ist hilfreich, zum Beispiel wenn ich eine Hausarbeit schreiben muss. Aber es
-		kann auch schwierig sein. Manchmal vergesse ich dann alles, auch zu essen oder einen Termin. Und
-		ich erledige dann andere Aufgaben nicht.
-	</SpeechBubble>
-
-	<FriendBubble {friendPersona}>
-		Sasha und ich – wir kennen uns schon ewig. Schon seit der Grundschule. Wenn ihm alles zu viel
-		wird, spricht er nicht mehr und klopft auf seinen Händen rum. Das macht er, damit er sich besser
-		konzentrieren kann, hat er mir gesagt. Also er hört einen dann trotzdem, auch wenn das nicht so
-		aussieht. Er versucht nur, den Rest, den ihn stört auszublenden. Zum Beispiel andere Leute, die
-		sich unterhalten oder rumlaufen. Stell dir mal vor, wie das ist, wenn du alles merkst. Ich weiß,
-		dass er so reagiert. Aber viele andere checken das nicht. Die reden dann lauter auf ihn ein,
-		kommen näher oder berühren ihn sogar. Das bringt halt gar nichts. Viel besser wäre, zusammen
-		einen ruhigeren Ort zu finden.
-	</FriendBubble>
 
 	<SpeechBubble {persona}>
 		Umweltreize lenken mich schnell ab. Mein Gehirn kann sie nicht ausfiltern. Deshalb nutze ich
@@ -146,14 +129,25 @@
 		finden muss.
 	</SpeechBubble>
 
+	<FriendBubble {friendPersona}>
+		Sasha und ich – wir kennen uns schon ewig. Schon seit der Grundschule. Wenn ihm alles zu viel
+		wird, spricht er nicht mehr und klopft auf seinen Händen rum. Das macht er, damit er sich besser
+		konzentrieren kann, hat er mir gesagt. Also, er hört einen dann trotzdem, auch wenn das nicht so
+		aussieht. Er versucht nur, den Rest, der ihn stört, auszublenden. Zum Beispiel andere Leute, die
+		sich unterhalten oder rumlaufen. Stell dir mal vor, wie das ist, wenn du alles merkst! Ich weiß,
+		dass er so reagiert. Aber viele andere checken das nicht. Die reden dann lauter auf ihn ein,
+		kommen näher oder berühren ihn sogar. Das bringt halt gar nichts. Viel besser wäre, zusammen
+		einen ruhigeren Ort zu finden.
+	</FriendBubble>
+
 	<SpeechBubble {persona}>
-		Wenn eine Situation mir zu viel wird – das heißt, wenn ich überstimuliert werde, wenn zu viele
-		Reize da sind und ich deshalb einen schnellen Puls, schnellen Atem und Angstgefühle bekomme...
-		Dann habe ich Regulationsprobleme und komme, wenn es nicht gut läuft, in einen Zustand, den man
-		„Meltdown“ nennt. Dann habe ich mein Verhalten nicht mehr unter Kontrolle. Als Kind hatte ich
-		das oft. Da habe ich geschrien und auch um mich getreten oder geschlagen. Heute beiße ich mir in
-		die Hand. Das ist autoaggressives Verhalten. Das tut weh, aber in der Situation hilft mir das.
-		Am besten lässt man mich dann in Ruhe.
+		Wenn mir eine Situation zu viel wird – das heißt, wenn ich überstimuliert bin und deshalb einen
+		schnellen Puls, schnellen Atem und Angstgefühle bekomme... Dann habe ich Regulationsprobleme und
+		komme, wenn es nicht gut läuft, in einen Zustand, den man „Meltdown“ nennt. Dann habe ich mein
+		Verhalten nicht mehr unter Kontrolle. Als Kind hatte ich das oft. Da habe ich geschrien und auch
+		um mich getreten oder geschlagen. Heute beiße ich mir in die Hand. Das ist autoaggressives
+		Verhalten. Das tut weh, aber in der Situation hilft mir das. Am besten lässt man mich dann in
+		Ruhe.
 	</SpeechBubble>
 
 	<FlipCard personaName={persona.name} front="Platz-halter" back="Platzhalter" />
@@ -193,8 +187,7 @@
 			helfen, Reizüberflutungen zu vermeiden.
 		</Text>
 		<Text>
-			So wie Routinen und klare Abläufe Sicherheiten und Struktur geben können, können Abweichungen
-			vom Gewohnten Stressoren für Studierende auf dem Spektrum sein. Raum- oder Dozierendenwechsel
+			Raum- oder Dozierendenwechsel können zu Orientierungsproblemen und Unsicherheiten führen und
 			sollten daher möglich frühzeitig angekündigt und spontane Änderungen, wenn möglich, vermieden
 			werden.
 		</Text>
@@ -205,22 +198,22 @@
 		<Text noTopMargin>
 			Für Studierende mit ASS kann das Unterscheiden zwischen relevanten und irrelevanten Inhalten
 			schwierig sein. Eine große Menge an (unstrukturierten) (Lern-)Materialien kann also schnell zu
-			Überforderung oder Überarbeitung führen. Auch hier sind eindeutige Arbeitsanweisungen und
-			Strukturen hilfreich.
+			Überforderung oder Überarbeitung führen. Arbeitsanweisungen, Fragen oder Antwortmöglichkeiten,
+			die inhaltlich oder auch visuell ähnlich sind – beispielsweise lediglich durch ein „nicht“ zu
+			unterscheiden – können zu Herausforderungen führen, die nichts mit dem Inhalt selbst zu tun
+			haben. Deshalb sind eindeutige Arbeitsanweisungen und Strukturen hilfreich.
 		</Text>
 	</TextSection>
 
 	<SpeechBubble {persona}>
-		Viele Dinge lenken mich von meiner Aufgabe ab. Das geht leicht. ... Ein Beispiel... Wenn ich
-		sage, ich lerne jetzt Neuroanatomie mit dem Gehirn-Atlas. Und dann sehe ich, dass ich was grün
-		unterstrichen habe. Dann frag ich mich, wieso? Und wo ist der grüne Stift. Ich habe ihn nicht im
-		Rucksack gesehen. Dann schaue ich in der Schublade. Da liegen Sachen drin, die muss man
-		aussortieren. Damit fange ich dann an. Und mir fällt ein, ich wollte die reparieren. Dazu
-		brauche ich Werkzeug. Dazu muss ich in die Garage. Da gehe ich dann hin. Dann komme ich wieder
-		und sehe die halb aussortierten Sachen. Das muss ich dann fertig machen. Ich kann das so nicht
-		liegen lassen. Aber eigentlich will ich lernen. Das passiert mir sehr oft. Deshalb brauche ich
-		klare Vorgaben. Die muss ich mir selbst setzen. Und aufpassen, dass mich wenig ablenkt. Dort wo
-		ich lerne.
+		Viele Dinge lenken mich von meiner Aufgabe ab. Das geht leicht. Ein Beispiel: Wenn ich sage, ich
+		lerne jetzt Neuroanatomie mit dem Gehirn-Atlas. Und dann sehe ich, dass ich etwas grün
+		unterstrichen habe. Dann frag ich mich: Wo ist eigentlich der grüne Stift? Dann schaue ich in
+		der Schublade. Und mir fällt ein, dass ich die reparieren wollte. Dazu brauche ich Werkzeug aus
+		der Garage. Da gehe ich dann hin. In dem Schrank finde ich eine Kiste mit Schrauben, die ganz
+		durcheinander sind. Ich fange an, sie zu sortieren... Aber eigentlich will ich lernen. Das
+		passiert mir sehr oft. Deshalb brauche ich klare Vorgaben. Die muss ich mir selbst setzen. Und
+		aufpassen, dass mich wenig ablenkt. Dort wo ich lerne.
 	</SpeechBubble>
 
 	<FriendBubble {friendPersona}>
@@ -272,11 +265,11 @@
 	</FriendBubble>
 
 	<SpeechBubble {persona}>
-		Genau so ist das. Ich denke, man muss so wirken, wie die anderen. Ich musste auch lernen, dass
-		man dem anderen in die Augen schaut. Das mach ich aber nicht mehr. Das ist mir unangenehm. Ich
-		schaue woanders hin. Dann höre ich auch besser zu. Und kann mich konzentrieren. Gesprächspartner
-		finden das aber komisch. Manchmal denken sie, ich bin nicht interessiert. Also schaue ich immer
-		mal wieder auf einen Punkt hinter dem Kopf der Person und nicke.
+		Genau. Ich denke, man muss so wirken, wie die anderen. Ich musste auch lernen, dass man dem
+		anderen in die Augen schaut. Das mache ich aber nicht mehr. Das ist mir unangenehm. Ich schaue
+		woanders hin. Dann höre ich auch besser zu und kann mich konzentrieren. Gesprächspartner finden
+		das aber komisch. Manchmal denken sie, ich bin nicht interessiert. Also schaue ich immer mal
+		wieder auf einen Punkt hinter dem Kopf der Person und nicke.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -305,11 +298,10 @@
 	</TextSection>
 
 	<SpeechBubble {persona}>
-		Die Umwelt ist eher für neurotypische Menschen gestaltet. Deshalb ist das nicht so einfach. Man
-		braucht viele Strategien. Aber es verursacht mir Stress und Aufregung. Eigentlich die ganze
-		Zeit. An der Uni sind oft viele Leute oder es gibt eine Baustelle oder irgendeine Aktion, bei
-		denen Leute einen was fragen. Ein Halbmarathon zu laufen ist für mich einfacher. Nach einem
-		ganzen Uni-Tag bin ich müde.
+		Die Umwelt ist eher für neurotypische Menschen gestaltet. Deshalb ist das nicht so einfach. Es
+		verursacht mir Stress und Aufregung. Eigentlich die ganze Zeit. An der Uni sind oft viele Leute
+		oder es gibt eine Baustelle oder irgendeine Aktion, bei denen Leute einen was fragen. Ein
+		Halbmarathon zu laufen ist für mich einfacher. Nach einem ganzen Uni-Tag bin ich müde.
 	</SpeechBubble>
 
 	<TextSection let:Text>
@@ -355,7 +347,7 @@
 		hilfreich ist. Die haben Probleme bei der Prüfung und müssen zwischendurch pausieren. Ich darf
 		aber Prüfungen in einem separaten Raum schreiben. So muss ich nicht so viel ausblenden. Aber die
 		Zeit ist die gleiche. Nächstes Semester habe ich eine wichtige Gruppenarbeit. Vielleicht sollte
-		ich mich um einen Nachteilsausgleich bemühen. Mit mir unbekannten Studierenden so
+		ich mich dafür um einen Nachteilsausgleich bemühen. Mit mir unbekannten Studierenden so
 		zusammenarbeiten. Da werde ich kein gutes Ergebnis erzielen.
 	</SpeechBubble>
 
@@ -371,13 +363,9 @@
 
 	<SpeechBubble {persona}>
 		Multiple-Choice ist für mich schwierig. Da sind die Antwortmöglichkeiten oft fast gleich. Nur
-		ein Wort oder ein „nicht“ ist anders. Ich kann das dann schwer auseinanderhalten. Ich les das
-		dann wieder und wieder. Es verschwimmt vor meinen Augen. Dann reagier‘ ich mit Stresssymptomen.
-		Schwierig finde ich auch, wenn Fragen für mich uneindeutig sind. Wenn man sie auf mehrere Arten
-		lesen kann. Dann kann man auch auf mehrere Arten antworten. Das habe ich mal falsch gemacht und
-		ein schlechtes Ergebnis in der Klausur erzielt. Das ärgert mich dann. Bei Stress muss ich mich
-		bemühen, die Reaktion schnell abzubauen. Das ist nicht leicht. Körperliche Betätigung hilft mir
-		dann oder der Stressball.
+		ein Wort oder ein „nicht“ ist anders. Ich kann das dann schwer auseinanderhalten und alles
+		verschwimmt vor meinen Augen. Schwierig finde ich auch, wenn Fragen für mich uneindeutig sind.
+		Wenn man sie auf mehrere Arten lesen kann, denn dann kann man auch auf mehrere Arten antworten.
 	</SpeechBubble>
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
