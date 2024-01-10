@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
+	import BackgroundInfo from '$lib/components/BackgroundInfo.svelte';
+	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
@@ -72,6 +74,8 @@
 		manchmal eben rollt.
 	</SpeechBubble>
 
+	<BackgroundInfo content="wheelchair-moving" />
+
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>
 		<Text noTopMargin>
@@ -118,6 +122,8 @@
 			die Angebote breit kommuniziert und somit bei Bedarf auch genutzt werden.
 		</Text>
 	</TextSection>
+
+	<BackgroundInfo content="wheelchair-sitting" />
 
 	<MainHeading heading="Lernmaterial" />
 	<TextSection let:Text>
@@ -172,6 +178,12 @@
 		</Text>
 	</TextSection>
 
+	<FlipCard
+		front="Ich bin nicht geistig behindert!"
+		back="Ich spreche nur langsamer, weil die Zerebralparese - und nicht ich - meine Sprechmuskulatur kontrolliert."
+		personaName={persona.name}
+	/>
+
 	<MainHeading heading="Prüfungen" />
 	<TextSection let:Text>
 		<Text noTopMargin>
@@ -221,11 +233,32 @@
 		gefährlich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
-	<FlipCard
-		front="Ich bin nicht geistig behindert!"
-		back="Ich spreche nur langsamer, weil die Zerebralparese - und nicht ich - meine Sprechmuskulatur kontrolliert."
-		personaName={persona.name}
-	/>
+	<Accordion title="Fragen und Antworten - Platzhaltertitel" let:AccordionItem>
+		<AccordionItem id="1" let:PersonaAnswer>
+			<span slot="title">Was ist das größte No Go, wenn ich einem Rollstuhlfahrer begegne?</span>
+
+			<PersonaAnswer personaId={persona.id} personaName={persona.name}>
+				Das ist easy: Bitte nicht einfach drauflos schieben! In dem Moment, in dem ich im Rollstuhl
+				sitze, ist dieser sozusagen mein 'Ersatzbein'. Und ich fasse ja auch nicht einfach die Beine
+				einer anderen Person an! Ich freue mich meistens über nett gemeinte Hilfsangebote, aber ich
+				bin auch ein selbstständiger Mensch. Eine kurze Nachfrage kann uns beide vor unangenehmen
+				Situationen bewahren.
+			</PersonaAnswer>
+		</AccordionItem>
+
+		<AccordionItem id="2" let:PersonaAnswer>
+			<span slot="title">Welchen digitalen Barrieren begegnest du?</span>
+
+			<p>
+				Klar, wenn man eine Person im Rollstuhl sieht, denkt man erstmal an bauliche Barrieren. Das
+				ist aber nicht alles: Assistive Technologien wie meine Großfeldtastatur ermöglichen zwar
+				grundsätzlich meine Teilhabe am digitalen Leben, aber das geht trotzdem langsamer als bei
+				anderen. Wenn ein Dozent in einer Online Vorlesung beispielsweise wissen will, ob es noch
+				Fragen gibt, brauche ich länger, bis ich den winzigen 'Hand heben'-Button gedrückt habe. Bis
+				dahin hat er die Konferenz womöglich schon beendet.
+			</p>
+		</AccordionItem>
+	</Accordion>
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 

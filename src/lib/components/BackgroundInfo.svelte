@@ -2,7 +2,7 @@
 	import Icon from './Icon.svelte';
 	import TextSection from './personaContent/TextSection.svelte';
 
-	type Content = 'keyboard' | 'support';
+	type Content = 'keyboard' | 'support' | 'wheelchair-moving' | 'wheelchair-sitting';
 
 	export let content: Content;
 </script>
@@ -14,6 +14,19 @@
 				BlindDate wurde ebenfalls barrierefrei umgesetzt. Das heißt, dass Sie auch hier direkt die
 				Tastatursteuerung ausprobieren können.
 			</Text>
+		</TextSection>
+	{/if}
+	{#if content === 'wheelchair-moving'}
+		<TextSection let:Text>
+			<Text>
+				Wer im Rollstuhl sitzt, sieht sich mit baulichen Barrieren konfrontiert, die anderen im
+				Alltag oft nicht einmal auffallen:
+			</Text>
+		</TextSection>
+	{/if}
+	{#if content === 'wheelchair-sitting'}
+		<TextSection let:Text>
+			<Text>Das permanente Sitzen im Rollstuhl geht auch mit physischen Belastungen einher:</Text>
 		</TextSection>
 	{/if}
 
@@ -73,6 +86,20 @@
 					</span>
 					.
 				</p>
+			{/if}
+			{#if content === 'wheelchair-moving'}
+				Legen Sie Ihren Weg zur und innerhalb der Universität einmal ausschließlich
+				<b>auf rollstuhlgerechten Strecken</b> zurück. Vermeiden Sie vor allem Treppen und nutzen
+				Sie stattdessen
+				<b>Aufzüge oder Rampen</b>, um barrierefrei andere Stockwerke zu erreichen. Achten Sie dabei
+				auch auf hohe Türschwellen. Wo ist eigentlich die nächste <b>barrierefreie Toilette</b>?
+			{/if}
+			{#if content === 'wheelchair-sitting'}
+				Zählen Sie einmal, wie oft Sie normalerweise <b>am Tag aufstehen</b>, um sich zu strecken
+				oder kurz zu bewegen. Versuchen Sie dann, dies zu reduzieren und den Tag
+				<b>größtenteils im Sitzen</b>
+				zu verbringen. Beachten Sie, wie sich Ihr Körper dabei anfühlt und welche
+				<b>Unannehmlichkeiten</b> es gibt. Auch Rollstuhlfahrer sind nicht gegen Rückenschmerzen immun.
 			{/if}
 		</p>
 	</div>
