@@ -38,6 +38,7 @@
 		}
 		.wrapper {
 			animation: smooth-on-mobile-reload 1s linear forwards;
+			animation-delay: 0.3s;
 		}
 	}
 </style>
