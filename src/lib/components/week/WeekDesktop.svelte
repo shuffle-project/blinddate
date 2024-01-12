@@ -172,6 +172,17 @@
 
 <style lang="scss">
 	.with-week-figure {
+		@keyframes smooth-on-mobile-reload {
+			0% {
+				opacity: 0%;
+			}
+			100% {
+				opacity: 100%;
+			}
+		}
+		animation: smooth-on-mobile-reload 1s linear forwards;
+		animation-delay: 0.3s;
+
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
