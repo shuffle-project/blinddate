@@ -14,7 +14,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	import { getRandomId } from '../utils';
 	import CaptionSettings from './CaptionSettings.svelte';
 	import TempoSettings from './TempoSettings.svelte';
-	const isSafari = detect()!.name == 'safari';
+	let isSafari: boolean;
 	const randomId = getRandomId();
 
 	export let videoData: Video;
@@ -72,6 +72,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	}
 
 	onMount(() => {
+		isSafari = detect()!.name == 'safari';
+
 		// userDeviceIsiOS = /iPhone/.test(navigator.userAgent);
 		userDeviceIsiOS =
 			['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(

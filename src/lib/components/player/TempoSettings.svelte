@@ -189,11 +189,6 @@
 		.option {
 			display: flex;
 			font-size: 0.88rem;
-
-			span {
-				display: flex;
-				align-items: center;
-			}
 		}
 	}
 </style>

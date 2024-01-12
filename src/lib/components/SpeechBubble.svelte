@@ -110,9 +110,6 @@
 				left: -18px;
 			}
 		}
-		.persona_img_container {
-			display: none;
-		}
 
 		.text {
 			margin: 0;
@@ -219,28 +216,6 @@
 
 			.decorative-outline {
 				display: none;
-			}
-			.persona_img_container {
-				position: relative;
-				z-index: 2;
-
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				background: var(--color-gradient-persona);
-				margin: auto auto -1.6rem auto;
-				width: 4.8rem;
-				height: 4.8rem;
-				border-radius: 50%;
-				box-shadow: 0px 4px 4px rgba(var(--color-black-rgb), 0.15);
-
-				overflow: hidden;
-			}
-
-			.persona_img_container img {
-				height: 5rem;
-				transform: translateY(0.5rem);
 			}
 
 			.text {

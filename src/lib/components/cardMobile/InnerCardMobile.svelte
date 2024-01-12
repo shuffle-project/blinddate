@@ -259,8 +259,7 @@
 					border: none;
 				}
 
-				button,
-				.tips-btn {
+				button {
 					margin: 0.5rem 0;
 					cursor: pointer;
 					border-radius: 40px;
@@ -308,15 +307,31 @@
 						color: var(--color-blue);
 					}
 				}
-
-				.tips-btn {
-					background-color: var(--color-blue);
-					color: var(--color-white);
-					border: none;
-					box-sizing: border-box;
-					text-decoration: none;
-				}
 			}
+		}
+	}
+
+	.tips-btn {
+		background-color: var(--color-blue);
+		color: var(--color-white);
+		border: none;
+		box-sizing: border-box;
+		text-decoration: none;
+
+		display: flex;
+
+		margin: 0.5rem 0;
+		cursor: pointer;
+		border-radius: 40px;
+		padding: 0.5rem;
+		text-align: left;
+		width: 100%;
+		font-size: 0.88rem;
+
+		&:hover,
+		&:focus {
+			outline: 2px solid var(--color-blue);
+			outline-offset: 2px;
 		}
 	}
 </style>
