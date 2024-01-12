@@ -1,18 +1,27 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
+	import { onMount } from 'svelte';
 	import WeekDesktop from './WeekDesktop.svelte';
 	import WeekMobile from './WeekMobile.svelte';
 
 	export let persona: Persona;
+
+	let desktop = true;
+
+	onMount(() => {
+		desktop = window.innerWidth > 510;
+		window.addEventListener('resize', () => {
+			desktop = window.innerWidth > 510;
+		});
+	});
 </script>
 
 <div class="wrapper">
-	<div class="desktop">
+	{#if desktop}
 		<WeekDesktop {persona} />
-	</div>
-	<div class="mobile">
+	{:else}
 		<WeekMobile {persona} />
-	</div>
+	{/if}
 </div>
 
 <style lang="scss">
