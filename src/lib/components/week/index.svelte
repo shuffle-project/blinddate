@@ -37,7 +37,7 @@
 			}
 		}
 		.wrapper {
-			animation: smooth-on-mobile-reload 0.3s linear forwards;
+			animation: smooth-on-mobile-reload 1s linear forwards;
 		}
 	}
 </style>
