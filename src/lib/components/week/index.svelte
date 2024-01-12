@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import WeekDesktop from './WeekDesktop.svelte';
 	import WeekMobile from './WeekMobile.svelte';
 
@@ -16,23 +17,17 @@
 	});
 </script>
 
+<!-- CSS media queries not working because the switch in each week component affect ... -->
+<!-- ...  each other through, probably, the bindings -->
+<!-- Adding svelte animation for cleaner transition on page refresh on mobile -->
 <div class="wrapper">
 	{#if desktop}
-		<WeekDesktop {persona} />
+		<div in:fade={{ duration: 300 }}>
+			<WeekDesktop {persona} />
+		</div>
 	{:else}
-		<WeekMobile {persona} />
+		<div in:fade={{ duration: 300 }}>
+			<WeekMobile {persona} />
+		</div>
 	{/if}
 </div>
-
-<style lang="scss">
-	@media (min-width: 31.9375rem) {
-		.mobile {
-			display: none;
-		}
-	}
-	@media (max-width: 31.875rem) {
-		.desktop {
-			display: none;
-		}
-	}
-</style>
