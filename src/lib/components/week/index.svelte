@@ -25,20 +25,3 @@
 		<WeekMobile {persona} />
 	{/if}
 </div>
-
-<style lang="scss">
-	// @media (max-width: 31.875rem) {
-	// 	@keyframes smooth-on-mobile-reload {
-	// 		0% {
-	// 			opacity: 0%;
-	// 		}
-	// 		100% {
-	// 			opacity: 100%;
-	// 		}
-	// 	}
-	// 	.wrapper {
-	// 		animation: smooth-on-mobile-reload 1s linear forwards;
-	// 		animation-delay: 0.3s;
-	// 	}
-	// }
-</style>
