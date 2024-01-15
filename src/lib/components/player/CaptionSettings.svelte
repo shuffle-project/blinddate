@@ -103,7 +103,7 @@
 	>
 		CC
 	</button>
-
+	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<dialog class="caption-menu" bind:this={captionMenu} on:keyup={(e) => handleKeyEvent(e)}>
 		<menu>
 			<li>

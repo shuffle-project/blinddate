@@ -39,9 +39,9 @@
 					in:slide={{ duration: 400, easing: quintOut }}
 					out:slide={{ duration: 600, easing: quintInOut }}
 					class="box background-pattern-{box.backgroundColorCode}"
-					style="height: {box.box.size - 15}px; width: 150px; transform: translateX({Math.floor(
-						Math.random() * 31
-					) - 15}px)"
+					style="height: {box.box.size - 15}px; width: 150px; transform: translateX({i !== 0
+						? Math.floor(Math.random() * 31) - 15
+						: 0}px)"
 				/>
 			{/if}
 		{/each}

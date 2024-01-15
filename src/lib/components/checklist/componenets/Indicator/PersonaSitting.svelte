@@ -28,7 +28,7 @@
 					// TODO: Probably needs to be persona specific
 					position: absolute;
 					top: -7.6rem;
-					left: -4.6rem;
+					left: -4rem;
 				}
 
 				&.itemAdded {
