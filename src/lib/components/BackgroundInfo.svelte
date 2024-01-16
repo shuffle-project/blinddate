@@ -19,7 +19,7 @@
 	{#if content === 'wheelchair-moving'}
 		<TextSection let:Text>
 			<Text>
-				Wer im Rollstuhl sitzt, sieht sich mit baulichen Barrieren konfrontiert, die anderen im
+				Wer einen Rollstuhl nutzt, sieht sich mit baulichen Barrieren konfrontiert, die anderen im
 				Alltag oft nicht einmal auffallen:
 			</Text>
 		</TextSection>
@@ -92,14 +92,15 @@
 				<b>auf rollstuhlgerechten Strecken</b> zurück. Vermeiden Sie vor allem Treppen und nutzen
 				Sie stattdessen
 				<b>Aufzüge oder Rampen</b>, um barrierefrei andere Stockwerke zu erreichen. Achten Sie dabei
-				auch auf hohe Türschwellen. Wo ist eigentlich die nächste <b>barrierefreie Toilette</b>?
+				auch auf hohe Türschwellen und darauf, auf welcher Höhe Alltagsgegenstände angebracht sind.
+				Wo ist eigentlich die nächste <b>barrierefreie Toilette</b>?
 			{/if}
 			{#if content === 'wheelchair-sitting'}
 				Zählen Sie einmal, wie oft Sie normalerweise <b>am Tag aufstehen</b>, um sich zu strecken
 				oder kurz zu bewegen. Versuchen Sie dann, dies zu reduzieren und den Tag
 				<b>größtenteils im Sitzen</b>
 				zu verbringen. Beachten Sie, wie sich Ihr Körper dabei anfühlt und welche
-				<b>Unannehmlichkeiten</b> es gibt. Auch Rollstuhlfahrer sind nicht gegen Rückenschmerzen immun.
+				<b>Unannehmlichkeiten</b> es gibt. Rückenschmerzen sind für Rollstuhlnutzende eine häufige Belastung.
 			{/if}
 		</p>
 	</div>

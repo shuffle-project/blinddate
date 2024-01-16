@@ -179,7 +179,7 @@
 	</TextSection>
 
 	<FlipCard
-		front="Ich bin nicht geistig behindert!"
+		front="Ich bin nicht schwer von Begriff!"
 		back="Ich spreche nur langsamer, weil die Zerebralparese - und nicht ich - meine Sprechmuskulatur kontrolliert."
 		personaName={persona.name}
 	/>
@@ -235,7 +235,7 @@
 
 	<Accordion title="Fragen und Antworten - Platzhaltertitel" let:AccordionItem>
 		<AccordionItem id="1" let:PersonaAnswer>
-			<span slot="title">Was ist das größte No Go, wenn ich einem Rollstuhlfahrer begegne?</span>
+			<span slot="title">Was ist ein No-Go, wenn ich Rollstuhlnutzenden begegne?</span>
 
 			<PersonaAnswer personaId={persona.id} personaName={persona.name}>
 				Das ist easy: Bitte nicht einfach drauflos schieben! In dem Moment, in dem ich im Rollstuhl
