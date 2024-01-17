@@ -8,7 +8,7 @@
 
 	switch (persona.id) {
 		case 'kilian':
-			personaImg = personaImg + '-neutral.svg';
+			personaImg = personaImg + '-explaining.svg';
 			break;
 		default:
 			personaImg = personaImg + '-explaining-circle.svg';
