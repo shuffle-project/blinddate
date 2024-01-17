@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import FlipCard from '$lib/components/FlipCard.svelte';
 	import BackgroundInfo from '$lib/components/BackgroundInfo.svelte';
-	import Accordion from '$lib/components/accordion/Accordion.svelte';
+	import FlipCard from '$lib/components/FlipCard.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
+	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import { KILIAN } from '$lib/constants/kilian';
@@ -36,7 +36,7 @@
 	</SpeechBubble>
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
-		<ToolCard title="Eingabehilfen" image="{base}/">
+		<ToolCard title="Eingabehilfen" image="{base}/tools/trackball.svg">
 			Die benötigten Hilfsmittel und Strategien, die Personen mit motorischen Beeinträchtigungen
 			nutzen, sind stark von der Ausprägung der Beeinträchtigung abhängig. Bei verschiedenen
 			motorischen Beeinträchtigungen – wie beispielsweise einer Zerebralparese - kommt es zu einer

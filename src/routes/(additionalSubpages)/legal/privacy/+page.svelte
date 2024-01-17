@@ -72,16 +72,12 @@
 		gestalten. Gleichzeitig sind Digitalisierungsprozesse kein Garant für Barrierefreiheit. Das
 		Forschungsprojekt SHUFFLE hat zum Ziel, <strong
 			>digitale Barrierefreiheit als Qualitätsmerkmal an Hochschulen</strong
-		> zu verankern. Dazu soll ein Modell entwickelt werden, womit Hochschulen bestehende Zustände und
-		Prozesse bezüglich digitaler Barrierefreiheit messen, bewerten und erforderlichenfalls verbessern
-		können. Die vorliegende Website dient der Vorstellung des Projekts, stellt wichtige Informationen
-		hierzu zur Verfügung und eröffnet die Möglichkeit zur Kontaktaufnahme. Gleichzeitig sollen dabei
-		die Vorgaben und Bedingungen barrierefreier (digitaler) Kommunikation gewährleistet werden.
+		> zu verankern.
 	</p>
 	<p>
 		Gegebenenfalls erhobene personenbezogene Daten können dem sog. Forschungsprivileg unterliegen
 		(vgl. hierzu z.B. <a class="focus-indicator" href="https://dejure.org/gesetze/DSGVO/9.html"
-			>Artt. 9 Abs. 2 lit. j</a
+			>Art. 9 Abs. 2 lit. j</a
 		>,
 		<a class="focus-indicator" href="https://dejure.org/gesetze/DSGVO/89.html">89 Abs. 1 DSGVO</a>
 		i.V.m.
@@ -116,14 +112,19 @@
 	<h3 id="datenarten-zwecke-und-rechtsgrundlagen">3.1 Datenarten, Zwecke und Rechtsgrundlagen</h3>
 	<h4 id="allgemeine-informationen">3.1.1 Allgemeine Informationen</h4>
 	<p>
-		Die Website dient der Information und Bekanntmachung des Forschungsprojekts SHUFFLE, nicht
-		dagegen sonstigen Marketingzwecken oder außerhalb des Projekts stehenden Zwecke. Konkret
-		personenbezogene Daten werden grundsätzlich nicht erhoben (s. hierzu Ziff. 3.1.2).
+		"BlindDate" ist eine digitale Plattform des SHUFFLE-Projektes, die Lehrenden eine Begegnung mit
+		virtuellen Studierende mit individuellen Bedarfen ermöglicht. Diese "Personas" zeigen typische
+		Barrieren in ihrem Studienalltag, sowie Strategien zur Bewältigung derselben, auf und steigern
+		so das Bewusstsein der Benutzenden.
 	</p>
 	<p>
-		Eine Ausnahme hierzu bildet die Möglichkeit der Eingabe Ihrer Daten in ein entsprechendes
-		Kontaktformular, wo Nutzende freiwillig personenbezogene Daten (Name, Mailadresse) in das
-		Formular eingeben können.
+		Die Website dient der Information, nicht dagegen sonstigen Marketingzwecken oder außerhalb des
+		Projekts stehenden Zwecke. Konkret personenbezogene Daten werden grundsätzlich nicht erhoben (s.
+		hierzu Ziff. 3.1.2).
+	</p>
+	<p>
+		Eine Ausnahme hierzu bildet die Möglichkeit der Kontaktaufnahme per E-Mail, wo Nutzende
+		freiwillig personenbezogene Daten übermitteln können, um beispielsweise eine Barriere zu melden.
 	</p>
 	<h4 id="einzelne-verarbeitungsvorgange">3.1.2 Einzelne Verarbeitungsvorgänge</h4>
 	<h5>(Einfache) Nutzung der Website</h5>
@@ -156,8 +157,27 @@
 		>) mit einem entsprechenden Zertifikat (incl.
 		<a class="focus-indicator" href="https://de.wikipedia.org/wiki/HTTP_Strict_Transport_Security"
 			>HSTS</a
-		>). Bezüglich individueller Server- und Datenbankzugänge bestehen interne Zugangskonzepte. Im
-		Übrigen werden keine Cookies gesetzt bzw. gespeichert.
+		>). Bezüglich individueller Server- und Datenbankzugänge bestehen interne Zugangskonzepte.
+	</p>
+	<p>
+		Um die BlindDate-Plattform ganz nach Ihren individuellen Bedürfnissen zu gestalten, setzen wir
+		die sogenannte <span lang="en">Local Storage</span> Technik ein. Hierbei werden Informationen lokal
+		im Cache Ihres Browsers abgelegt. Diese bleiben auch nach dem Schließen des Browser-Fensters bestehen,
+		sofern Sie den Cache nicht manuell löschen.
+	</p>
+	<p>
+		Der <span lang="en">Local Storage</span> ermöglicht es, dass Ihre Präferenzen bei der Nutzung
+		der BlindDate-Plattform von auf Ihrem Gerät gespeichert und von Ihnen genutzt werden können. Die
+		Daten aus dem <span lang="en">Local Storage</span> werden beispielsweise verwendet, Ihnen die Konfiguration
+		des Videoplayers zu ermöglichen. Dabei werden folgende Informationen von SHUFFLE als lokale Daten
+		hinterlegt:
+	</p>
+	<ul>
+		<li>Einstellungen zum Videoplayer, z.B. Untertitel-Farbe</li>
+	</ul>
+	<p>
+		Es ist zu beachten, dass auf die im <span lang="en">Local Storage</span> gespeicherten Daten Dritte
+		keinen Zugriff haben. Diese werden nicht an Dritte weitergegeben und auch nicht zu Werbezwecken verwendet
 	</p>
 	<p>
 		Die Rechtsgrundlage für diese Datenverarbeitungen ist daher ein berechtigtes Interesse gemäß <a
@@ -189,13 +209,15 @@
 	</p>
 	<h5>Zusätzliche Dienste</h5>
 	<p>
-		Auf der Unterseite „Kontakt“ wird eine Kontakt- und Kommunikationsfunktion eingebunden. Durch
-		Ausfüllen und Abschicken des entsprechenden Formulars kommt es zu einer Verarbeitung der dort
-		eingegebenen Daten (Name, E-Mail-Adresse, Nachrichteninhalte) beim Datenverantwortlichen. Diese
-		ist zur Bearbeitung und/oder Beantwortung der Anfrage erforderlich. Eine darüberhinausgehende,
-		d.h. zweckfremde Verarbeitung findet nicht statt.
+		Auf der Unterseite „Barrieren Melden“ wird eine Kontakt- und Kommunikationsfunktion eingebunden.
+		Durch Zusendungen von E-Mails (info@shuffle-projekt.de) durch Nutzende kommt es zu einer
+		Verarbeitung der dort eingegebenen Daten (Name, E-Mail-Adresse, Nachrichteninhalte) beim
+		Datenverantwortlichen. Diese ist zur Bearbeitung und/oder Beantwortung der Anfrage erforderlich.
+		Eine darüberhinausgehende, d.h. zweckfremde Verarbeitung findet nicht statt.
 	</p>
-	<p>Entsprechendes gilt für Zusendungen von E-Mails (info@shuffle-projekt.de) durch Nutzende.</p>
+	<p>
+		Entsprechendes gilt für andere Zusendungen von E-Mails (info@shuffle-projekt.de) durch Nutzende.
+	</p>
 	<p>
 		Zur Erbringung dieser Dienste werden externe Dienstleister eingebunden, die über einen
 		Auftragsverarbeitungsvertrag an eine DSGVO-konforme Datenverarbeitung gebunden sind (<a
@@ -227,8 +249,8 @@
 		anonymisiert, sobald der Zweck der Speicherung entfällt und sofern der Löschung bzw.
 		Anonymisierung keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Dies gilt grundsätzlich
 		auch für solche Daten, die (ausschließlich) aufgrund einer erteilten Einwilligung erhoben
-		wurden, z.B. nach dem Ausfüllen und Absenden des Kontaktformulars (gem. Grundsätzen des <em
-			lang="en">privacy by design</em
+		wurden, z.B. nach dem Zusenden einer E-Mail (gem. Grundsätzen des <em lang="en"
+			>privacy by design</em
 		>,
 		<a class="focus-indicator" href="https://dejure.org/gesetze/DSGVO/25.html"
 			>Art. 25 Abs. 1 DSGVO</a
