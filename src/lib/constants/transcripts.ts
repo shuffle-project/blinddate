@@ -37,38 +37,38 @@ Das bedeutet eine Texterkennungs-Software. Damit ist schon viel gemacht, einfach
 
 export const HOEREN_OFFLINE_TRANSKRIPT = `
 <p>[Studentin sitzt an einem Tisch vor einer grünen Tafel in einem Seminarraum]</p>
-<p><b>Studentin:</b> Die Leute glauben immer, wenn man Hörhilfen trägt, dann hört man gut. Aber dem ist leider nicht so, wir brauchen noch Unterstützung.</p>
+<p><strong>Studentin:</strong> Die Leute glauben immer, wenn man Hörhilfen trägt, dann hört man gut. Aber dem ist leider nicht so, wir brauchen noch Unterstützung.</p>
 <p>[Student steht vor einem Fenster]</p>
-<p><b>Student:</b> Wenn ich meine Brille anhabe, sehe ich normal. Aber wenn ich meine Hörhilfen trage, höre ich nicht immer normal. Störgeräusche sind immer noch ein großes Problem für mich. [Ein Auto fährt außen vorbei]Können wir bitte das Fenster zu machen?</p>
+<p><strong>Student:</strong> Wenn ich meine Brille anhabe, sehe ich normal. Aber wenn ich meine Hörhilfen trage, höre ich nicht immer normal. Störgeräusche sind immer noch ein großes Problem für mich. [Ein Auto fährt außen vorbei]Können wir bitte das Fenster zu machen?</p>
 <p>[Studentin steht auf und schließt das Fenster. Straßengeräusche verschwinden]</p>
-<p><b>Studentin:</b> Und genau deshalb ist es wichtig, dass wir Höranlagen tragen. Wichtig ist es, dass wir sie richtig tragen. Das heißt: Schal aus, das Display nach vorne und nach oben ziehen.Wenn wir die Höhenlage ablegen, oder sie nicht benötigen, müssen wir sie stummschalten.</p>
-<p><b>Student:</b> Wenn wir das Handmikrofon benutzen, ist es wichtig, das nicht einfach so rumzufuchteln, sondern immer schön vor den Mund zu halten. [Stimme wird leiser und lauter]</p>
+<p><strong>Studentin:</strong> Und genau deshalb ist es wichtig, dass wir Höranlagen tragen. Wichtig ist es, dass wir sie richtig tragen. Das heißt: Schal aus, das Display nach vorne und nach oben ziehen.Wenn wir die Höhenlage ablegen, oder sie nicht benötigen, müssen wir sie stummschalten.</p>
+<p><strong>Student:</strong> Wenn wir das Handmikrofon benutzen, ist es wichtig, das nicht einfach so rumzufuchteln, sondern immer schön vor den Mund zu halten. [Stimme wird leiser und lauter]</p>
 <p>[Knallgeräusch und kurze Rückkopplung] Das ist ein bisschen zu hart abgelegt. Also nach dem Sprechen das Mikrofon ganz sanft auf den Tisch legen.</p>
 <p>[Beide Studierende sitzen an einem Tisch. Sie reden unverständlich und undeutlich durcheinander]</p>
 <p>[Studentin nimmt das Handmikrofon] Und bitte, wenn Gruppenarbeiten oder Partnerarbeiten sind, immer einzeln, alleine ins Mikro sprechen.</p>
-<p><b>Student:</b> So kann man es dann auch gut verstehen.</p>
+<p><strong>Student:</strong> So kann man es dann auch gut verstehen.</p>
 `;
 
 export const HOEREN_ONLINE_TRANSKRIPT = `
 <p>[Studentin sitzt in einem Arbeitszimmer vor einem Bildschirm an einem Schreibtisch]</p>
-<p><b>Studentin:</b> Die meisten Menschen denken, dass Online-Vorlesungen für uns Personen mit Hörbehinderung einfacher sind. Weil wir die Lautstärke hochdrehen können und alleine in unserem Raum sitzen.Das ist aber nicht so. </p>
+<p><strong>Studentin:</strong> Die meisten Menschen denken, dass Online-Vorlesungen für uns Personen mit Hörbehinderung einfacher sind. Weil wir die Lautstärke hochdrehen können und alleine in unserem Raum sitzen.Das ist aber nicht so. </p>
 <p>[Student sitzt ebenfalls vor einem Bildschirm an einem Schreibtisch. Neben ihm steht ein Tischmikrofon]</p>
-<p><b>Student:</b> Nur die Lautstärke hochdrehen bringt nicht viel. So werden nur Störgeräusche noch mehr verstärkt. [Student dreht Laustärke an der Tastatur hoch. Lautes Brummen] Klingt super oder? Schon ein günstiges Mikrofon kann enorm viel helfen. </p>
+<p><strong>Student:</strong> Nur die Lautstärke hochdrehen bringt nicht viel. So werden nur Störgeräusche noch mehr verstärkt. [Student dreht Laustärke an der Tastatur hoch. Lautes Brummen] Klingt super oder? Schon ein günstiges Mikrofon kann enorm viel helfen. </p>
 <p>[Studentin sitzt im Arbeitszimmer. Die Lichtquelle kommt von hinten. Ihr Gesicht ist durch die Schatten nicht erkennbar]</p>
-<p><b>Studentin:</b> Und auch das Bild ist für uns sehr wichtig. Wir brauchen Mundbild! Eine gute Webcam-Position und Licht von vorne...helfen verdammt viel. [Studentin stellt Webcam ein und schnipst mit den Fingern. Licht von vorne erhellt ihr Gesicht]</p>
+<p><strong>Studentin:</strong> Und auch das Bild ist für uns sehr wichtig. Wir brauchen Mundbild! Eine gute Webcam-Position und Licht von vorne...helfen verdammt viel. [Studentin stellt Webcam ein und schnipst mit den Fingern. Licht von vorne erhellt ihr Gesicht]</p>
 <p>[Student sitzt vor dem Bildschirm]</p>
-<p><b>Student:</b> Viele Studierende mit Hörbehinderung sind auf Untertitel angewiesen, damit sie alles inhaltlich gut verstehen können. Dabei ist es wichtig, dass die Ausgangssprache in Deutsch eingestellt ist…</p>
+<p><strong>Student:</strong> Viele Studierende mit Hörbehinderung sind auf Untertitel angewiesen, damit sie alles inhaltlich gut verstehen können. Dabei ist es wichtig, dass die Ausgangssprache in Deutsch eingestellt ist…</p>
 <p>[Bildschirm-Ansicht: Ausgangssprache wird in einem Videokonferenzprogramm auf Deutsch eingestellt] …nicht z.B. auf Englisch. Sonst wird das nichts.</p> 
 <p>[Beide sitzen am Schreibtisch vor dem Bildschirm und schauen in die Kamera]</p>
-<p><b>Student:</b> Wie man sieht, sind das alles recht einfache, kleine Dinge.</p>
-<p><b>Studentin:</b> Sie machen für uns aber einen großen Unterschied!</p>
+<p><strong>Student:</strong> Wie man sieht, sind das alles recht einfache, kleine Dinge.</p>
+<p><strong>Studentin:</strong> Sie machen für uns aber einen großen Unterschied!</p>
 `;
 
 export const PSYCHE_TRANSKRIPT = `
 <p>[Verschwommene Ansicht in einer Hochschule, Personen laufen hin und her, Stimme einer Studentin hörbar]</p>
-<p><b>Studentin:</b> …sei es, morgens nicht aus dem Bett zu kommen. Eben Schwierigkeiten zu haben, den Alltag zu bewältigen…</p>
+<p><strong>Studentin:</strong> …sei es, morgens nicht aus dem Bett zu kommen. Eben Schwierigkeiten zu haben, den Alltag zu bewältigen…</p>
 <p>[Studentin sitzt in einem Seminarraum und wird von hinten gefilmt. Im Hintergrund erkennt man eine verschwommene Präsentation, die per Beamer an die Wand projiziert wird.]</p>
-<p><b>Studentin:</b> Innerhalb der Vorlesungen, dass die Inhalte nicht ankommen.Ich bin nicht aufnahmefähig. Wir sind vielleicht nicht immer sichtbar, aber wir sind da.Uns gibt es. Personen mit psychischer Erkrankung. Und psychische Erkrankungen sind laut Gesetzbuch eine Behinderung, deren Symptomatik oftmals im Verborgenen bleibt, weil sie eben innerlich ist, psychisch ist.</p>
+<p><strong>Studentin:</strong> Innerhalb der Vorlesungen, dass die Inhalte nicht ankommen.Ich bin nicht aufnahmefähig. Wir sind vielleicht nicht immer sichtbar, aber wir sind da.Uns gibt es. Personen mit psychischer Erkrankung. Und psychische Erkrankungen sind laut Gesetzbuch eine Behinderung, deren Symptomatik oftmals im Verborgenen bleibt, weil sie eben innerlich ist, psychisch ist.</p>
 <p>[Oberkörper der Studentin und ihre Hände werden gefilmt. Ihr Gesicht ist nicht zu sehen]</p>
 <p>Tatsächlich habe ich mich am Anfang sehr hilflos gefühlt. Ich hatte das Gefühl, es gibt hier nichts was mir weiterhelfen kann. Bis ich dann auf die psychosoziale Beratungsstelle vom Studierendenwerk gestoßen bin.</p>
 <p>[Ansicht der Präsentation: Auf der Folie steht die Überschrift „Wenn Sie Rat und Hilfe brauchen…“ und zwei unterschiedliche Anlaufstellen werden gezeigt.]</p>

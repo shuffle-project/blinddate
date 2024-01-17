@@ -75,7 +75,7 @@
 					neben Maxis persönlichen Erläuterungen auch allgemein gehaltene Textpassagen.
 				</p>
 			{:else}
-				<p>Auf dieser Webseite werden Sie <b>{persona}</b> kennenlernen.</p>
+				<p>Auf dieser Webseite werden Sie <strong>{persona}</strong> kennenlernen.</p>
 				<p>
 					{persona} ist eine von mehreren virtuellen Personas, die Ihnen von sich und ihrem Studienalltag
 					erzählt.
@@ -120,10 +120,10 @@
 					</p>
 				{/if}
 			</div>
-			<b>
+			<div class="call-for-action">
 				Bitte teilen Sie uns Ihre Gedanken und Rückmeldungen mit und nutzen die Links zur Umfrage am
 				Anfang oder am Ende der Seite.
-			</b>
+			</div>
 			<p class="signature">Das <span lang="en">SHUFFLE</span>-BlindDate-Team</p>
 			<p class="shuffle-url">www.shuffle-projekt.de</p>
 		</svelte:fragment>
@@ -131,6 +131,10 @@
 {/if}
 
 <style lang="scss">
+	.call-for-action {
+		font-weight: bold;
+	}
+
 	.signature {
 		margin-bottom: 0;
 	}

@@ -89,8 +89,8 @@
 			</span>
 			<InfoBox term="Gesichtsfeld">
 				<p>
-					Das <b>Gesichtsfeld</b> ist der Bereich, der wahrgenommen wird, wenn der Blick geradeaus gerichtet
-					ist und die Augen nicht bewegt werden.
+					Das <strong>Gesichtsfeld</strong> ist der Bereich, der wahrgenommen wird, wenn der Blick geradeaus
+					gerichtet ist und die Augen nicht bewegt werden.
 				</p>
 			</InfoBox>
 			<span class="toolcard-span">

@@ -33,21 +33,21 @@
 	<div class="card" class:support={content === 'support'}>
 		<p class="text">
 			{#if content === 'keyboard'}
-				Benutzen Sie die <b>Tabulatortaste</b>
+				Benutzen Sie die <strong>Tabulatortaste</strong>
 				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="tab-key" />
 				</span>
-				, um damit durch die Website zu navigieren. Oder <b>Shift</b>
+				, um damit durch die Website zu navigieren. Oder <strong>Shift</strong>
 				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="shift-key" />
 				</span>
 				+ Tabulatortaste, um so das vorherige interaktive Element zu erreichen. Mit der
-				<b>Leertaste</b>
+				<strong>Leertaste</strong>
 				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="spacebar-key" />
 				</span>
 				können Sie zum Beispiel Auswahlkästchen aktivieren oder deaktivieren. Mithilfe der
-				<b>Entertaste</b>
+				<strong>Entertaste</strong>
 				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="enter-key" />
 				</span>
@@ -89,18 +89,19 @@
 			{/if}
 			{#if content === 'wheelchair-moving'}
 				Legen Sie Ihren Weg zur und innerhalb der Universität einmal ausschließlich
-				<b>auf rollstuhlgerechten Strecken</b> zurück. Vermeiden Sie vor allem Treppen und nutzen
-				Sie stattdessen
-				<b>Aufzüge oder Rampen</b>, um barrierefrei andere Stockwerke zu erreichen. Achten Sie dabei
-				auch auf hohe Türschwellen und darauf, auf welcher Höhe Alltagsgegenstände angebracht sind.
-				Wo ist eigentlich die nächste <b>barrierefreie Toilette</b>?
+				<strong>auf rollstuhlgerechten Strecken</strong> zurück. Vermeiden Sie vor allem Treppen und
+				nutzen Sie stattdessen
+				<strong>Aufzüge oder Rampen</strong>, um barrierefrei andere Stockwerke zu erreichen. Achten
+				Sie dabei auch auf hohe Türschwellen und darauf, auf welcher Höhe Alltagsgegenstände
+				angebracht sind. Wo ist eigentlich die nächste <strong>barrierefreie Toilette</strong>?
 			{/if}
 			{#if content === 'wheelchair-sitting'}
-				Zählen Sie einmal, wie oft Sie normalerweise <b>am Tag aufstehen</b>, um sich zu strecken
-				oder kurz zu bewegen. Versuchen Sie dann, dies zu reduzieren und den Tag
-				<b>größtenteils im Sitzen</b>
+				Zählen Sie einmal, wie oft Sie normalerweise <strong>am Tag aufstehen</strong>, um sich zu
+				strecken oder kurz zu bewegen. Versuchen Sie dann, dies zu reduzieren und den Tag
+				<strong>größtenteils im Sitzen</strong>
 				zu verbringen. Beachten Sie, wie sich Ihr Körper dabei anfühlt und welche
-				<b>Unannehmlichkeiten</b> es gibt. Rückenschmerzen sind für Rollstuhlnutzende eine häufige Belastung.
+				<strong>Unannehmlichkeiten</strong> es gibt. Rückenschmerzen sind für Rollstuhlnutzende eine
+				häufige Belastung.
 			{/if}
 		</p>
 	</div>

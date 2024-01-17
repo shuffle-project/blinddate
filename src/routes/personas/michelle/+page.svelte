@@ -58,8 +58,8 @@
 					}
 				]}
 			>
-				CED ist die Abkürzung für <b>„chronisch entzündliche Darmerkrankungen“</b>. Als chronisch
-				bezeichnet man eine Krankheit, die sich langsam entwickelt, lange anhält oder
+				CED ist die Abkürzung für <strong>„chronisch entzündliche Darmerkrankungen“</strong>. Als
+				chronisch bezeichnet man eine Krankheit, die sich langsam entwickelt, lange anhält oder
 				lebensbegleitend ist. Die häufigsten und bekanntesten CED-Erkrankungen sind „Morbus Crohn“
 				und „Colitis ulcerosa“. Symptome, die bei beiden Erkrankungen auftrefen können, sind
 				beispielsweise (starke) Bauchschmerzen, Durchfälle, Fieber, Gewichtsverlust, aber auch
@@ -94,14 +94,14 @@
 					}
 				]}
 			>
-				Die <b>„spoon-theory“</b> wurde von Christine Miserandino 2003 zu ersten Mal veröffentlicht.
-				Mithilfe von Löffeln, die Energie-Portionen darstellen, erklärte sie ihrer Freundin, wie es ist,
-				mit begrenzten Energien zu haushalten. Aufgrund ihrer chronischen Erkrankung hat sie nur eine
-				begrenzte Anzahl an Löffeln pro Tag zur Verfügung. Energie-Portionen, die gesunden Menschen scheinbar
-				unbegrenzt zur Verfügung stehen, muss sie sich gut einteilen, um alltägliche Aufgaben zu lösen.
-				Sind beispielsweise schon einige Löffel für das Aufstehen, Anziehen, Frühstück zubereiten etc.
-				aufgebraucht, muss sie ab einem gewissen Punkt anfangen, Entscheidungen zu treffen – für eine
-				Prüfung lernen oder Mittagessen kochen?
+				Die <strong lang="en">„spoon-theory“</strong> wurde von Christine Miserandino 2003 zu ersten
+				Mal veröffentlicht. Mithilfe von Löffeln, die Energie-Portionen darstellen, erklärte sie ihrer
+				Freundin, wie es ist, mit begrenzten Energien zu haushalten. Aufgrund ihrer chronischen Erkrankung
+				hat sie nur eine begrenzte Anzahl an Löffeln pro Tag zur Verfügung. Energie-Portionen, die gesunden
+				Menschen scheinbar unbegrenzt zur Verfügung stehen, muss sie sich gut einteilen, um alltägliche
+				Aufgaben zu lösen. Sind beispielsweise schon einige Löffel für das Aufstehen, Anziehen, Frühstück
+				zubereiten etc. aufgebraucht, muss sie ab einem gewissen Punkt anfangen, Entscheidungen zu treffen
+				– für eine Prüfung lernen oder Mittagessen kochen?
 			</InfoBox>
 			<span> („Löffel-Theory“) verwendet. </span>
 		</Text>

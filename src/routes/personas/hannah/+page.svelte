@@ -132,13 +132,14 @@
 			>
 				<p>
 					Ist der Hörnerv einer Person unbeschadet, die Verstärkung der Schallwellen durch ein
-					Hörgerät aber nicht ausreichend, kann ein elektrisches <b>Cochlea-Implantat (CI)</b> eingesetzt
-					werden. Das Implantat übernimmt dann die Funktion eines Teils des Innenohrs – der Hörschnecke
-					(oder Cochlea). Hierbei werden die Schallwellen in elektrische Impulse umgewandelt und an den
-					Hörnerv geleitet. Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und die Sendespule,
-					die mittels Magneten auf der Haut hinter dem Ohr platziert sind. Unter der Haut liegt die Empfangsspule,
-					welche die elektrischen Signale an die Elektroden in der Cochlea weiterleitet. Der äußere Teil
-					des CIs ist abnehmbar.
+					Hörgerät aber nicht ausreichend, kann ein elektrisches <strong
+						>Cochlea-Implantat (CI)</strong
+					> eingesetzt werden. Das Implantat übernimmt dann die Funktion eines Teils des Innenohrs –
+					der Hörschnecke (oder Cochlea). Hierbei werden die Schallwellen in elektrische Impulse umgewandelt
+					und an den Hörnerv geleitet. Sichtbar ist bei einem CI das Mikrofon, der Sprachprozessor und
+					die Sendespule, die mittels Magneten auf der Haut hinter dem Ohr platziert sind. Unter der
+					Haut liegt die Empfangsspule, welche die elektrischen Signale an die Elektroden in der Cochlea
+					weiterleitet. Der äußere Teil des CIs ist abnehmbar.
 				</p>
 			</InfoBox>
 			<span class="toolcard-span"
@@ -205,10 +206,10 @@
 			>
 				<p>
 					Personen mit Hörbehinderung haben in bestimmten Bereichen einen rechtlichen Anspruch auf
-					Schrift- oder <b>Gebärdensprach&shy;dolmet&shy;schende</b>. Diese Bereiche umfassen
-					staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele sind
-					Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier übernehmen
-					staatliche Stellen die Kosten. Sind dolmetschende Personen direkt in der
+					Schrift- oder <strong>Gebärdensprach&shy;dolmet&shy;schende</strong>. Diese Bereiche
+					umfassen staatliche Einrichtungen, aber auch Gesundheit, Arbeit und Bildung. Beispiele
+					sind Arztbesuche, Beratungsgespräche oder Veranstaltungen in der Hochschule. Hier
+					übernehmen staatliche Stellen die Kosten. Sind dolmetschende Personen direkt in der
 					Kommunikationssituation anwesend, dolmetschen sie simultan. Sind Personen schwerhörig oder
 					später ertaubt und beherrschen u.U. die deutsche Gebärdensprache (DGS) nicht, können
 					Dolmetscher*innen das gesprochene Wort auch in Schrift übersetzen. Dolmetscher*innen
