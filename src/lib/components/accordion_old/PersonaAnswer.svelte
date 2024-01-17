@@ -1,28 +1,23 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-	export let persona: Persona;
-
-	let personaImg = `${base}/personas/${persona.id}/${persona.id}`;
-
-	switch (persona.id) {
-		case 'kilian':
-			personaImg = personaImg + '-neutral.svg';
-			break;
-		default:
-			personaImg = personaImg + '-explaining-circle.svg';
-	}
+	export let personaId: string;
+	export let personaName: string;
 </script>
 
 <div class="persona-answer-wrapper">
-	<div role="separator" aria-label="Anfang der {persona.name} Sprechblase" />
-	<img class="persona-img" src={personaImg} aria-hidden="true" alt="" />
+	<div role="separator" aria-label="Anfang der {personaName} Sprechblase" />
+	<img
+		class="persona-img"
+		src="{base}/personas/{personaId}/{personaId}-explaining-circle.svg"
+		aria-hidden="true"
+		alt=""
+	/>
 
 	<p class="persona-answer">
 		<slot />
 	</p>
-	<div role="separator" aria-label="Ende der {persona.name} Sprechblase" />
+	<div role="separator" aria-label="Ende der {personaName} Sprechblase" />
 </div>
 
 <style lang="scss">

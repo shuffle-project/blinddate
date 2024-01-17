@@ -1,124 +1,111 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import Icon from '../Icon.svelte';
 	import PersonaAnswer from './PersonaAnswer.svelte';
-	export let id: string;
-	let isOpen = false;
 
-	function toggle(event: KeyboardEvent | MouseEvent) {
-		if (
-			event.type === 'keydown' &&
-			(event as KeyboardEvent).key !== 'enter' &&
-			(event as KeyboardEvent).key !== ''
-		) {
-			return;
-		}
-		isOpen = !isOpen;
-	}
+	let open = false;
+	let details: HTMLDetailsElement;
+
+	onMount(() => {
+		details.addEventListener('toggle', (e) => {
+			open = !open;
+		});
+	});
 </script>
 
-<div class="card">
-	<h4>
-		<button
-			class="button"
-			aria-controls="sect{id}"
-			id="accordion{id}id"
-			aria-expanded={isOpen}
-			on:keydown={toggle}
-			on:click={toggle}
-		>
-			<slot name="title" />
-
-			<div class="arrow" class:isOpen>
-				<Icon img="arrow-toright" />
-			</div>
-		</button>
-	</h4>
-	<div id="sect{id}" role="region" aria-labelledby="accordion{id}id" aria-hidden={!isOpen}>
-		{#if isOpen}
-			<div transition:slide={{ duration: 500 }} class="content">
-				<slot {PersonaAnswer} />
-			</div>
-		{/if}
-	</div>
-</div>
+<details bind:this={details}>
+	<summary>
+		<slot name="question" />
+		<div class="arrow">
+			<Icon img="arrow-toright" />
+		</div>
+	</summary>
+	{#if open}
+		<div transition:slide={{ duration: 400 }} class="answer-wrapper">
+			<slot {PersonaAnswer} />
+		</div>
+	{/if}
+</details>
 
 <style lang="scss">
-	.card {
-		z-index: 1;
+	details {
 		background-color: var(--color-white);
 		border-radius: 0.85rem;
-		border: 1px solid var(--color-border);
+		border: 1px solid var(--color-lavender);
 		box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
-	}
 
-	h4 {
-		margin: 0;
-		font-weight: bold;
-	}
+		summary {
+			background-color: var(--color-white);
+			color: var(--color-black);
 
-	.button {
-		background-color: var(--color-white);
-		color: var(--color-black);
+			font-weight: bold;
+			font-size: 1rem;
+			line-height: 150%;
 
-		font-weight: bold;
-		font-size: 1rem;
-		line-height: 150%;
+			padding: 1rem 1rem;
+			border-radius: 0.85rem;
 
-		padding: 1rem 1rem;
-		border-radius: 0.85rem;
+			height: 100%;
+			cursor: pointer;
 
-		height: 100%;
-		cursor: pointer;
-
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 0.5rem;
-		width: 100%;
-
-		text-align: left;
-
-		border: none;
-
-		&:hover,
-		&:focus-within {
-			outline: 2px solid var(--color-blue);
-		}
-
-		h4 {
-			text-align: left;
-			margin: 0px;
-		}
-
-		.arrow {
-			transform: rotate(90deg);
-			transition: transform 0.5s ease-out;
-			padding: 0;
-			margin: 0;
 			display: flex;
+			justify-content: space-between;
 			align-items: center;
-			justify-content: center;
-			aspect-ratio: 1;
-			width: 1.5rem;
+			gap: 0.5rem;
 
-			&.isOpen {
+			text-align: left;
+
+			border: none;
+
+			.arrow {
+				transform: rotate(90deg);
+				transition: transform 0.4s ease-out;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				aspect-ratio: 1;
+				width: 1.5rem;
+			}
+
+			&:hover,
+			&:focus-within {
+				outline: 2px solid var(--color-blue);
+			}
+
+			&::marker {
+				content: none;
+			}
+
+			&::-webkit-details-marker {
+				display: none;
+			}
+		}
+
+		.answer-wrapper {
+			padding: 1rem 0 0;
+		}
+	}
+
+	details[open] {
+		summary {
+			.arrow {
 				transform: rotate(-90deg);
 			}
 		}
 	}
 
-	.content {
-		padding: 1rem 0rem 0rem;
-	}
-
 	@media (min-width: 27.5rem) {
-		.button {
-			padding: 1rem 1.875rem 1rem 1.875rem;
+		details {
+			.answer-wrapper {
+				padding: 1rem 1.875rem 0.875rem;
+			}
 		}
 
-		.content {
-			padding: 1rem 1.875rem;
+		details[open] {
+			padding-bottom: 1rem;
 		}
 	}
 </style>

@@ -1,16 +1,16 @@
 <script lang="ts">
 	import AccordionItem from './AccordionItem.svelte';
-	export let personaName: string;
+	export let title: string;
 </script>
 
-<section class="wrapper">
+<div class="wrapper">
 	<h3>
-		{`Fragen an ${personaName}`}
+		{title}
 	</h3>
 	<div class="items">
 		<slot {AccordionItem} />
 	</div>
-</section>
+</div>
 
 <style lang="scss">
 	@media (min-width: 59.375rem) {

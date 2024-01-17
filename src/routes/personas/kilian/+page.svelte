@@ -233,11 +233,12 @@
 		gefährlich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
-	<Accordion title="Fragen und Antworten - Platzhaltertitel" let:AccordionItem>
-		<AccordionItem id="1" let:PersonaAnswer>
-			<span slot="title">Was ist ein No-Go, wenn ich Rollstuhlnutzenden begegne?</span>
-
-			<PersonaAnswer personaId={persona.id} personaName={persona.name}>
+	<Accordion personaName={persona.name} let:AccordionItem>
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Was ist ein No-Go, wenn ich Rollstuhlnutzenden begegne?</svelte:fragment
+			>
+			<PersonaAnswer {persona}>
 				Das ist easy: Bitte nicht einfach drauflos schieben! In dem Moment, in dem ich im Rollstuhl
 				sitze, ist dieser sozusagen mein 'Ersatzbein'. Und ich fasse ja auch nicht einfach die Beine
 				einer anderen Person an! Ich freue mich meistens über nett gemeinte Hilfsangebote, aber ich
@@ -246,17 +247,16 @@
 			</PersonaAnswer>
 		</AccordionItem>
 
-		<AccordionItem id="2" let:PersonaAnswer>
-			<span slot="title">Welchen digitalen Barrieren begegnest du?</span>
-
-			<p>
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question">Welchen digitalen Barrieren begegnest du?</svelte:fragment>
+			<PersonaAnswer {persona}>
 				Klar, wenn man eine Person im Rollstuhl sieht, denkt man erstmal an bauliche Barrieren. Das
 				ist aber nicht alles: Assistive Technologien wie meine Großfeldtastatur ermöglichen zwar
 				grundsätzlich meine Teilhabe am digitalen Leben, aber das geht trotzdem langsamer als bei
 				anderen. Wenn ein Dozent in einer Online Vorlesung beispielsweise wissen will, ob es noch
 				Fragen gibt, brauche ich länger, bis ich den winzigen 'Hand heben'-Button gedrückt habe. Bis
 				dahin hat er die Konferenz womöglich schon beendet.
-			</p>
+			</PersonaAnswer>
 		</AccordionItem>
 	</Accordion>
 

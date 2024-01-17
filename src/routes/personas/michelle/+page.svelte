@@ -200,8 +200,21 @@
 		zeigt mir auch, dass ich mein Studium schaffe.
 	</SpeechBubble>
 
-	<Accordion title="Fragen und Antworten - Platzhaltertitel" let:AccordionItem>
-		<AccordionItem id="1" let:PersonaAnswer>
+	<Accordion personaName={persona.name} let:AccordionItem>
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</svelte:fragment
+			>
+			<PersonaAnswer {persona}>
+				Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker stellen,
+				die kommen, wann sie wollen - auch mal mitten auf dem Weg zur Uni. Wenn dann gerade keine
+				öffentliche Toilette in der Nähe ist, hilft auch keine große, körperliche Anstrengung, um
+				etwas zurückzuhalten. Nach so einem "Unfall" habe ich mich eine Zeit lang kaum noch aus dem
+				Haus getraut!
+			</PersonaAnswer>
+		</AccordionItem>
+
+		<!-- <AccordionItem id="1" let:PersonaAnswer>
 			<span slot="title">Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</span>
 
 			<PersonaAnswer personaId={persona.id} personaName={persona.name}>
@@ -217,7 +230,7 @@
 			<span slot="title"> Lorem ipsum dolor sit amet, consetetur sadipscing? </span>
 
 			<p>dsaddsad</p>
-		</AccordionItem>
+		</AccordionItem> -->
 	</Accordion>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
