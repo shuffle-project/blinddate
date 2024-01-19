@@ -75,12 +75,11 @@
 				<div class="lecturers">
 					<h2>Für Lehrende</h2>
 					<p>
-						BlindDate ist eine virtuelle Begegnugsplatform um Studierende mit individuellen Bedarfen
-						in Form von Personas kennenzulernen.
-					</p>
-					<p>
-						Lehre ist nicht einfach und Barrierefreiheit kostet Zeit. Was Sie als lehrende Person
-						auf BlindDate beachten sollten, erklären wir auf der folgenden Seite:
+						BlindDate ist eine virtuelle Begegnungsplattform, auf der Ihnen Studierenden-Personas
+						mit Behinderung ihren Hochschulalltag näherbringen. Dazu gehören Strategien, assistive
+						Technologien, aber auch Barrieren, die den Studierenden begegnen. Auch Sie als
+						Lehrperson können viel zur Barrierefreiheit der Hochschule beitragen. Erfahren Sie mehr
+						darüber, wie Sie BlindDate nutzen können.
 					</p>
 					<a href="{base}/lecturers" class="focus-indicator">Informationen für Lehrende</a>
 				</div>
@@ -94,13 +93,15 @@
 					<div class="personas-content">
 						<h2>Was sind Personas?</h2>
 						<p>
-							Personas sind keine reale Personen, aber durchaus realistisch. Unsere Personas
-							basieren auf Daten, Interviews und vor allem Erfahrungen echter Studierender mit
-							individuellen Bedarfen.
+							Personas sind fiktive Personen, die stellvertretend für eine Zielgruppe mit bestimmten
+							Charakteristika stehen – in unserem Fall Studierende mit Behinderungen. Personas sind
+							nicht frei erfunden – sie basieren auf Daten. Diese Daten wurden durch Umfragen,
+							Erfahrungsberichte und Feedback von Studierenden mit Behinderungen im Laufe des
+							SHUFFLE Projekts gesammelt.
 						</p>
 						<div class="to-persona-development">
 							<a href="{base}/development" class="focus-indicator"
-								>Die Persona-Entwicklung im Detail</a
+								>Mehr über die Entwicklung der Personas erfahren</a
 							>
 						</div>
 					</div>
@@ -114,8 +115,8 @@
 				<div class="glossary">
 					<h2>Wichtige Begriffe</h2>
 					<p>
-						Was bedeutet "Barrierefreiheit" eigentlich genau und wie sieht die gesetzliche Lage aus?
-						Auf der folgenden Unterseite gehen wir auf diese und weitere Frage ein:
+						Barrierefreiheit? Behinderung? Assistive Technologien? Best3 Studie? – auf dieser Seite
+						werden verschiedene Begriffe kurz und verständlich definiert.
 					</p>
 					<a href="{base}/glossary" class="focus-indicator">Zu den wichtigen Begriffen</a>
 				</div>
@@ -280,7 +281,7 @@
 				.personas {
 					max-width: clamp(20rem, 40vw + 1rem, var(--text-section-max-width));
 					align-self: flex-end;
-					padding-top: 6rem;
+					padding-top: 5rem;
 					margin-right: 1rem;
 				}
 
