@@ -63,7 +63,7 @@
 			sein, sich klare Strukturen und feste Routinen in den Alltag einzubauen, um andere Bereiche
 			nicht zu vernachlässigen.
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" langTitle="en" image="{base}/">
+		<ToolCard title="Platzhaltertitel" langTitle="en" image="{base}/tools/headphone.svg">
 			<span
 				>Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize.
 				So können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
@@ -110,7 +110,7 @@
 			</InfoBox>
 			<span class="toolcard-span">, um andere Reize auszublenden.</span>
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" image="{base}/">
+		<ToolCard title="Platzhaltertitel" image="{base}/tools/fidget-spinner.svg">
 			Neben der Überstimulierung durch verschiedene Reize ist auch eine Unterstimulation ein
 			bekanntes Symptom bei Menschen auf dem Autismus-Spektrum. Stimming, also die bewusste
 			Wiederholung von physischen Bewegungen oder Lauten, aber auch Sport oder das Hantieren mit
