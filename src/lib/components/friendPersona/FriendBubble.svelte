@@ -121,7 +121,7 @@
 			.speech-bubble-indicator {
 				position: absolute;
 				top: 1rem;
-				right: -18px;
+				right: -1rem;
 			}
 		}
 
