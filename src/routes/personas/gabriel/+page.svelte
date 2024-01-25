@@ -110,6 +110,10 @@
 					{
 						title: 'Braillezeile & Screenreader von der Stiftung barrierefrei kommunizieren',
 						url: 'https://www.stiftung-barrierefrei-kommunizieren.de/unsere-arbeit/erlebnisparcours/braillezeile-screenreader'
+					},
+					{
+						title: 'Apple - VoiceOver (Screenreader) Demonstration (YouTube)',
+						url: 'https://www.youtube.com/watch?v=75jv96fVGfg'
 					}
 				]}
 			>
