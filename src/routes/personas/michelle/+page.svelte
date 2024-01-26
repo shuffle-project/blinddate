@@ -14,10 +14,6 @@
 	const persona: Persona = MICHELLE;
 </script>
 
-<svelte:head>
-	<title>Michelle - BlindDate</title>
-</svelte:head>
-
 <PersonaContent {persona} let:MainHeading let:TextSection>
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-01.mp3'}>
 		Hi, mein Name ist Chelle – eigentlich Michelle. Ich studiere Popmusikdesign an der Popakademie

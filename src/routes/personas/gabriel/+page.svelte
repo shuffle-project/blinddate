@@ -51,10 +51,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Gabriel - BlindDate</title>
-</svelte:head>
-
 <PersonaContent {persona} let:MainHeading let:TextSection>
 	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-01.mp3'}>
 		Hallo, ich bin Gabriel. Ich bin 27 Jahre alt und studiere Soziale Arbeit im Master. Seit zwei
