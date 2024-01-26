@@ -120,6 +120,11 @@
 					</p>
 					<a href="{base}/glossary" class="focus-indicator">Zu den wichtigen Begriffen</a>
 				</div>
+				<div class="faq">
+					<h2>Häufige Fragen</h2>
+
+					<a href="{base}/faq" class="focus-indicator">Zu den häufigen Fragen</a>
+				</div>
 			</div>
 		</div>
 	{/if}
