@@ -130,7 +130,7 @@
 
 	<TextSection let:Text>
 		<Text>
-			Wenn die Rahmenbedingungen einer Veranstaltung (Räumlichkeiten, (Pausen-Zeiten, etc.)
+			Wenn die Rahmenbedingungen einer Veranstaltung (Räumlichkeiten, Pausen-Zeiten, etc.)
 			frühzeitig bekannt gegeben werden, haben die Studierenden die Möglichkeit, im Voraus zu
 			planen. Kurzfristige Planänderungen erzeugen Unsicherheit und Stress. Und Stress kann ein
 			Katalysator für Beschwerden sein.
