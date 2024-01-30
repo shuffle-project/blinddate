@@ -214,6 +214,20 @@
 			</PersonaAnswer>
 		</AccordionItem>
 
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Was ist der unangebrachteste Kommentar, den du bezüglich deiner Krankheit bekommen hast?
+			</svelte:fragment>
+			<PersonaAnswer {persona}>
+				Nur einer? Ich hab ein ganzes „Bullshit Bingo“-Feld in meinem Notizblock! Viele Kommentare
+				höre ich so häufig – Wenn ich jedes Mal einen Euro bekommen würde, wäre ich inzwischen
+				reich. Der Klassiker: „Und wann bist du wieder gesund?“, dicht gefolgt von Ratschlägen wie:
+				„Durchfall hab ich auch manchmal, mir hilft da immer Immodium“. Oder: „Du darfst länger
+				Klausuren schreiben, du hast es gut!“. Lass uns gerne tauschen, du bekommst meinen NTA und
+				ich deinen gesunden Darm!
+			</PersonaAnswer>
+		</AccordionItem>
+
 		<!-- <AccordionItem id="1" let:PersonaAnswer>
 			<span slot="title">Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</span>
 
@@ -274,7 +288,10 @@
 
 	<MainHeading heading="Eine Woche im Leben von" personaName={persona.name} />
 	<TextSection let:Text>
-		<Text noTopMargin>Lorem Ipsum, Michelle studiert das und hier ist eine Woche...</Text>
+		<Text noTopMargin
+			>Michelles zweites Semester an der Popakademie ist seit einigen Wochen in vollem Gange. Neben
+			vielen Seminaren muss sie aber auch viele Arzttermine wahrnehmen.</Text
+		>
 	</TextSection>
 
 	<Week {persona} />
