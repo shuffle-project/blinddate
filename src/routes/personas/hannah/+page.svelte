@@ -79,10 +79,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Hannah - BlindDate</title>
-</svelte:head>
-
 <PersonaContent {persona} let:MainHeading>
 	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-01.mp3'}>
 		Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik auf Lehramt im Bachelor in

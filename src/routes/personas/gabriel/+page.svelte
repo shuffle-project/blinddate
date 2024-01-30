@@ -51,10 +51,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Gabriel - BlindDate</title>
-</svelte:head>
-
 <PersonaContent {persona} let:MainHeading let:TextSection>
 	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-01.mp3'}>
 		Hallo, ich bin Gabriel. Ich bin 27 Jahre alt und studiere Soziale Arbeit im Master. Seit zwei
@@ -110,6 +106,10 @@
 					{
 						title: 'Braillezeile & Screenreader von der Stiftung barrierefrei kommunizieren',
 						url: 'https://www.stiftung-barrierefrei-kommunizieren.de/unsere-arbeit/erlebnisparcours/braillezeile-screenreader'
+					},
+					{
+						title: 'Apple - VoiceOver (Screenreader) Demonstration (YouTube)',
+						url: 'https://www.youtube.com/watch?v=75jv96fVGfg'
 					}
 				]}
 			>

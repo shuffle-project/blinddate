@@ -51,10 +51,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>Maxi - BlindDate</title>
-</svelte:head>
-
 <PersonaContent {persona} let:MainHeading let:TextSection>
 	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-01.mp3'}>
 		Hallo, mein Name ist Maxi und ich bin 29 Jahre alt. Ich studiere Architektur in Mannheim – und

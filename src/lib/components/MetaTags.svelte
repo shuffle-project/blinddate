@@ -6,7 +6,7 @@
 </script>
 
 <MetaTags
-	title={persona.name + ' - Barrierefreies BlindDate'}
+	title={persona.name + ' - BlindDate'}
 	description={persona.metaDescription}
 	additionalMetaTags={[
 		{
