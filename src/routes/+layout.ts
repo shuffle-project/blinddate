@@ -21,7 +21,7 @@ export const load = async (event) => {
 		}
 
 		if (!allowedSubpath && pathname !== '/') {
-			throw redirect(301, `${base}/`);
+			redirect(301, `${base}/`);
 		}
 	}
 };
