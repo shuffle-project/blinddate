@@ -76,7 +76,7 @@
 			<span>
 				Chronische Erkrankungen und deren Symptome sind häufig für Außenstehende nicht sichtbar.
 				Daher reagieren Menschen teilweise mit Unverständnis, wenn Studierende mit chronischen
-				Erkrankungen beispielsweise einen Nachteilsausgleich haben oder häufiger Pausen machen
+				Erkrankungen beispielsweise einen Nachteilsausgleich (NTA) haben oder häufiger Pausen machen
 				müssen. Um dieses Haushalten mit Energie zu veranschaulichen und für nicht sichtbare
 				Beeinträchtigungen zu sensibilisieren, wird häufig die
 			</span>
@@ -106,7 +106,7 @@
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-03.mp3'}>
 		Ich muss mit meiner Energie immer haushalten. Das wird schwierig, wenn viele Sachen an einem Tag
 		anstehen oder ich mehrere Tage hintereinander funktionieren muss. Am besten kann ich das mir –
-		und auch anderen – mit der Spoon Theorie erklären. An guten Tagen hab ich viele Löffel, an
+		und auch anderen – mit der <span lang="en">Spoon</span> Theorie erklären. An guten Tagen hab ich viele Löffel, an
 		schlechten eben wenig. Manchmal kosten mich die selben Aktivitäten viele oder wenige Löffel.
 		Wenn ich alle Löffel verbraucht habe, geht‘s mir halt beschissen. Wenn die Löffel weg sind, dann
 		wird auch kochen, einkaufen oder einfache Tätigkeiten zu viel.
