@@ -15,7 +15,9 @@
 		{#each sources as source}
 			{#if source.url}
 				<li class="source">
-					<a class="source__link text-size focus-indicator" href={source.url}>
+					<a class="source__link text-size focus-indicator" href={source.url}
+					lang={source.titleLang} 
+					>
 						{source.title}
 					</a>
 				</li>

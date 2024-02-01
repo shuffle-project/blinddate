@@ -85,6 +85,11 @@
 				langTerm="en"
 				sources={[
 					{
+						title: 'The Spoon Theory written by Christine Miserandino',
+						titleLang: 'en',
+						url: ' https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/'
+					},
+					{
 						title: 'Was ist die Spoon-Theory? von Sozialverband VdK Berlin-Brandenburg e.V.',
 						url: 'https://www.vdk.de/berlin-brandenburg/pages/76831/spoontheory?dscc=essenc]'
 					}
