@@ -43,13 +43,13 @@ jobs:
         uses: vimtor/action-zip@v1.1
         with:
           #files: ./build/
-          files: ./public/
+          files: ./public
           dest: release
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: 'release.zip'
+          name: 'release'
           path: ./
 
   #zip:
