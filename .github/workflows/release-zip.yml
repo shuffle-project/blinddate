@@ -47,18 +47,18 @@ jobs:
       #files:
       #dest: release
 
-      - name: Zip build
-        uses: thedoctor0/zip-release@0.7.6
-        with:
-          type: 'zip'
-          filename: 'release.zip'
-          directory: ./public
+      #- name: Zip build
+      #  uses: thedoctor0/zip-release@0.7.6
+      #  with:
+      #    type: 'zip'
+      #    filename: 'release.zip'
+      #    directory: ./public
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: 'release'
-          path: ./
+          path: ./public
 
   #zip:
   #runs-on: ubuntu-latest
