@@ -49,6 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: 'release.zip'
+          path: ./
 
   #zip:
   #runs-on: ubuntu-latest
