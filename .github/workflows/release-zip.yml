@@ -46,6 +46,7 @@ jobs:
       #with:
       #files:
       #dest: release
+
       - name: Zip build
         uses: thedoctor0/zip-release@0.7.6
         with:
