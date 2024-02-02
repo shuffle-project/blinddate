@@ -181,7 +181,7 @@
 	<FlipCard
 		front="Ich bin nicht schwer von Begriff!"
 		back="Ich spreche nur langsamer, weil die Zerebralparese - und nicht ich - meine Sprechmuskulatur kontrolliert."
-		personaName={persona.name}
+		{persona}
 	/>
 
 	<MainHeading heading="Prüfungen" />

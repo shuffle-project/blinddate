@@ -1,12 +1,18 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { detect } from 'detect-browser';
-	const isSafari = detect()!.name == 'safari';
+	import { onMount } from 'svelte';
+	let isSafari = false;
 	let flipped = false;
 
 	export let front: string;
 	export let back: string;
-	export let personaName: string;
+	export let persona: Persona;
+
+	onMount(() => {
+		isSafari = detect()!.name == 'safari';
+	});
 
 	function onKeydown(ev: KeyboardEvent) {
 		if (ev.key === ' ' || ev.key === 'Enter') {
@@ -25,7 +31,7 @@
 	</div>
 	<div class="speech-bubble">
 		<p>
-			<span class="text">Ich, {personaName}, wollte schon immer mal sagen:</span>
+			<span class="text">Ich, {persona.name}, wollte schon immer mal sagen:</span>
 		</p>
 	</div>
 </div>

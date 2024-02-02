@@ -150,7 +150,7 @@
 		Ruhe.
 	</SpeechBubble>
 
-	<FlipCard personaName={persona.name} front="Platz-halter" back="Platzhalter" />
+	<FlipCard {persona} front="Platz-halter" back="Platzhalter" />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>
