@@ -44,7 +44,7 @@ jobs:
       - name: Zip build
         uses: vimtor/action-zip@v1.1
         with:
-          files: public
+          files: public/
           dest: release
 
       - name: Upload artifact
