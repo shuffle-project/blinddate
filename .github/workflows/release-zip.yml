@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        #with:
+        #lfs: 'true'
 
       - name: Install npm
         uses: actions/setup-node@v4
@@ -42,8 +44,7 @@ jobs:
       - name: Zip build
         uses: vimtor/action-zip@v1.1
         with:
-          #files: ./build/
-          files: ./public
+          files: public
           dest: release
 
       - name: Upload artifact
