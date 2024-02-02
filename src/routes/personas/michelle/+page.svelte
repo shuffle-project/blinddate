@@ -111,10 +111,10 @@
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-03.mp3'}>
 		Ich muss mit meiner Energie immer haushalten. Das wird schwierig, wenn viele Sachen an einem Tag
 		anstehen oder ich mehrere Tage hintereinander funktionieren muss. Am besten kann ich das mir –
-		und auch anderen – mit der <span lang="en">Spoon</span> Theorie erklären. An guten Tagen hab ich viele Löffel, an
-		schlechten eben wenig. Manchmal kosten mich die selben Aktivitäten viele oder wenige Löffel.
-		Wenn ich alle Löffel verbraucht habe, geht‘s mir halt beschissen. Wenn die Löffel weg sind, dann
-		wird auch kochen, einkaufen oder einfache Tätigkeiten zu viel.
+		und auch anderen – mit der <span lang="en">Spoon</span> Theorie erklären. An guten Tagen hab ich
+		viele Löffel, an schlechten eben wenig. Manchmal kosten mich die selben Aktivitäten viele oder wenige
+		Löffel. Wenn ich alle Löffel verbraucht habe, geht‘s mir halt beschissen. Wenn die Löffel weg sind,
+		dann wird auch kochen, einkaufen oder einfache Tätigkeiten zu viel.
 	</SpeechBubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-04.mp3'}>
@@ -154,7 +154,7 @@
 	<FlipCard
 		front="Ich bin nicht des&shy;interessiert an der Vorlesung!"
 		back="Ich habe eine chronische Darmerkrankung, die mich dazu zwingt, die Toilette auch während der Vorlesungszeiten öfter aufzusuchen."
-		personaName={persona.name}
+		{persona}
 	/>
 
 	<TextSection let:Text>
