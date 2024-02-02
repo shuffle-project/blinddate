@@ -1,5 +1,5 @@
 # Workflow to build and deploy a SvelteKit website to GitHub Pages
-name: Deploy static SvelteKit content to Pages
+name: Zip release
 
 on:
   # Runs on pushes targeting the default branch
@@ -42,7 +42,7 @@ jobs:
       - name: Zip build
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r release.zip release
+          args: zip -qq -r release.zip -i release
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -50,16 +50,11 @@ jobs:
           name: 'release.zip'
 
   #zip:
-    #runs-on: ubuntu-latest
-    #steps:
-      #- name: Download artifact
-        #uses: actions/download-artifact@v4
-        #with:
-          #name: 'release'
-   
-          
-          
-      # What todo next? Webhook? Needs discussion
-      
-      
-    
+  #runs-on: ubuntu-latest
+  #steps:
+  #- name: Download artifact
+  #uses: actions/download-artifact@v4
+  #with:
+  #name: 'release'
+
+  # What todo next? Webhook? Needs discussion
