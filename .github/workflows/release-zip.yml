@@ -41,11 +41,17 @@ jobs:
       - name: Build site
         run: npm run build
 
+      #- name: Zip build
+      #uses: vimtor/action-zip@v1.1
+      #with:
+      #files:
+      #dest: release
       - name: Zip build
-        uses: vimtor/action-zip@v1.1
+        uses: thedoctor0/zip-release@0.7.6
         with:
-          files: public/
-          dest: release
+          type: 'zip'
+          filename: 'release.zip'
+          directory: ./public
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
