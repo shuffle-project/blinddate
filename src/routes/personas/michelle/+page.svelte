@@ -331,7 +331,8 @@
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich stelle meine Lernmaterialien vorab und digital zur Verfügung',
 			'Ich ermögliche eine asynchrone und remote Teilnahme an der Veranstaltung',
-			'Ich mache ausreichend Pausen in langen Veranstaltungen'
+			'Ich mache ausreichend Pausen in langen Veranstaltungen',
+			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 		{persona}
 	/>
