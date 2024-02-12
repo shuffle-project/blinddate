@@ -122,7 +122,12 @@
 				</div>
 				<div class="faq">
 					<h2>Häufige Fragen</h2>
-
+					<p>
+						Warum gibt es diese „Freunde“-Personas auf den organgenen Karten? Zwei Personas geben
+						unterschiedliche Tipps – was ist denn jetzt richtig? Warum steht da mal Behinderung und
+						mal Beeinträchtigung? In dieser Sektion finden Sie Antworten auf häufig gestellte Fragen
+						zu BlindDate.
+					</p>
 					<a href="{base}/faq" class="focus-indicator">Zu den häufigen Fragen</a>
 				</div>
 			</div>
@@ -220,7 +225,8 @@
 
 		.lower-content {
 			.lecturers,
-			.glossary {
+			.glossary,
+			.faq {
 				max-width: var(--text-section-max-width);
 				padding: 7rem 1.33rem 5rem 1.33rem;
 				margin-inline: auto;
@@ -294,6 +300,13 @@
 					max-width: clamp(26rem, 40vw + 1rem, var(--text-section-max-width));
 					padding: 12rem 0;
 					margin-left: 2rem;
+				}
+
+				.faq {
+					max-width: clamp(20rem, 40vw + 1rem, var(--text-section-max-width));
+					padding: 12rem 0;
+					align-self: flex-end;
+					margin-right: 1rem;
 				}
 			}
 		}
