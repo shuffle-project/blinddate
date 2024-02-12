@@ -4,14 +4,15 @@ name: Zip release
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['release']
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,6 +26,8 @@ jobs:
   build-site:
     runs-on: ubuntu-latest
     steps:
+       
+      
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -40,19 +43,23 @@ jobs:
 
       - name: Build site
         run: npm run build
+
+      - name: Delete previous release and tag
+        run:  gh release delete release --cleanup-tag -y
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Zip
+        uses: thedoctor0/zip-release@0.7.6
         with:
-          name: 'release'
-          path: ./public
+          type: 'zip'
+          path: 'public'
+          filename: 'release.zip'
+          
+      - name: Release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          artifacts: 'release.zip'
+        
 
-  #zip:
-  #runs-on: ubuntu-latest
-  #steps:
-  #- name: Download artifact
-  #uses: actions/download-artifact@v4
-  #with:
-  #name: 'release'
 
-  # What todo next? Webhook? Needs discussion
