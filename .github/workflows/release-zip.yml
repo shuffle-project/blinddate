@@ -42,10 +42,10 @@ jobs:
       - name: Build site
         run: npm run build
 
-      #- name: Delete previous release and tag
-      #run:  gh release delete release --cleanup-tag -y
-      #env:
-      #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete previous release and tag
+        run:  gh release delete latest --cleanup-tag -y
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Zip
         uses: thedoctor0/zip-release@0.7.6
