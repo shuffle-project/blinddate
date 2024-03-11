@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { welcomeTextShown } from '$lib/store';
+	import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 
@@ -43,6 +45,14 @@
 			linkToPersonaQuestionnaire = '';
 		}
 	}
+
+	onMount(() => {
+		if (!bottomOfPage && !$welcomeTextShown) {
+			welcomeTextShown.set(true);
+			modalButton?.focus();
+			modalButton?.click();
+		}
+	});
 </script>
 
 <div class="wrapper">
