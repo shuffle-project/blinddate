@@ -19,7 +19,7 @@ export const MAXI: Persona = {
 	disabilityIcon: 'mental-health',
 	disabilityExplanation: MentalDisorder,
 	previousPersona: 'Gabriel',
-	nextPersona: 'Michelle',
+	nextPersona: 'Hannah',
 	visualDescription:
 		'Hallo, ich bin Maxi. Dass ich gerne skateboarde, seht ihr schon an meinen Klamotten. Ich trage weite Jeans, flache Turnschuhe und einen weiten Kapuzenpulli. Auf meinem Pulli habe ich einen Button in den Farben der non-binary Pride. Ich bin eine weiße Person. Meine Haare sind jetzt gerade pink gefärbt und kurz. Sie gucken unter meinem schwarzen Beanie hervor. Ich bin relativ klein und ... irgendwie weder dick noch dünn.',
 	metaDescription:
