@@ -30,9 +30,11 @@
 		Gleichgewicht und meinen Orientierungssinn. Kurz gesagt: Meine rechte Körperhälfte macht halt,
 		was sie will – und ich den Rest mit links. Nicht nur in meinem Studium, auch außerhalb
 		interessiere ich mich sehr für Sprachen. Deshalb versuche ich auch oft im Ausland unterwegs zu
-		sein. Meine Trips und Erfahrungen verarbeite ich in einem kleinen Travel-Blog. Da gibt‘s
-		natürlich auch viele Infos zum Thema Reisen mit Mobilitätseinschränkung. Insta hab ich auch und
-		darüber richtig guten Kontakt zu einer internationalen Gruppe anderer travelling crips.
+		sein. Meine Trips und Erfahrungen verarbeite ich in einem kleinen <span lang="en"
+			>Travel-Blog</span
+		>. Da gibt‘s natürlich auch viele Infos zum Thema Reisen mit Mobilitätseinschränkung. Insta hab
+		ich auch und darüber richtig guten Kontakt zu einer internationalen Gruppe anderer
+		<span lang="en">travelling crips</span>.
 	</SpeechBubble>
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
@@ -201,13 +203,14 @@
 
 	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-09.mp3'}>
 		Ich bin schon vor Beginn des Studiums zum Beauftragten für Studierende mit Beeinträchtigungen
-		gegangen. Dort wurde mir gesagt, was ich alles besorgen muss, damit ich accommodations kriege.
-		Ich habe jetzt einen Nachteilsausgleich, der mir eine Zeitverlängerung bei Prüfungen und Abgaben
-		gibt. Ich brauche wegen der Spastik einfach länger zum Schreiben oder Tippen. Und ab und zu muss
-		ich etwas Pause machen, um meine Muskeln zu entspannen. Auch für mündliche Prüfungen oder
-		Referate brauche ich mehr Zeit, da ich langsam spreche. Bisher hat das alles gut geklappt. Was
-		mich allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss bei jeder Prüfung zum
-		Prüfungsamt. Wenn Räume nicht barrierefrei sind, muss ich das melden.
+		gegangen. Dort wurde mir gesagt, was ich alles besorgen muss, damit ich <span lang="en"
+			>accommodations</span
+		> kriege. Ich habe jetzt einen Nachteilsausgleich, der mir eine Zeitverlängerung bei Prüfungen und
+		Abgaben gibt. Ich brauche wegen der Spastik einfach länger zum Schreiben oder Tippen. Und ab und
+		zu muss ich etwas Pause machen, um meine Muskeln zu entspannen. Auch für mündliche Prüfungen oder
+		Referate brauche ich mehr Zeit, da ich langsam spreche. Bisher hat das alles gut geklappt. Was mich
+		allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss bei jeder Prüfung zum Prüfungsamt.
+		Wenn Räume nicht barrierefrei sind, muss ich das melden.
 	</SpeechBubble>
 	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-10.mp3'}>
 		Mir wurden nicht alle Hilfsmittel, die ich für‘s Studium brauche, sofort oder überhaupt
@@ -228,9 +231,10 @@
 	</TextSection>
 
 	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-11.mp3'}>
-		Mein Motto ist: be prepared. So versuche ich im Voraus Stress zu vermeiden. Oder improvisierte
-		Lösungen, die vor allem für mich schlecht sind - und unter Umständen unangenehm oder sogar
-		gefährlich sein könnten. Dazu gehört zum Beispiel, mich in irgendein Gebäude tragen zu wollen.
+		Mein Motto ist: <span lang="en">be prepared</span>. So versuche ich im Voraus Stress zu
+		vermeiden. Oder improvisierte Lösungen, die vor allem für mich schlecht sind - und unter
+		Umständen unangenehm oder sogar gefährlich sein könnten. Dazu gehört zum Beispiel, mich in
+		irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
 	<Accordion personaName={persona.name} let:AccordionItem>

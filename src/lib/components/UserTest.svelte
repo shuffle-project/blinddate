@@ -11,7 +11,7 @@
 	let persona = '';
 	let malePersona = false;
 	let simulationGame = false;
-	let disability: 'Hörbehinderung' | 'Sehbeeinträchtigung' | '' = '';
+	let disability: string;
 
 	let linkToPersonaQuestionnaire = '';
 
@@ -33,6 +33,11 @@
 		} else if (url.includes('maxi')) {
 			persona = 'Maxi';
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/434893?lang=de';
+		} else if (url.includes('kilian')) {
+			persona = 'Kilian';
+			linkToPersonaQuestionnaire = '	https://survey.hdm-stuttgart.de/756155?lang=de';
+			malePersona = true;
+			disability = 'Mobilitätseinschränkung';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';
