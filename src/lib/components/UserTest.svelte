@@ -35,9 +35,9 @@
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/434893?lang=de';
 		} else if (url.includes('kilian')) {
 			persona = 'Kilian';
-			linkToPersonaQuestionnaire = '	https://survey.hdm-stuttgart.de/756155?lang=de';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/756155?lang=de';
 			malePersona = true;
-			disability = 'Mobilitätseinschränkung';
+			disability = 'motorischen Beeinträchtigung';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';
