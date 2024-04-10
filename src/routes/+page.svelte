@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
+	import InfoGrid from '$lib/components/startpage/InfoGrid.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { HOSTNAME } from '$lib/constants/hostname';
 	import { MetaTags } from 'svelte-meta-tags';
@@ -67,66 +68,11 @@
 		</p>
 		<p class="call-to-action">Lernen Sie jetzt die Studierenden kennen:</p>
 	</div>
+
 	<LectureRoom />
 
 	{#if ENVIRONMENT.displayLowerStartpageContent}
-		<div class="lower-content-wrapper">
-			<div class="lower-content">
-				<div class="lecturers">
-					<h2>Für Lehrende</h2>
-					<p>
-						BlindDate ist eine virtuelle Begegnungsplattform, auf der Ihnen Studierenden-Personas
-						mit Behinderung ihren Hochschulalltag näherbringen. Dazu gehören Strategien, assistive
-						Technologien, aber auch Barrieren, die den Studierenden begegnen. Auch Sie als
-						Lehrperson können viel zur Barrierefreiheit der Hochschule beitragen. Erfahren Sie mehr
-						darüber, wie Sie BlindDate nutzen können.
-					</p>
-					<a href="{base}/lecturers" class="focus-indicator">Informationen für Lehrende</a>
-				</div>
-				<div class="personas">
-					<img
-						class="top-wave"
-						src="{base}/decorations/top-blue-wave.svg"
-						alt=""
-						aria-hidden="true"
-					/>
-					<div class="personas-content">
-						<h2>Was sind Personas?</h2>
-						<p>
-							Personas sind fiktive Personen, die stellvertretend für eine Zielgruppe mit bestimmten
-							Charakteristika stehen – in unserem Fall Studierende mit Behinderungen. Personas sind
-							nicht frei erfunden – sie basieren auf Daten. Diese Daten wurden durch Umfragen,
-							Erfahrungsberichte und Feedback von Studierenden mit Behinderungen im Laufe des
-							SHUFFLE Projekts gesammelt.
-						</p>
-						<div class="to-persona-development">
-							<a href="{base}/development" class="focus-indicator"
-								>Mehr über die Entwicklung der Personas erfahren</a
-							>
-						</div>
-					</div>
-					<img
-						class="bottom-wave"
-						src="{base}/decorations/bottom-blue-wave.svg"
-						alt=""
-						aria-hidden="true"
-					/>
-				</div>
-				<div class="glossary">
-					<h2>Wichtige Begriffe</h2>
-					<p>
-						Barrierefreiheit? Behinderung? Assistive Technologien? Best3 Studie? – auf dieser Seite
-						werden verschiedene Begriffe kurz und verständlich definiert.
-					</p>
-					<a href="{base}/glossary" class="focus-indicator">Zu den wichtigen Begriffen</a>
-				</div>
-				<div class="faq">
-					<h2>Häufige Fragen</h2>
-
-					<a href="{base}/faq" class="focus-indicator">Zu den häufigen Fragen</a>
-				</div>
-			</div>
-		</div>
+		<InfoGrid />
 	{/if}
 </main>
 
