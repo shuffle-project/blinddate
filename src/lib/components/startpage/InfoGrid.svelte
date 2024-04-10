@@ -110,15 +110,7 @@
 
 			.lecturers {
 				grid-area: one;
-				// color: var(--color-black);
-				background-color: var(--color-lavender);
-				// color: rgba(var(--color-white-rgb), 0.97);
-				// background-color: rgba(var(--color-black-rgb), 0.85);
 
-				// a {
-				// 	color: rgba(var(--color-white-rgb), 0.97);
-				// 	text-decoration-color: rgba(var(--color-white-rgb), 0.97);
-				// }
 				a {
 					color: rgba(var(--color-black-rgb), 1);
 					text-decoration-color: rgba(var(--color-black-rgb), 1);
@@ -127,8 +119,7 @@
 
 			.personas {
 				grid-area: two;
-				// background-color: var(--color-white);
-				// border: 1px solid var(--color-lavender);
+				background-color: var(--color-lavender);
 			}
 
 			.concepts {
