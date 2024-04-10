@@ -86,7 +86,6 @@
 			padding: 1.11rem;
 
 			div {
-				// border-radius: 1.33rem;
 				border-radius: 0.85rem;
 				padding: 1.11rem 1.11rem;
 			}
@@ -111,30 +110,36 @@
 
 			.lecturers {
 				grid-area: one;
-				color: rgba(var(--color-white-rgb), 0.97);
-				background-color: rgba(var(--color-black-rgb), 0.85);
+				// color: var(--color-black);
+				background-color: var(--color-lavender);
+				// color: rgba(var(--color-white-rgb), 0.97);
+				// background-color: rgba(var(--color-black-rgb), 0.85);
 
+				// a {
+				// 	color: rgba(var(--color-white-rgb), 0.97);
+				// 	text-decoration-color: rgba(var(--color-white-rgb), 0.97);
+				// }
 				a {
-					color: rgba(var(--color-white-rgb), 0.97);
-					text-decoration-color: rgba(var(--color-white-rgb), 0.97);
+					color: rgba(var(--color-black-rgb), 1);
+					text-decoration-color: rgba(var(--color-black-rgb), 1);
 				}
 			}
 
 			.personas {
 				grid-area: two;
-				background-color: var(--color-white);
-				border: 1px solid var(--color-lavender);
+				// background-color: var(--color-white);
+				// border: 1px solid var(--color-lavender);
 			}
 
 			.concepts {
 				grid-area: three;
-				background-color: var(--color-lavender);
+				background-color: var(--color-white);
+				border: 1px solid var(--color-lavender);
 			}
 
 			.decorative-image {
 				grid-area: four;
 				background-color: var(--color-white);
-				border: 1px solid var(--color-lavender);
 
 				display: flex;
 				align-items: center;
