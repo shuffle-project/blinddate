@@ -69,10 +69,10 @@
 	</p>
 
 	<p>
-		Nicht nur das – von Barrierefreiheit profitieren alle Studierenden. Barrierefreiheit ist für 10%
-		der Studierenden nötig – es geht nicht ohne sie. Für 30% der Studierenden ist sie wichtig – es
-		macht einen großen Unterschied, ob das Studium zugänglich gestaltet ist. Aber für alle
-		Studierende ist Barrierefreiheit ein Gewinn.
+		Nicht nur das – von Barrierefreiheit profitieren alle Studierenden. Man sagt, Barrierefreiheit
+		ist für 10% der Studierenden nötig – es geht nicht ohne sie. Für 30% der Studierenden ist sie
+		wichtig – es macht einen großen Unterschied, ob das Studium zugänglich gestaltet ist. Aber für
+		alle Studierende ist Barrierefreiheit ein Gewinn.
 	</p>
 
 	<p>
