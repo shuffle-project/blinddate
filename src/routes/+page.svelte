@@ -49,12 +49,11 @@
 	<div>
 		<div class="row">
 			<div class="logo">
-				<img src="{base}/icons/logo.svg" alt="Blind Date Logo" />
-				<span aria-hidden="true">BlindDate</span>
+				<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+				<span>BlindDate</span>
 			</div>
 			<ShareButton />
 		</div>
-		<hr aria-hidden="true" class="separator" />
 	</div>
 </header>
 
@@ -79,9 +78,6 @@
 <Footer />
 
 <style lang="scss">
-	:root {
-		--text-section-max-width: 31rem;
-	}
 	header {
 		background-color: var(--color-black);
 
@@ -93,12 +89,6 @@
 			padding: 1.33rem 1rem;
 			max-width: var(--content-max-width);
 			margin-inline: auto;
-		}
-
-		.separator {
-			max-width: var(--content-max-width);
-			margin: 0 auto 0 auto;
-			color: rgba(var(--color-white-rgb), 0.5);
 		}
 
 		.logo {
@@ -117,7 +107,7 @@
 		}
 	}
 	.content-wrapper {
-		padding-top: 4rem;
+		padding-top: 2rem;
 		background-color: var(--color-black);
 
 		.upper-content {
@@ -163,90 +153,11 @@
 		.call-to-action {
 			margin-bottom: 2rem;
 		}
-
-		.lower-content {
-			.lecturers,
-			.glossary {
-				max-width: var(--text-section-max-width);
-				padding: 7rem 1.33rem 5rem 1.33rem;
-				margin-inline: auto;
-			}
-		}
-
-		.personas {
-			display: flex;
-			flex-direction: column;
-
-			.top-wave,
-			.bottom-wave {
-				width: 100%;
-				max-width: 100%;
-			}
-			.personas-content {
-				padding: 2rem 0;
-				background-color: var(--color-lavender);
-
-				p,
-				.to-persona-development,
-				h2 {
-					max-width: var(--text-section-max-width);
-					padding: 0 1.33rem;
-					margin-inline: auto;
-				}
-
-				a {
-					color: var(--color-black);
-					text-decoration-color: var(--color-black);
-
-					&:focus {
-						outline: 2px solid var(--color-black);
-					}
-				}
-			}
-		}
 	}
 
 	@media (min-width: 50rem) {
 		.subtitle {
 			max-width: 80%;
-		}
-
-		.lower-content-wrapper {
-			background-image: url('/decorations/startpage-path.svg');
-			background-repeat: no-repeat;
-			background-position: center -1rem;
-
-			.lower-content {
-				max-width: var(--content-max-width);
-				margin-inline: auto;
-				padding-inline: 1rem;
-				display: flex;
-				flex-direction: column;
-
-				.lecturers {
-					padding-top: 11rem;
-					margin-left: 2rem;
-					max-width: clamp(20rem, 40vw + 1rem, var(--text-section-max-width));
-				}
-
-				.personas {
-					max-width: clamp(20rem, 40vw + 1rem, var(--text-section-max-width));
-					align-self: flex-end;
-					padding-top: 5rem;
-					margin-right: 1rem;
-				}
-
-				.glossary {
-					max-width: clamp(26rem, 40vw + 1rem, var(--text-section-max-width));
-					padding: 12rem 0;
-					margin-left: 2rem;
-				}
-			}
-		}
-
-		.bottom-wave,
-		.top-wave {
-			display: none;
 		}
 	}
 </style>
