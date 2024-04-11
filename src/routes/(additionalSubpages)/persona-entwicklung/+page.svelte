@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import Sources from '$lib/components/Sources.svelte';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
@@ -100,6 +101,23 @@
 			Auch das BlindDate-Team ist nicht unfehlbar: Sollten Ihnen Fehler begegnen oder Sie weitere
 			Anregungen haben, melden Sie sich gerne bei uns (LINK zu Kontakt).
 		</p>
+
+		<Sources
+			sources={[
+				{
+					title:
+						'Lepzien, Josefine/Lewerenz, Michael (2017): Persona Methode. Eine Illustrierung von Bildungsbedarfen. In: Team der Wissenschaftlichen Weiterbildung der Universität Rostock: Weiterbildungsmanagement professionalisieren. Rostock: Universität Rostock, S. 22-31.'
+				},
+				{
+					title: 'The Inmates Are Running the Asylum (Alan Cooper 1999)',
+					titleLang: 'en'
+				},
+				{
+					title: 'SHUFFLE Webseite',
+					url: 'www.shuffle-projekt.de'
+				}
+			]}
+		/>
 	</div>
 </div>
 

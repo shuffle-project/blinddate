@@ -40,7 +40,7 @@
 		<div class="questions">
 			<h2>Häufige Fragen</h2>
 			<p>
-				Warum gibt es diese „Freunde“-Personas auf den organgenen Karten? Zwei Personas geben
+				Warum gibt es diese „Freunde“-Personas auf den orangenen Karten? Zwei Personas geben
 				unterschiedliche Tipps – was ist denn jetzt richtig? Warum steht da mal Behinderung und mal
 				Beeinträchtigung?
 			</p>
