@@ -71,7 +71,7 @@
 <style lang="scss">
 	.wrapper {
 		background-color: var(--color-background-body);
-		padding-block: 13.33rem;
+		padding-block: 15rem;
 
 		display: flex;
 		justify-content: center;
@@ -83,11 +83,11 @@
 		.content {
 			max-width: var(--content-max-width);
 			width: 100%;
-			padding: 1.11rem;
+			padding: 1.25rem;
 
 			div {
-				border-radius: 0.85rem;
-				padding: 1.11rem 1.11rem;
+				border-radius: 1.25rem;
+				padding: 1.25rem;
 			}
 
 			a {
@@ -97,7 +97,7 @@
 			}
 
 			display: grid;
-			gap: 1.66rem;
+			gap: 1.875rem;
 
 			grid-template-areas:
 				'one'
@@ -138,7 +138,7 @@
 
 				img {
 					height: 100%;
-					max-height: 10rem;
+					max-height: 12rem;
 					width: 100%;
 				}
 			}
@@ -157,7 +157,7 @@
 				align-items: center;
 
 				img {
-					max-height: 20rem;
+					max-height: 22rem;
 				}
 			}
 

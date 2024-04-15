@@ -46,20 +46,18 @@
 />
 
 <header>
-	<div>
-		<div class="row">
-			<div class="logo">
-				<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
-				<span>BlindDate</span>
-			</div>
-			<ShareButton />
+	<div class="content">
+		<div class="logo">
+			<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+			<span>BlindDate</span>
 		</div>
+		<ShareButton />
 	</div>
 </header>
 
 <main class="content-wrapper" id="content">
 	<div class="upper-content">
-		<h1 class="responsive title">Eine Hochschule für alle</h1>
+		<h1 class="title">Eine Hochschule für alle</h1>
 		<p class="subtitle">
 			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren
 			Studienalltag. Konkrete Handlungsempfehlungen helfen Ihnen, Barrieren in der eigenen Lehre
@@ -81,51 +79,52 @@
 	header {
 		background-color: var(--color-black);
 
-		.row {
+		.content {
 			display: flex;
 			justify-content: center;
 			justify-content: space-between;
 			align-items: center;
-			padding: 1.33rem 1rem;
+			padding: 1.25rem var(--outer-spacing);
 			max-width: var(--content-max-width);
 			margin-inline: auto;
-		}
 
-		.logo {
-			color: var(--color-white);
-			display: flex;
-			align-items: center;
-			gap: 0.55rem;
+			.logo {
+				color: var(--color-white);
+				display: flex;
+				align-items: center;
+				gap: 0.625rem;
 
-			font-size: 1.11rem;
-			font-weight: bold;
+				font-size: 1.25rem;
+				font-weight: bold;
 
-			img {
-				width: 3rem;
-				height: 3rem;
+				img {
+					width: 3.125rem;
+					height: 3.125rem;
+				}
 			}
 		}
 	}
 	.content-wrapper {
-		padding-top: 2rem;
+		padding-top: 1.875rem;
 		background-color: var(--color-black);
 
 		.upper-content {
 			max-width: var(--content-max-width);
 			margin-inline: auto;
-			padding: 0 1rem;
+			padding-inline: var(--outer-spacing);
 
 			.title {
 				padding: 0;
 			}
 
-			h1,
+			h1 {
+				color: var(--color-white);
+				margin: 0;
+			}
+
 			.subtitle,
 			.call-to-action {
-				color: var(--color-white);
-			}
-			h1 {
-				margin: 0;
+				color: rgba(var(--color-white-rgb), 0.85);
 			}
 		}
 
@@ -147,17 +146,17 @@
 
 		.subtitle {
 			max-width: 100%;
-			margin: 2rem 0;
+			margin: 1.875rem 0;
 		}
 
 		.call-to-action {
-			margin-bottom: 2rem;
+			margin-bottom: 1.875rem;
 		}
 	}
 
 	@media (min-width: 50rem) {
 		.subtitle {
-			max-width: 80%;
+			max-width: 75%;
 		}
 	}
 </style>

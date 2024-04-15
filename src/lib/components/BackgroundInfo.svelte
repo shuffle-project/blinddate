@@ -108,31 +108,29 @@
 </div>
 
 <style lang="scss">
-	@media (min-width: 59.375rem) {
-		.wrapper {
-			max-width: var(--content-element-max-width);
-		}
-	}
-
 	.wrapper {
 		width: 100%;
 		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.card {
-		margin-inline: auto;
+		margin-inline: var(--outer-spacing);
 		margin-top: 1rem;
 		background-color: var(--color-neutral);
-		border-radius: 1.11rem;
-		width: 100%;
-		max-width: 26rem;
+		border-radius: 1.25rem;
+
+		max-width: 35rem;
 		border: 1px solid transparent;
+		padding: 1.125rem 1.5rem;
 		box-sizing: border-box;
-		padding: 1.125rem 1.66rem;
-		box-shadow: inset 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
+
+		box-shadow: inset 0px 6px 10px rgba(var(--color-black-rgb), 0.1);
 
 		&.support {
-			margin-top: 5.55rem;
+			margin-top: 6rem;
 		}
 	}
 	.text {
@@ -143,11 +141,21 @@
 		background-color: var(--color-black);
 		display: inline-flex;
 		border-radius: 5px;
-		height: 1.625rem;
+		height: 1.5rem;
 		width: 2.75rem;
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		top: 0.22rem;
+		top: 0.125rem;
+	}
+
+	@media (min-width: 59.375rem) {
+		.wrapper {
+			max-width: var(--content-element-max-width);
+
+			.card {
+				box-sizing: content-box;
+			}
+		}
 	}
 </style>

@@ -26,11 +26,11 @@
 
 <style lang="scss">
 	.card {
-		width: 11rem;
+		width: 12.5rem;
 		aspect-ratio: 5/7;
 
-		box-shadow: 0 4px 10px 0 rgba(var(--color-black-rgb), 0.15);
-		border-radius: 40px;
+		// box-shadow: 0 4px 10px 0 rgba(var(--color-black-rgb), 0.15);
+		border-radius: 2.5rem;
 		background: var(--color-gradient-friend-persona);
 
 		display: flex;
@@ -40,7 +40,7 @@
 		.card-content {
 			display: flex;
 			flex-direction: column;
-			gap: 0.22rem;
+			gap: 0.375rem;
 			margin: 0 1rem 1rem 1rem;
 		}
 	}

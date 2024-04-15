@@ -70,10 +70,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 0 1rem;
-		margin-bottom: -5px;
+		padding: 0 var(--outer-spacing);
 		position: relative;
-		height: min(49vw, 38rem);
+		height: min(49vw, 42.75rem);
 
 		.toggle-all-names {
 			width: 100%;
@@ -82,9 +81,9 @@
 			display: flex;
 			justify-content: end;
 			align-items: center;
-			gap: 0.55rem;
+			gap: 0.625rem;
 
-			padding-right: 2rem;
+			padding-right: 2.25rem;
 			box-sizing: border-box;
 
 			input {
@@ -94,11 +93,11 @@
 
 				margin: 0;
 
-				height: 1.33rem;
-				width: 1.33rem;
+				height: 1.5rem;
+				width: 1.5rem;
 				aspect-ratio: 1;
 
-				border-radius: 0.33rem;
+				border-radius: 0.375rem;
 				border: 2px solid var(--color-white);
 
 				cursor: pointer;
@@ -108,8 +107,8 @@
 
 				&:checked:before {
 					content: '';
-					width: 0.8rem;
-					height: 0.8rem;
+					width: 0.875rem;
+					height: 0.875rem;
 					box-shadow: inset 1rem 1rem var(--color-white);
 
 					transform-origin: bottom left;
@@ -135,25 +134,25 @@
 		.lecture-room {
 			max-width: var(--content-max-width);
 			width: 100%;
-			border-radius: 2rem;
+			border-radius: 2.25rem;
 			position: relative;
 
 			margin-inline: auto;
 
 			box-sizing: border-box;
-			margin-top: 0.55rem;
+			margin-top: 0.625rem;
 
 			ul {
 				margin: 0;
 			}
 
 			.lecture-room-img {
-				border-radius: 2rem;
+				border-radius: 2.25rem;
 			}
 
 			.loading-indicator {
-				width: 2rem;
-				height: 2rem;
+				width: 2.25rem;
+				height: 2.25rem;
 				background-color: transparent;
 				position: absolute;
 				inset: 1rem 1rem auto auto;
@@ -170,8 +169,8 @@
 					}
 				}
 
-				border: 0.33rem solid transparent;
-				border-top: 0.33rem solid var(--color-black);
+				border: 0.375rem solid transparent;
+				border-top: 0.375rem solid var(--color-black);
 				border-radius: 50%;
 				animation: spin 1.3s linear infinite;
 
@@ -198,7 +197,7 @@
 					left: 12%;
 
 					img {
-						width: min(17.5vw, 13rem);
+						width: min(17.5vw, 14.625rem);
 					}
 				}
 
@@ -207,16 +206,16 @@
 					left: 29%;
 
 					img {
-						width: min(21vw, 16rem);
+						width: min(21vw, 18rem);
 					}
 				}
 
 				&.michelle {
 					left: 38%;
-					top: 1.5%;
+					top: 2.1%;
 
 					img {
-						width: min(12vw, 9rem);
+						width: min(11.4vw, 9.875rem);
 					}
 				}
 
@@ -225,7 +224,7 @@
 					right: 28%;
 
 					img {
-						width: min(13.5vw, 10.3rem);
+						width: min(13.5vw, 11.625rem);
 					}
 				}
 
@@ -234,7 +233,7 @@
 					right: 7%;
 
 					img {
-						width: min(15.5vw, 11.9rem);
+						width: min(15.5vw, 13.3625rem);
 					}
 				}
 
@@ -243,7 +242,7 @@
 					left: 6%;
 
 					img {
-						width: min(19.6vw, 15rem);
+						width: min(19.4vw, 16.875rem);
 					}
 				}
 
@@ -264,18 +263,18 @@
 						.persona-info {
 							background-color: var(--color-blue);
 
-							border-radius: 2rem;
+							border-radius: 2.25rem;
 
-							width: 1.33rem;
-							height: 1.33rem;
+							width: 1.375rem;
+							height: 1.375rem;
 
-							margin-bottom: 0.33rem;
+							margin-bottom: 0.375rem;
 
 							transition: all 0.2s ease-out;
 
 							p {
 								margin: 0;
-								font-size: 1.22rem;
+								font-size: 1.25rem;
 							}
 
 							p,
@@ -294,10 +293,10 @@
 
 							color: var(--color-white);
 
-							padding: 0.55rem 1rem;
-							border-radius: 2rem;
+							padding: 0.625rem 1rem;
+							border-radius: 2.25rem;
 
-							width: 5rem;
+							width: 6rem;
 							margin-bottom: 0;
 
 							transition: all 0.3s ease-out;
@@ -305,7 +304,7 @@
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							gap: 0.55rem;
+							gap: 0.625rem;
 
 							p,
 							.icon {

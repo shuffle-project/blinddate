@@ -10,7 +10,7 @@
 	@media (min-width: 59.375rem) {
 		.wrapper {
 			max-width: var(--content-element-max-width);
-			padding-inline: 3.33rem;
+			padding-inline: 3.375rem;
 			box-sizing: border-box;
 		}
 	}

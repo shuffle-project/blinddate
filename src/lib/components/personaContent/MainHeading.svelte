@@ -65,7 +65,7 @@
 
 <style lang="scss">
 	.wrapper {
-		padding-inline: 3.33rem;
+		padding-inline: 3.25rem;
 
 		.main-heading {
 			padding-top: 5rem;
@@ -85,19 +85,19 @@
 
 	@media (max-width: 59.3125rem) {
 		.wrapper {
-			padding-inline: 1.33rem;
+			padding-inline: var(--outer-spacing);
 
 			.main-heading {
 				width: 100%;
-				max-width: 31.04rem;
+				max-width: 35rem;
 				margin-inline: auto;
 				box-sizing: border-box;
-				margin-bottom: 0.33rem;
+				margin-bottom: 0.375rem;
 			}
 		}
 
 		#tools {
-			margin-bottom: 1.77rem;
+			margin-bottom: 2rem;
 		}
 	}
 </style>

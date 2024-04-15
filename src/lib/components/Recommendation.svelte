@@ -33,28 +33,27 @@
 <style lang="scss">
 	@media (min-width: 59.375rem) {
 		.container {
-			margin: 3.33rem 0 0 3.33rem;
-			max-width: 29.33rem;
+			margin: 3.375rem 0 0 3.875rem;
 		}
 	}
 
 	@media (max-width: 59.3125rem) {
 		.container {
-			max-width: calc(26rem + 2.66rem);
 			width: 100%;
 			margin-inline: auto;
-			padding: 0 1.33rem;
+			padding: 0 var(--outer-spacing);
 			box-sizing: border-box;
 		}
 	}
 
 	.container {
+		max-width: 33.5rem;
 		display: flex;
-		gap: 1.65rem;
-		margin-top: 2rem;
+		gap: 1.625rem;
+		margin-top: 1.875rem;
 
 		&.marginBottom {
-			margin-bottom: 1.33rem;
+			margin-bottom: 1.375rem;
 		}
 	}
 
@@ -70,9 +69,5 @@
 
 	.link {
 		font-weight: 600;
-	}
-	.content {
-		margin: 0.3rem 0rem 0.3rem 0rem;
-		max-width: 27.7rem;
 	}
 </style>

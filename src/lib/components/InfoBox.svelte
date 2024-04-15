@@ -57,7 +57,7 @@
 
 		line-height: 150%;
 
-		font-size: 1rem;
+		font-size: 1.125rem;
 		font-weight: bold;
 
 		text-align: left;

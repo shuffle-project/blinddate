@@ -200,7 +200,7 @@
 
 		dialog {
 			border: none;
-			border-radius: 1.77rem;
+			border-radius: 2rem;
 
 			max-block-size: min(80vh, 100%);
 			max-block-size: min(80dvb, 100%);
@@ -209,7 +209,7 @@
 			padding-bottom: 0;
 
 			&.sticky {
-				padding-top: 0.5rem;
+				padding-top: 0.625rem;
 
 				margin-block-start: 0;
 				border-top-left-radius: 0rem;
@@ -231,15 +231,13 @@
 		}
 
 		nav {
-			max-width: 14.4rem;
+			max-width: 16.25rem;
 			padding: 0rem 1em 1rem 1rem;
 			box-sizing: border-box;
 
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-
-			gap: 1rem;
 
 			ul {
 				list-style: none;
@@ -248,8 +246,10 @@
 				height: auto;
 
 				.heading-link {
-					padding: 0.5rem 1rem;
-					font-size: 0.88rem;
+					padding: 0.625rem 0;
+					a {
+						font-size: 1rem;
+					}
 				}
 
 				hr {
@@ -259,27 +259,28 @@
 					border: none;
 				}
 
-				button {
-					margin: 0.5rem 0;
-					cursor: pointer;
-					border-radius: 40px;
-					padding: 0.5rem;
-					text-align: left;
+				.btn-with-arrow {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: 1rem;
+
 					width: 100%;
-					font-size: 0.88rem;
+					margin-block: 0.625rem;
+					box-sizing: border-box;
+
+					padding: 0.625rem;
+					cursor: pointer;
+
+					border-radius: 2.5rem;
+
 					color: var(--color-black);
+					background-color: var(--color-white);
 
 					&:hover,
 					&:focus {
 						outline: 2px solid var(--color-blue);
 						outline-offset: 2px;
-					}
-
-					&.btn-with-arrow {
-						display: flex;
-						align-items: center;
-						justify-content: space-between;
-						padding-right: 1rem;
 					}
 
 					&.table-of-contents-btn {
@@ -300,38 +301,29 @@
 						border: none;
 					}
 
-					&.stop-scrolling-btn {
-						background-color: transparent;
-						border: none;
-						text-align: center;
-						color: var(--color-blue);
+					&.tips-btn {
+						background-color: var(--color-blue);
+						color: var(--color-white);
+						text-decoration: none;
 					}
 				}
 			}
-		}
-	}
 
-	.tips-btn {
-		background-color: var(--color-blue);
-		color: var(--color-white);
-		border: none;
-		box-sizing: border-box;
-		text-decoration: none;
+			button.stop-scrolling-btn {
+				background-color: transparent;
+				border: none;
+				text-align: center;
+				color: var(--color-blue);
+				font-size: 0.875rem;
+				border-radius: 2.5rem;
+				margin-top: 0.625rem;
 
-		display: flex;
-
-		margin: 0.5rem 0;
-		cursor: pointer;
-		border-radius: 40px;
-		padding: 0.5rem;
-		text-align: left;
-		width: 100%;
-		font-size: 0.88rem;
-
-		&:hover,
-		&:focus {
-			outline: 2px solid var(--color-blue);
-			outline-offset: 2px;
+				&:hover,
+				&:focus {
+					outline: 2px solid var(--color-blue);
+					outline-offset: 2px;
+				}
+			}
 		}
 	}
 </style>

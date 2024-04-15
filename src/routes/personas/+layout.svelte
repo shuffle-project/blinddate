@@ -69,7 +69,7 @@
 
 	@media (min-width: 59.375rem) {
 		header {
-			padding-inline: 2.77rem;
+			padding-inline: var(--outer-spacing);
 			box-sizing: border-box;
 		}
 		.row,

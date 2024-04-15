@@ -76,13 +76,13 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.625rem;
 		background-color: transparent;
 		border: none;
 		color: var(--color-white);
 		border-radius: 1rem;
-		font-size: 0.88rem;
-		padding: 0.2rem 0.4rem;
+		font-size: 1rem;
+		padding: 0.25rem 0.375rem;
 		cursor: pointer;
 
 		&:hover,
@@ -94,20 +94,20 @@
 
 	.sharetext-container {
 		position: absolute;
-		inset: 0 0 -3.33rem -2.55rem;
+		inset: 0 0 -3.875rem -3rem;
 
 		font-weight: bold;
-		font-size: 0.88rem;
+		font-size: 1rem;
 
-		min-width: 9rem;
-		min-height: 2rem;
+		min-width: 10rem;
+		min-height: 2.5rem;
 
 		background-image: url('/decorations/share-rectangle-mobile.svg');
 
 		display: flex;
 		align-items: end;
 		justify-content: center;
-		padding: 0 0.4rem 0.2rem 0.4rem;
+		padding: 0 0.375rem 0.25rem 0.375rem;
 
 		background-size: 100%;
 		background-repeat: no-repeat;
@@ -120,8 +120,8 @@
 			justify-content: center;
 			align-items: center;
 			border-radius: 50%;
-			height: 2.77rem;
-			width: 2.77rem;
+			height: 2.875rem;
+			width: 2.875rem;
 			margin: 0;
 			padding: 0;
 
@@ -130,7 +130,7 @@
 			}
 		}
 		.sharetext-container {
-			inset: 0 0 -3.33rem -6.65rem;
+			inset: 0 0 -4rem -7.375rem;
 		}
 	}
 </style>

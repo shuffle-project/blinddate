@@ -27,7 +27,7 @@
 				img {
 					// TODO: Probably needs to be persona specific
 					position: absolute;
-					top: -7.6rem;
+					top: -8.5rem;
 					left: -4rem;
 				}
 

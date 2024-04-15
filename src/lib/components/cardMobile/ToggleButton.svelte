@@ -45,10 +45,10 @@
 
 <style lang="scss">
 	.wrapper {
-		min-height: 3.5rem;
-		min-width: 13.3rem;
+		min-height: 3.75rem;
+		min-width: 13.375rem;
 
-		padding: 0.33rem;
+		padding: 0.375rem;
 		box-sizing: border-box;
 
 		display: flex;
@@ -56,8 +56,8 @@
 		align-items: center;
 
 		box-shadow: 0 6px 10px 0 rgba(var(--color-black-rgb), 0.15);
-		border-radius: 2.3rem;
-		background: var(--color-gradient-persona);
+		border-radius: 2rem;
+		background: linear-gradient(160deg, var(--color-turquoise), var(--color-green));
 		font-family: var(--font-serif);
 		z-index: 10;
 
@@ -88,14 +88,14 @@
 			align-items: center;
 
 			.name-text {
-				font-size: 1.33rem;
+				font-size: 1.375rem;
 				font-weight: bold;
-				margin-left: 0.5rem;
+				margin-left: 0.625rem;
 			}
 
 			.img-wrapper {
-				width: 2.8rem;
-				height: 2.8rem;
+				width: 3rem;
+				height: 3rem;
 				border: 3px solid var(--color-white);
 				border-radius: 50%;
 				overflow: hidden;
@@ -114,8 +114,8 @@
 			border: none;
 
 			border-radius: 50%;
-			height: 2.33rem;
-			width: 2.33rem;
+			height: 2.5rem;
+			width: 2.5rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;

@@ -54,20 +54,18 @@
 		{#if firstPage}
 			<div
 				class="side-1"
-				in:fly={{ y: -100, duration: 200, delay: 200 }}
-				out:fly={{ y: -100, duration: 200 }}
+				in:fly={{ y: -50, duration: 300, delay: 300 }}
+				out:fly={{ y: -50, duration: 300 }}
 			>
 				<PersonaPortrait {persona} />
 				<div class="card-body">
 					<button class="first" on:click={() => toggleModalDisplay()}>
-						<Icon img={persona.disabilityIcon} size="medium">{persona.disability}</Icon>
+						<Icon img={persona.disabilityIcon} size="big">{persona.disability}</Icon>
 						<Icon img="arrow-toright" size="tiny" />
 					</button>
 
 					<a href="#tips" class="second">
-						<Icon img="light-bulb" size="medium" svg_color="white"
-							>Selbstcheck Barrierefreiheit</Icon
-						>
+						<Icon img="light-bulb" size="big" svg_color="white">Selbstcheck Barrierefreiheit</Icon>
 
 						<Icon img="arrow-toright" svg_color="white" size="tiny" />
 					</a>
@@ -76,8 +74,8 @@
 		{:else}
 			<div
 				class="side-2"
-				in:fly={{ y: 100, duration: 200, delay: 200 }}
-				out:fly={{ y: 100, duration: 200 }}
+				in:fly={{ y: 50, duration: 300, delay: 300 }}
+				out:fly={{ y: 50, duration: 300 }}
 			>
 				<div class="card-header">
 					<h2 id="table-of-content">Inhaltsverzeichnis</h2>
@@ -115,7 +113,7 @@
 <style lang="scss">
 	@media (min-width: 59.375rem) {
 		.container {
-			transform: translateY(-6.5rem);
+			transform: translateY(-5rem);
 		}
 	}
 
@@ -126,12 +124,14 @@
 			justify-content: center;
 
 			.other-personas {
-				max-width: 13.8rem;
+				max-width: 15.625rem;
 
 				box-sizing: border-box;
 				width: 100%;
-				position: absolute;
-				bottom: -3.3rem;
+				margin-top: 2rem;
+
+				transition: margin-top 0.3s ease-in-out;
+
 				display: flex;
 				justify-content: space-between;
 
@@ -142,13 +142,13 @@
 					color: var(--color-black);
 					background-color: var(--color-white);
 					border: 1px solid var(--color-lavender);
-					border-radius: 2.22rem;
+					border-radius: 2rem;
 
-					font-size: 0.88rem;
-					box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
+					font-size: 1rem;
+					box-shadow: 0px 2px 4px rgba(var(--color-black-rgb), 0.15);
 					text-align: center;
-					padding: 0.11rem 0;
-					max-width: 6.11rem;
+					padding: 0.125rem 0;
+					max-width: 6.375rem;
 
 					&:hover,
 					&:focus {
@@ -161,13 +161,13 @@
 		.card {
 			overflow: hidden;
 			width: 100%;
-			max-width: 13.88rem;
-			min-width: 10rem;
+			max-width: 15.625rem;
+			min-width: 11.25rem;
 			aspect-ratio: 5/7;
 
 			position: relative;
-			box-shadow: 0 4px 10px 0 rgba(var(--color-black-rgb), 0.15);
-			border-radius: 40px;
+			box-shadow: 0 2px 16px 0 rgba(var(--color-black-rgb), 0.075);
+			border-radius: 2.5rem;
 			background: var(--color-gradient-persona);
 
 			z-index: 1;
@@ -189,23 +189,24 @@
 
 					.first,
 					.second {
-						margin-bottom: 0.55rem;
+						margin-bottom: 0.625rem;
 						text-align: start;
 						box-sizing: border-box;
-						margin-inline: 0.33rem;
-						padding: 0.33rem 0.55rem 0.33rem 0.33rem;
-						font-size: 0.88rem;
+						margin-inline: 0.375rem;
+						padding: 0.375rem 0.625rem 0.375rem 0.375rem;
+						font-size: 1rem;
 						cursor: pointer;
-						min-height: 2.55rem;
+						min-height: 2.75rem;
 
 						width: 92%;
 
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
-						gap: 0.55rem;
+						gap: 0.625rem;
 
 						border: none;
+						border-radius: 2.5rem;
 
 						&:hover,
 						&:focus {
@@ -215,7 +216,6 @@
 					}
 
 					.first {
-						border-radius: 40px;
 						background-color: transparent;
 						color: var(--color-black);
 
@@ -228,7 +228,6 @@
 						hyphens: auto;
 					}
 					.second {
-						border-radius: 40px;
 						background-color: var(--color-blue);
 						color: var(--color-white);
 						text-decoration: none;
@@ -246,12 +245,13 @@
 
 				.card-header {
 					background-color: var(--color-green);
-					padding-top: 3rem;
+					padding-top: 3.25rem;
 
 					h2 {
 						color: var(--color-black);
-						text-align: center;
-						font-size: 1.22rem;
+						text-align: left;
+						font-size: 1.25rem;
+						padding-inline: 1.875rem;
 
 						word-wrap: break-word;
 						overflow-wrap: break-word;
@@ -270,11 +270,11 @@
 
 					ul {
 						list-style-type: none;
-						padding: 0 2rem;
+						padding: 0 1.875rem;
 						li {
-							padding: 0.5rem 0rem;
+							padding: 0.625rem 0rem;
 							a {
-								font-size: 0.88rem;
+								font-size: 1rem;
 								color: var(--color-blue);
 							}
 						}
@@ -294,11 +294,31 @@
 		.card.bg.left {
 			transform: rotateZ(5deg) translateY(2px);
 			transform-origin: bottom left;
+			transition: transform 0.3s ease-in-out;
 		}
 
 		.card.bg.right {
 			transform: rotateZ(-5deg) translateY(2px);
 			transform-origin: bottom right;
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+
+	@media (min-width: 59.375rem) and (max-width: 73.125rem) {
+		.container {
+			.card.bg.left {
+				transform: rotateZ(0deg) translateY(0px);
+			}
+
+			.card.bg.right {
+				transform: rotateZ(0deg) translateY(0px);
+			}
+
+			.other-personas-container {
+				.other-personas {
+					margin-top: 1rem;
+				}
+			}
 		}
 	}
 </style>

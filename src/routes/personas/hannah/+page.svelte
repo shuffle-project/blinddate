@@ -320,7 +320,6 @@
 
 	<SimulationLink
 		image="{base}/personas/hannah/hannah-explaining-circle.svg"
-		warningtext="Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe 'Informationen zur Simulation'."
 		pathtext={base + '/iframe/hannah'}
 		personaID={persona.id}
 	/>

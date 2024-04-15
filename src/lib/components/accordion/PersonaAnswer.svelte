@@ -30,18 +30,18 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1.11rem;
+		gap: 1rem;
 
 		background-color: var(--color-green);
 
-		border-radius: 0.83rem;
+		border-radius: 1rem;
 		border: 1px solid var(--color-black);
 
 		box-shadow: 0px 4px 4px rgba(var(--color-black-rgb), 0.1);
-		padding: 1.66rem 1.11rem 1.11rem;
+		padding: 1rem;
 
 		.persona-img {
-			max-width: clamp(6rem, 30vw + 0.1rem, 10rem);
+			max-width: clamp(6rem, 30vw + 0.1rem, 9rem);
 			object-fit: contain;
 		}
 
@@ -60,7 +60,6 @@
 
 	@media (min-width: 59.375rem) {
 		.persona-answer-wrapper {
-			padding: 1.11rem 1.66rem;
 			flex-direction: row;
 		}
 	}

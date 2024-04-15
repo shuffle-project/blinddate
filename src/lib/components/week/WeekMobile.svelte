@@ -178,8 +178,8 @@
 		.week-figure-wrapper {
 			perspective: 1000px;
 			margin-inline: auto;
-			margin-top: 1.5rem;
-			width: 13.8rem;
+			margin-top: 1.875rem;
+			width: 14rem;
 
 			height: 34rem;
 		}
@@ -189,8 +189,8 @@
 			margin: 0;
 			margin-inline: auto;
 
-			padding: 0.22rem;
-			font-size: 0.88rem;
+			padding: 0.25rem;
+			font-size: 1rem;
 
 			position: absolute;
 			bottom: 0;
@@ -239,8 +239,8 @@
 
 		.week-figure-background {
 			background: var(--color-gradient-persona);
-			width: 13.8rem;
-			border-radius: 2.22rem;
+			width: 14rem;
+			border-radius: 2.5rem;
 			display: flex;
 			justify-content: center;
 		}
@@ -253,14 +253,14 @@
 		.calender {
 			color: rgba(var(--color-white-rgb), 0.8);
 			background-color: var(--color-black);
-			margin: 0px 1.33rem;
-			border-radius: 1.11rem;
+			margin: 0 var(--outer-spacing);
+			border-radius: 1.25rem;
 
 			h3 {
-				padding-left: 1.05rem;
-				padding-top: 0.66rem;
-				color: var(--color-white);
-				margin-bottom: 0.88rem;
+				padding-left: 1rem;
+				padding-top: 0.625rem;
+				color: rgba(var(--color-white-rgb), 0.8);
+				margin-bottom: 1rem;
 			}
 
 			table {
@@ -274,26 +274,27 @@
 					.day {
 						text-align: center;
 						font-weight: 400;
-						font-size: 0.88rem;
+						font-size: 0.875rem;
 					}
 
 					.activity-selection-cell {
 						width: 100%;
 						display: flex;
 						justify-content: center;
-						padding-bottom: 0.55rem;
+						padding-bottom: 0.625rem;
 
 						button {
 							background-color: transparent;
 							color: var(--color-white);
 							border: 1px solid var(--color-border-blue);
-							max-width: 2.5rem;
-							min-width: 2rem;
+							max-width: 3rem;
+							min-width: 2.5rem;
 							aspect-ratio: 1;
 							border-radius: 50%;
-							margin-top: 0.11rem;
+							margin-top: 0.125rem;
 
-							font-size: 1rem;
+							font-size: 1.25rem;
+							font-weight: bold;
 							padding: 0;
 
 							cursor: pointer;
@@ -302,7 +303,6 @@
 								background-color: var(--color-turquoise);
 								border: 1px solid var(--color-black);
 								color: var(--color-black);
-								font-weight: bold;
 							}
 
 							&:hover,
@@ -315,16 +315,16 @@
 
 					.activity {
 						display: flex;
-						gap: 0.55rem;
+						gap: 0.625rem;
 						align-items: center;
 						justify-content: center;
 
 						.activity-text {
 							background-color: var(--color-turquoise);
 							color: var(--color-black);
-							border-radius: 0.22rem;
-							max-width: 12.22rem;
-							padding: 0.22rem 0.55rem;
+							border-radius: 0.25rem;
+							max-width: 13rem;
+							padding: 0.25rem 0.625rem;
 							font-weight: bold;
 
 							word-wrap: break-word;
@@ -341,17 +341,17 @@
 						overflow: hidden;
 
 						border-top: 1px solid var(--color-border-blue);
-						padding: 0.55rem 0.27rem;
+						padding: 0.625rem 0.25rem;
 					}
 				}
 			}
 		}
 
 		.detailed-day {
-			margin: 2rem 1.33rem;
+			margin: 2rem var(--outer-spacing);
 			border: 1px solid var(--color-black);
 			border-top: none;
-			border-radius: 1.11rem;
+			border-radius: 1.25rem;
 			position: relative;
 
 			.week-day-indicator {
@@ -364,7 +364,7 @@
 
 			.header {
 				border: 1px solid var(--color-black);
-				border-radius: 1.11rem 1.11rem 0 0;
+				border-radius: 1.25rem 1.25rem 0 0;
 
 				background-color: var(--color-black);
 				color: var(--color-white);
@@ -373,8 +373,8 @@
 				flex-direction: column;
 				align-items: center;
 
-				padding-top: 1.11rem;
-				padding-bottom: 1.11rem;
+				padding-top: 1.25rem;
+				padding-bottom: 1.25rem;
 
 				.icons {
 					display: flex;
@@ -386,24 +386,11 @@
 			}
 
 			.body {
-				padding: 0.86rem 1rem;
+				padding: 1rem;
 
 				p {
 					margin: 0;
 				}
-			}
-		}
-	}
-
-	@media (min-width: 59.375rem) {
-		.wrapper {
-			margin-inline: 0;
-			.calender {
-				margin: 0px 3.33rem;
-			}
-
-			.detailed-day {
-				margin: 2rem 3.33rem;
 			}
 		}
 	}

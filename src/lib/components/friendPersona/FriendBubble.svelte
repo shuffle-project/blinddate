@@ -36,10 +36,10 @@
 	.container {
 		display: flex;
 		position: relative;
-		margin-bottom: 1rem;
+		margin-bottom: 1.25rem;
 
 		&.with-mobile-card {
-			margin-top: 3rem;
+			margin-top: 3.125rem;
 		}
 	}
 
@@ -52,33 +52,31 @@
 		position: absolute;
 		z-index: 2;
 		right: 2.5rem;
-		top: -1.7rem;
+		top: -1.875rem;
 	}
 
 	.speech-bubble {
-		max-width: 31.04rem;
+		max-width: 35rem;
 
 		position: relative;
-
-		padding-left: 1.33rem;
-		padding-right: 1.33rem;
+		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 
 		.text {
 			margin: 0;
 			position: relative;
 			z-index: 1;
-			padding: 1.11rem 1.66rem;
+			padding: 1.25rem 1.875rem;
 			font-family: var(--font-persona);
 			line-height: 150%;
 			color: var(--color-black);
 			border: 1px solid var(--color-black);
 			background-color: var(--color-orange);
-			border-radius: 0.85rem;
-			box-shadow: 0px 4px 4px rgba(var(--color-black-rgb), 0.1);
+			border-radius: 1.25rem;
 
 			&.with-card {
-				padding: 2rem 1.66rem 1.11rem 1.66rem;
+				padding-top: 1.875rem;
+				// padding: 1.875rem 1.25rem 1.25rem;
 			}
 
 			&::before {
@@ -110,33 +108,33 @@
 			display: block;
 			position: absolute;
 			top: 0;
-			left: 10.5rem;
-			right: -0.85rem;
-			bottom: 0.85rem;
+			left: 11.5rem;
+			right: -1rem;
+			bottom: 1rem;
 
 			border: 1px solid var(--color-black);
-			border-radius: 0.85rem;
+			border-radius: 1.25rem;
 			background-color: var(--color-background-body);
 
 			.speech-bubble-indicator {
 				position: absolute;
 				top: 1rem;
-				right: -1rem;
+				right: -1.125rem;
 			}
 		}
 
 		.speech-bubble {
-			padding-left: 9.375rem;
+			padding-left: 10.625rem;
 			padding-right: 0;
-			padding-top: 0.85rem;
+			padding-top: 1rem;
 			margin: 0;
 			margin-top: 1rem;
 
 			.text {
-				padding: 1.11rem 1.66rem;
+				padding: 1.25rem 1.875rem;
 
 				&.with-card {
-					padding: 1.11rem 1.66rem;
+					padding: 1.25rem 1.875rem;
 				}
 			}
 		}

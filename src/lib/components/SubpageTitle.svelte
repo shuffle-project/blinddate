@@ -1,5 +1,5 @@
 <div class="title-wrapper">
-	<h1 class="responsive"><slot /></h1>
+	<h1><slot /></h1>
 </div>
 
 <style lang="scss">

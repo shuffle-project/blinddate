@@ -214,7 +214,6 @@
 	<div>
 		<SimulationLink
 			image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
-			warningtext="Mobile Geräte werden nicht unterstützt. Die Simulation ist leider nicht barrierefrei, siehe 'Informationen zur Simulation'."
 			pathtext={base + '/iframe/gabriel'}
 			personaID={persona.id}
 		/>

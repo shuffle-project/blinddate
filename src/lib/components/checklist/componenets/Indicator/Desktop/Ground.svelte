@@ -16,10 +16,10 @@
 		position: absolute;
 		left: 2rem;
 		bottom: 0;
-		height: 3.33rem;
-		width: 4.44rem;
+		height: 3.375rem;
+		width: 4rem;
 		border: 1px solid var(--color-black);
-		border-radius: 10px;
+		border-radius: 0.625rem;
 		z-index: 0;
 	}
 </style>

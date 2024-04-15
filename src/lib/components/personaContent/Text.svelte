@@ -13,9 +13,9 @@
 
 	@media (max-width: 59.3125rem) {
 		p {
-			max-width: 31.04rem;
+			max-width: 35rem;
 			margin-inline: auto;
-			padding-inline: 1.33rem;
+			padding-inline: 1.375rem;
 		}
 	}
 </style>

@@ -23,7 +23,7 @@
 
 <style lang="scss">
 	.wrapper {
-		margin-top: 1rem;
+		margin-top: 1.25rem;
 		position: relative;
 		height: 50%;
 
@@ -52,7 +52,7 @@
 		.name-text {
 			font-family: var(--font-serif);
 			color: var(--color-black);
-			font-size: 1.33rem;
+			font-size: 1.5rem;
 			font-weight: bold;
 			position: absolute;
 			display: flex;
