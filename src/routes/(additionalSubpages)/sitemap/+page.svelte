@@ -37,8 +37,8 @@
 
 <style lang="scss">
 	.wrapper {
-		max-width: 31.04rem;
-		padding-inline: 1.33rem;
+		max-width: 35rem;
+		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 
 		h1 {
@@ -46,7 +46,7 @@
 		}
 
 		li {
-			margin: 0.33rem 0rem;
+			margin: 0.375rem 0rem;
 		}
 	}
 </style>

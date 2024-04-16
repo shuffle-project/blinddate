@@ -127,22 +127,22 @@
 
 		.persona-progress-wrapper {
 			background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
-			padding-inline: 2.77rem;
+			padding-inline: var(--outer-spacing);
 
 			.persona-progress {
 				margin-inline: auto;
-				height: clamp(14rem, 28vw + 1rem, 16.66rem);
+				height: clamp(15.75rem, 28vw + 1rem, 18.75rem);
 				width: 100%;
 				max-width: var(--content-max-width);
 				background: linear-gradient(315deg, var(--color-turquoise), var(--color-green));
-				border-radius: 2.22rem;
+				border-radius: 2.5rem;
 
 				display: flex;
 				align-items: center;
 				justify-content: space-around;
 
 				img {
-					height: clamp(12rem, 23vw + 1rem, 15rem);
+					height: clamp(13.5rem, 23vw + 1rem, 16.875rem);
 				}
 			}
 		}
@@ -150,8 +150,8 @@
 		.content-wrapper {
 			background-color: var(--color-background-body);
 
-			max-width: 31.04rem;
-			padding-inline: 1.33rem;
+			max-width: 35rem;
+			padding-inline: var(--outer-spacing);
 			margin-inline: auto;
 		}
 	}
@@ -160,24 +160,16 @@
 		.wrapper {
 			.persona-progress-wrapper {
 				.persona-progress {
-					height: clamp(12rem, 45vw + 1rem, 14rem);
+					height: clamp(13.5rem, 45vw + 1rem, 15.75rem);
 
 					img {
-						height: clamp(10rem, 40vw + 1rem, 12rem);
+						height: clamp(11.25rem, 40vw + 1rem, 13.5rem);
 					}
 					.progress-3,
 					.progress-4 {
 						display: none;
 					}
 				}
-			}
-		}
-	}
-
-	@media (max-width: 59.3125rem) {
-		.wrapper {
-			.persona-progress-wrapper {
-				padding-inline: 1.33rem;
 			}
 		}
 	}

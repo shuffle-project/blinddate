@@ -57,9 +57,9 @@
 	}
 
 	.back-link {
-		margin-left: 0.6rem;
+		margin-left: 0.625rem;
 		border-radius: 1rem;
-		padding: 0.2rem 0.4rem;
+		padding: 0.25rem 0.375rem;
 		color: var(--color-white);
 		text-decoration: none;
 		display: flex;

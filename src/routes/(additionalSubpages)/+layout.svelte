@@ -54,7 +54,7 @@
 			.logo {
 				display: flex;
 				align-items: center;
-				margin: 0 0.4rem;
+				margin: 0 0.375rem;
 
 				.img {
 					height: 2rem;
@@ -73,7 +73,7 @@
 
 	@media (min-width: 59.375rem) {
 		header {
-			padding-inline: 2.77rem;
+			padding-inline: var(--outer-spacing);
 			box-sizing: border-box;
 		}
 		.row,
@@ -88,7 +88,7 @@
 
 	@media (max-width: 59.3125rem) {
 		.row {
-			padding: 1rem;
+			padding: 1rem var(--outer-spacing);
 		}
 	}
 </style>

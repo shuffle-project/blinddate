@@ -359,8 +359,8 @@
 
 <style lang="scss">
 	.wrapper {
-		max-width: 31.04rem;
-		padding-inline: 1.33rem;
+		max-width: 35rem;
+		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 
 		.table-of-contents {
@@ -369,7 +369,7 @@
 		}
 
 		li {
-			margin: 0.55rem 0rem;
+			margin: 0.625rem 0rem;
 		}
 	}
 </style>

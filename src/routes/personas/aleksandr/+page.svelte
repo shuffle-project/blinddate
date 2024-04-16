@@ -441,6 +441,6 @@
 <style lang="scss">
 	.more-info-list {
 		list-style-type: none;
-		margin-left: -2rem;
+		padding: 0;
 	}
 </style>

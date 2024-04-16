@@ -531,7 +531,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		}
 	}
 
-	@media (max-width: 42.25rem) {
+	@media (max-width: 37.75rem) {
 		#video-controls {
 			border-radius: 0;
 		}
@@ -541,7 +541,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		}
 	}
 
-	@media (min-width: 42.3125rem) {
+	@media (min-width: 37.8125rem) {
 		#video-controls {
 			border-radius: 0 0 1.25rem 1.25rem;
 		}
