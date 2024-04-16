@@ -269,6 +269,8 @@
 					margin-block: 0.625rem;
 					box-sizing: border-box;
 
+					text-align: left;
+
 					padding: 0.625rem;
 					cursor: pointer;
 

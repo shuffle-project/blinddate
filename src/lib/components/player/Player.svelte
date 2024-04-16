@@ -314,7 +314,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 		video {
 			width: 100%;
-			max-height: calc(100% - 5.5rem);
+			max-height: calc(100% - 6rem);
 			border-bottom: none;
 			margin-bottom: -1px;
 
@@ -382,12 +382,12 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			}
 			&.fs-medium {
 				&::cue {
-					font-size: 1.3rem;
+					font-size: 1.25rem;
 				}
 			}
 			&.fs-large {
 				&::cue {
-					font-size: 1.9rem;
+					font-size: 1.5rem;
 				}
 			}
 			&.fs-larger {
@@ -406,8 +406,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			box-sizing: border-box;
 			width: 100%;
 
-			padding: 0.5rem;
-			height: 5.5rem;
+			padding: 0.625rem;
+			height: 6rem;
 
 			.volume-slider {
 				cursor: pointer;
@@ -421,16 +421,9 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				cursor: pointer;
 			}
 
-			.playback-rate {
-				font-size: 0.77rem;
-				text-align: center;
-				width: 2rem;
-			}
-
 			button {
-				width: 1.8rem;
-				height: 1.8rem;
-				aspect-ratio: 1;
+				width: 2rem;
+				height: 2rem;
 				padding: 0rem;
 
 				display: flex;
@@ -446,7 +439,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				&:hover,
 				&:focus {
 					outline: 2px solid var(--color-white);
-					outline-offset: 2px;
 				}
 			}
 
@@ -462,7 +454,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				div {
 					flex-basis: calc(100% / 3);
 					display: flex;
-					gap: 5px;
+					gap: 0.25rem;
 					align-items: center;
 				}
 
@@ -477,12 +469,11 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			.row-3 {
 				display: flex;
 				align-items: center;
-				justify-content: center;
-				margin-top: 0.55rem;
+				justify-content: space-between;
+				margin-top: 0.375rem;
 
 				span {
-					width: 33.33333%;
-					font-size: 0.77rem;
+					font-size: 0.75rem;
 
 					&:nth-of-type(2) {
 						text-align: center;
@@ -494,7 +485,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			}
 			&.isSafari {
 				.volume-slider {
-					margin-top: 0.7rem;
+					margin-top: 0.75rem;
 
 					&:disabled {
 						opacity: 50%;
@@ -506,20 +497,18 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					-webkit-appearance: none;
 					width: 100%;
 					outline: none;
-					height: 0.2rem;
+					height: 0.25rem;
 					background-color: var(--color-white);
 					border-radius: 1rem;
-					margin-bottom: 0.8rem;
-
-					// margin-bottom: 0.8rem;
+					margin-bottom: 0.875rem;
 
 					cursor: pointer;
 
 					&::-webkit-slider-thumb {
 						-webkit-appearance: none;
 						appearance: none;
-						height: 1.11rem;
-						width: 1.11rem;
+						height: 1.25rem;
+						width: 1.25rem;
 						border: 1px solid var(--color-black);
 						background-color: var(--color-white);
 						border-radius: 50%;
@@ -527,7 +516,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						&:hover,
 						&:active {
 							outline: 2px solid var(--color-white);
-
 							border: 2px solid var(--color-black);
 						}
 					}
@@ -555,14 +543,14 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 	@media (min-width: 42.3125rem) {
 		#video-controls {
-			border-radius: 0 0 1.11rem 1.11rem;
+			border-radius: 0 0 1.25rem 1.25rem;
 		}
 
 		video {
-			border-radius: 1.11rem 1.11rem 0 0;
+			border-radius: 1.25rem 1.25rem 0 0;
 
 			&.userDeviceIsiOS {
-				border-radius: 1.11rem;
+				border-radius: 1.25rem;
 			}
 		}
 	}

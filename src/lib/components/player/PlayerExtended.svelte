@@ -106,16 +106,16 @@
 		overflow: hidden;
 
 		h3 {
-			max-width: 31.04rem;
-			padding: 0 1.33rem;
+			max-width: 35rem;
+			padding: 0 1.375rem;
 			margin-inline: auto;
 		}
 
 		.buttonslist {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 0.66rem;
-			margin: 0 1.33rem 1rem 1.33rem;
+			gap: 0.625rem;
+			margin: 0 1.375rem 1.25rem 1.375rem;
 
 			button {
 				cursor: pointer;
@@ -125,10 +125,10 @@
 
 				border-radius: 1rem;
 
-				padding: 0.22rem 0.66rem;
+				padding: 0.25rem 0.625rem;
 
 				border: 1px solid var(--color-black);
-				font-size: 0.88rem;
+				font-size: 1rem;
 
 				&:hover,
 				&:focus {
@@ -150,38 +150,38 @@
 
 	@media (max-width: 59.3125rem) {
 		.wrapper {
-			max-width: calc(var(--content-element-max-width) - 1.66rem);
+			max-width: 35rem + (1.375rem * 2);
 			overflow: hidden;
 			margin-inline: auto;
 			padding: 0;
 		}
 
 		.transcript {
-			margin-inline: 1.33rem;
-			padding: 0.33rem;
+			margin-inline: var(--outer-spacing);
+			padding: 0.625rem;
 			border: 1px solid var(--color-black);
-			border-radius: 1.11rem;
+			border-radius: 1.25rem;
 		}
 	}
 	@media (min-width: 59.375rem) {
 		.wrapper {
 			display: flex;
 			flex-direction: column;
-			max-width: calc(var(--content-element-max-width) - 1.66rem);
-			margin: 3.33rem 0 0 1.66rem;
+			max-width: 35rem + (2.875rem * 2);
+			margin: 3.375rem 0 0 1.875rem;
 
 			.buttonslist {
-				margin: 0 1.66rem 1rem 1.66rem;
+				margin: 0 1.5rem 1.25rem 1.5rem;
 			}
 
 			.transcript {
-				padding: 0.33rem 1rem;
+				padding: 0.375rem 1.25rem;
 				border: 1px solid var(--color-black);
-				border-radius: 1.11rem;
+				border-radius: 1.25rem;
 			}
 
 			h3 {
-				margin-left: 1.66rem;
+				margin-left: 1.5rem;
 				padding: 0;
 				margin-top: 0;
 			}

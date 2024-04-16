@@ -105,7 +105,7 @@
 						? term + ' Definition, Dialog schließen'
 						: 'Über ' + friendPersona.name + ', Dialog schließen'}
 				>
-					<Icon svg_color="white" size="medium" img="close" />
+					<Icon svg_color="white" size="big" img="close" />
 				</button>
 			</div>
 		{/if}
@@ -113,7 +113,6 @@
 		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 		<div class="content" tabindex="0">
 			<slot name="content" />
-			<!-- <div style="height: 2rem"></div> -->
 		</div>
 	</div>
 </dialog>
@@ -127,12 +126,12 @@
 	// normal dialog stylesheets
 	dialog {
 		border: none;
-		border-radius: 1.77rem;
+		border-radius: 2.5rem;
 
 		padding: 0;
 
 		box-sizing: border-box;
-		max-inline-size: min(90vw, 44.4rem);
+		max-inline-size: min(90vw, 50rem);
 		max-block-size: min(80vh, 100%);
 		max-block-size: min(80dvb, 100%);
 
@@ -157,27 +156,26 @@
 		}
 
 		.header {
-			padding: 2rem max(1.33rem, 7%) 0;
+			padding: 1.875rem max(1.375rem, 7%) 0;
 			.header-content {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				gap: 1rem;
-				margin-bottom: 0.55rem;
+				gap: 1.25rem;
+				margin-bottom: 0.625rem;
 
 				h2 {
-					font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+					font-size: clamp(1.375rem, 3vw + 0.5rem, 1.75rem);
 					margin: 0;
 				}
 			}
 
 			button {
 				aspect-ratio: 1;
-				min-width: 2rem;
+				min-width: 3.125rem;
 				border-radius: 50%;
 				background-color: var(--color-blue);
-				border: 2px solid var(--color-white);
-				outline: 2px solid var(--color-white);
+				border: none;
 
 				display: flex;
 				align-items: center;
@@ -187,8 +185,8 @@
 
 				&:hover,
 				&:focus {
-					border: 2px solid var(--color-white);
 					outline: 2px solid var(--color-blue);
+					outline-offset: 2px;
 				}
 			}
 		}
@@ -196,8 +194,8 @@
 		.content {
 			overflow-y: auto;
 			max-block-size: 100%; /* safari */
-			padding-inline: max(1.33rem, 7%);
-			padding-bottom: 1rem;
+			padding-inline: max(1.375rem, 7%);
+			padding-bottom: 1.25rem;
 		}
 	}
 
@@ -216,8 +214,8 @@
 
 				button {
 					position: absolute;
-					right: 0.5rem;
-					top: 0.5rem;
+					right: 0.625rem;
+					top: 0.625rem;
 				}
 			}
 
@@ -266,7 +264,7 @@
 	@media (min-width: 23.0625rem) and (max-width: 35rem) {
 		dialog {
 			.header {
-				padding-top: 1rem;
+				padding-top: 1.25rem;
 			}
 		}
 	}
@@ -274,7 +272,7 @@
 	@media (max-width: 23rem) {
 		dialog {
 			.header {
-				padding-top: 0.2rem;
+				padding-top: 0.25rem;
 
 				.header-content {
 					h2 {
