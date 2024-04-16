@@ -285,7 +285,9 @@
 		Sollten Sie auf Fehler stoßen oder dem Entwicklungsteam von BlindDate Rückmeldungen zu den
 		Inhalten oder dem Aufbau der Webseite geben wollen, können Sie dies über folgende E-Mail-Adresse
 		tun:
-		<a href="mailto:egger@hdm-stuttgart.de" class="focus-indicator">egger@hdm-stuttgart.de</a>
+		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
+			>kontakt@barrierefreies-blinddate.de</a
+		>
 	</p>
 	<p>Wir freuen uns auf Ihr Feedback!</p>
 </div>

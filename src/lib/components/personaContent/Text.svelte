@@ -1,10 +1,14 @@
 <script lang="ts">
 	export let noTopMargin = false;
+	export let extraTopMargin = false;
 </script>
 
-<p class:noTopMargin><slot /></p>
+<p class:noTopMargin class:extraTopMargin><slot /></p>
 
 <style lang="scss">
+	.extraTopMargin {
+		margin-top: 2.5rem;
+	}
 	@media (min-width: 59.375rem) {
 		.noTopMargin {
 			margin-top: 0;

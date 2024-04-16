@@ -100,13 +100,9 @@
 						>Erklärung der Barrierefreiheit
 					</a>
 				</li>
-				<li>
-					<a href="#" aria-disabled="true" style="opacity: 60%; cursor: not-allowed"
-						>Barrieren melden
-					</a>
-				</li>
-				<!-- <li><a href="{base}/">Erklärung der Barrierefreiheit </a></li>
-				<li><a href="{base}/">Barrieren melden </a></li> -->
+
+				<!-- <li><a href="{base}/">Erklärung der Barrierefreiheit </a></li>-->
+				<li><a href="{base}/kontakt">Kontakt</a></li>
 				<li><a href="{base}/legal/imprint">Impressum</a></li>
 				<li><a href="{base}/legal/privacy">Datenschutzerklärung</a></li>
 			</ul>

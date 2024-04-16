@@ -99,7 +99,10 @@
 
 		<p>
 			Auch das BlindDate-Team ist nicht unfehlbar: Sollten Ihnen Fehler begegnen oder Sie weitere
-			Anregungen haben, melden Sie sich gerne bei uns (LINK zu Kontakt).
+			Anregungen haben, melden Sie sich gerne bei uns: <a
+				href="{base}/kontakt"
+				class="focus-indicator">Kontakt</a
+			>.
 		</p>
 
 		<Sources

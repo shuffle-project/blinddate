@@ -38,8 +38,7 @@
 	});
 </script>
 
-<div role="separator" aria-label="Anfang der {persona.name} Sprechblase" />
-<div class="wrapper">
+<div class="wrapper" role="region" aria-label="{persona.name} Sprechblase">
 	<div class="mobile-card">
 		<div class="img-wrapper">
 			<div class="img">
@@ -80,7 +79,6 @@
 		<slot />
 	</p>
 </div>
-<div role="separator" aria-label="Ende der {persona.name} Sprechblase" />
 
 <style lang="scss">
 	.wrapper {

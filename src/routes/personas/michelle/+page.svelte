@@ -158,7 +158,7 @@
 	/>
 
 	<TextSection let:Text>
-		<Text>
+		<Text extraTopMargin>
 			Blockveranstaltungen oder Veranstaltungen, die sich über mehrere Stunden am Stück erstrecken,
 			sind mit flexiblem Eingehen auf das aktuelle Befinden kaum vereinbar. Werden Veranstaltungen
 			aufgezeichnet, können Studierende, die die Veranstaltung frühzeitig verlassen mussten oder an
@@ -171,9 +171,22 @@
 		Ja, Morbus Crohn ist körperlich belastend. Aber es geht auch auf die Psyche – ich habe oft Angst
 		einen Schub zu bekommen und dann in einer unangenehmen Situation zu sein. Es stresst mich, wenn
 		ich aus Veranstaltung renne und mich alle anschauen. Dazu kommt ein permanent schlechtes
-		Gewissen, dass ich an einer Veranstaltung nicht teilnehmen kann, nicht genug bei Gruppenarbeiten
-		beitrage und ich immer das Gefühl habe, die anderen denken schlecht von mir.
+		Gewissen, dass ich an einer Veranstaltungen nicht teilnehmen kann, nicht genug bei
+		Gruppenarbeiten beitrage und ich immer das Gefühl habe, die anderen denken schlecht von mir.
 	</SpeechBubble>
+
+	<TextSection let:Text>
+		<Text>
+			Anwesenheitspflichten bei Lehrveranstaltungen sind pro Bundesland und Hochschule
+			unterschiedlich geregelt. Ist Anwesenheit Voraussetzung für das Ablegen einer Prüfung oder das
+			Bestehen einer Veranstaltung, stellt das Studierende mit einer chronischen Erkrankung häufig
+			vor weitere Herausforderungen. Wichtige Arzttermine oder Fehlzeiten aufgrund von
+			Krankheitsschüben machen es Studierenden manchmal unmöglich, diese Präsenztermine einzuhalten.
+			Da Anwesenheitspflichten für viele Studierende eine Barriere darstellen können, sollten diese
+			generell überdacht werden. Zusätzlich können in einem Nachteilsausgleich Regelungen zum Umgang
+			mit Fehlzeiten festgelegt werden.
+		</Text>
+	</TextSection>
 
 	<MainHeading heading="Lernmaterial" />
 
@@ -228,24 +241,6 @@
 				ich deinen gesunden Darm!
 			</PersonaAnswer>
 		</AccordionItem>
-
-		<!-- <AccordionItem id="1" let:PersonaAnswer>
-			<span slot="title">Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</span>
-
-			<PersonaAnswer personaId={persona.id} personaName={persona.name}>
-				Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker stellen,
-				die kommen, wann sie wollen - auch mal mitten auf dem Weg zur Uni. Wenn dann gerade keine
-				öffentliche Toilette in der Nähe ist, hilft auch keine große, körperliche Anstrengung, um
-				etwas zurückzuhalten. Nach so einem "Unfall" habe ich mich eine Zeit lang kaum noch aus dem
-				Haus getraut!
-			</PersonaAnswer>
-		</AccordionItem>
-
-		<AccordionItem id="2">
-			<span slot="title"> Lorem ipsum dolor sit amet, consetetur sadipscing? </span>
-
-			<p>dsaddsad</p>
-		</AccordionItem> -->
 	</Accordion>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
@@ -337,7 +332,7 @@
 		{persona}
 	/>
 
-	<h2 class="main-heading" id="more-info">Weitere Informationen</h2>
+	<MainHeading heading="Weitere Informationen" />
 	<ul class="more-info-list">
 		<li>
 			<Recommendation link="https://www.dccv.de/die-dccv/aktiv-werden/aktiv-bei-studiced/">
@@ -355,6 +350,14 @@
 				<svelte:fragment slot="textAfter"
 					>von der Deutschen Morbus Crohn / Colitis ulcerosa Vereinigung e.V.</svelte:fragment
 				>
+			</Recommendation>
+		</li>
+		<li>
+			<Recommendation link="https://www.youtube.com/watch?v=EJxZfCsCPdU">
+				<svelte:fragment slot="linkText"
+					>Darmkrankheit: May hat seit 11 Jahren Schmerzen | TRU DOKU</svelte:fragment
+				>
+				<svelte:fragment slot="textAfter">ein Video von TRU DOKU</svelte:fragment>
 			</Recommendation>
 		</li>
 	</ul>

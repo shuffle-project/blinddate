@@ -209,9 +209,9 @@
 	</p>
 	<h5>Zusätzliche Dienste</h5>
 	<p>
-		Auf der Unterseite „Barrieren Melden“ wird eine Kontakt- und Kommunikationsfunktion eingebunden.
-		Durch Zusendungen von E-Mails (info@shuffle-projekt.de) durch Nutzende kommt es zu einer
-		Verarbeitung der dort eingegebenen Daten (Name, E-Mail-Adresse, Nachrichteninhalte) beim
+		Auf der Unterseite „Kontakt“ wird eine Kontakt- und Kommunikationsfunktion eingebunden. Durch
+		Zusendungen von E-Mails (info@shuffle-projekt.de) durch Nutzende kommt es zu einer Verarbeitung
+		der dort eingegebenen Daten (Name, E-Mail-Adresse, Nachrichteninhalte) beim
 		Datenverantwortlichen. Diese ist zur Bearbeitung und/oder Beantwortung der Anfrage erforderlich.
 		Eine darüberhinausgehende, d.h. zweckfremde Verarbeitung findet nicht statt.
 	</p>

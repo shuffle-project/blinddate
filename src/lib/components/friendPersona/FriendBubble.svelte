@@ -7,8 +7,12 @@
 	export let hidePersonaCard = false;
 </script>
 
-<div role="separator" aria-label="Anfang der {friendPersona.name} Sprechblase" />
-<div class="container" class:with-mobile-card={!hidePersonaCard}>
+<div
+	class="container"
+	class:with-mobile-card={!hidePersonaCard}
+	role="region"
+	aria-label="{friendPersona.name} Sprechblase"
+>
 	{#if !hidePersonaCard}
 		<div class="card">
 			<FriendPersonaCard {friendPersona} />
@@ -30,7 +34,6 @@
 		</div>
 	</div>
 </div>
-<div role="separator" aria-label="Ende der {friendPersona.name} Sprechblase" />
 
 <style lang="scss">
 	.container {

@@ -38,7 +38,7 @@
 			color: var(--color-black);
 
 			font-weight: bold;
-			font-size: 1rem;
+			font-size: 1.125rem;
 			line-height: 150%;
 
 			padding: 1rem 1rem;
