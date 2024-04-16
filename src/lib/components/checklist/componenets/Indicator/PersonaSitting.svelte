@@ -54,7 +54,7 @@
 		&--mobile {
 			position: absolute;
 			right: 0.75rem;
-			bottom: 3.5rem;
+			bottom: 3.625rem;
 			z-index: 5;
 
 			.img-container {
