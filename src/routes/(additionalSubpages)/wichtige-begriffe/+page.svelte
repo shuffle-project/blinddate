@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
@@ -126,6 +127,21 @@
 	</p>
 
 	<h2 id="personas">4. Personas</h2>
+
+	<p>
+		Die Persona-Methode wurde 1999 von Alan Cooper entwickelt. Ziel dieser Methode ist es, Modelle
+		von Nutzenden, „die Personen einer spezifischen Zielgruppe mit bestimmten Merkmalen
+		charakterisieren“ (Lepzien et al) zu entwickeln, um sich in diese Zielgruppe hineinversetzen und
+		deren Bedürfnisse und Motivationen verstehen zu können. Personas sind also fiktive Personen, die
+		eine bestimmte Gruppe von Menschen repräsentieren.
+	</p>
+
+	<p>
+		Mehr Informationen zu Personas finden Sie hier: <a
+			href="{base}/persona-entwicklung"
+			class="focus-indicator">Die Persona-Entwicklung im Detail</a
+		>
+	</p>
 
 	<h2 id="best3">5. best3 Studie</h2>
 
