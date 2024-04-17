@@ -151,7 +151,8 @@
 					</li>
 					<li>
 						<a href="#tips" on:click={toggleDialog} class="tips-btn btn-with-arrow">
-							<Icon img="light-bulb" size="medium" svg_color="white">Barrierefreiheit umsetzen</Icon
+							<Icon img="light-bulb" size="medium" svg_color="white"
+								>Selbstcheck Barrierefreiheit</Icon
 							>
 							<Icon size="tiny" img="arrow-toright" svg_color="white" />
 						</a>
@@ -307,6 +308,7 @@
 						background-color: var(--color-blue);
 						color: var(--color-white);
 						text-decoration: none;
+						padding-block: 0.25rem;
 					}
 				}
 			}
