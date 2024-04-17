@@ -213,7 +213,7 @@
 		color: var(--color-white);
 
 		.main {
-			font-size: 3rem;
+			font-size: max(2rem, 2.5rem);
 			line-height: 120%;
 		}
 	}
@@ -225,7 +225,7 @@
 		border: 1px solid var(--color-black);
 
 		.main {
-			font-size: 1.625rem;
+			font-size: max(1rem, 1.5rem);
 			line-height: 140%;
 		}
 	}
