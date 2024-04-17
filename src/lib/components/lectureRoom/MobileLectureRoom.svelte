@@ -1,23 +1,65 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import emblaCarouselSvelte, {
-		type EmblaCarouselType,
-		type EmblaOptionsType
-	} from 'embla-carousel-svelte';
-	import Icon from '../Icon.svelte';
 
 	export let personas: Persona[];
 
-	let emblaAPI: EmblaCarouselType;
-	let options: EmblaOptionsType = { loop: true, align: 'center' };
-	let selectedIndex = 0;
+	import { base } from '$app/paths';
+	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
+	import '@splidejs/svelte-splide/css/core';
+	import Icon from '../Icon.svelte';
 
-	let ariaLiveText = '';
+	let carousel: Splide;
+
+	const splideOptions = {
+		type: 'loop',
+		live: false,
+		keyboard: false,
+		i18n: {
+			prev: 'Vorherige Person',
+			next: 'Nächste Person',
+			first: 'Zur ersten Person gehen',
+			last: 'Zur letzten Person gehen',
+			slideX: 'Zur Person %s gehen',
+			pageX: 'Zur Seite %s gehen',
+			carousel: 'Karussell',
+			slide: 'Person',
+			slideLabel: '%s von %s'
+		},
+		pagination: false,
+		arrows: false,
+		speed: 800,
+		drag: 'free' as const,
+		snap: true,
+		flickPower: 450,
+		easing: 'ease'
+	};
+
+	let carouselSelectedIndex: number = 0;
+
 	let componentHasFocus = false;
 
 	$: ariaLiveText =
-		personas[selectedIndex].name + ', ' + (selectedIndex + 1) + ' von ' + personas.length;
+		personas[carouselSelectedIndex].name +
+		', ' +
+		(carouselSelectedIndex + 1) +
+		' von ' +
+		personas.length;
+
+	function moveSlide(direction: string) {
+		if (!carousel) return;
+		componentHasFocus = true;
+		carousel.go(direction);
+		carouselSelectedIndex = carousel.splide.index;
+	}
+
+	function handleMove(index: number | undefined) {
+		if (index !== undefined) carouselSelectedIndex = index;
+	}
+
+	function handleScrolled() {
+		if (!carousel) return;
+		carouselSelectedIndex = carousel.splide.index;
+	}
 
 	function getPersonaEmotion(personaName: string) {
 		switch (personaName) {
@@ -35,42 +77,26 @@
 				return 'neutral';
 		}
 	}
-
-	const onInit = (e: any) => {
-		emblaAPI = e.detail;
-		emblaAPI.on('select', () => {
-			selectedIndex = emblaAPI.internalEngine().index.get();
-		});
-	};
-
-	function scrollPrevious() {
-		if (!emblaAPI) return;
-		componentHasFocus = true;
-		emblaAPI.scrollPrev();
-	}
-
-	function scrollNext() {
-		if (!emblaAPI) return;
-		componentHasFocus = true;
-		emblaAPI.scrollNext();
-	}
 </script>
 
-<div
-	role="navigation"
-	aria-label="Zu den Studierenden"
+<Splide
 	aria-roledescription="Karussell"
-	class="embla"
-	use:emblaCarouselSvelte={{ options }}
-	on:emblaInit={onInit}
+	role="navigation"
+	aria-label="Studierende"
+	options={splideOptions}
+	bind:this={carousel}
+	hasTrack={false}
+	on:moved={(e) => handleMove(e?.detail.index)}
+	on:scrolled={() => handleScrolled()}
 >
-	<div class="embla__container">
-		{#each personas as persona, index (persona.name)}
-			<div class="embla__slide" aria-roledescription="Folie" aria-hidden={selectedIndex !== index}>
+	<SplideTrack>
+		{#each personas as persona, i (persona.id)}
+			<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
 				<a
 					href="{base}/personas/{persona.id}"
 					aria-labelledby="{persona.id}-name"
-					tabindex={selectedIndex !== index ? -1 : 0}
+					tabindex={carouselSelectedIndex !== i ? -1 : 0}
+					class="link-card"
 				>
 					<img
 						src="{base}/personas/{persona.id}/{persona.id}-{getPersonaEmotion(persona.name)}.svg"
@@ -86,141 +112,146 @@
 						<Icon img="clickable" size="medium" />
 					</div>
 				</a>
-			</div>
+			</SplideSlide>
 		{/each}
-	</div>
+	</SplideTrack>
+	<div class="splide__arrows" />
 
-	<div class="embla__buttons">
+	<div class="slider-navigation">
 		<button
-			class="embla__button embla__button--prev"
-			type="button"
-			on:click={() => scrollPrevious()}
-			aria-label="Vorheriger Studi"
 			on:focusout={() => (componentHasFocus = false)}
+			on:click={() => moveSlide('<')}
+			class="previous-button after-card"
+			aria-label="Vorherige Person"
 		>
-			<Icon img="arrow-toleft" svg_color="white" />
+			<Icon img="arrow-toleft" size="parent" svg_color="white" />
 		</button>
-		<!-- <p>{selectedIndex + 1} von {personas.length}</p> -->
-		<p>{`${selectedIndex + 1} von ${personas.length}`}</p>
+
+		<p class="slide-number-info">
+			{carouselSelectedIndex + 1} von {personas.length}
+		</p>
+
 		<button
-			class="embla__button embla__button--next"
-			type="button"
-			on:click={() => scrollNext()}
-			aria-label="Nächster Studi"
 			on:focusout={() => (componentHasFocus = false)}
-		>
-			<Icon img="arrow-toright" svg_color="white" />
+			on:click={() => moveSlide('>')}
+			class="next-button"
+			aria-label="Nächste Person"
+			><Icon img="arrow-toright" size="parent" svg_color="white" />
 		</button>
 	</div>
+</Splide>
 
-	{#if componentHasFocus}
-		<div aria-live="polite" class="sr-only">
-			{#key ariaLiveText}
-				{ariaLiveText}
-			{/key}
-		</div>
-	{/if}
-</div>
+{#if componentHasFocus}
+	<div aria-live="polite" class="sr-only">
+		{#key ariaLiveText}
+			{ariaLiveText}
+		{/key}
+	</div>
+{/if}
 
 <style lang="scss">
-	.embla {
-		overflow: hidden;
-		background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
-	}
+	.link-card {
+		background: var(--color-gradient-persona);
+		border-radius: 2.5rem;
 
-	.embla__container {
+		width: 15.75rem;
+		aspect-ratio: 1/2;
 		display: flex;
-	}
+		justify-content: center;
 
-	.embla__slide {
-		flex: 0 0 100%;
-		min-width: 0;
-		a {
-			background: var(--color-gradient-persona);
-			border-radius: 2.22rem;
+		position: relative;
+		margin-inline: auto;
 
-			width: 14rem;
-			aspect-ratio: 1/2;
-			display: flex;
-			justify-content: center;
+		&:focus-visible {
+			transition: all 0.2s ease-out;
 
-			position: relative;
-			margin-inline: auto;
+			outline-offset: -6px;
+			outline: 2px solid var(--color-blue);
+		}
 
-			&:focus {
-				transition: all 0.2s ease-out;
+		.persona-name {
+			position: absolute;
+			left: -1.626rem;
+			top: 0.625rem;
 
-				outline-offset: -6px;
-				outline: 2px solid var(--color-blue);
-			}
+			background-color: var(--color-white);
+			border-radius: 2rem;
+			padding: 0.25rem 0.625rem;
 
-			.persona-name {
-				position: absolute;
-				left: -1.66rem;
-				top: 0.55rem;
+			color: var(--color-black);
+			font-weight: bold;
+			font-size: 1.25rem;
 
-				background-color: var(--color-white);
-				border-radius: 2rem;
-				padding: 0.22rem 0.55rem;
+			box-shadow: 0 4px 4px rgba(var(--color-black-rgb), 0.15);
+		}
 
-				color: var(--color-black);
-				font-weight: bold;
-				font-size: 1.11rem;
+		.persona-img {
+			height: 90%;
+			max-width: 100%;
 
-				box-shadow: 0 4px 4px rgba(var(--color-black-rgb), 0.15);
-			}
+			position: absolute;
+			bottom: 0.625rem;
+		}
 
-			.persona-img {
-				height: 90%;
-				max-width: 100%;
-
-				position: absolute;
-				bottom: 0.55rem;
-			}
-
-			.clickable-icon {
-				position: absolute;
-				right: 1rem;
-				bottom: 1rem;
-			}
+		.clickable-icon {
+			position: absolute;
+			right: 1.25rem;
+			bottom: 1.25rem;
 		}
 	}
 
-	.embla__buttons {
+	.slider-navigation {
+		max-width: 15.75rem;
+		position: relative;
+		height: 3rem;
+		margin-inline: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1.25rem;
+
+		.slide-number-info {
+			text-align: center;
+			color: var(--color-dark-grey);
+			font-size: 0.875rem;
+			margin-bottom: 0;
+		}
+	}
+
+	.previous-button,
+	.next-button {
+		position: absolute;
+		top: auto;
+		bottom: 0;
+		z-index: 5;
+
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 
-		margin-inline: auto;
-		margin-top: 2rem;
+		height: 3.125rem;
+		width: 3.125rem;
 
-		max-width: 11.66rem;
-		width: 100%;
+		padding: 0.25rem;
 
-		p {
-			color: var(--color-black);
+		cursor: pointer;
+
+		background-color: var(--color-blue);
+		border: none;
+		border-radius: 50%;
+
+		&:focus,
+		&:hover {
+			outline: 2px solid var(--color-blue);
+			outline-offset: 2px;
 		}
+	}
 
-		.embla__button {
-			width: 3rem;
-			height: 3rem;
-			padding: 0;
+	.previous-button {
+		left: 0;
+	}
 
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			border: none;
-			border-radius: 50%;
-			background-color: var(--color-blue);
-
-			cursor: pointer;
-
-			&:hover,
-			&:focus {
-				outline-offset: 2px;
-				outline: 2px solid var(--color-blue);
-			}
-		}
+	.next-button {
+		right: 0;
 	}
 </style>

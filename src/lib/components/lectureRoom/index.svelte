@@ -23,6 +23,10 @@
 		display: none;
 	}
 
+	.mobile {
+		background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
+	}
+
 	@media (min-width: 50rem) {
 		.mobile {
 			display: none;
