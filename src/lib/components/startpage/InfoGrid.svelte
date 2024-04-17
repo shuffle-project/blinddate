@@ -63,7 +63,7 @@
 				elementum tristique ac a vel vitae. Eu porttitor pellentesque dui diam. Habitasse venenatis
 				aliquet volutpat nullam purus.
 			</p>
-			<a href="{base}/" class="focus-indicator">Zu der Vorlesungssaal-Komponente</a>
+			<a href="{base}/" class="focus-indicator">Zum großen Ganzen</a>
 		</div>
 	</div>
 </div>
