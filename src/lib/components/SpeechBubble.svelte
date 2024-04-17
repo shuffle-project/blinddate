@@ -112,7 +112,8 @@
 		.text {
 			margin: 0;
 			position: relative;
-			padding: 1.25rem 1.875rem;
+			padding: 1.25rem 1.375rem;
+
 			font-family: var(--font-persona);
 			line-height: 150%;
 			color: var(--color-black);

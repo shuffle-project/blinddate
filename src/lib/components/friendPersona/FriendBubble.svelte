@@ -69,7 +69,7 @@
 			margin: 0;
 			position: relative;
 			z-index: 1;
-			padding: 1.25rem 1.875rem;
+			padding: 1.25rem 1.375rem;
 			font-family: var(--font-persona);
 			line-height: 150%;
 			color: var(--color-black);
@@ -79,7 +79,6 @@
 
 			&.with-card {
 				padding-top: 1.875rem;
-				// padding: 1.875rem 1.25rem 1.25rem;
 			}
 
 			&::before {
@@ -134,10 +133,8 @@
 			margin-top: 1rem;
 
 			.text {
-				padding: 1.25rem 1.875rem;
-
 				&.with-card {
-					padding: 1.25rem 1.875rem;
+					padding: 1.25rem 1.375rem;
 				}
 			}
 		}

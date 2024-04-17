@@ -33,7 +33,7 @@
 <style lang="scss">
 	@media (min-width: 59.375rem) {
 		.container {
-			margin: 3.375rem 0 0 3.875rem;
+			margin: 3.375rem 0 0 3.375rem;
 		}
 	}
 
