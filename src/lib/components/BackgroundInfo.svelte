@@ -158,4 +158,10 @@
 			}
 		}
 	}
+
+	@media (max-width: 28.75rem) {
+		.card {
+			padding: 1rem 1rem;
+		}
+	}
 </style>

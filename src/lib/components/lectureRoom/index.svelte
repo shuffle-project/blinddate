@@ -5,14 +5,20 @@
 	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 
-<div class="desktop">
-	<DesktopLectureRoom {personas} />
-</div>
-<div class="mobile">
-	<MobileLectureRoom {personas} />
+<div id="lecture-room" class="lecture-room">
+	<div class="desktop">
+		<DesktopLectureRoom {personas} />
+	</div>
+	<div class="mobile">
+		<MobileLectureRoom {personas} />
+	</div>
 </div>
 
 <style lang="scss">
+	.lecture-room {
+		padding-top: 1.25rem;
+	}
+
 	.desktop {
 		display: none;
 	}

@@ -180,7 +180,10 @@
 			background-color: var(--color-black);
 			color: var(--color-white);
 			width: 100%;
+			box-sizing: border-box;
 			padding-block: 1.25rem;
+			padding-inline: var(--outer-spacing);
+
 			.inner {
 				ul {
 					list-style-type: none;

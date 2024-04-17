@@ -76,7 +76,7 @@
 			padding: 0 1.625rem 1.25rem 1.625rem;
 			font-family: var(--font-persona);
 			line-height: 150%;
-			max-width: 20rem;
+			max-width: 18rem;
 			box-sizing: border-box;
 
 			p {
@@ -102,7 +102,7 @@
 			z-index: -1;
 
 			width: 100%;
-			max-width: 20rem;
+			max-width: 18rem;
 			box-sizing: border-box;
 
 			display: flex;
@@ -151,8 +151,8 @@
 
 	.flip-card {
 		background-color: transparent;
-		width: 18.75rem;
-		height: 30rem;
+		width: 18rem;
+		min-height: 28rem;
 		perspective: 1000px;
 		border-radius: 1.25rem;
 		cursor: pointer;

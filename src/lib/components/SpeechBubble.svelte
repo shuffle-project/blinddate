@@ -225,4 +225,12 @@
 			}
 		}
 	}
+
+	@media (max-width: 28.75rem) {
+		.wrapper {
+			.text {
+				padding: 1.625rem 1rem 1rem;
+			}
+		}
+	}
 </style>

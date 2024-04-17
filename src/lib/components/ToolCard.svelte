@@ -40,8 +40,6 @@
 			position: relative;
 			z-index: 2;
 
-			// box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.1);
-
 			p {
 				margin: 0;
 			}
@@ -108,6 +106,14 @@
 						}
 					}
 				}
+			}
+		}
+	}
+
+	@media (max-width: 28.75rem) {
+		.wrapper {
+			.content {
+				padding: 1rem 1rem;
 			}
 		}
 	}

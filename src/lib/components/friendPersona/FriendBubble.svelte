@@ -142,4 +142,14 @@
 			}
 		}
 	}
+
+	@media (max-width: 28.75rem) {
+		.container {
+			.speech-bubble {
+				.text {
+					padding: 1.625rem 1rem 1rem;
+				}
+			}
+		}
+	}
 </style>

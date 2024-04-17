@@ -68,6 +68,7 @@
 <style lang="scss">
 	.wrapper {
 		max-width: 100%;
+		box-sizing: border-box;
 		overflow: hidden;
 		padding-block-start: 1.875rem;
 	}

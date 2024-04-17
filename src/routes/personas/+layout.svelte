@@ -15,7 +15,7 @@
 
 		<div class="row">
 			{#if ENVIRONMENT.backLinkToStartpage}
-				<a href="{base}/" class="back-to-startpage">
+				<a href="{base}/#lecture-room" class="back-to-startpage">
 					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
 				</a>
 			{:else}
