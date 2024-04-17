@@ -37,7 +37,7 @@
 			Wie bereits erwähnt, basieren alle Personas auf BlindDate auf realen Erfahrungen von
 			Studierenden mit Beeinträchtigungen. Um diese Daten zu sammeln, startete das Projekt im
 			Frühjahr 2022 eine große Bedarfsanalyse. Dafür wurden insgesamt 695 Studierende an den vier
-			Standorten des Projekts (<a href="www.shuffle-projekt.de" class="focus-indicator"
+			Standorten des Projekts (<a href="https://shuffle-projekt.de/" class="focus-indicator"
 				>Projektwebseite von SHUFFLE</a
 			> ) mithilfe eines Fragebogens nach ihren (studienerschwerenden) Bedingungen befragt.
 		</p>
@@ -117,7 +117,7 @@
 				},
 				{
 					title: 'SHUFFLE Webseite',
-					url: 'www.shuffle-projekt.de'
+					url: 'https://shuffle-projekt.de/'
 				}
 			]}
 		/>

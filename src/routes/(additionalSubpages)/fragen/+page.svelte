@@ -273,9 +273,7 @@
 	<p>
 		Um weitere Informationen zur Barrierefreiheit von BlindDate zu erhalten, werden Sie hier zur
 
-		<a href="{base}/accessibility-statement" class="focus-indicator"
-			>Erklärung zur Barrierefreiheit</a
-		>
+		<a href="{base}/barrierefreiheit" class="focus-indicator">Erklärung zur Barrierefreiheit</a>
 		weitergeleitet.
 	</p>
 
