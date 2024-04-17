@@ -16,19 +16,21 @@
 </script>
 
 <div class="wrapper">
-	<div class="text-container">
-		<p>
-			{checkedLength} von {length}
-			Tipps werden umgesetzt
-		</p>
-	</div>
+	<div class="content">
+		<div class="text-container">
+			<p>
+				{checkedLength} von {length}
+				Tipps werden umgesetzt
+			</p>
+		</div>
 
-	<ul class="box-container" aria-hidden="true">
-		<PersonaSitting position="mobile" {persona} />
-		{#each allBoxes as box}
-			<li class="box {box == 1 ? 'box__checked' : ''}" />
-		{/each}
-	</ul>
+		<ul class="box-container" aria-hidden="true">
+			<PersonaSitting position="mobile" {persona} />
+			{#each allBoxes as box}
+				<li class="box {box == 1 ? 'box__checked' : ''}" />
+			{/each}
+		</ul>
+	</div>
 </div>
 
 <style lang="scss">
@@ -39,8 +41,12 @@
 	}
 
 	.wrapper {
-		padding: 0 1.33rem;
-		max-width: 26rem;
+		max-width: var(--content-element-max-width);
+	}
+
+	.content {
+		max-width: 28rem;
+		width: 100%;
 		margin-inline: auto;
 	}
 
@@ -51,21 +57,21 @@
 	.box-container {
 		position: relative;
 		background-color: var(--color-black);
-		height: 2.22rem;
-		padding: 0 0.56rem;
-		border-radius: 0.55rem;
+		height: 2.25rem;
+		padding: 0 0.625rem;
+		border-radius: 0.625rem;
 		z-index: 10;
 
 		display: flex;
 		align-items: center;
-		gap: 0.55rem;
+		gap: 0.625rem;
 	}
 
 	.box {
-		height: 1.11rem;
+		height: 1.125rem;
 		width: 100%;
 		border: 1px solid var(--color-green-light);
-		border-radius: 0.277rem;
+		border-radius: 0.375rem;
 
 		&__checked {
 			background: linear-gradient(135deg, var(--color-green-light), var(--color-green));

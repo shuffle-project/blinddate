@@ -69,10 +69,10 @@
 	</p>
 
 	<p>
-		Nicht nur das – von Barrierefreiheit profitieren alle Studierenden. Barrierefreiheit ist für 10%
-		der Studierenden nötig – es geht nicht ohne sie. Für 30% der Studierenden ist sie wichtig – es
-		macht einen großen Unterschied, ob das Studium zugänglich gestaltet ist. Aber für alle
-		Studierende ist Barrierefreiheit ein Gewinn.
+		Nicht nur das – von Barrierefreiheit profitieren alle Studierenden. Man sagt, Barrierefreiheit
+		ist für 10% der Studierenden nötig – es geht nicht ohne sie. Für 30% der Studierenden ist sie
+		wichtig – es macht einen großen Unterschied, ob das Studium zugänglich gestaltet ist. Aber für
+		alle Studierende ist Barrierefreiheit ein Gewinn.
 	</p>
 
 	<p>
@@ -285,15 +285,17 @@
 		Sollten Sie auf Fehler stoßen oder dem Entwicklungsteam von BlindDate Rückmeldungen zu den
 		Inhalten oder dem Aufbau der Webseite geben wollen, können Sie dies über folgende E-Mail-Adresse
 		tun:
-		<a href="mailto:egger@hdm-stuttgart.de" class="focus-indicator">egger@hdm-stuttgart.de</a>
+		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
+			>kontakt@barrierefreies-blinddate.de</a
+		>
 	</p>
 	<p>Wir freuen uns auf Ihr Feedback!</p>
 </div>
 
 <style lang="scss">
 	.wrapper {
-		max-width: 31.04rem;
-		padding-inline: 1.33rem;
+		max-width: 35rem;
+		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 
 		.table-of-contents {
@@ -301,7 +303,7 @@
 			padding: 0;
 
 			li {
-				margin: 0.55rem 0rem;
+				margin: 0.625rem 0rem;
 			}
 		}
 

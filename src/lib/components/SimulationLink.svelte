@@ -3,7 +3,6 @@
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 	export let image: string;
-	export let warningtext: string;
 	export let pathtext: string;
 	export let personaID: string;
 
@@ -23,13 +22,16 @@
 				<p class="hint">Hinweis</p>
 			</div>
 			<p class="warning-text">
-				{warningtext}
+				Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe
+
+				<button class="focus-indicator" on:click={() => toggleModalDisplay()}
+					>Informationen zur Simulation</button
+				>
 			</p>
 
 			<a class="sim-link" href={pathtext}>Zur Simulation</a>
 		</div>
 	</div>
-	<button on:click={() => toggleModalDisplay()}>Informationen zur Simulation</button>
 	<Modal bind:this={modal}>
 		<svelte:fragment slot="headline">Informationen zur Simulation</svelte:fragment>
 		<svelte:fragment slot="content">
@@ -111,40 +113,33 @@
 	}
 
 	.sl-container {
-		max-width: var(--content-element-max-width);
-		margin-top: 2rem;
+		margin: 2.5rem 0 2rem 1.875rem;
 		display: flex;
 		flex-direction: column;
+		align-items: start;
 
 		button {
-			margin: 1rem auto;
-			padding: 0.5rem 1rem;
+			padding: 0;
 
-			border: 2px solid transparent;
-			outline: 2px solid transparent;
-			border-radius: 2rem;
+			border: none;
 
 			background-color: transparent;
 			color: var(--color-blue);
+			display: inline-block;
 
-			font-size: 0.88rem;
+			font-size: 1.125rem;
+			font-weight: bold;
 			cursor: pointer;
-
-			&:hover,
-			&:focus {
-				border: 2px solid transparent;
-				outline: 2px solid var(--color-blue);
-			}
 		}
 	}
 	.sl-content {
 		display: flex;
 		justify-content: left;
-		background: var(--color-gradient-persona);
-		padding: 1rem;
-		border-radius: 1.5rem;
-		margin-left: 3.33rem;
-		margin-right: 3.33rem;
+		background: linear-gradient(160deg, var(--color-turquoise), var(--color-green));
+		padding: 1.25rem;
+		border-radius: 1.25rem;
+		max-width: 35rem;
+		box-sizing: border-box;
 
 		.text-container {
 			display: flex;
@@ -155,7 +150,7 @@
 				margin: 0;
 
 				&.warning-text {
-					margin-bottom: 0.5rem;
+					margin-bottom: 0.625rem;
 				}
 			}
 		}
@@ -169,7 +164,7 @@
 		.hint-container {
 			display: flex;
 			flex-direction: row;
-			gap: 0.5rem;
+			gap: 0.625rem;
 
 			.hint {
 				font-weight: bold;
@@ -177,13 +172,14 @@
 		}
 
 		.sim-link {
-			border-radius: 1.8rem;
+			margin-top: 0.625rem;
+			border-radius: 2rem;
 			background-color: var(--color-blue);
 			color: var(--color-white);
 			text-decoration: none;
 			text-align: center;
 			font-weight: 600;
-			padding: 0.5rem 1rem;
+			padding: 0.625rem 1rem;
 			cursor: pointer;
 			&:hover,
 			&:focus {
@@ -194,19 +190,22 @@
 	}
 
 	@media (max-width: 40.5625rem) {
+		.sl-container {
+			margin-left: 0;
+		}
+
 		.sl-content {
 			flex-direction: column;
 			align-items: center;
-			margin-left: 1.33rem;
-			margin-right: 1.33rem;
+			margin-inline: var(--outer-spacing);
 
 			.sl-img {
 				width: clamp(10rem, 70% + 1rem, 12rem);
 			}
 			.sim-link {
-				padding: 0.5rem 2rem;
-				margin-left: 1rem;
-				margin-right: 1rem;
+				padding: 0.625rem 2rem;
+				margin-inline: 1rem;
+
 				box-sizing: border-box;
 				width: 100%;
 				align-self: center;
@@ -214,7 +213,7 @@
 		}
 	}
 
-	@media (min-width: 40.625rem) and (max-width: 59.375rem) {
+	@media (max-width: 59.375rem) {
 		.sl-container {
 			margin-inline: auto;
 		}

@@ -75,7 +75,7 @@
 	}
 
 	.radio-switch label:last-child {
-		margin-left: -2.12rem;
+		margin-left: -1.625rem;
 		padding-left: 3rem;
 		opacity: 90%;
 
@@ -98,12 +98,12 @@
 	.radio-switch label:first-of-type:after {
 		border: 1px solid var(--color-white);
 		content: '';
-		height: 1rem;
+		height: 1.25rem;
 		overflow: hidden;
 		pointer-events: none;
 		position: absolute;
 		vertical-align: middle;
-		margin-top: 0.5rem;
+		margin-top: 0.375rem;
 	}
 
 	.radio-switch label:first-of-type:before {
@@ -111,24 +111,24 @@
 		border: 1px solid var(--color-white);
 		border-radius: 100%;
 		position: absolute;
-		right: -0.0737rem;
+		right: -0.625rem;
 		transform: translateX(0rem);
 		transition: transform 0.2s ease-in-out;
-		width: 1rem;
+		width: 1.125rem;
 		z-index: 2;
 	}
 
 	.radio-switch label:first-of-type:after {
-		background: var(--color-black);
-		border-radius: 0.51rem;
-		margin: 0 0.98rem;
-		transition: background 0.2s ease-in-out;
-		width: 2rem;
-		margin-top: 0.5rem;
+		border-radius: 1rem;
+		margin: 0 1rem;
+		width: 2.5rem;
+		height: 1.25rem;
+
+		margin-top: 0.375rem;
 	}
 
 	.radio-switch input:first-of-type:checked ~ label:first-of-type:before {
-		transform: translateX(-1rem);
+		transform: translateX(-1.375rem);
 	}
 
 	.radio-switch input:last-of-type:checked ~ label:last-of-type {

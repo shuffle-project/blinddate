@@ -66,7 +66,6 @@
 	<dialog bind:this={dialog} on:keyup={(e) => handleKeyEvent(e)}>
 		<header>
 			<h4>Tempo</h4>
-			<hr />
 		</header>
 		<menu>
 			{#each tempoOptions as tempoOption}
@@ -101,16 +100,14 @@
 	.tempo-btn {
 		background-color: transparent;
 		color: var(--color-white);
-		border: 2px solid transparent;
-		outline: 2px solid transparent;
-
+		border: none;
 		border-radius: 50%;
 		font-weight: bold;
 		font-size: 1rem;
-		height: 1.8rem;
-		width: 1.8rem;
+		height: 2rem;
+		width: 2rem;
 
-		margin-right: 0.5rem;
+		margin-right: 0.25rem;
 		padding: 0;
 
 		display: flex;
@@ -121,7 +118,6 @@
 
 		&:focus,
 		&:hover {
-			border: 2px solid transparent;
 			outline: 2px solid var(--color-white);
 		}
 	}
@@ -129,7 +125,7 @@
 	dialog {
 		width: 6rem;
 		bottom: 0;
-		transform: translateX(-2.2rem) translateY(-2rem);
+		transform: translateX(-2.25rem) translateY(-2.25rem);
 
 		padding: 0;
 
@@ -138,23 +134,15 @@
 
 		header {
 			h4 {
-				font-size: 0.88rem;
-				margin: 0.55rem 0;
+				font-size: 1rem;
+				margin: 0.375rem 0;
 				text-align: center;
-			}
-
-			hr {
-				background-color: var(--color-lavender);
-				border: none;
-				height: 3px;
-				margin: 0;
 			}
 		}
 
-		li {
+		menu {
 			list-style-type: none;
-			margin-left: -2rem;
-			padding-right: 0 0.33rem;
+			padding: 0 0.25rem;
 		}
 
 		button {
@@ -163,23 +151,23 @@
 			display: flex;
 			align-items: center;
 			text-align: left;
-			gap: 0.5rem;
+			gap: 0.375rem;
 
 			width: 100%;
-			min-height: 1.33rem;
-			margin-bottom: 0.33rem;
+			min-height: 1.375rem;
+			margin-bottom: 0.375rem;
 
 			background-color: transparent;
 			border: none;
-			border-radius: 0.33rem;
+			border-radius: 0.375rem;
 
 			&:hover {
 				outline: 2px solid var(--color-blue);
 			}
 
 			.check {
-				height: 1.33rem;
-				width: 1.33rem;
+				height: 1.375rem;
+				width: 1.375rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -188,7 +176,7 @@
 
 		.option {
 			display: flex;
-			font-size: 0.88rem;
+			font-size: 0.875rem;
 		}
 	}
 </style>

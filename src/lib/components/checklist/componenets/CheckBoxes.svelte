@@ -55,15 +55,17 @@
 		display: flex;
 		align-items: center;
 
-		padding: 1.11rem 1.66rem;
+		padding: 1.25rem 1.5rem;
 
 		box-sizing: border-box;
-		margin-top: 0.66rem;
+		margin-top: 0.625rem;
 		margin-inline: auto;
-		max-width: 26rem;
+		max-width: 28rem;
 		width: 100%;
 		border: 1px solid var(--color-lavender);
-		border-radius: 10px;
+		border-radius: 0.625rem;
+
+		font-size: 1.125rem;
 
 		.checkbox {
 			-webkit-appearance: none;
@@ -72,11 +74,11 @@
 
 			margin: 0;
 			margin-right: 1rem;
-			height: 1.11rem;
-			width: 1.11rem;
+			height: 1.25rem;
+			width: 1.25rem;
 			aspect-ratio: 1;
 
-			border-radius: 0.11rem;
+			border-radius: 0.25rem;
 			border: 1px solid var(--color-black);
 
 			cursor: pointer;
@@ -86,8 +88,8 @@
 
 			&:checked:before {
 				content: '';
-				width: 0.8rem;
-				height: 0.8rem;
+				width: 0.875rem;
+				height: 0.875rem;
 				box-shadow: inset 1rem 1rem var(--color-black);
 
 				transform-origin: bottom left;
@@ -100,7 +102,7 @@
 
 			&:focus,
 			&:hover {
-				outline: 3px solid var(--color-blue);
+				outline: 2px solid var(--color-blue);
 				outline-offset: 2px;
 			}
 
@@ -117,7 +119,7 @@
 
 	@media (max-width: 40.5625rem) {
 		ul {
-			margin: 0 1.33rem;
+			margin: 0;
 		}
 
 		.check {

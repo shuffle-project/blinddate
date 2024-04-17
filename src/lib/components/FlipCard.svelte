@@ -67,16 +67,16 @@
 		isolation: isolate;
 		margin-top: 5rem;
 		margin-inline: auto;
-		transform: rotateZ(-5deg) translateY(1rem);
+		transform: rotateZ(-5deg) translateY(1.25rem);
 
 		.speech-bubble {
 			background-color: var(--color-green);
 			border: 1px solid var(--color-black);
-			border-radius: 0.83rem;
-			padding: 0 1.66rem 1.11rem 1.66rem;
+			border-radius: 1.25rem;
+			padding: 0 1.625rem 1.25rem 1.625rem;
 			font-family: var(--font-persona);
 			line-height: 150%;
-			max-width: 17rem;
+			max-width: 18rem;
 			box-sizing: border-box;
 
 			p {
@@ -98,11 +98,11 @@
 
 		.decorative-figure {
 			position: absolute;
-			top: -2.9rem;
+			top: -3rem;
 			z-index: -1;
 
 			width: 100%;
-			max-width: 17rem;
+			max-width: 18rem;
 			box-sizing: border-box;
 
 			display: flex;
@@ -112,9 +112,9 @@
 
 	@media (min-width: 59.375rem) {
 		.wrapper {
-			max-width: calc(var(--content-element-max-width) - 1.66rem);
+			max-width: calc(var(--content-element-max-width) - 3.75rem);
 			width: 100%;
-			margin-left: 1.66rem;
+			margin-left: 1.875rem;
 		}
 
 		.speech-bubble-wrapper {
@@ -129,11 +129,11 @@
 			}
 
 			.decorative-figure {
-				max-width: 15rem;
+				max-width: 16rem;
 			}
 
 			.speech-bubble {
-				max-width: 15rem;
+				max-width: 16rem;
 				p {
 					.name {
 						display: none;
@@ -151,10 +151,10 @@
 
 	.flip-card {
 		background-color: transparent;
-		width: 17rem;
-		height: 27rem;
+		width: 18rem;
+		min-height: 28rem;
 		perspective: 1000px;
-		border-radius: 1.11rem;
+		border-radius: 1.25rem;
 		cursor: pointer;
 
 		&:focus-within,
@@ -190,17 +190,17 @@
 
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
-		border-radius: 1.11rem;
-		box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
+		border-radius: 1.25rem;
+		box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.1);
 
 		display: flex;
 		flex-direction: column;
 		text-align: start;
-		padding: 1.66rem;
+		padding: 1.875rem;
 		box-sizing: border-box;
 
 		.site-info {
-			margin-bottom: 1.11rem;
+			margin-bottom: 1.25rem;
 		}
 
 		.main {
@@ -211,10 +211,9 @@
 	.flip-card-front {
 		background-color: var(--color-black);
 		color: var(--color-white);
-		border: 1px solid var(--color-white);
 
 		.main {
-			font-size: 2.7rem;
+			font-size: max(2rem, 2.5rem);
 			line-height: 120%;
 		}
 	}
@@ -226,7 +225,7 @@
 		border: 1px solid var(--color-black);
 
 		.main {
-			font-size: 1.5rem;
+			font-size: max(1rem, 1.5rem);
 			line-height: 140%;
 		}
 	}

@@ -1,5 +1,5 @@
 <div class="title-wrapper">
-	<h1 class="responsive"><slot /></h1>
+	<h1><slot /></h1>
 </div>
 
 <style lang="scss">
@@ -15,15 +15,15 @@
 			color: var(--color-white);
 			text-align: center;
 
-			padding-inline: 2.77rem;
-		}
-	}
+			padding-inline: var(--outer-spacing);
 
-	@media (max-width: 59.3125rem) {
-		.title-wrapper {
-			h1 {
-				padding-inline: 1.33rem;
-			}
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			overflow-wrap: anywhere;
+
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
 	}
 </style>

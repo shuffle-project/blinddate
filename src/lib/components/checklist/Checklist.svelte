@@ -68,11 +68,27 @@
 <style lang="scss">
 	.wrapper {
 		max-width: 100%;
+		box-sizing: border-box;
 		overflow: hidden;
-		padding-block-start: 2rem;
+		padding-block-start: 1.875rem;
 	}
 	.desktop {
 		display: none;
+	}
+
+	.mobile {
+		max-width: 100vw;
+		box-sizing: content-box;
+		display: block;
+	}
+
+	@media (max-width: 59.3125rem) {
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			margin-inline: auto;
+			padding-inline: 1.875rem;
+		}
 	}
 
 	@media (min-width: 78.375rem) {

@@ -137,7 +137,9 @@
 			{/each}
 			<li>
 				<button on:click={() => modal.toggleModalDisplay()}>
-					<Icon img="settings" />
+					<div class="check">
+						<Icon img="settings" size="parent" />
+					</div>
 					Einstellungen
 				</button>
 			</li>
@@ -236,12 +238,12 @@
 	.hint-wrapper {
 		background-color: var(--color-lavender);
 		padding: 1rem;
-		margin: 1rem;
+		margin-block: 1rem;
 		border-radius: 1rem;
 		.hint {
 			display: flex;
 			flex-direction: row;
-			gap: 0.5rem;
+			gap: 0.625rem;
 
 			p {
 				font-weight: bold;
@@ -261,8 +263,8 @@
 		border-radius: 50%;
 		font-weight: bold;
 		font-size: 1rem;
-		height: 1.8rem;
-		width: 1.8rem;
+		height: 2rem;
+		width: 2rem;
 		cursor: pointer;
 
 		display: flex;
@@ -277,8 +279,8 @@
 	}
 
 	.caption-menu {
-		width: 10rem;
-		padding: 0 0.33rem;
+		width: 12rem;
+		padding: 0 0.375rem;
 		box-sizing: border-box;
 
 		border: 1px solid var(--color-black);
@@ -286,11 +288,11 @@
 
 		bottom: 0;
 
-		transform: translateX(-4rem) translateY(-2rem);
+		transform: translateX(-5rem) translateY(-2.25rem);
 
-		li {
-			list-style: none;
-			margin-left: -2rem;
+		menu {
+			list-style-type: none;
+			padding: 0 0.25rem;
 		}
 		button {
 			cursor: pointer;
@@ -298,23 +300,25 @@
 			display: flex;
 			align-items: center;
 			text-align: left;
-			gap: 0.5rem;
+			gap: 0.375rem;
 
 			width: 100%;
-			min-height: 1.33rem;
-			margin-bottom: 0.33rem;
+			min-height: 1.375rem;
+			margin-bottom: 0.375rem;
+
+			font-size: 0.875rem;
 
 			background-color: transparent;
 			border: none;
-			border-radius: 0.33rem;
+			border-radius: 0.375rem;
 
 			&:hover {
 				outline: 2px solid var(--color-blue);
 			}
 
 			.check {
-				height: 1.33rem;
-				width: 1.33rem;
+				min-height: 1.375rem;
+				min-width: 1.375rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -329,22 +333,22 @@
 			tr {
 				width: 100%;
 				td {
-					padding: 0.5rem 0;
+					padding: 0.625rem 0;
 				}
 
 				td:first-child {
 					text-align: right;
 				}
 				td:last-child {
-					padding-left: 10px;
+					padding-left: 0.625rem;
 					select {
-						min-width: 5rem;
+						min-width: 6rem;
 
-						padding: 0.3rem;
+						padding: 0.375rem;
 						background-color: var(--color-white);
 						border: 1px solid var(--color-black);
 						outline: 2px solid var(--color-white);
-						border-radius: 0.33rem;
+						border-radius: 0.375rem;
 						font-weight: bold;
 
 						&:focus,
@@ -368,10 +372,10 @@
 			font-size: 1rem;
 		}
 		.example-medium {
-			font-size: 1.3rem;
+			font-size: 1.25rem;
 		}
 		.example-large {
-			font-size: 1.9rem;
+			font-size: 1.5rem;
 		}
 		.example-larger {
 			font-size: 2rem;

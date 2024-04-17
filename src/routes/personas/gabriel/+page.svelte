@@ -214,7 +214,6 @@
 	<div>
 		<SimulationLink
 			image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
-			warningtext="Mobile Geräte werden nicht unterstützt. Die Simulation ist leider nicht barrierefrei, siehe 'Informationen zur Simulation'."
 			pathtext={base + '/iframe/gabriel'}
 			personaID={persona.id}
 		/>
@@ -412,9 +411,9 @@
 
 	.user-test {
 		background-color: var(--color-black);
-		border-radius: 0.85rem;
+		border-radius: 1.25rem;
 		padding: 1rem;
-		margin: 2rem 0 0 3.33rem;
+		margin: 2rem 0 0 3.375rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -422,7 +421,7 @@
 
 	@media (max-width: 59.3125rem) {
 		.user-test {
-			margin: 2rem 1.33rem;
+			margin: 2rem 1.375rem;
 		}
 	}
 </style>

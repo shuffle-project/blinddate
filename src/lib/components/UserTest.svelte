@@ -35,9 +35,14 @@
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/434893?lang=de';
 		} else if (url.includes('kilian')) {
 			persona = 'Kilian';
-			linkToPersonaQuestionnaire = '	https://survey.hdm-stuttgart.de/756155?lang=de';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/756155?lang=de';
 			malePersona = true;
 			disability = 'Mobilitätseinschränkung';
+		} else if (url.includes('michelle')) {
+			persona = 'Michelle';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/426726?lang=de';
+			malePersona = false;
+			disability = 'chronischen Erkrankung';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';
@@ -125,10 +130,10 @@
 					</p>
 				{/if}
 			</div>
-			<div class="call-for-action">
+			<strong>
 				Bitte teilen Sie uns Ihre Gedanken und Rückmeldungen mit und nutzen die Links zur Umfrage am
 				Anfang oder am Ende der Seite.
-			</div>
+			</strong>
 			<p class="signature">Das <span lang="en">SHUFFLE</span>-BlindDate-Team</p>
 			<p class="shuffle-url">www.shuffle-projekt.de</p>
 		</svelte:fragment>
@@ -136,10 +141,6 @@
 {/if}
 
 <style lang="scss">
-	.call-for-action {
-		font-weight: bold;
-	}
-
 	.signature {
 		margin-bottom: 0;
 	}
@@ -147,7 +148,7 @@
 	.shuffle-url {
 		margin: 0;
 		padding: 0;
-		font-size: 0.88rem;
+		font-size: 1rem;
 		font-style: italic;
 	}
 	.hint-wrapper {
@@ -158,7 +159,7 @@
 		.hint {
 			display: flex;
 			flex-direction: row;
-			gap: 0.5rem;
+			gap: 0.625rem;
 
 			p {
 				font-weight: bold;
@@ -171,24 +172,23 @@
 	}
 
 	.wrapper {
-		max-width: 11.5rem;
+		max-width: 13.125rem;
 
 		button {
-			font-size: 0.88rem;
-			// padding: 0.33rem 0;
+			font-size: 1rem;
 			display: block;
 			width: 100%;
-			padding: 0.33rem 0.5rem;
+			padding: 0.375rem 0.625rem;
 			background-color: var(--color-black);
 			color: var(--color-white);
 			border: 2px solid transparent;
-			border-radius: 0.33rem;
+			border-radius: 0.375rem;
 			outline: none;
 			text-decoration: underline;
 
 			cursor: pointer;
 
-			margin-bottom: 0.2rem;
+			margin-bottom: 0.25rem;
 
 			&:hover,
 			&:focus {
@@ -203,30 +203,27 @@
 
 		p {
 			color: var(--color-white);
-			font-size: 0.88rem;
+			font-size: 1rem;
 			text-align: center;
 			margin: 0;
-			margin-bottom: 0.33rem;
+			margin-bottom: 0.375rem;
 		}
 
 		a {
 			background-color: var(--color-light-blue);
 			color: var(--color-black);
-			font-size: 1.22rem;
+			font-size: 1.25rem;
 			font-weight: bold;
 			text-decoration: none;
-			padding: 0.4rem 0;
+			padding: 0.375rem 0;
 			display: block;
 			text-align: center;
-			border-radius: 0.33rem;
-
-			outline: 2px solid transparent;
-			border: 2px solid transparent;
+			border-radius: 0.375rem;
 
 			&:hover,
 			&:focus {
-				border: 2px solid var(--color-black);
 				outline: 2px solid var(--color-light-blue);
+				outline-offset: 2px;
 			}
 		}
 	}

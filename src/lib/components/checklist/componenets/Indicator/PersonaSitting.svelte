@@ -27,7 +27,7 @@
 				img {
 					// TODO: Probably needs to be persona specific
 					position: absolute;
-					top: -7.6rem;
+					top: -8.5rem;
 					left: -4rem;
 				}
 
@@ -54,7 +54,7 @@
 		&--mobile {
 			position: absolute;
 			right: 0.75rem;
-			bottom: 3.5rem;
+			bottom: 3.625rem;
 			z-index: 5;
 
 			.img-container {

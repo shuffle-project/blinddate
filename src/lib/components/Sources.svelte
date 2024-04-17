@@ -15,8 +15,10 @@
 		{#each sources as source}
 			{#if source.url}
 				<li class="source">
-					<a class="source__link text-size focus-indicator" href={source.url}
-					lang={source.titleLang} 
+					<a
+						class="source__link text-size focus-indicator"
+						href={source.url}
+						lang={source.titleLang}
 					>
 						{source.title}
 					</a>
@@ -40,22 +42,22 @@
 	}
 
 	.text-size {
-		font-size: 0.88rem;
-		line-height: 1.144rem;
+		font-size: 1rem;
+		line-height: 130%;
 	}
 
 	.source-container {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		margin: 0.83rem 0 0;
+		margin: 1rem 0 0;
 		z-index: 100;
 	}
 
 	.sources {
 		width: 100%;
 		padding: 0;
-		margin-top: 0.67rem;
+		margin-top: 0.625rem;
 	}
 
 	.source {

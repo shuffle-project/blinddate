@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
 	import Icon from '../Icon.svelte';
 	import PersonaAnswer from './PersonaAnswer.svelte';
 
@@ -21,30 +20,29 @@
 			<Icon img="arrow-toright" />
 		</div>
 	</summary>
-	{#if open}
-		<div transition:slide={{ duration: 400 }} class="answer-wrapper">
-			<slot {PersonaAnswer} />
-		</div>
-	{/if}
+
+	<div class="answer-wrapper">
+		<slot {PersonaAnswer} />
+	</div>
 </details>
 
 <style lang="scss">
 	details {
 		background-color: var(--color-white);
-		border-radius: 0.85rem;
+		border-radius: 1rem;
 		border: 1px solid var(--color-lavender);
-		box-shadow: 0px 6px 10px rgba(var(--color-black-rgb), 0.15);
+		box-shadow: 0px 6px 8px rgba(var(--color-black-rgb), 0.1);
 
 		summary {
 			background-color: var(--color-white);
 			color: var(--color-black);
 
 			font-weight: bold;
-			font-size: 1rem;
+			font-size: 1.125rem;
 			line-height: 150%;
 
 			padding: 1rem 1rem;
-			border-radius: 0.85rem;
+			border-radius: 1rem;
 
 			height: 100%;
 			cursor: pointer;
@@ -52,7 +50,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			gap: 0.5rem;
+			gap: 0.625rem;
 
 			text-align: left;
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Persona } from '../interfaces/persona.interfaces';
-	import Card from './Card.svelte';
+	import PersonaCard from './PersonaCard.svelte';
 	export let persona: Persona;
 </script>
 
@@ -22,7 +22,7 @@
 			</section>
 		</div>
 		<div class="persona-card">
-			<Card {persona} />
+			<PersonaCard {persona} />
 		</div>
 		<div class="general-info">
 			<h2 id="about-me" class="main-heading">Über mich</h2>
@@ -59,36 +59,37 @@
 	.wrapper {
 		color: var(--color-white);
 		max-width: 100%;
-		padding: 0 1.33rem;
+		padding: 0 var(--outer-spacing);
 
 		.header-row {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			padding-block: 2.33rem;
+			padding-block: 2.5rem;
 
 			.heading-section {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				margin-bottom: 1.11rem;
+				margin-bottom: 1.25rem;
 
 				.heading {
-					margin: 1rem 0 0.55rem 0;
+					margin: 1rem 0 0.625rem 0;
 					display: inline-block;
 					line-height: 100%;
 				}
 
 				.subheading {
 					margin: 0;
-					color: rgba(var(--color-white-rgb), 0.75);
-					font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+					color: rgba(var(--color-white-rgb), 0.8);
+					font-size: clamp(1.375rem, 3vw + 0.5rem, 1.75rem);
 					text-align: center;
 				}
 			}
 
 			.tags {
-				margin-bottom: 1rem;
+				margin-bottom: 1.25rem;
+
 				ul {
 					display: flex;
 					flex-wrap: wrap;
@@ -98,48 +99,48 @@
 				.chip {
 					display: flex;
 					align-items: center;
-					color: rgba(var(--color-white-rgb), 0.75);
+					color: rgba(var(--color-white-rgb), 0.8);
 					background-color: var(--color-black);
 					border: 1px solid rgba(var(--color-white-rgb), 0.5);
 
-					border-radius: 2.77rem;
-					min-height: 1.66rem;
-					font-size: 0.88rem;
-					padding: 0.22rem 0.66rem;
+					border-radius: 2rem;
+					min-height: 1.75rem;
+					font-size: 1rem;
+					padding: 0.25rem 0.625rem;
 					text-align: center;
 				}
 			}
 		}
 		.general-info {
-			margin-top: 3.88rem;
+			margin-top: 5rem;
 			color: var(--color-black);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			max-width: 22.2rem;
+			max-width: 25rem;
 			margin-inline: auto;
 
 			h2 {
 				margin: 0;
-				padding-top: 1.55rem;
+				padding-top: 1.75rem;
 			}
 
 			dl {
 				display: grid;
 				grid-template-columns: max-content auto;
+				font-size: 1.125rem;
 
 				dt {
 					grid-column-start: 1;
 					font-weight: bold;
 					border-inline-end: 1px solid var(--color-black);
-					padding-inline-end: 1.22rem;
+					padding-inline-end: 1.25rem;
 					text-align: right;
 				}
 
 				dd {
 					grid-column-start: 2;
-					font-weight: 300;
-					margin-inline-start: 1.22rem;
+					margin-inline-start: 1.25rem;
 					&:not(:last-of-type) {
 						padding-block-end: 0.83rem;
 					}
@@ -151,7 +152,7 @@
 	@media (max-width: 24.25rem) {
 		.tags {
 			.chip {
-				max-width: 12rem;
+				max-width: 13.5rem;
 			}
 		}
 	}
@@ -164,7 +165,7 @@
 			}
 
 			.chip {
-				margin: 0.33rem;
+				margin: 0.375rem;
 			}
 		}
 	}
@@ -183,15 +184,13 @@
 				justify-content: right;
 			}
 			.chip {
-				margin: 0.33rem 0 0.33rem 0.66rem;
+				margin: 0.375rem 0 0.375rem 0.625rem;
 			}
 		}
 
 		.wrapper {
-			padding-left: 2.77rem;
-			padding-right: 2.77rem;
-			margin-left: auto;
-			margin-right: auto;
+			padding-inline: var(--outer-spacing);
+			margin-inline: auto;
 			padding-bottom: 2rem;
 
 			max-width: var(--content-max-width);
@@ -207,19 +206,20 @@
 			}
 
 			.general-info {
-				color: var(--color-white);
-				margin-left: 22.79635%;
-				padding-left: 3.33rem;
+				margin-left: 25%;
+				padding-left: 2.75rem;
 				display: block;
 				margin-top: 0rem;
 				max-width: 100%;
 
 				h2 {
-					padding-bottom: 0.66rem;
+					padding-bottom: 0.625rem;
+					color: var(--color-white);
 				}
 
 				dl {
-					padding-top: 0.66rem;
+					color: rgba(var(--color-white-rgb), 0.8);
+					padding-top: 0.625rem;
 
 					dt {
 						border-inline-end: 1px solid rgba(var(--color-white-rgb), 0.5);
@@ -229,11 +229,11 @@
 
 			.header-row {
 				flex-direction: row;
-				padding-top: 2.33rem;
-				padding-bottom: 4.44rem;
+				padding-top: 2.5rem;
+				padding-bottom: 4.5rem;
 
 				.tags {
-					max-width: 23rem;
+					max-width: 25rem;
 					justify-content: flex-start;
 					align-items: flex-start;
 					align-content: flex-start;

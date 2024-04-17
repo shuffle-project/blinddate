@@ -50,11 +50,11 @@
 						<td aria-hidden="true" class="smiley-date-cell">
 							{#if day.smiley === 'sad'}
 								<div class="smiley">
-									<Icon size="smedium" img="sad" svg_color="green" />
+									<Icon size="medium" img="sad" svg_color="green" />
 								</div>
 							{:else}
 								<div class="smiley">
-									<Icon size="smedium" img="happy" svg_color="green" />
+									<Icon size="medium" img="happy" svg_color="green" />
 								</div>
 							{/if}
 
@@ -102,7 +102,7 @@
 				aria-hidden="true"
 			/>
 			<div class="header">
-				<Icon size="smedium" img="happy" svg_color="green" />
+				<Icon size="medium" img="happy" svg_color="green" />
 				<Switch
 					option1="happy"
 					option1Label="Guter Tag"
@@ -110,7 +110,7 @@
 					option2Label="Schlechter Tag"
 					bind:value={days[detailedDay].smiley}
 				/>
-				<Icon size="smedium" img="sad" svg_color="green" />
+				<Icon size="medium" img="sad" svg_color="green" />
 			</div>
 			<div class="body">
 				<p>
@@ -180,16 +180,16 @@
 			perspective: 1000px;
 			margin-top: 1.5rem;
 			margin-inline: auto;
-			width: 13.8rem;
-			height: 34rem;
+			width: 15.625rem;
+			height: 38.5rem;
 		}
 
 		.week-figure-text {
 			text-align: center;
 			margin: 0 auto;
 
-			padding: 0.22rem;
-			font-size: 0.88rem;
+			padding: 0.25rem;
+			font-size: 1rem;
 
 			position: absolute;
 			inset: auto 0 0 0;
@@ -218,7 +218,7 @@
 
 		.week-figure {
 			height: 100%;
-			max-height: 28rem;
+			max-height: 32rem;
 			z-index: 2;
 
 			transform: translateY(5%);
@@ -234,8 +234,8 @@
 
 		.week-figure-background {
 			background: var(--color-gradient-persona);
-			width: 13.8rem;
-			border-radius: 2.22rem;
+			width: 15.625rem;
+			border-radius: 2.5rem;
 			display: flex;
 			justify-content: center;
 		}
@@ -248,13 +248,13 @@
 		.calender {
 			color: rgba(var(--color-white-rgb), 0.8);
 			background-color: var(--color-black);
-			margin-inline: 1.33rem;
-			border-radius: 1.11rem;
+			margin-inline: var(--outer-spacing);
+			border-radius: 1.25rem;
 
 			h3 {
-				padding-left: 1.05rem;
-				padding-top: 0.66rem;
-				color: var(--color-white);
+				padding-left: 1rem;
+				padding-top: 0.625rem;
+				color: rgba(var(--color-white-rgb), 0.8);
 			}
 
 			table {
@@ -268,11 +268,12 @@
 
 					th,
 					td {
-						padding: 0.27rem 0.5rem 0.27rem 0.5rem;
+						padding: 0.25rem 0.375rem;
 					}
 
 					.day {
 						text-align: right;
+						font-weight: 400;
 					}
 
 					.smiley-date-cell {
@@ -280,6 +281,7 @@
 						border-right: 1px solid var(--color-border-blue);
 						text-align: right;
 						color: rgba(var(--color-white-rgb), 0.8);
+						font-weight: 400;
 
 						&:last-child {
 							border-right: none;
@@ -292,8 +294,8 @@
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							left: 50%;
-							transform: translateX(-0.67rem);
+							margin-inline: auto;
+							inset: 0;
 						}
 					}
 
@@ -306,11 +308,12 @@
 					}
 
 					.activity {
-						margin-bottom: 0.27rem;
+						margin-bottom: 0.25rem;
 						color: var(--color-black);
 						background-color: var(--color-turquoise);
-						border-radius: 5px;
-						font-size: 0.88rem;
+						border-radius: 0.375rem;
+						font-size: 1rem;
+						font-weight: 500;
 						width: 100%;
 						border: none;
 
@@ -326,11 +329,7 @@
 						-moz-hyphens: auto;
 						hyphens: auto;
 
-						padding: 6px;
-
-						&.active {
-							text-decoration: underline;
-						}
+						padding: 0.375rem;
 
 						&:focus,
 						&:hover {
@@ -345,10 +344,11 @@
 		}
 
 		.detailed-day {
-			margin: 2rem 1.33rem;
+			margin: 2rem var(--outer-spacing);
+
 			border: 1px solid var(--color-black);
 			border-top: none;
-			border-radius: 1.11rem;
+			border-radius: 1.25rem;
 			position: relative;
 
 			.week-day-indicator {
@@ -359,19 +359,17 @@
 
 			.header {
 				border: 1px solid var(--color-black);
-				border-radius: 1.11rem 1.11rem 0 0;
+				border-radius: 1.25rem 1.25rem 0 0;
 
 				background-color: var(--color-black);
 				color: var(--color-white);
 				display: flex;
-				gap: 0.55rem;
-				padding-top: 1.52rem;
-				padding-left: 1.93rem;
-				padding-bottom: 1.08rem;
+				gap: 0.375rem;
+				padding: 1.25rem 0 1rem 1rem;
 			}
 
 			.body {
-				padding: 0.86rem 1.11rem;
+				padding: 1rem;
 
 				p {
 					margin: 0;
@@ -384,11 +382,11 @@
 		.wrapper {
 			margin-inline: 0;
 			.calender {
-				margin: 0px 3.33rem;
+				margin: 0px 3.375rem;
 			}
 
 			.detailed-day {
-				margin: 2rem 3.33rem;
+				margin: 2rem 3.375rem;
 			}
 		}
 	}

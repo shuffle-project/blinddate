@@ -1,7 +1,7 @@
 html,
 body {
 	font-family: var(--font-sans-serif);
-	font-size: 18px;
+	font-size: 16px;
 	background-color: var(--color-background-body);
 	margin: 0;
 	scrollbar-gutter: stable;
@@ -12,32 +12,40 @@ body {
 }
 
 html {
-	scroll-behavior: smooth;
+	// scroll-behavior: smooth;
 	background-color: rgba(rgb(106, 111, 117), 0.92);
 }
 
 h1 {
-	font-size: 3.7rem;
+	font-size: clamp(2.75rem, 7vw + 0.5rem, 4.125rem);
 	font-weight: 700;
 	line-height: 150%;
 	letter-spacing: -0.01em;
-
-	&.responsive {
-		font-size: clamp(2.5rem, 7vw + 0.5rem, 3.7rem);
-	}
 }
 
 h2 {
-	font-size: clamp(1.94rem, 5vw + 0.5rem, 2.5rem);
+	font-size: clamp(2.125rem, 5vw + 0.5rem, 2.75rem);
 	font-weight: 700;
 	line-height: 150%;
 	letter-spacing: -0.01em;
 }
 
 h3 {
-	font-size: clamp(1.22rem, 3vw + 0.5rem, 1.5rem);
+	font-size: clamp(1.375rem, 3vw + 0.5rem, 1.75rem);
 	font-weight: 700;
 	line-height: 150%;
+}
+
+h4 {
+	font-size: 1.375rem;
+}
+
+h5 {
+	font-size: 1.125rem;
+}
+
+li {
+	font-size: 1.125rem;
 }
 
 .subtitle {
@@ -45,23 +53,12 @@ h3 {
 	line-height: 150%;
 }
 
+strong,
 p,
 .toolcard-span {
-	font-size: 1rem;
-	font-weight: 400;
+	font-size: 1.125rem;
 	line-height: 155%;
 	letter-spacing: 0.005em;
-}
-
-.like-p {
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 150%;
-	letter-spacing: 0.005em;
-}
-
-.bold {
-	font-weight: 700;
 }
 
 a {
@@ -81,15 +78,17 @@ a {
 
 a,
 button {
+	font-size: 1.125rem;
+
 	&.focus-indicator {
-		border-radius: 0.33rem;
+		border-radius: 0.375rem;
 		cursor: pointer;
 		padding: 0;
 		border: none;
 
 		text-decoration: underline;
 		text-decoration-color: var(--color-blue);
-		text-underline-offset: 0.1rem;
+		text-underline-offset: 0.125rem;
 		text-decoration-thickness: 2px;
 		text-decoration-skip-ink: auto;
 		transition: text-decoration-thickness 0.2s ease;
@@ -100,7 +99,7 @@ button {
 			text-decoration-skip-ink: none;
 		}
 
-		&:focus {
+		&:focus-visible {
 			outline: 2px solid var(--color-blue);
 		}
 	}
@@ -109,11 +108,11 @@ button {
 .back-to-startpage {
 	border-radius: 1rem;
 	display: flex;
-	padding: 0.2rem 0.4rem;
+	padding: 0.25rem 0.375rem;
 	cursor: pointer;
 	color: var(--color-white);
 	text-decoration: none;
-	font-size: 0.88rem;
+	font-size: 1rem;
 
 	&:hover,
 	&:focus {

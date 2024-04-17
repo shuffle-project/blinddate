@@ -54,28 +54,28 @@
 
 		// SIZE ICON
 		.icon-tiny {
-			width: 0.88rem;
-			height: 0.88rem;
+			width: 1rem;
+			height: 1rem;
 		}
 
 		.icon-small {
-			width: 1.11rem;
-			height: 1.11rem;
+			width: 1.125rem;
+			height: 1.125rem;
 		}
 
 		.icon-smedium {
-			width: 1.33rem;
-			height: 1.33rem;
+			width: 1.375rem;
+			height: 1.375rem;
 		}
 
 		.icon-medium {
-			width: 1.66rem;
-			height: 1.66rem;
+			width: 1.5rem;
+			height: 1.5rem;
 		}
 
 		.icon-big {
-			width: 1.99rem;
-			height: 1.99rem;
+			width: 1.875rem;
+			height: 1.875em;
 		}
 
 		.icon-parent {
@@ -85,18 +85,18 @@
 
 		// SIZE TEXT
 		.text-small {
-			padding-left: 0.66rem;
-			font-size: 0.88rem;
-		}
-
-		.text-medium {
-			padding-left: 0.66rem;
+			padding-left: 0.625rem;
 			font-size: 1rem;
 		}
 
+		.text-medium {
+			padding-left: 0.625rem;
+			font-size: 1.125rem;
+		}
+
 		.text-big {
-			padding-left: 0.66rem;
-			font-size: 1.11rem;
+			padding-left: 0.625rem;
+			font-size: 1.25rem;
 		}
 	}
 </style>

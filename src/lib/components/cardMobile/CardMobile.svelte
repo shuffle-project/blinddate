@@ -54,7 +54,7 @@
 	.mobile-card {
 		margin-inline: auto;
 		z-index: 15;
-		padding-top: 0.5rem;
+		padding-top: 0.625rem;
 		margin-top: 4rem;
 		width: 100%;
 
@@ -63,7 +63,7 @@
 
 			// necessary for the intersection observer to work
 			top: -1px;
-			padding-top: calc(0.5rem);
+			padding-top: 0.625rem;
 		}
 	}
 
@@ -71,7 +71,7 @@
 		position: relative;
 		margin-inline: auto;
 		display: flex;
-		gap: 0.83rem;
+		gap: 1rem;
 
 		display: flex;
 		align-items: center;
@@ -79,7 +79,7 @@
 		transform: translateY(-1.5rem);
 		margin-bottom: 4rem;
 
-		padding: 2rem 1.33rem 1rem 1.33rem;
+		padding: 2rem 1.375rem 1rem 1.375rem;
 
 		border: 1px solid var(--color-black);
 		border-radius: 1rem;
@@ -95,11 +95,11 @@
 
 			margin: 0;
 
-			height: 1.33rem;
-			width: 1.33rem;
+			height: 1.375rem;
+			width: 1.375rem;
 			aspect-ratio: 1;
 
-			border-radius: 0.33rem;
+			border-radius: 0.375rem;
 			border: 2px solid var(--color-black);
 
 			cursor: pointer;

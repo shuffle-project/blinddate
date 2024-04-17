@@ -1,8 +1,8 @@
 <script lang="ts">
 	import AboutMe from '$lib/components/AboutMe.svelte';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import Card from '../Card.svelte';
 	import MetaTags from '../MetaTags.svelte';
+	import PersonaCard from '../PersonaCard.svelte';
 	import CardMobile from '../cardMobile/CardMobile.svelte';
 	import MainHeading from './MainHeading.svelte';
 	import TextSection from './TextSection.svelte';
@@ -17,7 +17,7 @@
 	<div class="columns-wrapper">
 		<div class="card-column">
 			<div class="hovering-card">
-				<Card {persona} />
+				<PersonaCard {persona} />
 			</div>
 		</div>
 		<div class="content-column">
@@ -49,18 +49,16 @@
 		.columns-wrapper {
 			display: flex;
 
-			padding-left: 2.77rem;
-			padding-right: 2.77rem;
+			padding-inline: var(--outer-spacing);
 
 			justify-content: center;
 
-			margin-left: auto;
-			margin-right: auto;
+			margin-inline: auto;
 			max-width: var(--content-max-width);
 
 			.card-column {
 				display: block;
-				width: 23%;
+				width: 25%;
 
 				background-image: url('/decorations/path.svg');
 				background-repeat: repeat-y;
@@ -73,21 +71,6 @@
 			}
 			.content-column {
 				width: 77%;
-
-				> :global(h2) {
-					margin-top: 6.66rem;
-					margin-left: 3.33rem;
-				}
-
-				> :global(p) {
-					box-sizing: border-box;
-					max-width: var(--content-element-max-width);
-
-					padding: 0;
-					margin: 0;
-					padding-left: 3.33rem;
-					padding-right: 3.33rem;
-				}
 			}
 		}
 	}

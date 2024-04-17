@@ -22,8 +22,8 @@
 		}
 
 		&--mobile {
-			max-width: 6rem;
-			top: 1.5rem;
+			max-width: 6.5rem;
+			top: 2rem;
 			right: -2rem;
 		}
 	}

@@ -148,8 +148,8 @@
 
 <style lang="scss">
 	.wrapper {
-		max-width: 31.04rem;
-		padding-inline: 1.33rem;
+		max-width: 35rem;
+		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 	}
 </style>

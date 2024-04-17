@@ -137,16 +137,24 @@
 	}
 </script>
 
+<!-- style={`height: ${
+	innerWidth <= smBreakpoint
+		? textBoxHeight / 13 + 14.7
+		: innerWidth <= mdBreakpoint
+			? textBoxHeight / 15 + 17.43
+			: textBoxHeight / 18 + 20.1
+}rem`} -->
+
 <div class="wrapper">
 	<div
 		class="puzzle"
 		role="tablist"
 		style={`height: ${
 			innerWidth <= smBreakpoint
-				? textBoxHeight / 13 + 14.7
+				? textBoxHeight / 12 + 17.5
 				: innerWidth <= mdBreakpoint
-				? textBoxHeight / 15 + 17.43
-				: textBoxHeight / 18 + 20.1
+					? textBoxHeight / 16 + 19.5
+					: textBoxHeight / 16 + 22.875
 		}rem`}
 	>
 		{#each Array(4) as _, i}
@@ -199,56 +207,48 @@
 		padding: 0;
 		margin: 0;
 		z-index: 3;
-		top: 1.11rem;
-		left: 1.11rem;
+		top: 1rem;
+		left: 1rem;
 		width: 100%;
 		height: 100%;
-		max-width: 8.77rem;
-		max-height: 8.77rem;
+		max-width: 10.375rem;
+		max-height: 10.375rem;
 		font-size: 1rem;
 		cursor: pointer;
 
 		&#btn-0 {
-			border-top-left-radius: 1.11rem;
+			border-top-left-radius: 1.25rem;
 		}
 
 		&#btn-1 {
-			border-top-right-radius: 1.11rem;
+			border-top-right-radius: 1.25rem;
 		}
 
 		&#btn-2 {
-			border-bottom-left-radius: 1.11rem;
+			border-bottom-left-radius: 1.25rem;
 		}
 
 		&#btn-3 {
-			border-bottom-right-radius: 1.11rem;
+			border-bottom-right-radius: 1.25rem;
 		}
 
 		&:focus,
 		&:hover {
 			outline: 3px solid var(--color-blue);
-			outline-offset: -8px;
+			outline-offset: -10px;
 			transition: outline 0.1s ease-out;
 		}
 
 		p {
 			padding: 0;
 			margin: 0;
-			margin-top: 0.27rem;
+			margin-top: 0.25rem;
 		}
 	}
 
 	img {
-		width: 11rem;
-		height: 11rem;
-
-		&.drop-shadow {
-			filter: drop-shadow(0px 2px 2px rgb(var(--color-black-rgb), 0.2));
-
-			&.active {
-				filter: drop-shadow(0px 6px 3px rgb(var(--color-black-rgb), 0.1));
-			}
-		}
+		width: 12.5rem;
+		height: 12.5rem;
 	}
 
 	.wrapper {
@@ -256,20 +256,21 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-top: 6.66rem;
+		margin-top: 7.5rem;
 
 		.text {
 			position: absolute;
 			z-index: 1;
 			width: 100%;
-			max-width: 17.63rem;
+			max-width: calc(19.875rem - 2px);
 			padding: 1rem;
 			border: 1px solid var(--color-black);
-			border-radius: 0.55rem;
+			border-radius: 1.25rem;
 			box-sizing: border-box;
 			text-align: center;
 
 			p {
+				font-size: 1rem;
 				&::before {
 					content: open-quote;
 				}
@@ -287,7 +288,7 @@
 			position: relative;
 			transition: height 0.4s ease-in-out;
 
-			width: 19.85rem;
+			width: 22.5625rem;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -340,137 +341,100 @@
 			}
 		}
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 30rem) {
 		img {
-			width: 9.5rem;
-			height: 9.5rem;
+			width: 10.625rem;
+			height: 10.625rem;
 		}
 
 		button {
-			top: 0.95rem;
-			left: 0.95rem;
-			max-width: 7.6rem;
-			max-height: 7.6rem;
-
-			&#btn-0 {
-				border-top-left-radius: 0.95rem;
-			}
-
-			&#btn-1 {
-				border-top-right-radius: 0.95rem;
-			}
-
-			&#btn-2 {
-				border-bottom-left-radius: 0.95rem;
-			}
-
-			&#btn-3 {
-				border-bottom-right-radius: 0.95rem;
-			}
+			max-width: 8.75rem;
+			max-height: 8.75rem;
 		}
 
 		.wrapper {
-			margin-top: 5rem;
+			margin-top: 5.625rem;
 
 			.text {
-				max-width: 15rem;
-				padding: 0.55rem;
+				max-width: 17rem;
+				padding: 0.625rem;
 			}
 
 			.puzzle {
-				width: 17.125rem;
+				width: 19.25rem;
 
 				.puzzle-piece {
 					&.piece-0 {
 						&.active {
-							transform: rotate(-5deg) translateX(-1rem) translateY(4rem);
+							transform: rotate(-5deg) translateX(-1.25rem) translateY(3rem);
 						}
 					}
 
 					&.piece-1 {
 						&.active {
-							transform: rotate(5deg) translateX(1rem) translateY(2.5rem);
+							transform: rotate(5deg) translateX(1.25rem) translateY(1.875rem);
 						}
 					}
 
 					&.piece-2 {
 						&.active {
-							transform: rotate(5deg) translateX(-1rem) translateY(-3rem);
+							transform: rotate(5deg) translateX(-1.25rem) translateY(-1.675rem);
 						}
 					}
 
 					&.piece-3 {
 						&.active {
-							transform: rotate(-5deg) translateX(1rem) translateY(-3.5rem);
+							transform: rotate(-5deg) translateX(1.25rem) translateY(-2rem);
 						}
 					}
 				}
 			}
 		}
 	}
-	@media (max-width: 350px) {
+	@media (max-width: 21.875rem) {
 		img {
-			width: 8rem;
-			height: 8rem;
+			width: 9.5rem;
+			height: 9.5rem;
 		}
 
 		button {
-			top: 0.8rem;
-			left: 0.8rem;
-			max-width: 6.4rem;
-			max-height: 6.4rem;
-
-			&#btn-0 {
-				border-top-left-radius: 0.8rem;
-			}
-
-			&#btn-1 {
-				border-top-right-radius: 0.8rem;
-			}
-
-			&#btn-2 {
-				border-bottom-left-radius: 0.8rem;
-			}
-
-			&#btn-3 {
-				border-bottom-right-radius: 0.8rem;
-			}
+			max-width: 7.6125rem;
+			max-height: 7.6125rem;
 		}
 
 		.wrapper {
 			margin-top: 4rem;
 
 			.text {
-				max-width: calc(100% - 2.33rem);
-				margin-inline: 1.33rem;
+				max-width: 15rem;
 				padding: 0;
 			}
 
 			.puzzle {
-				width: 14.44rem;
+				width: 17.25rem;
 
 				.puzzle-piece {
 					&.piece-0 {
 						&.active {
-							transform: rotate(-5deg) translateX(-1rem) translateY(3rem);
+							transform: rotate(-5deg) translateX(-1.25rem) translateY(3.125rem);
 						}
 					}
 
 					&.piece-1 {
 						&.active {
-							transform: rotate(5deg) translateX(1rem) translateY(1.5rem);
+							transform: rotate(5deg) translateX(1.25rem) translateY(1.25rem);
 						}
 					}
 
 					&.piece-2 {
 						&.active {
-							transform: rotate(5deg) translateX(-1rem) translateY(-2rem);
+							transform: rotate(5deg) translateX(-1.25rem) translateY(-2.25rem);
 						}
 					}
 
 					&.piece-3 {
 						&.active {
-							transform: rotate(-5deg) translateX(1rem) translateY(-2.5rem);
+							transform: rotate(-5deg) translateX(1.25rem) translateY(-2.25rem);
 						}
 					}
 				}
