@@ -50,7 +50,7 @@
 		<div class="decorative-persona">
 			<img
 				class="bottom-wave"
-				src="{base}/personas/gabriel/gabriel-happy.svg"
+				src="{base}/personas/maxi/maxi-happy.svg"
 				alt=""
 				aria-hidden="true"
 			/>

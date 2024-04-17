@@ -103,8 +103,8 @@
 
 				<!-- <li><a href="{base}/">Erklärung der Barrierefreiheit </a></li>-->
 				<li><a href="{base}/kontakt">Kontakt</a></li>
-				<li><a href="{base}/legal/imprint">Impressum</a></li>
-				<li><a href="{base}/legal/privacy">Datenschutzerklärung</a></li>
+				<li><a href="{base}/impressum">Impressum</a></li>
+				<li><a href="{base}/datenschutz">Datenschutzerklärung</a></li>
 			</ul>
 			<Icon img="logo" size="big" />
 		</nav>

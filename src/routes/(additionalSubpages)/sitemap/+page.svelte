@@ -9,26 +9,45 @@
 
 <SubpageTitle>Sitemap</SubpageTitle>
 <div class="wrapper">
-	<h2>Alle Seiten (alphabetisch)</h2>
+	<h2>Alle Persona-Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
-			<a href={base + '/personas/aleksandr'} class="focus-indicator">Aleksandr</a>
-		</li>
-		<li>
-			<a href={base + '/legal/privacy'} class="focus-indicator">Datenschutzerklärung</a>
-		</li>
-		<li>
 			<a href={base + '/personas/gabriel'} class="focus-indicator">Gabriel</a>
+		</li>
+		<li>
+			<a href={base + '/iframe/gabriel'} class="focus-indicator">Gabriel Simulationsspiel</a>
 		</li>
 		<li>
 			<a href={base + '/personas/hannah'} class="focus-indicator">Hannah</a>
 		</li>
 		<li>
-			<a href={base + '/legal/imprint'} class="focus-indicator">Impressum</a>
+			<a href={base + '/iframe/hannah'} class="focus-indicator">Hannah Simulationsspiel</a>
+		</li>
+		<li>
+			<a href={base + '/personas/kilian'} class="focus-indicator">Kilian</a>
 		</li>
 		<li>
 			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi</a>
 		</li>
+		<li>
+			<a href={base + '/personas/michelle'} class="focus-indicator">Michelle</a>
+		</li>
+	</ul>
+
+	<h2>Alle anderen Seiten (alphabetisch)</h2>
+	<ul>
+		<li>
+			<a href={base + '/datenschutz'} class="focus-indicator">Datenschutzerklärung</a>
+		</li>
+
+		<li>
+			<a href={base + '/impressum'} class="focus-indicator">Impressum</a>
+		</li>
+
+		<li>
+			<a href={base + '/kontakt'} class="focus-indicator">Kontakt</a>
+		</li>
+
 		<li>
 			<a href={base + '/'} class="focus-indicator">Startseite</a>
 		</li>
@@ -46,7 +65,7 @@
 		}
 
 		li {
-			margin: 0.375rem 0rem;
+			margin: 0.625rem 0rem;
 		}
 	}
 </style>
