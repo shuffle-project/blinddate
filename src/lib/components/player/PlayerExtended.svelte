@@ -123,9 +123,9 @@
 				color: var(--color-black);
 				background-color: var(--color-background-body);
 
-				border-radius: 1rem;
+				border-radius: 2rem;
 
-				padding: 0.25rem 0.625rem;
+				padding: 0.375rem 0.875rem;
 
 				border: 1px solid var(--color-black);
 				font-size: 1rem;
