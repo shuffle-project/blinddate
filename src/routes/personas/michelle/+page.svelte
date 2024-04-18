@@ -96,7 +96,7 @@
 					}
 				]}
 			>
-				Die <strong lang="en">„spoon-theory“</strong> wurde von Christine Miserandino 2003 zu ersten
+				Die <strong lang="en">„spoon-theory“</strong> wurde von Christine Miserandino 2003 zum ersten
 				Mal veröffentlicht. Mithilfe von Löffeln, die Energie-Portionen darstellen, erklärte sie ihrer
 				Freundin, wie es ist, mit begrenzten Energien zu haushalten. Aufgrund ihrer chronischen Erkrankung
 				hat sie nur eine begrenzte Anzahl an Löffeln pro Tag zur Verfügung. Energie-Portionen, die gesunden
@@ -149,7 +149,7 @@
 		Wenn mich Leute davon abhalten wollen, die barrierefreie Toilette zu benutzen. Aber es gibt auch
 		andere Seiten: Meine Uni-Freunde sammeln immer meine Sachen ein, wenn ich mal wieder auf dem Klo
 		statt in der Vorlesung bin, teilen ihre Notizen mit mir, fragen wie es mir geht und haben auch
-		immer was zu Trinken für mich dabei.
+		immer was zu trinken für mich dabei.
 	</SpeechBubble>
 
 	<FlipCard
@@ -169,10 +169,10 @@
 	</TextSection>
 
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-06.mp3'}>
-		Ja, Morbus Crohn ist körperlich belastend. Aber es geht auch auf die Psyche – ich habe oft Angst
-		einen Schub zu bekommen und dann in einer unangenehmen Situation zu sein. Es stresst mich, wenn
-		ich aus Veranstaltung renne und mich alle anschauen. Dazu kommt ein permanent schlechtes
-		Gewissen, dass ich an einer Veranstaltungen nicht teilnehmen kann, nicht genug bei
+		Ja, Morbus Crohn ist körperlich belastend. Aber es geht auch auf die Psyche – ich habe oft
+		Angst, einen Schub zu bekommen und dann in einer unangenehmen Situation zu sein. Es stresst
+		mich, wenn ich aus einer Veranstaltung renne und mich alle anschauen. Dazu kommt ein permanent
+		schlechtes Gewissen, dass ich an einer Veranstaltungen nicht teilnehmen kann, nicht genug bei
 		Gruppenarbeiten beitrage und ich immer das Gefühl habe, die anderen denken schlecht von mir.
 	</SpeechBubble>
 
