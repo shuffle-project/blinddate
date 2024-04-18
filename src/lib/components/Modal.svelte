@@ -172,7 +172,7 @@
 
 			button {
 				aspect-ratio: 1;
-				min-width: 3.125rem;
+				width: 3.125rem;
 				border-radius: 50%;
 				background-color: var(--color-blue);
 				border: none;

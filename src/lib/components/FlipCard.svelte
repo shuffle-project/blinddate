@@ -131,15 +131,6 @@
 			.decorative-figure {
 				max-width: 16rem;
 			}
-
-			.speech-bubble {
-				max-width: 16rem;
-				p {
-					.name {
-						display: none;
-					}
-				}
-			}
 		}
 	}
 

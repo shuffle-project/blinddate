@@ -127,14 +127,6 @@
 				color: rgba(var(--color-white-rgb), 0.85);
 			}
 		}
-
-		.lower-content-wrapper {
-			background-color: var(--color-background-body);
-
-			h2 {
-				margin: 0;
-			}
-		}
 	}
 
 	@media (max-width: 49.9375rem) {
