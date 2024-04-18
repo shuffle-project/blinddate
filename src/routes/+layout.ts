@@ -20,6 +20,10 @@ export const load = async (event) => {
 			allowedSubpath = pathname.includes('privacy');
 		}
 
+		if (!allowedSubpath) {
+			allowedSubpath = pathname.includes('sitemap') || pathname.includes('kontakt');
+		}
+
 		if (!allowedSubpath && pathname !== '/') {
 			redirect(301, `${base}/`);
 		}
