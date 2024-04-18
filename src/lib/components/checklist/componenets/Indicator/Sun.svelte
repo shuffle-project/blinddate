@@ -23,7 +23,7 @@
 
 		&--mobile {
 			max-width: 6.5rem;
-			top: 2rem;
+			top: 1.875rem;
 			right: -2rem;
 		}
 	}
