@@ -70,12 +70,19 @@
 
 	{#if ENVIRONMENT.displayLowerStartpageContent}
 		<InfoGrid />
+	{:else}
+		<div class="space-placeholder" />
 	{/if}
 </main>
 
 <Footer />
 
 <style lang="scss">
+	.space-placeholder {
+		height: 3.75rem;
+		background-color: var(--color-background-body);
+	}
+
 	header {
 		background-color: var(--color-black);
 

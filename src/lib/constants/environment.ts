@@ -2,7 +2,6 @@
 // to decide which pages/ personas are viewable
 
 import type { Persona } from '$lib/interfaces/persona.interfaces';
-import { ALEKSANDR } from './aleksandr';
 import { GABRIEL } from './gabriel';
 import { HANNAH } from './hannah';
 import { KILIAN } from './kilian';
@@ -22,13 +21,13 @@ interface Environment {
 }
 
 export const ENVIRONMENT: Environment = {
-	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL],
-	redirectToStartpage: false,
+	accessiblePersonas: [MAXI, MICHELLE, HANNAH, KILIAN, GABRIEL],
+	redirectToStartpage: true,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
 	personaCardOtherPersonas: true,
 	sitemap: true,
 	footerPersonas: true,
 	backLinkToStartpage: true,
-	displayLowerStartpageContent: true
+	displayLowerStartpageContent: false
 };
