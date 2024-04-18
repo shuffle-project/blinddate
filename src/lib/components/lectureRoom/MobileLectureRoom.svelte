@@ -197,6 +197,13 @@
 			position: absolute;
 			right: 1.25rem;
 			bottom: 1.25rem;
+			transition: transform 0.2s ease-out;
+		}
+
+		&:hover {
+			.clickable-icon {
+				transform: scale(120%);
+			}
 		}
 	}
 

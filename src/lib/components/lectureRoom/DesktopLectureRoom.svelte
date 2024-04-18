@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { onMount } from 'svelte';
+	import Icon from '../Icon.svelte';
 
 	export let personas: Persona[];
 
@@ -25,7 +26,10 @@
 	</div>
 
 	<div class="lecture-room">
-		<div class="loading-indicator" class:not-mounted={!mounted}></div>
+		<div class="loading-indicator" class:not-mounted={!mounted} />
+		<div class="click-indicator" class:mounted>
+			<Icon img="clickable-persona" size="parent" />
+		</div>
 		<ul aria-label="Vorlesungssaal mit Studierenden">
 			{#each personas as persona}
 				<li
@@ -150,6 +154,22 @@
 				border-radius: 2.25rem;
 			}
 
+			.click-indicator {
+				width: 3.125rem;
+				height: 3.125rem;
+				background-color: transparent;
+				position: absolute;
+				inset: 1rem 1rem auto auto;
+				margin: auto;
+				opacity: 0%;
+				transition: opacity 0.3s ease-in-out;
+				transition-delay: 0.2s;
+
+				&.mounted {
+					opacity: 100%;
+				}
+			}
+
 			.loading-indicator {
 				width: 2.25rem;
 				height: 2.25rem;
@@ -206,7 +226,7 @@
 					left: 29%;
 
 					img {
-						width: min(21vw, 18rem);
+						width: min(21.1vw, 18rem);
 					}
 				}
 
@@ -215,7 +235,7 @@
 					top: 2.1%;
 
 					img {
-						width: min(11.4vw, 9.875rem);
+						width: min(11.6vw, 9.875rem);
 					}
 				}
 
@@ -238,11 +258,11 @@
 				}
 
 				&.maxi {
-					top: 4.8%;
+					top: 4.9%;
 					left: 6%;
 
 					img {
-						width: min(19.4vw, 16.875rem);
+						width: min(19.8vw, 16.875rem);
 					}
 				}
 
