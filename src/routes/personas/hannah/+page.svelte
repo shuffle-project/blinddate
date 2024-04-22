@@ -95,13 +95,13 @@
 	</SpeechBubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-02.mp3'}>
-		Ich bin nämlich von Geburt an hochgradig hörbehindert auf beiden Ohren. Ich trage links ein
-		Hörgerät und rechts ein Cochlea-Implantat... wenn ich die Haare offen trage, sieht man davon
-		allerdings kaum was. Ich verwende sowohl die Lautsprache als auch die deutsche Gebärdensprache.
-		Dadurch, dass ich jetzt viel mehr Kontakt mit anderen DGS-Nutzenden habe, bin ich viel, viel
-		besser geworden und nutze gerade jede Gelegenheit, um zu gebärden. Irgendwie verbindet mich das
-		mit Leuten. Ich fühle mich als Teil der DGS Community. Das ist cool. Im Alltag und an der Uni
-		nutze ich vor allem die Lautsprache.
+		Ich bin nämlich von Geburt an hörbehindert auf beiden Ohren. Ich trage links ein Hörgerät und
+		rechts ein Cochlea-Implantat... wenn ich die Haare offen trage, sieht man davon allerdings kaum
+		was. Ich verwende sowohl die Lautsprache als auch die deutsche Gebärdensprache. Dadurch, dass
+		ich jetzt viel mehr Kontakt mit anderen DGS-Nutzenden habe, bin ich viel, viel besser geworden
+		und nutze gerade jede Gelegenheit, um zu gebärden. Irgendwie verbindet mich das mit Leuten. Ich
+		fühle mich als Teil der DGS Community. Das ist cool. Im Alltag und an der Uni nutze ich vor
+		allem die Lautsprache.
 	</SpeechBubble>
 
 	<MainHeading heading="Technologien und Strategien" />
