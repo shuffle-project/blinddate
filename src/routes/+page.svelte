@@ -68,6 +68,16 @@
 
 	<LectureRoom />
 
+	<div class="startpage-path-wrapper">
+		<div class="startpage-path" />
+		<!-- <img
+			src="{base}/decorations/startpage-path.svg"
+			alt=""
+			aria-hidden="true"
+			class="startpage-path"
+		/> -->
+	</div>
+
 	{#if ENVIRONMENT.displayLowerStartpageContent}
 		<InfoGrid />
 	{/if}

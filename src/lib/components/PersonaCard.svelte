@@ -67,7 +67,7 @@
 					<a href="#tips" class="second">
 						<Icon img="light-bulb" size="big" svg_color="white">Selbstcheck Barrierefreiheit</Icon>
 
-						<Icon img="arrow-toright" svg_color="white" size="tiny" />
+						<Icon img="arrow-down" svg_color="white" size="tiny" />
 					</a>
 				</div>
 			</div>
@@ -193,7 +193,7 @@
 						text-align: start;
 						box-sizing: border-box;
 						margin-inline: 0.375rem;
-						padding: 0.375rem 0.625rem 0.375rem 0.375rem;
+						padding: 0.375rem 0.875rem 0.375rem 0.375rem;
 						font-size: 1rem;
 						cursor: pointer;
 						min-height: 2.75rem;

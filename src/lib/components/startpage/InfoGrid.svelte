@@ -35,7 +35,7 @@
 			<a href="{base}/wichtige-begriffe" class="focus-indicator">Zu den wichtigen Begriffen</a>
 		</div>
 		<div class="decorative-image">
-			<img class="bottom-wave" src="{base}/tools/remote-study.svg" alt="" aria-hidden="true" />
+			<img src="{base}/tools/remote-study.svg" alt="" aria-hidden="true" />
 		</div>
 		<div class="questions">
 			<h2>Häufige Fragen</h2>
@@ -48,22 +48,17 @@
 			<a href="{base}/fragen" class="focus-indicator">Zu den häufigen Fragen</a>
 		</div>
 		<div class="decorative-persona">
-			<img
-				class="bottom-wave"
-				src="{base}/personas/maxi/maxi-happy.svg"
-				alt=""
-				aria-hidden="true"
-			/>
+			<img src="{base}/personas/maxi/maxi-happy.svg" alt="" aria-hidden="true" />
 		</div>
 
 		<div class="big-picture">
 			<h2>Das große Ganze</h2>
 			<p>
-				Lorem ipsum dolor sit amet consectetur. Suspendisse eu quam tellus scelerisque mi. Non
-				elementum tristique ac a vel vitae. Eu porttitor pellentesque dui diam. Habitasse venenatis
-				aliquet volutpat nullam purus.
+				Wir wollen eine Hochschullehre, an der möglichst viele unterschiedliche Menschen erfolgreich
+				lernen und lehren können. Hier geben wir Ihnen einen Einblick in Maßnahmen zur Gestaltung
+				Ihrer Lehre, die vielen Lernenden gleichzeitig zu Gute kommen.
 			</p>
-			<a href="{base}/" class="focus-indicator">Zum großen Ganzen</a>
+			<a href="{base}/große-ganze" class="focus-indicator">Zum großen Ganzen</a>
 		</div>
 	</div>
 </div>
@@ -71,7 +66,7 @@
 <style lang="scss">
 	.wrapper {
 		background-color: var(--color-background-body);
-		padding-block: 15rem;
+		padding-block: 6rem;
 
 		display: flex;
 		justify-content: center;
@@ -138,7 +133,7 @@
 
 				img {
 					height: 100%;
-					max-height: 12rem;
+					max-height: 10rem;
 					width: 100%;
 				}
 			}

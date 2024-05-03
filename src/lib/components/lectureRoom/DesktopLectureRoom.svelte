@@ -151,7 +151,7 @@
 			}
 
 			.lecture-room-img {
-				border-radius: 2.25rem;
+				border-radius: 2.5rem;
 			}
 
 			.click-indicator {
