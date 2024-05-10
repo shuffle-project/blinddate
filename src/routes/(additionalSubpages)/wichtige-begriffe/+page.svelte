@@ -447,7 +447,7 @@
 		margin-inline: auto;
 
 		.sources-wrapper {
-			margin-block: 3.125rem;
+			margin-block-start: 3.125rem;
 		}
 
 		.table-of-contents {

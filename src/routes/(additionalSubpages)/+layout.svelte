@@ -39,6 +39,10 @@
 		width: 100%;
 	}
 
+	main {
+		padding-bottom: 3.125rem;
+	}
+
 	header {
 		display: flex;
 		flex-direction: column;

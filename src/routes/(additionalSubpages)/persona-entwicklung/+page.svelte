@@ -105,28 +105,34 @@
 			>.
 		</p>
 
-		<Sources
-			sources={[
-				{
-					title:
-						'Lepzien, Josefine/Lewerenz, Michael (2017): Persona Methode. Eine Illustrierung von Bildungsbedarfen. In: Team der Wissenschaftlichen Weiterbildung der Universität Rostock: Weiterbildungsmanagement professionalisieren. Rostock: Universität Rostock, S. 22-31.'
-				},
-				{
-					title: 'The Inmates Are Running the Asylum (Alan Cooper 1999)',
-					titleLang: 'en'
-				},
-				{
-					title: 'SHUFFLE Webseite',
-					url: 'https://shuffle-projekt.de/'
-				}
-			]}
-		/>
+		<div class="sources-wrapper">
+			<Sources
+				sources={[
+					{
+						title:
+							'Lepzien, Josefine/Lewerenz, Michael (2017): Persona Methode. Eine Illustrierung von Bildungsbedarfen. In: Team der Wissenschaftlichen Weiterbildung der Universität Rostock: Weiterbildungsmanagement professionalisieren. Rostock: Universität Rostock, S. 22-31.'
+					},
+					{
+						title: 'The Inmates Are Running the Asylum (Alan Cooper 1999)',
+						titleLang: 'en'
+					},
+					{
+						title: 'SHUFFLE Webseite',
+						url: 'https://shuffle-projekt.de/'
+					}
+				]}
+			/>
+		</div>
 	</div>
 </div>
 
 <style lang="scss">
 	.wrapper {
 		background-color: var(--color-background-body);
+
+		.sources-wrapper {
+			margin-block-start: 3.125rem;
+		}
 
 		.persona-progress-wrapper {
 			background: linear-gradient(var(--color-black) 50%, var(--color-background-body) 50%);
