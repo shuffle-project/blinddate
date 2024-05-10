@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import Sources from '../../../lib/components/Sources.svelte';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
@@ -61,8 +62,7 @@
 	</p>
 
 	<p>
-		Besonders relevant sind die hervorgehobenen Elemente (hier wiederholen wegen Barrierefreiheit).
-		Diese werden auch vom Hochschulrahmengesetz aufgegriffen. Dort heißt es in §2, Abs 4
+		Diese Punkte werden auch vom Hochschulrahmengesetz aufgegriffen. Dort heißt es in §2, Abs 4:
 		„Hochschulen […] tragen dafür Sorge, dass behinderte Studierende in ihrem Studium nicht
 		benachteiligt werden und die Angebote der Hochschule möglichst ohne fremde Hilfe in Anspruch
 		nehmen können“
@@ -75,7 +75,7 @@
 	</p>
 
 	<p>
-		Eine genaue Beschreibung, wie Barrierefreiheit an der Hochschule umgesetzt werden sollte findet
+		Eine genaue Beschreibung, wie Barrierefreiheit an der Hochschule umgesetzt werden sollte, findet
 		sich in der <a
 			href="https://www.hrk.de/fileadmin/redaktion/hrk/02-Dokumente/02-03-Studium/02-03-08-Barrierefreies-Studium/Auswertung_Evaluation_Hochschule_fuer_Alle_01.pdf"
 			class="focus-indicator">Empfehlung „Eine Hochschule für Alle“ der HRK (PDF).</a
@@ -86,12 +86,64 @@
 		In ihrer <a href="https://dieneuenorm.de/podcast/barrierefreiheit/" class="focus-indicator">
 			Podcast Episode zum Thema Barrierefreiheit
 		</a>
-		erklärt das Team von die Neue Norm den Begriff und die Bedeutung weiter.
+		erklärt das Team von „die Neue Norm“ den Begriff und die Bedeutung weiter.
 	</p>
 
 	<h2 id="digital-accessibility">2. Digitale Barrierefreiheit</h2>
 
-	<p>Hier sind noch viele offene Fragen im Dokument.</p>
+	<p>
+		Digitale Barrierefreiheit bedeutet, dass digitale Angebote unabhängig von persönlichen
+		Voraussetzungen genutzt werden können – Webseiten, digitale Veranstaltungen, Dokumente und
+		Anwendungen müssen für alle Menschen gleichermaßen auffindbar, zugänglich und nutzbar sein.
+		<a
+			href="https://hochschulforumdigitalisierung.de/sites/default/files/dateien/HFD_AP_66_Leitfaden_Digitale_Barrierefreiheit.pdf"
+			class="focus-indicator">Leitfaden zur Digitalen Barrierefreiheit im Hochschulkontext (PDF)</a
+		>
+	</p>
+
+	<p>
+		An der Hochschule betrifft digitale Barrierefreiheit die ganze digitale Infrastruktur – dazu
+		gehören Web-Auftritte der gesamten Hochschule, das Intranet, Dokumente, die im Kontext der Lehre
+		oder Verwaltung erstellt und genutzt werden, digitale Services für Mitarbeitende und
+		Studierende, Learning Management Systeme und alle weiteren digitalen Angebote. Da diese Bereiche
+		fast die ganze Hochschule umfassen, ist es auch die Aufgabe aller, für digitale Barrierefreiheit
+		zu sorgen. Die EU-Richtlinie 2016/2102 verpflichtet alle öffentlichen Stellen und damit auch die
+		Hochschulen, ihre digitalen Angebote barrierefrei zugänglich zu machen.
+	</p>
+
+	<p>
+		Die <span lang="en">Web Content Accessibility Guidelines </span> (WCAG) legen fest, welche
+		Kriterien erfüllt sein müssen, damit digitale Inhalte barrierefrei sind. Die Kriterien der Stufe
+		A und AA finden sich auch in der BITV 2.0, die hier in Deutschland gilt und sich in den
+		unterschiedlichen Gesetzen der Länder widerspiegelt. Zentrale Kriterien bei der Umsetzung
+		barrierefreier digitaler Inhalte sind die Wahrnehmbarkeit, Bedienbarkeit, Verständlichkeit und
+		Robustheit (hier können Sie mehr über die POUR Prinzipien erfahren:
+
+		<a
+			class="focus-indicator"
+			href="https://hochschulforumdigitalisierung.de/grundlagen-digitaler-barrierefreiheit/"
+		>
+			Grundlagen digitaler Barrierefreiheit
+		</a>). Diese Vorgaben gelten auch für Hochschulen.
+	</p>
+
+	<p>
+		Für Dokumente gelten die Kriterien des <a
+			class="focus-indicator"
+			href="https://www.barrierefreiheit-dienstekonsolidierung.bund.de/Webs/PB/DE/gesetze-und-richtlinien/en301549/en301549-node.html"
+			>EN 301 549 Standards</a
+		>, der europaweit gilt. Hier wird unter anderem beschrieben, wie digitale Dokumente aufgebaut
+		sein müssen, damit sie barrierefrei zugänglich sind.
+	</p>
+
+	<p>
+		Das SHUFFLE-Forschungsprojekt hat mit dem <a
+			class="focus-indicator"
+			href="https://openmoodle.uni-bielefeld.de/course/view.php?id=46"
+			>Materialpaket barrierefreie Lehre</a
+		> einen kostenlosen Moodle-Kurs erstellt, um Lehrende bei der Umsetzung barrierefreier Dokumente
+		zu unterstützen.
+	</p>
 
 	<h2 id="assistive-technologies">3. Assistive Technologien</h2>
 	<p>
@@ -155,7 +207,11 @@
 	<p>
 		best3 ist die dritte Erhebung. Die Daten werden im Rahmen der Sozialerhebung gesammelt. Welche
 		Daten erhoben werden, die Forschungsfragen und die Auswertung sind auf Webseite der Umfrage
-		genau erklärt: <strong>!! LINK !!</strong>
+		genau erklärt: <a
+			class="focus-indicator"
+			href="https://www.studierendenwerke.de/themen/studieren-mit-behinderung/recht-politik-und-daten/daten"
+			>Zum Studiendesign der Sozialerhebung</a
+		>
 	</p>
 	<p>
 		Die Studie zeigt, dass insgesamt 16% der Studierenden eine studienerschwerende Beeinträchtigung
@@ -371,6 +427,17 @@
 			(YouTube)</a
 		>
 	</p>
+
+	<div class="sources-wrapper">
+		<Sources
+			sources={[
+				{
+					title:
+						'Lepzien, Josefine/Lewerenz, Michael (2017): Persona Methode. Eine Illustrierung von Bildungsbedarfen. In: Team der Wissenschaftlichen Weiterbildung der Universität Rostock: Weiterbildungsmanagement professionalisieren. Rostock: Universität Rostock, S. 22-31.'
+				}
+			]}
+		/>
+	</div>
 </div>
 
 <style lang="scss">
@@ -378,6 +445,10 @@
 		max-width: 35rem;
 		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
+
+		.sources-wrapper {
+			margin-block: 3.125rem;
+		}
 
 		.table-of-contents {
 			list-style-type: none;
