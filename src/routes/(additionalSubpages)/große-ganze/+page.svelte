@@ -236,7 +236,7 @@
 <style lang="scss">
 	.wrapper {
 		padding-inline: var(--outer-spacing);
-		margin: 2.5rem 0;
+		margin-top: 2.5rem;
 
 		p {
 			max-width: 35rem;

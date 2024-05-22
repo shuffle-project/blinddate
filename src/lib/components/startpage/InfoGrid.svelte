@@ -125,7 +125,6 @@
 
 			.decorative-image {
 				grid-area: four;
-				background-color: var(--color-white);
 
 				display: flex;
 				align-items: center;
