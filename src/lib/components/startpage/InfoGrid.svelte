@@ -48,7 +48,7 @@
 			<a href="{base}/fragen" class="focus-indicator">Zu den häufigen Fragen</a>
 		</div>
 		<div class="decorative-persona">
-			<img src="{base}/personas/maxi/maxi-happy.svg" alt="" aria-hidden="true" />
+			<img src="{base}/personas/maxi/maxi-happy.svg" alt="" aria-hidden="true" loading="lazy" />
 		</div>
 
 		<div class="big-picture">

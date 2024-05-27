@@ -143,6 +143,7 @@
 						src="{base}/personas/{persona.id}/{persona.id}-happy.svg"
 						alt="{persona.name} ist zufrieden, da {days.filter((obj) => obj.smiley === 'happy')
 							.length} von 5 Tagen in dieser Woche gut verliefen."
+						loading="lazy"
 					/>
 				</div>
 			</div>
@@ -155,6 +156,7 @@
 						alt="{persona.name} steht in einer erschöpften Pose da, da {days.filter(
 							(obj) => obj.smiley === 'sad'
 						).length} von 5 Tagen in dieser Woche schlecht verliefen"
+						loading="lazy"
 					/>
 				</div>
 			</div>

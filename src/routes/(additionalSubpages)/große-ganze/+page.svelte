@@ -184,6 +184,7 @@
 							class="persona-img"
 							src="{base}/personas/{student.id}/{student.id}-lecture.svg"
 							alt=""
+							loading="lazy"
 						/>
 					</button>
 
@@ -204,6 +205,8 @@
 			src="{base}/decorations/big-picture-room.svg"
 			alt=""
 			aria-hidden="true"
+			width="1350"
+			height="998"
 		/>
 	</div>
 	<div role="radiogroup" aria-label="Unterstützungsmöglichkeiten" class="support-list">
@@ -406,6 +409,7 @@
 
 			.big-picture-room {
 				width: 100%;
+				height: 100%;
 				border-radius: 2.5rem;
 			}
 		}

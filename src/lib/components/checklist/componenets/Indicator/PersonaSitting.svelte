@@ -10,7 +10,12 @@
 
 <li class="human human--{position}">
 	<div class="img-container" class:itemAdded>
-		<img src="{base}/personas/{persona.id}/{persona.id}-sitting.svg" alt="" aria-hidden="true" />
+		<img
+			src="{base}/personas/{persona.id}/{persona.id}-sitting.svg"
+			alt=""
+			aria-hidden="true"
+			loading="lazy"
+		/>
 	</div>
 	<Sun {position} />
 </li>

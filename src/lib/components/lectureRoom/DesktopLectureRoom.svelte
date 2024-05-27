@@ -53,6 +53,7 @@
 							src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
 							alt=""
 							id="{persona.id}-image"
+							loading="lazy"
 						/>
 					</a>
 				</li>
@@ -63,6 +64,8 @@
 			src={base + '/decorations/lecture-room.svg'}
 			aria-hidden="true"
 			alt=""
+			height="680"
+			width="1315"
 		/>
 	</div>
 </div>
@@ -151,6 +154,8 @@
 			}
 
 			.lecture-room-img {
+				width: 100%;
+				height: 100%;
 				border-radius: 2.5rem;
 			}
 
@@ -213,56 +218,56 @@
 				}
 
 				&.gabriel {
-					bottom: 2.5%;
+					bottom: 2%;
 					left: 12%;
 
 					img {
-						width: min(17.5vw, 14.625rem);
+						width: min(17vw, 14.625rem);
 					}
 				}
 
 				&.aleksandr {
-					top: 27.5%;
+					top: 28%;
 					left: 29%;
 
 					img {
-						width: min(21.1vw, 18rem);
+						width: min(20.8vw, 18rem);
 					}
 				}
 
 				&.michelle {
 					left: 38%;
-					top: 2.1%;
+					top: 2.2%;
 
 					img {
-						width: min(11.6vw, 9.875rem);
+						width: min(11.5vw, 10rem);
 					}
 				}
 
 				&.hannah {
-					bottom: 41.5%;
+					bottom: 40.9%;
 					right: 28%;
 
 					img {
-						width: min(13.5vw, 11.625rem);
+						width: min(13.4vw, 11.625rem);
 					}
 				}
 
 				&.kilian {
-					bottom: 41.7%;
+					bottom: 41.2%;
 					right: 7%;
 
 					img {
-						width: min(15.5vw, 13.3625rem);
+						width: min(15.4vw, 13.3625rem);
 					}
 				}
 
 				&.maxi {
-					top: 4.9%;
+					top: 5%;
 					left: 6%;
 
 					img {
-						width: min(19.8vw, 16.875rem);
+						width: min(19.5vw, 16.875rem);
 					}
 				}
 
