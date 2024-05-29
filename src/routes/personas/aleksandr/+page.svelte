@@ -19,7 +19,7 @@
 </script>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-01.mp3'}>
 		Hallo, mein Name ist Aleksandr, aber ich bevorzuge Sasha. Ich bin 23 Jahre alt. Ich wohne etwas
 		außerhalb von Frankfurt. Ich interessiere mich sehr für die Funktionsweise des menschlichen
 		Gehirns – wie Verhaltensweisen das Resultat elektrischer Signale sind. Deshalb studiere ich
@@ -32,7 +32,7 @@
 		für eine große Studie.
 	</SpeechBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-02.mp3'}>
 		Ich wohne bei meinen Eltern. Das ist wichtig. Ich brauche ab und zu Hilfe bei der Organisation
 		von Dingen. Zum Beispiel Wäsche machen oder Kochen. Und bei Terminen. Ich bin 4 Tage die Woche
 		an der Uni. Ab 8:30Uhr. Dort besuche ich Veranstaltungen und lerne auch. Ich mache auch viel
@@ -45,7 +45,7 @@
 
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
-		<ToolCard title="Platzhaltertitel" image="{base}/tools/calender.svg">
+		<ToolCard title="Studienorganisation" image="{base}/tools/calender.svg">
 			Menschen auf dem Autismus-Spektrum nehmen ihre Umwelt anders wahr als neurotypische Menschen.
 			Das Orientieren und Navigieren im Studienalltag, den Überblick zu behalten und das soziale
 			Miteinander zu meistern, kann Studierende mit ASS vor Herausforderungen stellen. Eine
@@ -55,15 +55,15 @@
 			erschwert. Gerade der Übergang von eher strukturiertem Alltag in der Schule zu häufig
 			unstrukturiertem Alltag im Studium kann eine Hürde darstellen.
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" image="{base}/tools/day-plan.svg">
+		<ToolCard title="Routinen & Struktur" image="{base}/tools/day-plan.svg">
 			Das Orientieren an Details und ein sogenannter Hyper-Fokus auf Themen können für ein Studium
 			von Vorteil sein. Manchmal nehmen diese Spezialinteressen aber auch viel Zeit und
 			Aufmerksamkeit in Anspruch. Andere wichtige Aktivitäten – wie Essen oder Termine – können
-			dadurch komplett in den Hintergrund rutschen Deshalb kann es für Studierende mit ASS wichtig
+			dadurch komplett in den Hintergrund rutschen. Deshalb kann es für Studierende mit ASS wichtig
 			sein, sich klare Strukturen und feste Routinen in den Alltag einzubauen, um andere Bereiche
 			nicht zu vernachlässigen.
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" langTitle="en" image="{base}/tools/headphone.svg">
+		<ToolCard title="Reizreduktion" image="{base}/tools/headphone.svg">
 			<span
 				>Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize.
 				So können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
@@ -97,7 +97,7 @@
 				<p>
 					Aber auch mit dem Geruch- und Geschmackssinn können verschiedene Reize aufgenommen werden,
 					die als <span lang="en">Stimming</span> dienen. Werden diese selbststimulierenden Reize
-					bewusste gesetzt, um beispielsweise die Konzentration zu erhöhen, spricht man von
+					bewusst gesetzt, um beispielsweise die Konzentration zu erhöhen, spricht man von
 					<span lang="en">„Skills“</span>. Viele Menschen, ob neurotypisch oder neurodivergent,
 					benutzten
 					<span lang="en">Stimming</span>. Mit den Füßen wippen oder mit dem Kugelschreiber klicken
@@ -110,7 +110,7 @@
 			</InfoBox>
 			<span class="toolcard-span">, um andere Reize auszublenden.</span>
 		</ToolCard>
-		<ToolCard title="Platzhaltertitel" image="{base}/tools/fidget-spinner.svg">
+		<ToolCard title="Selbststimulation" image="{base}/tools/fidget-spinner.svg">
 			Neben der Überstimulierung durch verschiedene Reize ist auch eine Unterstimulation ein
 			bekanntes Symptom bei Menschen auf dem Autismus-Spektrum. Stimming, also die bewusste
 			Wiederholung von physischen Bewegungen oder Lauten, aber auch Sport oder das Hantieren mit
@@ -119,7 +119,7 @@
 		</ToolCard>
 	</div>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-03.mp3'}>
 		Umweltreize lenken mich schnell ab. Mein Gehirn kann sie nicht ausfiltern. Deshalb nutze ich
 		Kopfhörer. Solche mit Active Noise Cancelling. Ich höre damit keine Musik. Sie blenden aber
 		zumindest Geräusche aus, damit ich mich besser konzentrieren kann. Fidget Toys habe ich auch
@@ -140,7 +140,7 @@
 		einen ruhigeren Ort zu finden.
 	</FriendBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-04.mp3'}>
 		Wenn mir eine Situation zu viel wird – das heißt, wenn ich überstimuliert bin und deshalb einen
 		schnellen Puls, schnellen Atem und Angstgefühle bekomme... Dann habe ich Regulationsprobleme und
 		komme, wenn es nicht gut läuft, in einen Zustand, den man „Meltdown“ nennt. Dann habe ich mein
@@ -150,7 +150,11 @@
 		Ruhe.
 	</SpeechBubble>
 
-	<FlipCard {persona} front="Platz-halter" back="Platzhalter" />
+	<FlipCard
+		{persona}
+		front="Ich bin nicht unhöflich!"
+		back="Im Gegenteil: Wenn ich keinen Augenkontakt halte, kann ich besser zuhören."
+	/>
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>
@@ -205,7 +209,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-05.mp3'}>
 		Viele Dinge lenken mich von meiner Aufgabe ab. Das geht leicht. Ein Beispiel: Wenn ich sage, ich
 		lerne jetzt Neuroanatomie mit dem Gehirn-Atlas. Und dann sehe ich, dass ich etwas grün
 		unterstrichen habe. Dann frag ich mich: Wo ist eigentlich der grüne Stift? Dann schaue ich in
@@ -236,7 +240,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-06.mp3'}>
 		Small Talk ist und bleibt für mich sehr anstrengend. Ich musste dafür viel üben. Zum Beispiel
 		als Kind in der Therapie. Es fühlt sich immer an, als würde ich performen. So wie ein
 		Schauspieler, der ein Skript liest. Wenn ich keinen Smalltalk mache, wirke ich unfreundlich.
@@ -264,7 +268,7 @@
 		so echt ist.
 	</FriendBubble>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-07.mp3'}>
 		Genau. Ich denke, man muss so wirken, wie die anderen. Ich musste auch lernen, dass man dem
 		anderen in die Augen schaut. Das mache ich aber nicht mehr. Das ist mir unangenehm. Ich schaue
 		woanders hin. Dann höre ich auch besser zu und kann mich konzentrieren. Gesprächspartner finden
@@ -280,7 +284,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-08.mp3'}>
 		Mimik und Gestik ist manchmal wie eine Art Geheimsprache für mich. Wie als sähe man etwas in
 		einer unbekannten Schrift. Ich kann dann sehen, dass es Schrift ist. Vielleicht auch, dass es
 		arabisch ist oder Runen. Aber ich kenne die Bedeutung nicht. Ich bin sozusagen Mimik-Analphabet.
@@ -297,7 +301,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-09.mp3'}>
 		Die Umwelt ist eher für neurotypische Menschen gestaltet. Deshalb ist das nicht so einfach. Es
 		verursacht mir Stress und Aufregung. Eigentlich die ganze Zeit. An der Uni sind oft viele Leute
 		oder es gibt eine Baustelle oder irgendeine Aktion, bei denen Leute einen was fragen. Ein
@@ -341,7 +345,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-10.mp3'}>
 		Ich habe keinen Nachteilsausgleich, der mir eine Zeitverlängerung bei Prüfungen oder Abgaben
 		einräumt. Ich brauche das nicht. Aber ich kenne Andere auf dem Spektrum, für die das sehr
 		hilfreich ist. Die haben Probleme bei der Prüfung und müssen zwischendurch pausieren. Ich darf
@@ -361,7 +365,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona}>
+	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-11.mp3'}>
 		Multiple-Choice ist für mich schwierig. Da sind die Antwortmöglichkeiten oft fast gleich. Nur
 		ein Wort oder ein „nicht“ ist anders. Ich kann das dann schwer auseinanderhalten und alles
 		verschwimmt vor meinen Augen. Schwierig finde ich auch, wenn Fragen für mich uneindeutig sind.

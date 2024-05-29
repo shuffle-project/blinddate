@@ -67,12 +67,14 @@
 	<button
 		class="playbutton-desktop"
 		on:click={speak}
-		aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
+		aria-label={!playingAudio ? 'Abspielen' : 'Pausieren'}
 	>
 		{#if playingAudio}
 			<Icon size="smedium" img="pause" />
+			<span aria-hidden="true">Pausieren</span>
 		{:else}
 			<Icon size="smedium" img="play" />
+			<span aria-hidden="true">Abspielen</span>
 		{/if}
 	</button>
 	<p class="text" bind:this={textDiv}>
@@ -144,9 +146,15 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-
-			width: 2.5rem;
+			gap: 0.375rem;
+			width: 7rem;
 			height: 2rem;
+			padding: 0.25rem 0.625rem;
+
+			span {
+				font-size: 0.875rem;
+				color: rgba(var(--color-black-rgb), 0.8);
+			}
 
 			&:hover,
 			&:focus {

@@ -57,19 +57,18 @@
 
 	let selectedOption: SupportOptionId | '' = '';
 	const supportOptions = [
-		{ id: '1', name: 'Adipiscing rhoncus', svg: 'placeholder' },
-		{ id: '2', name: 'Verwenden eines soliden Mikros', svg: 'placeholder' },
-		{ id: '3', name: 'Hochwertige Scans mit OCR Software', svg: 'placeholder' },
-		{ id: '4', name: 'Lorem ipsum dolor sit amet consectetur', svg: 'placeholder' },
-		{ id: '5', name: 'Ultricies porttitor egestas scelerisque id lorem', svg: 'placeholder' },
-		{ id: '6', name: 'Bereitstellen der Unterlagen vor der Vorlesung', svg: 'placeholder' },
-		{ id: '7', name: 'Aufnahme der Vorlesung', svg: 'placeholder' },
-		{ id: '8', name: 'Untertitel bei Videos', svg: 'placeholder' },
-		{ id: '9', name: 'Regelmäßige Pausen', svg: 'placeholder' },
+		{ id: '1', name: 'Adipiscing rhoncus' },
+		{ id: '2', name: 'Verwenden eines soliden Mikros' },
+		{ id: '3', name: 'Hochwertige Scans mit OCR Software' },
+		{ id: '4', name: 'Lorem ipsum dolor sit amet consectetur' },
+		{ id: '5', name: 'Ultricies porttitor egestas scelerisque id lorem' },
+		{ id: '6', name: 'Bereitstellen der Unterlagen vor der Vorlesung' },
+		{ id: '7', name: 'Aufnahme der Vorlesung' },
+		{ id: '8', name: 'Untertitel bei Videos' },
+		{ id: '9', name: 'Regelmäßige Pausen' },
 		{
 			id: 'accessible-documents',
-			name: 'Ich überprüfe die Barrierefreiheit meiner Dokumente',
-			svg: 'placeholder'
+			name: 'Ich überprüfe die Barrierefreiheit meiner Dokumente'
 		}
 	] as const;
 
@@ -206,12 +205,26 @@
 			alt=""
 			aria-hidden="true"
 			width="1350"
-			height="998"
+			height="980"
 		/>
 	</div>
-	<div role="radiogroup" aria-label="Unterstützungsmöglichkeiten" class="support-list">
+	<fieldset id="support-list" aria-label="Unterstützungsmöglichkeiten" class="support-list">
 		{#each supportOptions as option, i}
-			<button
+			<label for={option.id}>
+				<input
+					on:click={() => {
+						handleOptionSelection(option.id);
+						selectedStudent = undefined;
+					}}
+					type="radio"
+					value={option.name}
+					name="support-list"
+					id={option.id}
+					checked={selectedOption === option.id}
+				/>
+				<span>{option.name}</span>
+			</label>
+			<!-- <button
 				aria-checked={selectedOption === option.id}
 				role="radio"
 				id="support-tab-{i}"
@@ -219,8 +232,8 @@
 					handleOptionSelection(option.id);
 					selectedStudent = undefined;
 				}}
-			>
-				<!-- <div class="icon-wrapper">
+			> -->
+			<!-- <div class="icon-wrapper">
 					<Icon
 						img={option.svg}
 						size="parent"
@@ -228,10 +241,10 @@
 					/>
 				</div> -->
 
-				{option.name}
-			</button>
+			<!-- {option.name}
+			</button> -->
 		{/each}
-	</div>
+	</fieldset>
 </div>
 
 <svelte:window on:mouseup={(e) => handleBackdropClick(e)} />
@@ -336,7 +349,7 @@
 				}
 
 				li.gabriel {
-					bottom: 2.8%;
+					bottom: 1.1%;
 					left: 14%;
 
 					img {
@@ -345,7 +358,7 @@
 				}
 
 				li.michelle {
-					top: 38.2%;
+					top: 38.8%;
 					right: 21%;
 
 					img {
@@ -354,7 +367,7 @@
 				}
 
 				li.maxi {
-					top: 39.2%;
+					top: 39.8%;
 					left: 19%;
 
 					img {
@@ -367,6 +380,17 @@
 					border: none;
 					background-color: transparent;
 					cursor: pointer;
+
+					&:focus-visible {
+						outline: none;
+
+						.persona-img {
+							filter: drop-shadow(2px 0 0 var(--color-white))
+								drop-shadow(0 -2px 0 var(--color-white)) drop-shadow(-2px 0 0 var(--color-white))
+								drop-shadow(4px 0 0 var(--color-blue)) drop-shadow(-4px 0 0 var(--color-blue))
+								drop-shadow(0 -4px 0 var(--color-blue));
+						}
+					}
 				}
 			}
 
@@ -410,55 +434,74 @@
 			.big-picture-room {
 				width: 100%;
 				height: 100%;
-				border-radius: 2.5rem;
+				border-top-left-radius: 2.5rem;
+				border-top-right-radius: 2.5rem;
 			}
 		}
 
 		.support-list {
 			width: 100%;
 			max-width: var(--content-max-width);
-			margin: 1.25rem auto;
+			margin-inline: auto;
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
-			gap: 0.625rem;
+			gap: 1rem;
+			background-color: var(--color-black);
+			border-bottom-left-radius: 2.5rem;
+			border-bottom-right-radius: 2.5rem;
+			border: none;
+			box-sizing: border-box;
 
-			button {
-				min-height: 6rem;
+			label {
+				color: rgba(var(--color-white-rgb), 0.8);
 				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				padding: 0.625rem;
-
-				font-size: 1rem;
-
-				color: var(--color-black);
-				background-color: var(--color-lavender);
-				border: 1px solid var(--color-lavender);
-				border-radius: 2.5rem;
-
 				cursor: pointer;
 
-				font-weight: bold;
-
-				outline: 2px solid transparent;
-
-				.icon-wrapper {
-					width: 1.875rem;
-					height: 1.875rem;
-					margin-bottom: 0.625rem;
+				&:focus,
+				&:hover {
+					input {
+						outline: 2px solid var(--color-white);
+						outline-offset: 2px;
+					}
 				}
 
-				&[aria-checked='true'] {
-					background-color: var(--color-black);
-					color: rgba(var(--color-white-rgb), 0.85);
+				span {
+					margin-top: 0.25rem;
 				}
 
-				&:hover,
-				&:focus {
-					outline-offset: 2px;
-					outline-color: var(--color-blue);
-					transition: outline-color 0.3s ease-in-out;
+				input {
+					background-color: transparent;
+					-webkit-appearance: none;
+					appearance: none;
+					margin: 0;
+					margin-right: 0.375rem;
+					color: var(--color-white);
+					min-width: 1.625rem;
+					height: 1.625rem;
+					border: 2px solid rgba(var(--color-white-rgb), 0.8);
+					border-radius: 50%;
+
+					display: grid;
+					place-content: center;
+
+					&:focus {
+						outline: 2px solid var(--color-white);
+						outline-offset: 2px;
+					}
+
+					&:checked {
+						background-color: var(--color-white);
+					}
+
+					&:checked:before {
+						content: '';
+						width: 0.875rem;
+						height: 0.875rem;
+						box-shadow: inset 1rem 1rem var(--color-black);
+
+						transform-origin: bottom left;
+						clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
+					}
 				}
 			}
 		}

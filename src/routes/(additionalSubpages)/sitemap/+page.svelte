@@ -12,6 +12,9 @@
 	<h2>Alle Persona-Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
+			<a href={base + '/personas/aleksandr'} class="focus-indicator">Aleksandr</a>
+		</li>
+		<li>
 			<a href={base + '/personas/gabriel'} class="focus-indicator">Gabriel</a>
 		</li>
 		<li>
