@@ -29,21 +29,15 @@
 			<a href="#best3" class="focus-indicator">5. best3 Studie</a>
 		</li>
 		<li>
-			<a href="#multi-sense" class="focus-indicator"
-				>6. Mehr-Sinne-Prinzip oder Zwei-Sinne-Prinzip</a
-			>
+			<a href="#multi-sense" class="focus-indicator">6. Mehr-Sinne-Prinzip </a>
 		</li>
 		<li>
 			<a href="#ocr" class="focus-indicator">7. OCR</a>
 		</li>
-		<li>
-			<a href="#simulation-games" class="focus-indicator"
-				>8. Simulationen / Spiele auf der Webseite</a
-			>
-		</li>
+
 		<li>
 			<a href="#universal-design" class="focus-indicator" lang="en"
-				>9. Universal Design (for learning)</a
+				>8. Universal Design (for learning)</a
 			>
 		</li>
 	</ol>
@@ -65,11 +59,11 @@
 		Diese Punkte werden auch vom Hochschulrahmengesetz aufgegriffen. Dort heißt es in §2, Abs 4:
 		„Hochschulen […] tragen dafür Sorge, dass behinderte Studierende in ihrem Studium nicht
 		benachteiligt werden und die Angebote der Hochschule möglichst ohne fremde Hilfe in Anspruch
-		nehmen können“
+		nehmen können.“.
 	</p>
 
 	<p>
-		Die Angebote der Hochschule umfasst hier nicht nur die Zugänglichkeit von Gebäuden und
+		Die Angebote der Hochschule umfassen hier nicht nur die Zugänglichkeit von Gebäuden und
 		Studierbarkeit von einzelnen Studiengängen, sondern alle Angebote der Hochschule wie z.B. Zugang
 		zu Gebäuden, Praktika, Exkursionen, Labore, Sprachkurse und außercurriculare Angebote.
 	</p>
@@ -174,8 +168,9 @@
 		Damit assistive Technologien erfolgreich genutzt werden können, müssen Webseiten, Apps und
 		Dokumente damit kompatibel sein. ScreenReader können z.B. den Inhalt von Bildern oder Diagrammen
 		lesen, wenn ein Alternativtext hinterlegt ist. Für diese Kompatibilität sind die Autor*innen der
-		Webseiten und Dokumente verantwortlich. Barrierefreiheit muss also direkt von Anfang an
-		mitbedacht werden und entscheidet, wie eine Webseite codiert oder ein Dokument aufgebaut ist.
+		Webseiten und Dokumente verantwortlich. Barrierefreiheit muss also von Anfang an berücksichtigt
+		werden, da sie bestimmt, wie eine Webseite codiert und ein Dokument strukturiert/ aufgebaut
+		wird.
 	</p>
 
 	<h2 id="personas">4. Personas</h2>
@@ -224,15 +219,15 @@
 		>
 	</p>
 
-	<h2 id="multi-sense">6. Mehr-Sinne-Prinzip oder Zwei-Sinne-Prinzip</h2>
+	<h2 id="multi-sense">6. Mehr-Sinne-Prinzip</h2>
 
 	<p>
-		Das Zwei-/Mehr-Sinne-Prinzip ist ein Grundprinzip der barrierefreien Gestaltung. Es besagt, dass
+		Das Mehr-Sinne-Prinzip ist ein Grundprinzip der barrierefreien Gestaltung. Es besagt, dass
 		mindestens zwei der drei Sinne (Hören, Sehen, Fühlen) angesprochen werden sollen, um
 		Informationen zu übermitteln.
 	</p>
 	<p>
-		Das Mehr-Sinne Prinzip ist zentral, wenn Inhalte für Menschen mit Sinnesbehinderungen (z.B.
+		Das Mehr-Sinne-Prinzip ist zentral, wenn Inhalte für Menschen mit Sinnesbehinderungen (z.B.
 		Hörbehinderungen oder Sehbeeinträchtigungen) zugänglich sein sollen.
 	</p>
 	<p>Einige Beispiele der Umsetzung sind:</p>
@@ -255,8 +250,8 @@
 
 	<p>
 		Eine Gestaltung nach dem Mehr-Sinne-Prinzip sorgt einerseits dafür, dass Personen mit
-		Sinnesbeeinträchtigungen Informationen trotzdem gleichwertig wahrnehmen können. Zusätzlich ist
-		die Wahrscheinlichkeit, dass Informationen aufgenommen und verstanden werden, deutlich höher, je
+		Sinnesbeeinträchtigungen Informationen gleichwertig wahrnehmen können. Zusätzlich ist die
+		Wahrscheinlichkeit, dass Informationen aufgenommen und verstanden werden, deutlich höher, je
 		mehr Sinne bei der wahrnehmenden Person angesprochen werden.
 	</p>
 
@@ -288,88 +283,7 @@
 		>
 	</p>
 
-	<h2 id="simulation-games">8. Simulationen / Spiele auf der Webseite</h2>
-
-	<p>
-		Viele Menschen mit Behinderung und ihre Selbstvertretung sehen Simulationen oder immersive
-		Spiele, die eine Beeinträchtigung nachstellen sollen, kritisch.
-	</p>
-
-	<p>
-		Oft laufen diese Simulationen nach einem ähnlichen Schema ab: Eine nichtbehinderte Person soll
-		eine Behinderung erleben, indem sie z.B. für eine gewisse Zeit einen Rollstuhl nutzt, eine
-		spezielle Brille bekommt, die eine Sehbeeinträchtigungen simuliert, oder einen Anzug trägt, der
-		Bewegungen erschwert. Wenn die nichtbehinderte Person dann Aufgaben erledigen muss, soll sie
-		erleben, wie die Umwelt sie behindert, Mitgefühl entwickeln und ist in der Lage, in zukünftigen
-		Handlungen auch die Perspektive von behinderten Menschen einzubeziehen.
-	</p>
-
-	<p>
-		Manchmal führen solche Simulationen allerdings dazu, dass nichtbehinderte Personen sich (und im
-		Rückschluss Menschen mit Behinderung) als hilflos und ohnmächtig empfinden. Ohne Übung im
-		Handling in einem Rollstuhl zu sitzen, kann beispielsweise dazu führen, dass man Mitleid für
-		Menschen mit Behinderung entwickelt oder es schlimm findet, das Menschen sich so fortbewegen.
-	</p>
-
-	<p>
-		Für andere Leute können solche Erlebnisse jedoch auch bereichernd sein – gerade wenn sie von
-		Menschen mit Behinderung begleitet und angeleitet werden, die auch von ihren eigenen Erfahrungen
-		berichten. So wird das Ziel erfüllt, Bewusstsein zu entwickeln und die eigene Umwelt kritisch zu
-		betrachten, ob sie auf die Bedürfnisse von Menschen mit Behinderung zugeschnitten ist.
-	</p>
-
-	<p>
-		Wichtig ist ein Bewusstsein dafür, dass Menschen mit Behinderung viele Strategien und Kenntnisse
-		haben, die sie jeden Tag nutzen. Und dass diese Strategien auf viel Training und Übung aufbauen.
-		Dazu gehören zum Beispiel auch der Umgang mit einem Rollstuhl, Navigation in der Stadt mit einem
-		Langstock, oder die Nutzung von assistiven Technologien.
-	</p>
-
-	<p>
-		In dieser Podcast Folge geht das Team der Neuen Norm weiter auf das Thema ein:
-		<a href="https://dieneuenorm.de/podcast/rollstuhlexperimente/" class="focus-indicator"
-			>#1 Rollstuhl-Experimente</a
-		>
-	</p>
-
-	<p>
-		Und auch dieser Bericht von Suse Bauer geht auf den Umgang mit Simulationen ein:
-		<a
-			href="https://raul.de/allgemein/disability-simulations-behinderung-als-event-oder-eine-gute-moeglichkeit-um-auf-barrieren-aufmerksam-zu-machen/"
-			class="focus-indicator"
-			>“Disability Simulations” – Behinderung als Event oder eine gute Möglichkeit, um auf Barrieren
-			aufmerksam zu machen?</a
-		>
-	</p>
-
-	<p>
-		Zum Ausprobieren, der <a
-			href="https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla
-		"
-			class="focus-indicator">Web Disability Simulator von Google Chrome</a
-		>.
-	</p>
-
-	<p>
-		Die Spiele, die Sie auf BlindDate finden, sollen genau die Strategien in den Fokus nehmen, die
-		Menschen mit Behinderung nutzen, um alltägliche Aufgaben zu erledigen. Es geht also nicht darum,
-		genau zu verstehen, wie man mit einer Sehbeeinträchtigung sieht und wie sich das anfühlt,
-		sondern zu verstehen, welche Strategien und Technologien eine sehbehinderte Person nutzt, um
-		erfolgreich zu studieren. Und natürlich, wie Hochschulangehörige dabei helfen können, dass diese
-		Strategien erfolgreich sind.
-	</p>
-
-	<p>
-		Mehr Hintergrundinformationen zu den Simulationsspielen auf dieser Seite finden Sie hier:
-		<a
-			href="https://aaate2023.eu/wp-content/uploads/sites/26/2023/08/BookOfAbstracts-Prelim.pdf#page=277"
-			class="focus-indicator"
-			lang="en"
-			>Re-Conceptualizing Disability Simulations: a guided strategies-based approach (PDF)</a
-		>
-	</p>
-
-	<h2 id="universal-design" lang="en">9. Universal Design (for learning)</h2>
+	<h2 id="universal-design" lang="en">8. Universal Design (for learning)</h2>
 
 	<p>
 		Ziel von Universal Design ist es, Produkte, Gebäude und Dienstleistungen so zu gestalten, dass
@@ -406,11 +320,16 @@
 	</p>
 
 	<p>
-		Die Bedarfe von behinderten Studierenden werden im Universal Design von Anfang an berücksichtigt
-		– zum Beispiel werden Dokumente barrierefrei aufbereitet, Fachbegriffe erklärt oder
-		unterschiedliche Zugänge zu Inhalten bereit gestellt. Dieses Vorgehen sorgt dafür, dass
+		Die Bedarfe von Studierenden mit Beeinträchtigung werden im Universal Design von Anfang an
+		berücksichtigt – zum Beispiel werden Dokumente barrierefrei aufbereitet, Fachbegriffe erklärt
+		oder unterschiedliche Zugänge zu Inhalten bereit gestellt. Dieses Vorgehen sorgt dafür, dass
 		aufwändige Nachbesserungen weniger werden und ermöglicht allen Studierenden, das Lernen nach
 		ihren Bedarfen und Vorlieben zu gestalten.
+	</p>
+
+	<p>
+		Auf <a class="focus-indicator" href={base + '/große-ganze/'}>"das große Ganze"</a> haben wir den
+		UDL-Ansatz noch einmal veranschaulicht.
 	</p>
 
 	<p>

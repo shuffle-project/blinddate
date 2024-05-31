@@ -8,35 +8,34 @@
 			<h2>Für Lehrende</h2>
 			<p>
 				BlindDate ist eine virtuelle Begegnungsplattform, auf der Ihnen Studierenden-Personas mit
-				Behinderung ihren Hochschulalltag näherbringen. Dazu gehören Strategien, assistive
+				Beeinträchtigung ihren Hochschulalltag näherbringen. Dazu gehören Strategien, assistive
 				Technologien, aber auch Barrieren, die den Studierenden begegnen. Auch Sie als Lehrperson
-				können viel zur Barrierefreiheit der Hochschule beitragen. Erfahren Sie mehr darüber, wie
+				können viel zur Barrierefreiheit an der Hochschule beitragen. Erfahren Sie mehr darüber, wie
 				Sie BlindDate nutzen können.
 			</p>
 			<a href="{base}/lehrende" class="focus-indicator">Informationen für Lehrende</a>
+		</div>
+		<div class="big-picture">
+			<h2>Das große Ganze</h2>
+			<p>
+				Wir wollen eine Hochschullehre, an der möglichst viele unterschiedliche Menschen erfolgreich
+				lernen und lehren können. Hier geben wir Ihnen einen Einblick in Maßnahmen zur Gestaltung
+				Ihrer Lehre, die vielen Lernenden gleichzeitig zugutekommen.
+			</p>
+			<a href="{base}/große-ganze" class="focus-indicator">Zum großen Ganzen</a>
 		</div>
 		<div class="personas">
 			<h2>Personas?</h2>
 			<p>
 				Personas sind fiktive Personen, die stellvertretend für eine Zielgruppe mit bestimmten
-				Charakteristika stehen – in unserem Fall Studierende mit Behinderungen. Personas sind nicht
-				frei erfunden – sie basieren auf Daten. Diese Daten wurden durch Umfragen,
-				Erfahrungsberichte und Feedback von Studierenden mit Behinderungen im Laufe des SHUFFLE
+				Charakteristika stehen – in unserem Fall Studierende mit Beeinträchtigungen. Personas sind
+				nicht frei erfunden – sie basieren auf Daten. Diese Daten wurden durch Umfragen,
+				Erfahrungsberichte und Feedback von Studierenden mit Beeinträchtigungen im Laufe des SHUFFLE
 				Projekts gesammelt.
 			</p>
 			<a href="{base}/persona-entwicklung" class="focus-indicator">Persona-Entwicklung im Detail</a>
 		</div>
-		<div class="concepts">
-			<h2>Wichtige Begriffe</h2>
-			<p>
-				Barrierefreiheit? Behinderung? Assistive Technologien? Best3 Studie? – auf dieser Seite
-				werden verschiedene Begriffe kurz und verständlich definiert.
-			</p>
-			<a href="{base}/wichtige-begriffe" class="focus-indicator">Zu den wichtigen Begriffen</a>
-		</div>
-		<div class="decorative-image">
-			<img src="{base}/tools/remote-study.svg" alt="" aria-hidden="true" />
-		</div>
+
 		<div class="questions">
 			<h2>Häufige Fragen</h2>
 			<p>
@@ -47,18 +46,19 @@
 			<p>In dieser Sektion finden Sie Antworten auf häufig gestellte Fragen zu BlindDate.</p>
 			<a href="{base}/fragen" class="focus-indicator">Zu den häufigen Fragen</a>
 		</div>
+		<div class="decorative-image">
+			<img src="{base}/tools/remote-study.svg" alt="" aria-hidden="true" />
+		</div>
+		<div class="concepts">
+			<h2>Wichtige Begriffe</h2>
+			<p>
+				Barrierefreiheit? Behinderung? Assistive Technologien? best3 Studie? – auf dieser Seite
+				werden verschiedene Begriffe kurz und verständlich definiert.
+			</p>
+			<a href="{base}/wichtige-begriffe" class="focus-indicator">Zu den wichtigen Begriffen</a>
+		</div>
 		<div class="decorative-persona">
 			<img src="{base}/personas/maxi/maxi-happy.svg" alt="" aria-hidden="true" loading="lazy" />
-		</div>
-
-		<div class="big-picture">
-			<h2>Das große Ganze</h2>
-			<p>
-				Wir wollen eine Hochschullehre, an der möglichst viele unterschiedliche Menschen erfolgreich
-				lernen und lehren können. Hier geben wir Ihnen einen Einblick in Maßnahmen zur Gestaltung
-				Ihrer Lehre, die vielen Lernenden gleichzeitig zu Gute kommen.
-			</p>
-			<a href="{base}/große-ganze" class="focus-indicator">Zum großen Ganzen</a>
 		</div>
 	</div>
 </div>
@@ -113,18 +113,19 @@
 			}
 
 			.personas {
-				grid-area: two;
-				background-color: var(--color-lavender);
-			}
-
-			.concepts {
 				grid-area: three;
 				background-color: var(--color-white);
 				border: 1px solid var(--color-lavender);
 			}
 
+			.concepts {
+				grid-area: six;
+				background-color: var(--color-white);
+				border: 1px solid var(--color-lavender);
+			}
+
 			.decorative-image {
-				grid-area: four;
+				grid-area: five;
 
 				display: flex;
 				align-items: center;
@@ -138,13 +139,13 @@
 			}
 
 			.questions {
-				grid-area: five;
-				background-color: var(--color-white);
+				grid-area: four;
+				background-color: var(--color-lavender);
 				border: 1px solid var(--color-lavender);
 			}
 
 			.decorative-persona {
-				grid-area: six;
+				grid-area: seven;
 				background: var(--color-gradient-persona);
 				display: flex;
 				justify-content: center;
@@ -156,7 +157,7 @@
 			}
 
 			.big-picture {
-				grid-area: seven;
+				grid-area: two;
 				background-color: var(--color-lavender);
 			}
 		}
@@ -168,9 +169,9 @@
 				grid-template-columns: repeat(3, 1fr);
 				grid-template-areas:
 					'one two three'
-					'one two four'
-					'five six four'
-					'five six seven';
+					'one five three'
+					'four five seven'
+					'four six seven';
 			}
 		}
 	}
@@ -183,7 +184,7 @@
 					'one two'
 					'three four'
 					'five six'
-					'seven seven';
+					'seven eight';
 			}
 		}
 	}
@@ -195,9 +196,9 @@
 				grid-template-areas:
 					'one one one'
 					'two two two'
-					'three three four'
-					'five five six'
-					'seven seven seven';
+					'three three seven'
+					'four four four'
+					'five six six';
 			}
 		}
 	}

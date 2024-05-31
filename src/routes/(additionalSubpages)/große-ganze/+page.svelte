@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import StudentSpeechbubble from '$lib/components/big-picture/StudentSpeechbubble.svelte';
+	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 
 	type studentId = 'maxi' | 'michelle' | 'gabriel';
@@ -142,109 +143,100 @@
 <SubpageTitle>Das große Ganze</SubpageTitle>
 
 <div class="wrapper">
-	<p>
-		Werden Lernumgebungen von vornherein so geplant und gestaltet, dass sie für alle Lernenden
-		zugänglich sind, können einige aufwändige Nachbesserungen und zusätzliche, zeitintensive
-		Anpassungen vermieden werden. Viele (Unterstützungs-)Maßnahmen, die bereits zu Beginn mitgedacht
-		und umgesetzt werden, kommen vielen Studierenden zu Gute – vielleicht sogar Studierenden, die
-		Sie im ersten Moment gar nicht mitbedacht haben.
-	</p>
+	{#if ENVIRONMENT.showBigPictureContent}
+		<p>
+			Werden Lernumgebungen von vornherein so geplant und gestaltet, dass sie für alle Lernenden
+			zugänglich sind, können einige aufwändige Nachbesserungen und zusätzliche, zeitintensive
+			Anpassungen vermieden werden. Viele (Unterstützungs-)Maßnahmen, die bereits zu Beginn
+			mitgedacht und umgesetzt werden, kommen vielen Studierenden zu Gute – vielleicht sogar
+			Studierenden, die Sie im ersten Moment gar nicht mitbedacht haben.
+		</p>
 
-	<p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p>
+		<p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p>
 
-	<p>
-		Im Folgenden ist ein Vorlesungssaal voller Studierender abgebildet. Wählen Sie weiter unten eine
-		Unterstützungsmöglichkeit aus und sehen Sie, wer alles davon profitiert. Anschließend können Sie
-		auf die Studierenden klicken, um mehr Informationen zu bekommen.
-	</p>
+		<p>
+			Im Folgenden ist ein Vorlesungssaal voller Studierender abgebildet. Wählen Sie weiter unten
+			eine Unterstützungsmöglichkeit aus und sehen Sie, wer alles davon profitiert. Anschließend
+			können Sie auf die Studierenden klicken, um mehr Informationen zu bekommen.
+		</p>
 
-	<div class="desktop">
-		<ul>
-			{#each students as student, i}
-				<li
-					class={student.id}
-					class:active={student.active}
-					class:selected={student.id === selectedStudent}
-				>
-					<button
-						class="student-button"
-						aria-label={student.name}
-						tabindex={student.active ? 0 : -1}
-						on:click={() => handleSelectStudent(student.id)}
-						id="student-{student.id}-button"
-						aria-pressed={student.id === selectedStudent}
+		<div class="desktop">
+			<ul>
+				{#each students as student, i}
+					<li
+						class={student.id}
+						class:active={student.active}
+						class:selected={student.id === selectedStudent}
 					>
-						<div class="student-info-wrapper" aria-hidden="true">
-							<div class="student-info">
-								<p class="persona-name">{student.name}</p>
+						<button
+							class="student-button"
+							aria-label={student.name}
+							tabindex={student.active ? 0 : -1}
+							on:click={() => handleSelectStudent(student.id)}
+							id="student-{student.id}-button"
+							aria-pressed={student.id === selectedStudent}
+						>
+							<div class="student-info-wrapper" aria-hidden="true">
+								<div class="student-info">
+									<p class="persona-name">{student.name}</p>
+								</div>
 							</div>
-						</div>
-						<img
-							class="persona-img"
-							src="{base}/personas/{student.id}/{student.id}-lecture.svg"
-							alt=""
-							loading="lazy"
+							<img
+								class="persona-img"
+								src="{base}/personas/{student.id}/{student.id}-lecture.svg"
+								alt=""
+								loading="lazy"
+							/>
+						</button>
+
+						<StudentSpeechbubble
+							studentName={student.name}
+							studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
+							visible={selectedStudent === student.id}
+							on:close={() => handleSpeechbubbleClose()}
 						/>
-					</button>
+					</li>
+				{/each}
+			</ul>
 
-					<StudentSpeechbubble
-						studentName={student.name}
-						studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
-						visible={selectedStudent === student.id}
-						on:close={() => handleSpeechbubbleClose()}
+			<div class="dark-overlay" class:not-hidden={selectedOption !== ''}>
+				<input type="checkbox" id="show-all-names" />
+				<label for="show-all-names">Alle Namen anzeigen</label>
+			</div>
+
+			<img
+				class="big-picture-room"
+				src="{base}/decorations/big-picture-room.svg"
+				alt=""
+				aria-hidden="true"
+				width="1350"
+				height="980"
+			/>
+		</div>
+		<fieldset id="support-list" aria-label="Unterstützungsmöglichkeiten" class="support-list">
+			{#each supportOptions as option, i}
+				<label for={option.id}>
+					<input
+						on:click={() => {
+							handleOptionSelection(option.id);
+							selectedStudent = undefined;
+						}}
+						type="radio"
+						value={option.name}
+						name="support-list"
+						id={option.id}
+						checked={selectedOption === option.id}
 					/>
-				</li>
+					<span>{option.name}</span>
+				</label>
 			{/each}
-		</ul>
-
-		<div class="dark-overlay" class:not-hidden={selectedOption !== ''} />
-
-		<img
-			class="big-picture-room"
-			src="{base}/decorations/big-picture-room.svg"
-			alt=""
-			aria-hidden="true"
-			width="1350"
-			height="980"
-		/>
-	</div>
-	<fieldset id="support-list" aria-label="Unterstützungsmöglichkeiten" class="support-list">
-		{#each supportOptions as option, i}
-			<label for={option.id}>
-				<input
-					on:click={() => {
-						handleOptionSelection(option.id);
-						selectedStudent = undefined;
-					}}
-					type="radio"
-					value={option.name}
-					name="support-list"
-					id={option.id}
-					checked={selectedOption === option.id}
-				/>
-				<span>{option.name}</span>
-			</label>
-			<!-- <button
-				aria-checked={selectedOption === option.id}
-				role="radio"
-				id="support-tab-{i}"
-				on:click={() => {
-					handleOptionSelection(option.id);
-					selectedStudent = undefined;
-				}}
-			> -->
-			<!-- <div class="icon-wrapper">
-					<Icon
-						img={option.svg}
-						size="parent"
-						svg_color={selectedOption === i ? 'white' : 'black'}
-					/>
-				</div> -->
-
-			<!-- {option.name}
-			</button> -->
-		{/each}
-	</fieldset>
+		</fieldset>
+	{:else}
+		<p>
+			Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen Sie
+			gerne immer wieder Mal vorbei.
+		</p>
+	{/if}
 </div>
 
 <svelte:window on:mouseup={(e) => handleBackdropClick(e)} />

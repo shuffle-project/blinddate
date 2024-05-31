@@ -37,16 +37,21 @@
 			<a href="#friend-personas" class="focus-indicator">5. Wofür sind die Freunde-Personas da? </a>
 		</li>
 		<li>
-			<a href="#actuality" class="focus-indicator">6. Ist das noch aktuell?</a>
+			<a href="#simulation-games" class="focus-indicator"
+				>6. Haben Simulationen nicht einen schlechten Ruf?</a
+			>
+		</li>
+		<li>
+			<a href="#actuality" class="focus-indicator">7. Ist das noch aktuell?</a>
 		</li>
 		<li>
 			<a href="#blinddate-accessible" class="focus-indicator"
-				>7. Ist BlindDate selbst auch barrierefrei?</a
+				>8. Ist BlindDate selbst auch barrierefrei?</a
 			>
 		</li>
 		<li>
 			<a href="#blinddate-contact" class="focus-indicator"
-				>8. Ich habe Fragen oder Anmerkungen, an wen kann ich mich wenden?</a
+				>9. Ich habe Fragen oder Anmerkungen, an wen kann ich mich wenden?</a
 			>
 		</li>
 	</ol>
@@ -58,7 +63,7 @@
 	<p>
 		Chancengleichheit im Studium – und die schließt einen barrierefreien Zugang zu allen Angeboten
 		der Hochschule mit ein – ist gesetzlich vorgeschrieben. Wenn Studierende also Bedarfe anmelden
-		oder Nachteilsausgleiche haben, müssen Sie diese umsetzen.
+		oder Nachteilsausgleiche haben, muss die Hochschule diese umsetzen.
 	</p>
 
 	<p>
@@ -100,6 +105,13 @@
 		)
 	</p>
 
+	<p>
+		Wie Sie Ihre Lehre für viele Studierende barrierefrei gestalten können, ohne deren Bedarfe zu
+		kennen, zeigen wir Ihnen auf <a class="focus-indicator" href={base + '/große-ganze/'}
+			>"das große Ganze"</a
+		> .
+	</p>
+
 	<h2 id="accessibility-numbers">2. Wie viele Studierende haben eine Behinderung?</h2>
 
 	<p>
@@ -108,7 +120,7 @@
 	</p>
 
 	<p>
-		Eine gute Schätzung liefert die Umfrage „beeinträchtigt studieren“, die alle 3 Jahre vom
+		Eine gute Schätzung liefert die Umfrage „beeinträchtigt studieren“ (best3), die alle 3 Jahre vom
 		Deutschen Studierendenwerk und dem Deutschen Zentrum für Hochschul- und Wissenschaftsforschung
 		beauftragt wird. An den bisherigen Umfragen haben mehr als 20 000 Studierende teilgenommen und
 		Fragen zu ihren Erfahrungen im Studium beantwortet.
@@ -171,7 +183,7 @@
 		In der Regel sprechen wir von Barrierearmut – wir versuchen, so viele Barrieren wie möglich zu
 		reduzieren und orientieren uns dabei an den Bedarfen der Nutzenden oder Teilnehmenden. Wenn zu
 		unserer Nutzendengruppe „alle“ gehören, wie z.B. bei Softwareprogrammen wie MS Office, muss sehr
-		viel Aufwand in die Barrierefreiheit fließen. Wenn unsere Nutzenden eine kleinere, uns bekannte
+		viel Aufwand in die Barrierefreiheit fließen. Wenn unsere Basis eine kleinere, uns bekannte
 		Gruppe ist, können wir sehr viel für die generelle Barrierefreiheit tun und dann noch
 		individuelle Anpassungen vornehmen, die sich an konkreten Bedarfen orientieren.
 	</p>
@@ -234,11 +246,11 @@
 
 	<p>
 		Auf den orangen Karten, die auf der rechten Seite mancher Persona-Seiten erscheinen, finden Sie
-		die sogenannten Freunde-Personas, wie beispielsweise Bea und Alex. Diese Freunde oder Partner
-		haben die Funktion, mit der eigentlichen Persona in den Dialog zu treten, mehr über sie zu
-		erzählen oder auch mal anderer Meinung zu sein. Eine Funktion der Freunde-Personas ist, zu
-		zeigen, dass Studierende mit Beeinträchtigungen individuell verschieden sind, auch wenn sie
-		vielleicht eine ähnliche Beeinträchtigung haben oder in einer ähnlichen Situation sind.
+		die sogenannten Freunde-Personas, wie beispielsweise Bea und Alex. Diese Bezugspersonen haben
+		die Funktion, mit der eigentlichen Persona in den Dialog zu treten, mehr über sie zu erzählen
+		oder auch mal anderer Meinung zu sein. Eine Funktion der Freunde-Personas ist, zu zeigen, dass
+		Studierende mit Beeinträchtigungen individuell verschieden sind, auch wenn sie vielleicht eine
+		ähnliche Beeinträchtigung haben oder in einer ähnlichen Situation sind.
 	</p>
 
 	<p>
@@ -246,7 +258,89 @@
 		Audio-Material oder begleitende Medien.
 	</p>
 
-	<h2 id="actuality">6. Ist das noch aktuell?</h2>
+	<h2 id="simulation-games">6. Haben Simulationen nicht einen schlechten Ruf?</h2>
+
+	<p>
+		Viele Menschen mit Behinderung und ihre Selbstvertretung sehen Simulationen oder immersive
+		Spiele, die eine Beeinträchtigung nachstellen sollen, kritisch.
+	</p>
+
+	<p>
+		Oft laufen diese Simulationen nach einem ähnlichen Schema ab: Eine nichtbehinderte Person soll
+		eine Behinderung erleben, indem sie z.B. für eine gewisse Zeit einen Rollstuhl nutzt, eine
+		spezielle Brille bekommt, die eine Sehbeeinträchtigungen simuliert, oder einen Anzug trägt, der
+		Bewegungen erschwert. Wenn die nichtbehinderte Person dann Aufgaben erledigen muss, soll sie
+		erleben, wie die Umwelt sie behindert, Mitgefühl entwickeln und ist in der Lage, in zukünftigen
+		Handlungen auch die Perspektive von behinderten Menschen einzubeziehen.
+	</p>
+
+	<p>
+		Manchmal führen solche Simulationen allerdings dazu, dass nichtbehinderte Personen sich (und im
+		Rückschluss Menschen mit Behinderung) als hilflos und ohnmächtig empfinden. Ohne Übung im
+		Handling in einem Rollstuhl zu sitzen, kann beispielsweise dazu führen, dass man Mitleid für
+		Menschen mit Behinderung entwickelt oder es schlimm findet, das Menschen sich so fortbewegen.
+	</p>
+
+	<p>
+		Für andere Leute können solche Erlebnisse jedoch auch bereichernd sein – gerade wenn sie von
+		Menschen mit Behinderung begleitet und angeleitet werden, die auch von ihren eigenen Erfahrungen
+		berichten. Auf diese Weise wird das Ziel erreicht, ein Bewusstsein zu entwickeln und die eigene
+		Umwelt kritisch zu überprüfen, ob sie den Bedürfnissen von Menschen mit Behinderung gerecht
+		wird.
+	</p>
+
+	<p>
+		Wichtig ist ein Bewusstsein dafür, dass Menschen mit Behinderung viele Strategien und Kenntnisse
+		haben, die sie jeden Tag nutzen. Und dass diese Strategien auf viel Training und Übung aufbauen.
+		Dazu gehören zum Beispiel auch der Umgang mit einem Rollstuhl, Navigation in der Stadt mit einem
+		Langstock, oder die Nutzung von assistiven Technologien.
+	</p>
+
+	<p>
+		In dieser Podcast Folge geht das Team der Neuen Norm weiter auf das Thema ein:
+		<a href="https://dieneuenorm.de/podcast/rollstuhlexperimente/" class="focus-indicator"
+			>#1 Rollstuhl-Experimente</a
+		>
+	</p>
+
+	<p>
+		Und auch dieser Bericht von Suse Bauer geht auf den Umgang mit Simulationen ein:
+		<a
+			href="https://raul.de/allgemein/disability-simulations-behinderung-als-event-oder-eine-gute-moeglichkeit-um-auf-barrieren-aufmerksam-zu-machen/"
+			class="focus-indicator"
+			>“Disability Simulations” – Behinderung als Event oder eine gute Möglichkeit, um auf Barrieren
+			aufmerksam zu machen?</a
+		>
+	</p>
+
+	<p>
+		Zum Ausprobieren, der <a
+			href="https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla
+		"
+			class="focus-indicator">Web Disability Simulator von Google Chrome</a
+		>.
+	</p>
+
+	<p>
+		Die Spiele, die Sie auf BlindDate finden, sollen genau die Strategien in den Fokus nehmen, die
+		Menschen mit Behinderung nutzen, um alltägliche Aufgaben zu erledigen. Es geht also nicht darum,
+		genau zu verstehen, wie man mit einer Sehbeeinträchtigung sieht und wie sich das anfühlt,
+		sondern zu verstehen, welche Strategien und Technologien eine sehbehinderte Person nutzt, um
+		erfolgreich zu studieren. Und natürlich, wie Hochschulangehörige dabei helfen können, dass diese
+		Strategien erfolgreich sind.
+	</p>
+
+	<p>
+		Mehr Hintergrundinformationen zu den Simulationsspielen auf dieser Seite finden Sie hier:
+		<a
+			href="https://aaate2023.eu/wp-content/uploads/sites/26/2023/08/BookOfAbstracts-Prelim.pdf#page=277"
+			class="focus-indicator"
+			lang="en"
+			>Re-Conceptualizing Disability Simulations: a guided strategies-based approach (PDF)</a
+		>
+	</p>
+
+	<h2 id="actuality">7. Ist das noch aktuell?</h2>
 
 	<p>
 		Grundlage der Personas ist unter anderem die Bedarfsanalyse des Forschungsprojekts SHUFFLE. Die
@@ -257,7 +351,7 @@
 		Verlinkungen oder Aussagen nicht mehr dem aktuellen Diskurs entsprechen.
 	</p>
 
-	<h2 id="blinddate-accessible">7. Ist BlindDate selbst auch barrierefrei?</h2>
+	<h2 id="blinddate-accessible">8. Ist BlindDate selbst auch barrierefrei?</h2>
 
 	<p>
 		Die Webseite hat das Ziel nach nationalen und internationalen Standards und Richtlinien
@@ -277,7 +371,7 @@
 		weitergeleitet.
 	</p>
 
-	<h2 id="blinddate-contact">8. Ich habe Fragen oder Anmerkungen, an wen kann ich mich wenden?</h2>
+	<h2 id="blinddate-contact">9. Ich habe Fragen oder Anmerkungen, an wen kann ich mich wenden?</h2>
 
 	<p>
 		Sollten Sie auf Fehler stoßen oder dem Entwicklungsteam von BlindDate Rückmeldungen zu den

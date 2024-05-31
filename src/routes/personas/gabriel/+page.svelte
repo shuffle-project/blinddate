@@ -247,6 +247,9 @@
 			Damit ein Screenreader ein Dokument vorlesen kann, muss der Scan eine gute Qualität haben –
 			das heißt beispielsweise: keine mitgescannten Finger, scharfe Umrisse, keine Doppelseiten und
 			vor allem kein Abspeichern als Bilddatei, sondern Nutzen einer Texterkennungssoftware (OCR).
+			<a class="focus-indicator" href={base + '/wichtige-begriffe/#ocr'}
+				>Mehr Informationen zu OCR</a
+			>
 		</Text>
 	</TextSection>
 

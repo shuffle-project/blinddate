@@ -19,6 +19,7 @@ interface Environment {
 	footerPersonas: boolean;
 	backLinkToStartpage: boolean;
 	displayLowerStartpageContent: boolean;
+	showBigPictureContent: boolean;
 }
 
 export const ENVIRONMENT: Environment = {
@@ -30,5 +31,6 @@ export const ENVIRONMENT: Environment = {
 	sitemap: true,
 	footerPersonas: true,
 	backLinkToStartpage: true,
-	displayLowerStartpageContent: true
+	displayLowerStartpageContent: true,
+	showBigPictureContent: true
 };

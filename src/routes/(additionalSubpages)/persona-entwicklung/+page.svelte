@@ -18,19 +18,20 @@
 	<div class="content-wrapper">
 		<h2>Was sind Personas?</h2>
 		<p>
-			Die Persona-Methode wurde 1999 von Alan Cooper entwickelt. Ziel dieser Methode ist es, Modelle
-			von Nutzenden, „die Personen einer spezifischen Zielgruppe mit bestimmten Merkmalen
-			charakterisieren“ (Lepzien et al) zu entwickeln, um sich in diese Zielgruppe hineinversetzen
-			und deren Bedürfnisse und Motivationen verstehen zu können. Personas sind also fiktive
-			Personen, die eine bestimmte Gruppe von Menschen repräsentieren.
+			Die Persona-Methode wurde 1999 von Alan Cooper entwickelt. Das Ziel dieser Methode ist es,
+			Modelle von Nutzenden zu entwickeln, „die Personen einer spezifischen Zielgruppe mit
+			bestimmten Merkmalen charakterisieren“ (Lepzien et al). Dadurch soll ein tieferes Verständnis
+			für die Bedürfnisse und Motivationen dieser Zielgruppe erreicht werden. Personas sind also
+			fiktive Personen, die eine bestimmte Gruppe von Menschen repräsentieren.
 		</p>
 		<p>
 			Die Studierenden-Personas, die Ihnen auf BlindDate begegnen, sind nicht frei erfunden – sie
-			basieren auf Daten. Die realen Erfahrungen der Personengruppe mit dem Umgang von Strategien
-			und (assistiven) Technologien, aber auch Barrieren im Studienalltag, werden durch die Persona
-			zusammengefasst und erklärt. So soll vor allem Lehrenden die Möglichkeit gegeben werden, sich
-			in die Perspektive der Studierenden hineinzuversetzen, die Strategien und Technologien
-			kennenzulernen und die Konzeption der eigenen, barrierearmen Lehre daran auszurichten.
+			basieren auf Daten. Die Personas erklären und fassen die realen Erfahrungen der
+			Personengruppe, wie beispielsweise genutzte Strategien und (assistiven) Technologien,
+			zusammen. Auch Barrieren im Studienalltag werden durch sie aufgezeigt. So soll vor allem
+			Lehrenden die Möglichkeit gegeben werden, sich in die Perspektive der Studierenden
+			hineinzuversetzen, die Strategien und Technologien kennenzulernen und die Konzeption der
+			eigenen, barrierearmen Lehre daran auszurichten.
 		</p>
 		<h2>Wie hat das Forschungs<wbr />projekt SHUFFLE die Personas entwickelt?</h2>
 		<p>
