@@ -190,6 +190,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			? `bg-${captionsBackgroundColor} fc-${captionsFontColor} fs-${captionsFontSize}`
 			: ''}
 		class:native-controls={!useNativeControls}
+		class:isiOSDevice
 		on:click={onPlayPause}
 		on:dblclick={onToggleFullscreen}
 		tabindex="0"
@@ -301,7 +302,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	{/if}
 
 	<div class="toggle-controls-wrapper">
-		<label>
+		<label class="checkbox-input-label-wrapper">
 			<input type="checkbox" bind:checked={useNativeControls} />
 			<span>Nativer Player nutzen</span>
 		</label>
@@ -319,6 +320,18 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	.wrapper {
 		display: flex;
 		flex-direction: column;
+
+		.toggle-controls-wrapper {
+			display: flex;
+			justify-content: end;
+			margin-block: 0.5rem;
+
+			label {
+				span {
+					font-size: 0.875rem;
+				}
+			}
+		}
 
 		video {
 			width: 100%;

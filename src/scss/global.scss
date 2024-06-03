@@ -120,3 +120,51 @@ button {
 		outline-offset: 2px;
 	}
 }
+
+.checkbox-input-label-wrapper {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+
+	input {
+		-webkit-appearance: none;
+		appearance: none;
+		background-color: var(--color-white);
+
+		margin: 0;
+
+		height: 1.25rem;
+		width: 1.25rem;
+		aspect-ratio: 1;
+
+		border-radius: 0.375rem;
+		border: 1px solid var(--color-black);
+
+		cursor: pointer;
+
+		display: grid;
+		place-content: center;
+
+		&:checked:before {
+			content: '';
+			width: 0.8rem;
+			height: 0.8rem;
+			box-shadow: inset 1rem 1rem var(--color-white);
+
+			transform-origin: bottom left;
+			clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
+		}
+
+		&:checked {
+			background-color: var(--color-black);
+			border: 2px solid var(--color-black);
+		}
+
+		&:focus,
+		&:hover {
+			outline: 2px solid var(--color-blue);
+			outline-offset: 2px;
+		}
+	}
+}
