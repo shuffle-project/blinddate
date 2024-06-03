@@ -10,6 +10,9 @@
 		case 'kilian':
 			personaImg = personaImg + '-explaining.svg';
 			break;
+		case 'aleksandr':
+			personaImg = personaImg + '-neutral.svg';
+			break;
 		default:
 			personaImg = personaImg + '-explaining-circle.svg';
 	}

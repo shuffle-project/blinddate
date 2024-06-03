@@ -7,21 +7,20 @@ subtitles	The track defines subtitles, used to display subtitles in a video
  -->
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { detect } from 'detect-browser';
 	import { onMount } from 'svelte';
 	import type { Video } from '../../interfaces/player.interfaces';
 	import Icon from '../Icon.svelte';
-	import { getRandomId } from '../utils';
+	import { getRandomId, isIOSDevice } from '../utils';
 	import CaptionSettings from './CaptionSettings.svelte';
 	import TempoSettings from './TempoSettings.svelte';
-	let isSafari: boolean;
 	const randomId = getRandomId();
 
 	export let videoData: Video;
 
 	let fullscreen = false;
 
-	let userDeviceIsiOS = false;
+	let useNativeControls = false;
+	let isiOSDevice = false;
 
 	// video
 	let videoWrapper: HTMLElement;
@@ -54,12 +53,10 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	let volumeSlider: HTMLInputElement;
 
 	$: {
-		if (isSafari) {
-			let normalizedSliderValue = (currentTime / duration) * 100;
-			normalizedSliderValue = normalizedSliderValue < 0 ? 0 : normalizedSliderValue;
-			if (timeProgress) {
-				timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
-			}
+		let normalizedSliderValue = (currentTime / duration) * 100;
+		normalizedSliderValue = normalizedSliderValue < 0 ? 0 : normalizedSliderValue;
+		if (timeProgress) {
+			timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
 		}
 	}
 
@@ -71,18 +68,20 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		}
 	}
 
+	$: {
+		if (!muted && volume === 0) {
+			onMute();
+		}
+		if (muted && volume !== 0) {
+			onMute();
+		}
+	}
+
 	onMount(() => {
-		isSafari = detect()!.name == 'safari';
+		isiOSDevice = isIOSDevice();
+		useNativeControls = isiOSDevice;
 
-		// userDeviceIsiOS = /iPhone/.test(navigator.userAgent);
-		userDeviceIsiOS =
-			['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(
-				navigator.platform
-			) ||
-			// iPad on iOS 13 detection
-			(navigator.userAgent.includes('Mac') && 'ontouchend' in document);
-
-		if (!userDeviceIsiOS) {
+		if (!isiOSDevice) {
 			// load capationSsettings from localStorage
 			captionsBackgroundColor = window.localStorage.getItem('captionsBackgroundColor') || 'black';
 			captionsFontColor = window.localStorage.getItem('captionsFontColor') || 'white';
@@ -105,7 +104,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 	// functions
 	function onPlayPause() {
-		if (userDeviceIsiOS) return;
+		if (useNativeControls) return;
+
 		if (video.paused) {
 			video.play();
 		} else {
@@ -117,6 +117,14 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	function onMute() {
 		muted = !muted;
 		ariaLiveContent = muted ? 'Stummgeschalten' : 'Ton aktiviert';
+
+		if (muted && volume !== 0) {
+			volume = 0;
+		}
+
+		if (!muted && volume === 0) {
+			volume = 0.5;
+		}
 	}
 
 	function onKeyDownTimeProgress(ev: KeyboardEvent) {
@@ -168,7 +176,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 	<video
 		poster={base + videoData.poster}
 		id="video-{randomId}"
-		controls={userDeviceIsiOS}
+		controls={useNativeControls || isiOSDevice}
 		preload="auto"
 		width="100%"
 		bind:this={video}
@@ -178,10 +186,10 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		bind:playbackRate
 		bind:volume
 		bind:currentTime
-		class={!userDeviceIsiOS
+		class={!isiOSDevice
 			? `bg-${captionsBackgroundColor} fc-${captionsFontColor} fs-${captionsFontSize}`
 			: ''}
-		class:userDeviceIsiOS
+		class:native-controls={!useNativeControls}
 		on:click={onPlayPause}
 		on:dblclick={onToggleFullscreen}
 		tabindex="0"
@@ -201,10 +209,11 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		probieren, oder gegebenenfalls diesen Browser aktualisieren.
 	</video>
 
-	{#if !userDeviceIsiOS}
-		<div id="video-controls" class="controls" class:isSafari>
+	{#if !useNativeControls}
+		<div id="video-controls">
 			{#if video}
 				<div class="row-1">
+					<span>{currentTimeMinutes}:{currentTimeSeconds}</span>
 					<input
 						aria-valuetext="Zeit = {currentTimeMinutes} Minuten {currentTimeSeconds} Sekunden"
 						aria-label="Video-Zeitleiste"
@@ -216,10 +225,11 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						max={duration}
 						on:keydown={onKeyDownTimeProgress}
 					/>
+					<span>{durationMinutes}:{durationSeconds}</span>
 				</div>
 
 				<div class="row-2">
-					<div>
+					<div class="row-2-left">
 						<button
 							class="playpause player-btn"
 							aria-label={paused ? 'Video abspielen' : 'Video pausieren'}
@@ -257,22 +267,25 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 							step="0.1"
 							bind:value={volume}
 							bind:this={volumeSlider}
-							disabled={muted}
 							class="volume-slider"
 						/>
 					</div>
-					<div>
+					<div class="row-2-right">
+						<TempoSettings bind:playbackRate />
+
 						<CaptionSettings
 							{video}
 							bind:captionsBackgroundColor
 							bind:captionsFontColor
 							bind:captionsFontSize
 						/>
-					</div>
-					<div>
-						<TempoSettings bind:playbackRate />
 
-						<button class="player-btn" title="Fullscreen" on:click={onToggleFullscreen}>
+						<button
+							class="player-btn"
+							aria-label={fullscreen ? 'Vollbild verlassen' : 'Vollbild'}
+							title={fullscreen ? 'Vollbild verlassen' : 'Vollbild'}
+							on:click={onToggleFullscreen}
+						>
 							{#if fullscreen}
 								<Icon size="parent" img="fullscreen-close" svg_color="white" />
 							{:else}
@@ -282,19 +295,20 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					</div>
 				</div>
 
-				<div class="row-3">
-					<span>
-						{currentTimeMinutes}:{currentTimeSeconds} / {durationMinutes}:{durationSeconds}
-					</span>
-					<span>Tempo: {playbackRate}x</span>
-					<span>{paused ? 'Pausiert' : 'Gestartet'}</span>
-				</div>
 				<div />
 			{/if}
 		</div>
 	{/if}
+
+	<div class="toggle-controls-wrapper">
+		<label>
+			<input type="checkbox" bind:checked={useNativeControls} />
+			<span>Nativer Player nutzen</span>
+		</label>
+	</div>
+
 	<!-- Aria-Live Region -->
-	<div class="aria-live-region" aria-live="polite">
+	<div class="sr-only" aria-live="polite">
 		{#key ariaLiveContent}
 			{ariaLiveContent}
 		{/key}
@@ -302,75 +316,72 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 </div>
 
 <style lang="scss">
-	.aria-live-region {
-		opacity: 0%;
-		height: 0px;
-		width: 0px;
-	}
-
 	.wrapper {
 		display: flex;
 		flex-direction: column;
 
 		video {
 			width: 100%;
-			max-height: calc(100% - 6rem);
 			border-bottom: none;
 			margin-bottom: -1px;
+			background-color: var(--color-black);
+
+			&.native-controls {
+				max-height: calc(100% - 5rem);
+			}
 
 			// bg color
 			&.bg-black {
 				&::cue {
-					background-color: black;
-					background: black;
+					background-color: var(--color-black);
 				}
 			}
 			&.bg-red {
 				&::cue {
-					background-color: red;
+					background-color: var(--color-red);
 				}
 			}
 			&.bg-yellow {
 				&::cue {
-					background-color: yellow !important;
-					background: yellow !important;
+					background-color: var(--color-yellow);
+					background: var(--color-yellow);
 				}
 			}
 			&.bg-white {
 				&::cue {
-					background-color: white;
+					background-color: var(--color-white);
 				}
 			}
 			&.bg-blue {
 				&::cue {
-					background-color: blue;
+					background-color: var(--color-blue);
 				}
 			}
 
 			// fc color
 			&.fc-black {
 				&::cue {
-					color: black;
+					color: var(--color-black);
 				}
 			}
 			&.fc-red {
 				&::cue {
-					color: red;
+					color: var(--color-red);
 				}
 			}
 			&.fc-yellow {
 				&::cue {
-					color: yellow;
+					color: var(--color-yellow);
 				}
 			}
 			&.fc-white {
 				&::cue {
-					color: white;
+					color: var(--color-white);
 				}
 			}
 			&.fc-blue {
 				&::cue {
-					color: blue;
+					color: var(--color-blue);
 				}
 			}
 
@@ -401,13 +412,23 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+
+			gap: 0.375rem;
 			background-color: var(--color-black);
 
-			box-sizing: border-box;
-			width: 100%;
+			padding: 0.625rem 1rem 0.25rem;
+			height: 5rem;
 
-			padding: 0.625rem;
-			height: 6rem;
+			.row-1 {
+				display: flex;
+				align-items: center;
+				gap: 0.375rem;
+
+				span {
+					font-size: 0.875rem;
+					color: rgba(var(--color-white-rgb), 0.8);
+				}
+			}
 
 			.volume-slider {
 				cursor: pointer;
@@ -448,41 +469,17 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 			.row-2 {
 				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				div {
-					flex-basis: calc(100% / 3);
-					display: flex;
-					gap: 0.25rem;
-					align-items: center;
-				}
-
-				:nth-child(2) {
-					justify-content: center;
-				}
-				:nth-child(3) {
-					justify-content: flex-end;
-				}
-			}
-
-			.row-3 {
-				display: flex;
-				align-items: center;
 				justify-content: space-between;
-				margin-top: 0.375rem;
+				align-items: center;
 
-				span {
-					font-size: 0.75rem;
-
-					&:nth-of-type(2) {
-						text-align: center;
-					}
-					&:last-of-type {
-						text-align: right;
-					}
+				.row-2-left,
+				.row-2-right {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
 				}
 			}
+
 			&.isSafari {
 				.volume-slider {
 					margin-top: 0.75rem;
@@ -547,9 +544,13 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		}
 
 		video {
-			border-radius: 1.25rem 1.25rem 0 0;
+			border-radius: 0rem;
 
-			&.userDeviceIsiOS {
+			&.native-controls {
+				border-radius: 1.25rem 1.25rem 0 0;
+			}
+
+			&.isiOSDevice {
 				border-radius: 1.25rem;
 			}
 		}

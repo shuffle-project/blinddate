@@ -6,6 +6,7 @@
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
+	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
 	import { ALEKSANDR } from '$lib/constants/aleksandr';
@@ -229,6 +230,34 @@
 		muss.
 	</FriendBubble>
 
+	<Accordion personaName={persona.name} let:AccordionItem>
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Inwiefern nimmst du die Welt anders wahr als andere?
+			</svelte:fragment>
+			<PersonaAnswer {persona}>
+				Neurotypische Personen filtern jeden Tag tausende Sinneseindrücke aus. Das merken sie gar
+				nicht. Aber bei mir funktioniert das Filtern nicht. Ich sehe die Welt sehr detailliert. Als
+				ob ich die ganze Zeit durch eine Lupe gucken würde. Ich höre die Welt ganz laut. Als ob ich
+				direkt neben einem Lautsprecher stehen würde. Ich rieche die Welt auch intensiv. Als ob ich
+				konstant auf einem Fischmarkt stehen würde. Und ich spüre die Welt sehr stark. Als ob ich
+				permanent einen sehr kratzigen Pullover tragen würde.
+			</PersonaAnswer>
+		</AccordionItem>
+
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question">Was ist deine Inselbegabung?</svelte:fragment>
+			<PersonaAnswer {persona}>
+				Ich habe keine Inselbegabung. Das ist ein sich hartnäckig haltendes Gerücht, dass alle
+				Menschen auf dem Autismus-Spektrum ein außergewöhnliches Talent haben. Tatsächlich haben nur
+				sehr wenige Menschen auf dem Spektrum eine Inselbegabung, also das Savant-Syndrom. Aber
+				natürlich ist es viel spannender Menschen mit Autismus-Spektrum-Störung und einer besonderen
+				Inselbegabung in Film und Serien darzustellen. Kein Wunder also, dass sich dieser Eindruck
+				hält.
+			</PersonaAnswer>
+		</AccordionItem>
+	</Accordion>
+
 	<MainHeading heading="Interaktion und Kommunikation" />
 	<TextSection let:Text>
 		<Text noTopMargin>
@@ -437,6 +466,22 @@
 					>Das Autismus-Spektrum erklärt – So kannst du es dir vorstellen | InsideAut</svelte:fragment
 				>
 				<svelte:fragment slot="textAfter">ein Video von InsideAut</svelte:fragment>
+			</Recommendation>
+		</li>
+		<li>
+			<Recommendation link="https://blogs.hoou.de/psychestudium/comic-ruhe-hier/">
+				<svelte:fragment slot="linkText">Comic „Ruhe hier!“</svelte:fragment>
+				<svelte:fragment slot="textAfter"
+					>von der Hamburg Open Online University (HOOU)</svelte:fragment
+				>
+			</Recommendation>
+		</li>
+		<li>
+			<Recommendation link="https://blogs.hoou.de/psychestudium/wissen-und-diagnosen/">
+				<svelte:fragment slot="linkText">Wissen und Diagnosen</svelte:fragment>
+				<svelte:fragment slot="textAfter"
+					>von der Hamburg Open Online University (HOOU)</svelte:fragment
+				>
 			</Recommendation>
 		</li>
 	</ul>

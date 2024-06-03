@@ -34,14 +34,13 @@
 		if (e.target) {
 			let target = e.target as HTMLElement;
 
-			if (target === captionMenuButton) {
-				return;
-			}
-			if (displayModal) {
-				return;
-			}
+			if (target === captionMenuButton) return;
+			if (displayModal) return;
 
-			if (displayCaptionMenu && target !== captionMenu && target.parentNode !== captionMenu) {
+			// Icon image in caption button
+			if (target.parentElement?.parentElement === captionMenuButton) return;
+
+			if (displayCaptionMenu) {
 				handleBackdropClick(e, captionMenu);
 			}
 		}
@@ -99,9 +98,9 @@
 		on:click={() => toggleDisplayCaptionMenu()}
 		title="Untertitel Untermenü"
 		aria-label="Untertitel Untermenü"
-		class="cc-btn"
+		class="caption-btn"
 	>
-		CC
+		<Icon img="caption" svg_color="white" size="parent" />
 	</button>
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<dialog class="caption-menu" bind:this={captionMenu} on:keyup={(e) => handleKeyEvent(e)}>
@@ -219,12 +218,11 @@
 					</tr>
 				</table>
 
-				<p
-					class="exampleText example-{captionsFontSize}"
-					style="background-color: {captionsBackgroundColor}; color: {captionsFontColor}; "
-				>
-					So werden die Untertitel angezeigt
-				</p>
+				<div class="example-text-wrapper background-{captionsBackgroundColor}">
+					<p class="example-text font-{captionsFontSize} color-{captionsFontColor}">
+						So werden die Untertitel angezeigt
+					</p>
+				</div>
 			</div>
 		</svelte:fragment>
 	</Modal>
@@ -237,7 +235,7 @@
 
 	.hint-wrapper {
 		background-color: var(--color-lavender);
-		padding: 1rem;
+		padding: 0rem 1rem 0.25rem;
 		margin-block: 1rem;
 		border-radius: 1rem;
 		.hint {
@@ -255,7 +253,7 @@
 		}
 	}
 
-	.cc-btn {
+	.caption-btn {
 		background-color: transparent;
 		color: var(--color-white);
 		border: none;
@@ -274,7 +272,6 @@
 		&:focus,
 		&:hover {
 			outline: 2px solid var(--color-white);
-			outline-offset: 2px;
 		}
 	}
 
@@ -288,7 +285,7 @@
 
 		bottom: 0;
 
-		transform: translateX(-5rem) translateY(-2.25rem);
+		transform: translateX(-6.5rem) translateY(-2.25rem);
 
 		menu {
 			list-style-type: none;
@@ -360,25 +357,67 @@
 			}
 		}
 
-		.exampleText {
+		.example-text-wrapper {
 			width: 100%;
-			height: 8rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-		}
-		.example-small {
-			font-size: 1rem;
-		}
-		.example-medium {
-			font-size: 1.25rem;
-		}
-		.example-large {
-			font-size: 1.5rem;
-		}
-		.example-larger {
-			font-size: 2rem;
+			border-radius: 1rem;
+			margin-bottom: 1.25rem;
+
+			&.background-black {
+				background-color: var(--color-black);
+			}
+
+			&.background-red {
+				background-color: var(--color-red);
+			}
+
+			&.background-yellow {
+				background-color: var(--color-yellow);
+			}
+
+			&.background-white {
+				background-color: var(--color-white);
+			}
+
+			&.background-blue {
+				background-color: var(--color-blue);
+			}
+
+			.font-small {
+				font-size: 1rem;
+			}
+			.font-medium {
+				font-size: 1.25rem;
+			}
+			.font-large {
+				font-size: 1.5rem;
+			}
+			.font-larger {
+				font-size: 2rem;
+			}
+
+			.color-black {
+				color: var(--color-black);
+			}
+
+			.color-red {
+				color: var(--color-red);
+			}
+
+			.color-yellow {
+				color: var(--color-yellow);
+			}
+
+			.color-white {
+				color: var(--color-white);
+			}
+
+			.color-blue {
+				color: var(--color-blue);
+			}
 		}
 	}
 </style>

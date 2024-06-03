@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import Icon from '$lib/components/Icon.svelte';
 	import StudentSpeechbubble from '$lib/components/big-picture/StudentSpeechbubble.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
@@ -27,6 +28,7 @@
 		};
 	}
 
+	let showAllNames = false;
 	let selectedStudent: studentId | undefined = undefined;
 	let students: BigPictureStudent[] = [
 		{
@@ -167,6 +169,7 @@
 						class={student.id}
 						class:active={student.active}
 						class:selected={student.id === selectedStudent}
+						class:show-all-names={showAllNames}
 					>
 						<button
 							class="student-button"
@@ -200,8 +203,15 @@
 			</ul>
 
 			<div class="dark-overlay" class:not-hidden={selectedOption !== ''}>
-				<input type="checkbox" id="show-all-names" />
-				<label for="show-all-names">Alle Namen anzeigen</label>
+				<div class="notch">
+					<div class="icon-wrapper">
+						<Icon img="clickable-persona" svg_color="white" size="parent" />
+					</div>
+					<label for="show-all-names">
+						<input type="checkbox" id="show-all-names" bind:checked={showAllNames} />
+						Alle Namen anzeigen
+					</label>
+				</div>
 			</div>
 
 			<img
@@ -398,28 +408,89 @@
 				// pointer-events: none;
 				transition: opacity 0.3s ease-in-out;
 				z-index: 2;
-				border-radius: 2.5rem;
+				border-top-left-radius: 2.5rem;
+				border-top-right-radius: 2.5rem;
 				opacity: 0%;
+
+				.notch {
+					color: var(--color-white);
+					height: 4rem;
+					border-radius: 2.5rem;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 1.25rem;
+					margin-inline: auto;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.625rem;
+
+					label {
+						background-color: var(--color-black);
+						border-radius: 2.5rem;
+						height: 3.5rem;
+						padding-inline: 0.875rem;
+						display: flex;
+						align-items: center;
+						gap: 0.625rem;
+						cursor: pointer;
+
+						&:hover {
+							input {
+								outline: 2px solid var(--color-white);
+								outline-offset: 2px;
+							}
+						}
+
+						input {
+							background-color: transparent;
+							-webkit-appearance: none;
+							appearance: none;
+							margin: 0;
+							color: var(--color-white);
+							min-width: 1.625rem;
+							height: 1.625rem;
+							border: 2px solid rgba(var(--color-white-rgb), 0.8);
+							border-radius: 50%;
+
+							display: grid;
+							place-content: center;
+
+							&:focus {
+								outline: 2px solid var(--color-white);
+								outline-offset: 2px;
+							}
+
+							&:checked {
+								background-color: var(--color-white);
+							}
+
+							&:checked:before {
+								content: '';
+								width: 0.875rem;
+								height: 0.875rem;
+								box-shadow: inset 1rem 1rem var(--color-black);
+
+								transform-origin: bottom left;
+								clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
+							}
+						}
+					}
+
+					.icon-wrapper {
+						width: 2.375rem;
+						height: 2.375rem;
+						background-color: var(--color-black);
+						padding: 0.625rem;
+						border-radius: 50%;
+					}
+				}
+
 				&.not-hidden {
 					opacity: 100%;
 					transition: opacity 0.3s ease-in-out;
-
-					&::before {
-						content: url('/icons/clickable-persona-white.svg');
-						background-color: var(--color-black);
-						width: 4rem;
-						height: 4rem;
-						border-radius: 50%;
-						position: absolute;
-						left: 0;
-						right: 0;
-						top: 1.25rem;
-						margin-inline: auto;
-
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					}
 				}
 			}
 

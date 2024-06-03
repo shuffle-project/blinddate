@@ -14,6 +14,17 @@ export function handleBackdropClick(e: MouseEvent, dialog: HTMLDialogElement) {
 	}
 }
 
+export function isIOSDevice() {
+	return (
+		['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(
+			navigator.platform
+		) ||
+		// iPad on iOS 13 detection
+		(navigator.userAgent.includes('Mac') && navigator.maxTouchPoints > 0)
+	);
+	// return navigator.maxTouchPoints > 0 && /iPad|iPhone|iPod/.test(navigator.userAgent);
+}
+
 export function trapFocus(element: HTMLElement, arrowKeys = false) {
 	console.log('trapfocus');
 	const focusableEls: NodeListOf<Element> = element.querySelectorAll(

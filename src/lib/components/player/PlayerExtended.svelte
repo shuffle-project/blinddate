@@ -71,7 +71,6 @@
 		{@const index = i + 1}
 		{#if selectedTab === index}
 			<div
-				class="video"
 				id="panel-{index}-{randomId}"
 				in:slide={{ duration: 400 }}
 				out:slide={{ duration: 400 }}

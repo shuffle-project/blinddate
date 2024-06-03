@@ -107,7 +107,6 @@
 		height: 2rem;
 		width: 2rem;
 
-		margin-right: 0.25rem;
 		padding: 0;
 
 		display: flex;
