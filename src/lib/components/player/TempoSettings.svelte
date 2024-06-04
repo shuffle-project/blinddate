@@ -153,20 +153,22 @@
 			gap: 0.375rem;
 
 			width: 100%;
-			min-height: 1.375rem;
+			min-height: 1.5rem;
 			margin-bottom: 0.375rem;
 
 			background-color: transparent;
 			border: none;
 			border-radius: 0.375rem;
 
+			color: var(--color-black);
+
 			&:hover {
 				outline: 2px solid var(--color-blue);
 			}
 
 			.check {
-				height: 1.375rem;
-				width: 1.375rem;
+				min-height: 1.5rem;
+				min-width: 1.25rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -176,6 +178,7 @@
 		.option {
 			display: flex;
 			font-size: 0.875rem;
+			width: 100%;
 		}
 	}
 </style>

@@ -100,8 +100,9 @@
 		aria-label="Untertitel Untermenü"
 		class="caption-btn"
 	>
-		<Icon img="caption" svg_color="white" size="parent" />
+		<Icon img="caption" svg_color="white" size="medium" />
 	</button>
+
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<dialog class="caption-menu" bind:this={captionMenu} on:keyup={(e) => handleKeyEvent(e)}>
 		<menu>
@@ -254,15 +255,13 @@
 	}
 
 	.caption-btn {
-		background-color: transparent;
+		background-color: var(--color-black);
 		color: var(--color-white);
 		border: none;
-		outline: none;
-		border-radius: 50%;
-		font-weight: bold;
-		font-size: 1rem;
+		border-radius: 2rem;
 		height: 2rem;
 		width: 2rem;
+		aspect-ratio: 1;
 		cursor: pointer;
 
 		display: flex;
@@ -304,6 +303,7 @@
 			margin-bottom: 0.375rem;
 
 			font-size: 0.875rem;
+			color: var(--color-black);
 
 			background-color: transparent;
 			border: none;

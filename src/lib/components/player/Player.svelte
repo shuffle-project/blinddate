@@ -54,15 +54,19 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 	$: {
 		let normalizedSliderValue = (currentTime / duration) * 100;
-		normalizedSliderValue = normalizedSliderValue < 0 ? 0 : normalizedSliderValue;
+
+		if (normalizedSliderValue < 15) {
+			normalizedSliderValue += 1;
+		}
+
 		if (timeProgress) {
-			timeProgress.style.background = `linear-gradient(to right, #99bef5 ${normalizedSliderValue}%, #ccc ${normalizedSliderValue}%)`;
+			timeProgress.style.background = `linear-gradient(to right, var(--color-light-blue) ${normalizedSliderValue}%, #687390 ${normalizedSliderValue}%)`;
 		}
 	}
 
 	$: {
 		if (volumeSlider) {
-			volumeSlider.style.background = `linear-gradient(to right, #99bef5 ${volume * 100}%, #ccc ${
+			volumeSlider.style.background = `linear-gradient(to right, var(--color-light-blue) ${volume * 100}%, #687390 ${
 				volume * 100
 			}%)`;
 		}
@@ -133,9 +137,14 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			onPlayPause();
 		} else if (ev.key === 'ArrowRight') {
 			ev.preventDefault();
-			currentTime += 10;
+			if (currentTime + 10 >= duration) {
+				currentTime = duration;
+			} else {
+				currentTime += 10;
+			}
 		} else if (ev.key === 'ArrowLeft') {
 			ev.preventDefault();
+			if (currentTime === 0) return;
 			currentTime -= 10;
 		}
 	}
@@ -223,7 +232,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						bind:value={currentTime}
 						bind:this={timeProgress}
 						min="0"
-						max={duration}
+						max={Math.floor(duration)}
 						on:keydown={onKeyDownTimeProgress}
 					/>
 					<span>{durationMinutes}:{durationSeconds}</span>
@@ -325,6 +334,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			display: flex;
 			justify-content: end;
 			margin-block: 0.5rem;
+			margin-right: var(--outer-spacing);
 
 			label {
 				span {
@@ -337,7 +347,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			width: 100%;
 			border-bottom: none;
 			margin-bottom: -1px;
-			background-color: var(--color-black);
+
+			background: linear-gradient(transparent, var(--color-black));
 
 			&.native-controls {
 				max-height: calc(100% - 5rem);
@@ -426,7 +437,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			flex-direction: column;
 			justify-content: center;
 
-			gap: 0.375rem;
+			gap: 0.625rem;
 			background-color: var(--color-black);
 
 			padding: 0.625rem 1rem 0.25rem;
@@ -444,15 +455,75 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			}
 
 			.volume-slider {
-				cursor: pointer;
 				max-width: 5rem;
 			}
 
-			.time-progress {
-				box-sizing: border-box;
+			.time-progress,
+			.volume-slider {
+				appearance: none;
+				-webkit-appearance: none;
 				width: 100%;
-				margin: 0;
+				outline: none;
+				border: 4px solid var(--color-black);
+				box-sizing: border-box;
+				border-radius: 1rem;
+				height: 0.875rem;
+				position: relative;
+
+				&:focus-visible:focus-within {
+					outline: 2px solid var(--color-black);
+					outline-offset: 6px;
+				}
+
 				cursor: pointer;
+
+				&::-webkit-slider-thumb {
+					-webkit-appearance: none;
+					appearance: none;
+					height: 1.125rem;
+					width: 1.125rem;
+					border: 1px solid var(--color-yellow);
+					background-color: var(--color-white);
+					border-radius: 50%;
+					position: relative;
+					z-index: 3;
+					transition: outline 0.1s ease-out;
+
+					&:hover,
+					&:active {
+						outline: 2px solid var(--color-white);
+					}
+				}
+
+				&::-moz-range-thumb {
+					-webkit-appearance: none;
+					appearance: none;
+					height: 1.125rem;
+					width: 1.125rem;
+					border: 1px solid var(--color-white);
+					background-color: var(--color-white);
+					border-radius: 50%;
+					position: relative;
+					z-index: 3;
+					transition: outline 0.1s ease-out;
+
+					&:hover,
+					&:active {
+						outline: 2px solid var(--color-white);
+					}
+				}
+
+				&:focus-visible {
+					&::-webkit-slider-thumb {
+						outline: 2px solid var(--color-white);
+						background-color: var(--color-black);
+					}
+
+					&::-moz-range-thumb {
+						outline: 2px solid var(--color-white);
+						background-color: var(--color-black);
+					}
+				}
 			}
 
 			button {
@@ -565,6 +636,10 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 
 			&.isiOSDevice {
 				border-radius: 1.25rem;
+			}
+
+			&.isiOSDevice.native-controls {
+				border-radius: 1.25rem 1.25rem 0 0;
 			}
 		}
 	}
