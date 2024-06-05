@@ -40,7 +40,14 @@
 	<h2>Alle anderen Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
+			<a href={base + '/große-ganze'} class="focus-indicator">Das große Ganze</a>
+		</li>
+		<li>
 			<a href={base + '/datenschutz'} class="focus-indicator">Datenschutzerklärung</a>
+		</li>
+
+		<li>
+			<a href={base + '/fragen'} class="focus-indicator">Häufige Fragen</a>
 		</li>
 
 		<li>
@@ -50,9 +57,20 @@
 		<li>
 			<a href={base + '/kontakt'} class="focus-indicator">Kontakt</a>
 		</li>
+		<li>
+			<a href={base + '/persona-entwicklung'} class="focus-indicator"
+				>Persona-Entwicklung im Detail</a
+			>
+		</li>
 
 		<li>
+			<a href={base + '/so-funktioniert-es'} class="focus-indicator">So funktioniert's</a>
+		</li>
+		<li>
 			<a href={base + '/'} class="focus-indicator">Startseite</a>
+		</li>
+		<li>
+			<a href={base + '/wichtige-begriffe'} class="focus-indicator">Wichtige Begriffe</a>
 		</li>
 	</ul>
 </div>

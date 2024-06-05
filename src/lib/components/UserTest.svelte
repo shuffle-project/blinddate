@@ -43,6 +43,11 @@
 			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/426726?lang=de';
 			malePersona = false;
 			disability = 'chronischen Erkrankung';
+		} else if (url.includes('aleksandr')) {
+			persona = 'Aleksandr';
+			linkToPersonaQuestionnaire = 'https://survey.hdm-stuttgart.de/353574?lang=de';
+			malePersona = true;
+			disability = 'Autismus-Spektrum-Störung';
 		} else {
 			persona = '';
 			linkToPersonaQuestionnaire = '';

@@ -6,6 +6,7 @@
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
+	import UserTest from '$lib/components/UserTest.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
@@ -39,9 +40,10 @@
 		an der Uni. Ab 8:30Uhr. Dort besuche ich Veranstaltungen und lerne auch. Ich mache auch viel
 		Sport. Zweimal in der Woche gehe ich Joggen. Für meine kardiovaskuläre Fitness. Und ich mache
 		Calisthenics für Flexibilität und Muskelaufbau. Das ist Kraftsport mit dem eigenen
-		Körpergewicht. Strategische Brettspiele mag ich auch. Zum Beispiel Age of Sigmar, das früher
-		Warhammer hieß. Die Legenden von Andor. Oder Dune:Imperium. Ich spiele gerne zusammen mit
-		Valentin. Weil er das mag, auch mal Siedler von Catan.
+		Körpergewicht. Strategische Brettspiele mag ich auch. Zum Beispiel <span lang="en"
+			>Age of Sigmar</span
+		>, das früher <span lang="en">Warhammer</span> hieß. Die Legenden von Andor. Oder Dune:Imperium.
+		Ich spiele gerne zusammen mit Valentin. Weil er das mag, auch mal Siedler von Catan.
 	</SpeechBubble>
 
 	<MainHeading heading="Technologien und Strategien" />
@@ -113,21 +115,21 @@
 		</ToolCard>
 		<ToolCard title="Selbststimulation" image="{base}/tools/fidget-spinner.svg">
 			Neben der Überstimulierung durch verschiedene Reize ist auch eine Unterstimulation ein
-			bekanntes Symptom bei Menschen auf dem Autismus-Spektrum. Stimming, also die bewusste
-			Wiederholung von physischen Bewegungen oder Lauten, aber auch Sport oder das Hantieren mit
-			reizauslösenden Gegenständen (z.B. sogenannte Fidget Toys) sind Möglichkeiten des
-			selbststimulierenden Verhaltens.
+			bekanntes Symptom bei Menschen auf dem Autismus-Spektrum. <span lang="en">Stimming</span>,
+			also die bewusste Wiederholung von physischen Bewegungen oder Lauten, aber auch Sport oder das
+			Hantieren mit reizauslösenden Gegenständen (z.B. sogenannte
+			<span lang="en">Fidget Toys</span>) sind Möglichkeiten des selbststimulierenden Verhaltens.
 		</ToolCard>
 	</div>
 
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-03.mp3'}>
 		Umweltreize lenken mich schnell ab. Mein Gehirn kann sie nicht ausfiltern. Deshalb nutze ich
-		Kopfhörer. Solche mit Active Noise Cancelling. Ich höre damit keine Musik. Sie blenden aber
-		zumindest Geräusche aus, damit ich mich besser konzentrieren kann. Fidget Toys habe ich auch
-		dabei. Zum Beispiel ein Würfel mit Schaltern, Tasten und einer Kugel. Oder einen Ball, den man
-		kneten kann. Das ist kein Spielzeug. Ich brauche die Sachen, damit ich nicht überstimuliert
-		werde. Das passiert sonst schnell, wenn viele Menschen da sind, es laut ist oder ich einen Weg
-		finden muss.
+		Kopfhörer. Solche mit <span lang="en">Active Noise Cancelling</span>. Ich höre damit keine
+		Musik. Sie blenden aber zumindest Geräusche aus, damit ich mich besser konzentrieren kann.
+		<span lang="en">Fidget Toys</span> habe ich auch dabei. Zum Beispiel ein Würfel mit Schaltern, Tasten
+		und einer Kugel. Oder einen Ball, den man kneten kann. Das ist kein Spielzeug. Ich brauche die Sachen,
+		damit ich nicht überstimuliert werde. Das passiert sonst schnell, wenn viele Menschen da sind, es
+		laut ist oder ich einen Weg finden muss.
 	</SpeechBubble>
 
 	<FriendBubble {friendPersona}>
@@ -144,11 +146,10 @@
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-04.mp3'}>
 		Wenn mir eine Situation zu viel wird – das heißt, wenn ich überstimuliert bin und deshalb einen
 		schnellen Puls, schnellen Atem und Angstgefühle bekomme... Dann habe ich Regulationsprobleme und
-		komme, wenn es nicht gut läuft, in einen Zustand, den man „Meltdown“ nennt. Dann habe ich mein
-		Verhalten nicht mehr unter Kontrolle. Als Kind hatte ich das oft. Da habe ich geschrien und auch
-		um mich getreten oder geschlagen. Heute beiße ich mir in die Hand. Das ist autoaggressives
-		Verhalten. Das tut weh, aber in der Situation hilft mir das. Am besten lässt man mich dann in
-		Ruhe.
+		komme, wenn es nicht gut läuft, in einen Zustand, den man <span lang="en">„Meltdown“</span> nennt.
+		Dann habe ich mein Verhalten nicht mehr unter Kontrolle. Als Kind hatte ich das oft. Da habe ich
+		geschrien und auch um mich getreten oder geschlagen. Heute beiße ich mir in die Hand. Das ist autoaggressives
+		Verhalten. Das tut weh, aber in der Situation hilft mir das. Am besten lässt man mich dann in Ruhe.
 	</SpeechBubble>
 
 	<FlipCard
@@ -248,12 +249,10 @@
 		<AccordionItem let:PersonaAnswer>
 			<svelte:fragment slot="question">Was ist deine Inselbegabung?</svelte:fragment>
 			<PersonaAnswer {persona}>
-				Ich habe keine Inselbegabung. Das ist ein sich hartnäckig haltendes Gerücht, dass alle
-				Menschen auf dem Autismus-Spektrum ein außergewöhnliches Talent haben. Tatsächlich haben nur
-				sehr wenige Menschen auf dem Spektrum eine Inselbegabung, also das Savant-Syndrom. Aber
-				natürlich ist es viel spannender Menschen mit Autismus-Spektrum-Störung und einer besonderen
-				Inselbegabung in Film und Serien darzustellen. Kein Wunder also, dass sich dieser Eindruck
-				hält.
+				Ich habe keine Inselbegabung. Nur sehr wenige Menschen auf dem Spektrum haben eine. Die mit
+				dem Savant-Syndrom. Das ist ein sich hartnäckig haltendes Gerücht. Es ist spannender,
+				Menschen mit Autismus-Spektrum-Störung und einer besonderen Inselbegabung in Film und Serien
+				darzustellen. Deswegen hält sich dieser Eindruck.
 			</PersonaAnswer>
 		</AccordionItem>
 	</Accordion>
@@ -272,7 +271,7 @@
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-06.mp3'}>
 		Small Talk ist und bleibt für mich sehr anstrengend. Ich musste dafür viel üben. Zum Beispiel
 		als Kind in der Therapie. Es fühlt sich immer an, als würde ich performen. So wie ein
-		Schauspieler, der ein Skript liest. Wenn ich keinen Smalltalk mache, wirke ich unfreundlich.
+		Schauspieler, der ein Skript liest. Wenn ich keinen Small Talk mache, wirke ich unfreundlich.
 		Andere möchten dann nicht mit mir reden. Wenn ich über die Sachen rede, die mich interessieren,
 		wollen andere das oft nicht hören. Dann sagen die, das ist zu viel.
 	</SpeechBubble>
@@ -342,19 +341,19 @@
 			Eine Unterstützung im Studienalltag bei der Kontaktaufnahme mit Dozierenden, der Navigation
 			auf der Website der Uni oder in der Stundenplanerstellung kann über die Kontaktaufnahme mit
 			den Beauftragten für Studierende mit Beeinträchtigungen erfolgen. Mentor*innen-Programme,
-			„Study Buddys“ oder auch ausgebildete Assistenzen können Studierende auch bei den sozialen
-			Aspekten des Studierens begleiten. Dozierende können Studierenden mit ASS unter anderem durch
-			das Hinweisen auf oder Vermitteln von eben dieser Unterstützungsmöglichkeiten helfen. Auch der
-			Verweis auf möglicherweise existierende Studierenden-Gruppen zum Vernetzen kann eine
-			Unterstützung darstellen.
+			<span lang="en">„Study Buddys“</span> oder auch ausgebildete Assistenzen können Studierende auch
+			bei den sozialen Aspekten des Studierens begleiten. Dozierende können Studierenden mit ASS unter
+			anderem durch das Hinweisen auf oder Vermitteln von eben dieser Unterstützungsmöglichkeiten helfen.
+			Auch der Verweis auf möglicherweise existierende Studierenden-Gruppen zum Vernetzen kann eine Unterstützung
+			darstellen.
 		</Text>
 	</TextSection>
 
 	<Puzzle
-		topLeft="Platzhalter"
-		topRight="Platzhalter"
-		bottomLeft="Platzhalter"
-		bottomRight="Platzhalter"
+		topLeft="Ich muss hier raus. Ich brauche Ruhe. Das ist zu viel. Hat er mich gerade etwas gefragt? Ich sollte Augenkontakt halten! Was soll dieser Gesichtsausdruck bedeuten?"
+		topRight="Ich habe gerade keine Kapazität für ein Gespräch. Ich sage besser nichts!"
+		bottomLeft="Es ist viel zu laut. Wieso blinkt denn die LED am Beamer so hell? Mein Puls geht schnell und meine Hände sind schwitzig. Es wird mir zu viel."
+		bottomRight="Ich fange an, mir selbst in die Hände zu zwicken und bewege meinen Oberkörper leicht vor und zurück."
 	/>
 
 	<MainHeading heading="Prüfungen" />
@@ -412,10 +411,12 @@
 	<Checklist
 		checks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
-			'Ich stelle meine Lernmaterialien vorab und digital zur Verfügung',
+			'Ich mache transparent, welche Komponenten meiner Lehrveranstaltung bewertet werden und welche nicht (Bspw. mündliche Teilnahme und Gruppensituation)',
+			'Ich erlaube die Nutzung von Kopfhörern oder Fidget Toys in meinen Veranstaltungen',
+			'Ich achte auf eine möglichst reizarme Umgebung in meinen Veranstaltungen (keine Störgeräusche, blinkende Lichter etc.)',
+			'Ich stelle den Studierenden frei, ob sie Aufgaben in Gruppen oder einzeln bearbeiten',
 			'Ich verfasse verständliche und eindeutige Aufgabenstellungen',
-			'Ich ermögliche eine asynchrone oder remote Teilnahme an Veranstaltungen',
-			'Ich mache ausreichend Pausen in langen Veranstaltungen',
+			'Ich verweise auf Unterstützungs-möglichkeiten, Mentoring-Programme oder Studierenden-Gruppen zum Austausch',
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 		{persona}
@@ -485,11 +486,32 @@
 			</Recommendation>
 		</li>
 	</ul>
+
+	<!-- usertest -->
+	<div class="user-test">
+		<UserTest bottomOfPage />
+	</div>
 </PersonaContent>
 
 <style lang="scss">
 	.more-info-list {
 		list-style-type: none;
 		padding: 0;
+	}
+
+	.user-test {
+		background-color: var(--color-black);
+		border-radius: 1.25rem;
+		padding: 1rem;
+		margin: 2rem 0 0 3.375rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	@media (max-width: 59.3125rem) {
+		.user-test {
+			margin: 2rem 1.375rem;
+		}
 	}
 </style>

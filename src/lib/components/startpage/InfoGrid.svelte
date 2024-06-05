@@ -5,7 +5,7 @@
 <div class="wrapper">
 	<div class="content">
 		<div class="lecturers">
-			<h2>Für Lehrende</h2>
+			<h2>So funktioniert's</h2>
 			<p>
 				BlindDate ist eine virtuelle Begegnungsplattform, auf der Ihnen Studierenden-Personas mit
 				Beeinträchtigung ihren Hochschulalltag näherbringen. Dazu gehören Strategien, assistive
@@ -13,7 +13,7 @@
 				können viel zur Barrierefreiheit an der Hochschule beitragen. Erfahren Sie mehr darüber, wie
 				Sie BlindDate nutzen können.
 			</p>
-			<a href="{base}/lehrende" class="focus-indicator">Informationen für Lehrende</a>
+			<a href="{base}/so-funktioniert-es" class="focus-indicator">So funktioniert's</a>
 		</div>
 		<div class="big-picture">
 			<h2>Das große Ganze</h2>

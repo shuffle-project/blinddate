@@ -1,12 +1,13 @@
 <script>
+	import { base } from '$app/paths';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
 <svelte:head>
-	<title>Für Lehrende - BlindDate</title>
+	<title>So funktioniert's - BlindDate</title>
 </svelte:head>
 
-<SubpageTitle>Für Lehrende</SubpageTitle>
+<SubpageTitle>So funktioniert's</SubpageTitle>
 
 <div class="wrapper">
 	<p>
@@ -14,9 +15,7 @@
 		können:
 	</p>
 
-	<h2>
-		Ich habe wenig Zeit und brauche gezielte Informationen und pragmatische Handlungsempfehlungen
-	</h2>
+	<h2>Ich habe wenig Zeit und brauche gezielte Informationen</h2>
 
 	<p>Das befindet sich auf BlindDate:</p>
 
@@ -33,28 +32,29 @@
 
 	<h3>Die Persona-Seiten:</h3>
 	<ul>
-		<li>Schlagwörter /„tags“ am Anfang der Seite geben Hinweise auf angesprochene Themen</li>
-		<li>Persona-Karte: Inhaltsverzeichnis (drei Striche)</li>
+		<li>Schlagwörter auf der rechten Seite geben Hinweise auf angesprochene Themen</li>
 		<li>
-			Blauer Button: „Selbstcheck Barrierefreiheit“ = Checkliste mit Handlungsempfehlungen am Ende
-			Seite
+			Die Persona Karte auf der linken Seite beinhaltet das Inhaltsverzeichnis der Seite (Drei
+			Striche)
 		</li>
 		<li>
-			Definitionen: Auf Persona-Karte und in den allgemeinen Textpassagen und den Sprechblasen in
-			blau hinterlegten Worten.
+			Über den blauen Button 'Selbstcheck Barrierefreiheit' springen Sie direkt zu der Checkliste
+			mit Handlungsempfehlungen
+		</li>
+		<li>
+			Blau hinterlegte Worte auf der Persona Karte, in Sprechblasen und Textpassagen blenden Ihnen
+			Definitionen von Fachbegriffen ein
 		</li>
 	</ul>
 
 	<p>
-		Sie haben gerade keine Zeit, alle Personas kennenzulernen und wollen direkt loslegen? Klicken
-		Sie auf den Kasten „das große Ganze“ auf der Startseite und sehen Sie, welche Maßnahmen für
-		viele Studierende gleichzeitig hilfreich sind!
+		Sie haben gerade keine Zeit, alle Personas kennenzulernen? Besuchen Sie für den Anfang <a
+			class="focus-indicator"
+			href={base + '/große-ganze'}>"das große Ganze"</a
+		> und sehen Sie, welche Maßnahmen für viele Studierende gleichzeitig hilfreich sind!
 	</p>
 
-	<h2>
-		Ich möchte in die Perspektive der Studierenden eintauchen und ihre Sicht auf den Studienalltag
-		verstehen, um meine Lehre dementsprechend gestalten zu können
-	</h2>
+	<h2>Ich möchte in die Studierenden-Perspektive eintauchen</h2>
 
 	<p>
 		Um die Perspektive der virtuellen Studierenden besser verstehen zu können, haben Sie
@@ -64,10 +64,10 @@
 		verschiedenen Beeinträchtigungen. Zusätzlich finden Sie mehrere (interaktive) Elemente, welche
 		die Erfahrungen der virtuellen Studierenden auf verschiedene (mediale) Arten darstellen. Ob
 		Videos von realen Studierenden, „Eine Woche im Leben von…“ oder Simulationen – diese Elemente
-		sollen Sie beim eintauchen in die Perspektiven unterstützen.
+		sollen Sie beim Eintauchen in die Perspektiven unterstützen.
 	</p>
 
-	<h2>Ich brauche generelle Informationen zum Thema Barrierefreiheit</h2>
+	<h2>Ich möchte Infos zu Barrierefreiheit im Allgemeinen</h2>
 
 	<p>
 		Wir haben neben der Erstellung der Personas grundlegende und weiterführende Informationen zum
@@ -78,7 +78,7 @@
 		Fragen“ Antworten.
 	</p>
 
-	<h2>Ich möchte mich weiterführend mit dem Thema Barrierefreiheit beschäftigen.</h2>
+	<h2>Ich möchte weiterführende Informationen zu Barrierefreiheit</h2>
 
 	<p>
 		Auf jeder Persona-Unterseite finden Sie unterhalb der Checklisten, also am Ende der Seiten,
@@ -96,10 +96,7 @@
 		>.
 	</p>
 
-	<h2>
-		Ich habe das Gefühl, ich bin mit der Auseinandersetzung mit der Thematik Barrierefreiheit in der
-		Lehre allein. Geht es anderen Lehrpersonen denn auch so?
-	</h2>
+	<h2>Ich habe das Gefühl, alleine dazustehen. Wie geht es anderen Lehrenden?</h2>
 
 	<p>Inhalt folgt. Schauen Sie gerne ein anderes Mal nochmal vorbei.</p>
 </div>
