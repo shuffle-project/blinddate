@@ -24,7 +24,7 @@ interface Environment {
 
 export const ENVIRONMENT: Environment = {
 	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL],
-	redirectToStartpage: false,
+	redirectToStartpage: true,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
 	personaCardOtherPersonas: true,
@@ -32,5 +32,5 @@ export const ENVIRONMENT: Environment = {
 	footerPersonas: true,
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
-	showBigPictureContent: true
+	showBigPictureContent: false
 };
