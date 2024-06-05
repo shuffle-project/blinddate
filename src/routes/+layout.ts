@@ -13,11 +13,11 @@ export const load = async (event) => {
 		);
 
 		if (ENVIRONMENT.allowImprintPage && !allowedSubpath) {
-			allowedSubpath = pathname.includes('imprint');
+			allowedSubpath = pathname.includes('impressum');
 		}
 
 		if (ENVIRONMENT.allowPrivacyPage && !allowedSubpath) {
-			allowedSubpath = pathname.includes('privacy');
+			allowedSubpath = pathname.includes('datenschutz');
 		}
 
 		if (!allowedSubpath) {
