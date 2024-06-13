@@ -74,21 +74,27 @@
 		if (carouselId === 'supportOptions') {
 			supportCarousel.go(direction);
 			carouselSupportSelectedIndex = supportCarousel.splide.index;
+			carouselStudentSelectedIndex = 0;
 		}
 	}
 
 	function handleMove(index: number | undefined, carouselId: 'students' | 'supportOptions') {
 		if (index !== undefined) {
 			if (carouselId === 'students') carouselStudentSelectedIndex = index;
-			if (carouselId === 'supportOptions') carouselSupportSelectedIndex = index;
+			if (carouselId === 'supportOptions') {
+				carouselSupportSelectedIndex = index;
+				carouselStudentSelectedIndex = 0;
+			}
 		}
 	}
 
 	function handleScrolled(carouselId: 'students' | 'supportOptions') {
 		if (!studentCarousel || !supportCarousel) return;
 		if (carouselId === 'students') carouselStudentSelectedIndex = studentCarousel.splide.index;
-		if (carouselId === 'supportOptions')
+		if (carouselId === 'supportOptions') {
 			carouselSupportSelectedIndex = supportCarousel.splide.index;
+			carouselStudentSelectedIndex = 0;
+		}
 	}
 
 	$: {
@@ -291,7 +297,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				padding: 1rem;
+				padding: 0 1rem 1rem;
 
 				.student-image {
 					width: 6.25rem;
@@ -299,11 +305,14 @@
 					border-radius: 50%;
 					overflow: hidden;
 					position: relative;
+					display: flex;
+					justify-content: center;
 
 					img {
-						width: 100%;
+						height: 100%;
+
 						position: absolute;
-						bottom: 0;
+						bottom: -1rem;
 					}
 				}
 

@@ -1,4 +1,4 @@
-export type StudentId = 'maxi' | 'michelle' | 'gabriel';
+export type StudentId = 'maxi' | 'michelle' | 'gabriel' | 'aleksandr';
 export type SupportOptionId =
 	| '0'
 	| '1'
@@ -45,6 +45,14 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 		active: false,
 		benefitsFrom: {
 			'1': 'Ich hatte letzte Woche einen Arzt-TP-termin und konnte nicht zur Vorlesung kommen. Die Aufzeichnung hat mich und vor allem meine Note gerettet.'
+		}
+	},
+	{
+		id: 'aleksandr',
+		name: 'Aleksandr',
+		active: false,
+		benefitsFrom: {
+			'2': 'Ein weiterer Platzhaltertext, der wirklich nur dazu dient, dass hier was steht und niemand unglücklich ist.'
 		}
 	}
 ];

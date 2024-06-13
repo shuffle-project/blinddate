@@ -256,6 +256,15 @@
 				}
 			}
 
+			li.aleksandr {
+				top: 54.3%;
+				left: 37.5%;
+
+				img {
+					width: min(11.2vw, 9.5rem);
+				}
+			}
+
 			.student-button {
 				padding: 0;
 				border: none;
