@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import Icon from '$lib/components/Icon.svelte';
+	import BigPictureMobile from '$lib/components/big-picture/BigPictureMobile.svelte';
 	import StudentSpeechbubble from '$lib/components/big-picture/StudentSpeechbubble.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
@@ -223,7 +224,11 @@
 				height="980"
 			/>
 		</div>
-		<fieldset id="support-list" aria-label="Unterstützungsmöglichkeiten" class="support-list">
+		<fieldset
+			id="support-list"
+			aria-label="Unterstützungsmöglichkeiten"
+			class="support-list desktop"
+		>
 			{#each supportOptions as option, i}
 				<label for={option.id}>
 					<input
@@ -241,6 +246,9 @@
 				</label>
 			{/each}
 		</fieldset>
+		<div class="mobile">
+			<BigPictureMobile />
+		</div>
 	{:else}
 		<p>
 			Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen Sie
@@ -259,6 +267,10 @@
 		p {
 			max-width: 35rem;
 			margin-inline: auto;
+		}
+
+		.mobile {
+			display: none;
 		}
 
 		.desktop {
@@ -569,4 +581,23 @@
 			}
 		}
 	}
+
+	@media (max-width: 68.75rem) {
+		.wrapper {
+			.desktop {
+				display: none;
+			}
+			.mobile {
+				display: block;
+			}
+		}
+	}
+
+	// @media (min-width: 68.8125rem) {
+	// 	.wrapper {
+	// 		.mobile {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
 </style>
