@@ -11,7 +11,7 @@
 				<h1 class="heading" id="persona-name">{persona.name}</h1>
 				<p class="subheading">{persona.subheading}</p>
 			</div>
-			<section aria-label="Inhaltspunkte" class="tags">
+			<section aria-label="Schlagwörter" class="tags">
 				<ul>
 					{#each persona.tags as tag}
 						<li lang={tag.lang} class="chip">

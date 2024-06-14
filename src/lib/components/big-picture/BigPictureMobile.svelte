@@ -18,6 +18,15 @@
 	let selectedStudentComment: string | undefined = '';
 	let selectedStudentId: StudentId | undefined = undefined;
 
+	let carouselSupportSelectedIndex: number = 0;
+	let carouselStudentSelectedIndex: number = 0;
+
+	let supportCarouselHasFocus = false;
+	let supportCarouselAriaLiveText: string = '';
+
+	let studentsCarouselHasFocus = false;
+	let studentsCarouselAriaLiveText: string = '';
+
 	$: {
 		if (students.length !== 0) {
 			selectedStudentId = students[carouselStudentSelectedIndex].id;
@@ -33,7 +42,58 @@
 		}
 	}
 
-	const splideOptions = {
+	$: {
+		if (carouselSupportSelectedIndex === 0) {
+			supportCarouselAriaLiveText = 'Noch keine Auswahl';
+		} else {
+			supportCarouselAriaLiveText =
+				supportOptions[carouselSupportSelectedIndex].name +
+				', ' +
+				carouselSupportSelectedIndex +
+				' von ' +
+				(supportOptions.length - 1);
+		}
+	}
+
+	$: {
+		if (students.length !== 0) {
+			studentsCarouselAriaLiveText =
+				students[carouselStudentSelectedIndex].name +
+				', ' +
+				(carouselStudentSelectedIndex + 1) +
+				' von ' +
+				students.length +
+				', sagt: "' +
+				selectedStudentComment +
+				'"';
+		}
+	}
+
+	const splideOptionsSupport = {
+		type: 'loop',
+		live: false,
+		keyboard: false,
+		i18n: {
+			prev: 'Vorherige Maßnahme',
+			next: 'Nächste Maßnahme',
+			first: 'Zur ersten Maßnahme gehen',
+			last: 'Zur letzten Maßnahme gehen',
+			slideX: 'Zur Maßnahme %s gehen',
+			pageX: 'Zur Seite %s gehen',
+			carousel: 'Karussell',
+			slide: '',
+			slideLabel: ''
+		},
+		pagination: false,
+		arrows: false,
+		speed: 800,
+		drag: 'free' as const,
+		snap: true,
+		flickPower: 450,
+		easing: 'ease'
+	};
+
+	const splideOptionsStudents = {
 		type: 'loop',
 		live: false,
 		keyboard: false,
@@ -45,8 +105,8 @@
 			slideX: 'Zur Person %s gehen',
 			pageX: 'Zur Seite %s gehen',
 			carousel: 'Karussell',
-			slide: 'Person',
-			slideLabel: '%s von %s'
+			slide: '',
+			slideLabel: ''
 		},
 		pagination: false,
 		arrows: false,
@@ -57,21 +117,17 @@
 		easing: 'ease'
 	};
 
-	let carouselSupportSelectedIndex: number = 0;
-	let carouselStudentSelectedIndex: number = 0;
-
-	let componentHasFocus = false;
-
 	function moveSlide(direction: string, carouselId: 'students' | 'supportOptions') {
 		if (!studentCarousel || !supportCarousel) return;
-		componentHasFocus = true;
 
 		if (carouselId === 'students') {
+			studentsCarouselHasFocus = true;
 			studentCarousel.go(direction);
 			carouselStudentSelectedIndex = studentCarousel.splide.index;
 		}
 
 		if (carouselId === 'supportOptions') {
+			supportCarouselHasFocus = true;
 			supportCarousel.go(direction);
 			carouselSupportSelectedIndex = supportCarousel.splide.index;
 			carouselStudentSelectedIndex = 0;
@@ -121,28 +177,28 @@
 			{#if carouselSupportSelectedIndex === 0}
 				<span>Jetzt Swipen!</span>
 			{:else}
-				<span>Maßnahme {carouselSupportSelectedIndex} von {supportOptions.length - 1}</span>
+				<span>{`Maßnahme ${carouselSupportSelectedIndex} von ${supportOptions.length - 1}`}</span>
 			{/if}
 
 			<div class="carousel">
-				<button
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('<', 'supportOptions')}
-					class="previous-button"
-					aria-label="Vorherige Person"
-				>
-					<Icon img="arrow-toleft" size="small" svg_color="white" />
-				</button>
 				<Splide
 					aria-roledescription="Karussell"
 					role="navigation"
-					aria-label="Studierende"
-					options={splideOptions}
+					aria-label="Unterstützungsmaßnahmen"
+					options={splideOptionsSupport}
 					bind:this={supportCarousel}
 					hasTrack={false}
 					on:moved={(e) => handleMove(e?.detail.index, 'supportOptions')}
 					on:scrolled={() => handleScrolled('supportOptions')}
 				>
+					<button
+						on:focusout={() => (supportCarouselHasFocus = false)}
+						on:click={() => moveSlide('<', 'supportOptions')}
+						class="previous-button"
+						aria-label="Vorherige Maßnahme"
+					>
+						<Icon img="arrow-toleft" size="small" svg_color="white" />
+					</button>
 					<SplideTrack class="splide-track">
 						{#each supportOptions as option, i (option.id)}
 							<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
@@ -150,45 +206,46 @@
 							</SplideSlide>
 						{/each}
 					</SplideTrack>
-
+					<button
+						on:focusout={() => (supportCarouselHasFocus = false)}
+						on:click={() => moveSlide('>', 'supportOptions')}
+						class="next-button"
+						aria-label="Nächste Maßnahme"
+						><Icon img="arrow-toright" size="small" svg_color="white" />
+					</button>
 					<div class="splide__arrows" />
 				</Splide>
-				<button
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('>', 'supportOptions')}
-					class="next-button"
-					aria-label="Nächste Person"
-					><Icon img="arrow-toright" size="small" svg_color="white" />
-				</button>
 			</div>
 		</div>
 	</div>
 	<div
 		class="bottom-card"
 		class:visible={carouselSupportSelectedIndex !== 0 && students.length !== 0}
-		aria-hidden={carouselSupportSelectedIndex === 0 && students.length === 0}
+		aria-hidden={carouselSupportSelectedIndex === 0 || students.length === 0}
 	>
 		<div class="students">
-			<span>Studierende {carouselStudentSelectedIndex + 1} von {students.length}</span>
+			<span>{`Studierende ${carouselStudentSelectedIndex + 1} von ${students.length}`}</span>
 			<div class="carousel">
-				<button
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('<', 'students')}
-					class="previous-button"
-					aria-label="Vorherige Person"
-				>
-					<Icon img="arrow-toleft" size="small" svg_color="white" />
-				</button>
 				<Splide
 					aria-roledescription="Karussell"
 					role="navigation"
 					aria-label="Studierende"
-					options={splideOptions}
+					options={splideOptionsStudents}
 					bind:this={studentCarousel}
 					hasTrack={false}
 					on:moved={(e) => handleMove(e?.detail.index, 'students')}
 					on:scrolled={() => handleScrolled('students')}
 				>
+					<button
+						on:focusout={() => (studentsCarouselHasFocus = false)}
+						on:click={() => moveSlide('<', 'students')}
+						class="previous-button"
+						aria-label="Vorherige Person"
+						tabindex={carouselSupportSelectedIndex === 0 ? -1 : 0}
+						aria-hidden={carouselSupportSelectedIndex === 0}
+					>
+						<Icon img="arrow-toleft" size="small" svg_color="white" />
+					</button>
 					<SplideTrack class="splide-track">
 						{#each students as student, i (student.id)}
 							<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
@@ -196,16 +253,17 @@
 							</SplideSlide>
 						{/each}
 					</SplideTrack>
-
+					<button
+						on:focusout={() => (studentsCarouselHasFocus = false)}
+						on:click={() => moveSlide('>', 'students')}
+						class="next-button"
+						aria-label="Nächste Person"
+						tabindex={carouselSupportSelectedIndex === 0 ? -1 : 0}
+						aria-hidden={carouselSupportSelectedIndex === 0}
+						><Icon img="arrow-toright" size="small" svg_color="white" />
+					</button>
 					<div class="splide__arrows" />
 				</Splide>
-				<button
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('>', 'students')}
-					class="next-button"
-					aria-label="Nächste Person"
-					><Icon img="arrow-toright" size="small" svg_color="white" />
-				</button>
 			</div>
 		</div>
 		<div class="student-detail">
@@ -221,6 +279,22 @@
 				{selectedStudentComment}
 			</p>
 		</div>
+	</div>
+
+	<div aria-live="polite" class="sr-only">
+		{#if supportCarouselHasFocus}
+			{#key supportCarouselAriaLiveText}
+				{supportCarouselAriaLiveText}
+			{/key}
+		{/if}
+	</div>
+
+	<div aria-live="polite" class="sr-only">
+		{#if studentsCarouselHasFocus}
+			{#key studentsCarouselAriaLiveText}
+				{studentsCarouselAriaLiveText}
+			{/key}
+		{/if}
 	</div>
 </div>
 
@@ -373,6 +447,12 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			cursor: pointer;
+
+			&:focus-visible {
+				outline: 2px solid rgba(var(--color-white-rgb), 0.8);
+				outline-offset: -4px;
+			}
 		}
 
 		.previous-button {
@@ -397,14 +477,6 @@
 
 		.carousel {
 			padding-inline: 1.25rem;
-
-			.previous-button {
-				left: 1.25rem;
-			}
-
-			.next-button {
-				right: 1.25rem;
-			}
 		}
 	}
 </style>

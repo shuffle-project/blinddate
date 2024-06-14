@@ -45,7 +45,7 @@
 	</svelte:fragment>
 </Modal>
 
-<div class="container">
+<div class="container" aria-label="Persona-Karte">
 	<div class="card bg left" />
 	<div class="card bg right" />
 	<div class="card">

@@ -17,7 +17,7 @@
 
 	<h2>Ich habe wenig Zeit und brauche gezielte Informationen</h2>
 
-	<p>Das befindet sich auf BlindDate:</p>
+	<!-- <p>Das befindet sich auf BlindDate:</p> -->
 
 	<h3>Die Startseite</h3>
 

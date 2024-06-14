@@ -445,4 +445,28 @@
 			}
 		}
 	}
+
+	@media (max-width: 28.75rem) {
+		.wrapper {
+			ul {
+				li.gabriel {
+					bottom: -0.6%;
+					left: 14%;
+
+					img {
+						width: min(12vw, 10rem);
+					}
+				}
+
+				li.aleksandr {
+					top: 54%;
+					left: 37.4%;
+
+					img {
+						width: min(10.8vw, 8.75rem);
+					}
+				}
+			}
+		}
+	}
 </style>

@@ -147,21 +147,27 @@
 
 <div class="wrapper">
 	{#if ENVIRONMENT.showBigPictureContent}
-		<p>
+		<!-- <p>
 			Werden Lernumgebungen von vornherein so geplant und gestaltet, dass sie für alle Lernenden
 			zugänglich sind, können einige aufwändige Nachbesserungen und zusätzliche, zeitintensive
 			Anpassungen vermieden werden. Viele (Unterstützungs-)Maßnahmen, die bereits zu Beginn
 			mitgedacht und umgesetzt werden, kommen vielen Studierenden zu Gute – vielleicht sogar
 			Studierenden, die Sie im ersten Moment gar nicht mitbedacht haben.
+		</p> -->
+
+		<p>
+			Viele (Unterstützungs-)Maßnahmen, die bereits zu Beginn mitgedacht und umgesetzt werden,
+			kommen vielen Studierenden zu Gute – vielleicht sogar Studierenden, die Sie im ersten Moment
+			gar nicht mitbedacht haben.
 		</p>
 
-		<p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p>
-
+		<!-- <p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p> -->
+		<!-- 
 		<p>
 			Im Folgenden ist ein Vorlesungssaal voller Studierender abgebildet. Wählen Sie weiter unten
 			eine Unterstützungsmöglichkeit aus und sehen Sie, wer alles davon profitiert. Anschließend
 			können Sie auf die Studierenden klicken, um mehr Informationen zu bekommen.
-		</p>
+		</p> -->
 
 		<div class="desktop">
 			<ul>
