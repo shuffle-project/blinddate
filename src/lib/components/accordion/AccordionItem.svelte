@@ -1,19 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
 	import PersonaAnswer from './PersonaAnswer.svelte';
-
-	let open = false;
-	let details: HTMLDetailsElement;
-
-	onMount(() => {
-		details.addEventListener('toggle', (e) => {
-			open = !open;
-		});
-	});
 </script>
 
-<details bind:this={details}>
+<details>
 	<summary>
 		<slot name="question" />
 		<div class="arrow">

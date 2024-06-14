@@ -105,13 +105,17 @@
 				}
 			});
 		}
+
+		if (carouselSupportSelectedIndex === 0) {
+			students = BIG_PICTURE_STUDENTS;
+		}
 	}
 </script>
 
 <div class="wrapper">
 	<div class="top-card">
 		<div class="lecture-room">
-			<BigLectureRoom />
+			<BigLectureRoom highlightedStudents={students} mobileView />
 		</div>
 		<div class="support-options">
 			{#if carouselSupportSelectedIndex === 0}
@@ -223,16 +227,19 @@
 <style lang="scss">
 	.wrapper {
 		.top-card {
+			background: linear-gradient(transparent 50%, var(--color-black) 50%);
+			border-radius: 0 0 1.25rem 1.25rem;
 			.lecture-room {
 				display: flex;
 			}
 
 			.support-options {
-				background-color: var(--color-black);
-				border-radius: 0 0 1.25rem 1.25rem;
 				color: rgba(var(--color-white-rgb), 0.8);
 				position: relative;
 				padding-block: 0.625rem;
+
+				max-width: 35rem;
+				margin-inline: auto;
 
 				span {
 					font-size: 0.875rem;
@@ -257,6 +264,8 @@
 			margin-top: 2.5rem;
 			opacity: 0%;
 			transition: opacity 0.4s ease-in-out;
+			max-width: 35rem;
+			margin-inline: auto;
 
 			&.visible {
 				opacity: 100%;
@@ -297,7 +306,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				padding: 0 1rem 1rem;
+				padding: 0 1rem;
 
 				.student-image {
 					width: 6.25rem;
@@ -368,12 +377,34 @@
 
 		.previous-button {
 			inset: 0 auto 0 0;
-			background: linear-gradient(var(--color-black), transparent);
+			background: linear-gradient(90deg, var(--color-black), transparent);
 		}
 
 		.next-button {
 			inset: 0 0 0 auto;
-			background: linear-gradient(transparent, var(--color-black));
+			background: linear-gradient(90deg, transparent, var(--color-black));
+		}
+	}
+
+	@media (min-width: 22.5rem) {
+		.wrapper {
+			.bottom-card {
+				.student-detail {
+					padding: 0 1.25rem;
+				}
+			}
+		}
+
+		.carousel {
+			padding-inline: 1.25rem;
+
+			.previous-button {
+				left: 1.25rem;
+			}
+
+			.next-button {
+				right: 1.25rem;
+			}
 		}
 	}
 </style>

@@ -23,7 +23,7 @@
 			</div>
 		</div>
 
-		<hr aria-hidden="true" class="separator" />
+		<!-- <hr aria-hidden="true" class="separator" /> -->
 	</header>
 </div>
 

@@ -10,9 +10,33 @@
 	import StudentSpeechbubble from './StudentSpeechbubble.svelte';
 
 	export let showAllNames = false;
+	export let highlightedStudents: BigPictureStudent[] = [];
+	export let mobileView = false;
+
 	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS;
 	let selectedStudent: StudentId | undefined = undefined;
 	let selectedOption: SupportOptionId | '' = '';
+
+	$: {
+		if (
+			highlightedStudents.length > 0 &&
+			highlightedStudents.length < BIG_PICTURE_STUDENTS.length
+		) {
+			students = students.map((student) => {
+				if (highlightedStudents.includes(student)) {
+					student.active = true;
+				} else {
+					student.active = false;
+				}
+				return student;
+			});
+		} else {
+			students = students.map((student) => {
+				student.active = false;
+				return student;
+			});
+		}
+	}
 
 	function handleOptionSelection(id: SupportOptionId) {
 		if (selectedOption === id) {
@@ -78,56 +102,73 @@
 </script>
 
 <div class="wrapper">
-	<ul>
+	<ul aria-hidden={mobileView}>
 		{#each students as student, i}
 			<li
 				class={student.id}
 				class:active={student.active}
 				class:selected={student.id === selectedStudent}
 				class:show-all-names={showAllNames}
+				class:not-idle={mobileView && highlightedStudents.length !== BIG_PICTURE_STUDENTS.length}
 			>
-				<button
-					class="student-button"
-					aria-label={student.name}
-					tabindex={student.active ? 0 : -1}
-					on:click={() => handleSelectStudent(student.id)}
-					id="student-{student.id}-button"
-					aria-pressed={student.id === selectedStudent}
-				>
-					<div class="student-info-wrapper" aria-hidden="true">
-						<div class="student-info">
-							<p class="persona-name">{student.name}</p>
+				{#if !mobileView}
+					<button
+						class="student-button"
+						aria-label={student.name}
+						tabindex={student.active ? 0 : -1}
+						on:click={() => handleSelectStudent(student.id)}
+						id="student-{student.id}-button"
+						aria-pressed={student.id === selectedStudent}
+					>
+						<div class="student-info-wrapper" aria-hidden="true">
+							<div class="student-info">
+								<p class="persona-name">{student.name}</p>
+							</div>
 						</div>
-					</div>
+						<img
+							class="persona-img"
+							src="{base}/personas/{student.id}/{student.id}-lecture.svg"
+							alt=""
+							loading="lazy"
+						/>
+					</button>
+
+					<StudentSpeechbubble
+						studentName={student.name}
+						studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
+						visible={selectedStudent === student.id}
+						on:close={() => handleSpeechbubbleClose()}
+					/>
+				{:else}
 					<img
 						class="persona-img"
 						src="{base}/personas/{student.id}/{student.id}-lecture.svg"
 						alt=""
 						loading="lazy"
 					/>
-				</button>
-
-				<StudentSpeechbubble
-					studentName={student.name}
-					studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
-					visible={selectedStudent === student.id}
-					on:close={() => handleSpeechbubbleClose()}
-				/>
+				{/if}
 			</li>
 		{/each}
 	</ul>
 
-	<div class="dark-overlay" class:not-hidden={selectedOption !== ''}>
-		<div class="notch">
-			<div class="icon-wrapper">
-				<Icon img="clickable-persona" svg_color="white" size="parent" />
+	{#if !mobileView}
+		<div
+			class="dark-overlay"
+			class:not-hidden={selectedOption !== '' ||
+				(highlightedStudents.length > 0 &&
+					highlightedStudents.length < BIG_PICTURE_STUDENTS.length)}
+		>
+			<div class="notch">
+				<div class="icon-wrapper">
+					<Icon img="clickable-persona" svg_color="white" size="parent" />
+				</div>
+				<label for="show-all-names">
+					<input type="checkbox" id="show-all-names" bind:checked={showAllNames} />
+					Alle Namen anzeigen
+				</label>
 			</div>
-			<label for="show-all-names">
-				<input type="checkbox" id="show-all-names" bind:checked={showAllNames} />
-				Alle Namen anzeigen
-			</label>
 		</div>
-	</div>
+	{/if}
 
 	<img
 		class="big-picture-room"
@@ -157,6 +198,13 @@
 
 				.student-info-wrapper {
 					display: none;
+				}
+
+				transition: filter 0.2s ease-out;
+				&:not(.active) {
+					&.not-idle {
+						filter: opacity(96%) brightness(0%);
+					}
 				}
 
 				&.active {
@@ -266,10 +314,10 @@
 			}
 
 			.student-button {
+				cursor: pointer;
 				padding: 0;
 				border: none;
 				background-color: transparent;
-				cursor: pointer;
 
 				&:focus-visible {
 					outline: none;
