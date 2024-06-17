@@ -17,7 +17,7 @@
 
 	<h2>Ich habe wenig Zeit und brauche gezielte Informationen</h2>
 
-	<p>Das befindet sich auf BlindDate:</p>
+	<!-- <p>Das befindet sich auf BlindDate:</p> -->
 
 	<h3>Die Startseite</h3>
 
@@ -32,18 +32,22 @@
 
 	<h3>Die Persona-Seiten:</h3>
 	<ul>
-		<li>Schlagwörter auf der rechten Seite geben Hinweise auf angesprochene Themen</li>
 		<li>
-			Die Persona Karte auf der linken Seite beinhaltet das Inhaltsverzeichnis der Seite (Drei
-			Striche)
+			Schlagwörter nach dem Seitentitel geben Hinweise auf angesprochene Themen. Z.B. „Beratung“ bei
+			Maxi
 		</li>
 		<li>
-			Über den blauen Button 'Selbstcheck Barrierefreiheit' springen Sie direkt zu der Checkliste
-			mit Handlungsempfehlungen
+			Die Persona Karte beinhaltet neben dem blauen Button „Selbstcheck Barrierefreiheit“ auch ein
+			Inhaltsverzeichnis. Visuell erkennbar durch das Drei-Striche-Icon oder durch das Label
+			„Inhaltsverzeichnis anzeigen“ für Screenreader-Nutzende
 		</li>
 		<li>
-			Blau hinterlegte Worte auf der Persona Karte, in Sprechblasen und Textpassagen blenden Ihnen
-			Definitionen von Fachbegriffen ein
+			Über „Selbstcheck Barrierefreiheit“ springen Sie direkt zu der Checkliste mit
+			Handlungsempfehlungen am Ende Seite
+		</li>
+		<li>
+			Blau hinterlegte und unterstrichene Worte in Sprechblasen und Textpassagen blenden Ihnen
+			Definitionen von Fachbegriffen ein. Screenreader sollten sie als Taste oder Button deklarieren
 		</li>
 	</ul>
 
