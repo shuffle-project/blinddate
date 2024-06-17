@@ -217,12 +217,15 @@
 				</Splide>
 			</div>
 		</div>
+		<span class="bobble-indicator" aria-hidden="true" />
 	</div>
+
 	<div
 		class="bottom-card"
 		class:visible={carouselSupportSelectedIndex !== 0 && students.length !== 0}
 		aria-hidden={carouselSupportSelectedIndex === 0 || students.length === 0}
 	>
+		<span class="bobble-indicator" aria-hidden="true" />
 		<div class="students">
 			<span>{`Studierende ${carouselStudentSelectedIndex + 1} von ${students.length}`}</span>
 			<div class="carousel">
@@ -303,13 +306,14 @@
 		.top-card {
 			background: linear-gradient(transparent 50%, var(--color-black) 50%);
 			border-radius: 0 0 1.25rem 1.25rem;
+			position: relative;
 			.lecture-room {
 				display: flex;
 			}
 
 			.support-options {
 				color: rgba(var(--color-white-rgb), 0.8);
-				position: relative;
+
 				padding-block: 0.625rem;
 
 				max-width: 35rem;
@@ -320,7 +324,8 @@
 					display: flex;
 					justify-content: center;
 				}
-
+			}
+			.bobble-indicator {
 				&::after {
 					content: url('/decorations/mobile-big-picture-indicator.svg');
 					position: absolute;
@@ -340,26 +345,13 @@
 			transition: opacity 0.4s ease-in-out;
 			max-width: 35rem;
 			margin-inline: auto;
+			position: relative;
 
 			&.visible {
 				opacity: 100%;
 			}
 
-			.students {
-				background-color: var(--color-black);
-				color: rgba(var(--color-white-rgb), 0.8);
-
-				padding: 1rem 0 0.625rem 0;
-
-				border-radius: 1.25rem 1.25rem 0 0;
-				position: relative;
-
-				span {
-					font-size: 0.875rem;
-					display: flex;
-					justify-content: center;
-				}
-
+			.bobble-indicator {
 				&::before {
 					content: url('/decorations/mobile-big-picture-indicator.svg');
 					position: absolute;
@@ -370,6 +362,21 @@
 					height: 1rem;
 					display: flex;
 					transform: rotate(180deg);
+					justify-content: center;
+				}
+			}
+
+			.students {
+				background-color: var(--color-black);
+				color: rgba(var(--color-white-rgb), 0.8);
+
+				padding: 1rem 0 0.625rem 0;
+
+				border-radius: 1.25rem 1.25rem 0 0;
+
+				span {
+					font-size: 0.875rem;
+					display: flex;
 					justify-content: center;
 				}
 			}
