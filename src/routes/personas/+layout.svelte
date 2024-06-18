@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-		<hr aria-hidden="true" class="separator" />
+		<!-- <hr aria-hidden="true" class="separator" /> -->
 	</header>
 </div>
 <div class="persona">
@@ -58,13 +58,6 @@
 
 			box-sizing: border-box;
 		}
-
-		.separator {
-			margin: 0;
-			width: 100%;
-			box-sizing: border-box;
-			color: rgba(var(--color-white-rgb), 0.5);
-		}
 	}
 
 	@media (min-width: 59.375rem) {
@@ -72,19 +65,18 @@
 			padding-inline: var(--outer-spacing);
 			box-sizing: border-box;
 		}
-		.row,
-		.separator {
+		.row {
 			max-width: var(--content-max-width);
 		}
 
 		.row {
-			padding: 1rem 0;
+			padding: 1.625rem 0;
 		}
 	}
 
 	@media (max-width: 59.3125rem) {
 		.row {
-			padding: 1rem;
+			padding: 1.625rem 1rem;
 		}
 	}
 </style>

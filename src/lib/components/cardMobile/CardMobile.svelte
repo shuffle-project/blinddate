@@ -77,7 +77,7 @@
 		align-items: center;
 
 		transform: translateY(-1.5rem);
-		margin-bottom: 4rem;
+		margin-bottom: 1.25rem;
 
 		padding: 2rem 1.375rem 1rem 1.375rem;
 

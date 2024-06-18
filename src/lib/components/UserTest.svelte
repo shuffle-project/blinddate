@@ -56,12 +56,12 @@
 </script>
 
 <div class="wrapper">
-	{#if !bottomOfPage}
+	<!-- {#if !bottomOfPage}
 		<button bind:this={modalButton} on:click={() => modal.toggleModalDisplay()}>
 			Willkommenstext öffnen
 		</button>
 		<hr aria-hidden="true" />
-	{/if}
+	{/if} -->
 	<p>{persona}-Seite erkundet und bereit?</p>
 	<a href={linkToPersonaQuestionnaire}>Zur {persona}-Umfrage</a>
 </div>

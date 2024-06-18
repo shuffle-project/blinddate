@@ -113,7 +113,7 @@
 <style lang="scss">
 	@media (min-width: 59.375rem) {
 		.container {
-			transform: translateY(-5rem);
+			transform: translateY(-6rem);
 		}
 	}
 

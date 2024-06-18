@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AboutMe from '$lib/components/AboutMe.svelte';
+	import PersonaHeader from '$lib/components/PersonaHeader.svelte';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import MetaTags from '../MetaTags.svelte';
 	import PersonaCard from '../PersonaCard.svelte';
@@ -13,7 +13,7 @@
 <MetaTags {persona} />
 
 <main>
-	<AboutMe {persona} />
+	<PersonaHeader {persona} />
 	<div class="columns-wrapper">
 		<div class="card-column">
 			<div class="hovering-card">
@@ -22,6 +22,30 @@
 		</div>
 		<div class="content-column">
 			<CardMobile {persona} />
+			<div class="general-info">
+				<h2 id="about-me" class="main-heading">Über mich</h2>
+
+				<table aria-labelledby="about-me">
+					<tr>
+						<th scope="row">Alter</th>
+						<td>{persona.age + ' Jahre'}</td>
+					</tr>
+					<tr>
+						<th scope="row">Hobbys</th>
+						<td>{persona.hobbies}</td>
+					</tr>
+					<tr>
+						<th scope="row">Studium</th>
+						<td>{persona.study}</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Pronomen</th>
+						<td lang={persona.id === 'maxi' ? 'en' : 'de'}>{persona.pronouns}</td>
+					</tr>
+				</table>
+			</div>
+
 			<slot {MainHeading} {TextSection} />
 			<div class="footer-padding" />
 		</div>
@@ -39,6 +63,39 @@
 		.content-column {
 			display: flex;
 			flex-direction: column;
+
+			.general-info {
+				margin-inline: auto;
+				margin-bottom: 2.5rem;
+				font-size: 1.125rem;
+				max-width: 20rem;
+				padding-inline: var(--outer-spacing);
+
+				h2 {
+					text-align: center;
+				}
+
+				table {
+					border-collapse: collapse;
+
+					th {
+						text-align: right;
+						padding: 0 1rem 0.625rem 0;
+						border-right: 1px solid var(--color-black);
+					}
+
+					td {
+						padding: 0 0 0.625rem 1rem;
+						word-wrap: break-word;
+						overflow-wrap: break-word;
+						overflow-wrap: anywhere;
+
+						-webkit-hyphens: auto;
+						-moz-hyphens: auto;
+						hyphens: auto;
+					}
+				}
+			}
 		}
 	}
 
@@ -65,12 +122,21 @@
 
 				.hovering-card {
 					position: sticky;
-					top: 50vh;
-					transform: translateY(-50%);
+					top: 30vh;
+					// transform: translateY(-25%);
 				}
 			}
 			.content-column {
 				width: 77%;
+
+				.general-info {
+					margin-inline: 3.25rem;
+					max-width: 40rem;
+
+					h2 {
+						text-align: left;
+					}
+				}
 			}
 		}
 	}
