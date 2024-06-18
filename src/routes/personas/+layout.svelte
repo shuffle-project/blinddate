@@ -26,8 +26,6 @@
 				<ShareButton />
 			</div>
 		</div>
-
-		<!-- <hr aria-hidden="true" class="separator" /> -->
 	</header>
 </div>
 <div class="persona">

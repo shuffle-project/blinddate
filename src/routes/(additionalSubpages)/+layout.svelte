@@ -22,8 +22,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- <hr aria-hidden="true" class="separator" /> -->
 	</header>
 </div>
 
@@ -66,13 +64,6 @@
 				}
 			}
 		}
-
-		.separator {
-			margin: 0;
-			width: 100%;
-			box-sizing: border-box;
-			color: rgba(var(--color-white-rgb), 0.5);
-		}
 	}
 
 	@media (min-width: 59.375rem) {
@@ -80,8 +71,7 @@
 			padding-inline: var(--outer-spacing);
 			box-sizing: border-box;
 		}
-		.row,
-		.separator {
+		.row {
 			max-width: var(--content-max-width);
 		}
 
