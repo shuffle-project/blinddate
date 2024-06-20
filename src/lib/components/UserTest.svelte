@@ -62,7 +62,7 @@
 		</button>
 		<hr aria-hidden="true" />
 	{/if} -->
-	<p>{persona}-Seite erkundet und bereit?</p>
+	<!-- <p>{persona}-Seite erkundet und bereit?</p> -->
 	<a href={linkToPersonaQuestionnaire}>Zur {persona}-Umfrage</a>
 </div>
 
@@ -177,8 +177,6 @@
 	}
 
 	.wrapper {
-		max-width: 13.125rem;
-
 		button {
 			font-size: 1rem;
 			display: block;
@@ -207,28 +205,29 @@
 		}
 
 		p {
-			color: var(--color-white);
+			color: var(--color-black);
 			font-size: 1rem;
 			text-align: center;
 			margin: 0;
-			margin-bottom: 0.375rem;
+			max-width: 13.125rem;
 		}
 
 		a {
-			background-color: var(--color-light-blue);
-			color: var(--color-black);
+			background-color: var(--color-white);
+			color: rgba(var(--color-black), 0.85);
 			font-size: 1.25rem;
 			font-weight: bold;
 			text-decoration: none;
-			padding: 0.375rem 0;
+			padding: 0.375rem;
 			display: block;
 			text-align: center;
 			border-radius: 0.375rem;
+			max-width: 13.125rem;
 
 			&:hover,
 			&:focus {
-				outline: 2px solid var(--color-light-blue);
-				outline-offset: 2px;
+				outline: 2px solid var(--color-black);
+				outline-offset: -4px;
 			}
 		}
 	}

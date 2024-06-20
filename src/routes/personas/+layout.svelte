@@ -7,12 +7,11 @@
 	import Footer from '../../lib/components/Footer.svelte';
 </script>
 
+<div class="user-test">
+	<UserTest />
+</div>
 <div class="background-black">
 	<header>
-		<div class="user-test">
-			<UserTest />
-		</div>
-
 		<div class="row">
 			{#if ENVIRONMENT.backLinkToStartpage}
 				<a href="{base}/#lecture-room" class="back-to-startpage">
@@ -35,6 +34,13 @@
 <Footer />
 
 <style lang="scss">
+	.user-test {
+		padding: 1rem 0;
+		display: flex;
+		justify-content: center;
+		background-color: #99bef5;
+	}
+
 	.background-black {
 		background-color: var(--color-black);
 		width: 100%;
@@ -43,10 +49,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		.user-test {
-			margin: 1rem auto;
-		}
 
 		.row {
 			display: flex;
