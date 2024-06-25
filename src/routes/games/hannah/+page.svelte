@@ -32,7 +32,7 @@
 			audio: base + '/games/hannah/Audio/static.mp3',
 			mood: base + '/personas/hannah/hannah-explaining.svg',
 			description:
-				'“Gib’s zu, das hast Du geraten! Aber keine Sorge: Moderne Techniken bergen viele Hilfsmittel. Für dieses Video beispielsweise stehen automatische Untertitel zur Verfügung, auf die auch ich häufig zurückgreife. Ich schalte sie Dir ein.”',
+				'“Gib’s zu, das hast Du geraten! Aber keine Sorge: Moderne Techniken bergen viele Hilfsmittel. Für dieses Video beispielsweise stehen automatische Untertitel zur Verfügung. Auf die greife ich auch häufig zurück, denn sie sind mittlerweile super weit verbreitet. Ich schalte sie Dir ein!”',
 			btnA: { answer: 7, correct: false },
 			btnB: { answer: 9, correct: true },
 			btnC: { answer: 11, correct: false }
@@ -65,7 +65,7 @@
 			audio: base + '/games/hannah/Audio/static.mp3',
 			mood: base + '/personas/hannah/hannah-happy.svg',
 			description:
-				'“Die Dozentin hat auf meine Bitte reagiert und die Untertitel der restlichen Aufgaben manuell korrigiert! Du wirst gleich merken, dass Du deutlich besser arbeiten kannst, wenn du dabei nicht auch noch ‚Quizduell‘ spielen musst.”',
+				'“Die Dozentin hat auf meine Bitte reagiert und die Untertitel der restlichen Aufgaben mit einem Programm manuell korrigiert! Du wirst gleich merken, dass Du deutlich besser arbeiten kannst, wenn du dabei nicht auch noch ‚Quizduell‘ spielen musst.”',
 			btnA: { answer: 24, correct: false },
 			btnB: { answer: 27, correct: true },
 			btnC: { answer: 31, correct: false }
