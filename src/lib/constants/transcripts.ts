@@ -41,7 +41,7 @@ export const HOEREN_OFFLINE_TRANSKRIPT = `
 <p>[Student steht vor einem Fenster]</p>
 <p><strong>Student:</strong> Wenn ich meine Brille anhabe, sehe ich normal. Aber wenn ich meine Hörhilfen trage, höre ich nicht immer normal. Störgeräusche sind immer noch ein großes Problem für mich. [Ein Auto fährt außen vorbei]Können wir bitte das Fenster zu machen?</p>
 <p>[Studentin steht auf und schließt das Fenster. Straßengeräusche verschwinden]</p>
-<p><strong>Studentin:</strong> Und genau deshalb ist es wichtig, dass wir Höranlagen tragen. Wichtig ist es, dass wir sie richtig tragen. Das heißt: Schal aus, das Display nach vorne und nach oben ziehen.Wenn wir die Höhenlage ablegen, oder sie nicht benötigen, müssen wir sie stummschalten.</p>
+<p><strong>Studentin:</strong> Und genau deshalb ist es wichtig, dass wir Höranlagen tragen. Wichtig ist es, dass wir sie richtig tragen. Das heißt: Schal aus, das Display nach vorne und nach oben ziehen. Wenn wir die Höranlage ablegen, oder sie nicht benötigen, müssen wir sie stummschalten.</p>
 <p><strong>Student:</strong> Wenn wir das Handmikrofon benutzen, ist es wichtig, das nicht einfach so rumzufuchteln, sondern immer schön vor den Mund zu halten. [Stimme wird leiser und lauter]</p>
 <p>[Knallgeräusch und kurze Rückkopplung] Das ist ein bisschen zu hart abgelegt. Also nach dem Sprechen das Mikrofon ganz sanft auf den Tisch legen.</p>
 <p>[Beide Studierende sitzen an einem Tisch. Sie reden unverständlich und undeutlich durcheinander]</p>
