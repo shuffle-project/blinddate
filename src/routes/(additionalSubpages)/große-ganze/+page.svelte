@@ -161,7 +161,7 @@
 			gar nicht mitbedacht haben.
 		</p>
 
-		<!-- <p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p> -->
+		<p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p>
 		<!-- 
 		<p>
 			Im Folgenden ist ein Vorlesungssaal voller Studierender abgebildet. Wählen Sie weiter unten

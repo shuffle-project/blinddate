@@ -378,7 +378,7 @@
 	.user-test {
 		background-color: var(--color-black);
 		border-radius: 1.25rem;
-		padding: 1rem;
+		padding: 2.5rem 1rem;
 		margin: 2rem 0 0 3.375rem;
 		display: flex;
 		align-items: center;

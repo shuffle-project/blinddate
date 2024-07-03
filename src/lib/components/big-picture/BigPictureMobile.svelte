@@ -163,7 +163,9 @@
 		}
 
 		if (carouselSupportSelectedIndex === 0) {
-			students = BIG_PICTURE_STUDENTS;
+			setTimeout(() => {
+				students = BIG_PICTURE_STUDENTS;
+			}, 300);
 		}
 	}
 </script>
@@ -287,7 +289,7 @@
 	<div aria-live="polite" class="sr-only">
 		{#if supportCarouselHasFocus}
 			{#key supportCarouselAriaLiveText}
-				{supportCarouselAriaLiveText}
+				<p>{supportCarouselAriaLiveText}</p>
 			{/key}
 		{/if}
 	</div>
@@ -295,7 +297,7 @@
 	<div aria-live="polite" class="sr-only">
 		{#if studentsCarouselHasFocus}
 			{#key studentsCarouselAriaLiveText}
-				{studentsCarouselAriaLiveText}
+				<p>{studentsCarouselAriaLiveText}</p>
 			{/key}
 		{/if}
 	</div>
