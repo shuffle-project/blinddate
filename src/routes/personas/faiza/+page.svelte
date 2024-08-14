@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import { FAIZA } from '$lib/constants/faiza';
@@ -102,6 +103,25 @@
 		es auch einen Raum an der Uni, in dem ich Jonas früher in Ruhe gestillt habe und ihn auch
 		wickeln und eine Pause machen kann.
 	</SpeechBubble>
+
+	<MainHeading heading="Selbstcheck Barrierefreiheit" />
+
+	<TextSection let:Text>
+		<Text noTopMargin>
+			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
+		</Text>
+	</TextSection>
+
+	<Checklist
+		checks={[
+			'Ich informiere mich über digitale Barrierefreiheit',
+			'Ich gebe in der Veranstaltungsbeschreibung die Prüfungsform, die Struktur sowie Informationen zur Anwesenheitspflicht an',
+			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit Pflegeverantwortung wenden können',
+			'Ich ermögliche eine asynchrone oder remote Teilnahme an der Veranstaltung',
+			'Ich gehe auf individuelle Bedarfe von Studierenden mit familiären Verpflichtungen ein und stelle alternative Prüfformate zur Verfügung'
+		]}
+		{persona}
+	/>
 </PersonaContent>
 
 <style lang="scss">
