@@ -3,6 +3,7 @@
 
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 import { ALEKSANDR } from './aleksandr';
+import { FAIZA } from './faiza';
 import { GABRIEL } from './gabriel';
 import { HANNAH } from './hannah';
 import { KILIAN } from './kilian';
@@ -23,7 +24,7 @@ interface Environment {
 }
 
 export const ENVIRONMENT: Environment = {
-	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL],
+	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA],
 	redirectToStartpage: false,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
