@@ -271,6 +271,15 @@
 					}
 				}
 
+				&.faiza {
+					bottom: 2.6%;
+					left: 38%;
+
+					img {
+						width: min(15.4vw, 16rem);
+					}
+				}
+
 				a {
 					position: relative;
 
