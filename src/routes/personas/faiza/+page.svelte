@@ -1,11 +1,17 @@
 <script lang="ts">
+	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
+	import { CHRIS } from '$lib/constants/chris';
 	import { FAIZA } from '$lib/constants/faiza';
+	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 	const persona: Persona = FAIZA;
+	const friendPersona: FriendPersona = CHRIS;
 </script>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
@@ -74,7 +80,7 @@
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>
-		<Text>
+		<Text noTopMargin>
 			Studierende mit familiären Verpflichtungen brauchen räumliche und zeitliche Flexibilität.
 			Aufgezeichnete Vorlesungen, die asynchron und nach eigenem Tempo angeschaut werden können,
 			sind daher häufig sehr hilfreich.
@@ -104,6 +110,158 @@
 		wickeln und eine Pause machen kann.
 	</SpeechBubble>
 
+	<FriendBubble {friendPersona}>
+		Ja, das hat bisher zum Glück immer ganz gut geklappt. Wir fragen dann jeweils bei den
+		Dozierenden an, ob es okay ist, dass Jonas mit in der Vorlesung sitzt. Mit einem Sitzplatz nahe
+		der Tür, um auch mal schnell mit ihm rauszugehen, klappt das ganz gut. Trotzdem ist man halt
+		auch immer abgelenkt und kann nur mit einem Ohr zuhören.
+	</FriendBubble>
+
+	<SpeechBubble {persona}>
+		Und das geht mit einem Kind ab und an mal. Aber mit Pflegeverantwortung für ein älteres
+		Familienmitglied zum Beispiel wird es schwierig. Ein Freundin von mir pflegt ihre kranke Oma. Es
+		ist sozial akzeptiert, dass man mal Kinder mit zur Arbeit oder an die Uni bringt – aber nicht
+		die Oma.
+	</SpeechBubble>
+
+	<TextSection let:Text>
+		<Text>
+			Werden die Vorlesungsunterlagen im Voraus digital zur Verfügung gestellt, können
+			beispielsweise die Schlafzeiten des Kindes genutzt werden, um sich vorzubereiten.
+		</Text>
+
+		<Text>
+			Außerdem sind klare Absprachen und Transparenz zur Struktur und den Anforderungen einer
+			Veranstaltung zu Beginn eines Semester sehr wichtig. Hier können auch alternative Prüfformate
+			und Regelungen zur Anwesenheit kommuniziert werden.
+		</Text>
+	</TextSection>
+
+	<SpeechBubble {persona}>
+		Ehrlich gesagt, ist das immer das Erste, was ich mir in der Veranstaltungsbeschreibung anschaue:
+		Gibt es eine Anwesenheitspflicht? Wie oft darf ich maximal fehlen? Gibt es die Möglichkeit,
+		online teilzunehmen oder asynchron zu Arbeiten? Ich muss einfach wissen, welche Anforderungen an
+		mich gestellt sind und ob ich diesen zeitlich gerecht werden kann. Und wenn ich als
+		Prüfungsleistung eine Hausarbeit schreiben kann, ist das für mich besser machbar, als eine
+		Präsenzprüfung. Ich würde mich freuen, wenn diese strukturellen und inhaltlichen Anforderungen
+		immer selbstverständlich und klar zu Beginn kommuniziert werden und ich nicht erst bei
+		Dozierenden nachfragen muss.
+	</SpeechBubble>
+
+	<MainHeading heading="Lernmaterial" />
+
+	<TextSection let:Text>
+		<Text noTopMargin>
+			Ist Lernmaterial in verschiedenen Formen und Modalitäten vorhanden, kann es zu
+			unterschiedlichen Situationen in den Alltag eingebaut werden: Untertitel beispielsweise
+			ermöglichen das Anschauen eines Lernvideos ohne Ton in einem Wartezimmer und gleichzeitig
+			können aus diesen ein Transkript zum Nachbereiten erstellt werden. Und Audioaufnahmen oder
+			Podcasts können auch während des Stillens gehört werden.
+		</Text>
+		<Text>
+			Da das asynchrone Lernen besser in den Alltag integriert werden kann, sind didaktisch gut
+			aufbereitete Anleitungen für Selbstlernphasen sehr hilfreich und wichtig. Wenn aufgezeichnete
+			Vorlesungen oder Lernvideos in didaktisch sinnvolle Kapitel unterteilt und diese
+			dementsprechend auch benannt werden, können Studierende diese „häppchenweisen“ anschauen,
+			lernen und effektiv auch wiederholen.
+		</Text>
+	</TextSection>
+
+	<SpeechBubble {persona}>
+		Ich bin immer sehr froh, wenn ich Videos oder Podcasts zu einem Thema finde oder es sogar so von
+		Lehrenden zur Verfügung gestellt wird, da ich mir dann die Inhalte flexibel anhören oder
+		anschauen kann. Und wenn es dann kein 90 minütiges Video ist, sondern Kurzvideos zu
+		Lerneinheiten, ist das für mich optimal.
+	</SpeechBubble>
+
+	<MainHeading heading="Interaktion und Kommunikation" />
+
+	<SpeechBubble {persona}>
+		Wir sind darauf angewiesen, dass Lehrende ihre Vorlesungen entweder asynchron zur Verfügung
+		stellen, oder dass wir auf Verständnis bei ihnen stoßen, wenn wir spontan an Veranstaltungen
+		nicht teilnehmen können. Das ist leider nicht immer der Fall, da häufig noch das Idealbild von
+		Vollzeitstudierenden ohne Einschränkungen vorherrscht.
+	</SpeechBubble>
+
+	<FriendBubble {friendPersona}>
+		Ja genau. Dass Studieren und Familien parallel existiert, ist nichts Neues mehr. Trotzdem fehlt
+		manchmal noch die soziale Akzeptanz. Schön wäre, wenn ich mich irgendwann nicht mehr
+		rechtfertigen muss, dass ich Student UND Papa bin und das auch so gewählt habe.
+	</FriendBubble>
+
+	<TextSection let:Text>
+		<Text>
+			Häufig füllen die Erziehung und Betreuung eines Kindes, das Studium und eventuelle Nebenjobs
+			den Alltag komplett aus. Wird dann noch asynchron studiert, sind soziale Kontakte zu
+			Mitstudierenden oft erschwert. Und auch die unterschiedlichen Tagesrhythmen machen gemeinsame
+			Gruppenarbeiten und Projekte mit Mitstudierenden manchmal zu einer Herausforderung.
+		</Text>
+	</TextSection>
+
+	<SpeechBubble {persona}>
+		An der Uni gibt es ein Vernetzungstreffen für Studierende mit Pflegeverantwortung. Da werden
+		neue Regelungen kommuniziert und man hat die Möglichkeit, sich auszutauschen. Das hat mir sehr
+		geholfen und tut es auch immer noch. Und es gibt tatsächlich auch einen Moodle-Kurs „Studieren
+		mit Kind“ mit wichtigen Informationen. Das war auch das Erste, was ich gemacht habe, als ich
+		schwanger war. Ich hab‘ nach allen Informationen und Möglichkeiten der Uni gesucht. Das würde
+		ich auch allen Studierenden mit Pflegeverantwortung empfehlen. Jede Hochschule hat eine
+		Anlaufstelle - ob das jetzt das Familienbüro, ein Gleichstellungsbüro oder die
+		Studienkoordinationsstelle ist.
+	</SpeechBubble>
+
+	<Accordion personaName={persona.name} let:AccordionItem>
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Faiza, was wünschst du dir von Lehrpersonen?
+			</svelte:fragment>
+			<PersonaAnswer {persona}>
+				Hört sich ganz leicht und selbstverständlich an. Aber generell erst einmal: Ein offenes Ohr
+				und eine offene Haltung gegenüber Studierenden, die Pflegeverantwortung haben oder auch aus
+				anderen Gründen kein Vollzeitstudium in Präsenz durchziehen können. Wertschätzung ist das
+				passende Wort, glaube ich. Und vielleicht auch manchmal mehr Menschlichkeit. Es gibt doch
+				auch genügend Dozierende mit Familien und Pflegeverantwortung. Vielleicht müssten wir alle
+				mehr darüber sprechen und offen auch Grenzen aufzeigen.
+			</PersonaAnswer>
+		</AccordionItem>
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Faiza, an wen können sich Studierende mit Pflegeverantwortung für Unterstützung und
+				Entlastung an der Hochschule wenden?
+			</svelte:fragment>
+			<PersonaAnswer {persona}>
+				Also, gute erste Anlaufstellen sind auf jeden Fall die Familienbüros der Hochschulen oder
+				Studienberatungen, manchmal auch die Gleichstellungsbüros. Als es bei mir mal um ne längere
+				Frist für eine Hausarbeit ging, hab ich direkt meine Dozentin gefragt. Man kann aber auch
+				mit Studienkoordinator*innen oder Modulbeauftragten sprechen. Für die offiziellen
+				Geschichten sind die Prüfungsämter dann die richtigen Stellen.
+			</PersonaAnswer>
+		</AccordionItem>
+	</Accordion>
+
+	<MainHeading heading="Prüfungen" />
+
+	<TextSection let:Text>
+		<Text noTopMargin>
+			Nicht selten finden mehrere Prüfungen in Präsenz in einer Prüfungswoche gegen Ende des
+			Semesters statt und erfordern eine mehrmalige, mehrstündige Anwesenheit an der Uni. Das ist
+			organisatorisch für viele Studierende mit familiären Verpflichtungen nicht möglich.
+			Alternative Prüfungsformate und individuelle Absprachen können hier sehr hilfreich sein.
+		</Text>
+	</TextSection>
+
+	<SpeechBubble {persona}>
+		Letztes Semester hatten wir beide zur gleichen Zeit unsere Prüfungswoche mit jeweils 3 Prüfungen
+		in Präsenz. Da sind wir beide, Jonas und meine Schwiegereltern auf dem Zahnfleisch gegangen.
+	</SpeechBubble>
+
+	<TextSection let:Text>
+		<Text>
+			Auch pflegende Studierende können einen Antrag auf Nachteilsausgleich stellen, um
+			beispielsweise Fristen für Abgaben zu verlängern oder kurzfristig von Prüfungen zurücktreten,
+			diese verschieben zu können oder alternative Prüfungsformate in Anspruch zu nehmen.
+		</Text>
+	</TextSection>
+
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
 	<TextSection let:Text>
@@ -122,9 +280,38 @@
 		]}
 		{persona}
 	/>
+
+	<MainHeading heading="Weitere Informationen" />
+	<ul class="more-info-list">
+		<li>
+			<Recommendation link="https://www.youtube.com/watch?v=J4fWA6vWmz0">
+				<svelte:fragment slot="linkText"
+					>Studieren mit Kind: Ist das Studium der beste Zeitpunkt für ein Kind?</svelte:fragment
+				>
+				<svelte:fragment slot="textAfter">von PULS Reportage auf YouTube</svelte:fragment>
+			</Recommendation>
+		</li>
+		<li>
+			<Recommendation link="https://www.che.de/download/pflegende-studierende/">
+				<svelte:fragment slot="linkText">Fragen & Antworten zu Studium und Pflege</svelte:fragment>
+				<svelte:fragment slot="textAfter">vom Centrum für Hochschulentwicklung</svelte:fragment>
+			</Recommendation>
+		</li>
+		<li>
+			<Recommendation link="https://studieren.de/studieren-mit-kind.0.html">
+				<svelte:fragment slot="linkText">Studieren mit Kind</svelte:fragment>
+				<svelte:fragment slot="textAfter">von studieren.de</svelte:fragment>
+			</Recommendation>
+		</li>
+	</ul>
 </PersonaContent>
 
 <style lang="scss">
+	.more-info-list {
+		list-style-type: none;
+		padding: 0;
+	}
+
 	h3 {
 		width: 100%;
 		padding-inline: 3.25rem;

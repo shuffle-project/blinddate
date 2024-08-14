@@ -1,4 +1,4 @@
-import Child from '$lib/components/disabilityExplanation/Child.svelte';
+import CareResponsibility from '$lib/components/disabilityExplanation/CareResponsibility.svelte';
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 export const FAIZA: Persona = {
@@ -14,9 +14,9 @@ export const FAIZA: Persona = {
 	hobbies: 'Lesen und Eishockey',
 	study: 'Informatik im Bachelor',
 	pronouns: 'Sie / ihr',
-	disability: 'Studieren mit Kind',
+	disability: 'Pflegeverantwortung',
 	disabilityIcon: 'bottle',
-	disabilityExplanation: Child,
+	disabilityExplanation: CareResponsibility,
 	previousPersona: 'Gabriel',
 	nextPersona: 'Maxi',
 	visualDescription:

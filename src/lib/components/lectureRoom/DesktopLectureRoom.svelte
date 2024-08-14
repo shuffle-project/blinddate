@@ -272,11 +272,11 @@
 				}
 
 				&.faiza {
-					bottom: 2.6%;
+					bottom: 2.2%;
 					left: 38%;
 
 					img {
-						width: min(15.4vw, 16rem);
+						width: min(18.4vw, 15.8rem);
 					}
 				}
 
