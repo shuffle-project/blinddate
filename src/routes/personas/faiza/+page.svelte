@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import FactCarousel from '$lib/components/factCarousel/FactCarousel.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
@@ -77,6 +78,8 @@
 		spät komme und kurzfristig früher weg muss. Das ist natürlich blöd, weil ich dann inhaltlich
 		Dinge verpasse und ein paar genervte Blicke fange ich mir da auch immer mal wieder ein.
 	</SpeechBubble>
+
+	<FactCarousel facts={persona.facts} />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>

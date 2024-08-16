@@ -1,4 +1,5 @@
 import type { ComponentType } from 'svelte';
+import type { FactSlide } from './factSlide.interface';
 import type { Week } from './week.interfaces';
 
 export interface Persona {
@@ -19,4 +20,5 @@ export interface Persona {
 	visualDescription: string;
 	metaDescription: string;
 	metaKeywords: string;
+	facts?: FactSlide[];
 }

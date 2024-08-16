@@ -127,7 +127,7 @@
 		padding: 1.125rem 1.5rem;
 		box-sizing: border-box;
 
-		box-shadow: inset 0px 6px 10px rgba(var(--color-black-rgb), 0.1);
+		box-shadow: inset 0px 0px 20px rgba(var(--color-black-rgb), 0.05);
 
 		&.support {
 			margin-top: 6rem;
