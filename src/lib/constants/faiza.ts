@@ -27,22 +27,40 @@ export const FAIZA: Persona = {
 		'Barrierefreiheit, Studium mit Kind, familienfreundliche Hochschule, Mutter, Vater, Eltern, Familie und Studium, Pflegeverantwortung',
 	facts: [
 		{
-			text: 'Unter den Studierenden liegt der Anteil Pflegender laut einer Sozialerhebung von 2023 bei rund 12 Prozent. ',
+			text: '20 Prozent der Studierenden haben eine Pflegeverantwortung <br/> (8% Kinder, 12% ältere Menschen) ',
 			source: {
-				title: 'CHE kurz + kompakt – Studieren und Angehörige pflegen',
+				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
 				titleLang: 'de',
-				url: 'https://www.che.de/download/pflegende-studierende/'
+				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
 			},
-			decoration: { amount: 12, total: 100 }
+			decoration: { amount: 20, total: 100 }
 		},
 		{
-			text: 'Fünf Prozent aller Studierenden, die ihr Studium unterbrochen haben, haben dies wegen der Pflege von Angehörigen getan (Stand 2016). ',
+			text: 'Fünf Prozent der Studierenden, die ihr Studium unterbrochen haben, taten dies aufgrund der Pflege von Angehörigen. ',
 			source: {
-				title: 'CHE kurz + kompakt – Studieren und Angehörige pflegen',
+				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
 				titleLang: 'de',
-				url: 'https://www.che.de/download/pflegende-studierende/'
+				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
 			},
 			decoration: { amount: 5, total: 100 }
+		},
+		{
+			text: 'Fast 30 Prozent der Studierenden mit Pflegeverantwortung wählen ein Teilzeitstudium (16,7% Kinder, 13% ältere Menschen)',
+			source: {
+				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
+				titleLang: 'de',
+				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
+			},
+			decoration: { amount: 30, total: 100 }
+		},
+		{
+			text: 'Über 80 % der Kinderlosen studieren in Präsenz, aber nur 55 % der Studierenden mit Kind(ern).',
+			source: {
+				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
+				titleLang: 'de',
+				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
+			},
+			decoration: { amount: 55, total: 100 }
 		}
 	]
 };

@@ -29,7 +29,9 @@
 
 	<MainHeading heading="Allgemeine Informationen" />
 
-	<h3>Studienplanung</h3>
+	<div class="h3-wrapper">
+		<h3>Studienplanung</h3>
+	</div>
 	<TextSection let:Text>
 		<Text>
 			Ein Studium mit Pflegeverantwortung kann mit einigen Barrieren verbunden sein. Einige davon
@@ -54,7 +56,9 @@
 		finanziell dann einfach nicht mehr stemmbar.
 	</SpeechBubble>
 
-	<h3 class="spacing-top">Flexibilität</h3>
+	<div class="h3-wrapper">
+		<h3 class="spacing-top">Flexibilität</h3>
+	</div>
 	<TextSection let:Text>
 		<Text>
 			Planbarkeit ist mit familiärer Verantwortung sehr schwierig, da immer wieder unvorhersehbare
@@ -315,20 +319,24 @@
 		padding: 0;
 	}
 
-	h3 {
-		width: 100%;
-		padding-inline: 3.25rem;
-		margin-inline: auto;
-		margin-block: 0;
-
-		&.spacing-top {
-			margin-top: 2.5rem;
-		}
-
-		@media (max-width: 59.3125rem) {
+	.h3-wrapper {
+		h3 {
+			margin-block: 0;
 			padding-inline: var(--outer-spacing);
 			max-width: 35rem;
-			margin-top: 1.25rem;
+			margin-inline: auto;
+
+			&.spacing-top {
+				margin-top: 2.5rem;
+			}
+		}
+	}
+	@media (min-width: 59.375rem) {
+		.h3-wrapper {
+			h3 {
+				padding: 0;
+				margin-inline: 3.25rem;
+			}
 		}
 	}
 </style>

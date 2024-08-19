@@ -211,13 +211,11 @@
 		verständlich machen.
 	</SpeechBubble>
 
-	<div>
-		<SimulationLink
-			image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
-			pathtext={base + '/iframe/gabriel'}
-			personaID={persona.id}
-		/>
-	</div>
+	<SimulationLink
+		image="{base}/personas/gabriel/gabriel-explaining-circle.svg"
+		pathtext={base + '/iframe/gabriel'}
+		personaID={persona.id}
+	/>
 
 	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-05.mp3'}>
 		Eine einheitliche Gestaltung, eine klare Struktur und nicht überfrachtete Folien helfen mir und

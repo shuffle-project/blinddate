@@ -2,6 +2,7 @@
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 
+	import { base } from '$app/paths';
 	import type { FactSlide } from '$lib/interfaces/factSlide.interface';
 	import Icon from '../Icon.svelte';
 	import Enumeration from './Enumeration.svelte';
@@ -62,6 +63,7 @@
 	}
 </script>
 
+<img class="top-wave" src="{base}/decorations/top-blue-wave.svg" alt="" aria-hidden="true" />
 <div class="wrapper">
 	<h3>Fakten und Zahlen</h3>
 
@@ -82,7 +84,7 @@
 							<div class="fact-slide">
 								<Enumeration total={fact.decoration.total} amount={fact.decoration.amount} />
 								<div class="text-content">
-									<p>{fact.text}</p>
+									<p>{@html fact.text}</p>
 									<a class="focus-indicator" href={fact.source.url} lang={fact.source.titleLang}
 										>{fact.source.title}</a
 									>
@@ -106,16 +108,25 @@
 		</div>
 	</Splide>
 </div>
+<img class="bottom-wave" src="{base}/decorations/bottom-blue-wave.svg" alt="" aria-hidden="true" />
 
 <style lang="scss">
+	.bottom-wave,
+	.top-wave {
+		display: none;
+	}
+
+	.wrapper {
+		padding-inline: 1.875rem;
+	}
+
 	h3 {
-		margin: 2.5rem 3.25rem 1.25rem 3.25rem;
+		margin: 2.5rem 1.375rem 1.25rem 1.375rem;
 	}
 
 	.carousel-wrapper {
-		padding-inline: 1.875rem;
 		max-width: 40.75rem;
-
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -126,11 +137,9 @@
 		min-height: 22.875rem;
 		width: 100%;
 		max-width: 40.75rem;
-		margin-inline: 1.875rem;
 		background-color: var(--color-lavender);
 
 		border-radius: 2.5rem;
-
 		position: relative;
 
 		&::before {
@@ -176,17 +185,13 @@
 
 	.fact-slide {
 		background-color: var(--color-white);
-		margin-block: 1.875rem;
 
 		min-height: 19.125rem;
-
 		padding: 1.25rem;
 		box-sizing: border-box;
 
-		display: flex;
-
 		border-radius: 2rem;
-		margin-inline: 1.875rem;
+		margin: 1.875rem;
 
 		display: flex;
 		flex-direction: column;
@@ -202,6 +207,43 @@
 
 			a {
 				font-size: 0.875rem;
+			}
+		}
+	}
+
+	@media (max-width: 59.3125rem) {
+		.wrapper {
+			padding: 0;
+			box-sizing: border-box;
+			width: 100%;
+
+			.carousel-wrapper {
+				margin-inline: auto;
+			}
+
+			h3 {
+				width: 100%;
+				max-width: 35rem;
+				margin-inline: auto;
+			}
+		}
+	}
+
+	@media (max-width: 38.75rem) {
+		.bottom-wave,
+		.top-wave {
+			display: inline-flex;
+			width: 100%;
+		}
+		.wrapper {
+			background-color: var(--color-lavender);
+			.content-wrapper {
+				border-radius: 0;
+				background-color: transparent;
+
+				&::before {
+					display: none;
+				}
 			}
 		}
 	}
