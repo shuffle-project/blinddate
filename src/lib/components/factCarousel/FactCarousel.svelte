@@ -2,7 +2,6 @@
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 
-	import { base } from '$app/paths';
 	import type { FactSlide } from '$lib/interfaces/factSlide.interface';
 	import Icon from '../Icon.svelte';
 	import Enumeration from './Enumeration.svelte';
@@ -16,14 +15,14 @@
 		live: false,
 		keyboard: false,
 		i18n: {
-			prev: 'Vorherige Person',
-			next: 'Nächste Person',
-			first: 'Zur ersten Person gehen',
-			last: 'Zur letzten Person gehen',
-			slideX: 'Zur Person %s gehen',
+			prev: 'Vorheriger Fakt',
+			next: 'Nächster Fakt',
+			first: 'Zum ersten Fakt gehen',
+			last: 'Zum letzten Fakt gehen',
+			slideX: 'Zum Fakt %s gehen',
 			pageX: 'Zur Seite %s gehen',
 			carousel: 'Karussell',
-			slide: 'Person',
+			slide: 'Fakt',
 			slideLabel: '%s von %s'
 		},
 		pagination: false,
@@ -39,12 +38,8 @@
 
 	let componentHasFocus = false;
 
-	// $: ariaLiveText =
-	// 	personas[carouselSelectedIndex].name +
-	// 	', ' +
-	// 	(carouselSelectedIndex + 1) +
-	// 	' von ' +
-	// 	personas.length;
+	$: ariaLiveText =
+		facts[carouselSelectedIndex].text + ', ' + (carouselSelectedIndex + 1) + ' von ' + facts.length;
 
 	function moveSlide(direction: string) {
 		if (!carousel) return;
@@ -63,7 +58,6 @@
 	}
 </script>
 
-<img class="top-wave" src="{base}/decorations/top-blue-wave.svg" alt="" aria-hidden="true" />
 <div class="wrapper">
 	<h3>Fakten und Zahlen</h3>
 
@@ -97,25 +91,35 @@
 			</div>
 
 			<div class="navigation-wrapper">
-				<button on:focusout={() => (componentHasFocus = false)} on:click={() => moveSlide('<')}>
+				<button
+					aria-label="Vorheriger Fakt"
+					on:focusout={() => (componentHasFocus = false)}
+					on:click={() => moveSlide('<')}
+				>
 					<Icon img="arrow-toleft" svg_color="white" />
 				</button>
 				<span>{`${carouselSelectedIndex + 1} von ${facts.length}`}</span>
-				<button on:focusout={() => (componentHasFocus = false)} on:click={() => moveSlide('>')}>
+				<button
+					aria-label="Nächster Fakt"
+					on:focusout={() => (componentHasFocus = false)}
+					on:click={() => moveSlide('>')}
+				>
 					<Icon img="arrow-toright" svg_color="white" />
 				</button>
 			</div>
 		</div>
 	</Splide>
 </div>
-<img class="bottom-wave" src="{base}/decorations/bottom-blue-wave.svg" alt="" aria-hidden="true" />
+
+<div aria-live="polite" class="sr-only">
+	{#if componentHasFocus}
+		{#key ariaLiveText}
+			<p>{@html ariaLiveText}</p>
+		{/key}
+	{/if}
+</div>
 
 <style lang="scss">
-	.bottom-wave,
-	.top-wave {
-		display: none;
-	}
-
 	.wrapper {
 		padding-inline: 1.875rem;
 	}
@@ -230,13 +234,22 @@
 	}
 
 	@media (max-width: 38.75rem) {
-		.bottom-wave,
-		.top-wave {
-			display: inline-flex;
-			width: 100%;
-		}
 		.wrapper {
 			background-color: var(--color-lavender);
+			margin-top: 4rem;
+			width: 100%;
+			border-radius: 40% 40% 40% 40% / 4% 4% 4% 4%;
+			padding-block: 2.5rem;
+
+			h3 {
+				width: initial;
+				margin: 0 var(--outer-spacing);
+			}
+
+			.carousel-wrapper {
+				gap: 0;
+			}
+
 			.content-wrapper {
 				border-radius: 0;
 				background-color: transparent;
@@ -244,6 +257,14 @@
 				&::before {
 					display: none;
 				}
+
+				.fact-slide {
+					margin-block: 1rem;
+				}
+			}
+
+			.fact-slide {
+				margin-inline: var(--outer-spacing);
 			}
 		}
 	}

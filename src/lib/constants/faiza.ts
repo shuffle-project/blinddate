@@ -4,7 +4,7 @@ import type { Persona } from '$lib/interfaces/persona.interfaces';
 export const FAIZA: Persona = {
 	id: 'faiza',
 	name: 'Faiza',
-	subheading: 'Studieren mit Kind',
+	subheading: 'Studieren mit Pflegeverantwortung',
 	tags: [
 		{ content: 'Transparenz', lang: 'de' },
 		{ content: 'Nebenjob', lang: 'de' },
@@ -14,7 +14,7 @@ export const FAIZA: Persona = {
 	hobbies: 'Lesen und Eishockey',
 	study: 'Informatik im Bachelor',
 	pronouns: 'Sie / ihr',
-	disability: 'Pflegeverantwortung',
+	disability: 'Studieren mit Kind',
 	disabilityIcon: 'bottle',
 	disabilityExplanation: CareResponsibility,
 	previousPersona: 'Gabriel',

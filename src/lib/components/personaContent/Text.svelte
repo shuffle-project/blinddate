@@ -19,7 +19,7 @@
 		p {
 			max-width: 35rem;
 			margin-inline: auto;
-			padding-inline: 1.375rem;
+			padding-inline: var(--outer-spacing);
 		}
 	}
 </style>

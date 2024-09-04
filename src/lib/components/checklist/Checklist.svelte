@@ -87,7 +87,7 @@
 			display: flex;
 			flex-direction: column;
 			margin-inline: auto;
-			padding-inline: 1.875rem;
+			padding-inline: var(--outer-spacing);
 		}
 	}
 

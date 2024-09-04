@@ -2,7 +2,6 @@
 	import { base } from '$app/paths';
 	import Footer from '$lib/components/Footer.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
-	import Icon from '../../lib/components/Icon.svelte';
 </script>
 
 <div class="background-black">
@@ -10,17 +9,14 @@
 		<div class="row">
 			{#if ENVIRONMENT.backLinkToStartpage}
 				<a href="{base}/" class="back-to-startpage">
-					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
+					<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+					<span>Zur Startseite</span>
 				</a>
 			{:else}
 				<div />
 			{/if}
 
-			<div class="logo">
-				<div class="img">
-					<Icon size="parent" alt="BlindDate Logo" img="logo" />
-				</div>
-			</div>
+			<div />
 		</div>
 	</header>
 </div>

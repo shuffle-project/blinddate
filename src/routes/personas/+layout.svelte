@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Icon from '$lib/components/Icon.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import UserTest from '$lib/components/UserTest.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
@@ -15,7 +14,8 @@
 		<div class="row">
 			{#if ENVIRONMENT.backLinkToStartpage}
 				<a href="{base}/#lecture-room" class="back-to-startpage">
-					<Icon svg_color={'white'} img="back">Zurück zur Startseite</Icon>
+					<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+					<span>Zur Startseite</span>
 				</a>
 			{:else}
 				<div />
