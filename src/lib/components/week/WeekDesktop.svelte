@@ -284,12 +284,11 @@
 						text-align: right;
 						color: rgba(var(--color-white-rgb), 0.8);
 						font-weight: 400;
+						position: relative;
 
 						&:last-child {
 							border-right: none;
 						}
-
-						position: relative;
 
 						.smiley {
 							position: absolute;
@@ -330,7 +329,7 @@
 						-webkit-hyphens: auto;
 						-moz-hyphens: auto;
 						hyphens: auto;
-
+						cursor: pointer;
 						padding: 0.375rem;
 
 						&:focus,
@@ -338,8 +337,6 @@
 							outline: 2px solid var(--color-white);
 							outline-offset: 2px;
 						}
-
-						cursor: pointer;
 					}
 				}
 			}
