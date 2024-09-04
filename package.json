@@ -16,7 +16,6 @@
 	"devDependencies": {
 		"@fontsource/comic-neue": "^5.0.13",
 		"@fontsource/source-sans-pro": "^5.0.8",
-		"@fontsource/source-serif-pro": "^5.0.8",
 		"@sveltejs/adapter-static": "^3.0.4",
 		"@sveltejs/kit": "^2.5.25",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",

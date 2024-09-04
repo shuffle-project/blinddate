@@ -147,7 +147,7 @@
 					font-size: 1rem;
 					box-shadow: 0px 2px 4px rgba(var(--color-black-rgb), 0.15);
 					text-align: center;
-					padding: 0.125rem 0;
+					padding: 0.25rem 0;
 					max-width: 6.375rem;
 
 					&:hover,

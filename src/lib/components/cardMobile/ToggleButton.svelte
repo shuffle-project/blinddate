@@ -58,7 +58,6 @@
 		box-shadow: 0 6px 10px 0 rgba(var(--color-black-rgb), 0.15);
 		border-radius: 2rem;
 		background: linear-gradient(160deg, var(--color-turquoise), var(--color-green));
-		font-family: var(--font-serif);
 		z-index: 10;
 
 		transition: transform 0.5s ease-out;
@@ -89,8 +88,8 @@
 
 			.name-text {
 				font-size: 1.375rem;
-				font-weight: bold;
-				margin-left: 0.625rem;
+				font-weight: 600;
+				margin-left: 0.5rem;
 			}
 
 			.img-wrapper {

@@ -154,7 +154,7 @@
 							<Icon img="light-bulb" size="medium" svg_color="white"
 								>Selbstcheck Barrierefreiheit</Icon
 							>
-							<Icon size="tiny" img="arrow-toright" svg_color="white" />
+							<Icon size="tiny" img="arrow-down" svg_color="white" />
 						</a>
 					</li>
 					<li>

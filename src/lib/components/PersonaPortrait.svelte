@@ -50,23 +50,22 @@
 			margin-inline: auto;
 		}
 		.name-text {
-			font-family: var(--font-serif);
 			color: var(--color-black);
-			font-size: 1.5rem;
+			font-size: 1.375rem;
 			font-weight: bold;
 			position: absolute;
 			display: flex;
 			justify-content: center;
 
 			width: 80%;
-			bottom: 6%;
+			bottom: 8%;
 			left: 0;
 			right: 0;
 			margin-inline: auto;
 		}
 
 		.age-text {
-			font-weight: 400;
+			font-weight: 300;
 		}
 	}
 </style>
