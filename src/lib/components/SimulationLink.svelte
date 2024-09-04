@@ -19,7 +19,7 @@
 		<div class="text-container">
 			<div class="hint-container">
 				<Icon img="attention" size="smedium" />
-				<p class="hint">Hinweis</p>
+				<span class="hint">Hinweis</span>
 			</div>
 			<p class="warning-text">
 				Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe
@@ -163,6 +163,7 @@
 
 		.hint-container {
 			display: flex;
+			align-items: center;
 			flex-direction: row;
 			gap: 0.625rem;
 

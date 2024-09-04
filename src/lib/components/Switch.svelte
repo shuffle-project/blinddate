@@ -134,4 +134,10 @@
 	.radio-switch input:last-of-type:checked ~ label:last-of-type {
 		z-index: 1;
 	}
+
+	@media (max-width: 21rem) {
+		.radio-switch label {
+			font-size: 0.875rem;
+		}
+	}
 </style>

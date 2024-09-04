@@ -114,6 +114,14 @@
 		.label {
 			width: 100%;
 			cursor: pointer;
+
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			overflow-wrap: anywhere;
+
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
 	}
 

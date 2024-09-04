@@ -209,7 +209,7 @@
 					Kommunikationssituation anwesend, dolmetschen sie simultan. Sind Personen schwerhörig oder
 					später ertaubt und beherrschen u.U. die deutsche Gebärdensprache (DGS) nicht, können
 					Dolmetscher*innen das gesprochene Wort auch in Schrift übersetzen. Dolmetscher*innen
-					können über die Dolmetscher*innenvermittlung der Landesverbände engagiert werden.
+					können über die Dolmetscher*innen&shy;vermittlung der Landesverbände engagiert werden.
 				</p>
 			</InfoBox>
 			können für Online- als auch für Präsenzveranstaltungen gebucht werden. Damit die Dolmetschenden
@@ -257,7 +257,7 @@
 		<Text>
 			Sowohl Hörgeräte als auch CIs können mit Höranlagen verbunden werden, sodass über Mikrofone
 			akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob
-			Gebärdensprachdolmetschende oder eine Übertragungsanlage zur Übertragung der Lautsprache
+			Gebärdensprach&shy;dolmetschende oder eine Übertragungsanlage zur Übertragung der Lautsprache
 			eingesetzt werden, hängt von der bevorzugten Sprache der Anwesenden mit Hörbehinderung ab.
 		</Text>
 	</TextSection>
@@ -267,12 +267,12 @@
 	<MainHeading heading="Lernmaterial" />
 	<TextSection let:Text>
 		<Text noTopMargin>
-			Werden die Informationen einer Veranstaltung überwiegend visuell (Gebärdensprachdolmetschende
-			oder durch das Fokussieren der Lippen) entnommen, ist es schwierig, gleichzeitig Notizen zu
-			machen oder Präsentationen zu betrachten. Daher sollten Folien, Skripte oder Transkripte (am
-			besten bereits im Voraus) zur Verfügung gestellt werden. Eine weitere Hilfe kann das Erstellen
-			von Skripten der Veranstaltungsgespräche durch Mitschreibkräfte (meist Mitstudierende oder
-			Tutor*innen) sein.
+			Werden die Informationen einer Veranstaltung überwiegend visuell
+			(Gebärdensprach&shy;dolmetschende oder durch das Fokussieren der Lippen) entnommen, ist es
+			schwierig, gleichzeitig Notizen zu machen oder Präsentationen zu betrachten. Daher sollten
+			Folien, Skripte oder Transkripte (am besten bereits im Voraus) zur Verfügung gestellt werden.
+			Eine weitere Hilfe kann das Erstellen von Skripten der Veranstaltungsgespräche durch
+			Mitschreibkräfte (meist Mitstudierende oder Tutor*innen) sein.
 		</Text>
 
 		<Text>
@@ -357,7 +357,7 @@
 		<Text>
 			Damit in Veranstaltungen eine dolmetschende Person anwesend sein kann, ist eine klare
 			Absprache, schnelle Kontaktaufnahme und auch eine gewisse Verbindlichkeit sehr wichtig. Ebenso
-			müssen Veranstaltungen rechtzeitig terminiert sein, damit Gebärdensprachdolmetschende
+			müssen Veranstaltungen rechtzeitig terminiert sein, damit Gebärdensprach&shy;dolmetschende
 			rechtzeitig beauftragt werden können, denn hier ist eine gewisse Vorlaufzeit für die Planung
 			wichtig. Die dolmetschenden Personen benötigen das Vortragsmaterial vorab und rechtzeitig,
 			sodass sie sich auf entsprechende Fachbegriffe etc. gezielt vorbereiten können.

@@ -145,11 +145,11 @@
 	</TextSection>
 
 	<SpeechBubble {persona}>
-		Ehrlich gesagt, ist das immer das Erste, was ich mir in der Veranstaltungsbeschreibung anschaue:
-		Gibt es eine Anwesenheitspflicht? Wie oft darf ich maximal fehlen? Gibt es die Möglichkeit,
-		online teilzunehmen oder asynchron zu Arbeiten? Ich muss einfach wissen, welche Anforderungen an
-		mich gestellt sind und ob ich diesen zeitlich gerecht werden kann. Und wenn ich als
-		Prüfungsleistung eine Hausarbeit schreiben kann, ist das für mich besser machbar, als eine
+		Ehrlich gesagt, ist das immer das Erste, was ich mir in der Veranstaltungs&shy;beschreibung
+		anschaue: Gibt es eine Anwesenheitspflicht? Wie oft darf ich maximal fehlen? Gibt es die
+		Möglichkeit, online teilzunehmen oder asynchron zu Arbeiten? Ich muss einfach wissen, welche
+		Anforderungen an mich gestellt sind und ob ich diesen zeitlich gerecht werden kann. Und wenn ich
+		als Prüfungsleistung eine Hausarbeit schreiben kann, ist das für mich besser machbar, als eine
 		Präsenzprüfung. Ich würde mich freuen, wenn diese strukturellen und inhaltlichen Anforderungen
 		immer selbstverständlich und klar zu Beginn kommuniziert werden und ich nicht erst bei
 		Dozierenden nachfragen muss.
@@ -213,7 +213,7 @@
 		schwanger war. Ich hab‘ nach allen Informationen und Möglichkeiten der Uni gesucht. Das würde
 		ich auch allen Studierenden mit Pflegeverantwortung empfehlen. Jede Hochschule hat eine
 		Anlaufstelle - ob das jetzt das Familienbüro, ein Gleichstellungsbüro oder die
-		Studienkoordinationsstelle ist.
+		Studienkoordinations&shy;stelle ist.
 	</SpeechBubble>
 
 	<Accordion personaName={persona.name} let:AccordionItem>

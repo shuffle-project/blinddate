@@ -157,8 +157,8 @@
 	<TextSection let:Text>
 		<Text noTopMargin>
 			Einer Vorlesung über 90 Minuten aufmerksam zuzuhören, ist anstrengend.
-			Konzentrationsschwierigkeiten, belastende Gedanken und Selbstzweifel machen es Menschen, die
-			Depressionen haben, umso schwerer dem Gesagten zu folgen. Werden Vorlesungsfolien und
+			Konzentrations&shy;schwierigkeiten, belastende Gedanken und Selbstzweifel machen es Menschen,
+			die Depressionen haben, umso schwerer dem Gesagten zu folgen. Werden Vorlesungsfolien und
 			Arbeitsmaterial frühzeitig online hochgeladen, hilft das bei einem klaren Zeitmanagement und
 			kann den Druck nehmen, sich parallel ausführliche Notizen machen zu müssen.
 		</Text>

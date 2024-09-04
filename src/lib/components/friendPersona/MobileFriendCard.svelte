@@ -20,7 +20,7 @@
 				<Icon size="parent" img="/personas/{friendPersona.id}/{friendPersona.id}" />
 			</div>
 		</div>
-		<p>{friendPersona.name}</p>
+		<span>{friendPersona.name}</span>
 	</div>
 	<button on:click={() => toggleModalDisplay()} aria-label="Über {friendPersona.name}">
 		<Icon size="smedium" img="more-placeholder" />
@@ -39,7 +39,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		min-width: 10.375rem;
+		min-width: 10.625rem;
 		padding: 0.375rem;
 		border-radius: 2rem;
 
@@ -65,7 +65,7 @@
 				}
 			}
 
-			p {
+			span {
 				margin: 0;
 				margin-left: 0.375rem;
 				font-weight: 700;

@@ -108,6 +108,14 @@
 			max-width: 35rem;
 			padding: 0 1.375rem;
 			margin-inline: auto;
+
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			overflow-wrap: anywhere;
+
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
 
 		.buttonslist {

@@ -67,6 +67,14 @@
 		display: flex;
 		align-items: flex-start;
 
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		overflow-wrap: anywhere;
+
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+
 		&:last-child {
 			margin-bottom: 0;
 		}
