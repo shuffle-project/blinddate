@@ -52,13 +52,13 @@
 		.name-text {
 			color: var(--color-black);
 			font-size: 1.375rem;
-			font-weight: bold;
+			font-weight: 700;
 			position: absolute;
 			display: flex;
 			justify-content: center;
 
 			width: 80%;
-			bottom: 8%;
+			bottom: 7%;
 			left: 0;
 			right: 0;
 			margin-inline: auto;

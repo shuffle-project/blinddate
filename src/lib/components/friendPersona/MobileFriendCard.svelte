@@ -68,7 +68,7 @@
 			p {
 				margin: 0;
 				margin-left: 0.375rem;
-				font-weight: 600;
+				font-weight: 700;
 				font-size: 1.25rem;
 			}
 		}

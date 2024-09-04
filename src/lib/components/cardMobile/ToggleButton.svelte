@@ -88,7 +88,7 @@
 
 			.name-text {
 				font-size: 1.375rem;
-				font-weight: 600;
+				font-weight: 700;
 				margin-left: 0.5rem;
 			}
 

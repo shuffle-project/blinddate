@@ -178,7 +178,7 @@
 			color: var(--color-white);
 			text-decoration: none;
 			text-align: center;
-			font-weight: 600;
+			font-weight: 700;
 			padding: 0.625rem 1rem;
 			cursor: pointer;
 			&:hover,
