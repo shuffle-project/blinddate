@@ -80,17 +80,6 @@
 			width: 100%;
 			padding: 1.25rem;
 
-			div {
-				border-radius: 1.25rem;
-				padding: 1.25rem;
-			}
-
-			a {
-				color: var(--color-black);
-				text-decoration-color: var(--color-black);
-				font-weight: bold;
-			}
-
 			display: grid;
 			gap: 1.875rem;
 
@@ -102,6 +91,17 @@
 				'five'
 				'six'
 				'seven';
+
+			div {
+				border-radius: 1.25rem;
+				padding: 1.25rem;
+			}
+
+			a {
+				color: var(--color-black);
+				text-decoration-color: var(--color-black);
+				font-weight: bold;
+			}
 
 			.lecturers {
 				grid-area: one;

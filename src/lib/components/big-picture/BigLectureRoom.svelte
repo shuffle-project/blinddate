@@ -195,12 +195,11 @@
 
 			li {
 				position: absolute;
-
+				transition: filter 0.2s ease-out;
 				.student-info-wrapper {
 					display: none;
 				}
 
-				transition: filter 0.2s ease-out;
 				&:not(.active) {
 					&.not-idle {
 						filter: opacity(96%) brightness(0%);

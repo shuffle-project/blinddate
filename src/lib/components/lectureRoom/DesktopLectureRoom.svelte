@@ -185,6 +185,11 @@
 				opacity: 0%;
 				transition: opacity 0.3s ease-in-out;
 
+				border: 0.375rem solid transparent;
+				border-top: 0.375rem solid var(--color-black);
+				border-radius: 50%;
+				animation: spin 1.3s linear infinite;
+
 				@keyframes spin {
 					0% {
 						transform: rotate(0deg);
@@ -193,11 +198,6 @@
 						transform: rotate(360deg);
 					}
 				}
-
-				border: 0.375rem solid transparent;
-				border-top: 0.375rem solid var(--color-black);
-				border-radius: 50%;
-				animation: spin 1.3s linear infinite;
 
 				&.not-mounted {
 					opacity: 100%;

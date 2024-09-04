@@ -469,13 +469,12 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 				border-radius: 1rem;
 				height: 0.875rem;
 				position: relative;
+				cursor: pointer;
 
 				&:focus-visible:focus-within {
 					outline: 2px solid var(--color-black);
 					outline-offset: 6px;
 				}
-
-				cursor: pointer;
 
 				&::-webkit-slider-thumb {
 					-webkit-appearance: none;
