@@ -156,7 +156,7 @@
 		</p> -->
 
 		<p>
-			Viele (Unterstützungs-)Maßnahmen, die bereits zu Beginn mitgedacht und umgesetzt werden,
+			Viele (Unterstützungs-) Maßnahmen, die bereits zu Beginn mitgedacht und umgesetzt werden,
 			kommen vielen Studierenden zu Gute – vielleicht sogar Studierenden, die Sie im ersten Moment
 			gar nicht mitbedacht haben.
 		</p>

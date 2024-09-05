@@ -403,4 +403,16 @@
 			max-width: 100%;
 		}
 	}
+
+	@media (max-width: 21.25rem) {
+		h2 {
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			overflow-wrap: anywhere;
+
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+		}
+	}
 </style>

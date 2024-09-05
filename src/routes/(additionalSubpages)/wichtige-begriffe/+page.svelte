@@ -43,13 +43,14 @@
 	</ol>
 	<h2 id="accessibility">1. Barrierefreiheit</h2>
 	<p>
-		Eine Definition von Barrierefreiheit findet sich in §4 des Behindertengleichstellungsgesetz:
+		Eine Definition von Barrierefreiheit findet sich in §4 des
+		Behinderten&shy;gleichstellungsgesetz:
 	</p>
 	<p>
 		“Barrierefrei sind bauliche und sonstige Anlagen, Verkehrsmittel, technische
 		Gebrauchsgegenstände, Systeme der Informationsverarbeitung, akustische und visuelle
-		Informationsquellen und Kommunikationseinrichtungen sowie andere gestaltete Lebensbereiche, wenn
-		sie für Menschen mit Behinderungen <strong>
+		Informationsquellen und Kommunikations&shy;einrichtungen sowie andere gestaltete Lebensbereiche,
+		wenn sie für Menschen mit Behinderungen <strong>
 			in der allgemein üblichen Weise, ohne besondere Erschwernis und grundsätzlich ohne fremde
 			Hilfe auffindbar, zugänglich und nutzbar sind.
 		</strong> Hierbei ist die Nutzung behinderungsbedingt notwendiger Hilfsmittel zulässig.”
@@ -243,8 +244,8 @@
 		<li>Audio-Deskription von Handlungen in einem Video, die so gehört werden können</li>
 		<li>Ein Transkript für eine Podcast. Die Inhalte können so visuell wahrgenommen werden.</li>
 		<li>
-			Gebärdensprachdolmetscher*innen oder Schriftdolmetscher*innen, die das Gesprochene in eine
-			andere Modalität übersetzen
+			Gebärdensprach&shy;dolmetscher*innen oder Schriftdolmetscher*innen, die das Gesprochene in
+			eine andere Modalität übersetzen
 		</li>
 	</ul>
 
@@ -376,6 +377,18 @@
 
 		li {
 			margin: 0.625rem 0rem;
+		}
+	}
+
+	@media (max-width: 21.25rem) {
+		h2 {
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			overflow-wrap: anywhere;
+
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
 	}
 </style>

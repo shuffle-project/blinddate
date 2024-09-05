@@ -202,4 +202,26 @@
 			}
 		}
 	}
+
+	@media (max-width: 21.875rem) {
+		.wrapper {
+			.content {
+				div {
+					padding: 0.875rem;
+				}
+
+				.lecturers {
+					h2 {
+						word-wrap: break-word;
+						overflow-wrap: break-word;
+						overflow-wrap: anywhere;
+
+						-webkit-hyphens: auto;
+						-moz-hyphens: auto;
+						hyphens: auto;
+					}
+				}
+			}
+		}
+	}
 </style>

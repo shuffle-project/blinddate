@@ -15,6 +15,9 @@
 			<a href={base + '/personas/aleksandr'} class="focus-indicator">Aleksandr</a>
 		</li>
 		<li>
+			<a href={base + '/personas/faiza'} class="focus-indicator">Faiza</a>
+		</li>
+		<li>
 			<a href={base + '/personas/gabriel'} class="focus-indicator">Gabriel</a>
 		</li>
 		<li>
