@@ -33,7 +33,7 @@
 			hineinzuversetzen, die Strategien und Technologien kennenzulernen und die Konzeption der
 			eigenen, barrierearmen Lehre daran auszurichten.
 		</p>
-		<h2>Wie hat das Forschungs<wbr />projekt SHUFFLE die Personas entwickelt?</h2>
+		<h2>Wie hat das Forschungs&shy;projekt SHUFFLE die Personas entwickelt?</h2>
 		<p>
 			Wie bereits erwähnt, basieren alle Personas auf BlindDate auf realen Erfahrungen von
 			Studierenden mit Beeinträchtigungen. Um diese Daten zu sammeln, startete das Projekt im
