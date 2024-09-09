@@ -64,7 +64,12 @@
 
 		<div class="last-row">
 			<div class="nav-wrapper">
-				<nav class="accessibility-nav" aria-label="Barrierefreiheit">
+				<nav
+					class="accessibility-nav"
+					aria-label={ENVIRONMENT.allowFeedbackLink
+						? 'Barrierefreiheit und Feedback'
+						: 'Barrierefreiheit'}
+				>
 					<ul>
 						{#each accessibilityLinks as accessibilityLink}
 							{#if !accessibilityLink.disabled}
@@ -73,6 +78,11 @@
 								</li>
 							{/if}
 						{/each}
+						{#if ENVIRONMENT.allowFeedbackLink}
+							<li class="feedback-link">
+								<a href={ENVIRONMENT.feedbackLink}>Feedback geben</a>
+							</li>
+						{/if}
 					</ul>
 				</nav>
 				<nav class="legal-nav" aria-label="Kontakt, Info und Rechtliches">
@@ -170,6 +180,12 @@
 		}
 	}
 
+	.accessibility-nav {
+		ul {
+			align-items: center;
+		}
+	}
+
 	.legal-nav {
 		margin-top: 1.625rem;
 	}
@@ -184,6 +200,24 @@
 	.padding-bottom {
 		height: 2.5rem;
 		background-color: var(--color-background-body);
+	}
+
+	.feedback-link {
+		background-color: var(--color-white);
+		padding: 0.375rem 0.625rem;
+		border-radius: 1rem;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			outline: 2px solid var(--color-white);
+			outline-offset: 2px;
+		}
+
+		a {
+			color: var(--color-black) !important;
+			text-decoration: none !important;
+		}
 	}
 
 	@media (max-width: 59.3125rem) {

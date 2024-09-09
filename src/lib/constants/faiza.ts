@@ -36,11 +36,11 @@ export const FAIZA: Persona = {
 			decoration: { amount: 20, total: 100 }
 		},
 		{
-			text: 'Fünf Prozent der Studierenden, die ihr Studium unterbrochen haben, taten dies aufgrund der Pflege von Angehörigen. ',
+			text: 'Fünf Prozent der Studierenden, die ihr Studium unterbrochen haben, taten dies aufgrund der Pflege von Angehörigen (Stand 2016)',
 			source: {
-				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
+				title: 'Die Studierendenbefragung in Deutschland: 21. Sozialerhebung',
 				titleLang: 'de',
-				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
+				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31338_21_Sozialerhebung_2016_Zusammenfassung.pdf?__blob=publicationFile&v=3'
 			},
 			decoration: { amount: 5, total: 100 }
 		},
@@ -54,7 +54,7 @@ export const FAIZA: Persona = {
 			decoration: { amount: 30, total: 100 }
 		},
 		{
-			text: 'Über 80 % der Kinderlosen studieren in Präsenz, aber nur 55 % der Studierenden mit Kind(ern).',
+			text: 'Über 80 % der Kinderlosen studieren in Präsenz, aber nur 55 % der Studierenden mit Kind(ern)',
 			source: {
 				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
 				titleLang: 'de',

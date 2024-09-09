@@ -10,21 +10,21 @@
 	import StudentSpeechbubble from './StudentSpeechbubble.svelte';
 
 	export let showAllNames = false;
-	export let highlightedStudents: BigPictureStudent[] = [];
+	export let selectedOption: SupportOptionId | '' = '';
 	export let mobileView = false;
 
 	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS;
 	let selectedStudent: StudentId | undefined = undefined;
-	let selectedOption: SupportOptionId | '' = '';
+	let selectedSpeechBubbleText = '';
+
+	let highlightedStudents: number = 0;
 
 	$: {
-		if (
-			highlightedStudents.length > 0 &&
-			highlightedStudents.length < BIG_PICTURE_STUDENTS.length
-		) {
+		if (selectedOption !== '') {
 			students = students.map((student) => {
-				if (highlightedStudents.includes(student)) {
+				if (student.benefitsFrom[selectedOption as SupportOptionId]) {
 					student.active = true;
+					highlightedStudents += 1;
 				} else {
 					student.active = false;
 				}
@@ -35,24 +35,7 @@
 				student.active = false;
 				return student;
 			});
-		}
-	}
-
-	function handleOptionSelection(id: SupportOptionId) {
-		if (selectedOption === id) {
-			students.forEach((student) => (student.active = false));
-			students = students;
-			selectedOption = '';
-		} else {
-			students.forEach((student) => {
-				if (student.benefitsFrom[id]) {
-					student.active = true;
-				} else {
-					student.active = false;
-				}
-			});
-			students = students;
-			selectedOption = id;
+			highlightedStudents = 0;
 		}
 	}
 
@@ -65,8 +48,13 @@
 	function handleSelectStudent(studentId: StudentId) {
 		if (selectedStudent === studentId) {
 			selectedStudent = undefined;
+			selectedSpeechBubbleText = '';
 		} else {
 			selectedStudent = studentId;
+			selectedSpeechBubbleText =
+				students.find((student) => student.id === studentId)?.benefitsFrom[
+					selectedOption as SupportOptionId
+				] ?? '';
 		}
 	}
 
@@ -102,6 +90,30 @@
 </script>
 
 <div class="wrapper">
+	{#if !mobileView}
+		<div
+			aria-hidden={highlightedStudents === 0}
+			class="dark-overlay"
+			class:not-hidden={selectedOption !== '' ||
+				(highlightedStudents > 0 && highlightedStudents < BIG_PICTURE_STUDENTS.length)}
+		>
+			<div class="notch">
+				<div class="icon-wrapper">
+					<Icon img="clickable-persona" svg_color="white" size="parent" />
+				</div>
+				<label for="show-all-names">
+					<input
+						tabindex={highlightedStudents === 0 ? -1 : 0}
+						type="checkbox"
+						id="show-all-names"
+						bind:checked={showAllNames}
+					/>
+					Alle Namen anzeigen
+				</label>
+			</div>
+		</div>
+	{/if}
+
 	<ul aria-hidden={mobileView}>
 		{#each students as student, i}
 			<li
@@ -109,7 +121,8 @@
 				class:active={student.active}
 				class:selected={student.id === selectedStudent}
 				class:show-all-names={showAllNames}
-				class:not-idle={mobileView && highlightedStudents.length !== BIG_PICTURE_STUDENTS.length}
+				class:not-idle={mobileView && highlightedStudents !== BIG_PICTURE_STUDENTS.length}
+				aria-hidden={!student.active}
 			>
 				{#if !mobileView}
 					<button
@@ -119,6 +132,7 @@
 						on:click={() => handleSelectStudent(student.id)}
 						id="student-{student.id}-button"
 						aria-pressed={student.id === selectedStudent}
+						on:focusout={() => (selectedSpeechBubbleText = '')}
 					>
 						<div class="student-info-wrapper" aria-hidden="true">
 							<div class="student-info">
@@ -151,25 +165,6 @@
 		{/each}
 	</ul>
 
-	{#if !mobileView}
-		<div
-			class="dark-overlay"
-			class:not-hidden={selectedOption !== '' ||
-				(highlightedStudents.length > 0 &&
-					highlightedStudents.length < BIG_PICTURE_STUDENTS.length)}
-		>
-			<div class="notch">
-				<div class="icon-wrapper">
-					<Icon img="clickable-persona" svg_color="white" size="parent" />
-				</div>
-				<label for="show-all-names">
-					<input type="checkbox" id="show-all-names" bind:checked={showAllNames} />
-					Alle Namen anzeigen
-				</label>
-			</div>
-		</div>
-	{/if}
-
 	<img
 		class="big-picture-room"
 		src="{base}/decorations/big-picture-room.svg"
@@ -179,6 +174,16 @@
 		height="980"
 	/>
 </div>
+
+{#if !mobileView}
+	<div aria-live="polite" class="sr-only">
+		{#if selectedSpeechBubbleText}
+			<p>{selectedSpeechBubbleText}</p>
+		{/if}
+	</div>
+{/if}
+
+<svelte:window on:mouseup={(e) => handleBackdropClick(e)} />
 
 <style lang="scss">
 	.wrapper {

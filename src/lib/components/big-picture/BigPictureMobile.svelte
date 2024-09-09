@@ -4,7 +4,8 @@
 		BIG_PICTURE_STUDENTS,
 		SUPPORT_OPTIONS,
 		type BigPictureStudent,
-		type StudentId
+		type StudentId,
+		type SupportOptionId
 	} from '$lib/constants/bigPicture';
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
@@ -13,6 +14,8 @@
 
 	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS;
 	const supportOptions = SUPPORT_OPTIONS;
+	let selectedSupportOption: SupportOptionId | '' = '';
+
 	let studentCarousel: Splide;
 	let supportCarousel: Splide;
 	let selectedStudentComment: string | undefined = '';
@@ -45,7 +48,9 @@
 	$: {
 		if (carouselSupportSelectedIndex === 0) {
 			supportCarouselAriaLiveText = 'Noch keine Auswahl';
+			selectedSupportOption = '';
 		} else {
+			selectedSupportOption = supportOptions[carouselSupportSelectedIndex].id;
 			supportCarouselAriaLiveText =
 				supportOptions[carouselSupportSelectedIndex].name +
 				', ' +
@@ -173,7 +178,7 @@
 <div class="wrapper">
 	<div class="top-card">
 		<div class="lecture-room">
-			<BigLectureRoom highlightedStudents={students} mobileView />
+			<BigLectureRoom mobileView selectedOption={selectedSupportOption} />
 		</div>
 		<div class="support-options">
 			{#if carouselSupportSelectedIndex === 0}

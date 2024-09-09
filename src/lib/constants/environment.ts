@@ -21,6 +21,8 @@ interface Environment {
 	backLinkToStartpage: boolean;
 	displayLowerStartpageContent: boolean;
 	showBigPictureContent: boolean;
+	allowFeedbackLink: boolean;
+	feedbackLink: string;
 }
 
 export const ENVIRONMENT: Environment = {
@@ -33,5 +35,7 @@ export const ENVIRONMENT: Environment = {
 	footerPersonas: true,
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
-	showBigPictureContent: true
+	showBigPictureContent: true,
+	allowFeedbackLink: true,
+	feedbackLink: ''
 };

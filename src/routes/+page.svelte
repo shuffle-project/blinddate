@@ -45,6 +45,12 @@
 	}}
 />
 
+{#if ENVIRONMENT.allowFeedbackLink}
+	<div class="feedback">
+		<a href={ENVIRONMENT.feedbackLink}>Feedback geben</a>
+	</div>
+{/if}
+
 <header>
 	<div class="content">
 		<div class="logo">
@@ -68,16 +74,6 @@
 
 	<LectureRoom />
 
-	<div class="startpage-path-wrapper">
-		<div class="startpage-path" />
-		<!-- <img
-			src="{base}/decorations/startpage-path.svg"
-			alt=""
-			aria-hidden="true"
-			class="startpage-path"
-		/> -->
-	</div>
-
 	{#if ENVIRONMENT.displayLowerStartpageContent}
 		<InfoGrid />
 	{/if}
@@ -86,6 +82,27 @@
 <Footer />
 
 <style lang="scss">
+	.feedback {
+		padding: 1rem 0;
+		display: flex;
+		justify-content: center;
+		background-color: #99bef5;
+
+		a {
+			background-color: var(--color-white);
+			padding: 0.375rem 0.625rem;
+			border-radius: 1rem;
+			color: var(--color-black);
+			text-decoration: none;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				outline: 2px solid var(--color-black);
+			}
+		}
+	}
+
 	header {
 		background-color: var(--color-black);
 

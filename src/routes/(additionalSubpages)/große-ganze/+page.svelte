@@ -1,141 +1,15 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-	import Icon from '$lib/components/Icon.svelte';
+	import BigLectureRoom from '$lib/components/big-picture/BigLectureRoom.svelte';
 	import BigPictureMobile from '$lib/components/big-picture/BigPictureMobile.svelte';
-	import StudentSpeechbubble from '$lib/components/big-picture/StudentSpeechbubble.svelte';
+	import { SUPPORT_OPTIONS, type SupportOptionId } from '$lib/constants/bigPicture';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 
-	type studentId = 'maxi' | 'michelle' | 'gabriel';
-
-	type SupportOptionId =
-		| '1'
-		| '2'
-		| '3'
-		| '4'
-		| '5'
-		| '6'
-		| '7'
-		| '8'
-		| '9'
-		| 'accessible-documents';
-
-	interface BigPictureStudent {
-		id: studentId;
-		name: string;
-		active: boolean;
-		benefitsFrom: {
-			[key in SupportOptionId]?: string;
-		};
-	}
-
-	let showAllNames = false;
-	let selectedStudent: studentId | undefined = undefined;
-	let students: BigPictureStudent[] = [
-		{
-			id: 'maxi',
-			name: 'Maxi',
-			active: false,
-			benefitsFrom: {
-				'accessible-documents':
-					'Dann kann ich mit meinem Screenreader die Unterlagen besser verstehen.'
-			}
-		},
-		{
-			id: 'michelle',
-			name: 'Michelle',
-			active: false,
-			benefitsFrom: {
-				'1': 'Platzhalter-Text damit hier was steht und die Sprechblase nicht leer ist.'
-			}
-		},
-		{
-			id: 'gabriel',
-			name: 'Gabriel',
-			active: false,
-			benefitsFrom: {
-				'1': 'Ich hatte letzte Woche einen Arzt-TP-termin und konnte nicht zur Vorlesung kommen. Die Aufzeichnung hat mich und vor allem meine Note gerettet.'
-			}
-		}
-	];
-
 	let selectedOption: SupportOptionId | '' = '';
-	const supportOptions = [
-		{ id: '1', name: 'Adipiscing rhoncus' },
-		{ id: '2', name: 'Verwenden eines soliden Mikros' },
-		{ id: '3', name: 'Hochwertige Scans mit OCR Software' },
-		{ id: '4', name: 'Lorem ipsum dolor sit amet consectetur' },
-		{ id: '5', name: 'Ultricies porttitor egestas scelerisque id lorem' },
-		{ id: '6', name: 'Bereitstellen der Unterlagen vor der Vorlesung' },
-		{ id: '7', name: 'Aufnahme der Vorlesung' },
-		{ id: '8', name: 'Untertitel bei Videos' },
-		{ id: '9', name: 'Regelmäßige Pausen' },
-		{
-			id: 'accessible-documents',
-			name: 'Ich überprüfe die Barrierefreiheit meiner Dokumente'
-		}
-	] as const;
+	const supportOptions = SUPPORT_OPTIONS.filter((option) => option.id !== '0');
 
-	function handleOptionSelection(id: SupportOptionId) {
-		if (selectedOption === id) {
-			students.forEach((student) => (student.active = false));
-			students = students;
-			selectedOption = '';
-		} else {
-			students.forEach((student) => {
-				if (student.benefitsFrom[id]) {
-					student.active = true;
-				} else {
-					student.active = false;
-				}
-			});
-			students = students;
-			selectedOption = id;
-		}
-	}
-
-	function handleSpeechbubbleClose() {
-		const studentButton = document.getElementById(`student-${selectedStudent}-button`);
-		studentButton?.focus();
-		selectedStudent = undefined;
-	}
-
-	function handleSelectStudent(studentId: studentId) {
-		if (selectedStudent === studentId) {
-			selectedStudent = undefined;
-		} else {
-			selectedStudent = studentId;
-		}
-	}
-
-	function handleBackdropClick(e: MouseEvent) {
-		if (selectedStudent === undefined) return;
-
-		if ((e.target as HTMLElement).classList.contains('speechbubble')) {
-			return;
-		}
-
-		if (((e.target as HTMLElement).parentNode as HTMLElement).classList.contains('speechbubble')) {
-			return;
-		}
-
-		if ((e.target as HTMLElement).classList.contains('student-info')) {
-			return;
-		}
-
-		if ((e.target as HTMLElement).classList.contains('student-info-wrapper')) {
-			return;
-		}
-
-		if ((e.target as HTMLElement).classList.contains('persona-img')) {
-			return;
-		}
-
-		if ((e.target as HTMLElement).classList.contains('persona-name')) {
-			return;
-		}
-
-		handleSpeechbubbleClose();
+	function handleSupportSelection(id: SupportOptionId) {
+		selectedOption = selectedOption !== id ? id : '';
 	}
 </script>
 
@@ -170,88 +44,26 @@
 		</p> -->
 
 		<div class="desktop">
-			<ul>
-				{#each students as student, i}
-					<li
-						class={student.id}
-						class:active={student.active}
-						class:selected={student.id === selectedStudent}
-						class:show-all-names={showAllNames}
-					>
-						<button
-							class="student-button"
-							aria-label={student.name}
-							tabindex={student.active ? 0 : -1}
-							on:click={() => handleSelectStudent(student.id)}
-							id="student-{student.id}-button"
-							aria-pressed={student.id === selectedStudent}
-						>
-							<div class="student-info-wrapper" aria-hidden="true">
-								<div class="student-info">
-									<p class="persona-name">{student.name}</p>
-								</div>
-							</div>
-							<img
-								class="persona-img"
-								src="{base}/personas/{student.id}/{student.id}-lecture.svg"
-								alt=""
-								loading="lazy"
-							/>
-						</button>
-
-						<StudentSpeechbubble
-							studentName={student.name}
-							studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
-							visible={selectedStudent === student.id}
-							on:close={() => handleSpeechbubbleClose()}
+			<BigLectureRoom {selectedOption} />
+			<fieldset
+				id="support-list"
+				aria-label="Unterstützungsmöglichkeiten"
+				class="support-list desktop"
+			>
+				{#each supportOptions as option, i}
+					<label>
+						<input
+							on:click={() => handleSupportSelection(option.id)}
+							type="radio"
+							value={option.name}
+							name="support-list"
+							checked={selectedOption === option.id}
 						/>
-					</li>
-				{/each}
-			</ul>
-
-			<div class="dark-overlay" class:not-hidden={selectedOption !== ''}>
-				<div class="notch">
-					<div class="icon-wrapper">
-						<Icon img="clickable-persona" svg_color="white" size="parent" />
-					</div>
-					<label for="show-all-names">
-						<input type="checkbox" id="show-all-names" bind:checked={showAllNames} />
-						Alle Namen anzeigen
+						<span>{option.name}</span>
 					</label>
-				</div>
-			</div>
-
-			<img
-				class="big-picture-room"
-				src="{base}/decorations/big-picture-room.svg"
-				alt=""
-				aria-hidden="true"
-				width="1350"
-				height="980"
-			/>
+				{/each}
+			</fieldset>
 		</div>
-		<fieldset
-			id="support-list"
-			aria-label="Unterstützungsmöglichkeiten"
-			class="support-list desktop"
-		>
-			{#each supportOptions as option, i}
-				<label for={option.id}>
-					<input
-						on:click={() => {
-							handleOptionSelection(option.id);
-							selectedStudent = undefined;
-						}}
-						type="radio"
-						value={option.name}
-						name="support-list"
-						id={option.id}
-						checked={selectedOption === option.id}
-					/>
-					<span>{option.name}</span>
-				</label>
-			{/each}
-		</fieldset>
 		<div class="mobile">
 			<BigPictureMobile />
 		</div>
@@ -262,8 +74,6 @@
 		</p>
 	{/if}
 </div>
-
-<svelte:window on:mouseup={(e) => handleBackdropClick(e)} />
 
 <style lang="scss">
 	.wrapper {

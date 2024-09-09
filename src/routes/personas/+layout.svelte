@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import ShareButton from '$lib/components/ShareButton.svelte';
-	import UserTest from '$lib/components/UserTest.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import Footer from '../../lib/components/Footer.svelte';
 </script>
 
-<div class="user-test">
-	<UserTest />
-</div>
 <div class="background-black">
 	<header>
 		<div class="row">
@@ -34,13 +30,6 @@
 <Footer />
 
 <style lang="scss">
-	.user-test {
-		padding: 1rem 0;
-		display: flex;
-		justify-content: center;
-		background-color: #99bef5;
-	}
-
 	.background-black {
 		background-color: var(--color-black);
 		width: 100%;
