@@ -4,7 +4,6 @@
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
-	import UserTest from '$lib/components/UserTest.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
@@ -283,27 +282,4 @@
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 	/>
-
-	<!-- usertest -->
-	<div class="user-test">
-		<UserTest bottomOfPage />
-	</div>
 </PersonaContent>
-
-<style lang="scss">
-	.user-test {
-		background-color: var(--color-black);
-		border-radius: 1.25rem;
-		padding: 2.5rem 1rem;
-		margin: 2rem 0 0 3.375rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	@media (max-width: 59.3125rem) {
-		.user-test {
-			margin: 2rem 1.375rem;
-		}
-	}
-</style>

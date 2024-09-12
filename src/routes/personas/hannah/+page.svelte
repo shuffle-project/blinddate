@@ -5,7 +5,6 @@
 	import SimulationLink from '$lib/components/SimulationLink.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
-	import UserTest from '$lib/components/UserTest.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
@@ -439,32 +438,11 @@
 			</Recommendation>
 		</li>
 	</ul>
-
-	<!-- usertest -->
-	<div class="user-test">
-		<UserTest bottomOfPage />
-	</div>
 </PersonaContent>
 
 <style lang="scss">
 	.more-info-list {
 		list-style-type: none;
 		padding: 0;
-	}
-
-	.user-test {
-		background-color: var(--color-black);
-		border-radius: 1.25rem;
-		padding: 2.5rem 1rem;
-		margin: 2rem 0 0 3.375rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	@media (max-width: 59.3125rem) {
-		.user-test {
-			margin: 2rem 1.375rem;
-		}
 	}
 </style>

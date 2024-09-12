@@ -39,7 +39,7 @@
 			es auch im digitalen Raum einige Barrieren für Studierende mit Pflegeverantwortung, die
 			vielleicht nicht auf den ersten Blick erkennbar sind. Viele Studierende, die familiäre
 			Verpflichtungen haben – sie pflegen beispielsweise ein Kind oder eine angehörige Person –
-			profitieren von digitalen Studien-Angeboten. Je nach Alter des Kindes und vorhandenen
+			profitieren von digitalen Studienangeboten. Je nach Alter des Kindes und vorhandenen
 			Unterstützungsstrukturen müssen Stundenpläne dementsprechend belegt werden. Viele Studien- und
 			Prüfungsordnungen sehen hier schon einige Anpassungen vor. Außerdem bieten viele Hochschulen
 			die Möglichkeit eines Teilzeitstudiums (mit reduziertem Stundenumfang) an. Zur Unterstützung
@@ -88,7 +88,7 @@
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>
 		<Text noTopMargin>
-			Studierende mit familiären Verpflichtungen brauchen räumliche und zeitliche Flexibilität.
+			Studierende mit Pflegeverantwortung brauchen räumliche und zeitliche Flexibilität.
 			Aufgezeichnete Vorlesungen, die asynchron und nach eigenem Tempo angeschaut werden können,
 			sind daher häufig sehr hilfreich.
 		</Text>
@@ -139,7 +139,7 @@
 
 		<Text>
 			Außerdem sind klare Absprachen und Transparenz zur Struktur und den Anforderungen einer
-			Veranstaltung zu Beginn eines Semester sehr wichtig. Hier können auch alternative Prüfformate
+			Veranstaltung zu Beginn eines Semesters sehr wichtig. Hier können auch alternative Prüfformate
 			und Regelungen zur Anwesenheit kommuniziert werden.
 		</Text>
 	</TextSection>

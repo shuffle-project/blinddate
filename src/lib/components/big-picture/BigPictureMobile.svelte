@@ -167,6 +167,7 @@
 			});
 		}
 
+		// find out why I added this a few weeks ago
 		if (carouselSupportSelectedIndex === 0) {
 			setTimeout(() => {
 				students = BIG_PICTURE_STUDENTS;
