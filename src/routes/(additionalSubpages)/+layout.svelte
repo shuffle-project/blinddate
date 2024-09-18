@@ -48,17 +48,6 @@
 			justify-content: space-between;
 			align-items: center;
 			box-sizing: border-box;
-
-			.logo {
-				display: flex;
-				align-items: center;
-				margin: 0 0.375rem;
-
-				.img {
-					height: 2rem;
-					width: 2rem;
-				}
-			}
 		}
 	}
 

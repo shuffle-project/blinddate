@@ -1,4 +1,16 @@
-export type StudentId = 'maxi' | 'michelle' | 'gabriel' | 'aleksandr';
+export type StudentId =
+	| 'maxi'
+	| 'hannah'
+	| 'michelle'
+	| 'gabriel'
+	| 'aleksandr'
+	| 'faiza'
+	| 'kilian'
+	| 'fredo'
+	| 'kyle'
+	| 'sarah'
+	| 'mara';
+
 export type SupportOptionId =
 	| '0'
 	| '1'
@@ -23,12 +35,70 @@ export interface BigPictureStudent {
 
 export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
+		id: 'gabriel',
+		name: 'Gabriel',
+		active: false,
+		benefitsFrom: {
+			'1': 'Fehlerhafte Untertitel verwirren mich oft und ich verbrauche ultra viel Zeit, herauszufinden, welche Wörter tatsächlich gemeint sind. Bis ich damit fertig bin, sind die Dozierenden schon dreimal durch mit dem Inhalt und ich muss alles nacharbeiten.'
+		}
+	},
+	{
+		id: 'faiza',
+		name: 'Faiza',
+		active: false,
+		benefitsFrom: {
+			1: 'Blub'
+		}
+	},
+	{
+		id: 'sarah',
+		name: 'Sarah',
+		active: false,
+		benefitsFrom: {
+			1: 'Blub'
+		}
+	},
+	{
+		id: 'mara',
+		name: 'Mara',
+		active: false,
+		benefitsFrom: {
+			1: 'Blub'
+		}
+	},
+	{
+		id: 'fredo',
+		name: 'Fredo',
+		active: false,
+		benefitsFrom: {
+			1: 'Blub'
+		}
+	},
+	{
+		id: 'aleksandr',
+		name: 'Aleksandr',
+		active: false,
+		benefitsFrom: {
+			'2': 'Ein weiterer Platzhaltertext, der wirklich nur dazu dient, dass hier was steht und niemand unglücklich ist.',
+			1: 'Blub'
+		}
+	},
+	{
+		id: 'kyle',
+		name: 'Kyle',
+		active: false,
+		benefitsFrom: {
+			1: 'Blub'
+		}
+	},
+	{
 		id: 'maxi',
 		name: 'Maxi',
 		active: false,
 		benefitsFrom: {
 			'accessible-documents':
-				'Dann kann ich mit meinem Screenreader die Unterlagen besser verstehen.'
+				'Dann kann ich mit meinem Screenreader die Unterlagen besser verstehen.',
+			1: 'Blub'
 		}
 	},
 	{
@@ -40,19 +110,19 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 		}
 	},
 	{
-		id: 'gabriel',
-		name: 'Gabriel',
+		id: 'hannah',
+		name: 'Hannah',
 		active: false,
 		benefitsFrom: {
-			'1': 'Ich hatte letzte Woche einen Arzt-TP-termin und konnte nicht zur Vorlesung kommen. Die Aufzeichnung hat mich und vor allem meine Note gerettet.'
+			1: 'Blub'
 		}
 	},
 	{
-		id: 'aleksandr',
-		name: 'Aleksandr',
+		id: 'kilian',
+		name: 'Kilian',
 		active: false,
 		benefitsFrom: {
-			'2': 'Ein weiterer Platzhaltertext, der wirklich nur dazu dient, dass hier was steht und niemand unglücklich ist.'
+			1: 'Blub'
 		}
 	}
 ];

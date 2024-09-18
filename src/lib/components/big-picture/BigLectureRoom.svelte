@@ -282,7 +282,7 @@
 			}
 
 			li.gabriel {
-				bottom: 1.1%;
+				bottom: calc(1.6% - 0.265em);
 				left: 14%;
 
 				img {
@@ -291,7 +291,7 @@
 			}
 
 			li.michelle {
-				top: 38.8%;
+				bottom: calc(51.3% - 0.2675em);
 				right: 21%;
 
 				img {
@@ -300,7 +300,7 @@
 			}
 
 			li.maxi {
-				top: 39.8%;
+				bottom: calc(49.5% - 0.25em);
 				left: 19%;
 
 				img {
@@ -309,11 +309,74 @@
 			}
 
 			li.aleksandr {
-				top: 54.3%;
+				bottom: calc(34% - 0.25em);
 				left: 37.5%;
 
 				img {
-					width: min(11.2vw, 9.5rem);
+					width: min(11.4vw, 9.75rem);
+				}
+			}
+
+			li.fredo {
+				bottom: calc(34.2% - 0.2675em);
+				left: 26%;
+
+				img {
+					width: min(7vw, 6rem);
+				}
+			}
+
+			li.faiza {
+				bottom: calc(1.7% - 0.265em);
+				right: 53%;
+
+				img {
+					width: min(14vw, 12rem);
+				}
+			}
+
+			li.kyle {
+				bottom: calc(34.1% - 0.25em);
+				right: 38%;
+
+				img {
+					width: min(8.2vw, 7rem);
+				}
+			}
+
+			li.sarah {
+				bottom: calc(21.4% - 0.25em);
+				right: 22%;
+
+				img {
+					width: min(9vw, 7.5rem);
+				}
+			}
+
+			li.mara {
+				bottom: calc(21.5% - 0.25em);
+				right: 7%;
+
+				img {
+					width: min(8.5vw, 7.25rem);
+				}
+			}
+
+			li.kilian {
+				bottom: calc(56.9% - 0.25em);
+				right: 33%;
+
+				img {
+					width: min(6.5vw, 5.5rem);
+				}
+			}
+
+			li.hannah {
+				top: 33.5%;
+				right: 42%;
+
+				img {
+					width: min(5.5vw, 4.75rem);
 				}
 			}
 
@@ -446,30 +509,6 @@
 			.dark-overlay,
 			.big-picture-room {
 				border-radius: 1.25rem 1.25rem 0 0;
-			}
-		}
-	}
-
-	@media (max-width: 28.75rem) {
-		.wrapper {
-			ul {
-				li.gabriel {
-					bottom: -0.6%;
-					left: 14%;
-
-					img {
-						width: min(12vw, 10rem);
-					}
-				}
-
-				li.aleksandr {
-					top: 54%;
-					left: 37.4%;
-
-					img {
-						width: min(10.8vw, 8.75rem);
-					}
-				}
 			}
 		}
 	}
