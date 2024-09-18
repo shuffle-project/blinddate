@@ -218,7 +218,7 @@
 				}
 
 				&.gabriel {
-					bottom: 2%;
+					bottom: calc(2.4% - 0.125em);
 					left: 12%;
 
 					img {
@@ -237,10 +237,10 @@
 
 				&.michelle {
 					left: 38%;
-					top: 2.2%;
+					top: calc(2.4% - 0.125em);
 
 					img {
-						width: min(11.5vw, 10rem);
+						width: min(11.6vw, 10rem);
 					}
 				}
 
@@ -254,7 +254,7 @@
 				}
 
 				&.kilian {
-					bottom: 41.2%;
+					bottom: calc(41.5% - 0.125em);
 					right: 7%;
 
 					img {
@@ -263,7 +263,7 @@
 				}
 
 				&.maxi {
-					top: 5%;
+					top: calc(5.3% - 0.125em);
 					left: 6%;
 
 					img {
@@ -272,7 +272,7 @@
 				}
 
 				&.faiza {
-					bottom: 2.2%;
+					bottom: calc(2.5% - 0.125em);
 					left: 38%;
 
 					img {
