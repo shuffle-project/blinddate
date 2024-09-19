@@ -232,7 +232,7 @@
 
 	<Accordion personaName={persona.name} let:AccordionItem question="Frage">
 		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question">Was wünschst Du dir von Lehrpersonen?</svelte:fragment>
+			<svelte:fragment slot="question">Was wünschst Du Dir von Lehrpersonen?</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Hört sich ganz leicht und selbstverständlich an. Aber generell erst einmal: Ein offenes Ohr
 				und eine offene Haltung gegenüber Studierenden, die Pflegeverantwortung haben oder auch aus
