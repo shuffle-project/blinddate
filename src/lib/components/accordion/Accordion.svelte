@@ -1,11 +1,12 @@
 <script lang="ts">
 	import AccordionItem from './AccordionItem.svelte';
 	export let personaName: string;
+	export let question: 'Fragen' | 'Frage' = 'Fragen';
 </script>
 
 <section class="wrapper">
 	<h3>
-		{`Fragen an ${personaName}`}
+		{`${question} an ${personaName}`}
 	</h3>
 	<div class="items">
 		<slot {AccordionItem} />

@@ -62,15 +62,20 @@
 
 	$: {
 		if (students.length !== 0) {
-			studentsCarouselAriaLiveText =
-				students[carouselStudentSelectedIndex].name +
-				', ' +
-				(carouselStudentSelectedIndex + 1) +
-				' von ' +
-				students.length +
-				', sagt: "' +
-				selectedStudentComment +
-				'"';
+			if (students[carouselStudentSelectedIndex].disability) {
+				studentsCarouselAriaLiveText = `
+				${students[carouselStudentSelectedIndex].name},
+				${students[carouselStudentSelectedIndex].disability},
+				${carouselStudentSelectedIndex + 1} von ${students.length},
+				sagt: "${selectedStudentComment}"
+				`;
+			} else {
+				studentsCarouselAriaLiveText = `
+				${students[carouselStudentSelectedIndex].name},
+				${carouselStudentSelectedIndex + 1} von ${students.length},
+				sagt: "${selectedStudentComment}"
+				`;
+			}
 		}
 	}
 
@@ -260,7 +265,17 @@
 					<SplideTrack class="splide-track">
 						{#each students as student, i (student.id)}
 							<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
-								<p class="student-name">{student.name}</p>
+								<div class="name-icon-wrapper">
+									{#if student.icon}
+										<Icon
+											svg_color="white"
+											img={base + '/icons/' + student.icon + '.svg'}
+											size="medium"
+										/>
+									{/if}
+
+									<p class="student-name">{student.name}</p>
+								</div>
 							</SplideSlide>
 						{/each}
 					</SplideTrack>
@@ -382,6 +397,14 @@
 
 				border-radius: 1.25rem 1.25rem 0 0;
 
+				.name-icon-wrapper {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 0.625rem;
+					padding-inline: 2.75rem;
+				}
+
 				span {
 					font-size: 0.875rem;
 					display: flex;
@@ -432,11 +455,10 @@
 		text-align: center;
 
 		p {
-			padding-inline: 2.75rem;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding-inline: 2.75rem;
+
 			margin-block: 0.625rem;
 			font-weight: bold;
 
