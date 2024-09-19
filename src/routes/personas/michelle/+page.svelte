@@ -217,7 +217,7 @@
 	<Accordion personaName={persona.name} let:AccordionItem>
 		<AccordionItem let:PersonaAnswer>
 			<svelte:fragment slot="question"
-				>Hast du dir schon mal in der Öffentlichkeit in die Hose gemacht?</svelte:fragment
+				>Hast Du Dir schon mal in der Öffentlichkeit in die Hose gemacht?</svelte:fragment
 			>
 			<PersonaAnswer {persona}>
 				Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker stellen,
@@ -230,7 +230,7 @@
 
 		<AccordionItem let:PersonaAnswer>
 			<svelte:fragment slot="question"
-				>Was ist der unangebrachteste Kommentar, den du bezüglich deiner Krankheit bekommen hast?
+				>Was ist der unangebrachteste Kommentar, den Du bezüglich Deiner Krankheit bekommen hast?
 			</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Nur einer? Ich hab ein ganzes „Bullshit Bingo“-Feld in meinem Notizblock! Viele Kommentare

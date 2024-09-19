@@ -27,6 +27,8 @@ export type SupportOptionId =
 export interface BigPictureStudent {
 	id: StudentId;
 	name: string;
+	icon?: string;
+	disability?: string;
 	active: boolean;
 	benefitsFrom: {
 		[key in SupportOptionId]?: string;
@@ -37,6 +39,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'gabriel',
 		name: 'Gabriel',
+		icon: 'glaucoma',
+		disability: 'Grüner Star (Glaukom)',
 		active: false,
 		benefitsFrom: {
 			'1': 'Fehlerhafte Untertitel verwirren mich oft und ich verbrauche ultra viel Zeit, herauszufinden, welche Wörter tatsächlich gemeint sind. Bis ich damit fertig bin, sind die Dozierenden schon dreimal durch mit dem Inhalt und ich muss alles nacharbeiten.'
@@ -45,6 +49,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'faiza',
 		name: 'Faiza',
+		icon: 'bottle',
+		disability: 'Studieren mit Kind',
 		active: false,
 		benefitsFrom: {
 			1: 'Blub'
@@ -77,6 +83,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'aleksandr',
 		name: 'Aleksandr',
+		icon: 'sunflower',
+		disability: 'Autismus-Spektrum-Störung',
 		active: false,
 		benefitsFrom: {
 			'2': 'Ein weiterer Platzhaltertext, der wirklich nur dazu dient, dass hier was steht und niemand unglücklich ist.',
@@ -94,6 +102,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'maxi',
 		name: 'Maxi',
+		icon: 'mental-health',
+		disability: 'Depressionen',
 		active: false,
 		benefitsFrom: {
 			'accessible-documents':
@@ -104,6 +114,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'michelle',
 		name: 'Michelle',
+		icon: 'spoon',
+		disability: 'Morbus Crohn',
 		active: false,
 		benefitsFrom: {
 			'1': 'Platzhalter-Text damit hier was steht und die Sprechblase nicht leer ist.'
@@ -112,6 +124,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'hannah',
 		name: 'Hannah',
+		icon: 'ear',
+		disability: 'Hochgradige Schwerhörigkeit',
 		active: false,
 		benefitsFrom: {
 			1: 'Blub'
@@ -120,6 +134,8 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 	{
 		id: 'kilian',
 		name: 'Kilian',
+		icon: 'wheelchair',
+		disability: 'Zerebralparese',
 		active: false,
 		benefitsFrom: {
 			1: 'Blub'

@@ -218,9 +218,7 @@
 
 	<Accordion personaName={persona.name} let:AccordionItem>
 		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question"
-				>Faiza, was wünschst du dir von Lehrpersonen?
-			</svelte:fragment>
+			<svelte:fragment slot="question">Was wünschst Du dir von Lehrpersonen?</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Hört sich ganz leicht und selbstverständlich an. Aber generell erst einmal: Ein offenes Ohr
 				und eine offene Haltung gegenüber Studierenden, die Pflegeverantwortung haben oder auch aus
@@ -232,8 +230,8 @@
 		</AccordionItem>
 		<AccordionItem let:PersonaAnswer>
 			<svelte:fragment slot="question"
-				>Faiza, an wen können sich Studierende mit Pflegeverantwortung für Unterstützung und
-				Entlastung an der Hochschule wenden?
+				>An wen können sich Studierende mit Pflegeverantwortung für Unterstützung und Entlastung an
+				der Hochschule wenden?
 			</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Also, gute erste Anlaufstellen sind auf jeden Fall die Familienbüros der Hochschulen oder

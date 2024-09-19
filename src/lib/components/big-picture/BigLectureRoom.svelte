@@ -127,7 +127,9 @@
 				{#if !mobileView}
 					<button
 						class="student-button"
-						aria-label={student.name}
+						aria-label={student.disability
+							? `${student.name}, ${student.disability}`
+							: student.name}
 						tabindex={student.active ? 0 : -1}
 						on:click={() => handleSelectStudent(student.id)}
 						id="student-{student.id}-button"
@@ -136,6 +138,15 @@
 					>
 						<div class="student-info-wrapper" aria-hidden="true">
 							<div class="student-info">
+								{#if student.icon}
+									<span class="icon-wrapper">
+										<Icon
+											size="smedium"
+											svg_color="white"
+											img={base + '/icons/' + student.icon + '.svg'}
+										/>
+									</span>
+								{/if}
 								<p class="persona-name">{student.name}</p>
 							</div>
 						</div>
@@ -242,7 +253,8 @@
 								font-size: 1.25rem;
 							}
 
-							p {
+							p,
+							.icon-wrapper {
 								opacity: 0%;
 								transform: scale(0);
 							}
@@ -261,7 +273,7 @@
 							padding: 0.625rem 1rem;
 							border-radius: 2.25rem;
 
-							width: 6rem;
+							width: 6.25rem;
 							margin-bottom: 0;
 
 							transition: all 0.3s ease-out;
@@ -269,14 +281,24 @@
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							gap: 0.625rem;
+							gap: 0.375rem;
 
 							p {
 								transform: scale(1);
 								opacity: 100%;
 								transition: opacity 0.8s ease-out;
 							}
+
+							.icon-wrapper {
+								transform: scale(1);
+								opacity: 100%;
+								transition: opacity 0.4s 0.1s ease-out;
+							}
 						}
+					}
+
+					&.selected {
+						z-index: 10;
 					}
 				}
 			}

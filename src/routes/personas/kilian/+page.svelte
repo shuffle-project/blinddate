@@ -252,7 +252,7 @@
 		</AccordionItem>
 
 		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question">Welchen digitalen Barrieren begegnest du?</svelte:fragment>
+			<svelte:fragment slot="question">Welchen digitalen Barrieren begegnest Du?</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Klar, wenn man eine Person im Rollstuhl sieht, denkt man erstmal an bauliche Barrieren. Das
 				ist aber nicht alles: Assistive Technologien wie meine Großfeldtastatur ermöglichen zwar

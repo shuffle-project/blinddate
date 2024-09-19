@@ -36,6 +36,6 @@ export const ENVIRONMENT: Environment = {
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
 	showBigPictureContent: true,
-	allowFeedbackLink: true,
+	allowFeedbackLink: false,
 	feedbackLink: ''
 };

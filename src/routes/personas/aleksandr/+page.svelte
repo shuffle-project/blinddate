@@ -233,7 +233,7 @@
 	<Accordion personaName={persona.name} let:AccordionItem>
 		<AccordionItem let:PersonaAnswer>
 			<svelte:fragment slot="question"
-				>Inwiefern nimmst du die Welt anders wahr als andere?
+				>Inwiefern nimmst Du die Welt anders wahr als andere?
 			</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Neurotypische Personen filtern jeden Tag tausende Sinneseindrücke aus. Das merken sie gar
@@ -246,7 +246,7 @@
 		</AccordionItem>
 
 		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question">Was ist deine Inselbegabung?</svelte:fragment>
+			<svelte:fragment slot="question">Was ist Deine Inselbegabung?</svelte:fragment>
 			<PersonaAnswer {persona}>
 				Ich habe keine Inselbegabung. Nur sehr wenige Menschen auf dem Spektrum haben eine. Die mit
 				dem Savant-Syndrom. Das ist ein sich hartnäckig haltendes Gerücht. Es ist spannender,
