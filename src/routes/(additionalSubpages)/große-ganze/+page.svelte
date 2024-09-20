@@ -68,10 +68,12 @@
 			<BigPictureMobile />
 		</div>
 	{:else}
-		<p>
-			Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen Sie
-			gerne immer wieder Mal vorbei.
-		</p>
+		<div class="in-progress-wrapper">
+			<p>
+				Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen
+				Sie gerne immer wieder Mal vorbei.
+			</p>
+		</div>
 	{/if}
 </div>
 
@@ -79,6 +81,10 @@
 	.wrapper {
 		padding-inline: var(--outer-spacing);
 		margin-top: 2.5rem;
+
+		.in-progress-wrapper {
+			min-height: 30vh;
+		}
 
 		p {
 			max-width: 35rem;
