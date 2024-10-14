@@ -242,6 +242,21 @@
 				mehr darüber sprechen und offen auch Grenzen aufzeigen.
 			</PersonaAnswer>
 		</AccordionItem>
+
+		<AccordionItem let:PersonaAnswer>
+			<svelte:fragment slot="question"
+				>Wie erlebst Du den Spagat zwischen Studium und Kind?</svelte:fragment
+			>
+			<PersonaAnswer {persona}>
+				Ich spüre oft Druck, in beiden Rollen – sowohl als Studentin als auch als Mutter –
+				irgendwelchen Erwartungen gerecht werden zu müssen. Im Alltag schaffe ich aber manchmal
+				nicht beides und das Priorisieren fällt mir schwer. Wenn ich lerne, fühle ich mich schlecht,
+				weil ich nicht genug für meinen Sohn da bin, und wenn ich Zeit mit Jonas verbringe, habe ich
+				das Gefühl, mein Studium zu vernachlässigen. Dann passiert es auch schnell, dass ich meine
+				eigenen Bedürfnisse komplett hinten anstelle, um den Anforderungen meines Kindes oder meines
+				Studiums gerecht zu werden.
+			</PersonaAnswer>
+		</AccordionItem>
 	</Accordion>
 
 	<MainHeading heading="Prüfungen" />
