@@ -14,7 +14,7 @@
 			personaImg = personaImg + '-neutral.svg';
 			break;
 		case 'faiza':
-			personaImg = personaImg + '-neutral.svg';
+			personaImg = personaImg + '-explaining-circle.svg';
 			break;
 		default:
 			personaImg = personaImg + '-explaining-circle.svg';

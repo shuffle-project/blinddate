@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import Icon from '../Icon.svelte';
 
 	export let studentName: string;
@@ -24,80 +23,120 @@
 
 {#if studentComment && visible}
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<div
-		class="speechbubble {studentName}"
-		role="region"
-		aria-label="{studentName} Sprechblase"
-		on:keyup={(e) => handleKeyPress(e)}
-		out:fade={{ duration: 200 }}
-		bind:this={speechbubble}
-	>
-		<div class="header">
-			<button aria-label="Schließen" on:click={() => close()}>
-				<Icon img="close" svg_color="white" size="parent" />
-			</button>
+	<div class="speechbubble-wrapper {studentName}">
+		<div
+			class="speechbubble"
+			role="region"
+			aria-label="{studentName} Sprechblase"
+			on:keyup={(e) => handleKeyPress(e)}
+			bind:this={speechbubble}
+		>
+			<div class="header">
+				<button aria-label="Schließen" on:click={() => close()}>
+					<Icon img="close" svg_color="white" size="parent" />
+				</button>
+			</div>
+			<p class="content">{studentComment}</p>
 		</div>
-		<p class="content">{studentComment}</p>
+		<div class="bubble-indicator">
+			<Icon img="speech-bubble-indicator" size="parent" svg_color="white" />
+		</div>
 	</div>
 {/if}
 
 <style lang="scss">
-	.speechbubble {
+	.speechbubble-wrapper {
 		position: absolute;
-		margin-inline: auto;
-		bottom: calc(100% + 1.25rem);
-		background-color: var(--color-white);
-		border-radius: 1.25rem;
-		padding: 1.5rem;
-		width: 18.75rem;
-		border: none;
-		box-shadow: 0 0 0.625rem 0.625rem rgba(var(--color-black-rgb), 0.05);
-		animation: rotateFadeIn 0.4s forwards;
+		bottom: calc(100% + 0.5rem);
 
-		@keyframes rotateFadeIn {
-			0% {
-				transform: rotate(-5deg) translateX(-1rem);
-				opacity: 0%;
-			}
-			100% {
-				transform: rotate(0deg) translateX(0rem);
-				opacity: 100%;
-			}
-		}
+		.bubble-indicator {
+			height: 1rem;
 
-		&::before {
-			content: url('/decorations/speech-bubble-indicator-white.svg');
-			position: absolute;
-			bottom: -2rem;
-			display: none;
+			width: 2.5rem;
 
-			width: 3rem;
-			height: 2.5rem;
+			transform: translateY(-1px);
 		}
 
 		&.Gabriel {
-			&::before {
-				display: flex;
-				left: clamp(1rem, 5vw + 0.25rem, 5rem);
+			.bubble-indicator {
+				margin-left: 5rem;
 			}
 		}
 
-		&.Michelle {
-			right: -2rem;
+		&.Faiza {
+			.bubble-indicator {
+				margin-left: 6rem;
+			}
+		}
 
-			&::before {
-				display: flex;
+		&.Sarah {
+			right: -8rem;
+			.bubble-indicator {
+				margin-left: 8.5rem;
+			}
+		}
 
-				right: clamp(0.5rem, 3vw + 0.25rem, 2rem);
+		&.Mara {
+			right: 0;
+			.bubble-indicator {
+				margin-left: 17.5rem;
+			}
+		}
+
+		&.Fredo {
+			.bubble-indicator {
+				margin-left: 1.5rem;
+			}
+		}
+
+		&.Aleksandr {
+			.bubble-indicator {
+				margin-left: 3.5rem;
+			}
+		}
+
+		&.Kyle {
+			.bubble-indicator {
+				margin-left: 2rem;
 			}
 		}
 
 		&.Maxi {
-			&::before {
-				display: flex;
-				left: clamp(1rem, 3vw + 0.25rem, 3rem);
+			.bubble-indicator {
+				margin-left: 3rem;
 			}
 		}
+
+		&.Michelle {
+			right: -6rem;
+
+			.bubble-indicator {
+				margin-left: 13rem;
+			}
+		}
+
+		&.Hannah {
+			.bubble-indicator {
+				margin-left: 1.5rem;
+			}
+		}
+
+		&.Kilian {
+			.bubble-indicator {
+				margin-left: 1.5rem;
+			}
+		}
+	}
+
+	.speechbubble {
+		margin-inline: auto;
+
+		background-color: var(--color-white);
+		border-radius: 1.25rem;
+		padding: 1.5rem;
+		width: 18.75rem;
+		border: 1px solid var(--color-white);
+		box-shadow: 0 0 0.625rem 0.625rem rgba(var(--color-black-rgb), 0.05);
 
 		.header {
 			button {

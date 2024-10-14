@@ -6,7 +6,7 @@
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 
 	let selectedOption: SupportOptionId | '' = '';
-	const supportOptions = SUPPORT_OPTIONS.filter((option) => option.id !== '0');
+	const supportOptions = SUPPORT_OPTIONS.filter((option) => option.id !== 'idle');
 
 	function handleSupportSelection(id: SupportOptionId) {
 		selectedOption = selectedOption !== id ? id : '';
@@ -100,17 +100,21 @@
 			max-width: var(--content-max-width);
 			margin-inline: auto;
 			display: grid;
-			grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			gap: 1rem;
 			background-color: var(--color-black);
+
 			border-bottom-left-radius: 2.5rem;
 			border-bottom-right-radius: 2.5rem;
 			border: none;
 			box-sizing: border-box;
 
+			padding-top: 0rem;
+
 			label {
 				color: rgba(var(--color-white-rgb), 0.8);
 				display: flex;
+				align-items: center;
 				cursor: pointer;
 
 				&:focus,

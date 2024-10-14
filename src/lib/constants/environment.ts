@@ -35,7 +35,7 @@ export const ENVIRONMENT: Environment = {
 	footerPersonas: true,
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
-	showBigPictureContent: false,
+	showBigPictureContent: true,
 	allowFeedbackLink: false,
 	feedbackLink: ''
 };

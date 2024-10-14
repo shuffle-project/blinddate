@@ -458,6 +458,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			margin-inline: 1.875rem;
 
 			margin-block: 0.625rem;
 			font-weight: bold;
