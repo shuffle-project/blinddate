@@ -57,7 +57,8 @@ jobs:
 
     environment:
       name: github-pages
-      url: barrierefreies-blinddate
+      url: blinddate
+      #url: barrierefreies-blinddate
 
     steps:
       - name: Deploy to GitHub Pages
