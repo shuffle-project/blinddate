@@ -9,7 +9,6 @@
 	import Icon from '../Icon.svelte';
 	import StudentSpeechbubble from './StudentSpeechbubble.svelte';
 
-	export let showAllNames = false;
 	export let selectedOption: SupportOptionId | '' = '';
 	export let mobileView = false;
 
@@ -98,18 +97,9 @@
 				(highlightedStudents > 0 && highlightedStudents < BIG_PICTURE_STUDENTS.length)}
 		>
 			<div class="notch">
-				<div class="icon-wrapper">
+				<div class="notch-icon-wrapper">
 					<Icon img="clickable-persona" svg_color="white" size="parent" />
 				</div>
-				<label for="show-all-names">
-					<input
-						tabindex={highlightedStudents === 0 ? -1 : 0}
-						type="checkbox"
-						id="show-all-names"
-						bind:checked={showAllNames}
-					/>
-					Alle Namen anzeigen
-				</label>
 			</div>
 		</div>
 	{/if}
@@ -120,7 +110,6 @@
 				class={student.id}
 				class:active={student.active}
 				class:selected={student.id === selectedStudent}
-				class:show-all-names={showAllNames}
 				class:not-idle={mobileView && highlightedStudents !== BIG_PICTURE_STUDENTS.length}
 				aria-hidden={!student.active}
 			>
@@ -139,15 +128,9 @@
 						<div class="student-info-wrapper" aria-hidden="true">
 							<div class="student-info">
 								{#if student.icon}
-									<span class="icon-wrapper">
-										<Icon
-											size="smedium"
-											svg_color="white"
-											img={base + '/icons/' + student.icon + '.svg'}
-										/>
-									</span>
+									<img src={base + '/icons/' + student.icon + '.svg'} alt="" aria-hidden="true" />
 								{/if}
-								<p class="persona-name">{student.name}</p>
+								<span class="persona-name">{student.name}</span>
 							</div>
 						</div>
 						<img
@@ -248,13 +231,20 @@
 
 							transition: all 0.2s ease-out;
 
-							p {
+							.persona-name {
 								margin: 0;
 								font-size: 1.25rem;
+								opacity: 0%;
+								transform: scale(0);
 							}
 
-							p,
-							.icon-wrapper {
+							img {
+								width: 1.25rem;
+								height: 1.25rem;
+
+								filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(86%)
+									hue-rotate(216deg) brightness(102%) contrast(100%);
+
 								opacity: 0%;
 								transform: scale(0);
 							}
@@ -263,7 +253,6 @@
 
 					&:hover,
 					&:focus,
-					&.show-all-names,
 					&.selected {
 						.student-info {
 							opacity: 100%;
@@ -283,13 +272,13 @@
 							justify-content: center;
 							gap: 0.375rem;
 
-							p {
+							.persona-name {
 								transform: scale(1);
 								opacity: 100%;
 								transition: opacity 0.8s ease-out;
 							}
 
-							.icon-wrapper {
+							img {
 								transform: scale(1);
 								opacity: 100%;
 								transition: opacity 0.4s 0.1s ease-out;
@@ -451,59 +440,7 @@
 				justify-content: center;
 				gap: 0.625rem;
 
-				label {
-					background-color: var(--color-black);
-					border-radius: 2.5rem;
-					height: 3.5rem;
-					padding-inline: 0.875rem;
-					display: flex;
-					align-items: center;
-					gap: 0.625rem;
-					cursor: pointer;
-
-					&:hover {
-						input {
-							outline: 2px solid var(--color-white);
-							outline-offset: 2px;
-						}
-					}
-
-					input {
-						background-color: transparent;
-						-webkit-appearance: none;
-						appearance: none;
-						margin: 0;
-						color: var(--color-white);
-						min-width: 1.625rem;
-						height: 1.625rem;
-						border: 2px solid rgba(var(--color-white-rgb), 0.8);
-						border-radius: 50%;
-
-						display: grid;
-						place-content: center;
-
-						&:focus {
-							outline: 2px solid var(--color-white);
-							outline-offset: 2px;
-						}
-
-						&:checked {
-							background-color: var(--color-white);
-						}
-
-						&:checked:before {
-							content: '';
-							width: 0.875rem;
-							height: 0.875rem;
-							box-shadow: inset 1rem 1rem var(--color-black);
-
-							transform-origin: bottom left;
-							clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
-						}
-					}
-				}
-
-				.icon-wrapper {
+				.notch-icon-wrapper {
 					width: 2.375rem;
 					height: 2.375rem;
 					background-color: var(--color-black);

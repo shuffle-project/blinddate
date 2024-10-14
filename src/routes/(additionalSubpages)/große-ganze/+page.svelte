@@ -6,7 +6,7 @@
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 
 	let selectedOption: SupportOptionId | '' = '';
-	const supportOptions = SUPPORT_OPTIONS.filter((option) => option.id !== '0');
+	const supportOptions = SUPPORT_OPTIONS.filter((option) => option.id !== 'idle');
 
 	function handleSupportSelection(id: SupportOptionId) {
 		selectedOption = selectedOption !== id ? id : '';
@@ -68,10 +68,12 @@
 			<BigPictureMobile />
 		</div>
 	{:else}
-		<p>
-			Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen Sie
-			gerne immer wieder Mal vorbei.
-		</p>
+		<div class="in-progress-wrapper">
+			<p>
+				Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen
+				Sie gerne immer wieder Mal vorbei.
+			</p>
+		</div>
 	{/if}
 </div>
 
@@ -79,6 +81,10 @@
 	.wrapper {
 		padding-inline: var(--outer-spacing);
 		margin-top: 2.5rem;
+
+		.in-progress-wrapper {
+			min-height: 30vh;
+		}
 
 		p {
 			max-width: 35rem;
@@ -94,17 +100,21 @@
 			max-width: var(--content-max-width);
 			margin-inline: auto;
 			display: grid;
-			grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			gap: 1rem;
 			background-color: var(--color-black);
+
 			border-bottom-left-radius: 2.5rem;
 			border-bottom-right-radius: 2.5rem;
 			border: none;
 			box-sizing: border-box;
 
+			padding-top: 0rem;
+
 			label {
 				color: rgba(var(--color-white-rgb), 0.8);
 				display: flex;
+				align-items: center;
 				cursor: pointer;
 
 				&:focus,

@@ -27,7 +27,7 @@ interface Environment {
 
 export const ENVIRONMENT: Environment = {
 	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA],
-	redirectToStartpage: false,
+	redirectToStartpage: true,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
 	personaCardOtherPersonas: true,
