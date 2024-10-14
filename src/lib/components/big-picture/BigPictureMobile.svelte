@@ -267,11 +267,7 @@
 							<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
 								<div class="name-icon-wrapper">
 									{#if student.icon}
-										<Icon
-											svg_color="white"
-											img={base + '/icons/' + student.icon + '.svg'}
-											size="medium"
-										/>
+										<img src={base + '/icons/' + student.icon + '.svg'} alt="" aria-hidden="true" />
 									{/if}
 
 									<p class="student-name">{student.name}</p>
@@ -403,6 +399,14 @@
 					justify-content: center;
 					gap: 0.625rem;
 					padding-inline: 2.75rem;
+
+					img {
+						width: 1.25rem;
+						height: 1.25rem;
+
+						filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(86%)
+							hue-rotate(216deg) brightness(102%) contrast(100%);
+					}
 				}
 
 				span {
@@ -458,7 +462,6 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			margin-inline: 1.875rem;
 
 			margin-block: 0.625rem;
 			font-weight: bold;
@@ -469,6 +472,7 @@
 
 			&.support-option {
 				min-height: 5rem;
+				margin-inline: 1.875rem;
 			}
 		}
 
