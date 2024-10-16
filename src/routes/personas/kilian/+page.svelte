@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import BackgroundInfo from '$lib/components/BackgroundInfo.svelte';
+	import DoItYourself from '$lib/components/DoItYourself.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
@@ -76,7 +76,7 @@
 		manchmal eben rollt.
 	</SpeechBubble>
 
-	<BackgroundInfo content="wheelchair-moving" />
+	<DoItYourself content="wheelchair-moving" />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>
@@ -125,7 +125,7 @@
 		</Text>
 	</TextSection>
 
-	<BackgroundInfo content="wheelchair-sitting" />
+	<DoItYourself content="wheelchair-sitting" />
 
 	<MainHeading heading="Lernmaterial" />
 	<TextSection let:Text>

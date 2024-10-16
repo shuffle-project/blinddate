@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import BackgroundInfo from '$lib/components/BackgroundInfo.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
+	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
@@ -375,7 +375,7 @@
 		{persona}
 	/>
 
-	<BackgroundInfo content="support" />
+	<ImportantNotice content="support" />
 
 	<MainHeading heading="Weitere Informationen" />
 	<ul class="more-info-list">

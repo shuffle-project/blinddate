@@ -36,6 +36,6 @@ export const ENVIRONMENT: Environment = {
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
 	showBigPictureContent: true,
-	allowFeedbackLink: false,
-	feedbackLink: ''
+	allowFeedbackLink: true,
+	feedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de'
 };
