@@ -375,7 +375,7 @@
 		{persona}
 	/>
 
-	<ImportantNotice content="support" />
+	<ImportantNotice content="support" marginTop />
 
 	<MainHeading heading="Weitere Informationen" />
 	<ul class="more-info-list">

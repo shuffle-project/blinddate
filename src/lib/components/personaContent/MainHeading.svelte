@@ -10,6 +10,7 @@
 		| 'Selbstcheck Barrierefreiheit'
 		| 'Weitere Informationen'
 		| 'Allgemeine Informationen'
+		| 'LRS und ADHS'
 		| '' = '';
 
 	let id:
@@ -22,6 +23,7 @@
 		| 'tips'
 		| 'more-info'
 		| 'general'
+		| 'lrs-adhs'
 		| '' = '';
 
 	switch (heading) {
@@ -51,6 +53,9 @@
 			break;
 		case 'Allgemeine Informationen':
 			id = 'general';
+			break;
+		case 'LRS und ADHS':
+			id = 'lrs-adhs';
 			break;
 	}
 </script>

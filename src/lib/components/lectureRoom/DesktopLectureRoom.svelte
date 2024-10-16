@@ -280,6 +280,15 @@
 					}
 				}
 
+				&.oliver {
+					bottom: calc(2.5% - 0.125em);
+					right: 19%;
+
+					img {
+						width: min(17vw, 14rem);
+					}
+				}
+
 				a {
 					position: relative;
 

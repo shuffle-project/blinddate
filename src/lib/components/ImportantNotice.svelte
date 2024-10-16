@@ -1,10 +1,11 @@
 <script lang="ts">
-	type Content = 'support';
+	type Content = 'support' | 'lrs-compensation';
 
 	export let content: Content;
+	export let marginTop = false;
 </script>
 
-<div class="wrapper">
+<div class="wrapper" class:marginTop>
 	<div class="card">
 		<h3>Wichtig</h3>
 		{#if content === 'support'}
@@ -41,16 +42,31 @@
 				.
 			</p>
 		{/if}
+		{#if content === 'lrs-compensation'}
+			<p>
+				Bei der Beantragung des Nachteilsausgleichs ist jedoch zu beachten, dass hier die
+				Legasthenie als psychische oder seelische Erkrankung eingestuft wird. Dies ist aus Sicht der
+				Betroffenen oft nicht zutreffend, da eine Legasthenie zwar mit psychischen Problemen und
+				Stigmatisierung einhergehen kann, jedoch nicht bei allen Legastheniker*innen zu einer
+				psychischen Erkrankung führt. Es kann den Studierenden daher schwerfallen, sich als
+				psychisch krank einstufen zu lassen, um den Nachteilsausgleich zu erhalten.
+			</p>
+		{/if}
 	</div>
 </div>
 
 <style lang="scss">
 	.wrapper {
 		width: 100%;
-		margin-top: 2rem;
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin-top: 2rem;
+
+		&.marginTop {
+			margin-top: 6rem;
+		}
 	}
 
 	.card {
@@ -63,8 +79,6 @@
 		background-color: #f1f0b7;
 		padding: 1.125rem 1.5rem;
 		box-sizing: border-box;
-
-		margin-top: 6rem;
 
 		h3 {
 			margin: 0;
