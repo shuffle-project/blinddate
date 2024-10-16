@@ -6,8 +6,9 @@ export const OLIVER: Persona = {
 	name: 'Oliver',
 	subheading: 'Studieren mit Teilleistungsstörung',
 	tags: [
-		{ content: '?!?!?!?', lang: 'de' },
-		{ content: '?!?!?!?', lang: 'de' }
+		{ content: 'Unterstützungssoftware', lang: 'de' },
+		{ content: 'Konzentration', lang: 'de' },
+		{ content: 'Mitschreibassistenz', lang: 'de' }
 	],
 	age: 31,
 	hobbies: 'Musik jammen und mit Freunden kochen',

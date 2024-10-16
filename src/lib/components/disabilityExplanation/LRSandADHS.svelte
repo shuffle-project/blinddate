@@ -3,14 +3,14 @@
 </script>
 
 <div>
-	<h2>Lese-Rechtschreib-Schwäche (LRS)</h2>
+	<h2>Lese-Rechtschreib-Störung (LRS)</h2>
 	<p>
-		Legasthenie, auch als Lese-Rechtschreib-Schwäche (LRS) bekannt, ist eine spezifische
-		Lernstörung, die durch Schwierigkeiten beim Erlernen des Lesens und Schreibens trotz normaler
-		Intelligenz gekennzeichnet ist. Betroffene Personen haben oft Probleme mit der genauen und
-		flüssigen Worterkennung sowie mit der Rechtschreibung und dem Textverständnis. Diese
-		Schwierigkeiten können das schulische und berufliche Leben erheblich beeinträchtigen, sind
-		jedoch durch spezielle Fördermaßnahmen oft gut zu kompensieren.
+		Legasthenie, auch als Lese-Rechtschreib-Störung bekannt, ist eine spezifische Lernstörung, die
+		durch Schwierigkeiten beim Erlernen des Lesens und Schreibens trotz normaler Intelligenz
+		gekennzeichnet ist. Betroffene Personen haben oft Probleme mit der genauen und flüssigen
+		Worterkennung sowie mit der Rechtschreibung und dem Textverständnis. Diese Schwierigkeiten
+		können das schulische und berufliche Leben erheblich beeinträchtigen, sind jedoch durch
+		spezielle Fördermaßnahmen oft gut zu kompensieren.
 	</p>
 	<Sources
 		sources={[

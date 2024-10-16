@@ -34,7 +34,7 @@
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow: hidden;">
 		<ToolCard title="Unterstützungssoftware: Lesen" image="{base}/icons/lrs_adhs.svg">
-			Für Studierende mit Lese-Rechtschreib-Schwäche kann es hilfreich sein, sich Texte vorlesen zu
+			Für Studierende mit Lese-Rechtschreib-Störung kann es hilfreich sein, sich Texte vorlesen zu
 			lassen. Denn bei ihnen ist das sinnentnehmende Lesen erschwert. Das Umwandeln von Buchstaben
 			in sinnhaften Inhalt dauert unter Umständen länger und kann mit viel Anstrengung verbunden
 			sein. Um beispielsweise Texte zu lesen, die als Foto gespeichert wurden, kann eine
@@ -54,6 +54,24 @@
 	</div>
 
 	<MainHeading heading="LRS und ADHS" />
+
+	<TextSection let:Text>
+		<Text noTopMargin>
+			Die Diagnosen LRS und AD(H)S treten nicht selten gemeinsam auf. ADHS ist die Abkürzung für
+			Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung. Symptome von ADHS können unter anderem
+			fehlende Filter für relevante Informationen und eine starke Ablenkbarkeit durch verschiedene
+			Reize sein. Für weitere Informationen zu Strategien bei ADHS:
+		</Text>
+	</TextSection>
+
+	<Recommendation
+		link="https://gemeinsam-adhs-begegnen.de/leben-mit-adhs/erwachsene/ratgeber/selbstmanagement-im-alltag-mit-adhs/"
+		marginBottom
+	>
+		<svelte:fragment slot="linkText">Selbstmanagement im Alltag mit einer ADHS</svelte:fragment>
+		<svelte:fragment slot="textAfter">von Gemeinsam ADHS Begegnen</svelte:fragment>
+	</Recommendation>
+
 	<SpeechBubble {persona} audio={base + ''}>
 		Für mich fängt die erste Hürde schon bei der Anmeldung auf der Homepage der Uni an. Das
 		Einloggen mit Codes oder Kennwörtern ist für mich richtig schwer, weil die Buchstaben immer
