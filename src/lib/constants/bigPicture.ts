@@ -109,7 +109,7 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 				'Ich ziehe mir aus den Untertiteln das Transkript, um gleich damit lernen zu können.',
 			'documents-before-lecture': 'Ich bin gerne vorbereitet, um dann Fragen stellen zu können.',
 			'format-templates':
-				'Ich will lernen und keine Zeit verschwenden. Wenn ich aber Daten von Folien einzeln in meine Excel-Datei kopieren muss, weil die "Tabelle" des Profs nur wie eine aussieht, aber keine ist, passiert genau das.'
+				'Ich will lernen und keine Zeit verschwenden. Wenn ich aber Daten von Folien einzeln in meine Excel-Datei kopieren muss, weil die "Tabelle" nur wie eine aussieht, passiert genau das.'
 		}
 	},
 	{
@@ -137,7 +137,7 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 			subtitles:
 				'Umweltreize lenken mich oft ab. Deshalb trage ich fast immer Geräusch-unterdrückende Kopfhörer. Wenn Videos Untertitel haben, lese ich lieber, anstatt noch mehr Geräusche zu hören.',
 			'recording-lecture':
-				'Wenn ich weiß, dass eine Veranstaltung oder etwas Ähnliches an der Uni ist, gehe ich nicht hin. Dann sind dort noch mehr Menschen, das überreizt mich. Aufnahmen der Veranstaltungen lassen mich nichts verpassen.',
+				'Wenn ich weiß, dass eine besondere Veranstaltung oder etwas Ähnliches an der Uni ist, gehe ich nicht hin. Dann sind dort noch mehr Menschen, das überreizt mich. Aufnahmen der Veranstaltungen lassen mich nichts verpassen.',
 			'transparency-of-requirements':
 				'Gerade zu Beginn eines Semesters gibt es sehr viele wichtige Informationen. Es fällt mir schwer, alles immer zu filtern. Klar kommunizierte Anforderungen und Regeln helfen mir da sehr.'
 		}
@@ -205,7 +205,7 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 		active: false,
 		benefitsFrom: {
 			subtitles:
-				'Fehlerhafte Untertitel verwirren mich oft und ich verbrauche sehr viel Zeit, herauszufinden, welche Wörter tatsächlich gemeint sind. Bis ich damit fertig bin, sind die Dozierenden schon dreimal durch mit dem Inhalt und ich muss alles nacharbeiten.',
+				'Fehlerhafte Untertitel verwirren mich oft und ich brauche sehr viel Zeit, herauszufinden, welche Wörter tatsächlich gemeint sind. Bis ich damit fertig bin, sind die Dozierenden schon dreimal durch mit dem Inhalt und ich muss alles nacharbeiten.',
 			'documents-before-lecture':
 				'Da ich während der Veranstaltung nicht jedes Wort wahrnehme oder alles verstehe, hilft es mir sehr, die Unterlagen im Vorfeld anzusehen. So kann ich mich besser auf das Thema vorbereiten und den Kontext während der Veranstaltung leichter erfassen.',
 			'recording-lecture':
@@ -226,7 +226,7 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 			'regular-breaks':
 				'Pausen sind für mich sehr wichtig. Ich muss oft mehr Energie für Bewegungen aufwenden als andere. Pausen helfen auch, Verspannungen zu lösen, Muskelkrämpfe zu verhindern und Überlastung zu vermeiden.',
 			'format-templates':
-				'Mein Screenreader, und infolgedessen auch ich, benötigen Formatvorlagen. Ohne sie wird der Albtraum zur traurigen Realität: Unübersichltiche Layouts und der Kampf mit der Navigation durch das Dokument.',
+				'Mein Screenreader und ich benötigen Formatvorlagen. Ohne sie wird der Albtraum zur traurigen Realität: Unübersichltiche Layouts und ein Kampf mit der Navigation durch das Dokument.',
 			'ocr-scans':
 				'Weil mir das Sitzen im Rollstuhl oder auf dem Schreibtischstuhl schnell wehtut, muss ich immer wieder die Position wechseln. Wenn ich mir Texte auch vorlesen lassen kann, weil sie richtig eingescannt wurden, kann ich auch mal im Bett lernen.',
 			'transparency-of-requirements':
