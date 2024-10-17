@@ -2,6 +2,7 @@
 	import { base } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
+	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
@@ -34,12 +35,33 @@
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow: hidden;">
 		<ToolCard title="Unterstützungssoftware: Lesen" image="{base}/icons/lrs_adhs.svg">
-			Für Studierende mit Lese-Rechtschreib-Störung kann es hilfreich sein, sich Texte vorlesen zu
-			lassen. Denn bei ihnen ist das sinnentnehmende Lesen erschwert. Das Umwandeln von Buchstaben
-			in sinnhaften Inhalt dauert unter Umständen länger und kann mit viel Anstrengung verbunden
-			sein. Um beispielsweise Texte zu lesen, die als Foto gespeichert wurden, kann eine
-			Bild-zu-Text-Software – sogenannte OCR-Software – genutzt werden, um sich dann den Text
-			vorlesen zu lassen.
+			<span>Für Studierende mit</span>
+			<InfoBox
+				term="Lese-Rechtschreib-Störung"
+				sources={[
+					{
+						title:
+							'Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition (DSM-5), American Psychiatric Association.'
+					}
+				]}
+			>
+				<p>
+					Legasthenie, auch als <strong>Lese-Rechtschreib-Störung</strong> bekannt, ist eine spezifische
+					Lernstörung, die durch Schwierigkeiten beim Erlernen des Lesens und Schreibens trotz normaler
+					Intelligenz gekennzeichnet ist. Betroffene Personen haben oft Probleme mit der genauen und
+					flüssigen Worterkennung sowie mit der Rechtschreibung und dem Textverständnis. Diese Schwierigkeiten
+					können das schulische und berufliche Leben erheblich beeinträchtigen, sind jedoch durch spezielle
+					Fördermaßnahmen oft gut zu kompensieren.
+				</p>
+			</InfoBox>
+
+			<span
+				>kann es hilfreich sein, sich Texte vorlesen zu lassen. Denn bei ihnen ist das
+				sinnentnehmende Lesen erschwert. Das Umwandeln von Buchstaben in sinnhaften Inhalt dauert
+				unter Umständen länger und kann mit viel Anstrengung verbunden sein. Um beispielsweise Texte
+				zu lesen, die als Foto gespeichert wurden, kann eine Bild-zu-Text-Software – sogenannte
+				OCR-Software – genutzt werden, um sich dann den Text vorlesen zu lassen.</span
+			>
 		</ToolCard>
 
 		<ToolCard title="Unterstützungssoftware: Schreiben" image="{base}/icons/lrs_adhs.svg">
@@ -196,8 +218,8 @@
 	<ImportantNotice content="lrs-compensation" />
 
 	<FlipCard
-		front="Ich mache nicht dauernd Flüchtig-keitsfehler"
-		back="LRS und ADHS sind diagnostizierbare Störungen und gehen mit weiteren Symptome einher"
+		front="Ich habe nicht zu wenig geübt!"
+		back="LRS hat neurologische Ursachen und hat nichts mit mangelndem Fleiß zu tun!"
 		{persona}
 	/>
 
