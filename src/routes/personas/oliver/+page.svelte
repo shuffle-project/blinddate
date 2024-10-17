@@ -292,7 +292,7 @@
 				link="https://www.hs-emden-leer.de/generische-seiten/meldung?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6591&cHash=d4003d3c1d4fca9e3134cd972e85e248"
 			>
 				<svelte:fragment slot="linkText"
-					>Efahrungsbericht „Mit Chaos im Kopf neue Umweltlösungen finden“
+					>Erfahrungsbericht „Mit Chaos im Kopf neue Umweltlösungen finden“
 				</svelte:fragment>
 				<svelte:fragment slot="textAfter">von der Hochschule Emden/Leer</svelte:fragment>
 			</Recommendation>
