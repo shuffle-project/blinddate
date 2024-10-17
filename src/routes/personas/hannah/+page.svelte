@@ -403,7 +403,7 @@
 		checks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
-			'Ich verwende das Mehrsinne-Prinzip und erstelle Material bspw. auditiv und visuell',
+			'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Gesprochenes kann bspw. durch Untertitel oder Transkripte gelesen werden',
 			'Ich spreche deutlich und zeige mein Mundbild gut sichtbar',
 			'Damit mich alle gut verstehen, nutze ich ein externes Mikrofon',
 			'Um Störgeräusche zu vermeiden, schließe ich die Fenster',

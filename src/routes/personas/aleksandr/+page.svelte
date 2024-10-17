@@ -415,7 +415,7 @@
 			'Ich achte auf eine möglichst reizarme Umgebung in meinen Veranstaltungen (keine Störgeräusche, blinkende Lichter etc.)',
 			'Ich stelle den Studierenden frei, ob sie Aufgaben in Gruppen oder einzeln bearbeiten',
 			'Ich verfasse verständliche und eindeutige Aufgabenstellungen',
-			'Ich verweise auf Unterstützungs-möglichkeiten, Mentoring-Programme oder Studierenden-Gruppen zum Austausch',
+			'Ich verweise auf Unterstützungsmöglichkeiten oder Studierendengruppen zum Austausch, z.B. auf meinen Veranstaltungsfolien',
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 		{persona}

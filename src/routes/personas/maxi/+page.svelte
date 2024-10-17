@@ -365,9 +365,9 @@
 	<Checklist
 		checks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
-			'Ich mache Studierende auf Unterstützungsangebote aufmerksam, z.B. auf Veranstaltungsfolien oder in Informationen',
+			'Ich verweise auf Unterstützungsmöglichkeiten oder Studierendengruppen zum Austausch, z.B. auf meinen Veranstaltungsfolien',
 			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit psychischen Problemen wenden können',
-			'Ich stelle meine Lernmaterialien vorab und digital zur Verfügung',
+			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an der Veranstaltung',
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung',
 			'Ich mache ausreichend Pausen in langen Veranstaltungen'

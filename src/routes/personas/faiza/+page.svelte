@@ -297,7 +297,7 @@
 			'Ich gebe in der Veranstaltungsbeschreibung die Prüfungsform, die Struktur sowie Informationen zur Anwesenheitspflicht an',
 			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit Pflegeverantwortung wenden können',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an der Veranstaltung',
-			'Ich gehe auf individuelle Bedarfe von Studierenden mit familiären Verpflichtungen ein und stelle alternative Prüfformate zur Verfügung'
+			'Ich gehe auf individuelle Bedarfe von Studierenden ein und stelle alternative Prüfformate zur Verfügung'
 		]}
 		{persona}
 	/>

@@ -356,10 +356,10 @@
 		checks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
-			'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann gelesen oder mithilfe eines Screenreaders gehört werden, gesprochene Texte haben Untertitel oder ein Transkript',
+			'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Ein Text kann bspw. nicht nur gelesen, sondern auch mithilfe eines Screenreaders gehört werden',
 			'Ich beschreibe Bilder und Grafiken und erstelle Alternativtexte',
 			'Ich überprüfe die Barrierefreiheit meiner Dokumente mit den eingebauten Prüfhilfen (z.B. in MS Office oder LibreOffice)',
-			'Ich zeichne meine Vorlesungen auf oder gestatte eine Aufzeichnung',
+			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnung',
 			'Ich achte darauf, dass Scans von Dokumenten qualitativ hochwertig und mit einer OCR Software (Texterkennungssoftware) aufgenommen sind',
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}

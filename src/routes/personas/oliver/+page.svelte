@@ -234,12 +234,12 @@
 	<Checklist
 		checks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
-			'Ich stelle meine Lernmaterialien vorab und digital zur Verfügung',
+			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 			'Ich verfasse verständliche und eindeutige Aufgabenstellungen',
-			'Ich zeichne meine Vorlesung auf oder gestatte eine Aufzeichnung',
+			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnung',
 			'Ich achte darauf, dass Scans von Dokumenten qualitativ hochwertig und mit einer OCR Software (Texterkennungssoftware) aufgenommen sind',
 			'Ich kommuniziere Abgabefristen und wichtige Termine frühzeitig',
-			'Ich biete unterschiedliche Prüfformate an',
+			'Ich gehe auf individuelle Bedarfe von Studierenden ein und stelle alternative Prüfformate zur Verfügung',
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 		{persona}
