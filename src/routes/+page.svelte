@@ -64,6 +64,12 @@
 <main class="content-wrapper" id="content">
 	<div class="upper-content">
 		<h1 class="title">Eine Hochschule für alle</h1>
+
+		{#if ENVIRONMENT.allowBigPictureAd}
+			<!-- <div> -->
+			<a class="big-picture-ad" href="{base}/große-ganze"> Jetzt mit dem großen Ganzen </a>
+			<!-- </div> -->
+		{/if}
 		<p class="subtitle">
 			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren
 			Studienalltag. Konkrete Handlungsempfehlungen helfen Ihnen, Barrieren in der eigenen Lehre
@@ -82,6 +88,25 @@
 <Footer />
 
 <style lang="scss">
+	.big-picture-ad {
+		font-size: 1rem;
+		// background-color: rgba(var(--color-white-rgb), 0.9);
+		background-color: var(--color-green);
+		color: var(--color-black);
+		text-decoration: none;
+		padding: 0.375rem 0.625rem;
+		border-radius: 2rem;
+		margin-top: 1.25rem;
+		display: block;
+		width: fit-content;
+
+		&:hover,
+		&:focus {
+			outline: 2px solid var(--color-white);
+			outline-offset: 2px;
+		}
+	}
+
 	.feedback {
 		padding: 1rem 0;
 		display: flex;
@@ -91,8 +116,10 @@
 		a {
 			background-color: var(--color-white);
 			padding: 0.375rem 0.625rem;
-			border-radius: 1rem;
 			color: var(--color-black);
+
+			font-weight: bold;
+			border-radius: 2rem;
 			text-decoration: none;
 			cursor: pointer;
 
@@ -161,6 +188,10 @@
 		.subtitle,
 		.call-to-action {
 			text-align: center;
+		}
+
+		.big-picture-ad {
+			margin-inline: auto;
 		}
 
 		.subtitle {

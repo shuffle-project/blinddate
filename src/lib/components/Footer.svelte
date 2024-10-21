@@ -205,6 +205,7 @@
 	.feedback-link {
 		background-color: var(--color-white);
 		padding: 0.375rem 0.625rem;
+		font-weight: bold;
 		border-radius: 1rem;
 		cursor: pointer;
 

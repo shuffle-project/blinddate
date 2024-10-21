@@ -24,6 +24,7 @@ interface Environment {
 	showBigPictureContent: boolean;
 	allowFeedbackLink: boolean;
 	feedbackLink: string;
+	allowBigPictureAd: boolean;
 }
 
 export const ENVIRONMENT: Environment = {
@@ -38,5 +39,6 @@ export const ENVIRONMENT: Environment = {
 	displayLowerStartpageContent: true,
 	showBigPictureContent: true,
 	allowFeedbackLink: true,
-	feedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de'
+	feedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
+	allowBigPictureAd: true
 };
