@@ -182,6 +182,14 @@
 </script>
 
 <div class="wrapper">
+	<h2 class="sr-only">Wichtiger Screenreader-Hinweis</h2>
+	<p class="sr-only">
+		Bei der folgenden Karussell-Komponente kann es zu Fehlern kommen, insofern Sie Firefox auf einem
+		Mac-Gerät (Laptop oder Computer) benutzen. Die Ausgangsoption "Keine Auswahl" sowie die
+		darauffolgende Option "Korrekte Untertitel" werden nicht vorgelesen. Benutzen Sie bitte Chrome
+		oder Safari.
+	</p>
+
 	<div class="top-card">
 		<div class="lecture-room">
 			<BigLectureRoom mobileView selectedOption={selectedSupportOption} />
@@ -348,6 +356,7 @@
 				&::after {
 					content: url('/decorations/mobile-big-picture-indicator.svg');
 					position: absolute;
+					transform: translateY(-1px);
 					inset: 0;
 					top: auto;
 					bottom: -1rem;
@@ -380,7 +389,7 @@
 					bottom: auto;
 					height: 1rem;
 					display: flex;
-					transform: rotate(180deg);
+					transform: rotate(180deg) translateY(-1px);
 					justify-content: center;
 				}
 			}

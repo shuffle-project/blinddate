@@ -109,7 +109,8 @@
 			border: none;
 			box-sizing: border-box;
 
-			padding-top: 0rem;
+			padding: 0 1rem 1rem;
+			transform: translateY(-0.5rem);
 
 			label {
 				color: rgba(var(--color-white-rgb), 0.8);
