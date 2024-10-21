@@ -67,7 +67,7 @@
 
 		{#if ENVIRONMENT.allowBigPictureAd}
 			<!-- <div> -->
-			<a class="big-picture-ad" href="{base}/große-ganze"> Jetzt mit dem großen Ganzen </a>
+			<a class="big-picture-ad" href="{base}/große-ganze"> Neu! Das große Ganze </a>
 			<!-- </div> -->
 		{/if}
 		<p class="subtitle">

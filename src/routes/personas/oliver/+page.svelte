@@ -34,7 +34,7 @@
 
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow: hidden;">
-		<ToolCard title="Unterstützungssoftware: Lesen" image="{base}/icons/lrs_adhs.svg">
+		<ToolCard title="Unterstützungssoftware: Lesen" image="{base}/tools/screenreader.svg">
 			<span>Für Studierende mit</span>
 			<InfoBox
 				term="Lese-Rechtschreib-Störung"
@@ -64,7 +64,7 @@
 			>
 		</ToolCard>
 
-		<ToolCard title="Unterstützungssoftware: Schreiben" image="{base}/icons/lrs_adhs.svg">
+		<ToolCard title="Unterstützungssoftware: Schreiben" image="{base}/tools/voice-recording.svg">
 			Neben Schwierigkeiten beim sinnentnehmenden Lesen kann auch die Rechtschreibung, die
 			Zeichensetzung, das Anfertigen von schriftlichen Texten in kurzer Zeit oder auch das Eingeben
 			von Zahlen und Codes eine Hürde darstellen. Mithilfe von Schreibprogrammen mit automatischer
@@ -72,6 +72,11 @@
 			die inhaltliche Ebene konzentrieren zu können. Und mithilfe von Diktiersoftware (TTS) können
 			Notizen schnell verfasst werden, ohne selbst schreiben und sich auf Rechtschreibung
 			konzentrieren zu müssen.
+		</ToolCard>
+
+		<ToolCard title="Energiemanagement" image="{base}/tools/regular-breaks.svg">
+			Auch das regelmäßige Einlegen von Pausen, um beispielsweise das visuelle „Verschwimmen“ von
+			Buchstaben zu vermeiden, kann eine Strategie für Studierende mit Legasthenie sein.
 		</ToolCard>
 	</div>
 
