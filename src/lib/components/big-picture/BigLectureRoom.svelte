@@ -12,7 +12,7 @@
 	export let selectedOption: SupportOptionId | '' = '';
 	export let mobileView = false;
 
-	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS;
+	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS.reverse();
 	let selectedStudent: StudentId | undefined = undefined;
 	let selectedSpeechBubbleText = '';
 
@@ -40,6 +40,8 @@
 
 	function handleSpeechbubbleClose() {
 		const studentButton = document.getElementById(`student-${selectedStudent}-button`);
+		console.log('handleSpeechbubbleClose');
+		// TODO
 		studentButton?.focus();
 		selectedStudent = undefined;
 	}
@@ -84,14 +86,14 @@
 			return;
 		}
 
-		handleSpeechbubbleClose();
+		selectedStudent = undefined;
 	}
 </script>
 
 <div class="wrapper">
 	{#if !mobileView}
 		<div
-			aria-hidden={highlightedStudents === 0}
+			aria-hidden="true"
 			class="dark-overlay"
 			class:not-hidden={selectedOption !== '' ||
 				(highlightedStudents > 0 && highlightedStudents < BIG_PICTURE_STUDENTS.length)}
@@ -122,7 +124,7 @@
 						tabindex={student.active ? 0 : -1}
 						on:click={() => handleSelectStudent(student.id)}
 						id="student-{student.id}-button"
-						aria-pressed={student.id === selectedStudent}
+						aria-haspopup={student.active ? 'dialog' : 'false'}
 						on:focusout={() => (selectedSpeechBubbleText = '')}
 					>
 						<div class="student-info-wrapper" aria-hidden="true">
@@ -163,9 +165,12 @@
 		class="big-picture-room"
 		src="{base}/decorations/big-picture-room.svg"
 		alt=""
-		aria-hidden="true"
+		aria-hidden={highlightedStudents !== 0 || mobileView}
 		width="1350"
 		height="980"
+		aria-label={highlightedStudents === 0 && !mobileView
+			? 'Vorlesungsaal mit Studierenden. Wählen Sie weiter unten eine Unterstützungsmaßname aus und erfahren Sie hier, wie die Studierenden davon profitieren.'
+			: ''}
 	/>
 </div>
 

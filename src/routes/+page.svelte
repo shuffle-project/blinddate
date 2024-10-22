@@ -66,9 +66,7 @@
 		<h1 class="title">Eine Hochschule für alle</h1>
 
 		{#if ENVIRONMENT.allowBigPictureAd}
-			<!-- <div> -->
 			<a class="big-picture-ad" href="{base}/große-ganze"> Neu! Das große Ganze </a>
-			<!-- </div> -->
 		{/if}
 		<p class="subtitle">
 			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren
@@ -102,7 +100,7 @@
 
 		&:hover,
 		&:focus {
-			outline: 2px solid var(--color-white);
+			outline: 2px solid var(--color-green);
 			outline-offset: 2px;
 		}
 	}

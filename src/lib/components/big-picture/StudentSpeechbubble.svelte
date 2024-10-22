@@ -26,7 +26,7 @@
 	<div class="speechbubble-wrapper {studentName}">
 		<div
 			class="speechbubble"
-			role="region"
+			role="dialog"
 			aria-label="{studentName} Sprechblase"
 			on:keyup={(e) => handleKeyPress(e)}
 			bind:this={speechbubble}
