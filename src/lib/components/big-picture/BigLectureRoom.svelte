@@ -422,7 +422,10 @@
 			right: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(var(--color-black-rgb), 0.5);
+			background-image: radial-gradient(
+				rgba(var(--color-black-rgb), 0.5),
+				rgba(var(--color-black-rgb), 0.7)
+			);
 			// pointer-events: none;
 			transition: opacity 0.3s ease-in-out;
 			z-index: 2;
