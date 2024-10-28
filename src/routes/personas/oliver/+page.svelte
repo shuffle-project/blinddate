@@ -181,7 +181,7 @@
 	<MainHeading heading="Interaktion und Kommunikation" />
 	<TextSection let:Text>
 		<Text noTopMargin>
-			Studierende mit LRS oder ADHS haben, wie andere Studierende mit Beeinträchtigungen auch,
+			Studierende mit LRS oder ADHS haben, wie bei anderen Studierenden mit Beeinträchtigungen auch,
 			häufig mit Vorurteilen zu kämpfen. Viele Studierende haben sich im Studium verschiedene
 			Strategien angeeignet, sodass die Auswirkungen von LRS oder ADHS für Außenstehende kaum oder
 			nicht sichtbar sind. Daher werden die Studierenden eventuell nicht ernst genommen, wenn sie
@@ -209,7 +209,7 @@
 		</Text>
 
 		<Text>
-			Mithilfe von Nachteilsausgleichen können Studiereden mit LRS oder ADHS unterstützt werden.
+			Mithilfe von Nachteilsausgleichen können Studierede mit LRS oder ADHS unterstützt werden.
 			Diese können beispielsweise eine Zeitzugabe für die Abgabe von schriftlichen Ausarbeitungen
 			oder einen separaten Raum, um Ablenkungen zu reduzieren, beinhalten. Außerdem können mündliche
 			Prüfungen oder schriftliche Prüfungen mit Multiple-Choice-Antworten helfen, den Stress, der
