@@ -2,7 +2,42 @@
 	import { base } from '$app/paths';
 	import Footer from '$lib/components/Footer.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
+	import { HOSTNAME } from '$lib/constants/hostname';
+
+	import { MetaTags } from 'svelte-meta-tags';
 </script>
+
+<MetaTags
+	title="Barrierefreies BlindDate"
+	description="Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre."
+	additionalMetaTags={[
+		{
+			property: 'keywords',
+			content:
+				'Barrierefreiheit, Inklusion, Vorlesung, Lehre, Studierende, Hochschule, Studium und Behinderung, Didaktik, Barrierefreie Lehre'
+		}
+	]}
+	openGraph={{
+		url: HOSTNAME,
+		title: 'Barrierefreies BlindDate',
+		description:
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre.',
+		siteName: 'BlindDate',
+		images: [
+			{
+				url: `${HOSTNAME}decorations/mainpage-teaser.jpg`
+			}
+		]
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+
+		title: 'Barrierefreies BlindDate',
+		description:
+			'Persönliche Erfahrungen von Studierenden mit Beeinträchtigung und Tipps zur Umsetzung barrierefreier (Hochschul) Lehre.',
+		image: `${HOSTNAME}decorations/mainpage-teaser.jpg`
+	}}
+/>
 
 <div class="background-black">
 	<header>
