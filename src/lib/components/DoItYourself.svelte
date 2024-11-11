@@ -51,7 +51,7 @@
 				<span aria-hidden="true" class="key">
 					<Icon svg_color="white" img="enter-key" />
 				</span>
-				können Sie einen Button betätigen oder einen Link zu öffnen.
+				können Sie einen Button betätigen oder einen Link öffnen.
 			{/if}
 			{#if content === 'support'}
 				<p>
