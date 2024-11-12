@@ -22,5 +22,46 @@ export const OLIVER: Persona = {
 	visualDescription: '',
 	metaDescription: '',
 	metaKeywords:
-		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, ADHS, Legasthenie, Lese-Rechtschreib-Schwäche, Hyperaktivität, Studium mit ADHS, Neurodiversität'
+		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, ADHS, Legasthenie, Lese-Rechtschreib-Schwäche, Hyperaktivität, Studium mit ADHS, Neurodiversität',
+	facts: [
+		{
+			source: {
+				title: 'Die Studierendenbefragung in Deutschland: best3',
+				titleLang: 'de',
+				url: 'https://www.studierendenwerke.de/beitrag/die-studierendenbefragung-in-deutschland-best3-studieren-mit-einer-gesundheitlichen-beeintraechtigung'
+			},
+			content: {
+				type: 'boldText',
+				boldText: '3,7%',
+				normalText:
+					'der Studierenden haben eine Teilleistungsstörung (=Legasthenie oder Dyskalkulie)'
+			}
+		},
+		{
+			source: {
+				title: 'Die Studierendenbefragung in Deutschland: best3',
+				titleLang: 'de',
+				url: 'https://www.studierendenwerke.de/beitrag/die-studierendenbefragung-in-deutschland-best3-studieren-mit-einer-gesundheitlichen-beeintraechtigung'
+			},
+			content: {
+				type: 'boldText',
+				boldText: '52,4%',
+				normalText:
+					'der Studierenden mit Teilleistungsstörung geben an, dass die Symptome von außen durch Dritte nicht wahrnehmbar sind'
+			}
+		},
+		{
+			source: {
+				title: 'Die Studierendenbefragung in Deutschland: best3',
+				titleLang: 'de',
+				url: 'https://www.studierendenwerke.de/beitrag/die-studierendenbefragung-in-deutschland-best3-studieren-mit-einer-gesundheitlichen-beeintraechtigung'
+			},
+			content: {
+				type: 'boldText',
+				boldText: '37,8%',
+				normalText:
+					'der Studierenden mit Teilleistungsstörung berichten, dass ihnen Leistungen nicht zugetraut wurden'
+			}
+		}
+	]
 };

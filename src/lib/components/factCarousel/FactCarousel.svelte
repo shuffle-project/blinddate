@@ -4,6 +4,7 @@
 
 	import type { FactSlide } from '$lib/interfaces/factSlide.interface';
 	import Icon from '../Icon.svelte';
+	import BoldFact from './BoldFact.svelte';
 	import Enumeration from './Enumeration.svelte';
 
 	let carousel: Splide;
@@ -38,8 +39,17 @@
 
 	let componentHasFocus = false;
 
-	$: ariaLiveText =
-		facts[carouselSelectedIndex].text + ', ' + (carouselSelectedIndex + 1) + ' von ' + facts.length;
+	let ariaLiveText = '';
+
+	$: {
+		const content = facts[carouselSelectedIndex].content;
+		const text =
+			content.type === 'enumeration'
+				? `${content.text}, `
+				: `${content.boldText} ${content.normalText}, `;
+
+		ariaLiveText = text + (carouselSelectedIndex + 1) + ' von ' + facts.length;
+	}
 
 	function moveSlide(direction: string) {
 		if (!carousel) return;
@@ -76,13 +86,23 @@
 					{#each facts as fact, i}
 						<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
 							<div class="fact-slide">
-								<Enumeration total={fact.decoration.total} amount={fact.decoration.amount} />
-								<div class="text-content">
-									<p>{@html fact.text}</p>
-									<a class="focus-indicator" href={fact.source.url} lang={fact.source.titleLang}
-										>{fact.source.title}</a
-									>
-								</div>
+								{#if fact.content.type === 'enumeration'}
+									<Enumeration
+										total={fact.content.decoration.total}
+										amount={fact.content.decoration.amount}
+									/>
+									<div class="text-content">
+										<p>{@html fact.content.text}</p>
+									</div>
+								{/if}
+
+								{#if fact.content.type === 'boldText'}
+									<BoldFact boldText={fact.content.boldText} normalText={fact.content.normalText} />
+								{/if}
+
+								<a class="focus-indicator" href={fact.source.url} lang={fact.source.titleLang}
+									>{fact.source.title}</a
+								>
 							</div>
 						</SplideSlide>
 					{/each}

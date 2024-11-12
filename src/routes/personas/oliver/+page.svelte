@@ -8,6 +8,7 @@
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import FactCarousel from '$lib/components/factCarousel/FactCarousel.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import { OLIVER } from '$lib/constants/oliver';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
@@ -78,6 +79,13 @@
 			Auch das regelmäßige Einlegen von Pausen, um beispielsweise das visuelle „Verschwimmen“ von
 			Buchstaben zu vermeiden, kann eine Strategie für Studierende mit Legasthenie sein.
 		</ToolCard>
+
+		<ToolCard title="Studienorganisation" image="{base}/tools/regular-breaks.svg">
+			LRS und AD(H)S können sich auch auf die Selbstorganisation im Studium auswirken. Deshalb kann
+			eine Unterstützung durch Studienbüros, Support-Zentren oder Study-Buddy-Programme an
+			Hochschulen für Studierende mit ADHS eine sinnvolle Strategie zur Organisation des Studiums
+			sein.</ToolCard
+		>
 	</div>
 
 	<MainHeading heading="LRS und ADHS" />
@@ -120,6 +128,8 @@
 		recht müde. Seit ein paar Semestern gibt es einen Ruheraum an der Uni mit bequemen Stühlen und
 		wenig Ablenkung. Da chille ich sehr gerne zwischen den Vorlesungen.
 	</SpeechBubble>
+
+	<FactCarousel facts={persona.facts} />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection let:Text>

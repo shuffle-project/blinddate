@@ -27,40 +27,52 @@ export const FAIZA: Persona = {
 		'Barrierefreiheit, Studium mit Kind, familienfreundliche Hochschule, Mutter, Vater, Eltern, Familie und Studium, Pflegeverantwortung',
 	facts: [
 		{
-			text: '20 Prozent der Studierenden haben eine Pflegeverantwortung <br/> (8% Kinder, 12% ältere Menschen) ',
+			content: {
+				type: 'enumeration',
+				text: '20 Prozent der Studierenden haben eine Pflegeverantwortung <br/> (8% Kinder, 12% ältere Menschen) ',
+				decoration: { amount: 20, total: 100 }
+			},
 			source: {
 				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
 				titleLang: 'de',
 				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
-			},
-			decoration: { amount: 20, total: 100 }
+			}
 		},
 		{
-			text: 'Fünf Prozent der Studierenden, die ihr Studium unterbrochen haben, taten dies aufgrund der Pflege von Angehörigen (Stand 2016)',
+			content: {
+				type: 'enumeration',
+				text: 'Fünf Prozent der Studierenden, die ihr Studium unterbrochen haben, taten dies aufgrund der Pflege von Angehörigen (Stand 2016)',
+				decoration: { amount: 5, total: 100 }
+			},
 			source: {
 				title: 'Die Studierendenbefragung in Deutschland: 21. Sozialerhebung',
 				titleLang: 'de',
 				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31338_21_Sozialerhebung_2016_Zusammenfassung.pdf?__blob=publicationFile&v=3'
-			},
-			decoration: { amount: 5, total: 100 }
+			}
 		},
 		{
-			text: 'Fast 30 Prozent der Studierenden mit Pflegeverantwortung wählen ein Teilzeitstudium (16,7% Kinder, 13% ältere Menschen)',
+			content: {
+				type: 'enumeration',
+				text: 'Fast 30 Prozent der Studierenden mit Pflegeverantwortung wählen ein Teilzeitstudium (16,7% Kinder, 13% ältere Menschen)',
+				decoration: { amount: 30, total: 100 }
+			},
 			source: {
 				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
 				titleLang: 'de',
 				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
-			},
-			decoration: { amount: 30, total: 100 }
+			}
 		},
 		{
-			text: 'Über 80 % der Kinderlosen studieren in Präsenz, aber nur 55 % der Studierenden mit Kind(ern)',
+			content: {
+				type: 'enumeration',
+				text: 'Über 80 % der Kinderlosen studieren in Präsenz, aber nur 55 % der Studierenden mit Kind(ern)',
+				decoration: { amount: 55, total: 100 }
+			},
 			source: {
 				title: 'Die Studierendenbefragung in Deutschland: 22. Sozialerhebung',
 				titleLang: 'de',
 				url: 'https://www.bmbf.de/SharedDocs/Publikationen/de/bmbf/4/31790_22_Sozialerhebung_2021.html'
-			},
-			decoration: { amount: 55, total: 100 }
+			}
 		}
 	]
 };

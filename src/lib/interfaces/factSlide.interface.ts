@@ -3,12 +3,23 @@ export interface Enumeration {
 	total: number;
 }
 
-export interface FactSlide {
+export interface EnumerationFactSlide {
+	type: 'enumeration';
 	text: string;
+	decoration: Enumeration;
+}
+
+export interface BoldTextFactSlide {
+	type: 'boldText';
+	boldText: string;
+	normalText: string;
+}
+
+export interface FactSlide {
 	source: {
 		title: string;
 		titleLang: 'de' | 'en';
 		url: string;
 	};
-	decoration: Enumeration;
+	content: EnumerationFactSlide | BoldTextFactSlide;
 }
