@@ -108,17 +108,17 @@
 	</Recommendation>
 
 	<SpeechBubble {persona} audio={base + ''}>
-		Für mich fängt die erste Hürde schon bei der Anmeldung auf der Homepage der Uni an. Das
-		Einloggen mit Codes oder Kennwörtern ist für mich richtig schwer, weil die Buchstaben immer
-		wieder zu einem Brei verschwimmen. Ich weiß nicht, wie oft ich schon diverse Support-Center
-		kontaktieren musste, weil ich meine Passwörter auf Webseiten mehrfach falsch eingegeben habe.
+		Ich stoße schon bei der Anmeldung auf der Homepage der Uni auf die erste Hürde. Das Einloggen
+		mit Codes oder Kennwörtern ist für mich richtig schwer, weil die Buchstaben immer wieder zu
+		einem Brei verschwimmen. Ich weiß nicht, wie oft ich schon diverse Support-Center kontaktieren
+		musste, weil ich meine Passwörter auf Webseiten mehrfach falsch eingegeben habe.
 	</SpeechBubble>
 	<SpeechBubble {persona} audio={base + ''}>
 		Ich nutze eine App, die mich beim Zeitmanagement etwas unterstützt. Sie blockiert beispielsweise
 		für eine gewisse Zeit andere Apps auf meinem Handy, von denen ich mich leicht ablenken lasse.
-		Außerdem kann ich mir damit einen Zeitplan fürs Lernen machen, damit nicht in Zeitnot komme. Bei
-		mir dauert halt alles länger. Das nervt mich selbst sehr, aber ich habe mir in den letzten vier
-		Jahren einige Strategien angeeignet, die mir schon helfen. Viele Strategien habe ich durch
+		Außerdem kann ich mir damit einen Zeitplan fürs Lernen machen, damit ich nicht in Zeitnot komme.
+		Bei mir dauert halt alles länger. Das nervt mich selbst sehr, aber ich habe mir in den letzten
+		vier Jahren einige Strategien angeeignet, die mir schon helfen. Viele Strategien habe ich durch
 		andere Studierende mit ADHS und LRS gelernt. Wir haben hier eine kleine Gruppe an der Uni
 		Würzburg, in der wir uns immer wieder austauschen können.
 	</SpeechBubble>
@@ -140,10 +140,10 @@
 			Dafür können Studierende mit LRS, die einen Nachteilsausgleich beantragt haben, beispielsweise
 			durch eine Mitschreibassistenz unterstützt werden. Außerdem kann die Aufzeichnung einer
 			Veranstaltung - ob durch die Dozierenden selbst oder in Absprache mit den Dozierenden durch
-			die Studentin oder den Studenten - hilfreich sein, um diese im Nachgang an die Veranstaltung
-			erneut anzuhören oder in eine Textdatei umzuwandeln. Werden in digital stattfindenden
-			Veranstaltungen Untertitel verwendet, kann aus diesen ein Transkript erstellt werden, welches
-			wiederum vorgelesen oder zur Nachbereitung verwendet werden kann.
+			die Studentin oder den Studenten - hilfreich sein, um die Inhalte erneut anzuhören oder sie in
+			eine Textdatei umzuwandeln. Werden in digital stattfindenden Veranstaltungen Untertitel
+			verwendet, kann aus diesen ein Transkript erstellt werden, welches wiederum vorgelesen oder
+			zur Nachbereitung verwendet werden kann.
 		</Text>
 
 		<Text>
@@ -184,7 +184,7 @@
 		<Text>
 			Eine klare und verständliche Ausdrucksweise bei Aufgabenstellungen, ohne unnötig lange und
 			verschachtelte Sätze, kann Studierenden mit Legasthenie helfen, die Inhalte einfacher zu
-			entnehmen. Gerade in Prüfungssituationen kann das zusätzlichen Stress verringern.
+			entnehmen. Gerade in Prüfungssituationen kann das zusätzlichen Stress verhindern.
 		</Text>
 	</TextSection>
 
@@ -219,7 +219,7 @@
 		</Text>
 
 		<Text>
-			Mithilfe von Nachteilsausgleichen können Studierede mit LRS oder ADHS unterstützt werden.
+			Mithilfe von Nachteilsausgleichen können Studierende mit LRS oder ADHS unterstützt werden.
 			Diese können beispielsweise eine Zeitzugabe für die Abgabe von schriftlichen Ausarbeitungen
 			oder einen separaten Raum, um Ablenkungen zu reduzieren, beinhalten. Außerdem können mündliche
 			Prüfungen oder schriftliche Prüfungen mit Multiple-Choice-Antworten helfen, den Stress, der

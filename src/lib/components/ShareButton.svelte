@@ -80,6 +80,7 @@
 		background-color: transparent;
 		border: none;
 		color: var(--color-white);
+		font-family: var(--font-sans-serif);
 		border-radius: 1rem;
 		font-size: 1rem;
 		padding: 0.25rem 0.375rem;

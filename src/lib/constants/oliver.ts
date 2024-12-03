@@ -47,7 +47,7 @@ export const OLIVER: Persona = {
 				type: 'boldText',
 				boldText: '52,4%',
 				normalText:
-					'der Studierenden mit Teilleistungsstörung geben an, dass die Symptome von außen durch Dritte nicht wahrnehmbar sind'
+					'der Studierenden mit Teilleistungsstörungen geben an, dass die Symptome von außen durch Dritte nicht wahrnehmbar sind'
 			}
 		},
 		{
@@ -60,7 +60,7 @@ export const OLIVER: Persona = {
 				type: 'boldText',
 				boldText: '37,8%',
 				normalText:
-					'der Studierenden mit Teilleistungsstörung berichten, dass ihnen Leistungen nicht zugetraut wurden'
+					'der Studierenden mit Teilleistungsstörungen berichten, dass ihnen Leistungen nicht zugetraut wurden'
 			}
 		}
 	]
