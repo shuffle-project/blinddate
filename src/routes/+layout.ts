@@ -28,7 +28,8 @@ export const load = async (event) => {
 				pathname.includes('ganze') ||
 				pathname.includes('fragen') ||
 				pathname.includes('wichtige-begriffe') ||
-				pathname.includes('persona-entwicklung');
+				pathname.includes('persona-entwicklung') ||
+				pathname.includes('erklaerung-zur-barrierefreiheit');
 		}
 
 		if (!allowedSubpath && pathname !== '/') {

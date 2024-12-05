@@ -26,8 +26,8 @@
 	const legalLinks = [
 		{
 			name: 'Erklärung der Barrierefreiheit',
-			link: 'barrierefreiheit',
-			disabled: true
+			link: 'erklaerung-zur-barrierefreiheit',
+			disabled: false
 		},
 		{
 			name: 'Impressum',

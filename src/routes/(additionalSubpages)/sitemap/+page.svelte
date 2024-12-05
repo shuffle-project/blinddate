@@ -50,6 +50,12 @@
 		</li>
 
 		<li>
+			<a href={base + '/erklaerung-zur-barrierefreiheit'} class="focus-indicator"
+				>Erkärung zur Barrierefreiheit</a
+			>
+		</li>
+
+		<li>
 			<a href={base + '/fragen'} class="focus-indicator">Häufige Fragen</a>
 		</li>
 
