@@ -47,7 +47,7 @@
 	];
 </script>
 
-<div class="wrapper">
+<footer class="wrapper">
 	<div class="content-wrapper">
 		<nav class="persona-nav" aria-label="Studierende">
 			<ul>
@@ -105,7 +105,7 @@
 		</div>
 	</div>
 	<div class="padding-bottom" />
-</div>
+</footer>
 
 <style lang="scss">
 	.wrapper {
