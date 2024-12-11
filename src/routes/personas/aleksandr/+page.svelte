@@ -66,14 +66,16 @@
 			nicht zu vernachlässigen.
 		</ToolCard>
 		<ToolCard title="Reizreduktion" image="{base}/tools/headphone.svg">
+			Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize. So
+			können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
+			Überstimulation führen. Reizarm gestaltete Räume oder das Tragen von Geräusch-unterdrückenden
+			Kopfhörern können Strategien sein, um einer Reizüberflutung vorzubeugen.
+		</ToolCard>
+		<ToolCard title="Selbststimulation" image="{base}/tools/fidget-spinner.svg">
 			<span
-				>Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize.
-				So können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
-				Überstimulation führen. Reizarm gestaltete Räume oder das Tragen von
-				Geräusch-unterdrückenden Kopfhörern können Strategien sein, um einer Reizüberflutung
-				vorzubeugen. Eine Reizüberflutung kann unterschiedliche Reaktionen hervorrufen. Manche
-				Menschen mit ASS „erstarren“ und wirken auf die Umwelt nicht ansprechbar, andere versuchen
-				sich dieser Situation schnell zu entziehen oder nutzen
+				>Eine Reizüberflutung kann unterschiedliche Reaktionen hervorrufen. Manche Menschen mit ASS
+				„erstarren“ und wirken auf die Umwelt nicht ansprechbar, andere versuchen sich dieser
+				Situation schnell zu entziehen oder nutzen
 			</span>
 			<InfoBox term="Stimming" langTerm="en">
 				<p>
@@ -111,12 +113,8 @@
 				</p>
 			</InfoBox>
 			<span class="toolcard-span">, um andere Reize auszublenden.</span>
-		</ToolCard>
-		<ToolCard title="Selbststimulation" image="{base}/tools/fidget-spinner.svg">
-			Neben der Überstimulierung durch verschiedene Reize ist auch eine Unterstimulation ein
-			bekanntes Symptom bei Menschen auf dem Autismus-Spektrum. <span lang="en">Stimming</span>,
-			also die bewusste Wiederholung von physischen Bewegungen oder Lauten, aber auch Sport oder das
-			Hantieren mit reizauslösenden Gegenständen (z.B. sogenannte
+			<span lang="en">Stimming</span>, also die bewusste Wiederholung von physischen Bewegungen oder
+			Lauten, aber auch Sport oder das Hantieren mit reizauslösenden Gegenständen (z.B. sogenannte
 			<span lang="en">Fidget Toys</span>) sind Möglichkeiten des selbststimulierenden Verhaltens.
 		</ToolCard>
 	</div>
@@ -210,17 +208,6 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-05.mp3'}>
-		Viele Dinge lenken mich von meiner Aufgabe ab. Das geht leicht. Ein Beispiel: Wenn ich sage, ich
-		lerne jetzt Neuroanatomie mit dem Gehirn-Atlas. Und dann sehe ich, dass ich etwas grün
-		unterstrichen habe. Dann frag ich mich: Wo ist eigentlich der grüne Stift? Dann schaue ich in
-		der Schublade. Und mir fällt ein, dass ich die reparieren wollte. Dazu brauche ich Werkzeug aus
-		der Garage. Da gehe ich dann hin. In dem Schrank finde ich eine Kiste mit Schrauben, die ganz
-		durcheinander sind. Ich fange an, sie zu sortieren... Aber eigentlich will ich lernen. Das
-		passiert mir sehr oft. Deshalb brauche ich klare Vorgaben. Die muss ich mir selbst setzen. Und
-		aufpassen, dass mich wenig ablenkt. Dort wo ich lerne.
-	</SpeechBubble>
-
 	<FriendBubble {friendPersona}>
 		Ich treff mich immer mal mit Sasha am Nachmittag zum Lernen. Ich studiere was ganz anderes, aber
 		das kann man ja trotzdem zusammen machen. Schwierig wird es, wenn Sasha nach unserem Lern-Date
@@ -290,9 +277,9 @@
 
 		genannt wird. Das bedeutet, dass er quasi eine Maske aufzieht oder eine Rolle spielt – er spielt
 		dann, was er denkt, was neurotypisches Verhalten ist. Ich glaube, Sasha würde oft anders
-		reagieren – aber er hat gelernt, dass es besser ist, normal zu scheinen. Oder so, wie die
-		Gesellschaft es erwarten würde. Wenn man ihn etwas kennt, merkt man allerdings, dass das nicht
-		so echt ist.
+		reagieren – aber er hat gelernt, dass es besser ist, „normal“ zu scheinen. Also so, wie die
+		Gesellschaft es erwarten würde. Eigentlich schade. Besser fände ich es, wenn unser Umfeld
+		akzeptieren würde, dass Sasha genau so, wie er ist, vollkommen in Ordnung ist.
 	</FriendBubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-07.mp3'}>
