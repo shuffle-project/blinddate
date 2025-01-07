@@ -95,7 +95,7 @@
 
 	<p>
 		Das SHUFFLE Forschungsprojekt hinter BlindDate hat noch weitere Projekte zum Thema
-		Barrierefreiheit und der Unterstützung von Lehrenden. Hier kommen sie <a
+		Barrierefreiheit und der Unterstützung von Lehrenden. Hier kommen Sie <a
 			class="focus-indicator"
 			href="https://shuffle-projekt.de/">zur SHUFFLE Seite</a
 		>.

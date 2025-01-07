@@ -1,5 +1,7 @@
 html,
 body {
+	-webkit-tap-highlight-color: transparent;
+
 	font-family: var(--font-sans-serif);
 	font-size: 16px;
 	background-color: var(--color-background-body);
