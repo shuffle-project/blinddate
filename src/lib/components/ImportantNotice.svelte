@@ -72,8 +72,8 @@
 						url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5509825/'
 					},
 					{
-						title: 'Huke et al. (2013)',
-						url: 'https://onlinelibrary.wiley.com/doi/10.1002/erv.2244'
+						title: `D'Mello et al. (2022)`,
+						url: 'https://pubmed.ncbi.nlm.nih.gov/36054081/'
 					}
 				]}
 			/>
