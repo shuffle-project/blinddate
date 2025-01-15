@@ -67,6 +67,9 @@
 			<a href={base + '/kontakt'} class="focus-indicator">Kontakt</a>
 		</li>
 		<li>
+			<a href={base + '/leichte-sprache'} class="focus-indicator">Leichte Sprache</a>
+		</li>
+		<li>
 			<a href={base + '/persona-entwicklung'} class="focus-indicator"
 				>Persona-Entwicklung im Detail</a
 			>
