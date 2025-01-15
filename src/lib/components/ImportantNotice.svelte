@@ -1,5 +1,7 @@
 <script lang="ts">
-	type Content = 'support' | 'lrs-compensation';
+	import Sources from './Sources.svelte';
+
+	type Content = 'support' | 'lrs-compensation' | 'femaleAutism';
 
 	export let content: Content;
 	export let marginTop = false;
@@ -51,6 +53,30 @@
 				psychischen Erkrankung führt. Es kann den Studierenden daher schwerfallen, sich als
 				psychisch krank einstufen zu lassen, um den Nachteilsausgleich zu erhalten.
 			</p>
+		{/if}
+		{#if content === 'femaleAutism'}
+			<p>
+				Viele Menschen auf dem Spektrum haben gar keine offizielle Diagnose, insbesondere Frauen.
+				Während bei Männern mit Autismus Verhaltensweisen oftmals eher von außen erkennbar sind, wie
+				bspw. impulsives Verhalten oder Hyperaktivität, sind phänotypisch weibliche Verhaltensweisen
+				eher internalisiert. Das können beispielsweise Angstzustände, Essstörungen oder affektive
+				Störungen sein. Frauen auf dem Spektrum fliegen häufiger „unter dem Radar“ durch, weil sie
+				„soziale Tarnung“ erlernt haben. Frauen mit ASS fallen ggf. in manchen (sozialen)
+				Situationen weniger auf, können aber erheblichen alltäglichen Stress dadurch erfahren.
+			</p>
+
+			<Sources
+				sources={[
+					{
+						title: 'Hull et al. (2017)',
+						url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5509825/'
+					},
+					{
+						title: 'Huke et al. (2013)',
+						url: 'https://onlinelibrary.wiley.com/doi/10.1002/erv.2244'
+					}
+				]}
+			/>
 		{/if}
 	</div>
 </div>

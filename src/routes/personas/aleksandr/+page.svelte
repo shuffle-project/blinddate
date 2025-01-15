@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
+	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
@@ -184,7 +185,12 @@
 			Veranstaltungen häufig noch verstärkt und beansprucht viel Aufmerksamkeit und Energie. Diese
 			Energie und Aufmerksamkeit kann dann für das inhaltliche Bearbeiten der Aufgaben fehlen.
 		</Text>
-		<Text>
+	</TextSection>
+
+	<ImportantNotice content="femaleAutism" />
+
+	<TextSection let:Text>
+		<Text extraTopMargin>
 			Reizarme und ruhige Rückzugsorte an Hochschulen können allen Studierenden helfen, zwischen
 			Veranstaltungen etwas Ruhe zu finden. Für Studierende auf dem Spektrum können diese Orte
 			helfen, Reizüberflutungen zu vermeiden.

@@ -14,7 +14,7 @@
 		{
 			name: 'Leichte Sprache',
 			link: 'leichte-sprache',
-			disabled: true
+			disabled: false
 		},
 		{
 			name: 'Gebärdensprache (DGS)',
