@@ -7,7 +7,7 @@
 	export let marginTop = false;
 </script>
 
-<div class="wrapper" class:marginTop>
+<section aria-label="Wichtig-Abschnitt" class="wrapper" class:marginTop>
 	<div class="card">
 		<h3>Wichtig</h3>
 		{#if content === 'support'}
@@ -79,7 +79,7 @@
 			/>
 		{/if}
 	</div>
-</div>
+</section>
 
 <style lang="scss">
 	.wrapper {

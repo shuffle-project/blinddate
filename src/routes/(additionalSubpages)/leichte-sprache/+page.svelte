@@ -191,8 +191,8 @@
 	</p>
 
 	<p>
-		Es gibt jemandender <br />
-		Ihnen helfen kann: <br />
+		Es gibt jemanden <br />
+		der Ihnen helfen kann: <br />
 		Der "kommunale Beauftragte für die Belange von Menschen mit <br />
 		Behinderungen". <br />
 		Von Ihrem Wohnort.
@@ -244,6 +244,12 @@
 			a {
 				font-size: 1rem;
 				margin: 0;
+			}
+		}
+
+		ul {
+			li {
+				line-height: 150%;
 			}
 		}
 	}
