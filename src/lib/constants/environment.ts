@@ -23,7 +23,8 @@ interface Environment {
 	displayLowerStartpageContent: boolean;
 	showBigPictureContent: boolean;
 	allowFeedbackLink: boolean;
-	feedbackLink: string;
+	generalFeedbackLink: string;
+	lecturerFeedbackLink: string;
 	allowBigPictureAd: boolean;
 	showDevEnvInfo: boolean;
 }
@@ -40,7 +41,8 @@ export const ENVIRONMENT: Environment = {
 	displayLowerStartpageContent: true,
 	showBigPictureContent: true,
 	allowFeedbackLink: false,
-	feedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
+	generalFeedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
+	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',
 	allowBigPictureAd: true,
 	showDevEnvInfo: true
 };

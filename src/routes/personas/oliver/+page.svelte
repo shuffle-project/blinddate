@@ -188,6 +188,17 @@
 		</Text>
 	</TextSection>
 
+	<SpeechBubble {persona} audio={base + ''}>
+		Ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von offensichtlichen
+		Dingen wie Handyspielen! Es reicht schon, wenn ich meine Chemienotizen zum Lernen aufschlage und
+		sehe, dass ich dort etwas grün unterstrichen habe. Dann frage ich mich: Wo ist eigentlich der
+		grüne Stift? Also schaue ich in der Schublade nach, die klemmt, und ich erinnere mich, dass ich
+		sie schon lange reparieren wollte. Dazu brauche ich Werkzeug aus der Garage. Kaum dort
+		angekommen, finde ich im Schrank eine Kiste mit Schrauben, die ich dann erstmal sortiere... und
+		merke dann irgendwann: Ich wollte doch eigentlich lernen! Das passiert mir ziemlich häufig.
+		Deshalb brauche ich klare Vorgaben, die ich mir selbst setze, um fokussiert zu bleiben.
+	</SpeechBubble>
+
 	<MainHeading heading="Interaktion und Kommunikation" />
 	<TextSection let:Text>
 		<Text noTopMargin>

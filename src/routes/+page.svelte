@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import Icon from '$lib/components/Icon.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import InfoGrid from '$lib/components/startpage/InfoGrid.svelte';
@@ -47,7 +48,22 @@
 
 {#if ENVIRONMENT.allowFeedbackLink}
 	<div class="feedback">
-		<a href={ENVIRONMENT.feedbackLink}>Feedback geben</a>
+		<div class="link-wrapper">
+			<p>Wir brauchen Sie!</p>
+			<a href={ENVIRONMENT.lecturerFeedbackLink} target="_blank" rel="noopener noreferrer">
+				<span aria-hidden="true"> Feedback von Lehrenden </span>
+				<span class="sr-only"> Feedback von Lehrenden (Öffnet neues Fenster) </span>
+				<Icon img="open-in-new" size="medium"></Icon>
+			</a>
+		</div>
+		<div class="link-wrapper">
+			<p>Offen für Alle</p>
+			<a href={ENVIRONMENT.generalFeedbackLink} target="_blank" rel="noopener noreferrer">
+				<span aria-hidden="true">Allgemeines Feedback</span>
+				<span class="sr-only">Allgemeines Feedback (öffnet neues Fenster)</span>
+				<Icon img="open-in-new" size="medium"></Icon>
+			</a>
+		</div>
 	</div>
 {/if}
 
@@ -106,24 +122,43 @@
 	}
 
 	.feedback {
-		padding: 1rem 0;
+		padding: 1rem var(--outer-spacing) 2rem var(--outer-spacing);
 		display: flex;
-		justify-content: center;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 1.25rem;
+
 		background-color: #99bef5;
 
-		a {
-			background-color: var(--color-white);
-			padding: 0.375rem 0.625rem;
-			color: var(--color-black);
+		.link-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.125rem;
 
-			font-weight: bold;
-			border-radius: 2rem;
-			text-decoration: none;
-			cursor: pointer;
+			p {
+				margin: 0;
+				font-size: 1rem;
+			}
 
-			&:hover,
-			&:focus {
-				outline: 2px solid var(--color-black);
+			a {
+				background-color: var(--color-white);
+				padding: 0.375rem 0.625rem;
+				color: var(--color-black);
+
+				font-weight: bold;
+				border-radius: 2rem;
+				text-decoration: none;
+				cursor: pointer;
+
+				display: flex;
+				align-items: center;
+				gap: 0.25rem;
+
+				&:hover,
+				&:focus {
+					outline: 2px solid var(--color-black);
+				}
 			}
 		}
 	}

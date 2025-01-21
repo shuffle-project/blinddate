@@ -80,7 +80,22 @@
 						{/each}
 						{#if ENVIRONMENT.allowFeedbackLink}
 							<li class="feedback-link">
-								<a href={ENVIRONMENT.feedbackLink}>Feedback geben</a>
+								<a
+									href={ENVIRONMENT.lecturerFeedbackLink}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span aria-hidden="true"> Feedback von Lehrenden </span>
+									<span class="sr-only"> Feedback von Lehrenden (Öffnet neues Fenster) </span>
+									<Icon img="open-in-new" size="medium"></Icon>
+								</a>
+							</li>
+							<li class="feedback-link">
+								<a href={ENVIRONMENT.generalFeedbackLink} target="_blank" rel="noopener noreferrer">
+									<span aria-hidden="true">Allgemeines Feedback</span>
+									<span class="sr-only">Allgemeines Feedback (öffnet neues Fenster)</span>
+									<Icon img="open-in-new" size="medium"></Icon>
+								</a>
 							</li>
 						{/if}
 					</ul>
@@ -218,6 +233,10 @@
 		a {
 			color: var(--color-black) !important;
 			text-decoration: none !important;
+
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
 		}
 	}
 
