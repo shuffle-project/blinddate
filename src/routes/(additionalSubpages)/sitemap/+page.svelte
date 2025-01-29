@@ -60,6 +60,10 @@
 		</li>
 
 		<li>
+			<a href={base + '/dgs'} class="focus-indicator">Gebärdensprache (DGS)</a>
+		</li>
+
+		<li>
 			<a href={base + '/impressum'} class="focus-indicator">Impressum</a>
 		</li>
 

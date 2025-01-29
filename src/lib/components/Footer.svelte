@@ -18,8 +18,8 @@
 		},
 		{
 			name: 'Gebärdensprache (DGS)',
-			link: 'gebaerdensprache',
-			disabled: true
+			link: 'dgs',
+			disabled: false
 		}
 	];
 

@@ -30,6 +30,7 @@ export const load = async (event) => {
 				pathname.includes('wichtige-begriffe') ||
 				pathname.includes('persona-entwicklung') ||
 				pathname.includes('erklaerung-zur-barrierefreiheit') ||
+				pathname.includes('dgs') ||
 				pathname.includes('leichte-sprache');
 		}
 
