@@ -9,7 +9,6 @@ import { HANNAH } from './hannah';
 import { KILIAN } from './kilian';
 import { MAXI } from './maxi';
 import { MICHELLE } from './michelle';
-import { OLIVER } from './oliver';
 
 interface Environment {
 	accessiblePersonas: Persona[];
@@ -30,7 +29,7 @@ interface Environment {
 }
 
 export const ENVIRONMENT: Environment = {
-	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA, OLIVER],
+	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA],
 	redirectToStartpage: false,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
@@ -40,9 +39,9 @@ export const ENVIRONMENT: Environment = {
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
 	showBigPictureContent: true,
-	allowFeedbackLink: false,
+	allowFeedbackLink: true,
 	generalFeedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
 	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',
 	allowBigPictureAd: true,
-	showDevEnvInfo: true
+	showDevEnvInfo: false
 };
