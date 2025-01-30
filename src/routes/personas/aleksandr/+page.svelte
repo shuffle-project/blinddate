@@ -417,6 +417,14 @@
 	<MainHeading heading="Weitere Informationen" />
 	<ul class="more-info-list">
 		<li>
+			<Recommendation link="https://hasilux.lu/de/haeufige-fragen/autismus/">
+				<svelte:fragment slot="linkText">Fragen zu Autismus</svelte:fragment>
+				<svelte:fragment slot="textAfter"
+					>aus dem Handbuch für Autismus und Schulinklusion (HASILUX)</svelte:fragment
+				>
+			</Recommendation>
+		</li>
+		<li>
 			<Recommendation
 				link="https://dieneuenorm.de/gesellschaft/autismus-selbstfuersorge/?mc_cid=70566efc01&mc_eid=b1d842d3fd"
 			>
