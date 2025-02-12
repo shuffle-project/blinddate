@@ -17,20 +17,20 @@
 </script>
 
 <PersonaContent {persona} let:MainHeading let:TextSection>
-	<SpeechBubble {persona} audio={base + ''}>
-		Servus, mein Name ist Oliver, ich bin 31 Jahre alt und lebe und studiere seit 4 Jahren in
-		Würzburg. Ich liebe es, zu kochen – am liebsten Mexikanisch - und Musik zu machen, vor allem für
-		und mit meinen Freunden. Ich habe mich für die Uni Würzburg entschieden, weil ich hier
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-01.mp3'}>
+		Servus, mein Name ist Oliver, ich bin 31 Jahre alt und studiere seit 4 Jahren in Würzburg. Ich
+		liebe es, zu kochen – am liebsten natürlich Mexikanisch - und Musik zu machen, vor allem für und
+		mit meinen Freunden. Ich habe mich für die Uni Würzburg entschieden, weil ich hier
 		Lebensmittelchemie studieren kann und außerdem nicht darum kämpfen muss, dass man mich als
-		Studierender mit LRS und ADHS ernst nimmt.
+		Student mit LRS und ADHS ernst nimmt.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + ''}>
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-02.mp3'}>
 		Man kann sich LRS so vorstellen: Wenn ich schreibe, ist es, als ob ich jedes Wort das erste Mal
 		in meinem Leben sehen und schreiben würde. Erinnere dich einfach mal an die Zeit, als du
 		Schreiben gelernt hast und wie lange es gedauert hat, um ein Wort aus deinem Kopf auf Papier zu
-		bringen. Das dauert ewig! Daher schreibe ich nur, wenn ich muss und diktiere mir meine Gedanken
-		und Notizen immer.
+		bringen. Das dauert ewig! Daher schreibe ich nur, wenn ich muss und diktiere mir einfach lieber
+		Gedanken und Notizen.
 	</SpeechBubble>
 
 	<MainHeading heading="Technologien und Strategien" />
@@ -107,22 +107,22 @@
 		<svelte:fragment slot="textAfter">von Gemeinsam ADHS Begegnen</svelte:fragment>
 	</Recommendation>
 
-	<SpeechBubble {persona} audio={base + ''}>
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-03.mp3'}>
 		Ich stoße schon bei der Anmeldung auf der Homepage der Uni auf die erste Hürde. Das Einloggen
 		mit Codes oder Kennwörtern ist für mich richtig schwer, weil die Buchstaben immer wieder zu
-		einem Brei verschwimmen. Ich weiß nicht, wie oft ich schon diverse Support-Center kontaktieren
-		musste, weil ich meine Passwörter auf Webseiten mehrfach falsch eingegeben habe.
+		einem Brei verschwimmen. Ehrlich gesagt, hab ich kein Plan, wie oft ich schon diverse
+		Support-Center anrufen musste, weil ich meine Passwörter mehrfach falsch eingegeben habe.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + ''}>
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-04.mp3'}>
 		Ich nutze eine App, die mich beim Zeitmanagement etwas unterstützt. Sie blockiert beispielsweise
 		für eine gewisse Zeit andere Apps auf meinem Handy, von denen ich mich leicht ablenken lasse.
 		Außerdem kann ich mir damit einen Zeitplan fürs Lernen machen, damit ich nicht in Zeitnot komme.
-		Bei mir dauert halt alles länger. Das nervt mich selbst sehr, aber ich habe mir in den letzten
+		Bei mir dauert halt alles länger und ... das nervt mich selber, aber ich habe mir in den letzten
 		vier Jahren einige Strategien angeeignet, die mir schon helfen. Viele Strategien habe ich durch
-		andere Studierende mit ADHS und LRS gelernt. Wir haben hier eine kleine Gruppe an der Uni
+		andere Studenten mit ADHS und LRS gelernt. Wir haben hier eine kleine Gruppe an der Uni
 		Würzburg, in der wir uns immer wieder austauschen können.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + ''}>
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-05.mp3'}>
 		Ich nehme seit ein paar Jahren Medikamente, die mir helfen, mein ADHS-Gehirn etwas zu ordnen.
 		Das tun die auch echt gut. Aber sie haben halt trotzdem auch Nebenwirkungen und machen mich oft
 		recht müde. Seit ein paar Semestern gibt es einen Ruheraum an der Uni mit bequemen Stühlen und
@@ -153,12 +153,12 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + ''}>
-		Ich komme mittlerweile in den Vorlesungen ganz gut mit. Das war leider nicht immer so und hat
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-06.mp3'}>
+		Mittlerweile komme ich in den Vorlesungen ganz gut mit. Das war leider nicht immer so und hat
 		mich schon viele Nerven gekostet. Es fällt mir häufig sehr schwer, in Vorlesungen nicht
-		gedanklich abzuschweifen oder auch Anweisungen im Labor bis zum Ende zuzuhören. Meine
-		Dozierenden und Mitstudierenden bekommen gar nicht mit, wie viel Zeit ich vor und nach der
-		Vorlesung investieren muss.
+		gedanklich abzuschweifen oder auch Anweisungen im Labor bis zum Ende zuzuhören. Meine Dozenten
+		und Kommilitonen bekommen gar nicht mit, wie viel Zeit ich vor und nach der Vorlesung
+		investieren muss.
 	</SpeechBubble>
 
 	<Puzzle
@@ -188,15 +188,16 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + ''}>
-		Ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von offensichtlichen
-		Dingen wie Handyspielen! Es reicht schon, wenn ich meine Chemienotizen zum Lernen aufschlage und
-		sehe, dass ich dort etwas grün unterstrichen habe. Dann frage ich mich: Wo ist eigentlich der
-		grüne Stift? Also schaue ich in der Schublade nach, die klemmt, und ich erinnere mich, dass ich
-		sie schon lange reparieren wollte. Dazu brauche ich Werkzeug aus der Garage. Kaum dort
-		angekommen, finde ich im Schrank eine Kiste mit Schrauben, die ich dann erstmal sortiere... und
-		merke dann irgendwann: Ich wollte doch eigentlich lernen! Das passiert mir ziemlich häufig.
-		Deshalb brauche ich klare Vorgaben, die ich mir selbst setze, um fokussiert zu bleiben.
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-07.mp3'}>
+		Ohje, ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von
+		offensichtlichen Dingen wie Handyspielen! Es reicht schon, wenn ich meine Chemienotizen zum
+		Lernen aufschlage und sehe, dass ich dort etwas grün unterstrichen habe. Dann frage ich mich: Wo
+		ist eigentlich der grüne Stift? Also schaue ich in der Schublade nach, die klemmt, und ich
+		erinnere mich, dass ich sie schon lange reparieren wollte. Dazu brauche ich Werkzeug aus der
+		Garage. Kaum dort angekommen, finde ich im Schrank eine Kiste mit Schrauben, die ich dann
+		erstmal sortiere und ... dann merke ich irgendwann: Ich wollte doch eigentlich lernen! Das
+		passiert mir ziemlich häufig. Deshalb brauche ich klare Vorgaben, die ich mir selbst setze, um
+		fokussiert zu bleiben.
 	</SpeechBubble>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
@@ -214,12 +215,13 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + ''}>
-		Ich lerne gerne mit den anderen zusammen. Wir haben eine feste Lerngruppe, die sich regelmäßig
-		trifft und die wissen auch alle über LRS und ADHS Bescheid. Am Anfang hatte ich etwas Sorgen,
-		dass ich nicht so viel in der Gruppe beisteuern kann, weil meine Notizen häufig sehr wirr und
-		unleserlich waren. Da ich aber viel Zeit in die Vor- und Nachbereitung der Veranstaltungen
-		stecke – weil ich‘s halt muss – kann ich Themen meistens recht gut zusammenfassen und erklären!
+	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-08.mp3'}>
+		Ich lerne gerne mit den anderen zusammen. Wir haben da eine feste Lerngruppe, die sich
+		regelmäßig trifft und die wissen auch alle über LRS und ADHS Bescheid. Am Anfang hatte ich etwas
+		Sorgen, dass ich nicht so viel in der Gruppe beisteuern kann, weil meine Notizen häufig sehr
+		wirr und unleserlich waren. Da ich aber viel Zeit in die Vor- und Nachbereitung der
+		Veranstaltungen stecke – weil ich‘s halt muss – kann ich den Stoff meistens recht gut
+		zusammenfassen und erklären!
 	</SpeechBubble>
 
 	<MainHeading heading="Prüfungen" />
