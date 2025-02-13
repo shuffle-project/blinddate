@@ -80,7 +80,7 @@
 			Buchstaben zu vermeiden, kann eine Strategie für Studierende mit Legasthenie sein.
 		</ToolCard>
 
-		<ToolCard title="Studienorganisation" image="{base}/tools/regular-breaks.svg">
+		<ToolCard title="Studienorganisation" image="{base}/tools/day-plan.svg">
 			LRS und AD(H)S können sich auch auf die Selbstorganisation im Studium auswirken. Deshalb kann
 			eine Unterstützung durch Studienbüros, Support-Zentren oder Study-Buddy-Programme an
 			Hochschulen für Studierende mit ADHS eine sinnvolle Strategie zur Organisation des Studiums
