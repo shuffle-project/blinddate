@@ -121,6 +121,7 @@
 					href="https://stiftung-hochschullehre.de/"
 					aria-label="Stiftung Innovation in der Hochschullehre, zur Website"
 					class="foundation-wrapper"
+					rel="noopener noreferrer"
 				>
 					<Icon img="logo-foundation" size="parent" svg_color="white" />
 				</a>
