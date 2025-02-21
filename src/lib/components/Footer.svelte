@@ -116,13 +116,33 @@
 				</nav>
 			</div>
 
-			<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+			<div class="logo-wrapper">
+				<a
+					href="https://stiftung-hochschullehre.de/"
+					aria-label="Stiftung Innovation in der Hochschullehre, zur Website"
+					class="foundation-wrapper"
+				>
+					<Icon img="logo-foundation" size="parent" svg_color="white" />
+				</a>
+				<Icon img="logo" size="parent" />
+			</div>
 		</div>
 	</div>
 	<div class="padding-bottom" />
 </footer>
 
 <style lang="scss">
+	.logo-wrapper {
+		.foundation-wrapper {
+			height: 3rem;
+			width: 10rem;
+		}
+
+		display: flex;
+		gap: 2.5rem;
+
+		height: 3rem;
+	}
 	.wrapper {
 		padding-inline: var(--outer-spacing);
 	}
