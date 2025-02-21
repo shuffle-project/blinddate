@@ -133,15 +133,14 @@
 
 <style lang="scss">
 	.logo-wrapper {
+		display: flex;
+		gap: 2.5rem;
+		height: 3rem;
+
 		.foundation-wrapper {
 			height: 3rem;
 			width: 10rem;
 		}
-
-		display: flex;
-		gap: 2.5rem;
-
-		height: 3rem;
 	}
 	.wrapper {
 		padding-inline: var(--outer-spacing);
