@@ -21,7 +21,7 @@
 	let dialogOpen = $state(false);
 	let showTableOfContents = $state(false);
 
-	let dialogElement: HTMLDialogElement = $state();
+	let dialogElement: HTMLDialogElement | undefined = $state();
 
 	let modal: Modal;
 
@@ -67,11 +67,11 @@
 			});
 		});
 
-		dialogAttrObserver.observe(dialogElement, {
-			attributes: true
-		});
-
 		if (dialogElement) {
+			dialogAttrObserver.observe(dialogElement, {
+				attributes: true
+			});
+
 			dialogElement.addEventListener('close', (e) => {
 				dialogOpen = false;
 			});
@@ -81,30 +81,20 @@
 
 <div class="mobile-card">
 	<div>
-		<ToggleButton
-			on:toggleDialog={toggleDialog}
-			{mobileCardIsSticky}
-			outer
-			{persona}
-			{dialogOpen}
-		/>
+		<ToggleButton {toggleDialog} {mobileCardIsSticky} outer {persona} {dialogOpen} />
+
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<dialog
 			inert
 			class:sticky={mobileCardIsSticky}
 			bind:this={dialogElement}
-			onclick={(e) => handleBackdropClick(e, dialogElement)}
+			onclick={(e) => handleBackdropClick(e, dialogElement!)}
 		>
 			<nav aria-label={persona.name + ' mitscrollendes Menü'}>
 				<ul>
 					<li>
-						<ToggleButton
-							on:toggleDialog={toggleDialog}
-							{mobileCardIsSticky}
-							{persona}
-							{dialogOpen}
-						/>
+						<ToggleButton {toggleDialog} {mobileCardIsSticky} {persona} {dialogOpen} />
 					</li>
 					<li>
 						<button
