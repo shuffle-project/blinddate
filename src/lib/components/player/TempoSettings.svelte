@@ -1,23 +1,30 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
 	import { handleBackdropClick } from '../utils';
 
+	interface Props {
+		playbackRate?: number;
+	}
+
 	let tempoMenuButton: HTMLButtonElement;
 
 	let dialog: HTMLDialogElement;
-	let displayDialog = false;
+	let displayDialog = $state(false);
 
 	let tempoOptions = [0.5, 0.75, 1, 1.25, 1.5];
-	export let playbackRate = 1;
+
+	let { playbackRate = $bindable(1) }: Props = $props();
 
 	function toggleDialogDisplay() {
 		displayDialog = !displayDialog;
 	}
 
-	$: {
+	run(() => {
 		if (dialog) displayDialog ? dialog.show() : dialog.close();
-	}
+	});
 
 	function handleMouseClick(e: MouseEvent) {
 		if (e.target) {
@@ -48,7 +55,7 @@
 	}
 </script>
 
-<svelte:window on:click={(e) => handleMouseClick(e)} />
+<svelte:window onclick={(e) => handleMouseClick(e)} />
 
 <div class="wrapper">
 	<button
@@ -56,14 +63,14 @@
 		aria-expanded={displayDialog}
 		title="Wiedergabegetempo Untermenü"
 		aria-label="Wiedergabegetempo Untermenü"
-		on:click={() => toggleDialogDisplay()}
+		onclick={() => toggleDialogDisplay()}
 		class="tempo-btn"
 	>
 		<Icon svg_color="white" size="parent" img="tempo" />
 	</button>
 
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<dialog bind:this={dialog} on:keyup={(e) => handleKeyEvent(e)}>
+	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+	<dialog bind:this={dialog} onkeyup={(e) => handleKeyEvent(e)}>
 		<header>
 			<h4>Tempo</h4>
 		</header>
@@ -72,7 +79,8 @@
 				<li>
 					<button
 						aria-pressed={playbackRate === tempoOption}
-						on:click|stopPropagation={() => {
+						onclick={(e) => {
+							e.stopPropagation();
 							playbackRate = tempoOption;
 							toggleDialogDisplay();
 						}}
@@ -82,7 +90,7 @@
 								<Icon size="parent" img="check" />
 							</div>
 						{:else}
-							<div class="check" />
+							<div class="check"></div>
 						{/if}
 						<div class="option">{tempoOption}x</div></button
 					>

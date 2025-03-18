@@ -1,14 +1,27 @@
 <script lang="ts">
+	import { stopPropagation } from 'svelte/legacy';
+
 	import type { Source } from '$lib/interfaces/sources.interfaces';
 	import Modal from './Modal.svelte';
 	import Sources from './Sources.svelte';
 
-	export let term: string;
-	export let langTerm = 'de';
-	export let inSpeechBubble = false;
-	export let sources: Source[] = [];
+	interface Props {
+		term: string;
+		langTerm?: string;
+		inSpeechBubble?: boolean;
+		sources?: Source[];
+		children?: import('svelte').Snippet;
+	}
 
-	let modal: Modal;
+	let {
+		term,
+		langTerm = 'de',
+		inSpeechBubble = false,
+		sources = [],
+		children
+	}: Props = $props();
+
+	let modal: Modal = $state();
 
 	function toggleDialogDisplay() {
 		if (modal) modal.toggleModalDisplay();
@@ -22,26 +35,28 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
 <span
 	class="term-btn"
 	lang={langTerm}
 	class:inSpeechBubble
 	role="button"
 	tabindex="0"
-	on:click|stopPropagation={() => toggleDialogDisplay()}
-	on:keypress|stopPropagation={(e) => keyboardToggleDialogDisplay(e)}
+	onclick={stopPropagation(() => toggleDialogDisplay())}
+	onkeypress={stopPropagation((e) => keyboardToggleDialogDisplay(e))}
 >
 	{@html term}
 </span>
 
 <Modal bind:this={modal} bottomSheet {term}>
-	<svelte:fragment slot="content">
-		<slot />
-		{#if sources.length > 0}
-			<Sources {sources} />
-		{/if}
-	</svelte:fragment>
+	{#snippet content()}
+	
+			{@render children?.()}
+			{#if sources.length > 0}
+				<Sources {sources} />
+			{/if}
+		
+	{/snippet}
 </Modal>
 
 <style lang="scss">

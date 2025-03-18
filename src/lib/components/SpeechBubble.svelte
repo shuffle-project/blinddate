@@ -4,13 +4,18 @@
 	import type { Persona } from '../interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 
-	export let persona: Persona;
-	export let audio: string = '';
+	interface Props {
+		persona: Persona;
+		audio?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { persona, audio = '', children }: Props = $props();
 
 	let audioElement: HTMLAudioElement;
-	let playingAudio = false;
+	let playingAudio = $state(false);
 
-	let textDiv: HTMLElement;
+	let textDiv: HTMLElement = $state();
 
 	const speak = () => {
 		if (audioElement) {
@@ -47,7 +52,7 @@
 		</div>
 		<button
 			class="playbutton-mobil"
-			on:click={speak}
+			onclick={speak}
 			aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
 		>
 			{#if playingAudio}
@@ -66,7 +71,7 @@
 
 	<button
 		class="playbutton-desktop"
-		on:click={speak}
+		onclick={speak}
 		aria-label={!playingAudio ? 'Abspielen' : 'Pausieren'}
 	>
 		{#if playingAudio}
@@ -78,7 +83,7 @@
 		{/if}
 	</button>
 	<p class="text" bind:this={textDiv}>
-		<slot />
+		{@render children?.()}
 	</p>
 </div>
 

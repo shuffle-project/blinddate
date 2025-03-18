@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 
@@ -7,9 +9,13 @@
 	import BoldFact from './BoldFact.svelte';
 	import Enumeration from './Enumeration.svelte';
 
-	let carousel: Splide;
+	let carousel: Splide = $state();
 
-	export let facts: FactSlide[] = [];
+	interface Props {
+		facts?: FactSlide[];
+	}
+
+	let { facts = [] }: Props = $props();
 
 	const splideOptions = {
 		type: 'loop',
@@ -35,13 +41,13 @@
 		easing: 'ease'
 	};
 
-	let carouselSelectedIndex: number = 0;
+	let carouselSelectedIndex: number = $state(0);
 
-	let componentHasFocus = false;
+	let componentHasFocus = $state(false);
 
-	let ariaLiveText = '';
+	let ariaLiveText = $state('');
 
-	$: {
+	run(() => {
 		const content = facts[carouselSelectedIndex].content;
 		const text =
 			content.type === 'enumeration'
@@ -49,7 +55,7 @@
 				: `${content.boldText} ${content.normalText}, `;
 
 		ariaLiveText = text + (carouselSelectedIndex + 1) + ' von ' + facts.length;
-	}
+	});
 
 	function moveSlide(direction: string) {
 		if (!carousel) return;
@@ -107,22 +113,22 @@
 						</SplideSlide>
 					{/each}
 				</SplideTrack>
-				<div class="splide__arrows" />
+				<div class="splide__arrows"></div>
 			</div>
 
 			<div class="navigation-wrapper">
 				<button
 					aria-label="Vorheriger Fakt"
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('<')}
+					onfocusout={() => (componentHasFocus = false)}
+					onclick={() => moveSlide('<')}
 				>
 					<Icon img="arrow-toleft" svg_color="white" />
 				</button>
 				<span>{`${carouselSelectedIndex + 1} von ${facts.length}`}</span>
 				<button
 					aria-label="Nächster Fakt"
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('>')}
+					onfocusout={() => (componentHasFocus = false)}
+					onclick={() => moveSlide('>')}
 				>
 					<Icon img="arrow-toright" svg_color="white" />
 				</button>

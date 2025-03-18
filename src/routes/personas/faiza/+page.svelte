@@ -1,11 +1,16 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
+	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
+	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FactCarousel from '$lib/components/factCarousel/FactCarousel.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
+	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import { CHRIS } from '$lib/constants/chris';
@@ -17,7 +22,7 @@
 	const friendPersona: FriendPersona = CHRIS;
 </script>
 
-<PersonaContent {persona} let:MainHeading let:TextSection>
+<PersonaContent {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-01.mp3'}>
 		Hey, mein Name ist Faiza, ich bin 32 Jahre alt und studiere Informatik an der TU Darmstadt. Ich
 		wohne mit meinem Partner Chris und unserem 1 1/2 Jahre alten Sohn Jonas in Griesheim. Auch Chris
@@ -34,7 +39,7 @@
 	<div class="h3-wrapper">
 		<h3>Studienplanung</h3>
 	</div>
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Ein Studium mit Pflegeverantwortung kann mit zahlreichen Barrieren verbunden sein. Einige
 			davon scheinen offensichtlich, wie beispielsweise Herausforderungen in der Zeitplanung.
@@ -60,7 +65,7 @@
 	<div class="h3-wrapper">
 		<h3 class="spacing-top">Flexibilität</h3>
 	</div>
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Planbarkeit ist mit familiärer Verantwortung sehr schwierig, da immer wieder unvorhersehbare
 			Dinge passieren – das Kind wird plötzlich krank, betreuende Personen fallen aus...offene
@@ -87,7 +92,7 @@
 	<FactCarousel facts={persona.facts} />
 
 	<MainHeading heading="Lehrveranstaltungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Studierende mit Pflegeverantwortung brauchen räumliche und zeitliche Flexibilität.
 			Aufgezeichnete Vorlesungen, die asynchron und nach eigenem Tempo angeschaut werden können,
@@ -102,7 +107,7 @@
 		könnte trotzdem manchmal viel einfacher sein, wenn es strukturell nicht immer so starr wäre.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Eine klar abgesprochene Tagesstruktur einerseits, aber auch unplanbare Unterbrechungen dieser
 			Struktur bestimmen den Alltag der Eltern. Wegfallende Anfahrtswege zur Universität und
@@ -132,7 +137,7 @@
 		die Oma.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Werden die Vorlesungsunterlagen im Voraus digital zur Verfügung gestellt, können
 			beispielsweise die Schlafzeiten des Kindes genutzt werden, um sich vorzubereiten.
@@ -158,7 +163,7 @@
 
 	<MainHeading heading="Lernmaterial" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Digitale Barrieren für Studierende mit Pflegeverantwortung sind für Außenstehende
 			möglicherweise nicht immer direkt ersichtlich. Die verwendete Hard- und Software für ein
@@ -210,7 +215,7 @@
 		back="Bewusste Entscheidung! Geht aber auch niemanden etwas an."
 	/>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text extraTopMargin>
 			Häufig füllen die Erziehung und Betreuung eines Kindes, das Studium und eventuelle Nebenjobs
 			den Alltag komplett aus. Wird dann noch asynchron studiert, sind soziale Kontakte zu
@@ -230,38 +235,44 @@
 		Studienkoordinations&shy;stelle ist.
 	</SpeechBubble>
 
-	<Accordion personaName={persona.name} let:AccordionItem question="Frage">
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question">Was wünschst Du Dir von Lehrpersonen?</svelte:fragment>
-			<PersonaAnswer {persona}>
-				Hört sich ganz leicht und selbstverständlich an. Aber generell erst einmal: Ein offenes Ohr
-				und eine offene Haltung gegenüber Studierenden, die Pflegeverantwortung haben oder auch aus
-				anderen Gründen kein Vollzeitstudium in Präsenz durchziehen können. Wertschätzung ist das
-				passende Wort, glaube ich. Und vielleicht auch manchmal mehr Menschlichkeit. Es gibt doch
-				auch genügend Dozierende mit Familien und Pflegeverantwortung. Vielleicht müssten wir alle
-				mehr darüber sprechen und offen auch Grenzen aufzeigen.
-			</PersonaAnswer>
+	<Accordion personaName={persona.name} question="Frage">
+		<AccordionItem>
+			{#snippet question()}
+				Was wünschst Du Dir von Lehrpersonen?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Hört sich ganz leicht und selbstverständlich an. Aber generell erst einmal: Ein offenes
+					Ohr und eine offene Haltung gegenüber Studierenden, die Pflegeverantwortung haben oder
+					auch aus anderen Gründen kein Vollzeitstudium in Präsenz durchziehen können. Wertschätzung
+					ist das passende Wort, glaube ich. Und vielleicht auch manchmal mehr Menschlichkeit. Es
+					gibt doch auch genügend Dozierende mit Familien und Pflegeverantwortung. Vielleicht
+					müssten wir alle mehr darüber sprechen und offen auch Grenzen aufzeigen.
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question"
-				>Wie erlebst Du den Spagat zwischen Studium und Kind?</svelte:fragment
-			>
-			<PersonaAnswer {persona}>
-				Ich spüre oft Druck, in beiden Rollen – sowohl als Studentin als auch als Mutter –
-				irgendwelchen Erwartungen gerecht werden zu müssen. Im Alltag schaffe ich aber manchmal
-				nicht beides und das Priorisieren fällt mir schwer. Wenn ich lerne, fühle ich mich schlecht,
-				weil ich nicht genug für meinen Sohn da bin, und wenn ich Zeit mit Jonas verbringe, habe ich
-				das Gefühl, mein Studium zu vernachlässigen. Dann passiert es auch schnell, dass ich meine
-				eigenen Bedürfnisse komplett hinten anstelle, um den Anforderungen meines Kindes oder meines
-				Studiums gerecht zu werden.
-			</PersonaAnswer>
+		<AccordionItem>
+			{#snippet question()}
+				Wie erlebst Du den Spagat zwischen Studium und Kind?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Ich spüre oft Druck, in beiden Rollen – sowohl als Studentin als auch als Mutter –
+					irgendwelchen Erwartungen gerecht werden zu müssen. Im Alltag schaffe ich aber manchmal
+					nicht beides und das Priorisieren fällt mir schwer. Wenn ich lerne, fühle ich mich
+					schlecht, weil ich nicht genug für meinen Sohn da bin, und wenn ich Zeit mit Jonas
+					verbringe, habe ich das Gefühl, mein Studium zu vernachlässigen. Dann passiert es auch
+					schnell, dass ich meine eigenen Bedürfnisse komplett hinten anstelle, um den Anforderungen
+					meines Kindes oder meines Studiums gerecht zu werden.
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 	</Accordion>
 
 	<MainHeading heading="Prüfungen" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Nicht selten finden mehrere Prüfungen in Präsenz in einer Prüfungswoche gegen Ende des
 			Semesters statt und erfordern eine mehrmalige, mehrstündige Anwesenheit an der Uni. Das ist
@@ -275,7 +286,7 @@
 		in Präsenz. Da sind wir beide, Jonas und meine Schwiegereltern auf dem Zahnfleisch gegangen.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Auch pflegende Studierende können einen Antrag auf Nachteilsausgleich stellen, um
 			beispielsweise Fristen für Abgaben zu verlängern oder kurzfristig von Prüfungen zurücktreten,
@@ -285,7 +296,7 @@
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
@@ -306,22 +317,32 @@
 	<ul class="more-info-list">
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=J4fWA6vWmz0">
-				<svelte:fragment slot="linkText"
-					>Studieren mit Kind: Ist das Studium der beste Zeitpunkt für ein Kind?</svelte:fragment
-				>
-				<svelte:fragment slot="textAfter">von PULS Reportage auf YouTube</svelte:fragment>
+				{#snippet linkText()}
+					Studieren mit Kind: Ist das Studium der beste Zeitpunkt für ein Kind?
+				{/snippet}
+				{#snippet textAfter()}
+					von PULS Reportage auf YouTube
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.che.de/download/pflegende-studierende/">
-				<svelte:fragment slot="linkText">Fragen & Antworten zu Studium und Pflege</svelte:fragment>
-				<svelte:fragment slot="textAfter">vom Centrum für Hochschulentwicklung</svelte:fragment>
+				{#snippet linkText()}
+					Fragen & Antworten zu Studium und Pflege
+				{/snippet}
+				{#snippet textAfter()}
+					vom Centrum für Hochschulentwicklung
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://studieren.de/studieren-mit-kind.0.html">
-				<svelte:fragment slot="linkText">Studieren mit Kind</svelte:fragment>
-				<svelte:fragment slot="textAfter">von studieren.de</svelte:fragment>
+				{#snippet linkText()}
+					Studieren mit Kind
+				{/snippet}
+				{#snippet textAfter()}
+					von studieren.de
+				{/snippet}
 			</Recommendation>
 		</li>
 	</ul>

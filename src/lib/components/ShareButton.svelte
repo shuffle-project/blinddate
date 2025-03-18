@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { page } from '$app/stores';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
@@ -8,17 +10,17 @@
 
 	const personas = ENVIRONMENT.accessiblePersonas;
 
-	let visible = false;
-	let currentSite = 'BlindDate'; // the starting page
-	let text = '';
+	let visible = $state(false);
+	let currentSite = $state('BlindDate'); // the starting page
+	let text = $state('');
 
-	$: {
+	run(() => {
 		let url = $page.url.pathname;
 		personas.forEach((persona: Persona) => {
 			if (url.includes(persona.id)) currentSite = persona.name;
 		});
 		text = `Lerne ${currentSite} und barrierefreie (Hochschul) Lehre kennen:`;
-	}
+	});
 
 	const data = {
 		title: 'BlindDate',
@@ -62,7 +64,7 @@
 			Webadresse kopiert
 		</p>
 	{/if}
-	<button on:keyup={handleKeyPress} class="sharebutton" on:click={onClick} on:blur={handleBlur}>
+	<button onkeyup={handleKeyPress} class="sharebutton" onclick={onClick} onblur={handleBlur}>
 		<Icon alt="Seite teilen" size="small" img="share" svg_color="white" />
 		<div class="btn-label" aria-hidden="true">Seite teilen</div>
 	</button>

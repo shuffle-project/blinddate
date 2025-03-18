@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	export let position: 'desktop' | 'mobile';
+	interface Props {
+		position: 'desktop' | 'mobile';
+	}
+
+	let { position }: Props = $props();
 </script>
 
 <img

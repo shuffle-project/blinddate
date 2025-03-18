@@ -1,3 +1,5 @@
+<!-- @migration-task Error while migrating Svelte code: `<tr>` cannot be a child of `<table>`. `<table>` only allows these children: `<caption>`, `<colgroup>`, `<tbody>`, `<thead>`, `<tfoot>`, `<style>`, `<script>`, `<template>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
+https://svelte.dev/e/node_invalid_placement -->
 <script lang="ts">
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import Icon from '../Icon.svelte';
@@ -9,31 +11,24 @@
 <div class="card">
 	<PersonaPortrait persona={friendPersona} />
 	<div class="card-content">
-		{#if friendPersona.disability !== 'Keine Beeinträchtigung'}
-			<table>
-				<tr>
-					<th aria-label="Beeinträchtigung"
-						><Icon img={friendPersona.disabilityIcon} size="medium" />
-					</th>
-					<td>{friendPersona.disability}</td>
-				</tr>
-				<tr>
-					<th aria-label="Beziehung zu {friendPersona.relation_to}"
-						><Icon img="relation" size="medium" />
-					</th>
-					<td>{friendPersona.relation}</td>
-				</tr>
-			</table>
-		{:else}
-			<table>
+		<table>
+			<tbody>
+				{#if friendPersona.disability !== 'Keine Beeinträchtigung'}
+					<tr>
+						<th aria-label="Beeinträchtigung"
+							><Icon img={friendPersona.disabilityIcon} size="medium" />
+						</th>
+						<td>{friendPersona.disability}</td>
+					</tr>
+				{/if}
 				<tr>
 					<th aria-label="Beziehung zu {friendPersona.relation_to}"
 						><Icon img="relation" size="medium" />
 					</th>
 					<td>{friendPersona.relation}</td>
 				</tr>
-			</table>
-		{/if}
+			</tbody>
+		</table>
 	</div>
 </div>
 

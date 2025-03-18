@@ -9,38 +9,40 @@
 	import Icon from '../Icon.svelte';
 	import StudentSpeechbubble from './StudentSpeechbubble.svelte';
 
-	export let selectedOption: SupportOptionId | '' = '';
-	export let mobileView = false;
+	const REVERSED_STUDENTS = BIG_PICTURE_STUDENTS.slice().reverse();
 
-	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS.reverse();
-	let selectedStudent: StudentId | undefined = undefined;
-	let selectedSpeechBubbleText = '';
+	interface Props {
+		selectedOption?: SupportOptionId | '';
+		mobileView?: boolean;
+	}
 
-	let highlightedStudents: number = 0;
+	let { selectedOption = '', mobileView = false }: Props = $props();
 
-	$: {
+	let selectedStudent: StudentId | undefined = $state(undefined);
+	let selectedSpeechBubbleText = $state('');
+
+	let students: BigPictureStudent[] = $state([]);
+	let highlightedStudents = $state(false);
+
+	$effect(() => {
 		if (selectedOption !== '') {
-			students = students.map((student) => {
-				if (student.benefitsFrom[selectedOption as SupportOptionId]) {
-					student.active = true;
-					highlightedStudents += 1;
-				} else {
-					student.active = false;
-				}
+			students = REVERSED_STUDENTS.map((student) => {
+				student.active = student.benefitsFrom[selectedOption as SupportOptionId] ? true : false;
 				return student;
 			});
+			highlightedStudents = true;
 		} else {
-			students = students.map((student) => {
+			students = REVERSED_STUDENTS.map((student) => {
 				student.active = false;
 				return student;
 			});
-			highlightedStudents = 0;
+			highlightedStudents = false;
 		}
-	}
+	});
 
 	function handleSpeechbubbleClose() {
 		const studentButton = document.getElementById(`student-${selectedStudent}-button`);
-		console.log('handleSpeechbubbleClose');
+
 		// TODO
 		studentButton?.focus();
 		selectedStudent = undefined;
@@ -95,8 +97,7 @@
 		<div
 			aria-hidden="true"
 			class="dark-overlay"
-			class:not-hidden={selectedOption !== '' ||
-				(highlightedStudents > 0 && highlightedStudents < BIG_PICTURE_STUDENTS.length)}
+			class:not-hidden={selectedOption !== '' || highlightedStudents}
 		>
 			<div class="notch">
 				<div class="notch-icon-wrapper">
@@ -112,7 +113,7 @@
 				class={student.id}
 				class:active={student.active}
 				class:selected={student.id === selectedStudent}
-				class:not-idle={mobileView && highlightedStudents !== BIG_PICTURE_STUDENTS.length}
+				class:not-idle={mobileView}
 				aria-hidden={!student.active}
 			>
 				{#if !mobileView}
@@ -122,10 +123,10 @@
 							? `${student.name}, ${student.disability}`
 							: student.name}
 						tabindex={student.active ? 0 : -1}
-						on:click={() => handleSelectStudent(student.id)}
+						onclick={() => handleSelectStudent(student.id)}
 						id="student-{student.id}-button"
 						aria-haspopup={student.active ? 'dialog' : 'false'}
-						on:focusout={() => (selectedSpeechBubbleText = '')}
+						onfocusout={() => (selectedSpeechBubbleText = '')}
 					>
 						<div class="student-info-wrapper" aria-hidden="true">
 							<div class="student-info">
@@ -147,7 +148,7 @@
 						studentName={student.name}
 						studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
 						visible={selectedStudent === student.id}
-						on:close={() => handleSpeechbubbleClose()}
+						close={() => handleSpeechbubbleClose()}
 					/>
 				{:else}
 					<img
@@ -165,10 +166,10 @@
 		class="big-picture-room"
 		src="{base}/decorations/big-picture-room.svg"
 		alt=""
-		aria-hidden={highlightedStudents !== 0 || mobileView}
+		aria-hidden={highlightedStudents || mobileView}
 		width="1350"
 		height="980"
-		aria-label={highlightedStudents === 0 && !mobileView
+		aria-label={!highlightedStudents && !mobileView
 			? 'Vorlesungsaal mit Studierenden. Wählen Sie weiter unten eine Unterstützungsmaßname aus und erfahren Sie hier, wie die Studierenden davon profitieren.'
 			: ''}
 	/>
@@ -182,7 +183,7 @@
 	</div>
 {/if}
 
-<svelte:window on:mouseup={(e) => handleBackdropClick(e)} />
+<svelte:window onmouseup={(e) => handleBackdropClick(e)} />
 
 <style lang="scss">
 	.wrapper {

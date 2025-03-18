@@ -9,8 +9,12 @@
 		};
 	}
 
-	export let keyedChecks: CheckObject[];
-	export let toggleCheckBox: (id: number) => void;
+	interface Props {
+		keyedChecks: CheckObject[];
+		toggleCheckBox: (id: number) => void;
+	}
+
+	let { keyedChecks = $bindable(), toggleCheckBox }: Props = $props();
 </script>
 
 <ul>
@@ -27,7 +31,7 @@
 					value={check}
 					disabled={check.id === 0 ? true : false}
 					checked={check.checked}
-					on:click={() => toggleCheckBox(check.id)}
+					onclick={() => toggleCheckBox(check.id)}
 				/>
 				<label class="label" for={'checkbox' + check.id}> {check.text}</label>
 			</div>

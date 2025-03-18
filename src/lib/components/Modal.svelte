@@ -1,22 +1,37 @@
 <script lang="ts">
+	import { run, stopPropagation } from 'svelte/legacy';
+
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import { onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 	import { handleBackdropClick } from './utils';
 
-	export let bottomSheet = false;
-	export let term = '';
-	export let friendPersona: FriendPersona = {
+
+	interface Props {
+		bottomSheet?: boolean;
+		term?: string;
+		friendPersona?: FriendPersona;
+		displayModal?: boolean;
+		headline?: import('svelte').Snippet;
+		content?: import('svelte').Snippet;
+	}
+
+	let {
+		bottomSheet = false,
+		term = '',
+		friendPersona = {
 		id: 'placeholder',
 		name: '',
 		disability: '',
 		disabilityIcon: '',
 		relation: '',
 		relation_to: ''
-	};
-
-	export let displayModal = false;
-	let modal: HTMLDialogElement;
+	},
+		displayModal = $bindable(false),
+		headline,
+		content
+	}: Props = $props();
+	let modal: HTMLDialogElement = $state();
 
 	let randomId = Math.random();
 
@@ -24,7 +39,7 @@
 		displayModal = !displayModal;
 	}
 
-	$: {
+	run(() => {
 		if (modal) {
 			if (displayModal) {
 				modal.showModal();
@@ -35,7 +50,7 @@
 				modal.close();
 			}
 		}
-	}
+	});
 
 	onMount(() => {
 		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
@@ -67,8 +82,8 @@
 	});
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
 	aria-labelledby={!bottomSheet ? `headline-${randomId}` : null}
 	aria-label={bottomSheet
@@ -79,19 +94,19 @@
 	inert
 	class:bottomSheet
 	bind:this={modal}
-	on:click|stopPropagation={(e) => handleBackdropClick(e, modal)}
+	onclick={stopPropagation((e) => handleBackdropClick(e, modal))}
 >
 	<div class="modal-content">
 		{#if !bottomSheet}
 			<div class="header">
 				<div class="header-content">
 					<h2 id="headline-{randomId}">
-						<slot name="headline" />
+						{@render headline?.()}
 					</h2>
 					<button
 						aria-label="Dialog schließen"
 						aria-describedby="headline-{randomId}"
-						on:click|stopPropagation={() => toggleModalDisplay()}
+						onclick={stopPropagation(() => toggleModalDisplay())}
 						><Icon img="close" size="big" svg_color="white" /></button
 					>
 				</div>
@@ -100,7 +115,7 @@
 		{:else}
 			<div class="header">
 				<button
-					on:click|stopPropagation={() => toggleModalDisplay()}
+					onclick={stopPropagation(() => toggleModalDisplay())}
 					aria-label={term !== ''
 						? term + ' Definition, Dialog schließen'
 						: 'Über ' + friendPersona.name + ', Dialog schließen'}
@@ -110,9 +125,9 @@
 			</div>
 		{/if}
 
-		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<div class="content" tabindex="0">
-			<slot name="content" />
+			{@render content?.()}
 		</div>
 	</div>
 </dialog>

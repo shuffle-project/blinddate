@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { sineIn, sineOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import type { Persona } from '../../interfaces/persona.interfaces';
@@ -8,41 +8,44 @@
 	import { handleBackdropClick } from '../utils';
 	import ToggleButton from './ToggleButton.svelte';
 
-	export let persona: Persona;
-	export let mobileCardIsSticky = false;
+	interface Props {
+		persona: Persona;
+		mobileCardIsSticky?: boolean;
+		deactivateScrolling: Function;
+	}
 
-	let headings: NodeListOf<Element>;
+	let { persona, mobileCardIsSticky = false, deactivateScrolling }: Props = $props();
 
-	let dialogOpen = false;
-	let showTableOfContents = false;
+	let headings: NodeListOf<Element> | undefined = $state();
 
-	let dialog: HTMLDialogElement;
+	let dialogOpen = $state(false);
+	let showTableOfContents = $state(false);
+
+	let dialogElement: HTMLDialogElement = $state();
 
 	let modal: Modal;
-
-	const dispatch = createEventDispatcher();
 
 	function toggleDialog() {
 		dialogOpen = !dialogOpen;
 	}
 
-	$: {
-		if (dialog) {
+	function toggleTableOfContents() {
+		showTableOfContents = !showTableOfContents;
+	}
+
+	$effect(() => {
+		if (dialogElement) {
 			if (dialogOpen) {
-				dialog.showModal();
+				dialogElement.showModal();
 				document.body.setAttribute('style', 'overflow: hidden;');
 			} else {
 				document.body.removeAttribute('style');
 				showTableOfContents = false;
-				dialog.setAttribute('inert', '');
-				dialog.close();
+				dialogElement.setAttribute('inert', '');
+				dialogElement.close();
 			}
 		}
-	}
-
-	function toggleTableOfContents() {
-		showTableOfContents = !showTableOfContents;
-	}
+	});
 
 	onMount(() => {
 		headings = document.querySelectorAll('h1, h2.main-heading');
@@ -64,25 +67,16 @@
 			});
 		});
 
-		dialogAttrObserver.observe(dialog, {
+		dialogAttrObserver.observe(dialogElement, {
 			attributes: true
 		});
 
-		// const documentAttrObserver = new MutationObserver((mutations, observer) => {
-		// 	mutations.forEach((mutation) => )
-		// })
-
-		if (dialog) {
-			dialog.addEventListener('close', (e) => {
+		if (dialogElement) {
+			dialogElement.addEventListener('close', (e) => {
 				dialogOpen = false;
 			});
 		}
 	});
-
-	function deactivateScrolling() {
-		dialogOpen = false;
-		dispatch('deactivateScrolling', false);
-	}
 </script>
 
 <div class="mobile-card">
@@ -94,13 +88,13 @@
 			{persona}
 			{dialogOpen}
 		/>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<dialog
 			inert
 			class:sticky={mobileCardIsSticky}
-			bind:this={dialog}
-			on:click={(e) => handleBackdropClick(e, dialog)}
+			bind:this={dialogElement}
+			onclick={(e) => handleBackdropClick(e, dialogElement)}
 		>
 			<nav aria-label={persona.name + ' mitscrollendes Menü'}>
 				<ul>
@@ -116,7 +110,10 @@
 						<button
 							class="table-of-contents-btn btn-with-arrow"
 							aria-expanded={showTableOfContents}
-							on:click|stopPropagation={() => toggleTableOfContents()}
+							onclick={(e) => {
+								e.stopPropagation();
+								toggleTableOfContents();
+							}}
 						>
 							<Icon img="list-subtle" size="medium">Inhaltsverzeichnis</Icon>
 							<div class="arrow-icon" class:contents_open={showTableOfContents}>
@@ -124,14 +121,14 @@
 							</div>
 						</button>
 					</li>
-					{#if showTableOfContents}
+					{#if showTableOfContents && headings}
 						{#each headings as heading}
 							<li
 								class="heading-link"
 								in:slide|global={{ duration: 300, easing: sineOut }}
 								out:slide|global={{ duration: 300, easing: sineIn }}
 							>
-								<a class="focus-indicator" href="#{heading.id}" on:click={toggleDialog}>
+								<a class="focus-indicator" href="#{heading.id}" onclick={toggleDialog}>
 									{heading.innerHTML}
 								</a>
 							</li>
@@ -141,7 +138,10 @@
 					<li>
 						<button
 							class="disability-btn btn-with-arrow"
-							on:click|stopPropagation={() => modal.toggleModalDisplay()}
+							onclick={(e) => {
+								e.stopPropagation();
+								modal.toggleModalDisplay();
+							}}
 						>
 							<Icon svg_color="black" img={persona.disabilityIcon} size="medium"
 								>{persona.disability}</Icon
@@ -150,7 +150,7 @@
 						</button>
 					</li>
 					<li>
-						<a href="#tips" on:click={toggleDialog} class="tips-btn btn-with-arrow">
+						<a href="#tips" onclick={toggleDialog} class="tips-btn btn-with-arrow">
 							<Icon img="light-bulb" size="medium" svg_color="white"
 								>Selbstcheck Barrierefreiheit</Icon
 							>
@@ -160,7 +160,11 @@
 					<li>
 						<button
 							class="stop-scrolling-btn"
-							on:click|stopPropagation={() => deactivateScrolling()}
+							onclick={(e) => {
+								e.stopPropagation();
+								deactivateScrolling();
+								toggleDialog();
+							}}
 						>
 							Mitscrollen stoppen und Menü schließen
 						</button>
@@ -172,12 +176,12 @@
 </div>
 
 <Modal bind:this={modal}>
-	<svelte:fragment slot="headline">
+	{#snippet headline()}
 		{persona.disability}
-	</svelte:fragment>
-	<svelte:fragment slot="content">
-		<svelte:component this={persona.disabilityExplanation} />
-	</svelte:fragment>
+	{/snippet}
+	{#snippet content()}
+		<persona.disabilityExplanation />
+	{/snippet}
 </Modal>
 
 <style lang="scss" scoped>

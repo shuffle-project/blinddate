@@ -1,3 +1,5 @@
+<!-- @migration-task Error while migrating Svelte code: `<tr>` cannot be a child of `<table>`. `<table>` only allows these children: `<caption>`, `<colgroup>`, `<tbody>`, `<thead>`, `<tfoot>`, `<style>`, `<script>`, `<template>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
+https://svelte.dev/e/node_invalid_placement -->
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { Persona } from '../../interfaces/persona.interfaces';
@@ -40,47 +42,52 @@
 			<h3 id="tablist-1">{persona.week?.month} {persona.week?.year}</h3>
 			<!-- {#key days} -->
 			<table role="presentation">
-				<tr aria-hidden="true">
-					{#each days as day}
-						<th class="day">{day.day}</th>
-					{/each}
-				</tr>
+				<thead>
+					<tr aria-hidden="true">
+						{#each days as day}
+							<th class="day">{day.day}</th>
+						{/each}
+					</tr>
+				</thead>
+				<tbody>
+					<tr role="tablist">
+						{#each days as day, i}
+							<td class="activity-selection-cell">
+								<button
+									tabindex={i === detailedDay ? 0 : -1}
+									class:active={detailedDay === i}
+									id="weektab-{i + 1}-{randomId}"
+									role="tab"
+									aria-controls="tabpanel-{i + 1}-{randomId}"
+									aria-selected={detailedDay === i}
+									aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
+										/\&shy;/gi,
+										''
+									)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
+									on:click={() => onOpenDayDetails(day)}
+									on:keydown={onKeypressed}
+								>
+									{day.date}
+								</button>
+							</td>
+						{/each}
+					</tr>
 
-				<tr role="tablist">
-					{#each days as day, i}
-						<td class="activity-selection-cell">
-							<button
-								tabindex={i === detailedDay ? 0 : -1}
-								class:active={detailedDay === i}
-								id="weektab-{i + 1}-{randomId}"
-								role="tab"
-								aria-controls="tabpanel-{i + 1}-{randomId}"
-								aria-selected={detailedDay === i}
-								aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
-									/\&shy;/gi,
-									''
-								)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
-								on:click={() => onOpenDayDetails(day)}
-								on:keydown={onKeypressed}
-							>
-								{day.date}
-							</button>
+					<tr class="activity-wrapper">
+						<td>
+							<div class="activity">
+								{#if days[detailedDay].smiley === 'sad'}
+									<Icon img="sad" svg_color="green" size="medium" />
+								{:else}
+									<Icon img="happy" svg_color="green" size="medium" />
+								{/if}
+								<div class="activity-text">
+									{days[detailedDay].activity}
+								</div>
+							</div>
 						</td>
-					{/each}
-				</tr>
-
-				<tr class="activity-wrapper">
-					<div class="activity">
-						{#if days[detailedDay].smiley === 'sad'}
-							<Icon img="sad" svg_color="green" size="medium" />
-						{:else}
-							<Icon img="happy" svg_color="green" size="medium" />
-						{/if}
-						<div class="activity-text">
-							{days[detailedDay].activity}
-						</div>
-					</div>
-				</tr>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 

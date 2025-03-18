@@ -1,18 +1,28 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import PersonaSitting from '../PersonaSitting.svelte';
 
-	export let length: number;
-	export let checkedLength: number;
-	export let persona: Persona;
+	interface Props {
+		length: number;
+		checkedLength: number;
+		persona: Persona;
+	}
 
-	$: difference = length - checkedLength;
-	$: uncheckedBoxes = Array(difference).fill(0);
-	$: checkedBoxes = Array(checkedLength).fill(1);
-	$: allBoxes = [...checkedBoxes, ...uncheckedBoxes];
+	let { length, checkedLength, persona }: Props = $props();
 
-	$: length;
-	$: checkedLength;
+	let difference = $derived(length - checkedLength);
+	let uncheckedBoxes = $derived(Array(difference).fill(0));
+	let checkedBoxes = $derived(Array(checkedLength).fill(1));
+	let allBoxes = $derived([...checkedBoxes, ...uncheckedBoxes]);
+
+	run(() => {
+		length;
+	});
+	run(() => {
+		checkedLength;
+	});
 </script>
 
 <div class="wrapper">
@@ -27,7 +37,7 @@
 		<ul class="box-container" aria-hidden="true">
 			<PersonaSitting position="mobile" {persona} />
 			{#each allBoxes as box}
-				<li class="box {box == 1 ? 'box__checked' : ''}" />
+				<li class="box {box == 1 ? 'box__checked' : ''}"></li>
 			{/each}
 		</ul>
 	</div>

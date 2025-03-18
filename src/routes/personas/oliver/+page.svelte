@@ -9,14 +9,17 @@
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FactCarousel from '$lib/components/factCarousel/FactCarousel.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
+	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { OLIVER } from '$lib/constants/oliver';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 	const persona: Persona = OLIVER;
 </script>
 
-<PersonaContent {persona} let:MainHeading let:TextSection>
+<PersonaContent {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-01.mp3'}>
 		Servus, mein Name ist Oliver, ich bin 31 Jahre alt und studiere seit 4 Jahren in Würzburg. Ich
 		liebe es, zu kochen – am liebsten natürlich Mexikanisch - und Musik zu machen, vor allem für und
@@ -90,7 +93,7 @@
 
 	<MainHeading heading="LRS und ADHS" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Die Diagnosen LRS und AD(H)S treten nicht selten gemeinsam auf. ADHS ist die Abkürzung für
 			Aufmerksamkeitsdefizit-/Hyperaktivitätsstörung. Symptome von ADHS können unter anderem
@@ -103,8 +106,12 @@
 		link="https://gemeinsam-adhs-begegnen.de/leben-mit-adhs/erwachsene/ratgeber/selbstmanagement-im-alltag-mit-adhs/"
 		marginBottom
 	>
-		<svelte:fragment slot="linkText">Selbstmanagement im Alltag mit einer ADHS</svelte:fragment>
-		<svelte:fragment slot="textAfter">von Gemeinsam ADHS Begegnen</svelte:fragment>
+		{#snippet linkText()}
+			Selbstmanagement im Alltag mit einer ADHS
+		{/snippet}
+		{#snippet textAfter()}
+			von Gemeinsam ADHS Begegnen
+		{/snippet}
 	</Recommendation>
 
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-03.mp3'}>
@@ -132,7 +139,7 @@
 	<FactCarousel facts={persona.facts} />
 
 	<MainHeading heading="Lehrveranstaltungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Da das sinnentnehmende Lesen für viele Studierende mit LRS erschwert oder verlangsamt ist,
 			kann deren Gedächtnis sehr gut auf das Aufnehmen auditiver Inhalte trainiert sein. Trotzdem
@@ -169,7 +176,7 @@
 	/>
 
 	<MainHeading heading="Lernmaterial" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Aufwendig und visuell „spannend“ gestaltete Texte, die ggf. noch durch zwischengeschaltete
 			Anzeigen unterbrochen werden, oder aufwendig formulierte Aufgabenstellungen, bedeuten für
@@ -201,7 +208,7 @@
 	</SpeechBubble>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Studierende mit LRS oder ADHS haben, wie bei anderen Studierenden mit Beeinträchtigungen auch,
 			häufig mit Vorurteilen zu kämpfen. Viele Studierende haben sich im Studium verschiedene
@@ -225,7 +232,7 @@
 	</SpeechBubble>
 
 	<MainHeading heading="Prüfungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Prüfungsphasen können für Studierende mit LRS sehr belastend sein, da viele Lerninhalte
 			innerhalb kürzester Zeit aufgenommen und verarbeitet werden müssen.
@@ -253,7 +260,7 @@
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
@@ -277,52 +284,68 @@
 	<ul class="more-info-list">
 		<li>
 			<Recommendation link="https://www.bvl-legasthenie.de/ausbildung-beruf/studium.html">
-				<svelte:fragment slot="linkText">Studium mit Legasthenie/Dyskalkulie</svelte:fragment>
-				<svelte:fragment slot="textAfter">
+				{#snippet linkText()}
+					Studium mit Legasthenie/Dyskalkulie
+				{/snippet}
+				{#snippet textAfter()}
 					vom Bundesverband für Legasthenie und Dyskalkulie e.V.
-				</svelte:fragment>
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://www.studierendenwerke.de/themen/studieren-mit-behinderung/studium-und-pruefungen/technische-hilfsmittel-assistenzen/legasthenie-technische-und-personelle-unterstuetzung"
 			>
-				<svelte:fragment slot="linkText"
-					>Legasthenie - Technische und personelle Unterstützung</svelte:fragment
-				>
-				<svelte:fragment slot="textAfter">vom Deutschen Studierendenwerk</svelte:fragment>
+				{#snippet linkText()}
+					Legasthenie - Technische und personelle Unterstützung
+				{/snippet}
+				{#snippet textAfter()}
+					vom Deutschen Studierendenwerk
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.mehrwert-inklusion.de/einfache-sprache">
-				<svelte:fragment slot="linkText">MehrWert Einfache Sprache</svelte:fragment>
-				<svelte:fragment slot="textAfter">von MehrWert Inklusion</svelte:fragment>
+				{#snippet linkText()}
+					MehrWert Einfache Sprache
+				{/snippet}
+				{#snippet textAfter()}
+					von MehrWert Inklusion
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=aYzGgtVHyXA">
-				<svelte:fragment slot="linkText">ADHS bei Erwachsenen | ARTE Re:</svelte:fragment>
-				<svelte:fragment slot="textAfter">ein Video von ARTEde</svelte:fragment>
+				{#snippet linkText()}
+					ADHS bei Erwachsenen | ARTE Re:
+				{/snippet}
+				{#snippet textAfter()}
+					ein Video von ARTEde
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://www.bvl-legasthenie.de/images/static/pdfs/Ausbildung_Beruf/Ausbildung_Hilfen_Legasthenie.pdf"
 			>
-				<svelte:fragment slot="linkText">Checkliste für Nachteilsausgleiche (PDF)</svelte:fragment>
-				<svelte:fragment slot="textAfter"
-					>vom Bundesverband für Legasthenie und Dyskalkulie e.V.</svelte:fragment
-				>
+				{#snippet linkText()}
+					Checkliste für Nachteilsausgleiche (PDF)
+				{/snippet}
+				{#snippet textAfter()}
+					vom Bundesverband für Legasthenie und Dyskalkulie e.V.
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://www.hs-emden-leer.de/generische-seiten/meldung?tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=6591&cHash=d4003d3c1d4fca9e3134cd972e85e248"
 			>
-				<svelte:fragment slot="linkText"
-					>Erfahrungsbericht „Mit Chaos im Kopf neue Umweltlösungen finden“
-				</svelte:fragment>
-				<svelte:fragment slot="textAfter">von der Hochschule Emden/Leer</svelte:fragment>
+				{#snippet linkText()}
+					Erfahrungsbericht „Mit Chaos im Kopf neue Umweltlösungen finden“
+				{/snippet}
+				{#snippet textAfter()}
+					von der Hochschule Emden/Leer
+				{/snippet}
 			</Recommendation>
 		</li>
 	</ul>

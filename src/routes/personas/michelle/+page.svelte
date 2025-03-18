@@ -5,8 +5,13 @@
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
+	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
+	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
+	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { MICHELLE } from '$lib/constants/michelle';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import Week from '../../../lib/components/week/index.svelte';
@@ -14,7 +19,7 @@
 	const persona: Persona = MICHELLE;
 </script>
 
-<PersonaContent {persona} let:MainHeading let:TextSection>
+<PersonaContent {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-01.mp3'}>
 		Hi, mein Name ist Chelle – eigentlich Michelle. Ich studiere Popmusikdesign an der Popakademie
 		in Mannheim. Ich spiele Schlagzeug in einer Band – also ihr könnt mich oft im Proberaum finden.
@@ -40,7 +45,7 @@
 	</SpeechBubble>
 
 	<MainHeading heading="Allgemeine Informationen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			<span>Symptome</span>
 
@@ -126,14 +131,14 @@
 	</SpeechBubble>
 
 	<MainHeading heading="Lehrveranstaltungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Durch Bauchkrämpfe und Durchfälle ist das schnelle Erreichen einer Toilette für viele
 			Studierende mit CED eine Voraussetzung, die gegeben sein muss.
 		</Text>
 	</TextSection>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Wenn die Rahmenbedingungen einer Veranstaltung (Räumlichkeiten, Pausen-Zeiten, etc.)
 			frühzeitig bekannt gegeben werden, haben die Studierenden die Möglichkeit, im Voraus zu
@@ -157,7 +162,7 @@
 		{persona}
 	/>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text extraTopMargin>
 			Blockveranstaltungen oder Veranstaltungen, die sich über mehrere Stunden am Stück erstrecken,
 			sind mit flexiblem Eingehen auf das aktuelle Befinden kaum vereinbar. Werden Veranstaltungen
@@ -175,7 +180,7 @@
 		Gruppenarbeiten beitrage und ich immer das Gefühl habe, die anderen denken schlecht von mir.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Anwesenheitspflichten bei Lehrveranstaltungen sind pro Bundesland und Hochschule
 			unterschiedlich geregelt. Ist Anwesenheit Voraussetzung für das Ablegen einer Prüfung oder das
@@ -190,7 +195,7 @@
 
 	<MainHeading heading="Lernmaterial" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Auch hier gilt: Studierende mit chronischen Erkrankungen brauchen die Möglichkeit, flexibel
 			und je nach gesundheitlichem Zustand studieren zu können. Asynchrone Vorlesungen und online
@@ -214,37 +219,41 @@
 		zeigt mir auch, dass ich mein Studium schaffe.
 	</SpeechBubble>
 
-	<Accordion personaName={persona.name} let:AccordionItem>
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question"
-				>Hast Du Dir schon mal in der Öffentlichkeit in die Hose gemacht?</svelte:fragment
-			>
-			<PersonaAnswer {persona}>
-				Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker stellen,
-				die kommen, wann sie wollen - auch mal mitten auf dem Weg zur Uni. Wenn dann gerade keine
-				öffentliche Toilette in der Nähe ist, hilft auch keine große, körperliche Anstrengung, um
-				etwas zurückzuhalten. Nach so einem "Unfall" habe ich mich eine Zeit lang kaum noch aus dem
-				Haus getraut!
-			</PersonaAnswer>
+	<Accordion personaName={persona.name}>
+		<AccordionItem>
+			{#snippet question()}
+				Hast Du Dir schon mal in der Öffentlichkeit in die Hose gemacht?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Das ist super peinlich, aber: Ja! Nach meinen Magenkrämpfen kann man keinen Wecker
+					stellen, die kommen, wann sie wollen - auch mal mitten auf dem Weg zur Uni. Wenn dann
+					gerade keine öffentliche Toilette in der Nähe ist, hilft auch keine große, körperliche
+					Anstrengung, um etwas zurückzuhalten. Nach so einem "Unfall" habe ich mich eine Zeit lang
+					kaum noch aus dem Haus getraut!
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question"
-				>Was ist der unangebrachteste Kommentar, den Du bezüglich Deiner Krankheit bekommen hast?
-			</svelte:fragment>
-			<PersonaAnswer {persona}>
-				Nur einer? Ich hab ein ganzes „Bullshit Bingo“-Feld in meinem Notizblock! Viele Kommentare
-				höre ich so häufig – Wenn ich jedes Mal einen Euro bekommen würde, wäre ich inzwischen
-				reich. Der Klassiker: „Und wann bist du wieder gesund?“, dicht gefolgt von Ratschlägen wie:
-				„Durchfall hab ich auch manchmal, mir hilft da immer Immodium“. Oder: „Du darfst länger
-				Klausuren schreiben, du hast es gut!“. Lass uns gerne tauschen, du bekommst meinen NTA und
-				ich deinen gesunden Darm!
-			</PersonaAnswer>
+		<AccordionItem>
+			{#snippet question()}
+				Was ist der unangebrachteste Kommentar, den Du bezüglich Deiner Krankheit bekommen hast?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Nur einer? Ich hab ein ganzes „Bullshit Bingo“-Feld in meinem Notizblock! Viele Kommentare
+					höre ich so häufig – Wenn ich jedes Mal einen Euro bekommen würde, wäre ich inzwischen
+					reich. Der Klassiker: „Und wann bist du wieder gesund?“, dicht gefolgt von Ratschlägen
+					wie: „Durchfall hab ich auch manchmal, mir hilft da immer Immodium“. Oder: „Du darfst
+					länger Klausuren schreiben, du hast es gut!“. Lass uns gerne tauschen, du bekommst meinen
+					NTA und ich deinen gesunden Darm!
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 	</Accordion>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Die Kommunikation der Bedarfe ist gerade bei nicht-sichtbaren Beeinträchtigungen sehr wichtig.
 			Studierende sind dann auf Verständnis von und individuelle Absprachen mit Lehrpersonen
@@ -258,7 +267,7 @@
 		aufklärt.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Ein Austausch über Beeinträchtigungen unter Studierenden findet häufig in
 			Selbsthilfevereinigungen statt. Eine offene Haltung und auch das Bieten von
@@ -274,7 +283,7 @@
 		Verständnis zeigen. Die kriegen das hin, mich mitzunehmen.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Lehrende können beispielsweise Informationen zu Anlaufstellen für Beratung und Austausch
 			bereitstellen und damit Studierende mit sichtbaren und nicht-sichtbaren Beeinträchtigungen
@@ -283,7 +292,7 @@
 	</TextSection>
 
 	<MainHeading heading="Eine Woche im Leben von" personaName={persona.name} />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin
 			>Michelles zweites Semester an der Popakademie ist seit einigen Wochen in vollem Gange. Neben
 			vielen Seminaren muss sie aber auch viele Arzttermine wahrnehmen.</Text
@@ -301,7 +310,7 @@
 		Prüfung 5 mal auf die Toilette! Und dann muss ich mich ja auch immer wieder neu reindenken!
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Schübe der Erkrankungen können durch Stress hervorgerufen oder verstärkt werden. Mithilfe
 			eines Nachteilsausgleichs können Bedingungen geschaffen werden, die Studierenden mit
@@ -315,7 +324,7 @@
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
@@ -336,28 +345,34 @@
 	<ul class="more-info-list">
 		<li>
 			<Recommendation link="https://www.dccv.de/die-dccv/aktiv-werden/aktiv-bei-studiced/">
-				<svelte:fragment slot="linkText">Aktiv werden bei studiCED</svelte:fragment>
-				<svelte:fragment slot="textAfter">
+				{#snippet linkText()}
+					Aktiv werden bei studiCED
+				{/snippet}
+				{#snippet textAfter()}
 					von der Deutschen Morbus Crohn / Colitis ulcerosa Vereinigung e.V.
-				</svelte:fragment>
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://www.dccv.de/betroffene-angehoerige/medizinische-grundlagen/was-ist-morbus-crohn/"
 			>
-				<svelte:fragment slot="linkText">Morbus Crohn</svelte:fragment>
-				<svelte:fragment slot="textAfter"
-					>von der Deutschen Morbus Crohn / Colitis ulcerosa Vereinigung e.V.</svelte:fragment
-				>
+				{#snippet linkText()}
+					Morbus Crohn
+				{/snippet}
+				{#snippet textAfter()}
+					von der Deutschen Morbus Crohn / Colitis ulcerosa Vereinigung e.V.
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=EJxZfCsCPdU">
-				<svelte:fragment slot="linkText"
-					>Darmkrankheit: May hat seit 11 Jahren Schmerzen | TRU DOKU</svelte:fragment
-				>
-				<svelte:fragment slot="textAfter">ein Video von TRU DOKU</svelte:fragment>
+				{#snippet linkText()}
+					Darmkrankheit: May hat seit 11 Jahren Schmerzen | TRU DOKU
+				{/snippet}
+				{#snippet textAfter()}
+					ein Video von TRU DOKU
+				{/snippet}
 			</Recommendation>
 		</li>
 	</ul>

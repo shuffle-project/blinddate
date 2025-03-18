@@ -1,18 +1,14 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import Icon from '../Icon.svelte';
 
-	export let studentName: string;
-	export let studentComment: string | undefined;
-	export let visible = false;
-
-	let speechbubble: HTMLDivElement;
-
-	const dispatch = createEventDispatcher();
-
-	function close() {
-		dispatch('close');
+	interface Props {
+		studentName: string;
+		studentComment: string | undefined;
+		visible?: boolean;
+		close: Function;
 	}
+
+	let { studentName, studentComment, visible = false, close }: Props = $props();
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
@@ -22,17 +18,17 @@
 </script>
 
 {#if studentComment && visible}
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<div class="speechbubble-wrapper {studentName}">
+		<!-- svelte-ignore a11y_interactive_supports_focus -->
 		<div
 			class="speechbubble"
 			role="dialog"
 			aria-label="{studentName} Sprechblase"
-			on:keyup={(e) => handleKeyPress(e)}
-			bind:this={speechbubble}
+			onkeyup={(e) => handleKeyPress(e)}
 		>
 			<div class="header">
-				<button aria-label="Schließen" on:click={() => close()}>
+				<button aria-label="Schließen" onclick={() => close()}>
 					<Icon img="close" svg_color="white" size="parent" />
 				</button>
 			</div>

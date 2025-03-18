@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { Source } from '$lib/interfaces/sources.interfaces';
 
-	export let sources: Source[];
+	interface Props {
+		sources: Source[];
+	}
+
+	let { sources }: Props = $props();
 </script>
 
 <div class="source-container">

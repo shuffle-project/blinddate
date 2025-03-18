@@ -1,11 +1,22 @@
 <script lang="ts">
+	import { stopPropagation } from 'svelte/legacy';
+
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { createEventDispatcher } from 'svelte';
 	import Icon from '../Icon.svelte';
-	export let persona: Persona;
-	export let dialogOpen = false;
-	export let outer = false;
-	export let mobileCardIsSticky = false;
+	interface Props {
+		persona: Persona;
+		dialogOpen?: boolean;
+		outer?: boolean;
+		mobileCardIsSticky?: boolean;
+	}
+
+	let {
+		persona,
+		dialogOpen = false,
+		outer = false,
+		mobileCardIsSticky = false
+	}: Props = $props();
 
 	const dispatch = createEventDispatcher();
 </script>
@@ -33,7 +44,7 @@
 		aria-label={!outer
 			? persona.name + ' mitscrollendes Menü schließen'
 			: persona.name + ' mitscrollendes Menü öffnen'}
-		on:click|stopPropagation={() => dispatch('toggleDialog')}
+		onclick={stopPropagation(() => dispatch('toggleDialog'))}
 	>
 		{#if !outer}
 			<Icon size="medium" svg_color="white" img="close" />

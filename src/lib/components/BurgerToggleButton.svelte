@@ -1,8 +1,12 @@
 <script lang="ts">
 	import Icon from './Icon.svelte';
 
-	export let pressed = false;
-	export let onClickButtonToggle: () => void;
+	interface Props {
+		pressed?: boolean;
+		onClickButtonToggle: () => void;
+	}
+
+	let { pressed = $bindable(false), onClickButtonToggle }: Props = $props();
 
 	function onClickButtonToggleInternal() {
 		pressed = !pressed;
@@ -14,7 +18,7 @@
 	class="switch-button"
 	aria-pressed={pressed}
 	aria-label="Inhaltsverzeichnis anzeigen"
-	on:click={onClickButtonToggleInternal}
+	onclick={onClickButtonToggleInternal}
 >
 	<div class="blob">
 		{#if !pressed}

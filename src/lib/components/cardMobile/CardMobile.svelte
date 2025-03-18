@@ -2,10 +2,14 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { onMount } from 'svelte';
 	import InnerCardMobile from './InnerCardMobile.svelte';
-	export let persona: Persona;
-	let mobileCardScrolling = true;
-	let mobileCard: HTMLElement;
-	let mobileCardIsSticky = false;
+	interface Props {
+		persona: Persona;
+	}
+
+	let { persona }: Props = $props();
+	let mobileCardScrolling = $state(true);
+	let mobileCardElement: HTMLElement;
+	let mobileCardIsSticky = $state(false);
 
 	onMount(() => {
 		const observer = new IntersectionObserver(
@@ -15,7 +19,7 @@
 			{ threshold: [1] }
 		);
 
-		if (mobileCard) observer.observe(mobileCard);
+		if (mobileCardElement) observer.observe(mobileCardElement);
 	});
 
 	function toggleMobileCardScrolling() {
@@ -27,22 +31,22 @@
 	}
 </script>
 
-<div bind:this={mobileCard} class="mobile-card" class:sticky={mobileCardScrolling}>
+<div bind:this={mobileCardElement} class="mobile-card" class:sticky={mobileCardScrolling}>
 	<InnerCardMobile
-		on:deactivateScrolling={deactivateMobileCardScrolling}
+		deactivateScrolling={deactivateMobileCardScrolling}
 		{mobileCardIsSticky}
 		{persona}
 	/>
 </div>
 
 <div class="scrolling-note">
-	<div class="socket" />
+	<div class="socket"></div>
 	<input
 		type="checkbox"
 		class="checkbox"
 		id="scroll"
 		bind:checked={mobileCardScrolling}
-		on:click={toggleMobileCardScrolling}
+		onclick={toggleMobileCardScrolling}
 	/>
 	<label for="scroll">
 		<span aria-hidden="true">Komponente scrollt mit</span>

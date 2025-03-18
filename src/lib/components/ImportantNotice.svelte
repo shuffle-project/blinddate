@@ -3,8 +3,12 @@
 
 	type Content = 'support' | 'lrs-compensation' | 'femaleAutism';
 
-	export let content: Content;
-	export let marginTop = false;
+	interface Props {
+		content: Content;
+		marginTop?: boolean;
+	}
+
+	let { content, marginTop = false }: Props = $props();
 </script>
 
 <section aria-label="Wichtig-Abschnitt" class="wrapper" class:marginTop>

@@ -4,14 +4,18 @@
 	import CheckBoxes from './componenets/CheckBoxes.svelte';
 	import Desktop from './componenets/Indicator/Desktop/Desktop.svelte';
 	import Mobile from './componenets/Indicator/Mobile/Mobile.svelte';
-	export let checks: string[];
-	export let persona: Persona;
+	interface Props {
+		checks: string[];
+		persona: Persona;
+	}
+
+	let { checks, persona }: Props = $props();
 
 	function randomIntFromInterval(min: number, max: number) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
-	let keyedChecks: CheckObject[] = checks.map((item, i) => ({
+	let keyedChecks: CheckObject[] = $state(checks.map((item, i) => ({
 		id: i,
 		text: item,
 		checked: i === 0 ? true : false,
@@ -19,7 +23,7 @@
 		box: {
 			size: 80
 		}
-	}));
+	})));
 
 	function toggleCheckBox(id: number) {
 		let checkBox = keyedChecks.find((item) => item.id === id);

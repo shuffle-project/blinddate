@@ -6,7 +6,10 @@
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
+	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import { ALEX_FRIEND } from '$lib/constants/alex';
 	import { PSYCHE_TRANSKRIPT } from '$lib/constants/transcripts';
@@ -51,7 +54,7 @@
 	};
 </script>
 
-<PersonaContent {persona} let:MainHeading let:TextSection>
+<PersonaContent {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-01.mp3'}>
 		Hallo, mein Name ist Maxi und ich bin 29 Jahre alt. Ich studiere Architektur in Mannheim – und
 		bin endlich auch im Master angekommen. Das war ein steiniger Weg. Ich wohne im Wohnheim in einer
@@ -153,7 +156,7 @@
 
 	<MainHeading heading="Lehrveranstaltungen" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Einer Vorlesung über 90 Minuten aufmerksam zuzuhören, ist anstrengend.
 			Konzentrations&shy;schwierigkeiten, belastende Gedanken und Selbstzweifel machen es Menschen,
@@ -179,7 +182,7 @@
 		weinen. Warten, dass es vorbei geht.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Stehen Vorlesungen als Videos zum asynchronen Lernen zur Verfügung, können Pausen und
 			Geschwindigkeit des Lernens individuell gewählt werden.
@@ -218,7 +221,7 @@
 		mitgekriegt habe.
 	</FriendBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Es gibt also keine Musterlösung und eine Absprache mit Studierenden zu Beginn eines Semesters
 			oder einer Veranstaltung kann Unsicherheiten nehmen. Ein sensibler Umgang mit Daten und eine
@@ -229,7 +232,7 @@
 
 	<MainHeading heading="Lernmaterial" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Klare Informationen zu Anforderungen und auch Prüfungsleistungen bei einer Teilnahme an einer
 			Veranstaltung sind wichtig, um Unsicherheiten abzubauen. Sind beispielsweise Exkursionen
@@ -256,7 +259,7 @@
 
 	<MainHeading heading="Interaktion und Kommunikation" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Lehrende sind in der Regel keine Therapeut*innen und sollten diese Rolle auch nicht
 			übernehmen. Umso wichtiger ist es, dass klar kommuniziert wird, an wen sich Studierende mit
@@ -277,7 +280,7 @@
 		unerklärlich ist. Das ist so unangenehm. Niemand hört gerne: „Es geht mir NICHT gut“.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Online-Veranstaltungen bringen Vorteile wie zeitliche und örtliche Flexibilität mit sich. Ein
 			daraus entstehender Nachteil kann aber auch die soziale Isolation sein. Der direkte Austausch
@@ -295,7 +298,7 @@
 		werden.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			In der Kommunikation zwischen Studierenden und Lehrenden gibt es häufig nur die Möglichkeit
 			der Kontaktaufnahme per persönlicher Sprechstunde. Ein persönliches Gespräch oder ein
@@ -320,7 +323,7 @@
 
 	<MainHeading heading="Prüfungen" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Da der Name “Behindertenbeauftragte” an vielen Hochschulen noch genutzt wird, wenden sich
 			Studierende, die keine offiziell diagnostizierte Behinderung haben, aber in ihrem Studium
@@ -356,7 +359,7 @@
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
@@ -383,22 +386,24 @@
 			<Recommendation
 				link="https://www.deutsche-depressionshilfe.de/depression-infos-und-hilfe/was-ist-eine-depression/diagnose-der-depression"
 			>
-				<svelte:fragment slot="linkText">Diagnose der Depression</svelte:fragment>
-				<svelte:fragment slot="textAfter"
-					>von der Stiftung Deutsche Depressionshilfe und Suizidprävention</svelte:fragment
-				>
+				{#snippet linkText()}
+					Diagnose der Depression
+				{/snippet}
+				{#snippet textAfter()}
+					von der Stiftung Deutsche Depressionshilfe und Suizidprävention
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://www.rki.de/DE/Content/GesundAZ/P/Psychische_Gesundheit/EBH_Bericht_Psyschiche_Gesundheit.pdf?__blob=publicationFile"
 			>
-				<svelte:fragment slot="linkText"
-					>Psychische Gesundheit in Deutschland - Teil 1 Erwachsene (PDF)</svelte:fragment
-				>
-				<svelte:fragment slot="textAfter"
-					>von dem Robert Koch-Institut (Hrsg) (2021)
-				</svelte:fragment>
+				{#snippet linkText()}
+					Psychische Gesundheit in Deutschland - Teil 1 Erwachsene (PDF)
+				{/snippet}
+				{#snippet textAfter()}
+					von dem Robert Koch-Institut (Hrsg) (2021)
+				{/snippet}
 			</Recommendation>
 		</li>
 	</ul>

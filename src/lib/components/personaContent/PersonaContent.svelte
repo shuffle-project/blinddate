@@ -1,13 +1,12 @@
 <script lang="ts">
 	import PersonaHeader from '$lib/components/PersonaHeader.svelte';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
+	import type { Snippet } from 'svelte';
 	import MetaTags from '../MetaTags.svelte';
 	import PersonaCard from '../PersonaCard.svelte';
 	import CardMobile from '../cardMobile/CardMobile.svelte';
-	import MainHeading from './MainHeading.svelte';
-	import TextSection from './TextSection.svelte';
 
-	export let persona: Persona;
+	let { persona, children }: { persona: Persona; children: Snippet } = $props();
 </script>
 
 <MetaTags {persona} />
@@ -26,28 +25,31 @@
 				<h2 id="about-me" class="main-heading">Über mich</h2>
 
 				<table aria-labelledby="about-me">
-					<tr>
-						<th scope="row">Alter</th>
-						<td>{persona.age + ' Jahre'}</td>
-					</tr>
-					<tr>
-						<th scope="row">Hobbys</th>
-						<td>{persona.hobbies}</td>
-					</tr>
-					<tr>
-						<th scope="row">Studium</th>
-						<td>{persona.study}</td>
-					</tr>
+					<tbody>
+						<tr>
+							<th scope="row">Alter</th>
+							<td>{persona.age + ' Jahre'}</td>
+						</tr>
+						<tr>
+							<th scope="row">Hobbys</th>
+							<td>{persona.hobbies}</td>
+						</tr>
+						<tr>
+							<th scope="row">Studium</th>
+							<td>{persona.study}</td>
+						</tr>
 
-					<tr>
-						<th scope="row">Pronomen</th>
-						<td lang={persona.id === 'maxi' ? 'en' : 'de'}>{persona.pronouns}</td>
-					</tr>
+						<tr>
+							<th scope="row">Pronomen</th>
+							<td lang={persona.id === 'maxi' ? 'en' : 'de'}>{persona.pronouns}</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 
-			<slot {MainHeading} {TextSection} />
-			<div class="footer-padding" />
+			{@render children?.()}
+
+			<div class="footer-padding"></div>
 		</div>
 	</div>
 </main>

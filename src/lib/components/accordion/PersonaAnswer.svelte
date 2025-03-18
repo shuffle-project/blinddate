@@ -2,33 +2,38 @@
 	import { base } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-	export let persona: Persona;
+	interface Props {
+		persona: Persona;
+		children?: import('svelte').Snippet;
+	}
 
-	let personaImg = `${base}/personas/${persona.id}/${persona.id}`;
+	let { persona, children }: Props = $props();
+
+	let personaImg = $state(`${base}/personas/${persona.id}/${persona.id}`);
 
 	switch (persona.id) {
 		case 'kilian':
-			personaImg = personaImg + '-explaining.svg';
+			personaImg += '-explaining.svg';
 			break;
 		case 'aleksandr':
-			personaImg = personaImg + '-neutral.svg';
+			personaImg += '-neutral.svg';
 			break;
 		case 'faiza':
-			personaImg = personaImg + '-explaining-circle.svg';
+			personaImg += '-explaining-circle.svg';
 			break;
 		default:
-			personaImg = personaImg + '-explaining-circle.svg';
+			personaImg += '-explaining-circle.svg';
 	}
 </script>
 
 <div class="persona-answer-wrapper">
-	<div role="separator" aria-label="Anfang der {persona.name} Sprechblase" />
+	<div role="separator" aria-label="Anfang der {persona.name} Sprechblase"></div>
 	<img class="persona-img" src={personaImg} aria-hidden="true" alt="" />
 
 	<p class="persona-answer">
-		<slot />
+		{@render children?.()}
 	</p>
-	<div role="separator" aria-label="Ende der {persona.name} Sprechblase" />
+	<div role="separator" aria-label="Ende der {persona.name} Sprechblase"></div>
 </div>
 
 <style lang="scss">

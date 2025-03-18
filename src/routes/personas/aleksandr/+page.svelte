@@ -8,8 +8,13 @@
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
+	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
+	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
+	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { ALEKSANDR } from '$lib/constants/aleksandr';
 	import { VALENTIN } from '$lib/constants/valentin';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
@@ -20,7 +25,7 @@
 	const friendPersona: FriendPersona = VALENTIN;
 </script>
 
-<PersonaContent {persona} let:MainHeading let:TextSection>
+<PersonaContent {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-01.mp3'}>
 		Hallo, mein Name ist Aleksandr, aber ich bevorzuge Sasha. Ich bin 23 Jahre alt. Ich wohne etwas
 		außerhalb von Frankfurt. Ich interessiere mich sehr für die Funktionsweise des menschlichen
@@ -157,7 +162,7 @@
 	/>
 
 	<MainHeading heading="Lehrveranstaltungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Zu Beginn eines Semesters finden viele Auftaktveranstaltungen statt, um den Studierenden
 			viele, wichtige Informationen zu geben, um einen Start ins neue Semester zu erleichtern. Diese
@@ -189,7 +194,7 @@
 
 	<ImportantNotice content="femaleAutism" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text extraTopMargin>
 			Reizarme und ruhige Rückzugsorte an Hochschulen können allen Studierenden helfen, zwischen
 			Veranstaltungen etwas Ruhe zu finden. Für Studierende auf dem Spektrum können diese Orte
@@ -203,7 +208,7 @@
 	</TextSection>
 
 	<MainHeading heading="Lernmaterial" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Für Studierende mit ASS kann das Unterscheiden zwischen relevanten und irrelevanten Inhalten
 			schwierig sein. Eine große Menge an (unstrukturierten) (Lern-)Materialien kann also schnell zu
@@ -223,34 +228,40 @@
 		muss.
 	</FriendBubble>
 
-	<Accordion personaName={persona.name} let:AccordionItem>
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question"
-				>Inwiefern nimmst Du die Welt anders wahr als andere?
-			</svelte:fragment>
-			<PersonaAnswer {persona}>
-				Neurotypische Personen filtern jeden Tag tausende Sinneseindrücke aus. Das merken sie gar
-				nicht. Aber bei mir funktioniert das Filtern nicht. Ich sehe die Welt sehr detailliert. Als
-				ob ich die ganze Zeit durch eine Lupe gucken würde. Ich höre die Welt ganz laut. Als ob ich
-				direkt neben einem Lautsprecher stehen würde. Ich rieche die Welt auch intensiv. Als ob ich
-				konstant auf einem Fischmarkt stehen würde. Und ich spüre die Welt sehr stark. Als ob ich
-				permanent einen sehr kratzigen Pullover tragen würde.
-			</PersonaAnswer>
+	<Accordion personaName={persona.name}>
+		<AccordionItem>
+			{#snippet question()}
+				Inwiefern nimmst Du die Welt anders wahr als andere?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Neurotypische Personen filtern jeden Tag tausende Sinneseindrücke aus. Das merken sie gar
+					nicht. Aber bei mir funktioniert das Filtern nicht. Ich sehe die Welt sehr detailliert.
+					Als ob ich die ganze Zeit durch eine Lupe gucken würde. Ich höre die Welt ganz laut. Als
+					ob ich direkt neben einem Lautsprecher stehen würde. Ich rieche die Welt auch intensiv.
+					Als ob ich konstant auf einem Fischmarkt stehen würde. Und ich spüre die Welt sehr stark.
+					Als ob ich permanent einen sehr kratzigen Pullover tragen würde.
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question">Was ist Deine Inselbegabung?</svelte:fragment>
-			<PersonaAnswer {persona}>
-				Ich habe keine Inselbegabung. Nur sehr wenige Menschen auf dem Spektrum haben eine. Die mit
-				dem Savant-Syndrom. Das ist ein sich hartnäckig haltendes Gerücht. Es ist spannender,
-				Menschen mit Autismus-Spektrum-Störung und einer besonderen Inselbegabung in Film und Serien
-				darzustellen. Deswegen hält sich dieser Eindruck.
-			</PersonaAnswer>
+		<AccordionItem>
+			{#snippet question()}
+				Was ist Deine Inselbegabung?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Ich habe keine Inselbegabung. Nur sehr wenige Menschen auf dem Spektrum haben eine. Die
+					mit dem Savant-Syndrom. Das ist ein sich hartnäckig haltendes Gerücht. Es ist spannender,
+					Menschen mit Autismus-Spektrum-Störung und einer besonderen Inselbegabung in Film und
+					Serien darzustellen. Deswegen hält sich dieser Eindruck.
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 	</Accordion>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Für Studierende mit ASS können die Regeln und ungeschriebenen Gesetze sozialer Interaktionen
 			eine Herausforderung darstellen. Was gesellschaftlich anerkannt ist oder als höflich gilt,
@@ -296,7 +307,7 @@
 		wieder auf einen Punkt hinter dem Kopf der Person und nicke.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Für Studierende mit ASS kann das Lesen und Interpretieren von Mimik und Gestik erschwert sein.
 			Eine häufig genutzte Strategie ist das Auswendiglernen bekannter Mimiken. Dabei fällt das
@@ -310,7 +321,7 @@
 		arabisch ist oder Runen. Aber ich kenne die Bedeutung nicht. Ich bin sozusagen Mimik-Analphabet.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Im Studienalltag treffen Studierende auf eine große Anzahl an unterschiedlichen Personen in
 			unterschiedlichen Seminaren, Veranstaltungen und Settings. Eine häufige Komorbidität, die mit
@@ -328,7 +339,7 @@
 		Halbmarathon zu laufen ist für mich einfacher. Nach einem ganzen Uni-Tag bin ich müde.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Eine Unterstützung im Studienalltag bei der Kontaktaufnahme mit Dozierenden, der Navigation
 			auf der Website der Uni oder in der Stundenplanerstellung kann über die Kontaktaufnahme mit
@@ -349,7 +360,7 @@
 	/>
 
 	<MainHeading heading="Prüfungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Neben dem Fokussieren auf Details können autistische Studierende Probleme haben, Worte, Texte
 			oder Gegenstände, die sich visuell oder inhaltlich sehr ähnlich sind, auseinanderzuhalten.
@@ -375,7 +386,7 @@
 		zusammenarbeiten. Da werde ich kein gutes Ergebnis erzielen.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Prüfungssituationen sind für viele mit Stress verbunden. Ein Konzentrieren auf die Inhalte der
 			Prüfung kann für Studierende mit ASS erleichtert werden, indem Störreize möglichst vermieden
@@ -394,7 +405,7 @@
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
@@ -418,71 +429,87 @@
 	<ul class="more-info-list">
 		<li>
 			<Recommendation link="https://hasilux.lu/de/haeufige-fragen/autismus/">
-				<svelte:fragment slot="linkText">Fragen zu Autismus</svelte:fragment>
-				<svelte:fragment slot="textAfter"
-					>aus dem Handbuch für Autismus und Schulinklusion (HASILUX)</svelte:fragment
-				>
+				{#snippet linkText()}
+					Fragen zu Autismus
+				{/snippet}
+				{#snippet textAfter()}
+					aus dem Handbuch für Autismus und Schulinklusion (HASILUX)
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://dieneuenorm.de/gesellschaft/autismus-selbstfuersorge/?mc_cid=70566efc01&mc_eid=b1d842d3fd"
 			>
-				<svelte:fragment slot="linkText">
+				{#snippet linkText()}
 					Über die Schwierigkeiten, als autistische Person Selbstfürsorge zu praktizieren
-				</svelte:fragment>
-				<svelte:fragment slot="textAfter">von Die Neue Form</svelte:fragment>
+				{/snippet}
+				{#snippet textAfter()}
+					von Die Neue Form
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://ellasblog.de/wie-viele-autistinnen-und-autisten-auf-reizueberflutung-reagieren/"
 			>
-				<svelte:fragment slot="linkText">
+				{#snippet linkText()}
 					Wie viele Autistinnen und Autisten auf Reizüberflutung reagieren
-				</svelte:fragment>
-				<svelte:fragment slot="textAfter">von Ellas Blog</svelte:fragment>
+				{/snippet}
+				{#snippet textAfter()}
+					von Ellas Blog
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://ellasblog.de/barrierefreiheit-fuer-autistinnen-und-autisten/">
-				<svelte:fragment slot="linkText">
+				{#snippet linkText()}
 					Barrierefreiheit für Autistinnen und Autisten – Struktur, Reizreduzierung, Kommunikation,
 					Rahmenbedingungen und mehr….
-				</svelte:fragment>
-				<svelte:fragment slot="textAfter">von Ellas Blog</svelte:fragment>
+				{/snippet}
+				{#snippet textAfter()}
+					von Ellas Blog
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=6TlLUjGmJXU">
-				<svelte:fragment slot="linkText"
-					>Was ist eigentlich Masking im Autismus? | InsideAut</svelte:fragment
-				>
-				<svelte:fragment slot="textAfter">ein Video von InsideAut</svelte:fragment>
+				{#snippet linkText()}
+					Was ist eigentlich Masking im Autismus? | InsideAut
+				{/snippet}
+				{#snippet textAfter()}
+					ein Video von InsideAut
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://www.youtube.com/watch?v=-E7WqWHGsko">
-				<svelte:fragment slot="linkText"
-					>Das Autismus-Spektrum erklärt – So kannst du es dir vorstellen | InsideAut</svelte:fragment
-				>
-				<svelte:fragment slot="textAfter">ein Video von InsideAut</svelte:fragment>
+				{#snippet linkText()}
+					Das Autismus-Spektrum erklärt – So kannst du es dir vorstellen | InsideAut
+				{/snippet}
+				{#snippet textAfter()}
+					ein Video von InsideAut
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://blogs.hoou.de/psychestudium/comic-ruhe-hier/">
-				<svelte:fragment slot="linkText">Comic „Ruhe hier!“</svelte:fragment>
-				<svelte:fragment slot="textAfter"
-					>von der Hamburg Open Online University (HOOU)</svelte:fragment
-				>
+				{#snippet linkText()}
+					Comic „Ruhe hier!“
+				{/snippet}
+				{#snippet textAfter()}
+					von der Hamburg Open Online University (HOOU)
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation link="https://blogs.hoou.de/psychestudium/wissen-und-diagnosen/">
-				<svelte:fragment slot="linkText">Wissen und Diagnosen</svelte:fragment>
-				<svelte:fragment slot="textAfter"
-					>von der Hamburg Open Online University (HOOU)</svelte:fragment
-				>
+				{#snippet linkText()}
+					Wissen und Diagnosen
+				{/snippet}
+				{#snippet textAfter()}
+					von der Hamburg Open Online University (HOOU)
+				{/snippet}
 			</Recommendation>
 		</li>
 	</ul>

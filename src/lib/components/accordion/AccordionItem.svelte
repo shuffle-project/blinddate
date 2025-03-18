@@ -1,18 +1,20 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Icon from '../Icon.svelte';
-	import PersonaAnswer from './PersonaAnswer.svelte';
+
+	let { question, content }: { question: Snippet; content: Snippet } = $props();
 </script>
 
 <details>
 	<summary>
-		<slot name="question" />
+		{@render question?.()}
 		<div class="arrow">
 			<Icon img="arrow-toright" />
 		</div>
 	</summary>
 
 	<div class="answer-wrapper">
-		<slot {PersonaAnswer} />
+		{@render content?.()}
 	</div>
 </details>
 

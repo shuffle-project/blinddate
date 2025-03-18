@@ -4,30 +4,40 @@
 
 	type Content = 'keyboard' | 'support' | 'wheelchair-moving' | 'wheelchair-sitting';
 
-	export let content: Content;
+	interface Props {
+		content: Content;
+	}
+
+	let { content }: Props = $props();
 </script>
 
 <div class="wrapper">
 	{#if content === 'keyboard'}
-		<TextSection let:Text>
-			<Text>
-				BlindDate wurde ebenfalls barrierefrei umgesetzt. Das heißt, dass Sie auch hier direkt die
-				Tastatursteuerung ausprobieren können.
-			</Text>
-		</TextSection>
+		<TextSection >
+			{#snippet children({ Text })}
+						<Text>
+					BlindDate wurde ebenfalls barrierefrei umgesetzt. Das heißt, dass Sie auch hier direkt die
+					Tastatursteuerung ausprobieren können.
+				</Text>
+								{/snippet}
+				</TextSection>
 	{/if}
 	{#if content === 'wheelchair-moving'}
-		<TextSection let:Text>
-			<Text>
-				Wer einen Rollstuhl nutzt, sieht sich mit baulichen Barrieren konfrontiert, die anderen im
-				Alltag oft nicht einmal auffallen:
-			</Text>
-		</TextSection>
+		<TextSection >
+			{#snippet children({ Text })}
+						<Text>
+					Wer einen Rollstuhl nutzt, sieht sich mit baulichen Barrieren konfrontiert, die anderen im
+					Alltag oft nicht einmal auffallen:
+				</Text>
+								{/snippet}
+				</TextSection>
 	{/if}
 	{#if content === 'wheelchair-sitting'}
-		<TextSection let:Text>
-			<Text>Das permanente Sitzen im Rollstuhl geht auch mit physischen Belastungen einher:</Text>
-		</TextSection>
+		<TextSection >
+			{#snippet children({ Text })}
+						<Text>Das permanente Sitzen im Rollstuhl geht auch mit physischen Belastungen einher:</Text>
+								{/snippet}
+				</TextSection>
 	{/if}
 
 	<div class="card" class:support={content === 'support'}>

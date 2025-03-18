@@ -5,6 +5,11 @@
 	import { HOSTNAME } from '$lib/constants/hostname';
 
 	import { MetaTags } from 'svelte-meta-tags';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <MetaTags
@@ -48,16 +53,16 @@
 					<span>Zur Startseite</span>
 				</a>
 			{:else}
-				<div />
+				<div></div>
 			{/if}
 
-			<div />
+			<div></div>
 		</div>
 	</header>
 </div>
 
 <main>
-	<slot />
+	{@render children?.()}
 </main>
 
 <Footer />

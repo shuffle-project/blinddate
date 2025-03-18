@@ -1,9 +1,16 @@
 <script lang="ts">
-	export let noTopMargin = false;
-	export let extraTopMargin = false;
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		noTopMargin?: boolean;
+		extraTopMargin?: boolean;
+		children?: Snippet;
+	}
+
+	let { noTopMargin = false, extraTopMargin = false, children }: Props = $props();
 </script>
 
-<p class:noTopMargin class:extraTopMargin><slot /></p>
+<p class:noTopMargin class:extraTopMargin>{@render children?.()}</p>
 
 <style lang="scss">
 	.extraTopMargin {

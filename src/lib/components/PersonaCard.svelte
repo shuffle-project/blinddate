@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	import BurgerToggleButton from './BurgerToggleButton.svelte';
 	import PersonaPortrait from './PersonaPortrait.svelte';
 </script>
@@ -12,20 +12,24 @@
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 
-	export let persona: Persona;
+	interface Props {
+		persona: Persona;
+	}
 
-	let modal: Modal;
+	let { persona }: Props = $props();
+
+	let modal: Modal = $state();
 	function toggleModalDisplay() {
 		if (modal) modal.toggleModalDisplay();
 	}
 
-	let headings: NodeListOf<Element>;
+	let headings: NodeListOf<Element> = $state();
 
 	onMount(() => {
 		headings = document.querySelectorAll('h1, h2.main-heading');
 	});
 
-	let firstPage = true;
+	let firstPage = $state(true);
 
 	function togglePage() {
 		if (firstPage) {
@@ -37,17 +41,21 @@
 </script>
 
 <Modal bind:this={modal}>
-	<svelte:fragment slot="headline">
-		{persona.disability}
-	</svelte:fragment>
-	<svelte:fragment slot="content">
-		<svelte:component this={persona.disabilityExplanation} />
-	</svelte:fragment>
+	{#snippet headline()}
+	
+			{persona.disability}
+		
+	{/snippet}
+	{#snippet content()}
+	
+			<persona.disabilityExplanation />
+		
+	{/snippet}
 </Modal>
 
 <div class="container" aria-label="Persona-Karte">
-	<div class="card bg left" />
-	<div class="card bg right" />
+	<div class="card bg left"></div>
+	<div class="card bg right"></div>
 	<div class="card">
 		<BurgerToggleButton onClickButtonToggle={togglePage} />
 
@@ -59,7 +67,7 @@
 			>
 				<PersonaPortrait {persona} />
 				<div class="card-body">
-					<button class="first" on:click={() => toggleModalDisplay()}>
+					<button class="first" onclick={() => toggleModalDisplay()}>
 						<Icon img={persona.disabilityIcon} size="big">{persona.disability}</Icon>
 						<Icon img="arrow-toright" size="tiny" />
 					</button>

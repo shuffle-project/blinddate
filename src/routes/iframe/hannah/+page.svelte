@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 </script>
 
-<iframe src={base + '/games/hannah'} frameborder="0" title="Hannah Simulationsspiel" />
+<iframe src={base + '/games/hannah'} frameborder="0" title="Hannah Simulationsspiel"></iframe>
 
 <style lang="scss">
 	iframe {

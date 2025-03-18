@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import type { ExtendedPlayerConfig } from '../../interfaces/player.interfaces';
-	import { getRandomId } from '../utils';
 	import Player from './Player.svelte';
 
-	export let extendedPlayerConfig: ExtendedPlayerConfig;
+	interface Props {
+		extendedPlayerConfig: ExtendedPlayerConfig;
+	}
 
-	const randomId = getRandomId();
+	let { extendedPlayerConfig }: Props = $props();
 
-	let selectedTab: number | null = 1;
+	const randomId = $props.id();
+
+	let selectedTab: number | null = $state(1);
 	let selectedTabTemp = 1;
 
 	let tabcount = extendedPlayerConfig.videos.length + extendedPlayerConfig.transcripts.length;
@@ -45,8 +48,8 @@
 				role="tab"
 				aria-selected={selectedTab === index}
 				tabindex={selectedTab === index ? 0 : -1}
-				on:click={() => onSelectTab(index)}
-				on:keydown={onKeydownTab}
+				onclick={() => onSelectTab(index)}
+				onkeydown={onKeydownTab}
 			>
 				{video.title}
 			</button>
@@ -59,8 +62,8 @@
 				role="tab"
 				aria-selected={selectedTab === index}
 				tabindex={selectedTab === index ? 0 : -1}
-				on:click={() => onSelectTab(index)}
-				on:keydown={onKeydownTab}
+				onclick={() => onSelectTab(index)}
+				onkeydown={onKeydownTab}
 			>
 				{transcript.title}
 			</button>
@@ -74,7 +77,7 @@
 				id="panel-{index}-{randomId}"
 				in:slide={{ duration: 400 }}
 				out:slide={{ duration: 400 }}
-				on:outroend={setSelectedTab}
+				onoutroend={setSelectedTab}
 			>
 				<Player videoData={video} />
 			</div>
@@ -88,7 +91,7 @@
 				id="panel-{index}-{randomId}"
 				in:slide={{ duration: 400 }}
 				out:slide={{ duration: 400 }}
-				on:outroend={setSelectedTab}
+				onoutroend={setSelectedTab}
 			>
 				<div class="transcript">
 					{@html transcript.body}

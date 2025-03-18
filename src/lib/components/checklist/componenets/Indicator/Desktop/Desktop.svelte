@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { quintInOut, quintOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
@@ -6,15 +8,19 @@
 	import PersonaSitting from '../PersonaSitting.svelte';
 	import Ground from './Ground.svelte';
 
-	export let displayedBoxes: CheckObject[];
-	export let persona: Persona;
-	export let totalCheckboxes: number;
+	interface Props {
+		displayedBoxes: CheckObject[];
+		persona: Persona;
+		totalCheckboxes: number;
+	}
 
-	let checkedDisplayedBoxes: CheckObject[];
-	let oldDisplayedBoxes = displayedBoxes.filter((item: any) => item.checked);
-	let itemAdded = false;
+	let { displayedBoxes, persona, totalCheckboxes }: Props = $props();
 
-	$: {
+	let checkedDisplayedBoxes: CheckObject[] = $state();
+	let oldDisplayedBoxes = $state(displayedBoxes.filter((item: any) => item.checked));
+	let itemAdded = $state(false);
+
+	run(() => {
 		checkedDisplayedBoxes = displayedBoxes.filter((item: any) => item.checked);
 		itemAdded = checkedDisplayedBoxes.length > oldDisplayedBoxes.length;
 		oldDisplayedBoxes = checkedDisplayedBoxes;
@@ -23,7 +29,7 @@
 				itemAdded = false;
 			}, 700);
 		}
-	}
+	});
 </script>
 
 <div
@@ -42,7 +48,7 @@
 					style="height: {box.box.size - 15}px; width: 150px; transform: translateX({i !== 0
 						? Math.floor(Math.random() * 31) - 15
 						: 0}px)"
-				/>
+				></li>
 			{/if}
 		{/each}
 		<Ground />

@@ -4,7 +4,6 @@
 		BIG_PICTURE_STUDENTS,
 		SUPPORT_OPTIONS,
 		type BigPictureStudent,
-		type StudentId,
 		type SupportOptionId
 	} from '$lib/constants/bigPicture';
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
@@ -12,40 +11,45 @@
 	import Icon from '../Icon.svelte';
 	import BigLectureRoom from './BigLectureRoom.svelte';
 
-	let students: BigPictureStudent[] = BIG_PICTURE_STUDENTS;
+	let carouselSupportSelectedIndex: number = $state(0);
+	let carouselStudentSelectedIndex: number = $state(0);
+
+	let students: BigPictureStudent[] = $state(BIG_PICTURE_STUDENTS);
+	let selectedStudentId = $derived(students[carouselStudentSelectedIndex].id);
+	let selectedStudentComment: string | undefined = $state('');
+
 	const supportOptions = SUPPORT_OPTIONS;
-	let selectedSupportOption: SupportOptionId | '' = '';
+	let selectedSupportOption: SupportOptionId | '' = $state('');
 
-	let studentCarousel: Splide;
-	let supportCarousel: Splide;
-	let selectedStudentComment: string | undefined = '';
-	let selectedStudentId: StudentId | undefined = undefined;
+	let studentCarousel: Splide | undefined = $state();
+	let supportCarousel: Splide | undefined = $state();
 
-	let carouselSupportSelectedIndex: number = 0;
-	let carouselStudentSelectedIndex: number = 0;
+	let supportCarouselHasFocus = $state(false);
+	let supportCarouselAriaLiveText: string = $state('');
 
-	let supportCarouselHasFocus = false;
-	let supportCarouselAriaLiveText: string = '';
+	let studentsCarouselHasFocus = $state(false);
+	let studentsCarouselAriaLiveText: string = $state('');
 
-	let studentsCarouselHasFocus = false;
-	let studentsCarouselAriaLiveText: string = '';
-
-	$: {
-		if (students.length !== 0) {
-			selectedStudentId = students[carouselStudentSelectedIndex].id;
+	$effect(() => {
+		if (carouselSupportSelectedIndex && carouselSupportSelectedIndex !== 0) {
+			students = BIG_PICTURE_STUDENTS.filter((student) => {
+				if (student.benefitsFrom.hasOwnProperty(supportOptions[carouselSupportSelectedIndex].id)) {
+					return student;
+				}
+			});
 		}
-	}
+	});
 
-	$: {
+	$effect(() => {
 		if (carouselSupportSelectedIndex !== 0 && students.length !== 0) {
 			selectedStudentComment =
 				students[carouselStudentSelectedIndex].benefitsFrom[
 					supportOptions[carouselSupportSelectedIndex].id
 				];
 		}
-	}
+	});
 
-	$: {
+	$effect(() => {
 		if (carouselSupportSelectedIndex === 0) {
 			supportCarouselAriaLiveText = 'Noch keine Auswahl';
 			selectedSupportOption = '';
@@ -58,9 +62,9 @@
 				' von ' +
 				(supportOptions.length - 1);
 		}
-	}
+	});
 
-	$: {
+	$effect(() => {
 		if (students.length !== 0) {
 			if (students[carouselStudentSelectedIndex].disability) {
 				studentsCarouselAriaLiveText = `
@@ -77,7 +81,7 @@
 				`;
 			}
 		}
-	}
+	});
 
 	const splideOptionsSupport = {
 		type: 'loop',
@@ -134,6 +138,7 @@
 			studentsCarouselHasFocus = true;
 			studentCarousel.go(direction);
 			carouselStudentSelectedIndex = studentCarousel.splide.index;
+			_handleSlideChange(carouselId, studentCarousel.splide.index);
 		}
 
 		if (carouselId === 'supportOptions') {
@@ -141,42 +146,20 @@
 			supportCarousel.go(direction);
 			carouselSupportSelectedIndex = supportCarousel.splide.index;
 			carouselStudentSelectedIndex = 0;
-		}
-	}
-
-	function handleMove(index: number | undefined, carouselId: 'students' | 'supportOptions') {
-		if (index !== undefined) {
-			if (carouselId === 'students') carouselStudentSelectedIndex = index;
-			if (carouselId === 'supportOptions') {
-				carouselSupportSelectedIndex = index;
-				carouselStudentSelectedIndex = 0;
-			}
+			_handleSlideChange(carouselId, supportCarousel.splide.index);
 		}
 	}
 
 	function handleScrolled(carouselId: 'students' | 'supportOptions') {
-		if (!studentCarousel || !supportCarousel) return;
-		if (carouselId === 'students') carouselStudentSelectedIndex = studentCarousel.splide.index;
-		if (carouselId === 'supportOptions') {
-			carouselSupportSelectedIndex = supportCarousel.splide.index;
-			carouselStudentSelectedIndex = 0;
-		}
+		const carousel = carouselId === 'students' ? studentCarousel : supportCarousel;
+		_handleSlideChange(carouselId, carousel!.splide.index);
 	}
 
-	$: {
-		if (carouselSupportSelectedIndex && carouselSupportSelectedIndex !== 0) {
-			students = BIG_PICTURE_STUDENTS.filter((student) => {
-				if (student.benefitsFrom.hasOwnProperty(supportOptions[carouselSupportSelectedIndex].id)) {
-					return student;
-				}
-			});
-		}
-
-		// find out why I added this a few weeks ago
-		if (carouselSupportSelectedIndex === 0) {
-			setTimeout(() => {
-				students = BIG_PICTURE_STUDENTS;
-			}, 300);
+	function _handleSlideChange(carouselId: 'students' | 'supportOptions', index: number) {
+		if (carouselId === 'students') carouselStudentSelectedIndex = index;
+		if (carouselId === 'supportOptions') {
+			carouselSupportSelectedIndex = index;
+			carouselStudentSelectedIndex = 0;
 		}
 	}
 </script>
@@ -209,12 +192,11 @@
 					options={splideOptionsSupport}
 					bind:this={supportCarousel}
 					hasTrack={false}
-					on:moved={(e) => handleMove(e?.detail.index, 'supportOptions')}
 					on:scrolled={() => handleScrolled('supportOptions')}
 				>
 					<button
-						on:focusout={() => (supportCarouselHasFocus = false)}
-						on:click={() => moveSlide('<', 'supportOptions')}
+						onfocusout={() => (supportCarouselHasFocus = false)}
+						onclick={() => moveSlide('<', 'supportOptions')}
 						class="previous-button"
 						aria-label="Vorherige Maßnahme"
 					>
@@ -228,17 +210,17 @@
 						{/each}
 					</SplideTrack>
 					<button
-						on:focusout={() => (supportCarouselHasFocus = false)}
-						on:click={() => moveSlide('>', 'supportOptions')}
+						onfocusout={() => (supportCarouselHasFocus = false)}
+						onclick={() => moveSlide('>', 'supportOptions')}
 						class="next-button"
 						aria-label="Nächste Maßnahme"
 						><Icon img="arrow-toright" size="small" svg_color="white" />
 					</button>
-					<div class="splide__arrows" />
+					<div class="splide__arrows"></div>
 				</Splide>
 			</div>
 		</div>
-		<span class="bobble-indicator" aria-hidden="true" />
+		<span class="bobble-indicator" aria-hidden="true"></span>
 	</div>
 
 	<div
@@ -246,54 +228,59 @@
 		class:visible={carouselSupportSelectedIndex !== 0 && students.length !== 0}
 		aria-hidden={carouselSupportSelectedIndex === 0 || students.length === 0}
 	>
-		<span class="bobble-indicator" aria-hidden="true" />
+		<span class="bobble-indicator" aria-hidden="true"></span>
 		<div class="students">
 			<span>{`Studierende ${carouselStudentSelectedIndex + 1} von ${students.length}`}</span>
 			<div class="carousel">
-				<Splide
-					aria-roledescription="Karussell"
-					role="navigation"
-					aria-label="Studierende"
-					options={splideOptionsStudents}
-					bind:this={studentCarousel}
-					hasTrack={false}
-					on:moved={(e) => handleMove(e?.detail.index, 'students')}
-					on:scrolled={() => handleScrolled('students')}
-				>
-					<button
-						on:focusout={() => (studentsCarouselHasFocus = false)}
-						on:click={() => moveSlide('<', 'students')}
-						class="previous-button"
-						aria-label="Vorherige Person"
-						tabindex={carouselSupportSelectedIndex === 0 ? -1 : 0}
-						aria-hidden={carouselSupportSelectedIndex === 0}
+				{#key students}
+					<Splide
+						aria-roledescription="Karussell"
+						role="navigation"
+						aria-label="Studierende"
+						options={splideOptionsStudents}
+						bind:this={studentCarousel}
+						hasTrack={false}
+						on:scrolled={() => handleScrolled('students')}
 					>
-						<Icon img="arrow-toleft" size="small" svg_color="white" />
-					</button>
-					<SplideTrack class="splide-track">
-						{#each students as student, i (student.id)}
-							<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
-								<div class="name-icon-wrapper">
-									{#if student.icon}
-										<img src={base + '/icons/' + student.icon + '.svg'} alt="" aria-hidden="true" />
-									{/if}
+						<button
+							onfocusout={() => (studentsCarouselHasFocus = false)}
+							onclick={() => moveSlide('<', 'students')}
+							class="previous-button"
+							aria-label="Vorherige Person"
+							tabindex={carouselSupportSelectedIndex === 0 ? -1 : 0}
+							aria-hidden={carouselSupportSelectedIndex === 0}
+						>
+							<Icon img="arrow-toleft" size="small" svg_color="white" />
+						</button>
+						<SplideTrack class="splide-track">
+							{#each students as student, i (student.id)}
+								<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
+									<div class="name-icon-wrapper">
+										{#if student.icon}
+											<img
+												src={base + '/icons/' + student.icon + '.svg'}
+												alt=""
+												aria-hidden="true"
+											/>
+										{/if}
 
-									<p class="student-name">{student.name}</p>
-								</div>
-							</SplideSlide>
-						{/each}
-					</SplideTrack>
-					<button
-						on:focusout={() => (studentsCarouselHasFocus = false)}
-						on:click={() => moveSlide('>', 'students')}
-						class="next-button"
-						aria-label="Nächste Person"
-						tabindex={carouselSupportSelectedIndex === 0 ? -1 : 0}
-						aria-hidden={carouselSupportSelectedIndex === 0}
-						><Icon img="arrow-toright" size="small" svg_color="white" />
-					</button>
-					<div class="splide__arrows" />
-				</Splide>
+										<p class="student-name">{student.name}</p>
+									</div>
+								</SplideSlide>
+							{/each}
+						</SplideTrack>
+						<button
+							onfocusout={() => (studentsCarouselHasFocus = false)}
+							onclick={() => moveSlide('>', 'students')}
+							class="next-button"
+							aria-label="Nächste Person"
+							tabindex={carouselSupportSelectedIndex === 0 ? -1 : 0}
+							aria-hidden={carouselSupportSelectedIndex === 0}
+							><Icon img="arrow-toright" size="small" svg_color="white" />
+						</button>
+						<div class="splide__arrows"></div>
+					</Splide>
+				{/key}
 			</div>
 		</div>
 		<div class="student-detail">

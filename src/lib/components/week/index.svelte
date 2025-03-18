@@ -4,10 +4,14 @@
 	import WeekDesktop from './WeekDesktop.svelte';
 	import WeekMobile from './WeekMobile.svelte';
 
-	export let persona: Persona;
+	interface Props {
+		persona: Persona;
+	}
 
-	let desktop = true;
-	let mounted = false;
+	let { persona }: Props = $props();
+
+	let desktop = $state(true);
+	let mounted = $state(false);
 
 	onMount(() => {
 		desktop = window.innerWidth > 510;

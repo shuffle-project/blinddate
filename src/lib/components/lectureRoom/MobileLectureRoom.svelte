@@ -1,14 +1,18 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-	export let personas: Persona[];
 
 	import { base } from '$app/paths';
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 	import Icon from '../Icon.svelte';
+	interface Props {
+		personas: Persona[];
+	}
 
-	let carousel: Splide;
+	let { personas }: Props = $props();
+
+	let carousel: Splide = $state();
 
 	const splideOptions = {
 		type: 'loop',
@@ -34,16 +38,16 @@
 		easing: 'ease'
 	};
 
-	let carouselSelectedIndex: number = 0;
+	let carouselSelectedIndex: number = $state(0);
 
-	let componentHasFocus = false;
+	let componentHasFocus = $state(false);
 
-	$: ariaLiveText =
-		personas[carouselSelectedIndex].name +
+	let ariaLiveText =
+		$derived(personas[carouselSelectedIndex].name +
 		', ' +
 		(carouselSelectedIndex + 1) +
 		' von ' +
-		personas.length;
+		personas.length);
 
 	function moveSlide(direction: string) {
 		if (!carousel) return;
@@ -115,12 +119,12 @@
 			</SplideSlide>
 		{/each}
 	</SplideTrack>
-	<div class="splide__arrows" />
+	<div class="splide__arrows"></div>
 
 	<div class="slider-navigation">
 		<button
-			on:focusout={() => (componentHasFocus = false)}
-			on:click={() => moveSlide('<')}
+			onfocusout={() => (componentHasFocus = false)}
+			onclick={() => moveSlide('<')}
 			class="previous-button after-card"
 			aria-label="Vorherige Person"
 		>
@@ -132,8 +136,8 @@
 		</p>
 
 		<button
-			on:focusout={() => (componentHasFocus = false)}
-			on:click={() => moveSlide('>')}
+			onfocusout={() => (componentHasFocus = false)}
+			onclick={() => moveSlide('>')}
 			class="next-button"
 			aria-label="Nächste Person"
 			><Icon img="arrow-toright" size="parent" svg_color="white" />

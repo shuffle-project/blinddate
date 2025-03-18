@@ -5,7 +5,7 @@
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 
-	let selectedOption: SupportOptionId | '' = '';
+	let selectedOption: SupportOptionId | '' = $state('');
 	const supportOptions = SUPPORT_OPTIONS.filter((option) => option.id !== 'idle');
 
 	function handleSupportSelection(id: SupportOptionId) {
@@ -53,7 +53,7 @@
 				{#each supportOptions as option, i}
 					<label>
 						<input
-							on:click={() => handleSupportSelection(option.id)}
+							onclick={() => handleSupportSelection(option.id)}
 							type="radio"
 							value={option.name}
 							name="support-list"

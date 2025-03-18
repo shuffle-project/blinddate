@@ -40,51 +40,56 @@
 			<h3 id="tablist-1">{persona.week?.month} {persona.week?.year}</h3>
 
 			<table role="presentation">
-				<tr aria-hidden="true">
-					{#each days as day}
-						<th class="day">{day.day}</th>
-					{/each}
-				</tr>
-				<tr>
-					{#each days as day}
-						<td aria-hidden="true" class="smiley-date-cell">
-							{#if day.smiley === 'sad'}
-								<div class="smiley">
-									<Icon size="medium" img="sad" svg_color="green" />
-								</div>
-							{:else}
-								<div class="smiley">
-									<Icon size="medium" img="happy" svg_color="green" />
-								</div>
-							{/if}
+				<thead>
+					<tr aria-hidden="true">
+						{#each days as day}
+							<th class="day">{day.day}</th>
+						{/each}
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						{#each days as day}
+							<td aria-hidden="true" class="smiley-date-cell">
+								{#if day.smiley === 'sad'}
+									<div class="smiley">
+										<Icon size="medium" img="sad" svg_color="green" />
+									</div>
+								{:else}
+									<div class="smiley">
+										<Icon size="medium" img="happy" svg_color="green" />
+									</div>
+								{/if}
 
-							{day.date}
-						</td>
-					{/each}
-				</tr>
-				<tr role="tablist">
-					{#each days as day, i}
-						<td class="activity-cell">
-							<button
-								tabindex={i === detailedDay ? 0 : -1}
-								class="activity"
-								class:active={detailedDay === i}
-								id="weektab-{i + 1}-{randomId}"
-								role="tab"
-								aria-controls="tabpanel-{i + 1}-{randomId}"
-								aria-selected={detailedDay === i}
-								aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
-									/\&shy;/gi,
-									''
-								)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
-								on:click={() => onOpenDayDetails(day)}
-								on:keydown={onKeypressed}
-							>
-								{@html day.activity}
-							</button>
-						</td>
-					{/each}
-				</tr>
+								{day.date}
+							</td>
+						{/each}
+					</tr>
+					<!-- debug: test if this is confusing for screenreader users -->
+					<tr role="tablist">
+						{#each days as day, i}
+							<td class="activity-cell">
+								<button
+									tabindex={i === detailedDay ? 0 : -1}
+									class="activity"
+									class:active={detailedDay === i}
+									id="weektab-{i + 1}-{randomId}"
+									role="tab"
+									aria-controls="tabpanel-{i + 1}-{randomId}"
+									aria-selected={detailedDay === i}
+									aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
+										/\&shy;/gi,
+										''
+									)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
+									on:click={() => onOpenDayDetails(day)}
+									on:keydown={onKeypressed}
+								>
+									{@html day.activity}
+								</button>
+							</td>
+						{/each}
+					</tr>
+				</tbody>
 			</table>
 		</div>
 

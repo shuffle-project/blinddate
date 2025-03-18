@@ -2,7 +2,11 @@
 	import { HOSTNAME } from '$lib/constants/hostname';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { MetaTags } from 'svelte-meta-tags';
-	export let persona: Persona;
+	interface Props {
+		persona: Persona;
+	}
+
+	let { persona }: Props = $props();
 </script>
 
 <MetaTags

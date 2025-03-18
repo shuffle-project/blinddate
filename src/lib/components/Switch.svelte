@@ -7,14 +7,25 @@
 	// sonstiges_
 	// https://kittygiraudel.com/2021/04/05/an-accessible-toggle/
 
-	// some changes for better responsivness of our component
-	export let option1: string;
-	export let option2: string;
+	
 
-	export let option1Label: string;
-	export let option2Label: string;
 
-	export let value: string;
+	interface Props {
+		// some changes for better responsivness of our component
+		option1: string;
+		option2: string;
+		option1Label: string;
+		option2Label: string;
+		value: string;
+	}
+
+	let {
+		option1,
+		option2,
+		option1Label,
+		option2Label,
+		value = $bindable()
+	}: Props = $props();
 
 	const randomId = getRandomId();
 </script>

@@ -3,8 +3,13 @@
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import FriendPersonaCard from './FriendPersonaCard.svelte';
 	import MobileFriendCard from './MobileFriendCard.svelte';
-	export let friendPersona: FriendPersona;
-	export let hidePersonaCard = false;
+	interface Props {
+		friendPersona: FriendPersona;
+		hidePersonaCard?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let { friendPersona, hidePersonaCard = false, children }: Props = $props();
 </script>
 
 <div
@@ -25,7 +30,7 @@
 			</div>
 		{/if}
 		<p class="text" class:with-card={!hidePersonaCard}>
-			<slot />
+			{@render children?.()}
 		</p>
 		<div class="decorative-outline">
 			<div aria-hidden="true" class="speech-bubble-indicator">

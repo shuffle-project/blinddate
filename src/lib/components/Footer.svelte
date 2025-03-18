@@ -129,7 +129,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="padding-bottom" />
+	<div class="padding-bottom"></div>
 </footer>
 
 <style lang="scss">

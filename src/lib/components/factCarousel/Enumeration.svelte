@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	export let total = 0;
-	export let amount = 0;
+	interface Props {
+		total?: number;
+		amount?: number;
+	}
+
+	let { total = 0, amount = 0 }: Props = $props();
 
 	let responsiveTotal = total / 5;
 	let responsiveAmount = amount / 5;

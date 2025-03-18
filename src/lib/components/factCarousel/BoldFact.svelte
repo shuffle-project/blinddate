@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let boldText: string;
-	export let normalText: string;
+	interface Props {
+		boldText: string;
+		normalText: string;
+	}
+
+	let { boldText, normalText }: Props = $props();
 </script>
 
 <div class="wrapper">

@@ -1,5 +1,5 @@
 <li class="ground">
-	<div class="box-mockup" />
+	<div class="box-mockup"></div>
 </li>
 
 <style lang="scss">

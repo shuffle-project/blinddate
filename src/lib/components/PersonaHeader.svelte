@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { Persona } from '../interfaces/persona.interfaces';
 	import PersonaCard from './PersonaCard.svelte';
-	export let persona: Persona;
+	interface Props {
+		persona: Persona;
+	}
+
+	let { persona }: Props = $props();
 </script>
 
 <div class="background-black">

@@ -4,9 +4,13 @@
 	import Modal from '../Modal.svelte';
 	import FriendPersonaCard from './FriendPersonaCard.svelte';
 
-	export let friendPersona: FriendPersona;
+	interface Props {
+		friendPersona: FriendPersona;
+	}
 
-	let modal: Modal;
+	let { friendPersona }: Props = $props();
+
+	let modal: Modal = $state();
 
 	function toggleModalDisplay() {
 		if (modal) modal.toggleModalDisplay();
@@ -22,15 +26,17 @@
 		</div>
 		<span>{friendPersona.name}</span>
 	</div>
-	<button on:click={() => toggleModalDisplay()} aria-label="Über {friendPersona.name}">
+	<button onclick={() => toggleModalDisplay()} aria-label="Über {friendPersona.name}">
 		<Icon size="smedium" img="more-placeholder" />
 	</button>
 </div>
 
 <Modal bind:this={modal} bottomSheet {friendPersona}>
-	<svelte:fragment slot="content">
-		<FriendPersonaCard {friendPersona} />
-	</svelte:fragment>
+	{#snippet content()}
+	
+			<FriendPersonaCard {friendPersona} />
+		
+	{/snippet}
 </Modal>
 
 <style lang="scss">

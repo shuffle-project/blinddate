@@ -1,5 +1,10 @@
-<script>
+<script lang="ts">
 	import { ENVIRONMENT } from '../lib/constants/environment';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 {#if ENVIRONMENT.showDevEnvInfo}
@@ -12,7 +17,7 @@
 	</div>
 {/if}
 
-<slot />
+{@render children?.()}
 
 <style lang="scss" global>
 	@import './../scss/_main.scss';

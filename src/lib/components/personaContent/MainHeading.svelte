@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let personaName: string = '';
-	export let heading:
+	interface Props {
+		personaName?: string;
+		heading?: 
 		| 'Technologien und Strategien'
 		| 'Lehrveranstaltungen'
 		| 'Lernmaterial'
@@ -11,7 +12,10 @@
 		| 'Weitere Informationen'
 		| 'Allgemeine Informationen'
 		| 'LRS und ADHS'
-		| '' = '';
+		| '';
+	}
+
+	let { personaName = '', heading = '' }: Props = $props();
 
 	let id:
 		| 'tools'
@@ -24,7 +28,7 @@
 		| 'more-info'
 		| 'general'
 		| 'lrs-adhs'
-		| '' = '';
+		| '' = $state('');
 
 	switch (heading) {
 		case 'Technologien und Strategien':

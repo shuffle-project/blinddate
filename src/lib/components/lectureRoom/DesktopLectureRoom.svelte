@@ -4,15 +4,19 @@
 	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
 
-	export let personas: Persona[];
+	interface Props {
+		personas: Persona[];
+	}
 
-	let toggleAllNames = false;
+	let { personas }: Props = $props();
+
+	let toggleAllNames = $state(false);
 	let durations = ['0.3s', '0.7s', '1.2s', '2s'];
 	function randomIntFromInterval() {
 		return Math.floor(Math.random() * (3 - 0 + 1) + 0);
 	}
 
-	let mounted = false;
+	let mounted = $state(false);
 
 	onMount(() => {
 		mounted = true;
@@ -26,7 +30,7 @@
 	</div>
 
 	<div class="lecture-room">
-		<div class="loading-indicator" class:not-mounted={!mounted} />
+		<div class="loading-indicator" class:not-mounted={!mounted}></div>
 		<div class="click-indicator" class:mounted>
 			<Icon img="clickable-persona" size="parent" />
 		</div>

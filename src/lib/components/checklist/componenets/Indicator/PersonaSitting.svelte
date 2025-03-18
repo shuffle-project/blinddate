@@ -3,9 +3,13 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import Sun from './Sun.svelte';
 
-	export let position: 'desktop' | 'mobile';
-	export let itemAdded = false;
-	export let persona: Persona;
+	interface Props {
+		position: 'desktop' | 'mobile';
+		itemAdded?: boolean;
+		persona: Persona;
+	}
+
+	let { position, itemAdded = false, persona }: Props = $props();
 </script>
 
 <li class="human human--{position}">

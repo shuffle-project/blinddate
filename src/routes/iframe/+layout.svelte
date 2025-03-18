@@ -3,9 +3,14 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Icon from '../../lib/components/Icon.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	let persona: 'gabriel' | 'hannah' | null = null;
-	let personaName: string = '';
+	let { children }: Props = $props();
+
+	let persona: 'gabriel' | 'hannah' | null = $state(null);
+	let personaName: string = $state('');
 
 	if ($page.url.pathname.includes('gabriel')) persona = 'gabriel';
 	if ($page.url.pathname.includes('hannah')) persona = 'hannah';
@@ -42,7 +47,7 @@
 	</header>
 
 	<main class="game-wrapper">
-		<slot />
+		{@render children?.()}
 	</main>
 </div>
 
