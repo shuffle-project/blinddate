@@ -2,7 +2,7 @@
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
-	import FriendPersonaCard from './FriendPersonaCard.svelte';
+	import FriendCard from './FriendCard.svelte';
 
 	interface Props {
 		friendPersona: FriendPersona;
@@ -10,7 +10,7 @@
 
 	let { friendPersona }: Props = $props();
 
-	let modal: Modal = $state();
+	let modal: Modal;
 
 	function toggleModalDisplay() {
 		if (modal) modal.toggleModalDisplay();
@@ -33,9 +33,7 @@
 
 <Modal bind:this={modal} bottomSheet {friendPersona}>
 	{#snippet content()}
-	
-			<FriendPersonaCard {friendPersona} />
-		
+		<FriendCard {friendPersona} />
 	{/snippet}
 </Modal>
 

@@ -11,7 +11,7 @@
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
-	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
@@ -135,7 +135,7 @@
 		laut ist oder ich einen Weg finden muss.
 	</SpeechBubble>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Sasha und ich – wir kennen uns schon ewig. Schon seit der Grundschule. Wenn ihm alles zu viel
 		wird, spricht er nicht mehr und klopft auf seinen Händen rum. Das macht er, damit er sich besser
 		konzentrieren kann, hat er mir gesagt. Also, er hört einen dann trotzdem, auch wenn das nicht so
@@ -144,7 +144,7 @@
 		dass er so reagiert. Aber viele andere checken das nicht. Die reden dann lauter auf ihn ein,
 		kommen näher oder berühren ihn sogar. Das bringt halt gar nichts. Viel besser wäre, zusammen
 		einen ruhigeren Ort zu finden.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-04.mp3'}>
 		Wenn mir eine Situation zu viel wird – das heißt, wenn ich überstimuliert bin und deshalb einen
@@ -219,14 +219,14 @@
 		</Text>
 	</TextSection>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Ich treff mich immer mal mit Sasha am Nachmittag zum Lernen. Ich studiere was ganz anderes, aber
 		das kann man ja trotzdem zusammen machen. Schwierig wird es, wenn Sasha nach unserem Lern-Date
 		noch einen anderen Termin hat. Ich hab dann das Gefühl er sitzt da wie bestellt und nicht
 		abgeholt und wartet eigentlich nur darauf, dass er jetzt zu dem Termin losgehen kann. Auf etwas
 		anderes konzentrieren kann er sich dann nicht mehr, obwohl er erst in einer Stunde oder so los
 		muss.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<Accordion personaName={persona.name}>
 		<AccordionItem>
@@ -279,7 +279,7 @@
 		wollen andere das oft nicht hören. Dann sagen die, das ist zu viel.
 	</SpeechBubble>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Sasha hat mir mal erklärt, dass das, was er performen nennt, auch
 		<InfoBox term="masking" langTerm="en" inSpeechBubble>
 			<p style="font-family: var(--font-sans-serif);">
@@ -297,7 +297,7 @@
 		reagieren – aber er hat gelernt, dass es besser ist, „normal“ zu scheinen. Also so, wie die
 		Gesellschaft es erwarten würde. Eigentlich schade. Besser fände ich es, wenn unser Umfeld
 		akzeptieren würde, dass Sasha genau so, wie er ist, vollkommen in Ordnung ist.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-07.mp3'}>
 		Genau. Ich denke, man muss so wirken, wie die anderen. Ich musste auch lernen, dass man dem

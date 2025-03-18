@@ -136,7 +136,7 @@
 		wenig Ablenkung. Da chille ich sehr gerne zwischen den Vorlesungen.
 	</SpeechBubble>
 
-	<FactCarousel facts={persona.facts} />
+	<FactCarousel facts={persona.facts!} />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection>

@@ -1,11 +1,9 @@
-<!-- @migration-task Error while migrating Svelte code: `<tr>` cannot be a child of `<table>`. `<table>` only allows these children: `<caption>`, `<colgroup>`, `<tbody>`, `<thead>`, `<tfoot>`, `<style>`, `<script>`, `<template>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
 <script lang="ts">
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import Icon from '../Icon.svelte';
 	import PersonaPortrait from '../PersonaPortrait.svelte';
 
-	export let friendPersona: FriendPersona;
+	let { friendPersona }: { friendPersona: FriendPersona } = $props();
 </script>
 
 <div class="card">

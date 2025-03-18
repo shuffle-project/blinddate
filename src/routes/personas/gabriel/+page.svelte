@@ -4,6 +4,7 @@
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
@@ -16,7 +17,6 @@
 	import SimulationLink from '../../../lib/components/SimulationLink.svelte';
 	import SpeechBubble from '../../../lib/components/SpeechBubble.svelte';
 	import ToolCard from '../../../lib/components/ToolCard.svelte';
-	import FriendBubble from '../../../lib/components/friendPersona/FriendBubble.svelte';
 	import { BEA } from '../../../lib/constants/bea';
 	import { GABRIEL } from '../../../lib/constants/gabriel';
 	import type { Persona } from '../../../lib/interfaces/persona.interfaces';
@@ -138,20 +138,20 @@
 		>
 	</div>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Hi, ich bin Bea. Ich kenne Gabriel seit Beginn des Studiums. Wir unterstützen uns gegenseitig
 		bei unterschiedlichen Themen. Ich bin blind und nutze dementsprechend zwar teilweise andere
 		Techniken und Strategien als Gabriel, aber das Abbauen von Barrieren geht gemeinsam doch
 		einfacher!
-	</FriendBubble>
+	</FriendSpeechbubble>
 
-	<FriendBubble {friendPersona} hidePersonaCard>
+	<FriendSpeechbubble {friendPersona} hidePersonaCard>
 		Beispielsweise kann ich den Cursor der Maus auf dem Desktop natürlich nicht sehen. Daher nutze
 		ich Tastenkombinationen und insbesondere die Tabulatortaste – das ist die Tab-Taste mit den
 		beiden Pfeilen in unterschiedliche Richtungen am linken Rand der Tastatur. Ich benutze also die
 		Tastatur in Kombi mit dem <span lang="en">Screenreader</span>, um auf dem Laptop zu navigieren.
 		Als Ausgabe nutze ich auch mal gerne die Braillezeile, anstatt immer nur per Audio.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-02.mp3'}>
 		Ich kann zwar teilweise noch sehen, aber mein Gesichtsfeld ist seitlich eingeschränkt, also ist
@@ -178,11 +178,11 @@
 		ich mich mit meinen Freunden und Freundinnen hinsetzen möchte. Ich muss dann nicht in der ersten
 		Reihe sitzen, um etwas erkennen zu können.
 	</SpeechBubble>
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Es gibt ein paar Kniffe, die man bei der Erstellung von Dokumenten beachten kann, die nicht
 		lange dauern und mir das Arbeiten damit extrem erleichtern. Dokumente immer wieder selbst
 		bearbeiten zu müssen oder von meiner Assistenz umwandeln zu lassen, kostet Zeit und Nerven.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<Recommendation
 		link="https://support.microsoft.com/de-de/office/gestalten-barrierefreier-word-dokumente-f%C3%BCr-personen-mit-behinderungen-d9bf3683-87ac-47ea-b91a-78dcacb3c66d"
@@ -314,13 +314,13 @@
 		</Text>
 	</TextSection>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Ich nehme zu Beginn jedes Semesters Kontakt mit den Lehrpersonen auf und versuche, zu erklären,
 		wie ich arbeite und was ich benötige. Häufig muss ich während des Semesters erneut dran
 		erinnern, weil Dokumente nicht frühzeitig zum Bearbeiten da sind etc. Ich weiß, Gabriel ist es
 		Leid, immer wieder zu erinnern. Aber wir haben ja einen Anspruch auf barrierefrei zugängliches
 		Material. Deshalb muss ich da ja dranbleiben.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<MainHeading heading="Prüfungen" />
 	<TextSection>

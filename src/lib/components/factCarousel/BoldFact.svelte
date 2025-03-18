@@ -1,10 +1,5 @@
 <script lang="ts">
-	interface Props {
-		boldText: string;
-		normalText: string;
-	}
-
-	let { boldText, normalText }: Props = $props();
+	let { boldText, normalText }: { boldText: string; normalText: string } = $props();
 </script>
 
 <div class="wrapper">

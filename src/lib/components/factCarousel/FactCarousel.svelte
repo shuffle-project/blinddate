@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 
@@ -9,13 +7,9 @@
 	import BoldFact from './BoldFact.svelte';
 	import Enumeration from './Enumeration.svelte';
 
-	let carousel: Splide = $state();
+	let carousel: Splide;
 
-	interface Props {
-		facts?: FactSlide[];
-	}
-
-	let { facts = [] }: Props = $props();
+	let { facts = [] }: { facts: FactSlide[] } = $props();
 
 	const splideOptions = {
 		type: 'loop',
@@ -42,12 +36,10 @@
 	};
 
 	let carouselSelectedIndex: number = $state(0);
-
 	let componentHasFocus = $state(false);
-
 	let ariaLiveText = $state('');
 
-	run(() => {
+	$effect(() => {
 		const content = facts[carouselSelectedIndex].content;
 		const text =
 			content.type === 'enumeration'

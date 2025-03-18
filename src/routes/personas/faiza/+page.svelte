@@ -6,7 +6,7 @@
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FactCarousel from '$lib/components/factCarousel/FactCarousel.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
-	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import FriendBubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
@@ -89,7 +89,7 @@
 		und ein paar genervte Blicke fange ich mir da auch immer mal wieder ein.
 	</SpeechBubble>
 
-	<FactCarousel facts={persona.facts} />
+	<FactCarousel facts={persona.facts!} />
 
 	<MainHeading heading="Lehrveranstaltungen" />
 	<TextSection>

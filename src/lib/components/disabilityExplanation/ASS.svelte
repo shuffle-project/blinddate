@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <div>
 	<p>
 		Mit Inkrafttreten der ICD-11 am 01.01.2022 gibt es die Formen der Autismus-Diagnose (Asperger,

@@ -5,7 +5,7 @@
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
-	import FriendBubble from '$lib/components/friendPersona/FriendBubble.svelte';
+	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
@@ -122,18 +122,18 @@
 		ich hab nicht so guten Kontakt zu den Leuten in meinem Studiengang.
 	</SpeechBubble>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Hi, ich bin Alex, Maxis Mitbewohner und Freund und Studienkollege. Also wir machen alles
 		zusammen. Ich habe eine Angststörung. Es gibt Phasen, da geht es mir ähnlich wie Maxi. Ich bin
 		echt froh, dass Maxi und ich uns gefunden haben und so gut verstehen.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
-	<FriendBubble {friendPersona} hidePersonaCard>
+	<FriendSpeechbubble {friendPersona} hidePersonaCard>
 		Meine Therapeutin hat mir spezielle Übungen beigebracht. Und ich hab' die immer wieder geübt,
 		damit ich sie anwenden kann, wenn meine Gedanken außer Kontrolle geraten. Eine Übung ist zum
 		Beispiel, alle Dinge aufzuzählen, die ich in dem Moment höre oder sehe. Das lenkt mich dann ab
 		und idealerweise kann ich mich so selbst beruhigen.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-04.mp3'}>
 		Ja, solche Übungen kenn' ich auch. Ok, mittlerweile kennen die alle. Achtsamkeit ist ja
@@ -142,11 +142,11 @@
 		einfach, wenn ich nur Sachen aufzählen müsste und – Puff! - meine Angst wäre einfach weg.</SpeechBubble
 	>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Die Übungen sind ja auch nur ein Teil meiner Strategien. Ich nehme mittlerweile auch
 		Medikamente, die mir helfen. Die haben leider Nebenwirkungen, aber es geht mir damit echt
 		besser. Und zur Therapie gehe ich auch. Auf den Platz musste ich ganz schön lange warten.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<FlipCard
 		{persona}
@@ -214,12 +214,12 @@
 		irgendwie weiß, dass das nicht der Fall ist. Ich hab direkt Stress gekriegt.
 	</SpeechBubble>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Und ich merke, wenn die Kamera bei Zoom zum Beispiel aus ist, dann mache ich halt alles andere
 		nebenbei. Ich putz mein Zimmer. Ich gieß meine Blumen. Ich mach ein Puzzle. Merkt ja keiner.
 		Allerdings merke ich dann auch, dass meine Konzentration komplett flöten ist und ich nichts
 		mitgekriegt habe.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<TextSection>
 		<Text>
@@ -346,7 +346,7 @@
 		ich die finde und so.
 	</SpeechBubble>
 
-	<FriendBubble {friendPersona}>
+	<FriendSpeechbubble {friendPersona}>
 		Und ich war über die Infos von Maxi dann sehr dankbar. Je nachdem, wie es mir gerade geht, habe
 		ich nämlich mit Prüfungen echt Probleme und bekomme Panikattacken. Aber ich habe mit dem
 		Nachteilsausgleich eine Zeitverlängerung bekommen, was mir sehr hilft. Sonst wäre ich schon
@@ -355,7 +355,7 @@
 		einer Gruppe von Personen für mich eine riesige Herausforderung. Ich kann mich nicht auf den
 		Inhalt konzentrieren und bin komplett gelähmt. Hier hilft mir sehr, wenn ich ein alternatives
 		Prüfungsformat nutzen kann.
-	</FriendBubble>
+	</FriendSpeechbubble>
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 

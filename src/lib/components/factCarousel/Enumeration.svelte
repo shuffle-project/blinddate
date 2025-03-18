@@ -1,30 +1,25 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	interface Props {
-		total?: number;
-		amount?: number;
-	}
-
-	let { total = 0, amount = 0 }: Props = $props();
+	let { total = 0, amount = 0 }: { total?: number; amount?: number } = $props();
 
 	let responsiveTotal = total / 5;
 	let responsiveAmount = amount / 5;
 </script>
 
 <div class="wrapper">
-	{#each { length: amount } as _, i}
+	{#each { length: amount }, i}
 		<img class="amount" src="{base}/icons/person-fill.svg" alt="" aria-hidden="true" />
 	{/each}
-	{#each { length: total - amount } as _, i}
+	{#each { length: total - amount }, i}
 		<img class="total" src="{base}/icons/person-stroke.svg" alt="" aria-hidden="true" />
 	{/each}
 </div>
 <div class="mobile-wrapper">
-	{#each { length: responsiveAmount } as _, i}
+	{#each { length: responsiveAmount }, i}
 		<img class="amount" src="{base}/icons/person-fill.svg" alt="" aria-hidden="true" />
 	{/each}
-	{#each { length: responsiveTotal - responsiveAmount } as _, i}
+	{#each { length: responsiveTotal - responsiveAmount }, i}
 		<img class="total" src="{base}/icons/person-stroke.svg" alt="" aria-hidden="true" />
 	{/each}
 </div>

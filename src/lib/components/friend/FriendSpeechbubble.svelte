@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
-	import FriendPersonaCard from './FriendPersonaCard.svelte';
-	import MobileFriendCard from './MobileFriendCard.svelte';
+	import type { Snippet } from 'svelte';
+	import FriendCard from './FriendCard.svelte';
+	import FriendCardMobile from './FriendCardMobile.svelte';
 	interface Props {
 		friendPersona: FriendPersona;
 		hidePersonaCard?: boolean;
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { friendPersona, hidePersonaCard = false, children }: Props = $props();
@@ -20,13 +21,13 @@
 >
 	{#if !hidePersonaCard}
 		<div class="card">
-			<FriendPersonaCard {friendPersona} />
+			<FriendCard {friendPersona} />
 		</div>
 	{/if}
 	<div class="speech-bubble">
 		{#if !hidePersonaCard}
 			<div class="mobile-card">
-				<MobileFriendCard {friendPersona} />
+				<FriendCardMobile {friendPersona} />
 			</div>
 		{/if}
 		<p class="text" class:with-card={!hidePersonaCard}>
