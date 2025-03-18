@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { onMount } from 'svelte';
-	import InnerCardMobile from './InnerCardMobile.svelte';
+	import MobileCard from './MobileCard.svelte';
+
 	interface Props {
 		persona: Persona;
 	}
@@ -26,17 +27,13 @@
 		mobileCardScrolling = !mobileCardScrolling;
 	}
 
-	function deactivateMobileCardScrolling() {
+	function deactivateScrolling() {
 		mobileCardScrolling = false;
 	}
 </script>
 
 <div bind:this={mobileCardElement} class="mobile-card" class:sticky={mobileCardScrolling}>
-	<InnerCardMobile
-		deactivateScrolling={deactivateMobileCardScrolling}
-		{mobileCardIsSticky}
-		{persona}
-	/>
+	<MobileCard {deactivateScrolling} {mobileCardIsSticky} {persona} />
 </div>
 
 <div class="scrolling-note">

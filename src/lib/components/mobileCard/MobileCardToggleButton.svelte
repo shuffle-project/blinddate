@@ -31,9 +31,8 @@
 				<Icon size="parent" img="/personas/{persona.id}/{persona.id}" />
 			</div>
 		</div>
-		<div>
-			<span class="name-text">{persona.name}</span>
-		</div>
+
+		<span class="name-text">{persona.name}</span>
 	</div>
 
 	<button

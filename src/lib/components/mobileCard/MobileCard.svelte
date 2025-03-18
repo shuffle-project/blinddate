@@ -6,12 +6,12 @@
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import { handleBackdropClick } from '../utils';
-	import ToggleButton from './ToggleButton.svelte';
+	import MobileCardToggleButton from './MobileCardToggleButton.svelte';
 
 	interface Props {
 		persona: Persona;
 		mobileCardIsSticky?: boolean;
-		deactivateScrolling: Function;
+		deactivateScrolling: () => void;
 	}
 
 	let { persona, mobileCardIsSticky = false, deactivateScrolling }: Props = $props();
@@ -41,7 +41,6 @@
 			} else {
 				document.body.removeAttribute('style');
 				showTableOfContents = false;
-				dialogElement.setAttribute('inert', '');
 				dialogElement.close();
 			}
 		}
@@ -50,28 +49,7 @@
 	onMount(() => {
 		headings = document.querySelectorAll('h1, h2.main-heading');
 
-		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
-			mutations.forEach((mutation) => {
-				if (mutation.attributeName === 'open') {
-					const dialog: any = mutation.target;
-					const isOpen = dialog.hasAttribute('open');
-
-					if (!isOpen) return;
-
-					dialog.removeAttribute('inert');
-
-					//set focus
-					const focusTarget = dialog.querySelector('[autofocus]');
-					focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
-				}
-			});
-		});
-
 		if (dialogElement) {
-			dialogAttrObserver.observe(dialogElement, {
-				attributes: true
-			});
-
 			dialogElement.addEventListener('close', (e) => {
 				dialogOpen = false;
 			});
@@ -81,12 +59,9 @@
 
 <div class="mobile-card">
 	<div>
-		<ToggleButton {toggleDialog} {mobileCardIsSticky} outer {persona} {dialogOpen} />
+		<MobileCardToggleButton {toggleDialog} {mobileCardIsSticky} outer {persona} {dialogOpen} />
 
-		<!-- svelte-ignore a11y_click_events_have_key_events -->
-		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<dialog
-			inert
 			class:sticky={mobileCardIsSticky}
 			bind:this={dialogElement}
 			onclick={(e) => handleBackdropClick(e, dialogElement!)}
@@ -94,7 +69,7 @@
 			<nav aria-label={persona.name + ' mitscrollendes Menü'}>
 				<ul>
 					<li>
-						<ToggleButton {toggleDialog} {mobileCardIsSticky} {persona} {dialogOpen} />
+						<MobileCardToggleButton {toggleDialog} {mobileCardIsSticky} {persona} {dialogOpen} />
 					</li>
 					<li>
 						<button
@@ -200,7 +175,6 @@
 			max-block-size: min(80vh, 100%);
 			max-block-size: min(80dvb, 100%);
 
-			display: block;
 			padding-bottom: 0;
 
 			&.sticky {
@@ -214,11 +188,6 @@
 
 		dialog[open].sticky {
 			animation: animation-slide-in-down 0.8s ease-out forwards;
-		}
-
-		dialog:not([open]) {
-			pointer-events: none;
-			opacity: 0;
 		}
 
 		dialog::backdrop {

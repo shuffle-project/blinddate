@@ -4,7 +4,7 @@
 	import type { Snippet } from 'svelte';
 	import MetaTags from '../MetaTags.svelte';
 	import PersonaCard from '../PersonaCard.svelte';
-	import CardMobile from '../cardMobile/CardMobile.svelte';
+	import MobileCardWrapper from '../mobileCard/MobileCardWrapper.svelte';
 
 	let { persona, children }: { persona: Persona; children: Snippet } = $props();
 </script>
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="content-column">
-			<CardMobile {persona} />
+			<MobileCardWrapper {persona} />
 			<div class="general-info">
 				<h2 id="about-me" class="main-heading">Über mich</h2>
 
