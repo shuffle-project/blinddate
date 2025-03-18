@@ -303,7 +303,7 @@
 	</TextSection>
 
 	<Checklist
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich gebe in der Veranstaltungsbeschreibung die Prüfungsform, die Struktur sowie Informationen zur Anwesenheitspflicht an',
 			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit Pflegeverantwortung wenden können',

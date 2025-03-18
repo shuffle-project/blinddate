@@ -1,6 +1,6 @@
 <script lang="ts">
-	import BigLectureRoom from '$lib/components/big-picture/BigLectureRoom.svelte';
-	import BigPictureMobile from '$lib/components/big-picture/BigPictureMobile.svelte';
+	import BigPictureMobile from '$lib/components/bigPicture/BigPictureMobile.svelte';
+	import BigPictureRoom from '$lib/components/bigPicture/BigPictureRoom.svelte';
 	import { SUPPORT_OPTIONS, type SupportOptionId } from '$lib/constants/bigPicture';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
@@ -44,7 +44,7 @@
 		</p> -->
 
 		<div class="desktop">
-			<BigLectureRoom {selectedOption} />
+			<BigPictureRoom {selectedOption} />
 			<fieldset
 				id="support-list"
 				aria-label="Unterstützungsmöglichkeiten"

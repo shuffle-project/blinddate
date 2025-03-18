@@ -4,24 +4,25 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { quintInOut, quintOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
-	import type { CheckObject } from '../../../../../interfaces/checkList.interface';
+	import type { Check } from '../../../../../interfaces/checklist.interface';
 	import PersonaSitting from '../PersonaSitting.svelte';
 	import Ground from './Ground.svelte';
 
 	interface Props {
-		displayedBoxes: CheckObject[];
+		checklist: Check[];
 		persona: Persona;
 		totalCheckboxes: number;
 	}
 
-	let { displayedBoxes, persona, totalCheckboxes }: Props = $props();
+	let { checklist, persona, totalCheckboxes }: Props = $props();
 
-	let checkedDisplayedBoxes: CheckObject[] = $state();
-	let oldDisplayedBoxes = $state(displayedBoxes.filter((item: any) => item.checked));
+	let checkedDisplayedBoxes: Check[] = $state([]);
+
+	let oldDisplayedBoxes = $state(checklist.filter((item: any) => item.checked));
 	let itemAdded = $state(false);
 
 	run(() => {
-		checkedDisplayedBoxes = displayedBoxes.filter((item: any) => item.checked);
+		checkedDisplayedBoxes = checklist.filter((item: any) => item.checked);
 		itemAdded = checkedDisplayedBoxes.length > oldDisplayedBoxes.length;
 		oldDisplayedBoxes = checkedDisplayedBoxes;
 		if (itemAdded) {
@@ -39,13 +40,13 @@
 	<ul aria-hidden="true" class="box-container">
 		<PersonaSitting position="desktop" {itemAdded} {persona} />
 
-		{#each displayedBoxes as box, i}
-			{#if box.checked}
+		{#each checklist as entry, i}
+			{#if entry.checked}
 				<li
 					in:slide={{ duration: 400, easing: quintOut }}
 					out:slide={{ duration: 600, easing: quintInOut }}
-					class="box background-pattern-{box.backgroundColorCode}"
-					style="height: {box.box.size - 15}px; width: 150px; transform: translateX({i !== 0
+					class="box background-pattern-{entry.backgroundColorCode}"
+					style="height: {entry.boxSize - 15}px; width: 150px; transform: translateX({i !== 0
 						? Math.floor(Math.random() * 31) - 15
 						: 0}px)"
 				></li>
@@ -134,7 +135,8 @@
 
 	.background-pattern-4 {
 		background-color: var(--color-background-body);
-		background-image: linear-gradient(var(--color-black) 1.2px, transparent 1.2px),
+		background-image:
+			linear-gradient(var(--color-black) 1.2px, transparent 1.2px),
 			linear-gradient(to right, var(--color-black) 1.2px, var(--color-background-body) 1.2px);
 		background-size: 24px 24px;
 		background-position: -12px -12px;

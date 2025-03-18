@@ -366,7 +366,7 @@
 	</TextSection>
 
 	<Checklist
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich verweise auf Unterstützungsmöglichkeiten oder Studierendengruppen zum Austausch, z.B. auf meinen Veranstaltungsfolien',
 			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit psychischen Problemen wenden können',

@@ -331,7 +331,7 @@
 	</TextSection>
 
 	<Checklist
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 			'Ich ermögliche eine asynchrone und remote Teilnahme an der Veranstaltung',

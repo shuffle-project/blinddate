@@ -285,7 +285,7 @@
 
 	<Checklist
 		{persona}
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnung',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an Veranstaltungen',

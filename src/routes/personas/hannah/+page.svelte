@@ -404,7 +404,7 @@
 	</TextSection>
 
 	<Checklist
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 			'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Gesprochenes kann nicht nur gehört, sondern auch bspw. durch Untertitel oder Transkripte gelesen werden',

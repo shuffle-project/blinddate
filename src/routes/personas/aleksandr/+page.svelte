@@ -412,7 +412,7 @@
 	</TextSection>
 
 	<Checklist
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich mache transparent, welche Komponenten meiner Lehrveranstaltung bewertet werden und welche nicht (Bspw. mündliche Teilnahme und Gruppensituation)',
 			'Ich erlaube die Nutzung von Kopfhörern oder Fidget Toys in meinen Veranstaltungen',

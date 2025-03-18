@@ -9,7 +9,7 @@
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 	import Icon from '../Icon.svelte';
-	import BigLectureRoom from './BigLectureRoom.svelte';
+	import BigPictureRoom from './BigPictureRoom.svelte';
 
 	let carouselSupportSelectedIndex: number = $state(0);
 	let carouselStudentSelectedIndex: number = $state(0);
@@ -175,7 +175,7 @@
 
 	<div class="top-card">
 		<div class="lecture-room">
-			<BigLectureRoom mobileView selectedOption={selectedSupportOption} />
+			<BigPictureRoom mobileView selectedOption={selectedSupportOption} />
 		</div>
 		<div class="support-options">
 			{#if carouselSupportSelectedIndex === 0}

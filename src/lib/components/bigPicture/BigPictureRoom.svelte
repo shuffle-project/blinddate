@@ -7,7 +7,7 @@
 		type SupportOptionId
 	} from '$lib/constants/bigPicture';
 	import Icon from '../Icon.svelte';
-	import StudentSpeechbubble from './StudentSpeechbubble.svelte';
+	import BigPictureSpeechbubble from './BigPictureSpeechbubble.svelte';
 
 	const REVERSED_STUDENTS = BIG_PICTURE_STUDENTS.slice().reverse();
 
@@ -144,7 +144,7 @@
 						/>
 					</button>
 
-					<StudentSpeechbubble
+					<BigPictureSpeechbubble
 						studentName={student.name}
 						studentComment={selectedOption ? student.benefitsFrom[selectedOption] : ''}
 						visible={selectedStudent === student.id}

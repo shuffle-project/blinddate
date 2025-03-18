@@ -1,28 +1,20 @@
 <script lang="ts">
-	interface CheckObject {
-		id: number;
-		text: string;
-		checked: boolean;
-		backgroundColorCode: number;
-		box: {
-			size: number;
-		};
-	}
+	import type { Check } from '$lib/interfaces/checklist.interface';
 
 	interface Props {
-		keyedChecks: CheckObject[];
-		toggleCheckBox: (id: number) => void;
+		checklist: Check[];
+		toggleCheckbox: (id: number) => void;
 	}
 
-	let { keyedChecks = $bindable(), toggleCheckBox }: Props = $props();
+	let { checklist = $bindable(), toggleCheckbox }: Props = $props();
 </script>
 
 <ul>
-	{#each keyedChecks as check, i (check.id)}
+	{#each checklist as check, i (check.id)}
 		<li>
 			<div
 				class="check {check.checked ? 'checked' : 'unchecked'}"
-				bind:clientHeight={keyedChecks[i].box.size}
+				bind:clientHeight={checklist[i].boxSize}
 			>
 				<input
 					class="checkbox"
@@ -31,7 +23,7 @@
 					value={check}
 					disabled={check.id === 0 ? true : false}
 					checked={check.checked}
-					onclick={() => toggleCheckBox(check.id)}
+					onclick={() => toggleCheckbox(check.id)}
 				/>
 				<label class="label" for={'checkbox' + check.id}> {check.text}</label>
 			</div>
