@@ -6,7 +6,7 @@
 		toggleCheckbox: (id: number) => void;
 	}
 
-	let { checklist = $bindable(), toggleCheckbox }: Props = $props();
+	let { checklist, toggleCheckbox }: Props = $props();
 </script>
 
 <ul>
@@ -20,7 +20,6 @@
 					class="checkbox"
 					type="checkbox"
 					id={'checkbox' + check.id}
-					value={check}
 					disabled={check.id === 0 ? true : false}
 					checked={check.checked}
 					onclick={() => toggleCheckbox(check.id)}

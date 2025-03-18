@@ -34,7 +34,6 @@
 				z-index: 40;
 
 				img {
-					// TODO: Probably needs to be persona specific
 					position: absolute;
 					top: -8.5rem;
 					left: -4rem;

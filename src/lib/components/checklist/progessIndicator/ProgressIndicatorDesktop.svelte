@@ -1,12 +1,9 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { quintInOut, quintOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import type { Check } from '../../../../../interfaces/checklist.interface';
-	import PersonaSitting from '../PersonaSitting.svelte';
-	import Ground from './Ground.svelte';
+	import PersonaSitting from './PersonaSitting.svelte';
 
 	interface Props {
 		checklist: Check[];
@@ -16,25 +13,23 @@
 
 	let { checklist, persona, totalCheckboxes }: Props = $props();
 
-	let checkedDisplayedBoxes: Check[] = $state([]);
-
-	let oldDisplayedBoxes = $state(checklist.filter((item: any) => item.checked));
 	let itemAdded = $state(false);
+	let checkedLength = $state(1);
 
-	run(() => {
-		checkedDisplayedBoxes = checklist.filter((item: any) => item.checked);
-		itemAdded = checkedDisplayedBoxes.length > oldDisplayedBoxes.length;
-		oldDisplayedBoxes = checkedDisplayedBoxes;
-		if (itemAdded) {
+	$effect(() => {
+		// necessary for persona jump animation
+		if (checklist.filter((item: any) => item.checked).length > checkedLength) {
+			itemAdded = true;
 			setTimeout(() => {
 				itemAdded = false;
 			}, 700);
 		}
+		checkedLength = checklist.filter((item: any) => item.checked).length;
 	});
 </script>
 
 <div
-	aria-label="{persona.name} sitzt auf einem Turm. Je mehr Checkboxen angekreuzt werden, desto höher wächst er. {checkedDisplayedBoxes.length} von {totalCheckboxes} sind aktuell angekreuzt. "
+	aria-label="{persona.name} sitzt auf einem Turm. Je mehr Checkboxen angekreuzt werden, desto höher wächst er. {checkedLength} von {totalCheckboxes} sind aktuell angekreuzt."
 	class="wrapper"
 >
 	<ul aria-hidden="true" class="box-container">
@@ -52,7 +47,10 @@
 				></li>
 			{/if}
 		{/each}
-		<Ground />
+		<!-- <Ground /> -->
+		<li class="ground">
+			<div class="ground-box"></div>
+		</li>
 	</ul>
 </div>
 
@@ -165,5 +163,25 @@
 			var(--color-background-body) 0,
 			var(--color-background-body) 50%
 		);
+	}
+
+	.ground {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: var(--color-black);
+
+		.ground-box {
+			position: absolute;
+			left: 2rem;
+			bottom: 0;
+			height: 3.375rem;
+			width: 4rem;
+			border: 1px solid var(--color-black);
+			border-radius: 0.625rem;
+			z-index: 0;
+		}
 	}
 </style>

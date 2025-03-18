@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { Check } from '../../interfaces/checklist.interface';
-	import Checkboxes from './componenets/Checkboxes.svelte';
-	import Desktop from './componenets/ProgessIndicator/Desktop/Desktop.svelte';
-	import Mobile from './componenets/ProgessIndicator/Mobile/Mobile.svelte';
+	import Checkboxes from './Checkboxes.svelte';
+	import ProgressIndicatorDesktop from './progessIndicator/ProgressIndicatorDesktop.svelte';
+	import ProgressIndicatorMobile from './progessIndicator/ProgressIndicatorMobile.svelte';
 
 	let { stringChecks, persona }: { stringChecks: string[]; persona: Persona } = $props();
 
@@ -37,13 +37,13 @@
 
 <div class="wrapper">
 	<div class="mobile">
-		<Mobile {checklist} {persona} />
+		<ProgressIndicatorMobile {checklist} {persona} />
 	</div>
 
 	<Checkboxes {checklist} {toggleCheckbox} />
 
 	<div class="desktop">
-		<Desktop totalCheckboxes={checklist.length} {checklist} {persona} />
+		<ProgressIndicatorDesktop totalCheckboxes={checklist.length} {checklist} {persona} />
 	</div>
 </div>
 
