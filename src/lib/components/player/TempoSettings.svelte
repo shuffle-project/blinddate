@@ -1,18 +1,13 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
-	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
-	import { handleBackdropClick } from '../utils';
 
 	interface Props {
 		playbackRate?: number;
 	}
 
-	let tempoMenuButton: HTMLButtonElement;
-
 	let dialog: HTMLDialogElement;
 	let displayDialog = $state(false);
+	let initialOpenMenuClick = $state(false);
 
 	let tempoOptions = [0.5, 0.75, 1, 1.25, 1.5];
 
@@ -20,33 +15,30 @@
 
 	function toggleDialogDisplay() {
 		displayDialog = !displayDialog;
-	}
+		displayDialog ? dialog.show() : dialog.close();
 
-	run(() => {
-		if (dialog) displayDialog ? dialog.show() : dialog.close();
-	});
+		if (!displayDialog) {
+			initialOpenMenuClick = false;
+		}
+	}
 
 	function handleMouseClick(e: MouseEvent) {
-		if (e.target) {
-			let target = e.target as HTMLElement;
+		if (!displayDialog) return;
+		if (!initialOpenMenuClick) {
+			initialOpenMenuClick = true;
+			return;
+		}
 
-			if (target === tempoMenuButton || target.parentNode?.parentNode === tempoMenuButton) {
-				return;
-			}
-
-			if (displayDialog && target !== dialog && target.parentNode !== dialog) {
-				handleBackdropClick(e, dialog);
-			}
+		const dialogDimensions = dialog.getBoundingClientRect();
+		if (
+			e.clientX < dialogDimensions.left ||
+			e.clientX > dialogDimensions.right ||
+			e.clientY < dialogDimensions.top ||
+			e.clientY > dialogDimensions.bottom
+		) {
+			toggleDialogDisplay();
 		}
 	}
-
-	onMount(() => {
-		if (dialog) {
-			dialog.addEventListener('close', () => {
-				displayDialog = false;
-			});
-		}
-	});
 
 	function handleKeyEvent(e: KeyboardEvent) {
 		if (e.key === 'Escape') {
@@ -59,7 +51,6 @@
 
 <div class="wrapper">
 	<button
-		bind:this={tempoMenuButton}
 		aria-expanded={displayDialog}
 		title="Wiedergabegetempo Untermenü"
 		aria-label="Wiedergabegetempo Untermenü"
@@ -79,8 +70,7 @@
 				<li>
 					<button
 						aria-pressed={playbackRate === tempoOption}
-						onclick={(e) => {
-							e.stopPropagation();
+						onclick={() => {
 							playbackRate = tempoOption;
 							toggleDialogDisplay();
 						}}

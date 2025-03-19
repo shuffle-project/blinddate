@@ -17,7 +17,7 @@
 	let isiOSDevice = $state(false);
 
 	// video
-	let videoWrapper: HTMLElement;
+	let videoWrapper: HTMLElement | undefined = $state();
 	let video: HTMLVideoElement | undefined = $state();
 
 	//readonly
@@ -64,6 +64,13 @@
 				}
 			})
 		);
+	});
+
+	$effect(() => {
+		if (videoData) {
+			if (!video?.paused) video?.pause();
+			video?.load();
+		}
 	});
 
 	// functions
@@ -124,7 +131,7 @@
 	}
 
 	function enterFullscreen() {
-		if (videoWrapper.requestFullscreen) {
+		if (videoWrapper?.requestFullscreen) {
 			videoWrapper.requestFullscreen({ navigationUI: 'hide' });
 		} else if ((videoWrapper as any).webkitRequestFullscreen) {
 			(videoWrapper as any).webkitRequestFullscreen({ navigationUI: 'hide' });
@@ -164,6 +171,7 @@
 
 <div class="wrapper" bind:this={videoWrapper}>
 	<!-- svelte-ignore a11y_media_has_caption -->
+
 	<video
 		poster={base + videoData.poster}
 		id="video-{randomId}"

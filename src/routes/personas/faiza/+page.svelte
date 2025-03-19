@@ -68,7 +68,7 @@
 	<TextSection>
 		<Text>
 			Planbarkeit ist mit familiärer Verantwortung sehr schwierig, da immer wieder unvorhersehbare
-			Dinge passieren – das Kind wird plötzlich krank, betreuende Personen fallen aus...offene
+			Dinge passieren – das Kind wird plötzlich krank, betreuende Personen fallen aus... offene
 			Aufgaben müssen daher immer dann erledigt werden, wenn gerade Zeit ist. Prokrastination kann
 			man sich nicht leisten! Das erfordert viel Selbstdisziplin.
 		</Text>
@@ -153,9 +153,9 @@
 	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-07.mp3'}>
 		Ehrlich gesagt, ist das immer das Erste, was ich mir in der Veranstaltungs&shy;beschreibung
 		anschaue: Gibt es eine Anwesenheitspflicht? Wie oft darf ich maximal fehlen? Gibt es die
-		Möglichkeit, online teilzunehmen oder asynchron zu Arbeiten? Ich muss einfach wissen, welche
+		Möglichkeit, online teilzunehmen oder asynchron zu arbeiten? Ich muss einfach wissen, welche
 		Anforderungen an mich gestellt sind und ob ich diesen zeitlich gerecht werden kann. Und wenn ich
-		als Prüfungsleistung eine Hausarbeit schreiben kann, dann ist das für mich besser machbar, als
+		als Prüfungsleistung eine Hausarbeit schreiben kann, dann ist das für mich besser machbar als
 		eine Präsenzprüfung. Ich würde mich wirklich freuen, wenn diese strukturellen und inhaltlichen
 		Anforderungen immer selbstverständlich und klar zu Beginn kommuniziert werden und ich nicht erst
 		bei Dozierenden nachfragen muss.

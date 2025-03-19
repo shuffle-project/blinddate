@@ -2,35 +2,35 @@
 	import { run, stopPropagation } from 'svelte/legacy';
 
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import Icon from './Icon.svelte';
 	import { handleBackdropClick } from './utils';
-
 
 	interface Props {
 		bottomSheet?: boolean;
 		term?: string;
 		friendPersona?: FriendPersona;
 		displayModal?: boolean;
-		headline?: import('svelte').Snippet;
-		content?: import('svelte').Snippet;
+		headline?: Snippet;
+		content?: Snippet;
 	}
 
 	let {
 		bottomSheet = false,
 		term = '',
 		friendPersona = {
-		id: 'placeholder',
-		name: '',
-		disability: '',
-		disabilityIcon: '',
-		relation: '',
-		relation_to: ''
-	},
+			id: 'placeholder',
+			name: '',
+			disability: '',
+			disabilityIcon: '',
+			relation: '',
+			relation_to: ''
+		},
 		displayModal = $bindable(false),
 		headline,
 		content
 	}: Props = $props();
+
 	let modal: HTMLDialogElement = $state();
 
 	let randomId = Math.random();

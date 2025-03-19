@@ -1,93 +1,75 @@
-<!-- @migration-task Error while migrating Svelte code: `<tr>` cannot be a child of `<table>`. `<table>` only allows these children: `<caption>`, `<colgroup>`, `<tbody>`, `<thead>`, `<tfoot>`, `<style>`, `<script>`, `<template>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
-	import { handleBackdropClick } from '../utils';
 
-	export let video: HTMLVideoElement;
-
-	let captionMenuButton: HTMLButtonElement;
+	let {
+		video,
+		captionsBackgroundColor = $bindable('black'),
+		captionsFontColor = $bindable('white'),
+		captionsFontSize = $bindable('small')
+	}: {
+		video: HTMLVideoElement;
+		captionsBackgroundColor: string;
+		captionsFontColor: string;
+		captionsFontSize: string;
+	} = $props();
 
 	let captionMenu: HTMLDialogElement;
-	let displayCaptionMenu = false;
+	let displayCaptionMenu = $state(false);
+	let initialOpenMenuClick = $state(false);
 
 	let modal: Modal;
-	let displayModal = false;
+	let displayModal: boolean = $state(false);
 
 	function toggleDisplayCaptionMenu() {
 		displayCaptionMenu = !displayCaptionMenu;
-	}
+		displayCaptionMenu ? captionMenu.show() : captionMenu.close();
 
-	$: {
-		if (captionMenu) {
-			displayCaptionMenu ? captionMenu.show() : captionMenu.close();
+		if (!displayCaptionMenu) {
+			initialOpenMenuClick = false;
 		}
 	}
 
+	$effect(() => {
+		window.localStorage.setItem('captionsBackgroundColor', captionsBackgroundColor);
+		window.localStorage.setItem('captionsFontColor', captionsFontColor);
+		window.localStorage.setItem('captionsFontSize', captionsFontSize);
+	});
+
 	function handleKeyEvent(e: KeyboardEvent) {
-		if (e.key === 'Escape') {
+		if (e.key === 'Escape') toggleDisplayCaptionMenu();
+	}
+
+	function handleMouseClick(e: MouseEvent) {
+		if (displayModal) return;
+		if (!displayCaptionMenu) return;
+
+		if (!initialOpenMenuClick) {
+			initialOpenMenuClick = true;
+			return;
+		}
+
+		const dialogDimensions = captionMenu.getBoundingClientRect();
+		if (
+			e.clientX < dialogDimensions.left ||
+			e.clientX > dialogDimensions.right ||
+			e.clientY < dialogDimensions.top ||
+			e.clientY > dialogDimensions.bottom
+		) {
 			toggleDisplayCaptionMenu();
 		}
 	}
 
-	function handleMouseClick(e: MouseEvent) {
-		if (e.target) {
-			let target = e.target as HTMLElement;
-
-			if (target === captionMenuButton) return;
-			if (displayModal) return;
-
-			// Icon image in caption button
-			if (target.parentElement?.parentElement === captionMenuButton) return;
-
-			if (displayCaptionMenu) {
-				handleBackdropClick(e, captionMenu);
-			}
-		}
-	}
-
-	onMount(() => {
-		if (captionMenu) {
-			captionMenu.addEventListener('close', () => {
-				displayCaptionMenu = false;
-			});
-		}
-	});
-
-	// caption styles
-	export let captionsBackgroundColor: string = 'black';
-	export let captionsFontColor: string = 'white';
-	export let captionsFontSize: string = 'small';
-
-	$: {
-		window.localStorage.setItem('captionsBackgroundColor', captionsBackgroundColor);
-	}
-	$: {
-		window.localStorage.setItem('captionsFontColor', captionsFontColor);
-	}
-	$: {
-		window.localStorage.setItem('captionsFontSize', captionsFontSize);
-	}
-
-	let selectedTrackLabel: string | null = null; // track active Caption
+	let selectedTrackLabel: string | null = $state(null);
 
 	function onSelectTextTrack(textTrack: TextTrack | null) {
-		if (textTrack) {
-			selectedTrackLabel = textTrack.label;
+		selectedTrackLabel = textTrack ? textTrack.label : null;
 
-			for (let index = 0; index < video.textTracks.length; index++) {
-				video.textTracks[index].mode = 'hidden';
-			}
-			textTrack.mode = 'showing';
-		} else {
-			selectedTrackLabel = null;
-			for (let index = 0; index < video.textTracks.length; index++) {
-				video.textTracks[index].mode = 'hidden';
-			}
+		for (let track of video.textTracks) {
+			track.mode = textTrack && track.label === textTrack.label ? 'showing' : 'hidden';
 		}
-		displayCaptionMenu = false;
+
+		toggleDisplayCaptionMenu();
 	}
 </script>
 
@@ -95,9 +77,8 @@ https://svelte.dev/e/node_invalid_placement -->
 
 <div class="wrapper">
 	<button
-		bind:this={captionMenuButton}
 		aria-expanded={displayCaptionMenu}
-		on:click={() => toggleDisplayCaptionMenu()}
+		onclick={() => toggleDisplayCaptionMenu()}
 		title="Untertitel Untermenü"
 		aria-label="Untertitel Untermenü"
 		class="caption-btn"
@@ -105,11 +86,10 @@ https://svelte.dev/e/node_invalid_placement -->
 		<Icon img="caption" svg_color="white" size="medium" />
 	</button>
 
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<dialog class="caption-menu" bind:this={captionMenu} on:keyup={(e) => handleKeyEvent(e)}>
+	<dialog class="caption-menu" bind:this={captionMenu} onkeyup={(e) => handleKeyEvent(e)}>
 		<menu>
 			<li>
-				<button aria-pressed={selectedTrackLabel === null} on:click={() => onSelectTextTrack(null)}
+				<button aria-pressed={selectedTrackLabel === null} onclick={() => onSelectTextTrack(null)}
 					>{#if selectedTrackLabel === null}
 						<div class="check">
 							<Icon size="parent" img="check" />
@@ -124,7 +104,7 @@ https://svelte.dev/e/node_invalid_placement -->
 				<li>
 					<button
 						aria-pressed={track.label === selectedTrackLabel}
-						on:click={() => onSelectTextTrack(track)}
+						onclick={() => onSelectTextTrack(track)}
 					>
 						{#if track.label === selectedTrackLabel}
 							<div class="check">
@@ -138,7 +118,7 @@ https://svelte.dev/e/node_invalid_placement -->
 				</li>
 			{/each}
 			<li>
-				<button on:click={() => modal.toggleModalDisplay()}>
+				<button onclick={() => modal.toggleModalDisplay()}>
 					<div class="check">
 						<Icon img="settings" size="parent" />
 					</div>
@@ -176,15 +156,15 @@ https://svelte.dev/e/node_invalid_placement -->
 								<select
 									id="selectBackgroundColor"
 									bind:value={captionsBackgroundColor}
-									on:click|stopPropagation
+									onclick={(e) => e.stopPropagation()}
 									title="Untertitel Hintergrundfarbe"
 									class="custom-select"
 								>
-									<option on:click|stopPropagation value="black">schwarz</option>
-									<option on:click|stopPropagation value="red">rot</option>
-									<option on:click|stopPropagation value="yellow">gelb</option>
-									<option on:click|stopPropagation value="white">weiß</option>
-									<option on:click|stopPropagation value="blue">blau</option>
+									<option onclick={(e) => e.stopPropagation()} value="black">schwarz</option>
+									<option onclick={(e) => e.stopPropagation()} value="red">rot</option>
+									<option onclick={(e) => e.stopPropagation()} value="yellow">gelb</option>
+									<option onclick={(e) => e.stopPropagation()} value="white">weiß</option>
+									<option onclick={(e) => e.stopPropagation()} value="blue">blau</option>
 								</select>
 							</td>
 						</tr>
@@ -195,14 +175,14 @@ https://svelte.dev/e/node_invalid_placement -->
 									id="selectFontColor"
 									class="custom-select"
 									bind:value={captionsFontColor}
-									on:click|stopPropagation
+									onclick={(e) => e.stopPropagation()}
 									title="Untertitel Schriftfarbe"
 								>
-									<option on:click|stopPropagation value="black">schwarz</option>
-									<option on:click|stopPropagation value="red">rot</option>
-									<option on:click|stopPropagation value="yellow">gelb</option>
-									<option on:click|stopPropagation value="white">weiß</option>
-									<option on:click|stopPropagation value="blue">blau</option>
+									<option onclick={(e) => e.stopPropagation()} value="black">schwarz</option>
+									<option onclick={(e) => e.stopPropagation()} value="red">rot</option>
+									<option onclick={(e) => e.stopPropagation()} value="yellow">gelb</option>
+									<option onclick={(e) => e.stopPropagation()} value="white">weiß</option>
+									<option onclick={(e) => e.stopPropagation()} value="blue">blau</option>
 								</select>
 							</td>
 						</tr>
@@ -213,13 +193,13 @@ https://svelte.dev/e/node_invalid_placement -->
 									id="selectFontSize"
 									class="custom-select"
 									bind:value={captionsFontSize}
-									on:click|stopPropagation
+									onclick={(e) => e.stopPropagation()}
 									title="Untertitel Schriftgröße"
 								>
-									<option on:click|stopPropagation value="small">klein</option>
-									<option on:click|stopPropagation value="medium">normal</option>
-									<option on:click|stopPropagation value="large">groß</option>
-									<option on:click|stopPropagation value="larger">größer</option>
+									<option onclick={(e) => e.stopPropagation()} value="small">klein</option>
+									<option onclick={(e) => e.stopPropagation()} value="medium">normal</option>
+									<option onclick={(e) => e.stopPropagation()} value="large">groß</option>
+									<option onclick={(e) => e.stopPropagation()} value="larger">größer</option>
 								</select>
 							</td>
 						</tr>
