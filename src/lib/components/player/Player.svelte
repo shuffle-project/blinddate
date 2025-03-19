@@ -273,12 +273,14 @@
 					<div class="row-2-right">
 						<TempoSettings bind:playbackRate />
 
-						<CaptionSettings
-							{video}
-							bind:captionsBackgroundColor
-							bind:captionsFontColor
-							bind:captionsFontSize
-						/>
+						{#key videoData}
+							<CaptionSettings
+								{video}
+								bind:captionsBackgroundColor
+								bind:captionsFontColor
+								bind:captionsFontSize
+							/>
+						{/key}
 
 						<button
 							class="player-btn"
