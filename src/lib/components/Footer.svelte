@@ -133,6 +133,19 @@
 </footer>
 
 <style lang="scss">
+	.logo-wrapper,
+	.legal-nav,
+	.accessibility-nav {
+		a {
+			border: 2px solid transparent;
+			border-radius: 1rem;
+		}
+		a:focus-visible {
+			border: 2px solid var(--color-white);
+			outline: 0;
+		}
+	}
+
 	.logo-wrapper {
 		display: flex;
 		gap: 2.5rem;
@@ -197,7 +210,7 @@
 		ul {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 0.875rem 1.875rem;
+			gap: 0.875rem 1.5rem;
 			list-style: none;
 			padding: 0;
 			margin: 0;
@@ -206,6 +219,7 @@
 				color: rgba(var(--color-white-rgb), 0.8);
 				text-decoration: none;
 				font-size: 1rem;
+				padding: 0.25rem;
 
 				&:hover,
 				&:focus {
