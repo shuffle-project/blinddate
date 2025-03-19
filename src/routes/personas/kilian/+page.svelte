@@ -9,7 +9,7 @@
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { KILIAN } from '$lib/constants/kilian';
@@ -18,7 +18,7 @@
 	const persona: Persona = KILIAN;
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-01.mp3'}>
 		Hallo und Guten Tag. Mein Name ist Kilian, ich bin 21 Jahre alt und wohne, nicht ganz
 		freiwillig, mit meinen Eltern und vielen Kühen in einem Vorort von Oldenburg. An der Uni
@@ -293,4 +293,4 @@
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 	/>
-</PersonaContent>
+</PersonaWrapper>

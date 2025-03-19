@@ -6,7 +6,7 @@
 	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
@@ -80,7 +80,7 @@
 	};
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-01.mp3'}>
 		Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik auf Lehramt im Bachelor in
 		Dortmund. Ich wohne gemeinsam mit meinen zwei Mitbewohnern, Till und Simon, in einer WG und
@@ -444,7 +444,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

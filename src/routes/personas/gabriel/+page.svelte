@@ -6,7 +6,7 @@
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
@@ -53,7 +53,7 @@
 	};
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/gabriel/audio/gabriel-sb-01.mp3'}>
 		Hallo, ich bin Gabriel. Ich bin 27 Jahre alt und studiere Soziale Arbeit im Master. Seit zwei
 		Jahren lebe ich alleine in einer Wohnung mit meinem Kater Henry. Ich spiele Klavier und übe
@@ -413,7 +413,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

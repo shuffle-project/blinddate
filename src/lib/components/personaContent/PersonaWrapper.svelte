@@ -1,10 +1,10 @@
 <script lang="ts">
-	import PersonaHeader from '$lib/components/PersonaHeader.svelte';
+	import PersonaHeader from '$lib/components/personaContent/PersonaHeader.svelte';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { Snippet } from 'svelte';
 	import MetaTags from '../MetaTags.svelte';
-	import PersonaCard from '../PersonaCard.svelte';
 	import MobileCardWrapper from '../mobileCard/MobileCardWrapper.svelte';
+	import PersonaCard from './PersonaCard.svelte';
 
 	let { persona, children }: { persona: Persona; children: Snippet } = $props();
 </script>

@@ -8,7 +8,7 @@
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import FriendBubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
@@ -22,7 +22,7 @@
 	const friendPersona: FriendPersona = CHRIS;
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-01.mp3'}>
 		Hey, mein Name ist Faiza, ich bin 32 Jahre alt und studiere Informatik an der TU Darmstadt. Ich
 		wohne mit meinem Partner Chris und unserem 1 1/2 Jahre alten Sohn Jonas in Griesheim. Auch Chris
@@ -346,7 +346,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

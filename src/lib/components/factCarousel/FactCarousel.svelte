@@ -4,8 +4,8 @@
 
 	import type { FactSlide } from '$lib/interfaces/factSlide.interface';
 	import Icon from '../Icon.svelte';
-	import BoldFact from './BoldFact.svelte';
-	import Enumeration from './Enumeration.svelte';
+	import FactBold from './FactBold.svelte';
+	import FactEnumeration from './FactEnumeration.svelte';
 
 	let carousel: Splide;
 
@@ -85,7 +85,7 @@
 						<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
 							<div class="fact-slide">
 								{#if fact.content.type === 'enumeration'}
-									<Enumeration
+									<FactEnumeration
 										total={fact.content.decoration.total}
 										amount={fact.content.decoration.amount}
 									/>
@@ -95,7 +95,7 @@
 								{/if}
 
 								{#if fact.content.type === 'boldText'}
-									<BoldFact boldText={fact.content.boldText} normalText={fact.content.normalText} />
+									<FactBold boldText={fact.content.boldText} normalText={fact.content.normalText} />
 								{/if}
 
 								<a class="focus-indicator" href={fact.source.url} lang={fact.source.titleLang}

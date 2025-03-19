@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-
 	import { base } from '$app/paths';
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
@@ -12,7 +11,7 @@
 
 	let { personas }: Props = $props();
 
-	let carousel: Splide = $state();
+	let carousel: Splide;
 
 	const splideOptions = {
 		type: 'loop',
@@ -42,12 +41,13 @@
 
 	let componentHasFocus = $state(false);
 
-	let ariaLiveText =
-		$derived(personas[carouselSelectedIndex].name +
-		', ' +
-		(carouselSelectedIndex + 1) +
-		' von ' +
-		personas.length);
+	let ariaLiveText = $derived(
+		personas[carouselSelectedIndex].name +
+			', ' +
+			(carouselSelectedIndex + 1) +
+			' von ' +
+			personas.length
+	);
 
 	function moveSlide(direction: string) {
 		if (!carousel) return;

@@ -13,19 +13,19 @@
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { ALEKSANDR } from '$lib/constants/aleksandr';
 	import { VALENTIN } from '$lib/constants/valentin';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import PersonaContent from '../../../lib/components/personaContent/PersonaContent.svelte';
 
 	const persona: Persona = ALEKSANDR;
 	const friendPersona: FriendPersona = VALENTIN;
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-01.mp3'}>
 		Hallo, mein Name ist Aleksandr, aber ich bevorzuge Sasha. Ich bin 23 Jahre alt. Ich wohne etwas
 		außerhalb von Frankfurt. Ich interessiere mich sehr für die Funktionsweise des menschlichen
@@ -513,7 +513,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

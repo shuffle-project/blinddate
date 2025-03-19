@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import Icon from '../Icon.svelte';
-	import PersonaPortrait from '../PersonaPortrait.svelte';
+	import PersonaPortrait from '../personaContent/PersonaPortrait.svelte';
 
 	let { friendPersona }: { friendPersona: FriendPersona } = $props();
 </script>

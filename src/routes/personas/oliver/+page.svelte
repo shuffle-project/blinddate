@@ -10,7 +10,7 @@
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FactCarousel from '$lib/components/factCarousel/FactCarousel.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { OLIVER } from '$lib/constants/oliver';
@@ -19,7 +19,7 @@
 	const persona: Persona = OLIVER;
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-01.mp3'}>
 		Servus, mein Name ist Oliver, ich bin 31 Jahre alt und studiere seit 4 Jahren in Würzburg. Ich
 		liebe es, zu kochen – am liebsten natürlich Mexikanisch - und Musik zu machen, vor allem für und
@@ -349,7 +349,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { ENVIRONMENT } from '$lib/constants/environment';
-	import DesktopLectureRoom from './DesktopLectureRoom.svelte';
-	import MobileLectureRoom from './MobileLectureRoom.svelte';
+	import LectureRoomDesktop from './LectureRoomDesktop.svelte';
+	import LectureRoomMobile from './LectureRoomMobile.svelte';
 	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 
 <div id="lecture-room" class="lecture-room">
 	<div class="desktop">
-		<DesktopLectureRoom {personas} />
+		<LectureRoomDesktop {personas} />
 	</div>
 	<div class="mobile">
-		<MobileLectureRoom {personas} />
+		<LectureRoomMobile {personas} />
 	</div>
 </div>
 

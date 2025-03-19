@@ -9,7 +9,7 @@
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { MICHELLE } from '$lib/constants/michelle';
@@ -19,7 +19,7 @@
 	const persona: Persona = MICHELLE;
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-01.mp3'}>
 		Hi, mein Name ist Chelle – eigentlich Michelle. Ich studiere Popmusikdesign an der Popakademie
 		in Mannheim. Ich spiele Schlagzeug in einer Band – also ihr könnt mich oft im Proberaum finden.
@@ -376,7 +376,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

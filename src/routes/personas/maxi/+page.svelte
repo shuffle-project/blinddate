@@ -7,7 +7,7 @@
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
@@ -54,7 +54,7 @@
 	};
 </script>
 
-<PersonaContent {persona}>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-01.mp3'}>
 		Hallo, mein Name ist Maxi und ich bin 29 Jahre alt. Ich studiere Architektur in Mannheim – und
 		bin endlich auch im Master angekommen. Das war ein steiniger Weg. Ich wohne im Wohnheim in einer
@@ -407,7 +407,7 @@
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

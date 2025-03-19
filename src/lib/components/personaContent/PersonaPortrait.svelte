@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
-	import type { Persona } from '../interfaces/persona.interfaces';
+	import type { Persona } from '../../interfaces/persona.interfaces';
 
 	interface Props {
 		persona: Persona | FriendPersona;

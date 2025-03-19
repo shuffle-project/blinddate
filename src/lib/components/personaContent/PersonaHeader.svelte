@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Persona } from '../interfaces/persona.interfaces';
+	import type { Persona } from '../../interfaces/persona.interfaces';
 	import PersonaCard from './PersonaCard.svelte';
 	interface Props {
 		persona: Persona;

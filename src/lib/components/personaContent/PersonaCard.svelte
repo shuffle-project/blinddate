@@ -1,5 +1,5 @@
 <script module>
-	import BurgerToggleButton from './BurgerToggleButton.svelte';
+	import BurgerToggleButton from '../BurgerToggleButton.svelte';
 	import PersonaPortrait from './PersonaPortrait.svelte';
 </script>
 
@@ -8,9 +8,9 @@
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import type { Persona } from '../interfaces/persona.interfaces';
-	import Icon from './Icon.svelte';
-	import Modal from './Modal.svelte';
+	import type { Persona } from '../../interfaces/persona.interfaces';
+	import Icon from '../Icon.svelte';
+	import Modal from '../Modal.svelte';
 
 	interface Props {
 		persona: Persona;
@@ -18,12 +18,12 @@
 
 	let { persona }: Props = $props();
 
-	let modal: Modal = $state();
+	let modal: Modal;
 	function toggleModalDisplay() {
 		if (modal) modal.toggleModalDisplay();
 	}
 
-	let headings: NodeListOf<Element> = $state();
+	let headings: NodeListOf<Element> | undefined = $state();
 
 	onMount(() => {
 		headings = document.querySelectorAll('h1, h2.main-heading');
@@ -42,14 +42,10 @@
 
 <Modal bind:this={modal}>
 	{#snippet headline()}
-	
-			{persona.disability}
-		
+		{persona.disability}
 	{/snippet}
 	{#snippet content()}
-	
-			<persona.disabilityExplanation />
-		
+		<persona.disabilityExplanation />
 	{/snippet}
 </Modal>
 
@@ -91,13 +87,15 @@
 				<div class="card-body">
 					<nav aria-label="Inhaltsverzeichnis">
 						<ul>
-							{#each headings as heading}
-								<li>
-									<a class="focus-indicator" href="#{heading.id}">
-										{heading.innerHTML}
-									</a>
-								</li>
-							{/each}
+							{#if headings}
+								{#each headings as heading}
+									<li>
+										<a class="focus-indicator" href="#{heading.id}">
+											{heading.innerHTML}
+										</a>
+									</li>
+								{/each}
+							{/if}
 						</ul>
 					</nav>
 				</div>
