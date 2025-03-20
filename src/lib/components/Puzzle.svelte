@@ -10,12 +10,7 @@
 		bottomRight?: string;
 	}
 
-	let {
-		topLeft = '',
-		topRight = '',
-		bottomLeft = '',
-		bottomRight = ''
-	}: Props = $props();
+	let { topLeft = '', topRight = '', bottomLeft = '', bottomRight = '' }: Props = $props();
 
 	const pieceLabels = ['denke', 'sage', 'fühle', 'mache'];
 	const pieceIcon = ['think-bubble', 'speech-bubble', 'heart', 'hand'];
@@ -33,7 +28,7 @@
 	let text = $state(puzzle.topLeft);
 	let tabPossible = $state(false);
 
-	let textBox: HTMLElement = $state();
+	let textBox: HTMLElement;
 	let textBoxHeight = $state(0);
 	let selectedPiece = $state(-1);
 
@@ -145,14 +140,6 @@
 		}
 	}
 </script>
-
-<!-- style={`height: ${
-	innerWidth <= smBreakpoint
-		? textBoxHeight / 13 + 14.7
-		: innerWidth <= mdBreakpoint
-			? textBoxHeight / 15 + 17.43
-			: textBoxHeight / 18 + 20.1
-}rem`} -->
 
 <div class="wrapper">
 	<div

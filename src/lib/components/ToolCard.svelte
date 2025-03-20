@@ -17,7 +17,9 @@
 				{@render children?.()}
 			</p>
 		</div>
-		<img class="image" src={image} alt="" role="presentation" />
+		<div class="image-wrapper">
+			<img src={image} alt="" role="presentation" />
+		</div>
 	</div>
 	<div aria-hidden="true" class="background"></div>
 </div>
@@ -40,10 +42,22 @@
 
 			display: flex;
 			justify-content: space-between;
+			justify-content: center;
 			gap: 2rem;
 
 			position: relative;
 			z-index: 2;
+
+			.image-wrapper {
+				display: flex;
+				justify-content: center;
+				align-self: center;
+
+				img {
+					width: 9rem;
+					height: 9rem;
+				}
+			}
 
 			p {
 				margin: 0;
