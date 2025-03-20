@@ -11,7 +11,7 @@
 	}
 
 	let {
-		img = $bindable(),
+		img,
 		alt = '',
 		size = 'small',
 		textSize = 'small',

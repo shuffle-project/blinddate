@@ -15,7 +15,7 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Checklist from '../../../lib/components/checklist/Checklist.svelte';
-	import Week from '../../../lib/components/week/index.svelte';
+	import Week from '../../../lib/components/week/Week.svelte';
 
 	const persona: Persona = HANNAH;
 
@@ -343,7 +343,7 @@
 	<TextSection>
 		<Text noTopMargin>
 			Ob die Lautsprache oder die Gebärdensprache genutzt wird, wird beeinflusst von vielen
-			verschiedenen Faktoren: Unter anderem von der (Gruppen-)Situation, von der Art der
+			verschiedenen Faktoren: Unter anderem von der (Gruppen-) Situation, von der Art der
 			Hörbehinderung, von der bevorzugten Kommunikation etc. Da die akustische Rückmeldung über die
 			eigene Aussprache mitunter fehlt, kann es zu einer undeutlichen Lautsprache bei einzelnen
 			Menschen mit Hörschädigungen kommen.

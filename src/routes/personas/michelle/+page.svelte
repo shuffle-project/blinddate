@@ -14,7 +14,7 @@
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { MICHELLE } from '$lib/constants/michelle';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import Week from '../../../lib/components/week/index.svelte';
+	import Week from '../../../lib/components/week/Week.svelte';
 
 	const persona: Persona = MICHELLE;
 </script>
