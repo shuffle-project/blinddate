@@ -87,7 +87,7 @@
 									onkeydown={onKeypressed}
 								>
 									<span class="desktop">
-										{@html day.activity}
+										{day.activity}
 										<span class="sr-only">
 											{`. ${day.dayFull} der ${day.date}. ${month}. 
 											${day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}`}

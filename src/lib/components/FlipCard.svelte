@@ -3,6 +3,7 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { detect } from 'detect-browser';
 	import { onMount } from 'svelte';
+
 	let isSafari = $state(false);
 	let flipped = $state(false);
 

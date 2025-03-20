@@ -89,11 +89,6 @@
 		outline-offset: 2px;
 	}
 
-	.radio-switch:focus-within label:first-of-type:after :hover {
-		outline: 2px solid var(--color-white);
-		outline-offset: 2px;
-	}
-
 	.radio-switch label:first-of-type:before,
 	.radio-switch label:first-of-type:after {
 		border: 1px solid var(--color-white);

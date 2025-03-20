@@ -1,5 +1,4 @@
 <script module>
-	import BurgerToggleButton from '../BurgerToggleButton.svelte';
 	import PersonaPortrait from './PersonaPortrait.svelte';
 </script>
 
@@ -11,6 +10,7 @@
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
+	import BurgerToggleButton from './BurgerToggleButton.svelte';
 
 	interface Props {
 		persona: Persona;

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Icon from './Icon.svelte';
+	import Icon from '../Icon.svelte';
 
 	interface Props {
 		pressed?: boolean;
 		onClickButtonToggle: () => void;
 	}
 
-	let { pressed = $bindable(false), onClickButtonToggle }: Props = $props();
+	let { pressed, onClickButtonToggle }: Props = $props();
 
 	function onClickButtonToggleInternal() {
 		pressed = !pressed;
