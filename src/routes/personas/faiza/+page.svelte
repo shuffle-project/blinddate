@@ -132,8 +132,8 @@
 
 	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-06.mp3'}>
 		Und das geht mit einem Kind ab und an mal. Aber mit Pflegeverantwortung für ein älteres
-		Familienmitglied zum Beispiel wird es schwierig. Ein Freundin von mir pflegt ihre kranke Oma. Es
-		ist sozial akzeptiert, dass man mal Kinder mit zur Arbeit oder an die Uni bringt – aber nicht
+		Familienmitglied zum Beispiel wird es schwierig. Eine Freundin von mir pflegt ihre kranke Oma.
+		Es ist sozial akzeptiert, dass man mal Kinder mit zur Arbeit oder an die Uni bringt – aber nicht
 		die Oma.
 	</SpeechBubble>
 

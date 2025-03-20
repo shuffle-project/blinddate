@@ -33,6 +33,19 @@
 			}
 		});
 	}
+
+	function updateChecklistWithBoxSize(i: number, boxSize: number) {
+		checklist = checklist.map((item) => {
+			if (item.id === i) {
+				return {
+					...item,
+					boxSize
+				};
+			} else {
+				return item;
+			}
+		});
+	}
 </script>
 
 <div class="wrapper">
@@ -40,7 +53,7 @@
 		<ProgressIndicatorMobile {checklist} {persona} />
 	</div>
 
-	<Checkboxes {checklist} {toggleCheckbox} />
+	<Checkboxes {updateChecklistWithBoxSize} {checklist} {toggleCheckbox} />
 
 	<div class="desktop">
 		<ProgressIndicatorDesktop totalCheckboxes={checklist.length} {checklist} {persona} />

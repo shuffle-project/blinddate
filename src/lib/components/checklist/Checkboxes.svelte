@@ -4,18 +4,20 @@
 	interface Props {
 		checklist: Check[];
 		toggleCheckbox: (id: number) => void;
+		updateChecklistWithBoxSize: (i: number, boxSize: number) => void;
 	}
 
-	let { checklist, toggleCheckbox }: Props = $props();
+	let { checklist, toggleCheckbox, updateChecklistWithBoxSize }: Props = $props();
+
+	function setBoxSize(element: HTMLDivElement, i: number) {
+		updateChecklistWithBoxSize(i, element.clientHeight);
+	}
 </script>
 
 <ul>
 	{#each checklist as check, i (check.id)}
 		<li>
-			<div
-				class="check {check.checked ? 'checked' : 'unchecked'}"
-				bind:clientHeight={checklist[i].boxSize}
-			>
+			<div class="check {check.checked ? 'checked' : 'unchecked'}" use:setBoxSize={i}>
 				<input
 					class="checkbox"
 					type="checkbox"

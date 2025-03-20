@@ -4,30 +4,25 @@
 	import type { Day } from '../../interfaces/week.interfaces';
 	import Icon from '../Icon.svelte';
 	import Switch from '../Switch.svelte';
-	import { getRandomId } from '../utils';
 
-	export let persona: Persona;
+	let { persona }: { persona: Persona } = $props();
 
-	const randomId = getRandomId();
+	const randomId = $props.id();
 
 	const month: string = persona.week!.month;
 	const days: Day[] = persona.week!.days;
 
-	let detailedDay = 0;
+	let selectedDay = $state(0);
 
 	function onOpenDayDetails(day: Day) {
-		detailedDay = days.findIndex((obj) => obj.day === day.day);
+		selectedDay = days.findIndex((obj) => obj.day === day.day);
 	}
 
 	function onKeypressed(event: KeyboardEvent) {
-		if (event.code === 'ArrowLeft') {
+		const direction = event.code === 'ArrowLeft' ? -1 : event.code === 'ArrowRight' ? 1 : 0;
+		if (direction !== 0) {
 			event.preventDefault();
-			let element = document.getElementById(`weektab-${detailedDay + 1 - 1}-${randomId}`);
-			element?.focus();
-			element?.click();
-		} else if (event.code === 'ArrowRight') {
-			event.preventDefault();
-			let element = document.getElementById(`weektab-${detailedDay + 1 + 1}-${randomId}`);
+			const element = document.getElementById(`weektab-${selectedDay + 1 + direction}-${randomId}`);
 			element?.focus();
 			element?.click();
 		}
@@ -65,24 +60,23 @@
 							</td>
 						{/each}
 					</tr>
-					<!-- debug: test if this is confusing for screenreader users -->
 					<tr role="tablist">
 						{#each days as day, i}
 							<td class="activity-cell">
 								<button
-									tabindex={i === detailedDay ? 0 : -1}
+									tabindex={i === selectedDay ? 0 : -1}
 									class="activity"
-									class:active={detailedDay === i}
+									class:active={selectedDay === i}
 									id="weektab-{i + 1}-{randomId}"
 									role="tab"
 									aria-controls="tabpanel-{i + 1}-{randomId}"
-									aria-selected={detailedDay === i}
+									aria-selected={selectedDay === i}
 									aria-label="{day.dayFull} der {day.date}. {month}. {day.activity.replace(
 										/\&shy;/gi,
 										''
 									)}. {day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}."
-									on:click={() => onOpenDayDetails(day)}
-									on:keydown={onKeypressed}
+									onclick={() => onOpenDayDetails(day)}
+									onkeydown={onKeypressed}
 								>
 									{@html day.activity}
 								</button>
@@ -95,13 +89,13 @@
 
 		<div
 			class="detailed-day"
-			id="tabpanel-{detailedDay + 1}-{randomId}"
+			id="tabpanel-{selectedDay + 1}-{randomId}"
 			role="tabpanel"
-			aria-labelledby="weektab-{detailedDay + 1}-{randomId}"
+			aria-labelledby="weektab-{selectedDay + 1}-{randomId}"
 		>
 			<img
 				class="week-day-indicator"
-				style="left:{20 * detailedDay + 3}%"
+				style="left:{20 * selectedDay + 3}%"
 				src="{base}/decorations/week-day-indicator.svg"
 				alt=""
 				aria-hidden="true"
@@ -113,19 +107,19 @@
 					option1Label="Guter Tag"
 					option2="sad"
 					option2Label="Schlechter Tag"
-					bind:value={days[detailedDay].smiley}
+					bind:value={days[selectedDay].smiley}
 				/>
 				<Icon size="medium" img="sad" svg_color="green" />
 			</div>
 			<div class="body">
 				<p>
-					{days[detailedDay].time}
+					{days[selectedDay].time}
 				</p>
 				<p>
-					{#if days[detailedDay].smiley === 'happy'}
-						{days[detailedDay].text_happy}
+					{#if days[selectedDay].smiley === 'happy'}
+						{days[selectedDay].text_happy}
 					{:else}
-						{days[detailedDay].text_sad}
+						{days[selectedDay].text_sad}
 					{/if}
 				</p>
 			</div>
