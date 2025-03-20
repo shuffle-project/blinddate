@@ -1,21 +1,19 @@
-<!-- @migration-task Error while migrating Svelte code: `<tr>` cannot be a child of `<table>`. `<table>` only allows these children: `<caption>`, `<colgroup>`, `<tbody>`, `<thead>`, `<tfoot>`, `<style>`, `<script>`, `<template>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import type { Day } from '../../interfaces/week.interfaces';
 	import Icon from '../Icon.svelte';
-	import Switch from '../Switch.svelte';
-	import { getRandomId } from '../utils';
+	import WeekDaySwitch from './WeekDaySwitch.svelte';
+	import WeekPersonaIndicator from './WeekPersonaIndicator.svelte';
 
-	export let persona: Persona;
+	let { persona }: { persona: Persona } = $props();
 
-	const randomId = getRandomId();
+	const randomId = $props.id();
 
 	const month: string = persona.week!.month;
-	const days: Day[] = persona.week!.days;
+	const days: Day[] = $state(persona.week!.days);
 
-	let detailedDay = 0;
+	let detailedDay = $state(0);
 
 	function onOpenDayDetails(day: Day) {
 		detailedDay = days.findIndex((obj) => obj.day === day.day);
@@ -110,7 +108,7 @@ https://svelte.dev/e/node_invalid_placement -->
 				</div>
 
 				<div class="switch">
-					<Switch
+					<WeekDaySwitch
 						option1="happy"
 						option1Label="Guter Tag"
 						option2="sad"
@@ -134,48 +132,7 @@ https://svelte.dev/e/node_invalid_placement -->
 		</div>
 	</div>
 
-	<div
-		class="week-figure-wrapper {days.filter((obj) => obj.smiley === 'sad').length > 2
-			? 'flipped'
-			: ''}"
-	>
-		<div class="week-figure-inner">
-			<div class="week-figure-front">
-				<div class="week-figure-background">
-					<img
-						class="week-figure {days.filter((obj) => obj.smiley === 'happy').length < 3
-							? 'hidden'
-							: ''}"
-						aria-hidden={days.filter((obj) => obj.smiley === 'happy').length < 3}
-						src="{base}/personas/{persona.id}/{persona.id}-happy.svg"
-						alt="{persona.name} ist zufrieden, da {days.filter((obj) => obj.smiley === 'happy')
-							.length} von 5 Tagen in dieser Woche gut verliefen."
-						loading="lazy"
-					/>
-				</div>
-			</div>
-			<div class="week-figure-back">
-				<div class="week-figure-background">
-					<img
-						class="week-figure"
-						aria-hidden={days.filter((obj) => obj.smiley === 'sad').length < 3}
-						src="{base}/personas/{persona.id}/{persona.id}-sad.svg"
-						alt="{persona.name} steht in einer erschöpften Pose da, da {days.filter(
-							(obj) => obj.smiley === 'sad'
-						).length} von 5 Tagen in dieser Woche schlecht verliefen"
-						loading="lazy"
-					/>
-				</div>
-			</div>
-		</div>
-		<p class="week-figure-text" aria-hidden="true">
-			{#if days.filter((obj) => obj.smiley === 'happy').length >= 3}
-				{days.filter((obj) => obj.smiley === 'happy').length} von 5 Tage waren gut
-			{:else}
-				{days.filter((obj) => obj.smiley === 'sad').length} von 5 Tage waren schlecht
-			{/if}
-		</p>
-	</div>
+	<WeekPersonaIndicator {persona} {days} />
 </div>
 
 <style lang="scss">
@@ -183,76 +140,6 @@ https://svelte.dev/e/node_invalid_placement -->
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-
-		.week-figure-wrapper {
-			perspective: 1000px;
-			margin-inline: auto;
-			margin-top: 1.875rem;
-			width: 14rem;
-
-			height: 34rem;
-		}
-
-		.week-figure-text {
-			text-align: center;
-			margin: 0;
-			margin-inline: auto;
-
-			padding: 0.25rem;
-			font-size: 1rem;
-
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			left: 0;
-		}
-
-		.week-figure-inner {
-			position: relative;
-			transition: transform 0.8s;
-			transform-style: preserve-3d;
-		}
-
-		.week-figure-wrapper.flipped .week-figure-inner {
-			transform: rotateY(180deg);
-		}
-
-		.week-figure-front,
-		.week-figure-back {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-
-			-webkit-backface-visibility: hidden;
-			backface-visibility: hidden;
-		}
-
-		.week-figure-back {
-			transform: rotateY(180deg);
-		}
-
-		.week-figure {
-			max-height: 28rem;
-
-			z-index: 2;
-			transform: translateY(5%);
-			opacity: 100%;
-			transition: all 0s;
-			transition-delay: 0.2s;
-
-			&.hidden {
-				//for firefox, otherwise you can see the feet in the background
-				opacity: 0%;
-			}
-		}
-
-		.week-figure-background {
-			background: var(--color-gradient-persona);
-			width: 14rem;
-			border-radius: 2.5rem;
-			display: flex;
-			justify-content: center;
-		}
 	}
 
 	.wrapper {

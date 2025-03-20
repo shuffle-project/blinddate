@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { getRandomId } from './utils';
-
 	// quelle
 	// https://www.sarasoueidan.com/blog/toggle-switch-design/#site-header
 	// https://codepen.io/scottohara/pen/zLZwNv?editors=1111
 	// sonstiges_
 	// https://kittygiraudel.com/2021/04/05/an-accessible-toggle/
-
-	
-
 
 	interface Props {
 		// some changes for better responsivness of our component
@@ -19,15 +14,9 @@
 		value: string;
 	}
 
-	let {
-		option1,
-		option2,
-		option1Label,
-		option2Label,
-		value = $bindable()
-	}: Props = $props();
+	let { option1, option2, option1Label, option2Label, value = $bindable() }: Props = $props();
 
-	const randomId = getRandomId();
+	const randomId = $props.id();
 </script>
 
 <fieldset class="radio-switch" role="radiogroup">
