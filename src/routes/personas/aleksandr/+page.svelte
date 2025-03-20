@@ -5,7 +5,6 @@
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
-	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
@@ -14,6 +13,7 @@
 	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
+	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { ALEKSANDR } from '$lib/constants/aleksandr';

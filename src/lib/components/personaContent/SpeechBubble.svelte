@@ -1,21 +1,19 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { onDestroy, onMount } from 'svelte';
-	import type { Persona } from '../interfaces/persona.interfaces';
-	import Icon from './Icon.svelte';
+	import { onDestroy, onMount, type Snippet } from 'svelte';
+	import type { Persona } from '../../interfaces/persona.interfaces';
+	import Icon from '../Icon.svelte';
 
 	interface Props {
 		persona: Persona;
 		audio?: string;
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { persona, audio = '', children }: Props = $props();
 
 	let audioElement: HTMLAudioElement;
 	let playingAudio = $state(false);
-
-	let textDiv: HTMLElement = $state();
 
 	const speak = () => {
 		if (audioElement) {
@@ -69,20 +67,16 @@
 		</div>
 	</div>
 
-	<button
-		class="playbutton-desktop"
-		onclick={speak}
-		aria-label={!playingAudio ? 'Abspielen' : 'Pausieren'}
-	>
+	<button class="playbutton-desktop" onclick={speak}>
 		{#if playingAudio}
 			<Icon size="smedium" img="pause" />
-			<span aria-hidden="true">Pausieren</span>
+			<span>Pausieren</span>
 		{:else}
 			<Icon size="smedium" img="play" />
-			<span aria-hidden="true">Abspielen</span>
+			<span>Abspielen</span>
 		{/if}
 	</button>
-	<p class="text" bind:this={textDiv}>
+	<p class="text">
 		{@render children?.()}
 	</p>
 </div>

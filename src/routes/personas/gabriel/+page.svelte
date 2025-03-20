@@ -15,8 +15,8 @@
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 
 	import SimulationLink from '../../../lib/components/SimulationLink.svelte';
-	import SpeechBubble from '../../../lib/components/SpeechBubble.svelte';
 	import ToolCard from '../../../lib/components/ToolCard.svelte';
+	import SpeechBubble from '../../../lib/components/personaContent/SpeechBubble.svelte';
 	import { BEA } from '../../../lib/constants/bea';
 	import { GABRIEL } from '../../../lib/constants/gabriel';
 	import type { Persona } from '../../../lib/interfaces/persona.interfaces';

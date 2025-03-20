@@ -6,12 +6,7 @@
 		children?: import('svelte').Snippet;
 	}
 
-	let {
-		title,
-		image,
-		langTitle = 'de',
-		children
-	}: Props = $props();
+	let { title, image, langTitle = 'de', children }: Props = $props();
 </script>
 
 <div class="wrapper">

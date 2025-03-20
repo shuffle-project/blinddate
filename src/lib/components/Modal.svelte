@@ -33,7 +33,7 @@
 
 	let modal: HTMLDialogElement = $state();
 
-	let randomId = Math.random();
+	let randomId = $props.id();
 
 	export function toggleModalDisplay() {
 		displayModal = !displayModal;

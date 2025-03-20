@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import DoItYourself from '$lib/components/DoItYourself.svelte';
-	import FlipCard from '$lib/components/FlipCard.svelte';
-	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
-	import ToolCard from '$lib/components/ToolCard.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import DoItYourself from '$lib/components/DoItYourself.svelte';
+	import FlipCard from '$lib/components/FlipCard.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
+	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
+	import ToolCard from '$lib/components/ToolCard.svelte';
 	import { KILIAN } from '$lib/constants/kilian';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 

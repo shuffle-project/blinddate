@@ -1,22 +1,16 @@
 <script lang="ts">
-	import { getRandomId } from './utils';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		link: string;
 		marginBottom?: boolean;
-		textBefore?: import('svelte').Snippet;
-		linkText?: import('svelte').Snippet;
-		textAfter?: import('svelte').Snippet;
+		textBefore?: Snippet;
+		linkText?: Snippet;
+		textAfter?: Snippet;
 	}
 
-	let {
-		link,
-		marginBottom = false,
-		textBefore,
-		linkText,
-		textAfter
-	}: Props = $props();
-	const randomId = getRandomId();
+	let { link, marginBottom = false, textBefore, linkText, textAfter }: Props = $props();
+	const randomId = $props.id();
 </script>
 
 <div class="container" class:marginBottom>

@@ -3,13 +3,13 @@
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
-	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
+	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { MICHELLE } from '$lib/constants/michelle';

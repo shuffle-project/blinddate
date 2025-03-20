@@ -9,10 +9,10 @@
 	import FriendBubble from '$lib/components/friend/FriendSpeechbubble.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
+	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
-	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import { CHRIS } from '$lib/constants/chris';
 	import { FAIZA } from '$lib/constants/faiza';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';

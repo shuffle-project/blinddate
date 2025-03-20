@@ -1,21 +1,21 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import FlipCard from '$lib/components/FlipCard.svelte';
-	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
-	import Puzzle from '$lib/components/Puzzle.svelte';
-	import Recommendation from '$lib/components/Recommendation.svelte';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
+	import FlipCard from '$lib/components/FlipCard.svelte';
 	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
+	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
 	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
 	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
+	import Puzzle from '$lib/components/Puzzle.svelte';
+	import Recommendation from '$lib/components/Recommendation.svelte';
 	import { ALEX_FRIEND } from '$lib/constants/alex';
 	import { PSYCHE_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
-	import SpeechBubble from '../../../lib/components/SpeechBubble.svelte';
+	import SpeechBubble from '../../../lib/components/personaContent/SpeechBubble.svelte';
 	import ToolCard from '../../../lib/components/ToolCard.svelte';
 	import { MAXI } from '../../../lib/constants/maxi';
 	import type { Persona } from '../../../lib/interfaces/persona.interfaces';

@@ -1,11 +1,7 @@
 <script lang="ts">
 	import type { Source } from '$lib/interfaces/sources.interfaces';
 
-	interface Props {
-		sources: Source[];
-	}
-
-	let { sources }: Props = $props();
+	let { sources }: { sources: Source[] } = $props();
 </script>
 
 <div class="source-container">
