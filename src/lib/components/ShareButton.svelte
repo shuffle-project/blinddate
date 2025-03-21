@@ -40,7 +40,6 @@
 	};
 
 	const onClick = () => {
-		console.log(document.URL);
 		data.url = document.URL;
 		data.text = text;
 
