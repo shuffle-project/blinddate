@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import { page } from '$app/stores';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
+	import { onMount } from 'svelte';
 	import { backIn, backOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import Icon from './Icon.svelte';
@@ -14,7 +13,7 @@
 	let currentSite = $state('BlindDate'); // the starting page
 	let text = $state('');
 
-	run(() => {
+	onMount(() => {
 		let url = $page.url.pathname;
 		personas.forEach((persona: Persona) => {
 			if (url.includes(persona.id)) currentSite = persona.name;
@@ -41,6 +40,7 @@
 	};
 
 	const onClick = () => {
+		console.log(document.URL);
 		data.url = document.URL;
 		data.text = text;
 
@@ -54,16 +54,17 @@
 </script>
 
 <div class="wrapper">
-	{#if visible}
-		<p
-			in:scale={{ duration: 200, easing: backOut }}
-			out:scale={{ duration: 200, easing: backIn }}
-			class="sharetext-container"
-			aria-live="polite"
-		>
-			Webadresse kopiert
-		</p>
-	{/if}
+	<div aria-live="polite">
+		{#if visible}
+			<p
+				in:scale={{ duration: 200, easing: backOut }}
+				out:scale={{ duration: 200, easing: backIn }}
+				class="sharetext-container"
+			>
+				Webadresse kopiert
+			</p>
+		{/if}
+	</div>
 	<button onkeyup={handleKeyPress} class="sharebutton" onclick={onClick} onblur={handleBlur}>
 		<Icon alt="Seite teilen" size="small" img="share" svg_color="white" />
 		<div class="btn-label" aria-hidden="true">Seite teilen</div>

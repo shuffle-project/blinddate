@@ -13,7 +13,7 @@
 
 	let { term, langTerm = 'de', inSpeechBubble = false, sources = [], children }: Props = $props();
 
-	let modal: Modal;
+	let modal: Modal | undefined = $state();
 
 	function toggleDialogDisplay(e: Event) {
 		e.stopPropagation();
