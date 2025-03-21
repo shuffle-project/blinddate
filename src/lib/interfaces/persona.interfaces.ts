@@ -1,10 +1,9 @@
-import type { ComponentType } from 'svelte';
 import type { FactSlide } from './factSlide.interface';
 import type { Week } from './week.interfaces';
 
 export interface Persona {
-	id: string;
-	name: string;
+	id: 'maxi' | 'michelle' | 'aleksandr' | 'hannah' | 'kilian' | 'gabriel' | 'faiza' | 'oliver';
+	name: 'Maxi' | 'Michelle' | 'Aleksandr' | 'Hannah' | 'Kilian' | 'Gabriel' | 'Faiza' | 'Oliver';
 	subheading: string;
 	tags: { content: string; lang: string }[];
 	age: number;
@@ -13,7 +12,6 @@ export interface Persona {
 	pronouns: 'They / them' | 'Sie / ihr' | 'Er / ihm';
 	disability: string;
 	disabilityIcon: string;
-	disabilityExplanation: ComponentType;
 	nextPersona: string;
 	previousPersona: string;
 	week?: Week;

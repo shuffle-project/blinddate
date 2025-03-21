@@ -8,15 +8,19 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import type { Persona } from '../../interfaces/persona.interfaces';
+	import Ass from '../disabilityExplanation/ASS.svelte';
+	import CareResponsibility from '../disabilityExplanation/CareResponsibility.svelte';
+	import CerebralPalsy from '../disabilityExplanation/CerebralPalsy.svelte';
+	import Glaucoma from '../disabilityExplanation/Glaucoma.svelte';
+	import HardOfHearing from '../disabilityExplanation/HardOfHearing.svelte';
+	import LrSandAdhs from '../disabilityExplanation/LRSandADHS.svelte';
+	import MentalDisorder from '../disabilityExplanation/MentalDisorder.svelte';
+	import MorbusCrohn from '../disabilityExplanation/MorbusCrohn.svelte';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import BurgerToggleButton from './BurgerToggleButton.svelte';
 
-	interface Props {
-		persona: Persona;
-	}
-
-	let { persona }: Props = $props();
+	let { persona }: { persona: Persona } = $props();
 
 	let modal: Modal;
 	function toggleModalDisplay() {
@@ -45,7 +49,23 @@
 		{persona.disability}
 	{/snippet}
 	{#snippet content()}
-		<persona.disabilityExplanation />
+		{#if persona.id === 'maxi'}
+			<MentalDisorder />
+		{:else if persona.id === 'michelle'}
+			<MorbusCrohn />
+		{:else if persona.id === 'aleksandr'}
+			<Ass />
+		{:else if persona.id === 'hannah'}
+			<HardOfHearing />
+		{:else if persona.id === 'kilian'}
+			<CerebralPalsy />
+		{:else if persona.id === 'gabriel'}
+			<Glaucoma />
+		{:else if persona.id === 'faiza'}
+			<CareResponsibility />
+		{:else if persona.id === 'oliver'}
+			<LrSandAdhs />
+		{/if}
 	{/snippet}
 </Modal>
 

@@ -1,4 +1,3 @@
-import Ass from '$lib/components/disabilityExplanation/ASS.svelte';
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 export const ALEKSANDR: Persona = {
@@ -17,7 +16,6 @@ export const ALEKSANDR: Persona = {
 	pronouns: 'Er / ihm',
 	disability: 'Autismus-Spektrum-Störung',
 	disabilityIcon: 'sunflower',
-	disabilityExplanation: Ass,
 	previousPersona: 'Michelle',
 	nextPersona: 'Hannah',
 	visualDescription:

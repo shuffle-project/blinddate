@@ -1,4 +1,3 @@
-import LRSandADHS from '$lib/components/disabilityExplanation/LRSandADHS.svelte';
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 // TODO OLIVER - add meta image
 export const OLIVER: Persona = {
@@ -16,7 +15,6 @@ export const OLIVER: Persona = {
 	pronouns: 'Er / ihm',
 	disability: 'LRS & ADHS',
 	disabilityIcon: 'lrs_adhs',
-	disabilityExplanation: LRSandADHS,
 	previousPersona: 'Faiza',
 	nextPersona: 'Maxi',
 	visualDescription: '',

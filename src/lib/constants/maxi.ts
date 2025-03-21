@@ -1,4 +1,3 @@
-import MentalDisorder from '$lib/components/disabilityExplanation/MentalDisorder.svelte';
 import type { Persona } from '../interfaces/persona.interfaces';
 
 export const MAXI: Persona = {
@@ -17,7 +16,6 @@ export const MAXI: Persona = {
 	pronouns: 'They / them',
 	disability: 'Depressionen',
 	disabilityIcon: 'mental-health',
-	disabilityExplanation: MentalDisorder,
 	previousPersona: 'Faiza',
 	nextPersona: 'Michelle',
 	visualDescription:

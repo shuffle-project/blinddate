@@ -1,4 +1,3 @@
-import HardOfHearing from '$lib/components/disabilityExplanation/HardOfHearing.svelte';
 import type { Persona } from '../interfaces/persona.interfaces';
 import type { Week } from '../interfaces/week.interfaces';
 
@@ -85,7 +84,6 @@ export const HANNAH: Persona = {
 	pronouns: 'Sie / ihr',
 	disability: 'Hochgradige Schwerhörigkeit',
 	disabilityIcon: 'ear',
-	disabilityExplanation: HardOfHearing,
 	previousPersona: 'Aleksandr',
 	nextPersona: 'Kilian',
 	week: hannahsWeek,
