@@ -8,14 +8,7 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import type { Persona } from '../../interfaces/persona.interfaces';
-	import Ass from '../disabilityExplanation/ASS.svelte';
-	import CareResponsibility from '../disabilityExplanation/CareResponsibility.svelte';
-	import CerebralPalsy from '../disabilityExplanation/CerebralPalsy.svelte';
-	import Glaucoma from '../disabilityExplanation/Glaucoma.svelte';
-	import HardOfHearing from '../disabilityExplanation/HardOfHearing.svelte';
-	import LrSandAdhs from '../disabilityExplanation/LRSandADHS.svelte';
-	import MentalDisorder from '../disabilityExplanation/MentalDisorder.svelte';
-	import MorbusCrohn from '../disabilityExplanation/MorbusCrohn.svelte';
+	import DisabilityExplanation from '../disabilityExplanation/DisabilityExplanation.svelte';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import BurgerToggleButton from './BurgerToggleButton.svelte';
@@ -49,23 +42,7 @@
 		{persona.disability}
 	{/snippet}
 	{#snippet content()}
-		{#if persona.id === 'maxi'}
-			<MentalDisorder />
-		{:else if persona.id === 'michelle'}
-			<MorbusCrohn />
-		{:else if persona.id === 'aleksandr'}
-			<Ass />
-		{:else if persona.id === 'hannah'}
-			<HardOfHearing />
-		{:else if persona.id === 'kilian'}
-			<CerebralPalsy />
-		{:else if persona.id === 'gabriel'}
-			<Glaucoma />
-		{:else if persona.id === 'faiza'}
-			<CareResponsibility />
-		{:else if persona.id === 'oliver'}
-			<LrSandAdhs />
-		{/if}
+		<DisabilityExplanation personaId={persona.id} />
 	{/snippet}
 </Modal>
 

@@ -3,6 +3,7 @@
 	import { sineIn, sineOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 	import type { Persona } from '../../interfaces/persona.interfaces';
+	import DisabilityExplanation from '../disabilityExplanation/DisabilityExplanation.svelte';
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import { handleBackdropClick } from '../utils';
@@ -145,7 +146,7 @@
 		{persona.disability}
 	{/snippet}
 	{#snippet content()}
-		<persona.disabilityExplanation />
+		<DisabilityExplanation personaId={persona.id} />
 	{/snippet}
 </Modal>
 
