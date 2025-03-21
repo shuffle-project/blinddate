@@ -9,10 +9,10 @@
 	let persona: 'gabriel' | 'hannah' | null = $state(null);
 	let personaName: string = $state('');
 
-	onMount(() => {
-		if ($page.url.pathname.includes('gabriel')) persona = 'gabriel';
-		if ($page.url.pathname.includes('hannah')) persona = 'hannah';
+	if ($page.url.pathname.includes('gabriel')) persona = 'gabriel';
+	if ($page.url.pathname.includes('hannah')) persona = 'hannah';
 
+	onMount(() => {
 		if (persona !== null) {
 			personaName = persona.charAt(0).toUpperCase() + persona.slice(1, persona.length);
 		}
