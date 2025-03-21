@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { run, createBubbler, preventDefault } from 'svelte/legacy';
-
-	const bubble = createBubbler();
-	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 
 	/* tasks */
 
@@ -104,7 +101,7 @@
 
 	/* functions */
 
-	run(() => {
+	$effect(() => {
 		if (input) {
 			inputIsNumber = true;
 			inputRangeCorrect = true;
@@ -170,7 +167,7 @@
 
 	/*no fun on mobile*/
 
-	let smallScreen: boolean = $state();
+	let smallScreen: boolean = $state(false);
 	let smallScreenMessage =
 		'Ihr Gerät oder Browserfenster ist zu klein, um das Spiel zu spielen. Bitte wählen sie ein größeres Gerät oder vergrößern Sie ihr Browserfenster.';
 
@@ -199,16 +196,6 @@
 				class="slides-image"
 				src={interactionSrc}
 			/>
-
-			<!-- svelte-ignore a11y_missing_attribute -->
-			<!-- <img
-				class="hole"
-				class:holeSticky={!holeMoveable}
-				src={base + '/games/gabriel/hole.png'}
-				style="transform: translate({holePosX}px, {holePosY}px);"
-				hidden={holeHidden}
-				bind:this={hole}
-			/> -->
 		</div>
 		<div class="notebook" class:mobileVisibility={smallScreen}>
 			<!-- svelte-ignore a11y_missing_attribute -->
@@ -241,7 +228,7 @@
 					<p style="font-size: 1.5vw; display: inline-block; margin-right: 0.7vw">
 						Artikel {taskIndex + 1} - Seite
 					</p>
-					<form onsubmit={preventDefault(bubble('submit'))}>
+					<form>
 						<input
 							type="number"
 							id="notebook-input-field"
@@ -252,7 +239,7 @@
 						/>
 						<button
 							id="notebook-input-button"
-							type="button"
+							type="submit"
 							disabled={!inputIsNumber || !inputRangeCorrect}
 							onclick={onClick}>OK</button
 						>

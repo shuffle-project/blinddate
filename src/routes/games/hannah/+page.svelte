@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 
 	/* tasks */
 
@@ -130,7 +130,7 @@
 
 	let audioSource = $state(contentsArray[0].audio);
 	let audioPlaying = $state(false);
-	let audioElement: HTMLAudioElement = $state();
+	let audioElement: HTMLAudioElement | undefined = $state();
 
 	let endscreen = $state(false);
 
@@ -179,9 +179,9 @@
 	const onPlayAudioClick = () => {
 		audioPlaying = !audioPlaying;
 		if (audioPlaying) {
-			audioElement.play();
+			audioElement?.play();
 		} else {
-			audioElement.pause();
+			audioElement?.pause();
 		}
 	};
 
@@ -191,7 +191,7 @@
 
 	/*no fun on mobile*/
 
-	let smallScreen: boolean = $state();
+	let smallScreen: boolean = $state(false);
 	let smallScreenMessage =
 		'Ihr Gerät oder Browserfenster ist zu klein, um das Spiel zu spielen. Bitte wählen sie ein größeres Gerät oder vergrößern Sie ihr Browserfenster.';
 
