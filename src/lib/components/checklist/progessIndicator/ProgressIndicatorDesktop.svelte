@@ -1,8 +1,8 @@
 <script lang="ts">
+	import type { Check } from '$lib/interfaces/checklist.interface';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { quintInOut, quintOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
-	import type { Check } from '../../../../../interfaces/checklist.interface';
 	import PersonaSitting from './PersonaSitting.svelte';
 
 	interface Props {

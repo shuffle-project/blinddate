@@ -324,8 +324,7 @@
 								font-size: 1.25rem;
 							}
 
-							p,
-							.icon {
+							p {
 								opacity: 0%;
 								transform: scale(0);
 							}
@@ -353,8 +352,7 @@
 							justify-content: center;
 							gap: 0.625rem;
 
-							p,
-							.icon {
+							p {
 								transform: scale(1);
 								opacity: 100%;
 								transition: opacity 0.8s ease-out;

@@ -226,10 +226,6 @@
 				margin: 0;
 				margin-bottom: 0.25rem;
 			}
-
-			a {
-				font-size: 0.875rem;
-			}
 		}
 	}
 
