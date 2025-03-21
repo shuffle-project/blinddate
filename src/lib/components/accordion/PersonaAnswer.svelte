@@ -26,14 +26,12 @@
 	}
 </script>
 
-<div class="persona-answer-wrapper">
-	<div role="separator" aria-label="Anfang der {persona.name} Sprechblase"></div>
+<div class="persona-answer-wrapper" role="region" aria-label="{persona.name} Sprechblase">
 	<img class="persona-img" src={personaImg} aria-hidden="true" alt="" />
 
 	<p class="persona-answer">
 		{@render children?.()}
 	</p>
-	<div role="separator" aria-label="Ende der {persona.name} Sprechblase"></div>
 </div>
 
 <style lang="scss">
