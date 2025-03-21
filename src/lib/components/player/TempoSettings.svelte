@@ -1,45 +1,44 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
-	import { handleBackdropClick } from '../utils';
 
-	let tempoMenuButton: HTMLButtonElement;
+	interface Props {
+		playbackRate?: number;
+	}
 
 	let dialog: HTMLDialogElement;
-	let displayDialog = false;
+	let displayDialog = $state(false);
+	let initialOpenMenuClick = $state(false);
 
 	let tempoOptions = [0.5, 0.75, 1, 1.25, 1.5];
-	export let playbackRate = 1;
+
+	let { playbackRate = $bindable(1) }: Props = $props();
 
 	function toggleDialogDisplay() {
 		displayDialog = !displayDialog;
-	}
+		displayDialog ? dialog.show() : dialog.close();
 
-	$: {
-		if (dialog) displayDialog ? dialog.show() : dialog.close();
+		if (!displayDialog) {
+			initialOpenMenuClick = false;
+		}
 	}
 
 	function handleMouseClick(e: MouseEvent) {
-		if (e.target) {
-			let target = e.target as HTMLElement;
+		if (!displayDialog) return;
+		if (!initialOpenMenuClick) {
+			initialOpenMenuClick = true;
+			return;
+		}
 
-			if (target === tempoMenuButton || target.parentNode?.parentNode === tempoMenuButton) {
-				return;
-			}
-
-			if (displayDialog && target !== dialog && target.parentNode !== dialog) {
-				handleBackdropClick(e, dialog);
-			}
+		const dialogDimensions = dialog.getBoundingClientRect();
+		if (
+			e.clientX < dialogDimensions.left ||
+			e.clientX > dialogDimensions.right ||
+			e.clientY < dialogDimensions.top ||
+			e.clientY > dialogDimensions.bottom
+		) {
+			toggleDialogDisplay();
 		}
 	}
-
-	onMount(() => {
-		if (dialog) {
-			dialog.addEventListener('close', () => {
-				displayDialog = false;
-			});
-		}
-	});
 
 	function handleKeyEvent(e: KeyboardEvent) {
 		if (e.key === 'Escape') {
@@ -48,22 +47,21 @@
 	}
 </script>
 
-<svelte:window on:click={(e) => handleMouseClick(e)} />
+<svelte:window onclick={(e) => handleMouseClick(e)} />
 
 <div class="wrapper">
 	<button
-		bind:this={tempoMenuButton}
 		aria-expanded={displayDialog}
 		title="Wiedergabegetempo Untermenü"
 		aria-label="Wiedergabegetempo Untermenü"
-		on:click={() => toggleDialogDisplay()}
+		onclick={() => toggleDialogDisplay()}
 		class="tempo-btn"
 	>
 		<Icon svg_color="white" size="parent" img="tempo" />
 	</button>
 
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<dialog bind:this={dialog} on:keyup={(e) => handleKeyEvent(e)}>
+	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+	<dialog bind:this={dialog} onkeyup={(e) => handleKeyEvent(e)}>
 		<header>
 			<h4>Tempo</h4>
 		</header>
@@ -72,7 +70,7 @@
 				<li>
 					<button
 						aria-pressed={playbackRate === tempoOption}
-						on:click|stopPropagation={() => {
+						onclick={() => {
 							playbackRate = tempoOption;
 							toggleDialogDisplay();
 						}}
@@ -82,7 +80,7 @@
 								<Icon size="parent" img="check" />
 							</div>
 						{:else}
-							<div class="check" />
+							<div class="check"></div>
 						{/if}
 						<div class="option">{tempoOption}x</div></button
 					>

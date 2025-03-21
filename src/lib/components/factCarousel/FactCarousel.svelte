@@ -4,12 +4,12 @@
 
 	import type { FactSlide } from '$lib/interfaces/factSlide.interface';
 	import Icon from '../Icon.svelte';
-	import BoldFact from './BoldFact.svelte';
-	import Enumeration from './Enumeration.svelte';
+	import FactBold from './FactBold.svelte';
+	import FactEnumeration from './FactEnumeration.svelte';
 
 	let carousel: Splide;
 
-	export let facts: FactSlide[] = [];
+	let { facts = [] }: { facts: FactSlide[] } = $props();
 
 	const splideOptions = {
 		type: 'loop',
@@ -35,13 +35,11 @@
 		easing: 'ease'
 	};
 
-	let carouselSelectedIndex: number = 0;
+	let carouselSelectedIndex: number = $state(0);
+	let componentHasFocus = $state(false);
+	let ariaLiveText = $state('');
 
-	let componentHasFocus = false;
-
-	let ariaLiveText = '';
-
-	$: {
+	$effect(() => {
 		const content = facts[carouselSelectedIndex].content;
 		const text =
 			content.type === 'enumeration'
@@ -49,7 +47,7 @@
 				: `${content.boldText} ${content.normalText}, `;
 
 		ariaLiveText = text + (carouselSelectedIndex + 1) + ' von ' + facts.length;
-	}
+	});
 
 	function moveSlide(direction: string) {
 		if (!carousel) return;
@@ -87,7 +85,7 @@
 						<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
 							<div class="fact-slide">
 								{#if fact.content.type === 'enumeration'}
-									<Enumeration
+									<FactEnumeration
 										total={fact.content.decoration.total}
 										amount={fact.content.decoration.amount}
 									/>
@@ -97,7 +95,7 @@
 								{/if}
 
 								{#if fact.content.type === 'boldText'}
-									<BoldFact boldText={fact.content.boldText} normalText={fact.content.normalText} />
+									<FactBold boldText={fact.content.boldText} normalText={fact.content.normalText} />
 								{/if}
 
 								<a class="focus-indicator" href={fact.source.url} lang={fact.source.titleLang}
@@ -107,22 +105,22 @@
 						</SplideSlide>
 					{/each}
 				</SplideTrack>
-				<div class="splide__arrows" />
+				<div class="splide__arrows"></div>
 			</div>
 
 			<div class="navigation-wrapper">
 				<button
 					aria-label="Vorheriger Fakt"
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('<')}
+					onfocusout={() => (componentHasFocus = false)}
+					onclick={() => moveSlide('<')}
 				>
 					<Icon img="arrow-toleft" svg_color="white" />
 				</button>
 				<span>{`${carouselSelectedIndex + 1} von ${facts.length}`}</span>
 				<button
 					aria-label="Nächster Fakt"
-					on:focusout={() => (componentHasFocus = false)}
-					on:click={() => moveSlide('>')}
+					onfocusout={() => (componentHasFocus = false)}
+					onclick={() => moveSlide('>')}
 				>
 					<Icon img="arrow-toright" svg_color="white" />
 				</button>

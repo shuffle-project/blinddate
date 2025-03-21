@@ -1,7 +1,12 @@
 <script lang="ts">
-	export let title: string;
-	export let image: string;
-	export let langTitle = 'de';
+	interface Props {
+		title: string;
+		image: string;
+		langTitle?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { title, image, langTitle = 'de', children }: Props = $props();
 </script>
 
 <div class="wrapper">
@@ -9,12 +14,14 @@
 		<div class="text">
 			<h3 id={title.replace(' ', '')} class="title" lang={langTitle}>{title}</h3>
 			<p>
-				<slot />
+				{@render children?.()}
 			</p>
 		</div>
-		<img class="image" src={image} alt="" role="presentation" />
+		<div class="image-wrapper">
+			<img src={image} alt="" role="presentation" />
+		</div>
 	</div>
-	<div aria-hidden="true" class="background" />
+	<div aria-hidden="true" class="background"></div>
 </div>
 
 <style lang="scss">
@@ -35,10 +42,22 @@
 
 			display: flex;
 			justify-content: space-between;
+			justify-content: center;
 			gap: 2rem;
 
 			position: relative;
 			z-index: 2;
+
+			.image-wrapper {
+				display: flex;
+				justify-content: center;
+				align-self: center;
+
+				img {
+					width: 8rem;
+					height: 8rem;
+				}
+			}
 
 			p {
 				margin: 0;

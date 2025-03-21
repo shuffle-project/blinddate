@@ -1,19 +1,24 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import Accordion from '$lib/components/accordion/Accordion.svelte';
+	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
+	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
+	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import DoItYourself from '$lib/components/DoItYourself.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
-	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
+	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
+	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
-	import Accordion from '$lib/components/accordion/Accordion.svelte';
-	import Checklist from '$lib/components/checklist/Checklist.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
 	import { KILIAN } from '$lib/constants/kilian';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 	const persona: Persona = KILIAN;
 </script>
 
-<PersonaContent {persona} let:MainHeading let:TextSection>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-01.mp3'}>
 		Hallo und Guten Tag. Mein Name ist Kilian, ich bin 21 Jahre alt und wohne, nicht ganz
 		freiwillig, mit meinen Eltern und vielen Kühen in einem Vorort von Oldenburg. An der Uni
@@ -79,7 +84,7 @@
 	<DoItYourself content="wheelchair-moving" />
 
 	<MainHeading heading="Lehrveranstaltungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Werden Aufzeichnungen von Veranstaltungen online und asynchron zur Verfügung gestellt,
 			ermöglicht das die häufig benötigte Flexibilität und kann so mit regelmäßigen Pausen und
@@ -100,7 +105,7 @@
 		Rollstuhlplatz ist. Naja, jetzt kennen mich immerhin alle!
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Nicht alle Gebäude und Räume in Universitäten sind barrierefrei zugänglich für Menschen, die
 			einen Rollstuhl nutzen. Ein weitläufiger Campus oder viele Gebäude können für Studierende mit
@@ -116,7 +121,7 @@
 		noch nach außen auf.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Unterstützungen für Studierende mit (motorischen) Beeinträchtigungen, die Universitäten
 			bieten, sind häufig nicht bekannt. Mit Übersichten oder Hinweisen zu diesen Angeboten –
@@ -128,7 +133,7 @@
 	<DoItYourself content="wheelchair-sitting" />
 
 	<MainHeading heading="Lernmaterial" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Auch hier gilt: Das Bereitstellen von Materialien in mehreren Modalitäten ermöglicht ein
 			Aneignen der Inhalte angepasst auf verschiedene Bedarfe. Da eine konstante Muskelanspannung
@@ -153,7 +158,7 @@
 	</SpeechBubble>
 
 	<MainHeading heading="Interaktion und Kommunikation" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Motorische Beeinträchtigungen können Lähmungen verschiedenster Muskeln im Körper bedeuten. Es
 			kann also auch die Stimmmuskulatur betroffen sein. Nicht selten wird einer langsameren und
@@ -171,7 +176,7 @@
 		gegenüber.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Manche Menschen mit motorischen Beeinträchtigungen werden durch Assistenzkräfte im Alltag
 			unterstützt. Diese Unterstützung kann im Umfang und in den Aufgaben ganz unterschiedlich
@@ -187,7 +192,7 @@
 	/>
 
 	<MainHeading heading="Prüfungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Um Prüfungen mit den gleichen Voraussetzungen wie Mitstudierende ohne Beeinträchtigungen
 			ablegen zu können, haben Studierende mit motorischen Beeinträchtigungen ein Anrecht auf einen
@@ -220,7 +225,7 @@
 		wollte.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Der psychische Zustand einer Person kann sich auch auf die Anspannung der Muskulatur
 			auswirken. Aufgeregtsein vor einer Prüfung kann die Spastik der Muskulatur daher verstärken.
@@ -237,36 +242,42 @@
 		irgendein Gebäude tragen zu wollen.
 	</SpeechBubble>
 
-	<Accordion personaName={persona.name} let:AccordionItem>
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question"
-				>Was ist ein No-Go, wenn ich Rollstuhlnutzenden begegne?</svelte:fragment
-			>
-			<PersonaAnswer {persona}>
-				Das ist easy: Bitte nicht einfach drauflos schieben! In dem Moment, in dem ich im Rollstuhl
-				sitze, ist dieser sozusagen mein 'Ersatzbein'. Und ich fasse ja auch nicht einfach die Beine
-				einer anderen Person an! Ich freue mich meistens über nett gemeinte Hilfsangebote, aber ich
-				bin auch ein selbstständiger Mensch. Eine kurze Nachfrage kann uns beide vor unangenehmen
-				Situationen bewahren.
-			</PersonaAnswer>
+	<Accordion personaName={persona.name}>
+		<AccordionItem>
+			{#snippet question()}
+				Was ist ein No-Go, wenn ich Rollstuhlnutzenden begegne?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Das ist easy: Bitte nicht einfach drauflos schieben! In dem Moment, in dem ich im
+					Rollstuhl sitze, ist dieser sozusagen mein 'Ersatzbein'. Und ich fasse ja auch nicht
+					einfach die Beine einer anderen Person an! Ich freue mich meistens über nett gemeinte
+					Hilfsangebote, aber ich bin auch ein selbstständiger Mensch. Eine kurze Nachfrage kann uns
+					beide vor unangenehmen Situationen bewahren.
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 
-		<AccordionItem let:PersonaAnswer>
-			<svelte:fragment slot="question">Welchen digitalen Barrieren begegnest Du?</svelte:fragment>
-			<PersonaAnswer {persona}>
-				Klar, wenn man eine Person im Rollstuhl sieht, denkt man erstmal an bauliche Barrieren. Das
-				ist aber nicht alles: Assistive Technologien wie meine Großfeldtastatur ermöglichen zwar
-				grundsätzlich meine Teilhabe am digitalen Leben, aber das geht trotzdem langsamer als bei
-				anderen. Wenn ein Dozent in einer Online Vorlesung beispielsweise wissen will, ob es noch
-				Fragen gibt, brauche ich länger, bis ich den winzigen 'Hand heben'-Button gedrückt habe. Bis
-				dahin hat er die Konferenz womöglich schon beendet.
-			</PersonaAnswer>
+		<AccordionItem>
+			{#snippet question()}
+				Welchen digitalen Barrieren begegnest Du?
+			{/snippet}
+			{#snippet content()}
+				<PersonaAnswer {persona}>
+					Klar, wenn man eine Person im Rollstuhl sieht, denkt man erstmal an bauliche Barrieren.
+					Das ist aber nicht alles: Assistive Technologien wie meine Großfeldtastatur ermöglichen
+					zwar grundsätzlich meine Teilhabe am digitalen Leben, aber das geht trotzdem langsamer als
+					bei anderen. Wenn ein Dozent in einer Online Vorlesung beispielsweise wissen will, ob es
+					noch Fragen gibt, brauche ich länger, bis ich den winzigen 'Hand heben'-Button gedrückt
+					habe. Bis dahin hat er die Konferenz womöglich schon beendet.
+				</PersonaAnswer>
+			{/snippet}
 		</AccordionItem>
 	</Accordion>
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
@@ -274,7 +285,7 @@
 
 	<Checklist
 		{persona}
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich zeichne meine Veranstaltungen auf oder gestatte eine Aufzeichnung',
 			'Ich ermögliche eine asynchrone oder remote Teilnahme an Veranstaltungen',
@@ -282,4 +293,4 @@
 			'Wenn Studierende einen Nachteilsausgleich haben, sorge ich für eine angemessene Umsetzung'
 		]}
 	/>
-</PersonaContent>
+</PersonaWrapper>

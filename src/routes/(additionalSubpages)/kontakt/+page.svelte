@@ -28,7 +28,9 @@
 				>kontakt@barrierefreies-blinddate.de</a
 			>
 			oder anonym über den folgenden Link:
-			<a class="focus-indicator" href={ENVIRONMENT.feedbackLink}>Feedback geben</a>
+			<a class="focus-indicator" href={ENVIRONMENT.generalFeedbackLink}
+				>Allgemeines Feedback geben</a
+			>
 		</p>
 	{/if}
 	<p>Wir freuen uns auf Ihr Feedback!</p>

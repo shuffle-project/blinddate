@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 
 	/* tasks */
 
@@ -112,27 +112,27 @@
 	let checkmarkFalse =
 		'<div style="display: flex; align-items: center; height: 2.5vw"><p style="font-size: 1.6vw; font-family: var(--font-sans-serif);">Aufgabe {index}</p><img src="UI/check-false.png" width="8%" style="margin-left: auto; margin-right: 10vw;" /></div>';
 
-	let checkmarks: string[] = [];
+	let checkmarks: string[] = $state([]);
 
 	/* variables */
 
-	let personaHidden = true;
-	let personaImage = contentsArray[0].mood;
+	let personaHidden = $state(true);
+	let personaImage = $state(contentsArray[0].mood);
 
 	let taskIndex = 0;
-	let taskDescriptionText = contentsArray[0].description;
-	let taskSlideImage = contentsArray[0].image;
+	let taskDescriptionText = $state(contentsArray[0].description);
+	let taskSlideImage = $state(contentsArray[0].image);
 
-	let selectedAnswer: { answer: number; correct: boolean } | null = null;
-	let btnA = contentsArray[0].btnA;
-	let btnB = contentsArray[0].btnB;
-	let btnC = contentsArray[0].btnC;
+	let selectedAnswer: { answer: number; correct: boolean } | null = $state(null);
+	let btnA = $state(contentsArray[0].btnA);
+	let btnB = $state(contentsArray[0].btnB);
+	let btnC = $state(contentsArray[0].btnC);
 
-	let audioSource = contentsArray[0].audio;
-	let audioPlaying = false;
-	let audioElement: HTMLAudioElement;
+	let audioSource = $state(contentsArray[0].audio);
+	let audioPlaying = $state(false);
+	let audioElement: HTMLAudioElement | undefined = $state();
 
-	let endscreen = false;
+	let endscreen = $state(false);
 
 	/* functions */
 
@@ -179,9 +179,9 @@
 	const onPlayAudioClick = () => {
 		audioPlaying = !audioPlaying;
 		if (audioPlaying) {
-			audioElement.play();
+			audioElement?.play();
 		} else {
-			audioElement.pause();
+			audioElement?.pause();
 		}
 	};
 
@@ -191,7 +191,7 @@
 
 	/*no fun on mobile*/
 
-	let smallScreen: boolean;
+	let smallScreen: boolean = $state(false);
 	let smallScreenMessage =
 		'Ihr Gerät oder Browserfenster ist zu klein, um das Spiel zu spielen. Bitte wählen sie ein größeres Gerät oder vergrößern Sie ihr Browserfenster.';
 
@@ -206,16 +206,16 @@
 	});
 </script>
 
-<audio bind:this={audioElement} src={audioSource} on:ended={onAudioEnded} />
+<audio bind:this={audioElement} src={audioSource} onended={onAudioEnded}></audio>
 
 <div class="mobileMessage" class:mobileVisibility={!smallScreen}>{smallScreenMessage}</div>
 <div class="ratio" class:ratioDeactivated={smallScreen}>
-	<!-- svelte-ignore a11y-missing-attribute -->
+	<!-- svelte-ignore a11y_missing_attribute -->
 	<img class="persona" src={personaImage} hidden={personaHidden} />
 
 	<div class="wrapper-interaction">
 		<div class="slides">
-			<!-- svelte-ignore a11y-missing-attribute -->
+			<!-- svelte-ignore a11y_missing_attribute -->
 			<img class="slides-image" src={taskSlideImage} draggable="false" />
 		</div>
 		<div class="solutions">
@@ -223,7 +223,7 @@
 				<div>{@html div}</div>
 			{/each}
 		</div>
-		<button class="playbutton" class:hidden={endscreen} on:click={onPlayAudioClick}>
+		<button class="playbutton" class:hidden={endscreen} onclick={onPlayAudioClick}>
 			{#if audioPlaying}
 				<img src="UI/pause.svg" alt="Pause" style="width: 85%; height: auto;" />
 			{:else}
@@ -231,16 +231,16 @@
 			{/if}
 		</button>
 		<div class="buttons" style:display={endscreen ? 'none' : 'flex'}>
-			<button on:click={() => onAnswerClick(btnA)} class:selected={selectedAnswer == btnA}
+			<button onclick={() => onAnswerClick(btnA)} class:selected={selectedAnswer == btnA}
 				>{btnA.answer}</button
 			>
-			<button on:click={() => onAnswerClick(btnB)} class:selected={selectedAnswer == btnB}
+			<button onclick={() => onAnswerClick(btnB)} class:selected={selectedAnswer == btnB}
 				>{btnB.answer}</button
 			>
-			<button on:click={() => onAnswerClick(btnC)} class:selected={selectedAnswer == btnC}
+			<button onclick={() => onAnswerClick(btnC)} class:selected={selectedAnswer == btnC}
 				>{btnC.answer}</button
 			>
-			<button on:click={onSendClick} disabled={!selectedAnswer}>Antworten</button>
+			<button onclick={onSendClick} disabled={!selectedAnswer}>Antworten</button>
 		</div>
 	</div>
 

@@ -104,7 +104,6 @@
 <style lang="scss">
 	.big-picture-ad {
 		font-size: 1rem;
-		// background-color: rgba(var(--color-white-rgb), 0.9);
 		background-color: var(--color-green);
 		color: var(--color-black);
 		text-decoration: none;

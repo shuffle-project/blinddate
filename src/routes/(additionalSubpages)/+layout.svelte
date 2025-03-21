@@ -3,8 +3,11 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { HOSTNAME } from '$lib/constants/hostname';
+	import type { Snippet } from 'svelte';
 
 	import { MetaTags } from 'svelte-meta-tags';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <MetaTags
@@ -48,16 +51,16 @@
 					<span>Zur Startseite</span>
 				</a>
 			{:else}
-				<div />
+				<div></div>
 			{/if}
 
-			<div />
+			<div></div>
 		</div>
 	</header>
 </div>
 
 <main>
-	<slot />
+	{@render children?.()}
 </main>
 
 <Footer />

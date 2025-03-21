@@ -1,5 +1,8 @@
-<script>
+<script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { ENVIRONMENT } from '../lib/constants/environment';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 {#if ENVIRONMENT.showDevEnvInfo}
@@ -12,7 +15,7 @@
 	</div>
 {/if}
 
-<slot />
+{@render children?.()}
 
 <style lang="scss" global>
 	@import './../scss/_main.scss';

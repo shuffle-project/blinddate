@@ -1,7 +1,12 @@
 <script lang="ts">
-	import AccordionItem from './AccordionItem.svelte';
-	export let personaName: string;
-	export let question: 'Fragen' | 'Frage' = 'Fragen';
+	import type { Snippet } from 'svelte';
+	interface Props {
+		personaName: string;
+		question?: 'Fragen' | 'Frage';
+		children?: Snippet;
+	}
+
+	let { personaName, question = 'Fragen', children }: Props = $props();
 </script>
 
 <section class="wrapper">
@@ -9,7 +14,7 @@
 		{`${question} an ${personaName}`}
 	</h3>
 	<div class="items">
-		<slot {AccordionItem} />
+		{@render children?.()}
 	</div>
 </section>
 

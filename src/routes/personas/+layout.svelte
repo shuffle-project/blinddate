@@ -2,7 +2,10 @@
 	import { base } from '$app/paths';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
+	import type { Snippet } from 'svelte';
 	import Footer from '../../lib/components/Footer.svelte';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <div class="background-black">
@@ -14,7 +17,7 @@
 					<span>Zur Startseite</span>
 				</a>
 			{:else}
-				<div />
+				<div></div>
 			{/if}
 
 			<div class="icons">
@@ -24,7 +27,7 @@
 	</header>
 </div>
 <div class="persona">
-	<slot />
+	{@render children?.()}
 </div>
 
 <Footer />

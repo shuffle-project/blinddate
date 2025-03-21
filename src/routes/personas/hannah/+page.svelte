@@ -3,9 +3,11 @@
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SimulationLink from '$lib/components/SimulationLink.svelte';
-	import SpeechBubble from '$lib/components/SpeechBubble.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
-	import PersonaContent from '$lib/components/personaContent/PersonaContent.svelte';
+	import MainHeading from '$lib/components/personaContent/MainHeading.svelte';
+	import PersonaWrapper from '$lib/components/personaContent/PersonaWrapper.svelte';
+	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
+	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
 	import { HANNAH } from '$lib/constants/hannah';
@@ -13,7 +15,7 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Checklist from '../../../lib/components/checklist/Checklist.svelte';
-	import Week from '../../../lib/components/week/index.svelte';
+	import Week from '../../../lib/components/week/Week.svelte';
 
 	const persona: Persona = HANNAH;
 
@@ -78,7 +80,7 @@
 	};
 </script>
 
-<PersonaContent {persona} let:MainHeading>
+<PersonaWrapper {persona}>
 	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-01.mp3'}>
 		Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik auf Lehramt im Bachelor in
 		Dortmund. Ich wohne gemeinsam mit meinen zwei Mitbewohnern, Till und Simon, in einer WG und
@@ -137,11 +139,11 @@
 					weiterleitet. Der äußere Teil des CIs ist abnehmbar.
 				</p>
 			</InfoBox>
-			<span class="toolcard-span"
-				>eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
+			<span>
+				eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
 				Sprachprozessor, der Schallwellen in elektrische Impulse umwandelt. Der Sprachprozessor ist
-				abnehmbar, zum Beispiel beim Schlafen oder Schwimmen.</span
-			>
+				abnehmbar, zum Beispiel beim Schlafen oder Schwimmen.
+			</span>
 		</ToolCard>
 
 		<ToolCard title="Gebärdensprache" image="{base}/tools/sign-language.svg">
@@ -171,11 +173,13 @@
 	</SpeechBubble>
 
 	<Recommendation link="https://taubenschlag.de/" marginBottom>
-		<svelte:fragment slot="linkText">Taubenschlag</svelte:fragment>
-		<svelte:fragment slot="textAfter"
-			>ist eine Website für Taube und Schwerhörige, aber auch für Hörende. Sie bietet Informationen
+		{#snippet linkText()}
+			Taubenschlag
+		{/snippet}
+		{#snippet textAfter()}
+			ist eine Website für Taube und Schwerhörige, aber auch für Hörende. Sie bietet Informationen
 			und Einblicke in die Welt der Hörgeschädigten.
-		</svelte:fragment>
+		{/snippet}
 	</Recommendation>
 
 	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-04.mp3'}>
@@ -188,7 +192,7 @@
 
 	<MainHeading heading="Lehrveranstaltungen" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			<InfoBox
 				term="Gebärdensprach&shy;dolmet&shy;schende"
@@ -234,7 +238,7 @@
 		selbsterklärend ist. So verliere ich nicht den Faden.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Höranlagen sind technische Einrichtungen, die manchen Menschen mit Hörbehinderungen das
 			Verstehen in öffentlichen Räumen, wie zum Beispiel Kino, Theater, Kirche oder Vortragssaal,
@@ -243,16 +247,16 @@
 	</TextSection>
 
 	<Recommendation link="{base}/media/Infografik_Roger_Hoeranlage.pdf" marginBottom>
-		<svelte:fragment slot="linkText">
+		{#snippet linkText()}
 			Infografik Roger Höranlage (PDF, nicht barrierefrei)
-		</svelte:fragment>
+		{/snippet}
 
-		<svelte:fragment slot="textAfter">
+		{#snippet textAfter()}
 			bietet einen Überblick über den richtigen Umgang mit Höranlagen dieser Art.
-		</svelte:fragment>
+		{/snippet}
 	</Recommendation>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Sowohl Hörgeräte als auch CIs können mit Höranlagen verbunden werden, sodass über Mikrofone
 			akustische Informationen direkt an die Hörhilfen gesendet werden können. Ob
@@ -264,7 +268,7 @@
 	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOffline} />
 
 	<MainHeading heading="Lernmaterial" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Werden die Informationen einer Veranstaltung überwiegend visuell
 			(Gebärdensprach&shy;dolmetschende oder durch das Fokussieren der Lippen) entnommen, ist es
@@ -293,7 +297,7 @@
 		generierte Untertitel furchtbar verwirren können.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Automatische Untertitelungen bei Videos gibt es mittlerweile häufig, sie haben aber oft viele
 			Fehler. Untertitel für Menschen mit Hörschädigungen dürfen außerdem nicht nur das Gesprochene
@@ -326,7 +330,7 @@
 	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOnline} />
 
 	<MainHeading heading="Eine Woche im Leben von" personaName={persona.name} />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hannah befindet sich im zweiten Jahr ihres Lehramt Mathematik Studiums in Dortmund. Dies ist
 			die zweite Woche des WS22 und Hannah hat eine volle Auslastung von 5 Kursen.
@@ -336,10 +340,10 @@
 	<Week {persona} />
 
 	<MainHeading heading="Interaktion und Kommunikation" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Ob die Lautsprache oder die Gebärdensprache genutzt wird, wird beeinflusst von vielen
-			verschiedenen Faktoren: Unter anderem von der (Gruppen-)Situation, von der Art der
+			verschiedenen Faktoren: Unter anderem von der (Gruppen-) Situation, von der Art der
 			Hörbehinderung, von der bevorzugten Kommunikation etc. Da die akustische Rückmeldung über die
 			eigene Aussprache mitunter fehlt, kann es zu einer undeutlichen Lautsprache bei einzelnen
 			Menschen mit Hörschädigungen kommen.
@@ -352,7 +356,7 @@
 		Aussprache verwaschen war.
 	</SpeechBubble>
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text>
 			Damit in Veranstaltungen eine dolmetschende Person anwesend sein kann, ist eine klare
 			Absprache, schnelle Kontaktaufnahme und auch eine gewisse Verbindlichkeit sehr wichtig. Ebenso
@@ -378,7 +382,7 @@
 	</SpeechBubble>
 
 	<MainHeading heading="Prüfungen" />
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Studierende mit Behinderungen können einen Nachteilsausgleich beantragen. Diese Anpassungen
 			werden zunächst mit den Beauftragten für Studierende mit Behinderungen besprochen und durch
@@ -393,14 +397,14 @@
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />
 
-	<TextSection let:Text>
+	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
 		</Text>
 	</TextSection>
 
 	<Checklist
-		checks={[
+		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 			'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Gesprochenes kann nicht nur gehört, sondern auch bspw. durch Untertitel oder Transkripte gelesen werden',
@@ -419,26 +423,28 @@
 			<Recommendation
 				link="https://www.deutsche-gesellschaft.de/fokus/einige-informationen-zum-thema-hoerschaedigung"
 			>
-				<svelte:fragment slot="linkText">
+				{#snippet linkText()}
 					Einige Informationen zum Thema Hörschädigung
-				</svelte:fragment>
-				<svelte:fragment slot="textAfter">
+				{/snippet}
+				{#snippet textAfter()}
 					von der Deutschen Gesellschaft der Hörbehinderten - Selbsthilfe und Fachverbände e.V.
-				</svelte:fragment>
+				{/snippet}
 			</Recommendation>
 		</li>
 		<li>
 			<Recommendation
 				link="https://www.schwerhoerigen-netz.de/fileadmin/user_upload/dsb/Dokumente/Information/Service/Ratgeber/Ratgeber1_Hoerschaedigung-Was_kann_ich_dagegen_tun.pdf"
 			>
-				<svelte:fragment slot="linkText">
+				{#snippet linkText()}
 					Hörschädigung - Was kann ich dagegen tun? (PDF)
-				</svelte:fragment>
-				<svelte:fragment slot="textAfter">vom Deutschen Schwerhörigenbund e.V.</svelte:fragment>
+				{/snippet}
+				{#snippet textAfter()}
+					vom Deutschen Schwerhörigenbund e.V.
+				{/snippet}
 			</Recommendation>
 		</li>
 	</ul>
-</PersonaContent>
+</PersonaWrapper>
 
 <style lang="scss">
 	.more-info-list {

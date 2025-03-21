@@ -3,12 +3,17 @@
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { detect } from 'detect-browser';
 	import { onMount } from 'svelte';
-	let isSafari = false;
-	let flipped = false;
 
-	export let front: string;
-	export let back: string;
-	export let persona: Persona;
+	let isSafari = $state(false);
+	let flipped = $state(false);
+
+	interface Props {
+		front: string;
+		back: string;
+		persona: Persona;
+	}
+
+	let { front, back, persona }: Props = $props();
 
 	onMount(() => {
 		isSafari = detect()!.name == 'safari';
@@ -40,10 +45,10 @@
 	<div
 		tabindex="0"
 		class="flip-card {flipped ? 'flipped' : ''}"
-		on:click={() => {
+		onclick={() => {
 			flipped = !flipped;
 		}}
-		on:keydown={onKeydown}
+		onkeydown={onKeydown}
 		role="button"
 		aria-roledescription="Umdrehbare Karte"
 		aria-labelledby="flip-card-inner"

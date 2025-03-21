@@ -1,4 +1,3 @@
-import CerebralPalsy from '$lib/components/disabilityExplanation/CerebralPalsy.svelte';
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 export const KILIAN: Persona = {
@@ -17,7 +16,6 @@ export const KILIAN: Persona = {
 	pronouns: 'Er / ihm',
 	disability: 'Zerebralparese',
 	disabilityIcon: 'wheelchair',
-	disabilityExplanation: CerebralPalsy,
 	previousPersona: 'Hannah',
 	nextPersona: 'Gabriel',
 	visualDescription:

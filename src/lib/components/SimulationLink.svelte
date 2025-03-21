@@ -2,9 +2,13 @@
 	import { base } from '$app/paths';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
-	export let image: string;
-	export let pathtext: string;
-	export let personaID: string;
+	interface Props {
+		image: string;
+		pathtext: string;
+		personaID: string;
+	}
+
+	let { image, pathtext, personaID }: Props = $props();
 
 	let modal: Modal;
 
@@ -24,7 +28,7 @@
 			<p class="warning-text">
 				Mobile Geräte werden nicht unterstützt. Das Spiel ist leider nicht barrierefrei, siehe
 
-				<button class="focus-indicator" on:click={() => toggleModalDisplay()}
+				<button class="focus-indicator" onclick={() => toggleModalDisplay()}
 					>Informationen zur Simulation</button
 				>
 			</p>
@@ -33,8 +37,10 @@
 		</div>
 	</div>
 	<Modal bind:this={modal}>
-		<svelte:fragment slot="headline">Informationen zur Simulation</svelte:fragment>
-		<svelte:fragment slot="content">
+		{#snippet headline()}
+			Informationen zur Simulation
+		{/snippet}
+		{#snippet content()}
 			{#if personaID === 'gabriel'}
 				<p>
 					Das vorliegende Simulationsspiel ist aufgrund seiner spezifischen Spielmechanik leider
@@ -100,7 +106,7 @@
 					Untertitel zur Verfügung, auf die auch ich häufig zurückgreife. Ich schalte sie Dir ein. "
 				</p>
 			{/if}
-		</svelte:fragment>
+		{/snippet}
 	</Modal>
 </div>
 

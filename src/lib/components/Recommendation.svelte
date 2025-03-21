@@ -1,18 +1,25 @@
 <script lang="ts">
-	import { getRandomId } from './utils';
+	import type { Snippet } from 'svelte';
 
-	export let link: string;
-	export let marginBottom = false;
-	const randomId = getRandomId();
+	interface Props {
+		link: string;
+		marginBottom?: boolean;
+		textBefore?: Snippet;
+		linkText?: Snippet;
+		textAfter?: Snippet;
+	}
+
+	let { link, marginBottom = false, textBefore, linkText, textAfter }: Props = $props();
+	const randomId = $props.id();
 </script>
 
 <div class="container" class:marginBottom>
-	<div class="line" />
+	<div class="line"></div>
 
 	<div class="content">
 		<p class="text">
 			<span id="text-before-{randomId}">
-				<slot name="textBefore" />
+				{@render textBefore?.()}
 			</span>
 			<span>
 				<a
@@ -20,11 +27,11 @@
 					href={link}
 					aria-describedby="text-before-{randomId} text-after-{randomId}"
 				>
-					<slot name="linkText" />
+					{@render linkText?.()}
 				</a>
 			</span>
 			<span id="text-after-{randomId}">
-				<slot name="textAfter" />
+				{@render textAfter?.()}
 			</span>
 		</p>
 	</div>

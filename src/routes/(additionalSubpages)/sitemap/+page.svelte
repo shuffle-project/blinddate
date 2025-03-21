@@ -97,10 +97,6 @@
 		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 
-		h1 {
-			margin-bottom: 0;
-		}
-
 		li {
 			margin: 0.625rem 0rem;
 		}

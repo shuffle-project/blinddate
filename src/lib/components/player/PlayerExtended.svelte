@@ -1,36 +1,37 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
-	import type { ExtendedPlayerConfig } from '../../interfaces/player.interfaces';
-	import { getRandomId } from '../utils';
+	import type { ExtendedPlayerConfig, Transcript, Video } from '../../interfaces/player.interfaces';
 	import Player from './Player.svelte';
 
-	export let extendedPlayerConfig: ExtendedPlayerConfig;
+	const randomId = $props.id();
 
-	const randomId = getRandomId();
-
-	let selectedTab: number | null = 1;
-	let selectedTabTemp = 1;
+	let { extendedPlayerConfig }: { extendedPlayerConfig: ExtendedPlayerConfig } = $props();
 
 	let tabcount = extendedPlayerConfig.videos.length + extendedPlayerConfig.transcripts.length;
+	let selectedTab: number = $state(1);
+
+	let selectedContent: Video | Transcript = $state(extendedPlayerConfig.videos[0]);
 
 	function onSelectTab(index: number) {
-		selectedTab = null;
-		selectedTabTemp = index;
-	}
+		if (selectedTab === index) return;
+		selectedTab = index;
 
-	function setSelectedTab() {
-		selectedTab = selectedTabTemp;
+		if (index <= extendedPlayerConfig.videos.length) {
+			selectedContent = extendedPlayerConfig.videos[index - 1];
+		} else {
+			const transcriptIndex = index - extendedPlayerConfig.videos.length - 1;
+			selectedContent = extendedPlayerConfig.transcripts[transcriptIndex];
+		}
 	}
 
 	function onKeydownTab(event: KeyboardEvent) {
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
-			onSelectTab(selectedTabTemp === tabcount ? 1 : selectedTabTemp + 1);
-			document.getElementById('playertab-' + selectedTabTemp)?.focus();
+			onSelectTab(selectedTab === tabcount ? 1 : selectedTab + 1);
+			document.getElementById(`playertab-${selectedTab}-${randomId}`)?.focus();
 		} else if (event.key === 'ArrowLeft') {
 			event.preventDefault();
-			onSelectTab(selectedTabTemp === 1 ? tabcount : selectedTabTemp - 1);
-			document.getElementById('playertab-' + selectedTabTemp)?.focus();
+			onSelectTab(selectedTab === 1 ? tabcount : selectedTab - 1);
+			document.getElementById(`playertab-${selectedTab}-${randomId}`)?.focus();
 		}
 	}
 </script>
@@ -41,12 +42,12 @@
 		{#each extendedPlayerConfig.videos as video, i}
 			{@const index = i + 1}
 			<button
-				id="playertab-{i + 1}-{randomId}"
+				id="playertab-{index}-{randomId}"
 				role="tab"
 				aria-selected={selectedTab === index}
 				tabindex={selectedTab === index ? 0 : -1}
-				on:click={() => onSelectTab(index)}
-				on:keydown={onKeydownTab}
+				onclick={() => onSelectTab(index)}
+				onkeydown={onKeydownTab}
 			>
 				{video.title}
 			</button>
@@ -59,43 +60,23 @@
 				role="tab"
 				aria-selected={selectedTab === index}
 				tabindex={selectedTab === index ? 0 : -1}
-				on:click={() => onSelectTab(index)}
-				on:keydown={onKeydownTab}
+				onclick={() => onSelectTab(index)}
+				onkeydown={onKeydownTab}
 			>
 				{transcript.title}
 			</button>
 		{/each}
 	</div>
 
-	{#each extendedPlayerConfig.videos as video, i}
-		{@const index = i + 1}
-		{#if selectedTab === index}
-			<div
-				id="panel-{index}-{randomId}"
-				in:slide={{ duration: 400 }}
-				out:slide={{ duration: 400 }}
-				on:outroend={setSelectedTab}
-			>
-				<Player videoData={video} />
-			</div>
-		{/if}
-	{/each}
-
-	{#each extendedPlayerConfig.transcripts as transcript, i}
-		{@const index = extendedPlayerConfig.videos.length + i + 1}
-		{#if selectedTab === index}
-			<div
-				id="panel-{index}-{randomId}"
-				in:slide={{ duration: 400 }}
-				out:slide={{ duration: 400 }}
-				on:outroend={setSelectedTab}
-			>
-				<div class="transcript">
-					{@html transcript.body}
-				</div>
-			</div>
-		{/if}
-	{/each}
+	{#if 'videoPathMp4' in selectedContent}
+		<!-- {#key selectedContent} -->
+		<Player videoData={selectedContent} />
+		<!-- {/key} -->
+	{:else}
+		<div class="transcript">
+			{@html selectedContent.body}
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">

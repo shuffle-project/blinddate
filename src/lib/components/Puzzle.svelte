@@ -3,10 +3,14 @@
 	import { onDestroy, onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 
-	export let topLeft = '';
-	export let topRight = '';
-	export let bottomLeft = '';
-	export let bottomRight = '';
+	interface Props {
+		topLeft?: string;
+		topRight?: string;
+		bottomLeft?: string;
+		bottomRight?: string;
+	}
+
+	let { topLeft = '', topRight = '', bottomLeft = '', bottomRight = '' }: Props = $props();
 
 	const pieceLabels = ['denke', 'sage', 'fühle', 'mache'];
 	const pieceIcon = ['think-bubble', 'speech-bubble', 'heart', 'hand'];
@@ -21,19 +25,19 @@
 		bottomRight: bottomRight
 	};
 
-	let text = puzzle.topLeft;
-	let tabPossible = false;
+	let text = $state(puzzle.topLeft);
+	let tabPossible = $state(false);
 
 	let textBox: HTMLElement;
-	let textBoxHeight = 0;
-	let selectedPiece = -1;
+	let textBoxHeight = $state(0);
+	let selectedPiece = $state(-1);
 
-	let firstContact = true;
+	let firstContact = $state(true);
 
-	let paddingBottom = 0;
+	let paddingBottom = $state(0);
 	let textBoxSpace = 0;
 
-	let innerWidth = 0;
+	let innerWidth = $state(0);
 	let smMq: MediaQueryList;
 	let mdMq: MediaQueryList;
 
@@ -137,14 +141,6 @@
 	}
 </script>
 
-<!-- style={`height: ${
-	innerWidth <= smBreakpoint
-		? textBoxHeight / 13 + 14.7
-		: innerWidth <= mdBreakpoint
-			? textBoxHeight / 15 + 17.43
-			: textBoxHeight / 18 + 20.1
-}rem`} -->
-
 <div class="wrapper">
 	<div
 		class="puzzle"
@@ -164,8 +160,8 @@
 					tabindex={selectedPiece === i || (i === 0 && firstContact) ? 0 : -1}
 					role="tab"
 					aria-selected={selectedPiece === i}
-					on:click={() => onPiecePressed(puzzlePieces[i])}
-					on:keydown={onKeypressed}
+					onclick={() => onPiecePressed(puzzlePieces[i])}
+					onkeydown={onKeypressed}
 				>
 					<Icon img={pieceIcon[i]} size="parent" />
 					<p>Was ich <br role="presentation" /><strong>{pieceLabels[i]}</strong></p>
@@ -180,12 +176,12 @@
 			</div>
 		{/each}
 	</div>
-	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 	<div tabindex={tabPossible ? 0 : -1} class="text" bind:this={textBox} class:hidden={!tabPossible}>
 		<p>{text}</p>
 	</div>
 </div>
-<div class="padding-bottom-div" style="height: {paddingBottom}px" />
+<div class="padding-bottom-div" style="height: {paddingBottom}px"></div>
 
 <style lang="scss">
 	.padding-bottom-div {

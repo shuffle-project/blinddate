@@ -1,67 +1,62 @@
 <script lang="ts">
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
-	import type { CheckObject } from '../../interfaces/checkList.interface';
-	import CheckBoxes from './componenets/CheckBoxes.svelte';
-	import Desktop from './componenets/Indicator/Desktop/Desktop.svelte';
-	import Mobile from './componenets/Indicator/Mobile/Mobile.svelte';
-	export let checks: string[];
-	export let persona: Persona;
+	import type { Check } from '../../interfaces/checklist.interface';
+	import Checkboxes from './Checkboxes.svelte';
+	import ProgressIndicatorDesktop from './progessIndicator/ProgressIndicatorDesktop.svelte';
+	import ProgressIndicatorMobile from './progessIndicator/ProgressIndicatorMobile.svelte';
 
-	function randomIntFromInterval(min: number, max: number) {
+	let { stringChecks, persona }: { stringChecks: string[]; persona: Persona } = $props();
+
+	function randomNumberFromRange(min: number, max: number) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
 	}
 
-	let keyedChecks: CheckObject[] = checks.map((item, i) => ({
-		id: i,
-		text: item,
-		checked: i === 0 ? true : false,
-		backgroundColorCode: randomIntFromInterval(1, 6),
-		box: {
-			size: 80
-		}
-	}));
+	let checklist: Check[] = $state(
+		stringChecks.map((item, i) => ({
+			id: i,
+			text: item,
+			checked: i === 0 ? true : false,
+			backgroundColorCode: randomNumberFromRange(1, 6),
+			boxSize: 80
+		}))
+	);
 
-	function toggleCheckBox(id: number) {
-		let checkBox = keyedChecks.find((item) => item.id === id);
-		if (checkBox?.checked === true) {
-			keyedChecks = keyedChecks.map((item) => {
-				if (item.id === id) {
-					return {
-						...item,
-						checked: false
-					};
-				} else {
-					return item;
-				}
-			});
-		} else {
-			keyedChecks = keyedChecks.map((item) => {
-				if (item.id === id) {
-					return {
-						...item,
-						checked: true
-					};
-				} else {
-					return item;
-				}
-			});
-		}
+	function toggleCheckbox(id: number) {
+		checklist = checklist.map((item) => {
+			if (item.id === id) {
+				return {
+					...item,
+					checked: !item.checked
+				};
+			} else {
+				return item;
+			}
+		});
+	}
+
+	function updateChecklistWithBoxSize(i: number, boxSize: number) {
+		checklist = checklist.map((item) => {
+			if (item.id === i) {
+				return {
+					...item,
+					boxSize
+				};
+			} else {
+				return item;
+			}
+		});
 	}
 </script>
 
 <div class="wrapper">
 	<div class="mobile">
-		<Mobile
-			length={keyedChecks.length}
-			checkedLength={keyedChecks.filter((check) => check.checked).length}
-			{persona}
-		/>
+		<ProgressIndicatorMobile {checklist} {persona} />
 	</div>
 
-	<CheckBoxes {keyedChecks} {toggleCheckBox} />
+	<Checkboxes {updateChecklistWithBoxSize} {checklist} {toggleCheckbox} />
 
 	<div class="desktop">
-		<Desktop totalCheckboxes={keyedChecks.length} displayedBoxes={keyedChecks} {persona} />
+		<ProgressIndicatorDesktop totalCheckboxes={checklist.length} {checklist} {persona} />
 	</div>
 </div>
 

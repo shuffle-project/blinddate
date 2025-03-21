@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 
 	/* tasks */
 
@@ -76,37 +76,37 @@
 		correct: boolean;
 		userAnswer: number | null;
 		index: number;
-	}[] = [];
+	}[] = $state([]);
 
 	/* variables */
 
-	let personaHidden = true;
-	let personaImage = contentsArray[0].mood;
+	let personaHidden = $state(true);
+	let personaImage = $state(contentsArray[0].mood);
 
 	let hole: HTMLImageElement;
-	let holeHidden = true;
+	let holeHidden = $state(true);
 	let holeMoveable = false;
-	let holePosX = '10vw';
-	let holePosY = '16vw';
+	let holePosX = $state('10vw');
+	let holePosY = $state('16vw');
 
-	let inputImpossible = false;
-	let input: number | null = null;
+	let inputImpossible = $state(false);
+	let input: number | null = $state(null);
 
-	let taskIndex = 0;
-	let descriptionText = contentsArray[0].description;
-	let interactionSrc = contentsArray[0].image;
+	let taskIndex = $state(0);
+	let descriptionText = $state(contentsArray[0].description);
+	let interactionSrc = $state(contentsArray[0].image);
 
-	let inputIsNumber = true;
-	let inputRangeCorrect = true;
+	let inputIsNumber = $state(true);
+	let inputRangeCorrect = $state(true);
 
 	/* functions */
 
-	$: {
+	$effect(() => {
 		if (input) {
 			inputIsNumber = true;
 			inputRangeCorrect = true;
 		}
-	}
+	});
 
 	function onClick() {
 		const regex = /^[0-9]+$/;
@@ -167,7 +167,7 @@
 
 	/*no fun on mobile*/
 
-	let smallScreen: boolean;
+	let smallScreen: boolean = $state(false);
 	let smallScreenMessage =
 		'Ihr Gerät oder Browserfenster ist zu klein, um das Spiel zu spielen. Bitte wählen sie ein größeres Gerät oder vergrößern Sie ihr Browserfenster.';
 
@@ -184,31 +184,21 @@
 
 <div class="mobileMessage" class:mobileVisibility={!smallScreen}>{smallScreenMessage}</div>
 <div class="ratio" class:ratioDeactivated={smallScreen}>
-	<!-- svelte-ignore a11y-missing-attribute -->
+	<!-- svelte-ignore a11y_missing_attribute -->
 	<img class="persona" src={personaImage} hidden={personaHidden} />
 
 	<div class="wrapper-interaction">
 		<div class="slides">
-			<!-- svelte-ignore a11y-missing-attribute -->
+			<!-- svelte-ignore a11y_missing_attribute -->
 			<img
 				class:hole={!holeHidden}
 				style="mask-position: {holePosX} {holePosY}; -webkit-mask-position: {holePosX} {holePosY}"
 				class="slides-image"
 				src={interactionSrc}
 			/>
-
-			<!-- svelte-ignore a11y-missing-attribute -->
-			<!-- <img
-				class="hole"
-				class:holeSticky={!holeMoveable}
-				src={base + '/games/gabriel/hole.png'}
-				style="transform: translate({holePosX}px, {holePosY}px);"
-				hidden={holeHidden}
-				bind:this={hole}
-			/> -->
 		</div>
 		<div class="notebook" class:mobileVisibility={smallScreen}>
-			<!-- svelte-ignore a11y-missing-attribute -->
+			<!-- svelte-ignore a11y_missing_attribute -->
 			<img class="notebook-image" src={base + '/games/gabriel/notepad.svg'} />
 
 			<div class="error-message">
@@ -238,20 +228,20 @@
 					<p style="font-size: 1.5vw; display: inline-block; margin-right: 0.7vw">
 						Artikel {taskIndex + 1} - Seite
 					</p>
-					<form on:submit|preventDefault>
+					<form>
 						<input
 							type="number"
 							id="notebook-input-field"
 							bind:value={input}
-							on:keypress={(e) => handleKeyPress(e)}
+							onkeypress={(e) => handleKeyPress(e)}
 							class="number-inputfield"
 							class:error={!inputIsNumber || !inputRangeCorrect}
 						/>
 						<button
 							id="notebook-input-button"
-							type="button"
+							type="submit"
 							disabled={!inputIsNumber || !inputRangeCorrect}
-							on:click={onClick}>OK</button
+							onclick={onClick}>OK</button
 						>
 					</form>
 				</div>
@@ -264,7 +254,7 @@
 	</div>
 </div>
 
-<svelte:window on:mousemove={moveHole} />
+<svelte:window onmousemove={moveHole} />
 
 <style>
 	:global(.wip-info) {

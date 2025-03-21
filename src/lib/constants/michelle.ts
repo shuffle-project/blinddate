@@ -1,4 +1,3 @@
-import MorbusCrohn from '$lib/components/disabilityExplanation/MorbusCrohn.svelte';
 import type { Week } from '$lib/interfaces/week.interfaces';
 import type { Persona } from '../interfaces/persona.interfaces';
 
@@ -84,7 +83,6 @@ export const MICHELLE: Persona = {
 	pronouns: 'Sie / ihr',
 	disability: 'Morbus Crohn',
 	disabilityIcon: 'spoon',
-	disabilityExplanation: MorbusCrohn,
 	previousPersona: 'Maxi',
 	nextPersona: 'Aleksandr',
 	week: michellesWeek,

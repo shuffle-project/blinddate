@@ -1,4 +1,3 @@
-import Glaucoma from '$lib/components/disabilityExplanation/Glaucoma.svelte';
 import type { Persona } from '../interfaces/persona.interfaces';
 
 export const GABRIEL: Persona = {
@@ -17,7 +16,6 @@ export const GABRIEL: Persona = {
 	pronouns: 'Er / ihm',
 	disability: 'Grüner Star (Glaukom)',
 	disabilityIcon: 'glaucoma',
-	disabilityExplanation: Glaucoma,
 	previousPersona: 'Kilian',
 	nextPersona: 'Faiza',
 	visualDescription:

@@ -1,11 +1,23 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	export let img: string;
-	export let alt: string = '';
-	export let size: 'tiny' | 'small' | 'smedium' | 'medium' | 'big' | 'parent' = 'small';
-	export let textSize: 'small' | 'medium' | 'big' = 'small';
 
-	export let svg_color: null | 'white' | 'black' | 'green' | 'blue' = null;
+	interface Props {
+		img: string;
+		alt?: string;
+		size?: 'tiny' | 'small' | 'smedium' | 'medium' | 'big' | 'parent';
+		textSize?: 'small' | 'medium' | 'big';
+		svg_color?: null | 'white' | 'black' | 'green' | 'blue';
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		img,
+		alt = '',
+		size = 'small',
+		textSize = 'small',
+		svg_color = null,
+		children
+	}: Props = $props();
 
 	if (!img.endsWith('.svg')) {
 		img = img + '.svg';
@@ -15,17 +27,17 @@
 	}
 </script>
 
-<div class="icon-component">
+<span class="icon-component">
 	<img
 		src={base + img}
 		{alt}
 		aria-hidden={alt === '' || undefined}
 		class="icon-{size} {svg_color ? 'svg-' + svg_color : ''}"
 	/>
-	{#if $$slots.default}
-		<span class="text-{textSize}"><slot /></span>
+	{#if children}
+		<span class="text-{textSize}">{@render children?.()}</span>
 	{/if}
-</div>
+</span>
 
 <style lang="scss">
 	.icon-component {

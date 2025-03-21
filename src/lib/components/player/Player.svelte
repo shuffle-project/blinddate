@@ -1,92 +1,52 @@
-<!--
-captions	The track defines translation of dialogue and sound effects (suitable for deaf users)
-chapters	The track defines chapter titles (suitable for navigating the media resource)
-descriptions	The track defines a textual description of the video content (suitable for blind users)
-metadata	The track defines content used by scripts. Not visible for the user
-subtitles	The track defines subtitles, used to display subtitles in a video
- -->
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import type { Video } from '../../interfaces/player.interfaces';
 	import Icon from '../Icon.svelte';
-	import { getRandomId, isIOSDevice } from '../utils';
+	import { isIOSDevice } from '../utils';
 	import CaptionSettings from './CaptionSettings.svelte';
 	import TempoSettings from './TempoSettings.svelte';
-	const randomId = getRandomId();
 
-	export let videoData: Video;
+	let { videoData }: { videoData: Video } = $props();
 
-	let fullscreen = false;
+	const randomId = $props.id();
 
-	let useNativeControls = false;
-	let isiOSDevice = false;
+	let fullscreen = $state(false);
+
+	let useNativeControls = $state(false);
+	let isiOSDevice = $state(false);
 
 	// video
-	let videoWrapper: HTMLElement;
-	let video: HTMLVideoElement;
+	let videoWrapper: HTMLElement | undefined = $state();
+	let video: HTMLVideoElement | undefined = $state();
 
 	//readonly
-	let duration: number;
-	$: durationMinutes = ('00' + Math.floor(duration / 60)).slice(-2);
-	$: durationSeconds = ('00' + (Math.floor(duration) % 60)).slice(-2);
+	let duration: number = $state(0);
 
 	//two way
-	let currentTime: number = 0;
-	$: currentTimeMinutes = ('00' + Math.floor(currentTime / 60)).slice(-2);
-	$: currentTimeSeconds = ('00' + Math.floor(currentTime % 60)).slice(-2);
+	let currentTime: number = $state(0);
 
-	let playbackRate: number = 1;
-	let paused: boolean = true;
-	let volume: number = 0.8; // between 0 and 1
-	let muted: boolean;
+	let playbackRate: number = $state(1);
+	let paused: boolean = $state(true);
+	let volume: number = $state(0.8);
+	let muted: boolean = $state(false);
 
 	// caption styles
-	let captionsBackgroundColor: string = 'black';
-	let captionsFontColor: string = 'white';
-	let captionsFontSize: string = 'small';
+	let captionsBackgroundColor: string = $state('black');
+	let captionsFontColor: string = $state('white');
+	let captionsFontSize: string = $state('small');
 
 	// aria live
-	let ariaLiveContent = '';
+	let ariaLiveContent = $state('');
 
-	let timeProgress: HTMLInputElement;
-	let volumeSlider: HTMLInputElement;
-
-	$: {
-		let normalizedSliderValue = (currentTime / duration) * 100;
-
-		if (normalizedSliderValue < 15) {
-			normalizedSliderValue += 1;
-		}
-
-		if (timeProgress) {
-			timeProgress.style.background = `linear-gradient(to right, var(--color-light-blue) ${normalizedSliderValue}%, #687390 ${normalizedSliderValue}%)`;
-		}
-	}
-
-	$: {
-		if (volumeSlider) {
-			volumeSlider.style.background = `linear-gradient(to right, var(--color-light-blue) ${volume * 100}%, #687390 ${
-				volume * 100
-			}%)`;
-		}
-	}
-
-	$: {
-		if (!muted && volume === 0) {
-			onMute();
-		}
-		if (muted && volume !== 0) {
-			onMute();
-		}
-	}
+	let timeProgressElement: HTMLInputElement | undefined = $state();
+	let volumeSliderElement: HTMLInputElement | undefined = $state();
 
 	onMount(() => {
 		isiOSDevice = isIOSDevice();
 		useNativeControls = isiOSDevice;
 
 		if (!isiOSDevice) {
-			// load capationSsettings from localStorage
 			captionsBackgroundColor = window.localStorage.getItem('captionsBackgroundColor') || 'black';
 			captionsFontColor = window.localStorage.getItem('captionsFontColor') || 'white';
 			captionsFontSize = window.localStorage.getItem('captionsFontSize') || 'medium';
@@ -106,21 +66,26 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 		);
 	});
 
+	$effect(() => {
+		if (videoData) {
+			if (!video?.paused) video?.pause();
+			video?.load();
+		}
+	});
+
 	// functions
 	function onPlayPause() {
-		if (useNativeControls) return;
+		if (useNativeControls || !video) return;
 
 		if (video.paused) {
 			video.play();
 		} else {
 			video.pause();
 		}
-		ariaLiveContent = paused ? 'Pausiert' : 'Gestartet';
 	}
 
 	function onMute() {
 		muted = !muted;
-		ariaLiveContent = muted ? 'Stummgeschalten' : 'Ton aktiviert';
 
 		if (muted && volume !== 0) {
 			volume = 0;
@@ -164,24 +129,49 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			await (document as any).webkitExitFullscreen();
 		}
 	}
+
 	function enterFullscreen() {
-		if (videoWrapper.requestFullscreen) {
+		if (videoWrapper?.requestFullscreen) {
 			videoWrapper.requestFullscreen({ navigationUI: 'hide' });
 		} else if ((videoWrapper as any).webkitRequestFullscreen) {
 			(videoWrapper as any).webkitRequestFullscreen({ navigationUI: 'hide' });
 		}
 	}
+
+	let durationMinutes = $derived(('00' + Math.floor(duration / 60)).slice(-2));
+	let durationSeconds = $derived(('00' + (Math.floor(duration) % 60)).slice(-2));
+	let currentTimeMinutes = $derived(('00' + Math.floor(currentTime / 60)).slice(-2));
+	let currentTimeSeconds = $derived(('00' + Math.floor(currentTime % 60)).slice(-2));
+
+	$effect(() => {
+		let normalizedSliderValue = (currentTime / duration) * 100;
+		normalizedSliderValue = normalizedSliderValue < 0 ? 0 : normalizedSliderValue;
+		if (timeProgressElement) {
+			timeProgressElement.style.background = `linear-gradient(to right, var(--color-light-blue) ${normalizedSliderValue}%, #687390 ${normalizedSliderValue}%)`;
+		}
+	});
+
+	$effect(() => {
+		if (volumeSliderElement) {
+			volumeSliderElement.style.background = `linear-gradient(to right, var(--color-light-blue) ${volume * 100}%, #687390 ${
+				volume * 100
+			}%)`;
+		}
+	});
+
+	$effect(() => {
+		if (!muted && volume === 0) {
+			onMute();
+		}
+		if (muted && volume !== 0) {
+			onMute();
+		}
+	});
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div
-	class="wrapper"
-	bind:this={videoWrapper}
-	on:focusout={() => {
-		if (ariaLiveContent !== '') ariaLiveContent = '';
-	}}
->
-	<!-- svelte-ignore a11y-media-has-caption -->
+<div class="wrapper" bind:this={videoWrapper}>
+	<!-- svelte-ignore a11y_media_has_caption -->
+
 	<video
 		poster={base + videoData.poster}
 		id="video-{randomId}"
@@ -200,8 +190,8 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 			: ''}
 		class:native-controls={!useNativeControls}
 		class:isiOSDevice
-		on:click={onPlayPause}
-		on:dblclick={onToggleFullscreen}
+		onclick={onPlayPause}
+		ondblclick={onToggleFullscreen}
 		tabindex="0"
 		aria-label="Videospieler anklickbar"
 	>
@@ -230,10 +220,10 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 						class="time-progress"
 						type="range"
 						bind:value={currentTime}
-						bind:this={timeProgress}
+						bind:this={timeProgressElement}
 						min="0"
 						max={Math.floor(duration)}
-						on:keydown={onKeyDownTimeProgress}
+						onkeydown={onKeyDownTimeProgress}
 					/>
 					<span>{durationMinutes}:{durationSeconds}</span>
 				</div>
@@ -244,7 +234,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 							class="playpause player-btn"
 							aria-label={paused ? 'Video abspielen' : 'Video pausieren'}
 							title={paused ? 'Video abspielen' : 'Video pausieren'}
-							on:click={onPlayPause}
+							onclick={onPlayPause}
 						>
 							{#if !paused}
 								<Icon size="parent" img="pause" svg_color="white" />
@@ -259,7 +249,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 							title="Ton stummschalten"
 							aria-pressed={muted}
 							class="player-btn"
-							on:click={onMute}
+							onclick={onMute}
 						>
 							{#if muted}
 								<Icon size="parent" img="volume-mute" svg_color="white" />
@@ -276,25 +266,27 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 							max="1"
 							step="0.1"
 							bind:value={volume}
-							bind:this={volumeSlider}
+							bind:this={volumeSliderElement}
 							class="volume-slider"
 						/>
 					</div>
 					<div class="row-2-right">
 						<TempoSettings bind:playbackRate />
 
-						<CaptionSettings
-							{video}
-							bind:captionsBackgroundColor
-							bind:captionsFontColor
-							bind:captionsFontSize
-						/>
+						{#key videoData}
+							<CaptionSettings
+								{video}
+								bind:captionsBackgroundColor
+								bind:captionsFontColor
+								bind:captionsFontSize
+							/>
+						{/key}
 
 						<button
 							class="player-btn"
 							aria-label={fullscreen ? 'Vollbild verlassen' : 'Vollbild'}
 							title={fullscreen ? 'Vollbild verlassen' : 'Vollbild'}
-							on:click={onToggleFullscreen}
+							onclick={onToggleFullscreen}
 						>
 							{#if fullscreen}
 								<Icon size="parent" img="fullscreen-close" svg_color="white" />
@@ -305,7 +297,7 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					</div>
 				</div>
 
-				<div />
+				<div></div>
 			{/if}
 		</div>
 	{/if}
@@ -560,52 +552,6 @@ subtitles	The track defines subtitles, used to display subtitles in a video
 					display: flex;
 					align-items: center;
 					gap: 0.5rem;
-				}
-			}
-
-			&.isSafari {
-				.volume-slider {
-					margin-top: 0.75rem;
-
-					&:disabled {
-						opacity: 50%;
-					}
-				}
-				.time-progress,
-				.volume-slider {
-					appearance: none;
-					-webkit-appearance: none;
-					width: 100%;
-					outline: none;
-					height: 0.25rem;
-					background-color: var(--color-white);
-					border-radius: 1rem;
-					margin-bottom: 0.875rem;
-
-					cursor: pointer;
-
-					&::-webkit-slider-thumb {
-						-webkit-appearance: none;
-						appearance: none;
-						height: 1.25rem;
-						width: 1.25rem;
-						border: 1px solid var(--color-black);
-						background-color: var(--color-white);
-						border-radius: 50%;
-
-						&:hover,
-						&:active {
-							outline: 2px solid var(--color-white);
-							border: 2px solid var(--color-black);
-						}
-					}
-
-					&:focus-within {
-						&::-webkit-slider-thumb {
-							outline: 2px solid var(--color-white);
-							border: 2px solid var(--color-black);
-						}
-					}
 				}
 			}
 		}

@@ -1,64 +1,55 @@
 <script lang="ts">
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import Icon from './Icon.svelte';
 	import { handleBackdropClick } from './utils';
 
-	export let bottomSheet = false;
-	export let term = '';
-	export let friendPersona: FriendPersona = {
-		id: 'placeholder',
-		name: '',
-		disability: '',
-		disabilityIcon: '',
-		relation: '',
-		relation_to: ''
-	};
+	interface Props {
+		bottomSheet?: boolean;
+		term?: string;
+		friendPersona?: FriendPersona;
+		displayModal?: boolean;
+		headline?: Snippet;
+		content?: Snippet;
+	}
 
-	export let displayModal = false;
+	let {
+		bottomSheet = false,
+		term = '',
+		friendPersona = {
+			id: 'placeholder',
+			name: '',
+			disability: '',
+			disabilityIcon: '',
+			relation: '',
+			relation_to: ''
+		},
+		displayModal = $bindable(false),
+		headline,
+		content
+	}: Props = $props();
+
 	let modal: HTMLDialogElement;
 
-	let randomId = Math.random();
+	let randomId = $props.id();
 
 	export function toggleModalDisplay() {
 		displayModal = !displayModal;
 	}
 
-	$: {
+	$effect(() => {
 		if (modal) {
 			if (displayModal) {
 				modal.showModal();
 				document.body.setAttribute('style', 'overflow: hidden;');
 			} else {
 				document.body.removeAttribute('style');
-				modal.setAttribute('inert', '');
 				modal.close();
 			}
 		}
-	}
+	});
 
 	onMount(() => {
-		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
-			mutations.forEach((mutation) => {
-				if (mutation.attributeName === 'open') {
-					const dialog: any = mutation.target;
-					const isOpen = dialog.hasAttribute('open');
-
-					if (!isOpen) return;
-
-					dialog.removeAttribute('inert');
-
-					//set focus
-					const focusTarget = dialog.querySelector('[autofocus]');
-					focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
-				}
-			});
-		});
-
-		dialogAttrObserver.observe(modal, {
-			attributes: true
-		});
-
 		if (modal) {
 			modal.addEventListener('close', (e) => {
 				displayModal = false;
@@ -67,8 +58,8 @@
 	});
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
 	aria-labelledby={!bottomSheet ? `headline-${randomId}` : null}
 	aria-label={bottomSheet
@@ -76,23 +67,24 @@
 			? term + ' Definition'
 			: 'Über ' + friendPersona.name
 		: null}
-	inert
 	class:bottomSheet
 	bind:this={modal}
-	on:click|stopPropagation={(e) => handleBackdropClick(e, modal)}
+	onclick={(e) => handleBackdropClick(e, modal)}
 >
 	<div class="modal-content">
 		{#if !bottomSheet}
 			<div class="header">
 				<div class="header-content">
 					<h2 id="headline-{randomId}">
-						<slot name="headline" />
+						{@render headline?.()}
 					</h2>
 					<button
 						aria-label="Dialog schließen"
 						aria-describedby="headline-{randomId}"
-						on:click|stopPropagation={() => toggleModalDisplay()}
-						><Icon img="close" size="big" svg_color="white" /></button
+						onclick={(e) => {
+							e.stopPropagation();
+							toggleModalDisplay();
+						}}><Icon img="close" size="big" svg_color="white" /></button
 					>
 				</div>
 				<hr aria-hidden="true" />
@@ -100,7 +92,10 @@
 		{:else}
 			<div class="header">
 				<button
-					on:click|stopPropagation={() => toggleModalDisplay()}
+					onclick={(e) => {
+						e.stopPropagation();
+						toggleModalDisplay();
+					}}
 					aria-label={term !== ''
 						? term + ' Definition, Dialog schließen'
 						: 'Über ' + friendPersona.name + ', Dialog schließen'}
@@ -110,9 +105,9 @@
 			</div>
 		{/if}
 
-		<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 		<div class="content" tabindex="0">
-			<slot name="content" />
+			{@render content?.()}
 		</div>
 	</div>
 </dialog>
