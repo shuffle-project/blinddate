@@ -5,11 +5,7 @@
 
 	type Content = 'keyboard' | 'support' | 'wheelchair-moving' | 'wheelchair-sitting';
 
-	interface Props {
-		content: Content;
-	}
-
-	let { content }: Props = $props();
+	let { content }: { content: Content } = $props();
 </script>
 
 <div class="wrapper">

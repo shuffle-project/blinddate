@@ -3,13 +3,11 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { HOSTNAME } from '$lib/constants/hostname';
+	import type { Snippet } from 'svelte';
 
 	import { MetaTags } from 'svelte-meta-tags';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
 
-	let { children }: Props = $props();
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <MetaTags

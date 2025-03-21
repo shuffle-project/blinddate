@@ -1,10 +1,8 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import { ENVIRONMENT } from '../lib/constants/environment';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
 
-	let { children }: Props = $props();
+	let { children }: { children: Snippet } = $props();
 </script>
 
 {#if ENVIRONMENT.showDevEnvInfo}

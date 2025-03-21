@@ -1,4 +1,5 @@
 export function handleBackdropClick(e: MouseEvent, dialog: HTMLDialogElement) {
+	e.stopPropagation();
 	const dialogDimensions = dialog.getBoundingClientRect();
 	if (
 		e.clientX < dialogDimensions.left ||

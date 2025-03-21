@@ -21,7 +21,6 @@ interface Environment {
 	footerPersonas: boolean;
 	backLinkToStartpage: boolean;
 	displayLowerStartpageContent: boolean;
-	showBigPictureContent: boolean;
 	allowFeedbackLink: boolean;
 	generalFeedbackLink: string;
 	lecturerFeedbackLink: string;
@@ -39,7 +38,6 @@ export const ENVIRONMENT: Environment = {
 	footerPersonas: true,
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
-	showBigPictureContent: true,
 	allowFeedbackLink: false,
 	generalFeedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
 	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',

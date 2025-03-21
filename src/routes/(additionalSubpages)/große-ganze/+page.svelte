@@ -2,7 +2,6 @@
 	import BigPictureMobile from '$lib/components/bigPicture/BigPictureMobile.svelte';
 	import BigPictureRoom from '$lib/components/bigPicture/BigPictureRoom.svelte';
 	import { SUPPORT_OPTIONS, type SupportOptionId } from '$lib/constants/bigPicture';
-	import { ENVIRONMENT } from '$lib/constants/environment';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 
 	let selectedOption: SupportOptionId | '' = $state('');
@@ -20,71 +19,44 @@
 <SubpageTitle>Das große Ganze</SubpageTitle>
 
 <div class="wrapper">
-	{#if ENVIRONMENT.showBigPictureContent}
-		<!-- <p>
-			Werden Lernumgebungen von vornherein so geplant und gestaltet, dass sie für alle Lernenden
-			zugänglich sind, können einige aufwändige Nachbesserungen und zusätzliche, zeitintensive
-			Anpassungen vermieden werden. Viele (Unterstützungs-)Maßnahmen, die bereits zu Beginn
-			mitgedacht und umgesetzt werden, kommen vielen Studierenden zu Gute – vielleicht sogar
-			Studierenden, die Sie im ersten Moment gar nicht mitbedacht haben.
-		</p> -->
+	<p>
+		Viele (Unterstützungs-) Maßnahmen, die bereits zu Beginn mitgedacht und umgesetzt werden, kommen
+		vielen Studierenden zu Gute – vielleicht sogar Studierenden, die Sie im ersten Moment gar nicht
+		mitbedacht haben.
+	</p>
 
-		<p>
-			Viele (Unterstützungs-) Maßnahmen, die bereits zu Beginn mitgedacht und umgesetzt werden,
-			kommen vielen Studierenden zu Gute – vielleicht sogar Studierenden, die Sie im ersten Moment
-			gar nicht mitbedacht haben.
-		</p>
+	<p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p>
 
-		<p>Lassen Sie uns einen Blick auf diese möglichen Maßnahmen werfen.</p>
-		<!-- 
-		<p>
-			Im Folgenden ist ein Vorlesungssaal voller Studierender abgebildet. Wählen Sie weiter unten
-			eine Unterstützungsmöglichkeit aus und sehen Sie, wer alles davon profitiert. Anschließend
-			können Sie auf die Studierenden klicken, um mehr Informationen zu bekommen.
-		</p> -->
-
-		<div class="desktop">
-			<BigPictureRoom {selectedOption} />
-			<fieldset
-				id="support-list"
-				aria-label="Unterstützungsmöglichkeiten"
-				class="support-list desktop"
-			>
-				{#each supportOptions as option, i}
-					<label>
-						<input
-							onclick={() => handleSupportSelection(option.id)}
-							type="radio"
-							value={option.name}
-							name="support-list"
-							checked={selectedOption === option.id}
-						/>
-						<span>{option.name}</span>
-					</label>
-				{/each}
-			</fieldset>
-		</div>
-		<div class="mobile">
-			<BigPictureMobile />
-		</div>
-	{:else}
-		<div class="in-progress-wrapper">
-			<p>
-				Die Seite befindet sich aktuell noch in der Entwicklung. Bleiben Sie gespannt und schauen
-				Sie gerne immer wieder Mal vorbei.
-			</p>
-		</div>
-	{/if}
+	<div class="desktop">
+		<BigPictureRoom {selectedOption} />
+		<fieldset
+			id="support-list"
+			aria-label="Unterstützungsmöglichkeiten"
+			class="support-list desktop"
+		>
+			{#each supportOptions as option, i}
+				<label>
+					<input
+						onclick={() => handleSupportSelection(option.id)}
+						type="radio"
+						value={option.name}
+						name="support-list"
+						checked={selectedOption === option.id}
+					/>
+					<span>{option.name}</span>
+				</label>
+			{/each}
+		</fieldset>
+	</div>
+	<div class="mobile">
+		<BigPictureMobile />
+	</div>
 </div>
 
 <style lang="scss">
 	.wrapper {
 		padding-inline: var(--outer-spacing);
 		margin-top: 2.5rem;
-
-		.in-progress-wrapper {
-			min-height: 30vh;
-		}
 
 		p {
 			max-width: 35rem;

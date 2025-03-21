@@ -27,7 +27,7 @@
 	}
 </script>
 
-<div class="icon-component">
+<span class="icon-component">
 	<img
 		src={base + img}
 		{alt}
@@ -37,7 +37,7 @@
 	{#if children}
 		<span class="text-{textSize}">{@render children?.()}</span>
 	{/if}
-</div>
+</span>
 
 <style lang="scss">
 	.icon-component {

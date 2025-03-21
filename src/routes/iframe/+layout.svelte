@@ -1,25 +1,22 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import Icon from '../../lib/components/Icon.svelte';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
 
-	let { children }: Props = $props();
+	let { children }: { children: Snippet } = $props();
 
 	let persona: 'gabriel' | 'hannah' | null = $state(null);
 	let personaName: string = $state('');
 
-	if ($page.url.pathname.includes('gabriel')) persona = 'gabriel';
-	if ($page.url.pathname.includes('hannah')) persona = 'hannah';
-
-	if (persona !== null) {
-		personaName = persona.charAt(0).toUpperCase() + persona.slice(1, persona.length);
-	}
-
 	onMount(() => {
+		if ($page.url.pathname.includes('gabriel')) persona = 'gabriel';
+		if ($page.url.pathname.includes('hannah')) persona = 'hannah';
+
+		if (persona !== null) {
+			personaName = persona.charAt(0).toUpperCase() + persona.slice(1, persona.length);
+		}
+
 		window.document.body.classList.toggle('full-height');
 		window.document.documentElement.classList.toggle('full-height');
 

@@ -2,12 +2,10 @@
 	import { base } from '$app/paths';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
+	import type { Snippet } from 'svelte';
 	import Footer from '../../lib/components/Footer.svelte';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
 
-	let { children }: Props = $props();
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <div class="background-black">

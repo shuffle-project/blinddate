@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run, stopPropagation } from 'svelte/legacy';
-
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import { onMount, type Snippet } from 'svelte';
 	import Icon from './Icon.svelte';
@@ -31,7 +29,7 @@
 		content
 	}: Props = $props();
 
-	let modal: HTMLDialogElement = $state();
+	let modal: HTMLDialogElement;
 
 	let randomId = $props.id();
 
@@ -39,41 +37,19 @@
 		displayModal = !displayModal;
 	}
 
-	run(() => {
+	$effect(() => {
 		if (modal) {
 			if (displayModal) {
 				modal.showModal();
 				document.body.setAttribute('style', 'overflow: hidden;');
 			} else {
 				document.body.removeAttribute('style');
-				modal.setAttribute('inert', '');
 				modal.close();
 			}
 		}
 	});
 
 	onMount(() => {
-		const dialogAttrObserver = new MutationObserver((mutations, observer) => {
-			mutations.forEach((mutation) => {
-				if (mutation.attributeName === 'open') {
-					const dialog: any = mutation.target;
-					const isOpen = dialog.hasAttribute('open');
-
-					if (!isOpen) return;
-
-					dialog.removeAttribute('inert');
-
-					//set focus
-					const focusTarget = dialog.querySelector('[autofocus]');
-					focusTarget ? focusTarget.focus() : dialog.querySelector('button').focus();
-				}
-			});
-		});
-
-		dialogAttrObserver.observe(modal, {
-			attributes: true
-		});
-
 		if (modal) {
 			modal.addEventListener('close', (e) => {
 				displayModal = false;
@@ -91,10 +67,9 @@
 			? term + ' Definition'
 			: 'Über ' + friendPersona.name
 		: null}
-	inert
 	class:bottomSheet
 	bind:this={modal}
-	onclick={stopPropagation((e) => handleBackdropClick(e, modal))}
+	onclick={(e) => handleBackdropClick(e, modal)}
 >
 	<div class="modal-content">
 		{#if !bottomSheet}
@@ -106,8 +81,10 @@
 					<button
 						aria-label="Dialog schließen"
 						aria-describedby="headline-{randomId}"
-						onclick={stopPropagation(() => toggleModalDisplay())}
-						><Icon img="close" size="big" svg_color="white" /></button
+						onclick={(e) => {
+							e.stopPropagation();
+							toggleModalDisplay();
+						}}><Icon img="close" size="big" svg_color="white" /></button
 					>
 				</div>
 				<hr aria-hidden="true" />
@@ -115,7 +92,10 @@
 		{:else}
 			<div class="header">
 				<button
-					onclick={stopPropagation(() => toggleModalDisplay())}
+					onclick={(e) => {
+						e.stopPropagation();
+						toggleModalDisplay();
+					}}
 					aria-label={term !== ''
 						? term + ' Definition, Dialog schließen'
 						: 'Über ' + friendPersona.name + ', Dialog schließen'}
