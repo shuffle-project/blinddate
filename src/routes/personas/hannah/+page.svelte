@@ -139,11 +139,11 @@
 					weiterleitet. Der äußere Teil des CIs ist abnehmbar.
 				</p>
 			</InfoBox>
-			<span class="toolcard-span"
-				>eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
+			<span>
+				eingesetzt werden. Es sitzt innerhalb des Kopfes. Außen am Kopf sieht man den dazugehörigen
 				Sprachprozessor, der Schallwellen in elektrische Impulse umwandelt. Der Sprachprozessor ist
-				abnehmbar, zum Beispiel beim Schlafen oder Schwimmen.</span
-			>
+				abnehmbar, zum Beispiel beim Schlafen oder Schwimmen.
+			</span>
 		</ToolCard>
 
 		<ToolCard title="Gebärdensprache" image="{base}/tools/sign-language.svg">

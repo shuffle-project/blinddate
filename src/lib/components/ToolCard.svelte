@@ -54,8 +54,8 @@
 				align-self: center;
 
 				img {
-					width: 9rem;
-					height: 9rem;
+					width: 8rem;
+					height: 8rem;
 				}
 			}
 

@@ -95,7 +95,7 @@
 					gerichtet ist und die Augen nicht bewegt werden.
 				</p>
 			</InfoBox>
-			<span class="toolcard-span">
+			<span>
 				eingeschränkt oder erschwert ein Nystagmus (Augenzittern) das Fokussieren des Geschriebenen,
 				kann ein Orientieren im Text zudem mehr Zeit in Anspruch nehmen.
 			</span>
@@ -130,7 +130,7 @@
 					barrierefrei erstellt werden, um die Inhalte in einer logischen Reihenfolge entnehmen zu können.
 				</p>
 			</InfoBox>.
-			<span class="toolcard-span">
+			<span>
 				Das Programm liest alle Inhalte vor und gibt die Struktur – bspw. Überschriften oder Menüs –
 				wieder. Leider sind nicht alle Websites oder PDFs barrierefrei und können nicht oder nur
 				fehlerhaft durch den <span lang="en">Screenreader</span> ausgelesen werden.

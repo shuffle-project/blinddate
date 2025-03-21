@@ -41,14 +41,16 @@
 	{@html term}
 </span>
 
-<Modal bind:this={modal} bottomSheet {term}>
-	{#snippet content()}
-		{@render children?.()}
-		{#if sources.length > 0}
-			<Sources {sources} />
-		{/if}
-	{/snippet}
-</Modal>
+{#await import('./Modal.svelte') then { default: Modal }}
+	<Modal bind:this={modal} bottomSheet {term}>
+		{#snippet content()}
+			{@render children?.()}
+			{#if sources.length > 0}
+				<Sources {sources} />
+			{/if}
+		{/snippet}
+	</Modal>
+{/await}
 
 <style lang="scss">
 	.term-btn {

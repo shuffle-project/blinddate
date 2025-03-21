@@ -118,7 +118,7 @@
 					der Bewegungen und die Intensität unterschiedlich ausgeprägt.
 				</p>
 			</InfoBox>
-			<span class="toolcard-span">, um andere Reize auszublenden.</span>
+			<span>, um andere Reize auszublenden.</span>
 			<span lang="en">Stimming</span>, also die bewusste Wiederholung von physischen Bewegungen oder
 			Lauten, aber auch Sport oder das Hantieren mit reizauslösenden Gegenständen (z.B. sogenannte
 			<span lang="en">Fidget Toys</span>) sind Möglichkeiten des selbststimulierenden Verhaltens.
