@@ -1,5 +1,5 @@
 import type { Persona } from '$lib/interfaces/persona.interfaces';
-// TODO OLIVER - add meta image
+
 export const OLIVER: Persona = {
 	id: 'oliver',
 	name: 'Oliver',
@@ -17,8 +17,10 @@ export const OLIVER: Persona = {
 	disabilityIcon: 'lrs_adhs',
 	previousPersona: 'Faiza',
 	nextPersona: 'Maxi',
+	// TODO
 	visualDescription: '',
-	metaDescription: '',
+	metaDescription:
+		'Oliver zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit Teilleistungsstörung gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, ADHS, Legasthenie, Lese-Rechtschreib-Schwäche, Hyperaktivität, Studium mit ADHS, Neurodiversität',
 	facts: [

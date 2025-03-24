@@ -43,7 +43,6 @@
 	function handleSpeechbubbleClose() {
 		const studentButton = document.getElementById(`student-${selectedStudent}-button`);
 
-		// TODO
 		studentButton?.focus();
 		selectedStudent = undefined;
 	}
