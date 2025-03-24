@@ -9,7 +9,8 @@ export type StudentId =
 	| 'fredo'
 	| 'kyle'
 	| 'sarah'
-	| 'mara';
+	| 'mara'
+	| 'oliver';
 
 export type SupportOptionId =
 	| 'idle'
@@ -35,7 +36,7 @@ export const SUPPORT_OPTIONS = [
 		name: 'Transparenz der Anforderungen & Veranstaltungsstruktur'
 	},
 	{ id: 'image-descriptions', name: 'Verbale oder schriftliche Bildbeschreibung' }
-] as const;
+] as const satisfies { id: SupportOptionId; name: string }[];
 
 export interface BigPictureStudent {
 	id: StudentId;
@@ -44,7 +45,7 @@ export interface BigPictureStudent {
 	disability?: string;
 	active: boolean;
 	benefitsFrom: {
-		[key in SupportOptionId]?: string;
+		[K in SupportOptionId]?: string;
 	};
 }
 
@@ -86,6 +87,25 @@ export const BIG_PICTURE_STUDENTS: BigPictureStudent[] = [
 				'Ich lasse mir gerne Texte vorlesen - wie ein Hörbuch quasi. So kann ich  Jonas dabei Essen geben oder andere Dinge erledigen. Wenn ein Text halt nur als Bild eingescannt wurde, kann das die Software leider nicht vorlesen.',
 			'transparency-of-requirements':
 				'Anwesenheitspflicht? Wann sind die Prüfungen? Was wird von mir erwartet? - Das sind unglaublich wichtige Informationen, die ich unbedingt zu Beginn brauche, um zu sehen, welche Veranstaltungen ich realistisch belegen kann.'
+		}
+	},
+	{
+		id: 'oliver',
+		name: 'Oliver',
+		icon: 'lrs_adhs',
+		disability: 'Studieren mit Teilleistungsstörung',
+		active: false,
+		benefitsFrom: {
+			subtitles:
+				'Mein LRS sagt "Hör dir die Veranstaltung an, Lesen ist sau anstrengend", aber mein ADHS sagt "Nur hören? Ne, dafür gibt es keine Konzentration." Ich lerne also am Besten, wenn ich beides habe - Tonspur und Untertitel.',
+			'documents-before-lecture':
+				'Wenn ich die Unterlagen vorher habe, kann ich schonmal nach unbekannten Wörtern schauen. Außerdem fällt es mir leichter, mitzulesen, wenn ich die Texte schon einmal gelesen habe.',
+			'recording-lecture':
+				'Meine Konzentration ist sehr unberechenbar. Machnmal fehlen mir ganze Teile einer Veranstaltung. So kann ich sie anschauen, wenn die Konzentration gerade da ist. Und manchmal hilft es mir sehr, die Sprechgeschwindigkeit anzupassen.',
+			'ocr-scans':
+				'Wegen meiner LRS geht Texte vorlesen lassen einfach schneller. Ihr habt keine Ahnung, wie lange ich für eine Seite Text brauche und wie viel zusätzliche Anstrengung mich das kostet!',
+			'transparency-of-requirements':
+				'Weil ich immer etwas haushalten muss, wann meine Konzentration einsatzbereit ist, ist es sehr wichtig, dass ich weiß, wo welche Erwartungen gestellt werden. Ich versuche mir dann eine Liste mit Prioritäten zu machen.'
 		}
 	},
 	{

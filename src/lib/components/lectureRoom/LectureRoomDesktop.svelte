@@ -320,11 +320,8 @@
 							transition: all 0.2s ease-out;
 
 							p {
-								margin: 0;
+								margin: 0 0 0.25rem 0;
 								font-size: 1.25rem;
-							}
-
-							p {
 								opacity: 0%;
 								transform: scale(0);
 							}

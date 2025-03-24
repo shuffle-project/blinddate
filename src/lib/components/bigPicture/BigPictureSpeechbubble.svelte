@@ -59,6 +59,12 @@
 			}
 		}
 
+		&.Oliver {
+			.bubble-indicator {
+				margin-left: 4rem;
+			}
+		}
+
 		&.Faiza {
 			.bubble-indicator {
 				margin-left: 6rem;

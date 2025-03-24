@@ -85,9 +85,9 @@
 
 		<ToolCard title="Studienorganisation" image="{base}/tools/day-plan.svg">
 			LRS und AD(H)S können sich auch auf die Selbstorganisation im Studium auswirken. Deshalb kann
-			eine Unterstützung durch Studienbüros, Support-Zentren oder Study-Buddy-Programme an
-			Hochschulen für Studierende mit ADHS eine sinnvolle Strategie zur Organisation des Studiums
-			sein.</ToolCard
+			eine Unterstützung durch Studienbüros, Support-Zentren oder <span lang="en">Study-Buddy</span
+			>-Programme an Hochschulen für Studierende mit ADHS eine sinnvolle Strategie zur Organisation
+			des Studiums sein.</ToolCard
 		>
 	</div>
 
@@ -242,11 +242,12 @@
 			Mithilfe von Nachteilsausgleichen können Studierende mit LRS oder ADHS unterstützt werden.
 			Diese können beispielsweise eine Zeitzugabe für die Abgabe von schriftlichen Ausarbeitungen
 			oder einen separaten Raum, um Ablenkungen zu reduzieren, beinhalten. Außerdem können mündliche
-			Prüfungen oder schriftliche Prüfungen mit Multiple-Choice-Antworten helfen, den Stress, der
-			durch die Anforderung des schnellen, grammatikalisch korrekten Schreibens entsteht, etwas
-			reduzieren. Sind schriftliche Antworten benötigt, können diese am Laptop mit eingeschalteter
-			Rechtschreibprüfung verfasst werden. In manchen Nachteilsausgleichen kann auch festgehalten
-			werden, dass eine korrekte Rechtschreibung nicht in die Bewertung der Prüfung einbezogen wird.
+			Prüfungen oder schriftliche Prüfungen mit <span lang="en">Multiple-Choice</span>-Antworten
+			helfen, den Stress, der durch die Anforderung des schnellen, grammatikalisch korrekten
+			Schreibens entsteht, etwas reduzieren. Sind schriftliche Antworten benötigt, können diese am
+			Laptop mit eingeschalteter Rechtschreibprüfung verfasst werden. In manchen
+			Nachteilsausgleichen kann auch festgehalten werden, dass eine korrekte Rechtschreibung nicht
+			in die Bewertung der Prüfung einbezogen wird.
 		</Text>
 	</TextSection>
 

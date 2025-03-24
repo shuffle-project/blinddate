@@ -307,6 +307,15 @@
 				}
 			}
 
+			li.oliver {
+				bottom: calc(1.6% - 0.265em);
+				right: 34%;
+
+				img {
+					width: min(13vw, 11.25rem);
+				}
+			}
+
 			li.michelle {
 				bottom: calc(51.3% - 0.2675em);
 				right: 21%;
