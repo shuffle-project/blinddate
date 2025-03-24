@@ -66,11 +66,20 @@
 				text-align: center;
 				padding: 0.25rem 0;
 				max-width: 6.375rem;
+				min-height: 1.25rem;
 
 				&:hover,
 				&:focus {
 					outline: 2px solid var(--color-blue);
 				}
+			}
+		}
+	}
+
+	@media (min-width: 59.375rem) and (max-width: 73.125rem) {
+		.wrapper {
+			.other-personas {
+				margin-top: 1rem;
 			}
 		}
 	}

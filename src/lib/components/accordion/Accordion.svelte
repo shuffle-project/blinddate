@@ -1,7 +1,8 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import type { PersonaName } from '$lib/interfaces/persona.interfaces';
+	import { type Snippet } from 'svelte';
 	interface Props {
-		personaName: string;
+		personaName: PersonaName;
 		question?: 'Fragen' | 'Frage';
 		children?: Snippet;
 	}

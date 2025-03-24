@@ -85,7 +85,7 @@ export const MICHELLE: Persona = {
 	disabilityIcon: 'spoon',
 	week: michellesWeek,
 	visualDescription:
-		'Hey, ich bin Chelle.  Ich habe schwarze, lange Haare, die zu Dreads geflochten sind. Heute trage ich eine Mom-Jeans und ein orangenes Kurzarm-Shirt, das ich selbst genäht habe. Dazu natürlich die passenden Chucks. Ich trage leichtes Make-Up, das sehr natürlich aussieht. Ich bin eine ziemliche Bohnenstange, das liegt am Morbus Crohn. Und ich bin eine Person of Color.',
+		'Hey, ich bin Michelle.  Ich habe schwarze, lange Haare, die zu Dreads geflochten sind. Heute trage ich eine Mom-Jeans und ein orangenes Kurzarm-Shirt, das ich selbst genäht habe. Dazu natürlich die passenden Chucks. Ich trage leichtes Make-Up, das sehr natürlich aussieht. Ich bin eine ziemliche Bohnenstange, das liegt am Morbus Crohn. Und ich bin eine Person of Color.',
 	metaDescription:
 		'Michelle zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit chronischen Erkrankungen gestalten kann.',
 	metaKeywords:

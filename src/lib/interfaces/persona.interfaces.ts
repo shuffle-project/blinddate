@@ -11,9 +11,19 @@ export type PersonaID =
 	| 'faiza'
 	| 'oliver';
 
+export type PersonaName =
+	| 'Maxi'
+	| 'Michelle'
+	| 'Aleksandr'
+	| 'Hannah'
+	| 'Kilian'
+	| 'Gabriel'
+	| 'Faiza'
+	| 'Oliver';
+
 export interface Persona {
 	id: PersonaID;
-	name: 'Maxi' | 'Michelle' | 'Aleksandr' | 'Hannah' | 'Kilian' | 'Gabriel' | 'Faiza' | 'Oliver';
+	name: PersonaName;
 	subheading: string;
 	tags: { content: string; lang: string }[];
 	age: number;

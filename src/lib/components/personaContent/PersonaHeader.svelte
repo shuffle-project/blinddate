@@ -1,19 +1,15 @@
 <script lang="ts">
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import PersonaCard from './PersonaCard.svelte';
-	interface Props {
-		persona: Persona;
-	}
 
-	let { persona }: Props = $props();
+	let { persona }: { persona: Persona } = $props();
 </script>
 
 <div class="background-black">
 	<div class="wrapper">
 		<div class="header-row" id="content">
-			<!-- <div class="heading-section"> -->
 			<h1 class="heading" id="persona-name">{persona.name}</h1>
-			<!-- </div> -->
+
 			<div class="subheading-details">
 				<p class="subheading">{persona.subheading}</p>
 				<section aria-label="Schlagwörter" class="tags">

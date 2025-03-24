@@ -15,12 +15,12 @@ export const OLIVER: Persona = {
 	pronouns: 'Er / ihm',
 	disability: 'LRS & ADHS',
 	disabilityIcon: 'lrs_adhs',
-	// TODO
-	visualDescription: '',
+	visualDescription:
+		'Hey, ich heiße Oliver. Meine dunkelblonden, langen Haare trage ich in einem lockeren Männerdutt, damit sie mich nicht stören. Um meinen Hals habe ich eine Kette, und an meinen Handgelenken mehrere Armbänder. Heute habe ich ein schlichtes braunes T-Shirt an, und darüber meinen Laborkittel. Der ist Pflicht, wenn ich im Uni-Chemielabor bin – und gehört inzwischen auch zu meinem Look.',
 	metaDescription:
 		'Oliver zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit Teilleistungsstörung gestalten kann.',
 	metaKeywords:
-		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, ADHS, Legasthenie, Lese-Rechtschreib-Schwäche, Hyperaktivität, Studium mit ADHS, Neurodiversität',
+		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, ADHS, Legasthenie, Lese-Rechtschreib-Schwäche, Hyperaktivität, Studium mit ADHS, Neurodiversität, Teilleistungsstörung',
 	facts: [
 		{
 			source: {

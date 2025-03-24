@@ -270,12 +270,6 @@
 			.card.bg.right {
 				transform: rotateZ(0deg) translateY(0px);
 			}
-
-			.other-personas-container {
-				.other-personas {
-					margin-top: 1rem;
-				}
-			}
 		}
 	}
 </style>
