@@ -84,8 +84,6 @@ export const HANNAH: Persona = {
 	pronouns: 'Sie / ihr',
 	disability: 'Hochgradige Schwerhörigkeit',
 	disabilityIcon: 'ear',
-	previousPersona: 'Aleksandr',
-	nextPersona: 'Kilian',
 	week: hannahsWeek,
 	visualDescription:
 		'Ich bin Hannah. Ich habe mittelblonde Haare, bin sportlich gebaut und knapp 1,80m groß. Meine Haare hab ich meistens zum Pferdeschwanz gebunden, so wie heute auch. Ich trage ein knielanges oranges Kleid mit kurzem Arm. Und an den Füßen noch weiße Sneaker.',

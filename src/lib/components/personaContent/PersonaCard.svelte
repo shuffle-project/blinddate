@@ -3,7 +3,6 @@
 </script>
 
 <script lang="ts">
-	import { base } from '$app/paths';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
@@ -12,6 +11,7 @@
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import BurgerToggleButton from './BurgerToggleButton.svelte';
+	import PreviousNextPersona from './PreviousNextPersona.svelte';
 
 	let { persona }: { persona: Persona } = $props();
 
@@ -101,15 +101,7 @@
 	</div>
 
 	{#if ENVIRONMENT.personaCardOtherPersonas}
-		<div class="other-personas-container">
-			<div class="other-personas">
-				<a href="{base}/personas/{persona.previousPersona.toLocaleLowerCase()}"
-					>{persona.previousPersona}</a
-				>
-				<a href="{base}/personas/{persona.nextPersona.toLocaleLowerCase()}">{persona.nextPersona}</a
-				>
-			</div>
-		</div>
+		<PreviousNextPersona />
 	{/if}
 </div>
 
@@ -122,44 +114,6 @@
 
 	.container {
 		position: relative;
-		.other-personas-container {
-			display: flex;
-			justify-content: center;
-
-			.other-personas {
-				max-width: 15.625rem;
-
-				box-sizing: border-box;
-				width: 100%;
-				margin-top: 2rem;
-
-				transition: margin-top 0.3s ease-in-out;
-
-				display: flex;
-				justify-content: space-between;
-
-				a {
-					text-decoration: none;
-					flex-grow: 1;
-
-					color: var(--color-black);
-					background-color: var(--color-white);
-					border: 1px solid var(--color-lavender);
-					border-radius: 2rem;
-
-					font-size: 1rem;
-					box-shadow: 0px 2px 4px rgba(var(--color-black-rgb), 0.15);
-					text-align: center;
-					padding: 0.25rem 0;
-					max-width: 6.375rem;
-
-					&:hover,
-					&:focus {
-						outline: 2px solid var(--color-blue);
-					}
-				}
-			}
-		}
 
 		.card {
 			overflow: hidden;

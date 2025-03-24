@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { onMount } from 'svelte';
@@ -14,7 +14,7 @@
 	let text = $state('');
 
 	onMount(() => {
-		let url = $page.url.pathname;
+		let url = page.url.pathname;
 		personas.forEach((persona: Persona) => {
 			if (url.includes(persona.id)) currentSite = persona.name;
 		});

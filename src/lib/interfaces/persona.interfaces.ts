@@ -22,8 +22,6 @@ export interface Persona {
 	pronouns: 'They / them' | 'Sie / ihr' | 'Er / ihm';
 	disability: string;
 	disabilityIcon: string;
-	nextPersona: string;
-	previousPersona: string;
 	week?: Week;
 	visualDescription: string;
 	metaDescription: string;

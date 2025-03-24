@@ -15,8 +15,6 @@ export const OLIVER: Persona = {
 	pronouns: 'Er / ihm',
 	disability: 'LRS & ADHS',
 	disabilityIcon: 'lrs_adhs',
-	previousPersona: 'Faiza',
-	nextPersona: 'Maxi',
 	// TODO
 	visualDescription: '',
 	metaDescription:

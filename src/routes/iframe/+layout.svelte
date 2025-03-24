@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { onMount, type Snippet } from 'svelte';
 	import Icon from '../../lib/components/Icon.svelte';
 
@@ -9,8 +9,8 @@
 	let persona: 'gabriel' | 'hannah' | null = $state(null);
 	let personaName: string = $state('');
 
-	if ($page.url.pathname.includes('gabriel')) persona = 'gabriel';
-	if ($page.url.pathname.includes('hannah')) persona = 'hannah';
+	if (page.url.pathname.includes('gabriel')) persona = 'gabriel';
+	if (page.url.pathname.includes('hannah')) persona = 'hannah';
 
 	onMount(() => {
 		if (persona !== null) {
