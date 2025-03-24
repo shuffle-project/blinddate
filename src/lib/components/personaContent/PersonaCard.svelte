@@ -1,7 +1,3 @@
-<script module>
-	import PersonaPortrait from './PersonaPortrait.svelte';
-</script>
-
 <script lang="ts">
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import { onMount } from 'svelte';
@@ -11,6 +7,7 @@
 	import Icon from '../Icon.svelte';
 	import Modal from '../Modal.svelte';
 	import BurgerToggleButton from './BurgerToggleButton.svelte';
+	import PersonaPortrait from './PersonaPortrait.svelte';
 	import PreviousNextPersona from './PreviousNextPersona.svelte';
 
 	let { persona }: { persona: Persona } = $props();

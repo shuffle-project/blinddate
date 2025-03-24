@@ -3,11 +3,7 @@
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Persona } from '../../interfaces/persona.interfaces';
 
-	interface Props {
-		persona: Persona | FriendPersona;
-	}
-
-	let { persona }: Props = $props();
+	let { persona }: { persona: Persona | FriendPersona } = $props();
 </script>
 
 <div class="wrapper">

@@ -4,14 +4,11 @@
 	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
 
-	interface Props {
-		personas: Persona[];
-	}
-
-	let { personas }: Props = $props();
+	let { personas }: { personas: Persona[] } = $props();
 
 	let toggleAllNames = $state(false);
-	let durations = ['0.3s', '0.7s', '1.2s', '2s'];
+	const durations = ['0.3s', '0.7s', '1.2s', '2s'];
+
 	function randomIntFromInterval() {
 		return Math.floor(Math.random() * (3 - 0 + 1) + 0);
 	}

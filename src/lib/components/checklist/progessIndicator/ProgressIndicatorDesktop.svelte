@@ -47,7 +47,6 @@
 				></li>
 			{/if}
 		{/each}
-		<!-- <Ground /> -->
 		<li class="ground">
 			<div class="ground-box"></div>
 		</li>

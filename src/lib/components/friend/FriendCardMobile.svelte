@@ -4,11 +4,7 @@
 	import Modal from '../Modal.svelte';
 	import FriendCard from './FriendCard.svelte';
 
-	interface Props {
-		friendPersona: FriendPersona;
-	}
-
-	let { friendPersona }: Props = $props();
+	let { friendPersona }: { friendPersona: FriendPersona } = $props();
 
 	let modal: Modal;
 

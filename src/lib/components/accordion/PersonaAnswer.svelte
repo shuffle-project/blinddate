@@ -1,13 +1,9 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
+	import type { Snippet } from 'svelte';
 
-	interface Props {
-		persona: Persona;
-		children?: import('svelte').Snippet;
-	}
-
-	let { persona, children }: Props = $props();
+	let { persona, children }: { persona: Persona; children: Snippet } = $props();
 
 	let personaImg = $state(`${base}/personas/${persona.id}/${persona.id}`);
 

@@ -3,11 +3,8 @@
 	import { onMount } from 'svelte';
 	import MobileCard from './MobileCard.svelte';
 
-	interface Props {
-		persona: Persona;
-	}
+	let { persona }: { persona: Persona } = $props();
 
-	let { persona }: Props = $props();
 	let mobileCardScrolling = $state(true);
 	let mobileCardElement: HTMLElement;
 	let mobileCardIsSticky = $state(false);

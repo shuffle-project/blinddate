@@ -5,11 +5,8 @@
 	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css/core';
 	import Icon from '../Icon.svelte';
-	interface Props {
-		personas: Persona[];
-	}
 
-	let { personas }: Props = $props();
+	let { personas }: { personas: Persona[] } = $props();
 
 	let carousel: Splide;
 
