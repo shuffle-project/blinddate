@@ -64,7 +64,8 @@
 				<img
 					alt="Screenshot aus Gabriels Simulationsspiel"
 					aria-describedby="game-explained"
-					src={base + '/personas/gabriel/simulation-game.png'}
+					src={base + '/personas/gabriel/gabriel-simgame-teaser.jpg'}
+					loading="lazy"
 				/>
 
 				<p>
@@ -96,7 +97,8 @@
 				<img
 					alt="Screenshot aus Hannahs Simulationsspiel"
 					aria-describedby="game-explained"
-					src={base + '/personas/hannah/simulation-game.png'}
+					src={base + '/personas/hannah/hannah-simgame-teaser.jpg'}
+					loading="lazy"
 				/>
 
 				<p>
