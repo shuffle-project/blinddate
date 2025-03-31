@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import type { PersonaID } from '$lib/interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
 	interface Props {
 		image: string;
 		pathtext: string;
-		personaID: string;
+		personaID: PersonaID;
 	}
 
 	let { image, pathtext, personaID }: Props = $props();

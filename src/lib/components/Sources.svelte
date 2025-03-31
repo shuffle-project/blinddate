@@ -2,14 +2,13 @@
 	import type { Source } from '$lib/interfaces/sources.interfaces';
 
 	let { sources }: { sources: Source[] } = $props();
+	let label = sources.length > 1 ? 'Quellen:' : 'Quelle:';
 </script>
 
 <div class="source-container">
-	{#if sources.length > 1}
-		<p class="text-size title">Quellen:</p>
-	{:else}
-		<p class="text-size title">Quelle:</p>
-	{/if}
+	<p class="text-size title">
+		{label}
+	</p>
 
 	<ul aria-label={sources.length > 1 ? 'Quellen:' : 'Quelle:'} class="sources">
 		{#each sources as source}

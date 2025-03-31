@@ -210,7 +210,7 @@
 	</FriendBubble>
 
 	<FlipCard
-		{persona}
+		personaName={persona.name}
 		front="Nein, mein Kind war kein „Unfall“!"
 		back="Bewusste Entscheidung! Geht aber auch niemanden etwas an."
 	/>

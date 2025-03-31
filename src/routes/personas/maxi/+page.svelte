@@ -149,7 +149,7 @@
 	</FriendSpeechbubble>
 
 	<FlipCard
-		{persona}
+		personaName={persona.name}
 		front="Ich bin nicht faul und unzu&shy;verlässig!"
 		back="Ich habe depressive Episoden. Alles - selbst Aufstehen - kostet mich dann viel Kraft, die an anderer Stelle somit fehlt."
 	/>

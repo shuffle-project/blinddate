@@ -156,7 +156,7 @@
 	</SpeechBubble>
 
 	<FlipCard
-		{persona}
+		personaName={persona.name}
 		front="Ich bin nicht unhöflich!"
 		back="Im Gegenteil: Wenn ich keinen Augenkontakt halte, kann ich besser zuhören."
 	/>

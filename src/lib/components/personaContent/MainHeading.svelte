@@ -1,21 +1,23 @@
 <script lang="ts">
+	import type { PersonaName } from '$lib/interfaces/persona.interfaces';
+
 	interface Props {
-		personaName?: string;
-		heading?: 
-		| 'Technologien und Strategien'
-		| 'Lehrveranstaltungen'
-		| 'Lernmaterial'
-		| 'Eine Woche im Leben von'
-		| 'Interaktion und Kommunikation'
-		| 'Prüfungen'
-		| 'Selbstcheck Barrierefreiheit'
-		| 'Weitere Informationen'
-		| 'Allgemeine Informationen'
-		| 'LRS und ADHS'
-		| '';
+		personaName?: PersonaName;
+		heading?:
+			| 'Technologien und Strategien'
+			| 'Lehrveranstaltungen'
+			| 'Lernmaterial'
+			| 'Eine Woche im Leben von'
+			| 'Interaktion und Kommunikation'
+			| 'Prüfungen'
+			| 'Selbstcheck Barrierefreiheit'
+			| 'Weitere Informationen'
+			| 'Allgemeine Informationen'
+			| 'LRS und ADHS'
+			| '';
 	}
 
-	let { personaName = '', heading = '' }: Props = $props();
+	let { personaName, heading = '' }: Props = $props();
 
 	let id:
 		| 'tools'

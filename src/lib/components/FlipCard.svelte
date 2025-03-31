@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import type { Persona } from '$lib/interfaces/persona.interfaces';
+	import type { PersonaName } from '$lib/interfaces/persona.interfaces';
 	import { detect } from 'detect-browser';
 	import { onMount } from 'svelte';
 
@@ -10,10 +10,10 @@
 	interface Props {
 		front: string;
 		back: string;
-		persona: Persona;
+		personaName: PersonaName;
 	}
 
-	let { front, back, persona }: Props = $props();
+	let { front, back, personaName }: Props = $props();
 
 	onMount(() => {
 		isSafari = detect()!.name == 'safari';
@@ -36,7 +36,7 @@
 	</div>
 	<div class="speech-bubble">
 		<p>
-			<span class="text">Ich, {persona.name}, wollte schon immer mal sagen:</span>
+			<span class="text">Ich, {personaName}, wollte schon immer mal sagen:</span>
 		</p>
 	</div>
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Source } from '$lib/interfaces/sources.interfaces';
+	import type { Snippet } from 'svelte';
 	import Modal from './Modal.svelte';
 	import Sources from './Sources.svelte';
 
@@ -8,7 +9,7 @@
 		langTerm?: string;
 		inSpeechBubble?: boolean;
 		sources?: Source[];
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { term, langTerm = 'de', inSpeechBubble = false, sources = [], children }: Props = $props();

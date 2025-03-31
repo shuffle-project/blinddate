@@ -256,7 +256,7 @@
 	<FlipCard
 		front="Ich habe nicht zu wenig geübt!"
 		back="LRS hat neurologische Ursachen und hat nichts mit mangelndem Fleiß zu tun!"
-		{persona}
+		personaName={persona.name}
 	/>
 
 	<MainHeading heading="Selbstcheck Barrierefreiheit" />

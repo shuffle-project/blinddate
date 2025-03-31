@@ -53,7 +53,7 @@
 			<ul>
 				{#each personas as persona}
 					<li>
-						<a href="{base}/personas/{persona.name.toLowerCase()}" class="persona-chip">
+						<a href="{base}/personas/{persona.id}" class="persona-chip">
 							<Icon size="smedium" img={persona.disabilityIcon} />
 							{persona.name}
 						</a>
