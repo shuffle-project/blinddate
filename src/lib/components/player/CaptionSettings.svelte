@@ -14,6 +14,8 @@
 		captionsFontSize: string;
 	} = $props();
 
+	const randomId = $props.id();
+
 	let captionMenu: HTMLDialogElement;
 	let displayCaptionMenu = $state(false);
 	let initialOpenMenuClick = $state(false);
@@ -151,10 +153,14 @@
 				<table class="style-selection" role="presentation">
 					<tbody>
 						<tr>
-							<th><label for="selectBackgroundColor">Hintergrundfarbe der Untertitel</label></th>
+							<th
+								><label for="selectBackgroundColor-{randomId}"
+									>Hintergrundfarbe der Untertitel</label
+								></th
+							>
 							<td>
 								<select
-									id="selectBackgroundColor"
+									id="selectBackgroundColor-{randomId}"
 									bind:value={captionsBackgroundColor}
 									onclick={(e) => e.stopPropagation()}
 									title="Untertitel Hintergrundfarbe"
@@ -169,10 +175,10 @@
 							</td>
 						</tr>
 						<tr>
-							<th><label for="selectFontColor">Schriftfarbe der Untertitel</label></th>
+							<th><label for="selectFontColor-{randomId}">Schriftfarbe der Untertitel</label></th>
 							<td>
 								<select
-									id="selectFontColor"
+									id="selectFontColor-{randomId}"
 									class="custom-select"
 									bind:value={captionsFontColor}
 									onclick={(e) => e.stopPropagation()}
@@ -187,10 +193,10 @@
 							</td>
 						</tr>
 						<tr>
-							<th><label for="selectFontSize">Schriftgröße der Untertitel</label></th>
+							<th><label for="selectFontSize-{randomId}">Schriftgröße der Untertitel</label></th>
 							<td>
 								<select
-									id="selectFontSize"
+									id="selectFontSize-{randomId}"
 									class="custom-select"
 									bind:value={captionsFontSize}
 									onclick={(e) => e.stopPropagation()}

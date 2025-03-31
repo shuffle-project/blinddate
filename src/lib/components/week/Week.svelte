@@ -75,7 +75,8 @@
 					</tr>
 					<tr role="tablist">
 						{#each days as day, i}
-							<td class="activity-cell">
+							<!-- svelte-ignore a11y_no_interactive_element_to_noninteractive_role -->
+							<td class="activity-cell" role="presentation">
 								<button
 									tabindex={i === selectedDay ? 0 : -1}
 									class="activity"
@@ -96,7 +97,7 @@
 									<span class="mobile">
 										{day.date}
 										<span class="sr-only">
-											{`${month}. ${day.dayFull}.  
+											{`${month}. ${day.dayFull}. ${day.activity}. 
 											${day.smiley === 'happy' ? 'Guter Tag' : 'Schlechter Tag'}`}
 										</span>
 									</span>
