@@ -362,12 +362,14 @@
 	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
+			Diese dient als Einstieg und ersetzt keine umfassende Betrachtung des Themas.
 		</Text>
 	</TextSection>
 
 	<Checklist
 		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
+			'Ich signalisiere Offenheit, indem ich meine Bereitschaft zur individuellen Unterstützung betone, aber vermeide es, Studierende zur Offenlegung persönlicher Informationen zu drängen',
 			'Ich verweise auf Unterstützungsmöglichkeiten oder Studierendengruppen zum Austausch, z.B. auf meinen Veranstaltungsfolien',
 			'Ich teile Informationen über Beratungsangebote und Anlaufstellen, an die sich Studierende mit psychischen Problemen wenden können',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',

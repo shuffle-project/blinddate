@@ -400,12 +400,14 @@
 	<TextSection>
 		<Text noTopMargin>
 			Hier finden Sie eine Checkliste, um zu überprüfen, wie barrierefrei Ihre Lehre bereits ist.
+			Diese dient als Einstieg und ersetzt keine umfassende Betrachtung des Themas.
 		</Text>
 	</TextSection>
 
 	<Checklist
 		stringChecks={[
 			'Ich informiere mich über digitale Barrierefreiheit',
+			'Ich signalisiere Offenheit, indem ich meine Bereitschaft zur individuellen Unterstützung betone, aber vermeide es, Studierende zur Offenlegung persönlicher Informationen zu drängen',
 			'Ich stelle meine Lernmaterialien und Foliensätze vorab und digital zur Verfügung',
 			'Ich verwende das Mehrsinne-Prinzip, sodass alle Materialien über unterschiedliche Sinne erfahrbar sind. Gesprochenes kann nicht nur gehört, sondern auch bspw. durch Untertitel oder Transkripte gelesen werden',
 			'Ich spreche deutlich und zeige mein Mundbild gut sichtbar',
