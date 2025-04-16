@@ -29,11 +29,11 @@
 	</SpeechBubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-02.mp3'}>
-		Man kann sich LRS so vorstellen: Wenn ich schreibe, ist es, als ob ich jedes Wort das erste Mal
-		in meinem Leben sehen und schreiben würde. Erinnere dich einfach mal an die Zeit, als du
-		Schreiben gelernt hast und wie lange es gedauert hat, um ein Wort aus deinem Kopf auf Papier zu
-		bringen. Das dauert ewig! Daher schreibe ich nur, wenn ich muss und diktiere mir einfach lieber
-		Gedanken und Notizen.
+		Man kann sich LRS so vorstellen: Wenn ich schreibe, ist es so, als ob ich jedes Wort das
+		allererste Mal in meinem Leben sehen und schreiben würde. Erinnere dich einfach mal an die Zeit,
+		als du Schreiben gelernt hast und wie lange es gedauert hat, um ein Wort aus deinem Kopf auf
+		Papier zu bringen. Das dauert ewig! Daher schreibe ich nur, wenn ich muss und diktiere mir
+		einfach lieber Gedanken und Notizen.
 	</SpeechBubble>
 
 	<MainHeading heading="Technologien und Strategien" />
@@ -117,23 +117,23 @@
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-03.mp3'}>
 		Ich stoße schon bei der Anmeldung auf der Homepage der Uni auf die erste Hürde. Das Einloggen
 		mit Codes oder Kennwörtern ist für mich richtig schwer, weil die Buchstaben immer wieder zu
-		einem Brei verschwimmen. Ehrlich gesagt, hab ich kein Plan, wie oft ich schon diverse
+		einem Brei verschwimmen. Ehrlich gesagt, hab ich gar kein Plan mehr, wie oft ich schon diverse
 		Support-Center anrufen musste, weil ich meine Passwörter mehrfach falsch eingegeben habe.
 	</SpeechBubble>
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-04.mp3'}>
 		Ich nutze eine App, die mich beim Zeitmanagement etwas unterstützt. Sie blockiert beispielsweise
 		für eine gewisse Zeit andere Apps auf meinem Handy, von denen ich mich leicht ablenken lasse.
 		Außerdem kann ich mir damit einen Zeitplan fürs Lernen machen, damit ich nicht in Zeitnot komme.
-		Bei mir dauert halt alles länger und ... das nervt mich selber, aber ich habe mir in den letzten
-		vier Jahren einige Strategien angeeignet, die mir schon helfen. Viele Strategien habe ich durch
-		andere Studenten mit ADHS und LRS gelernt. Wir haben hier eine kleine Gruppe an der Uni
-		Würzburg, in der wir uns immer wieder austauschen können.
+		Bei mir dauert halt alles länger und ... das kotzt mich selbst am meisten an, aber ich habe mir
+		in den letzten vier Jahren einige Strategien angeeignet, die mir schon helfen. Viele Strategien
+		habe ich durch andere Studenten mit ADHS und LRS gelernt. Wir haben hier an der Uni Würzburg
+		eine kleine Gruppe, in der wir uns immer wieder austauschen können.
 	</SpeechBubble>
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-05.mp3'}>
 		Ich nehme seit ein paar Jahren Medikamente, die mir helfen, mein ADHS-Gehirn etwas zu ordnen.
 		Das tun die auch echt gut. Aber sie haben halt trotzdem auch Nebenwirkungen und machen mich oft
-		recht müde. Seit ein paar Semestern gibt es einen Ruheraum an der Uni mit bequemen Stühlen und
-		wenig Ablenkung. Da chille ich sehr gerne zwischen den Vorlesungen.
+		recht müde. Zum Glück gibt es seit ein paar Semestern einen Ruheraum an der Uni mit bequemen
+		Stühlen und wenig Ablenkung. Da chille ich sehr gerne zwischen den Vorlesungen.
 	</SpeechBubble>
 
 	<FactCarousel facts={persona.facts!} />
@@ -161,11 +161,11 @@
 	</TextSection>
 
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-06.mp3'}>
-		Mittlerweile komme ich in den Vorlesungen ganz gut mit. Das war leider nicht immer so und hat
-		mich schon viele Nerven gekostet. Es fällt mir häufig sehr schwer, in Vorlesungen nicht
-		gedanklich abzuschweifen oder auch Anweisungen im Labor bis zum Ende zuzuhören. Meine Dozenten
-		und Kommilitonen bekommen gar nicht mit, wie viel Zeit ich vor und nach der Vorlesung
-		investieren muss.
+		Mittlerweile komme ich ganz gut in den Vorlesungen mit. Das war leider nicht immer so und hat
+		mich schon extrem viele Nerven gekostet. Es fällt mir häufig sehr schwer, in Vorlesungen nicht
+		gedanklich abzuschweifen oder auch Anweisungen im Labor bis zum Ende zuzuhören. Ich glaube,
+		meine Dozenten und Kommilitonen bekommen gar nicht mit, wie viel Zeit ich vor und nach der
+		Vorlesung investieren muss.
 	</SpeechBubble>
 
 	<Puzzle
@@ -196,13 +196,13 @@
 	</TextSection>
 
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-07.mp3'}>
-		Ohje, ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von
+		Ohje, ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von so
 		offensichtlichen Dingen wie Handyspielen! Es reicht schon, wenn ich meine Chemienotizen zum
 		Lernen aufschlage und sehe, dass ich dort etwas grün unterstrichen habe. Dann frage ich mich: Wo
 		ist eigentlich der grüne Stift? Also schaue ich in der Schublade nach, die klemmt, und ich
-		erinnere mich, dass ich sie schon lange reparieren wollte. Dazu brauche ich Werkzeug aus der
-		Garage. Kaum dort angekommen, finde ich im Schrank eine Kiste mit Schrauben, die ich dann
-		erstmal sortiere und ... dann merke ich irgendwann: Ich wollte doch eigentlich lernen! Das
+		erinnere mich, dass ich sie schon so lange reparieren wollte. Dazu brauche ich Werkzeug aus der
+		Garage natürlich. Kaum dort angekommen, finde ich im Schrank eine Kiste mit Schrauben, die ich
+		dann erstmal sortiere und ... dann merke ich irgendwann: Ich wollte doch eigentlich lernen! Das
 		passiert mir ziemlich häufig. Deshalb brauche ich klare Vorgaben, die ich mir selbst setze, um
 		fokussiert zu bleiben.
 	</SpeechBubble>
