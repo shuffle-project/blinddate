@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HOSTNAME } from '$lib/constants/hostname';
+	import { HOSTNAME } from '$lib/constants/environment';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { MetaTags } from 'svelte-meta-tags';
 

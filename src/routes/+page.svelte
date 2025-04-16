@@ -4,8 +4,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import InfoGrid from '$lib/components/startpage/InfoGrid.svelte';
-	import { ENVIRONMENT } from '$lib/constants/environment';
-	import { HOSTNAME } from '$lib/constants/hostname';
+	import { ENVIRONMENT, HOSTNAME } from '$lib/constants/environment';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Footer from '../lib/components/Footer.svelte';
 </script>

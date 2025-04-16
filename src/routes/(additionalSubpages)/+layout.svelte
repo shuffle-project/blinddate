@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import Footer from '$lib/components/Footer.svelte';
-	import { ENVIRONMENT } from '$lib/constants/environment';
-	import { HOSTNAME } from '$lib/constants/hostname';
+	import { ENVIRONMENT, HOSTNAME } from '$lib/constants/environment';
 	import type { Snippet } from 'svelte';
 
 	import { MetaTags } from 'svelte-meta-tags';

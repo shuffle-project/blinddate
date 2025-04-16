@@ -1,5 +1,6 @@
-// for user tests
-// to decide which pages/ personas are viewable
+// only used for the meta tags, change to the correct URL before deploying
+export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
+// export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
 
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 import { ALEKSANDR } from './aleksandr';
