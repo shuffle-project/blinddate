@@ -60,11 +60,11 @@
 			</InfoBox>
 
 			<span
-				>kann es hilfreich sein, sich Texte vorlesen zu lassen. Denn bei ihnen ist das
-				sinnentnehmende Lesen erschwert. Das Umwandeln von Buchstaben in sinnhaften Inhalt dauert
-				unter Umständen länger und kann mit viel Anstrengung verbunden sein. Um beispielsweise Texte
-				zu lesen, die als Foto gespeichert wurden, kann eine Bild-zu-Text-Software – sogenannte
-				OCR-Software – genutzt werden, um sich dann den Text vorlesen zu lassen.</span
+				>kann es hilfreich sein, sich Texte vorlesen zu lassen, denn das sinnentnehmende Lesen kann
+				erschwert sein. Das Umwandeln von Buchstaben in sinnhaften Inhalt dauert unter Umständen
+				länger und kann mit viel Anstrengung verbunden sein. Um beispielsweise Texte zu lesen, die
+				als Foto gespeichert wurden, kann eine Bild-zu-Text-Software – sogenannte OCR-Software –
+				genutzt werden, um sich dann den Text vorlesen zu lassen.</span
 			>
 		</ToolCard>
 
@@ -244,8 +244,8 @@
 			oder einen separaten Raum, um Ablenkungen zu reduzieren, beinhalten. Außerdem können mündliche
 			Prüfungen oder schriftliche Prüfungen mit <span lang="en">Multiple-Choice</span>-Antworten
 			helfen, den Stress, der durch die Anforderung des schnellen, grammatikalisch korrekten
-			Schreibens entsteht, etwas reduzieren. Sind schriftliche Antworten benötigt, können diese am
-			Laptop mit eingeschalteter Rechtschreibprüfung verfasst werden. In manchen
+			Schreibens entsteht, etwas zu reduzieren. Sind schriftliche Antworten benötigt, können diese
+			am Laptop mit eingeschalteter Rechtschreibprüfung verfasst werden. In manchen
 			Nachteilsausgleichen kann auch festgehalten werden, dass eine korrekte Rechtschreibung nicht
 			in die Bewertung der Prüfung einbezogen wird.
 		</Text>
