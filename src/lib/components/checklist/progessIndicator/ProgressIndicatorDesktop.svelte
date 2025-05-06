@@ -62,7 +62,7 @@
 
 	.wrapper {
 		height: 100%;
-		min-width: 17rem;
+		min-width: 18rem;
 	}
 
 	.box-container {

@@ -72,10 +72,10 @@
 			nicht zu vernachlässigen.
 		</ToolCard>
 		<ToolCard title="Reizreduktion" image="{base}/tools/headphone.svg">
-			Menschen mit ASS reagieren häufig über- oder unterempfindlich auf verschiedene Umweltreize. So
-			können Lichter, Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und
-			Überstimulation führen. Reizarm gestaltete Räume oder das Tragen von Geräusch-unterdrückenden
-			Kopfhörern können Strategien sein, um einer Reizüberflutung vorzubeugen.
+			Menschen mit ASS haben eine andere Reiz- und Informationsverarbeitung. So können Lichter,
+			Gerüche, Geräusche oder auch Berührungen zu einer Reizüberflutung und Überstimulation führen.
+			Reizarm gestaltete Räume oder das Tragen von Geräusch-unterdrückenden Kopfhörern können
+			Strategien sein, um einer Reizüberflutung vorzubeugen.
 		</ToolCard>
 		<ToolCard title="Selbststimulation" image="{base}/tools/fidget-spinner.svg">
 			<span

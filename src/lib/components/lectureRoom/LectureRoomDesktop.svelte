@@ -283,10 +283,10 @@
 
 				&.oliver {
 					bottom: calc(2.5% - 0.125em);
-					right: 19%;
+					right: 17%;
 
 					img {
-						width: min(17vw, 14rem);
+						width: min(19.8vw, 17rem);
 					}
 				}
 
