@@ -80,8 +80,8 @@
 	<div class="upper-content">
 		<h1 class="title">Eine Hochschule für alle</h1>
 
-		{#if ENVIRONMENT.allowBigPictureAd}
-			<a class="big-picture-ad" href="{base}/große-ganze"> Neu! Das große Ganze </a>
+		{#if ENVIRONMENT.showNewContentAd}
+			<a class="new-content-ad" href="{base}/personas/oliver"> Neu! Oliver ist da! </a>
 		{/if}
 		<p class="subtitle">
 			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren
@@ -101,7 +101,7 @@
 <Footer />
 
 <style lang="scss">
-	.big-picture-ad {
+	.new-content-ad {
 		font-size: 1rem;
 		background-color: var(--color-green);
 		color: var(--color-black);
@@ -221,7 +221,7 @@
 			text-align: center;
 		}
 
-		.big-picture-ad {
+		.new-content-ad {
 			margin-inline: auto;
 		}
 
