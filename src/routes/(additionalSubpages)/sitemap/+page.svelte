@@ -12,31 +12,40 @@
 	<h2>Alle Persona-Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
-			<a href={base + '/personas/aleksandr'} class="focus-indicator">Aleksandr</a>
+			<a href={base + '/personas/aleksandr'} class="focus-indicator"
+				>Aleksandr ( Autismus-Spektrum-Störung)</a
+			>
 		</li>
 		<li>
-			<a href={base + '/personas/faiza'} class="focus-indicator">Faiza</a>
+			<a href={base + '/personas/faiza'} class="focus-indicator">Faiza (Pflegeverantwortung)</a>
 		</li>
 		<li>
-			<a href={base + '/personas/gabriel'} class="focus-indicator">Gabriel</a>
+			<a href={base + '/personas/gabriel'} class="focus-indicator">Gabriel (Sehbeeinträchtigung)</a>
 		</li>
 		<li>
 			<a href={base + '/iframe/gabriel'} class="focus-indicator">Gabriel Simulationsspiel</a>
 		</li>
 		<li>
-			<a href={base + '/personas/hannah'} class="focus-indicator">Hannah</a>
+			<a href={base + '/personas/hannah'} class="focus-indicator">Hannah (Hörbehinderung)</a>
 		</li>
 		<li>
 			<a href={base + '/iframe/hannah'} class="focus-indicator">Hannah Simulationsspiel</a>
 		</li>
 		<li>
-			<a href={base + '/personas/kilian'} class="focus-indicator">Kilian</a>
+			<a href={base + '/personas/kilian'} class="focus-indicator"
+				>Kilian (Motorische Beeinträchtigung)</a
+			>
 		</li>
 		<li>
-			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi</a>
+			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi (Psychischer Erkrankung)</a>
 		</li>
 		<li>
-			<a href={base + '/personas/michelle'} class="focus-indicator">Michelle</a>
+			<a href={base + '/personas/michelle'} class="focus-indicator"
+				>Michelle (Chronischer Erkrankung)</a
+			>
+		</li>
+		<li>
+			<a href={base + '/personas/oliver'} class="focus-indicator">Oliver (Teilleistungsstörung)</a>
 		</li>
 	</ul>
 
