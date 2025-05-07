@@ -37,11 +37,11 @@
 			>
 		</li>
 		<li>
-			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi (Psychischer Erkrankung)</a>
+			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi (Psychische Erkrankung)</a>
 		</li>
 		<li>
 			<a href={base + '/personas/michelle'} class="focus-indicator"
-				>Michelle (Chronischer Erkrankung)</a
+				>Michelle (Chronische Erkrankung)</a
 			>
 		</li>
 		<li>
