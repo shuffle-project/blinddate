@@ -307,11 +307,11 @@
 			}
 
 			li.oliver {
-				bottom: calc(1.6% - 0.265em);
-				right: 34%;
+				bottom: calc(0.9% - 0.265em);
+				right: 33%;
 
 				img {
-					width: min(13vw, 11.25rem);
+					width: min(15vw, 13rem);
 				}
 			}
 

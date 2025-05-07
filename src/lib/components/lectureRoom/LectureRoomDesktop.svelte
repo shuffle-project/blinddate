@@ -282,8 +282,8 @@
 				}
 
 				&.oliver {
-					bottom: calc(2.5% - 0.125em);
-					right: 17%;
+					bottom: calc(1.2% - 0.125em);
+					right: 16%;
 
 					img {
 						width: min(19.8vw, 17rem);
