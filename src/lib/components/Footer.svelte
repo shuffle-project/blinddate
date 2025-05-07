@@ -253,13 +253,12 @@
 
 	.feedback-link {
 		background-color: var(--color-white);
-		padding: 0.375rem 0.625rem;
 		font-weight: bold;
-		border-radius: 1rem;
+		border-radius: 2rem;
 		cursor: pointer;
 
-		&:hover,
-		&:focus {
+		a:hover,
+		a:focus {
 			outline: 2px solid var(--color-white);
 			outline-offset: 2px;
 		}
