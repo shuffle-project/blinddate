@@ -15,10 +15,21 @@
 	let audioElement: HTMLAudioElement;
 	let playingAudio = $state(false);
 
+	let button: HTMLButtonElement;
+
 	const speak = () => {
 		if (audioElement) {
 			audioElement.paused ? audioElement.play() : audioElement.pause();
 			playingAudio = !playingAudio;
+		}
+	};
+
+	const preloadData = () => {
+		if (audioElement) {
+			if (audioElement.preload === 'metadata') {
+				audioElement.preload = 'auto';
+				audioElement.load();
+			}
 		}
 	};
 
@@ -50,9 +61,12 @@
 			</div>
 		</div>
 		<button
+			bind:this={button}
 			class="playbutton-mobil"
 			onclick={speak}
 			aria-label={!playingAudio ? persona.name + ' Sprechblase vorlesen' : 'Vorlesen stoppen'}
+			onfocus={preloadData}
+			onmouseenter={preloadData}
 		>
 			{#if playingAudio}
 				<Icon size="smedium" img="pause" />
@@ -68,7 +82,12 @@
 		</div>
 	</div>
 
-	<button class="playbutton-desktop" onclick={speak}>
+	<button
+		class="playbutton-desktop"
+		onclick={speak}
+		onfocus={preloadData}
+		onmouseenter={preloadData}
+	>
 		{#if playingAudio}
 			<Icon size="smedium" img="pause" />
 			<span>Pausieren</span>
