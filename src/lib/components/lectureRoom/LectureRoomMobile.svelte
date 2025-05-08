@@ -98,6 +98,7 @@
 					aria-labelledby="{persona.id}-name"
 					tabindex={carouselSelectedIndex !== i ? -1 : 0}
 					class="link-card"
+					data-sveltekit-preload-data="tap"
 				>
 					<img
 						src="{base}/personas/{persona.id}/{persona.id}-{getPersonaEmotion(persona.name)}.svg"

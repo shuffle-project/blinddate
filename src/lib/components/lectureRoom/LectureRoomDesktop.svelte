@@ -43,6 +43,7 @@
 						aria-label={persona.name}
 						aria-describedby="{persona.id}-image"
 						class:show-all-names={toggleAllNames}
+						data-sveltekit-preload-data="hover"
 					>
 						<div class="persona-info-wrapper" aria-hidden="true">
 							<div class="persona-info">

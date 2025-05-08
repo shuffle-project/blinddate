@@ -30,8 +30,12 @@
 
 <div class="wrapper">
 	<div class="other-personas">
-		<a href="{base}/personas/{previousPersona?.id}">{previousPersona?.name}</a>
-		<a href="{base}/personas/{nextPersona?.id}">{nextPersona?.name}</a>
+		<a href="{base}/personas/{previousPersona?.id}" data-sveltekit-preload-data="hover"
+			>{previousPersona?.name}</a
+		>
+		<a href="{base}/personas/{nextPersona?.id}" data-sveltekit-preload-data="hover"
+			>{nextPersona?.name}</a
+		>
 	</div>
 </div>
 

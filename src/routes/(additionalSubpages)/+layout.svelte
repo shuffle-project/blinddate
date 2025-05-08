@@ -45,7 +45,7 @@
 	<header>
 		<div class="row">
 			{#if ENVIRONMENT.backLinkToStartpage}
-				<a href="{base}/" class="back-to-startpage">
+				<a href="{base}/" class="back-to-startpage" data-sveltekit-preload-data="hover">
 					<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
 					<span>Zur Startseite</span>
 				</a>

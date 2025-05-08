@@ -176,7 +176,7 @@
 		poster={base + videoData.poster}
 		id="video-{randomId}"
 		controls={useNativeControls || isiOSDevice}
-		preload="auto"
+		preload="metadata"
 		width="100%"
 		bind:this={video}
 		bind:duration
