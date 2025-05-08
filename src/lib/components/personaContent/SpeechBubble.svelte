@@ -25,6 +25,7 @@
 	onMount(() => {
 		if (audio !== '') {
 			audioElement = new Audio(audio);
+			audioElement.preload = 'metadata';
 		}
 
 		if (audioElement) {
