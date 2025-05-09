@@ -105,6 +105,7 @@
 						alt=""
 						class="persona-img"
 						aria-hidden="true"
+						loading="lazy"
 					/>
 					<div aria-hidden="true">
 						<p class="persona-name" id="{persona.id}-name">{persona.name}</p>

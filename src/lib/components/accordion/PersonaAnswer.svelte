@@ -23,7 +23,7 @@
 </script>
 
 <div class="persona-answer-wrapper" role="region" aria-label="{persona.name} Sprechblase">
-	<img class="persona-img" src={personaImg} aria-hidden="true" alt="" />
+	<img class="persona-img" src={personaImg} aria-hidden="true" alt="" loading="lazy" />
 
 	<p class="persona-answer">
 		{@render children?.()}

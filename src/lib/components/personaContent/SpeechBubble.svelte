@@ -127,6 +127,11 @@
 				position: absolute;
 				top: 1rem;
 				left: -1.125rem;
+
+				img {
+					height: 2.625rem;
+					width: 1.25rem;
+				}
 			}
 		}
 
