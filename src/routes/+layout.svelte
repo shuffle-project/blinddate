@@ -31,14 +31,6 @@
 		fetchPriority="high"
 		crossorigin="anonymous"
 	/>
-	<link
-		rel="preload"
-		href="{base}/fonts/comic-neue-latin-700-normal.woff2"
-		as="font"
-		type="font/woff2"
-		fetchPriority="high"
-		crossorigin="anonymous"
-	/>
 </svelte:head>
 
 {#if ENVIRONMENT.showDevEnvInfo}
