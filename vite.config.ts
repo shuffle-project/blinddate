@@ -18,6 +18,10 @@ const config: UserConfig = {
 				{
 					src: 'node_modules/@fontsource/comic-neue/files/comic-neue-latin-400-normal.woff2',
 					dest: 'fonts'
+				},
+				{
+					src: 'node_modules/@fontsource/comic-neue/files/comic-neue-latin-700-normal.woff2',
+					dest: 'fonts'
 				}
 			]
 		})
