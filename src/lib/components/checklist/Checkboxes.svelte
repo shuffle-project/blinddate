@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Check } from '$lib/interfaces/checklist.interface';
+	import { untrack } from 'svelte';
 
 	interface Props {
 		checklist: Check[];
@@ -10,14 +11,19 @@
 	let { checklist, toggleCheckbox, updateChecklistWithBoxSize }: Props = $props();
 
 	function setBoxSize(element: HTMLDivElement, i: number) {
-		updateChecklistWithBoxSize(i, element.clientHeight);
+		untrack(() => {
+			updateChecklistWithBoxSize(i, element.clientHeight);
+		});
 	}
 </script>
 
 <ul>
 	{#each checklist as check, i (check.id)}
 		<li>
-			<div class="check {check.checked ? 'checked' : 'unchecked'}" use:setBoxSize={i}>
+			<div
+				class="check {check.checked ? 'checked' : 'unchecked'}"
+				{@attach (element) => setBoxSize(element, i)}
+			>
 				<input
 					class="checkbox"
 					type="checkbox"
