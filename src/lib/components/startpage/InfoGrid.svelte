@@ -73,6 +73,7 @@
 
 		h2 {
 			margin: 0;
+			line-height: 120%;
 		}
 
 		.content {

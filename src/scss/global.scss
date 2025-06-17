@@ -14,14 +14,13 @@ body {
 }
 
 html {
-	// scroll-behavior: smooth;
 	background-color: rgba(rgb(106, 111, 117), 0.92);
 }
 
 h1 {
 	font-size: clamp(2.75rem, 7vw + 0.5rem, 4.125rem);
 	font-weight: 700;
-	line-height: 150%;
+	line-height: 120%;
 	letter-spacing: -0.01em;
 }
 

@@ -2,6 +2,7 @@
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import LectureRoomDesktop from './LectureRoomDesktop.svelte';
 	import LectureRoomMobile from './LectureRoomMobile.svelte';
+
 	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 

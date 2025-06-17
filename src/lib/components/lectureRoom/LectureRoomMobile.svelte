@@ -1,267 +1,219 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-	import { base } from '$app/paths';
-	import { Splide, SplideSlide, SplideTrack } from '@splidejs/svelte-splide';
-	import '@splidejs/svelte-splide/css/core';
-	import Icon from '../Icon.svelte';
-
 	let { personas }: { personas: Persona[] } = $props();
-
-	let carousel: Splide;
-
-	const splideOptions = {
-		type: 'loop',
-		live: false,
-		keyboard: false,
-		i18n: {
-			prev: 'Vorherige Person',
-			next: 'Nächste Person',
-			first: 'Zur ersten Person gehen',
-			last: 'Zur letzten Person gehen',
-			slideX: 'Zur Person %s gehen',
-			pageX: 'Zur Seite %s gehen',
-			carousel: 'Karussell',
-			slide: 'Person',
-			slideLabel: '%s von %s'
-		},
-		pagination: false,
-		arrows: false,
-		speed: 800,
-		drag: 'free' as const,
-		snap: true,
-		flickPower: 450,
-		easing: 'ease'
-	};
-
-	let carouselSelectedIndex: number = $state(0);
-
-	let componentHasFocus = $state(false);
-
-	let ariaLiveText = $derived(
-		personas[carouselSelectedIndex].name +
-			', ' +
-			(carouselSelectedIndex + 1) +
-			' von ' +
-			personas.length
-	);
-
-	function moveSlide(direction: string) {
-		if (!carousel) return;
-		componentHasFocus = true;
-		carousel.go(direction);
-		carouselSelectedIndex = carousel.splide.index;
-	}
-
-	function handleMove(index: number | undefined) {
-		if (index !== undefined) carouselSelectedIndex = index;
-	}
-
-	function handleScrolled() {
-		if (!carousel) return;
-		carouselSelectedIndex = carousel.splide.index;
-	}
-
-	function getPersonaEmotion(personaName: string) {
-		switch (personaName) {
-			case 'Gabriel':
-				return 'explaining';
-			case 'Maxi':
-				return 'neutral';
-			case 'Hannah':
-				return 'happy';
-			case 'Aleksandr':
-				return 'neutral';
-			case 'Michelle':
-				return 'shrug';
-			default:
-				return 'neutral';
-		}
-	}
+	let toggleDisabilityInfo = $state(false);
 </script>
 
-<Splide
-	aria-roledescription="Karussell"
-	role="navigation"
-	aria-label="Studierende"
-	options={splideOptions}
-	bind:this={carousel}
-	hasTrack={false}
-	on:moved={(e) => handleMove(e?.detail.index)}
-	on:scrolled={() => handleScrolled()}
->
-	<SplideTrack>
-		{#each personas as persona, i (persona.id)}
-			<SplideSlide id="result-card-{i + 1}" aria-roledescription="Folie">
-				<a
-					href="{base}/personas/{persona.id}"
-					aria-labelledby="{persona.id}-name"
-					tabindex={carouselSelectedIndex !== i ? -1 : 0}
-					class="link-card"
-					data-sveltekit-preload-data="tap"
-				>
-					<img
-						src="{base}/personas/{persona.id}/{persona.id}-{getPersonaEmotion(persona.name)}.svg"
-						alt=""
-						class="persona-img"
-						aria-hidden="true"
-						loading="lazy"
-					/>
-					<div aria-hidden="true">
-						<p class="persona-name" id="{persona.id}-name">{persona.name}</p>
-					</div>
+<div class="wrapper">
+	<div class="toggle">
+		<input id="toggle-mobile-disability-info" type="checkbox" bind:checked={toggleDisabilityInfo} />
+		<label for="toggle-mobile-disability-info">Beeinträchtigung mitanzeigen</label>
+	</div>
 
-					<div class="clickable-icon">
-						<Icon img="clickable" size="medium" />
-					</div>
-				</a>
-			</SplideSlide>
+	<div class="persona-wrapper">
+		{#each personas as persona}
+			<a href="{base}/personas/{persona.id}" data-sveltekit-preload-data="hover">
+				<div class="info">
+					<p class="name">{persona.name}</p>
+					{#if toggleDisabilityInfo}
+						<p class="disability">{persona.disablityCategory}</p>
+					{/if}
+				</div>
+
+				<img
+					class={persona.id}
+					src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
+					alt=""
+				/>
+			</a>
 		{/each}
-	</SplideTrack>
-	<div class="splide__arrows"></div>
-
-	<div class="slider-navigation">
-		<button
-			onfocusout={() => (componentHasFocus = false)}
-			onclick={() => moveSlide('<')}
-			class="previous-button after-card"
-			aria-label="Vorherige Person"
-		>
-			<Icon img="arrow-toleft" size="parent" svg_color="white" />
-		</button>
-
-		<p class="slide-number-info">
-			{carouselSelectedIndex + 1} von {personas.length}
-		</p>
-
-		<button
-			onfocusout={() => (componentHasFocus = false)}
-			onclick={() => moveSlide('>')}
-			class="next-button"
-			aria-label="Nächste Person"
-			><Icon img="arrow-toright" size="parent" svg_color="white" />
-		</button>
 	</div>
-</Splide>
-
-{#if componentHasFocus}
-	<div aria-live="polite" class="sr-only">
-		{#key ariaLiveText}
-			{ariaLiveText}
-		{/key}
-	</div>
-{/if}
+</div>
 
 <style lang="scss">
-	.link-card {
-		background: var(--color-gradient-persona);
-		border-radius: 2.5rem;
+	.wrapper {
+		background-color: var(--color-white);
+		padding-inline: var(--outer-spacing);
+		padding-top: 1.25rem;
 
-		width: 15.75rem;
-		aspect-ratio: 1/2;
-		display: flex;
-		justify-content: center;
+		.persona-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
 
-		position: relative;
-		margin-inline: auto;
+			justify-content: center;
 
-		&:focus-visible {
-			transition: all 0.2s ease-out;
+			a {
+				display: flex;
+				flex-direction: column;
 
-			outline-offset: -6px;
-			outline: 2px solid var(--color-blue);
+				justify-content: space-between;
+
+				text-decoration: none;
+				border-radius: 1rem;
+				overflow: hidden;
+
+				// height: 100%;
+				// max-height: 14rem;
+				aspect-ratio: 1/1.4;
+
+				width: 100%;
+				max-width: clamp(7.5rem, 40vw + 0.125rem, 10rem);
+
+				background: linear-gradient(145deg, var(--color-turquoise), var(--color-green));
+
+				position: relative;
+
+				outline: 3px solid transparent;
+				outline-offset: 3px;
+
+				&:hover,
+				&:focus {
+					outline: 3px solid var(--color-blue);
+
+					transition: outline-color 0.4s ease-out;
+				}
+
+				.info {
+					padding: 0.625rem;
+
+					p {
+						margin: 0;
+						line-height: 100%;
+						color: var(--color-black);
+					}
+
+					p.name {
+						font-size: 1.375rem;
+						font-weight: bold;
+						margin-bottom: 0.25rem;
+					}
+
+					p.disability {
+						font-size: 0.875rem;
+						opacity: 80%;
+					}
+				}
+
+				img {
+					position: absolute;
+
+					&.maxi {
+						width: clamp(120%, 70vw + 0.125rem, 160%);
+						bottom: -2rem;
+					}
+
+					&.michelle {
+						width: clamp(80%, 70vw + 0.125rem, 95%);
+						bottom: -1rem;
+						right: 0;
+					}
+
+					&.aleksandr {
+						bottom: -0.25rem;
+						left: -1rem;
+						width: clamp(70%, 70vw + 0.125rem, 120%);
+					}
+
+					&.hannah {
+						bottom: -0.5rem;
+						left: -0.5rem;
+						width: clamp(60%, 70vw + 0.125rem, 85%);
+					}
+
+					&.kilian {
+						bottom: -0.5rem;
+						width: clamp(75%, 70vw + 0.125rem, 100%);
+					}
+
+					&.gabriel {
+						bottom: -1.5rem;
+						right: -1rem;
+						width: clamp(75%, 70vw + 0.125rem, 95%);
+					}
+
+					&.faiza {
+						bottom: -1.5rem;
+						right: -1rem;
+						width: clamp(90%, 70vw + 0.125rem, 120%);
+					}
+
+					&.oliver {
+						bottom: -1.5rem;
+						right: -1rem;
+						width: clamp(90%, 70vw + 0.125rem, 120%);
+					}
+				}
+			}
 		}
 
-		.persona-name {
-			position: absolute;
-			left: -1.626rem;
-			top: 0.625rem;
+		.toggle {
+			display: flex;
+			gap: 0.5rem;
 
-			background-color: var(--color-white);
-			border-radius: 2rem;
-			padding: 0.25rem 0.625rem;
+			box-sizing: border-box;
 
-			color: var(--color-black);
-			font-weight: bold;
-			font-size: 1.25rem;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 1.5rem;
 
-			box-shadow: 0 4px 4px rgba(var(--color-black-rgb), 0.15);
-		}
+			input {
+				-webkit-appearance: none;
+				appearance: none;
+				background-color: var(--color-white);
 
-		.persona-img {
-			height: 90%;
-			max-width: 100%;
+				margin: 0;
 
-			position: absolute;
-			bottom: 0.625rem;
-		}
+				height: 1.5rem;
+				width: 1.5rem;
+				aspect-ratio: 1;
 
-		.clickable-icon {
-			position: absolute;
-			right: 1.25rem;
-			bottom: 1.25rem;
-			transition: transform 0.2s ease-out;
-		}
+				border-radius: 0.375rem;
+				border: 2px solid var(--color-black);
 
-		&:hover {
-			.clickable-icon {
-				transform: scale(120%);
+				cursor: pointer;
+
+				display: grid;
+				place-content: center;
+
+				&:checked:before {
+					content: '';
+					width: 0.875rem;
+					height: 0.875rem;
+					box-shadow: inset 1rem 1rem var(--color-black);
+
+					transform-origin: bottom left;
+					clip-path: polygon(13% 50%, 5% 65%, 45% 100%, 100% 10%, 83% 0%, 40% 75%);
+				}
+
+				&:checked {
+					background-color: var(--color-white);
+				}
+
+				&:focus,
+				&:hover {
+					outline: 2px solid var(--color-black);
+					outline-offset: 2px;
+				}
+			}
+
+			label {
+				color: var(--color-black);
 			}
 		}
 	}
 
-	.slider-navigation {
-		max-width: 15.75rem;
-		position: relative;
-		height: 3rem;
-		margin-inline: auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 1.25rem;
+	@media (max-width: 22.5rem) {
+		.disability {
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			overflow-wrap: anywhere;
 
-		.slide-number-info {
-			text-align: center;
-			color: var(--color-dark-grey);
-			font-size: 0.875rem;
-			margin-bottom: 0;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
-	}
-
-	.previous-button,
-	.next-button {
-		position: absolute;
-		top: auto;
-		bottom: 0;
-		z-index: 5;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		height: 3.125rem;
-		width: 3.125rem;
-
-		padding: 0.25rem;
-
-		cursor: pointer;
-
-		background-color: var(--color-blue);
-		border: none;
-		border-radius: 50%;
-
-		&:focus,
-		&:hover {
-			outline: 2px solid var(--color-blue);
-			outline-offset: 2px;
-		}
-	}
-
-	.previous-button {
-		left: 0;
-	}
-
-	.next-button {
-		right: 0;
 	}
 </style>

@@ -15,6 +15,7 @@ export const KILIAN: Persona = {
 	study: 'Anglistik',
 	pronouns: 'Er / ihm',
 	disability: 'Zerebralparese',
+	disablityCategory: 'Motorische Beeinträchtigung',
 	disabilityIcon: 'wheelchair',
 	visualDescription:
 		'Guten Tag, mein Name ist Kilian. Mein Outfit heute ist sehr klassisch: graue Anzughose, hellgraues Hemd und darüber ein blauer Wollpullover. Zu meinem Aktiv-Rollstuhl mit dunkelblauem Metallgestänge trage ich schwarze Brogues. Meine roten Haare trag ich kurz. Meine Augen sind sehr blau und meine Haut sehr hell. Meine rechte Hand hat eine sichtbare Lähmung.',

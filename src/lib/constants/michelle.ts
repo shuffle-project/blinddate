@@ -82,6 +82,7 @@ export const MICHELLE: Persona = {
 	study: 'Popmusikdesign',
 	pronouns: 'Sie / ihr',
 	disability: 'Morbus Crohn',
+	disablityCategory: 'Chronische Erkrankung',
 	disabilityIcon: 'spoon',
 	week: michellesWeek,
 	visualDescription:

@@ -83,6 +83,7 @@ export const HANNAH: Persona = {
 	study: 'Mathematik auf Lehramt',
 	pronouns: 'Sie / ihr',
 	disability: 'Hochgradige Schwerhörigkeit',
+	disablityCategory: 'Hörbehinderung',
 	disabilityIcon: 'ear',
 	week: hannahsWeek,
 	visualDescription:

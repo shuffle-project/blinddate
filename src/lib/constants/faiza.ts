@@ -14,6 +14,7 @@ export const FAIZA: Persona = {
 	study: 'Informatik im Bachelor',
 	pronouns: 'Sie / ihr',
 	disability: 'Studieren mit Kind',
+	disablityCategory: 'Pflegeverantwortung',
 	disabilityIcon: 'bottle',
 	visualDescription:
 		'Hi, ich bin Faiza. Der Name steht im arabischen für die Gewinnerin, wobei ich das aktuell mit meiner Leggins, den Sneakern und der weiten Strickjacke vielleicht nicht ausstrahle. Bequem und praktisch ist das Outfit aber alle mal. Meine braunen Haare habe ich zu zwei Zöpfen zusammengebunden und ja, ich bin gigantische 157cm groß. ',

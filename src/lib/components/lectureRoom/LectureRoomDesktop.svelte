@@ -7,6 +7,8 @@
 	let { personas }: { personas: Persona[] } = $props();
 
 	let toggleAllNames = $state(false);
+	let toggleDisabilityInfo = $state(false);
+
 	const durations = ['0.3s', '0.7s', '1.2s', '2s'];
 
 	function randomIntFromInterval() {
@@ -21,9 +23,16 @@
 </script>
 
 <div class="wrapper">
-	<div class="toggle-all-names">
-		<input id="toggle-all-names" type="checkbox" bind:checked={toggleAllNames} />
-		<label for="toggle-all-names">Alle Namen anzeigen</label>
+	<div class="toggle-wrapper">
+		<div class="toggle">
+			<input id="toggle-all-names" type="checkbox" bind:checked={toggleAllNames} />
+			<label for="toggle-all-names">Alle Namen anzeigen</label>
+		</div>
+
+		<div class="toggle">
+			<input id="toggle-disability-info" type="checkbox" bind:checked={toggleDisabilityInfo} />
+			<label for="toggle-disability-info">Beeinträchtigung mitanzeigen</label>
+		</div>
 	</div>
 
 	<div class="lecture-room">
@@ -40,21 +49,22 @@
 				>
 					<a
 						href="{base}/personas/{persona.id}"
-						aria-label={persona.name}
-						aria-describedby="{persona.id}-image"
+						aria-label={persona.name + (toggleDisabilityInfo ? ` (${persona.disability})` : '')}
 						class:show-all-names={toggleAllNames}
 						data-sveltekit-preload-data="hover"
 					>
 						<div class="persona-info-wrapper" aria-hidden="true">
 							<div class="persona-info">
 								<p class="persona-name">{persona.name}</p>
+								{#if toggleDisabilityInfo}
+									<p class="persona-disability">{persona.disablityCategory}</p>
+								{/if}
 							</div>
 						</div>
 						<img
 							class="persona-img"
 							src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
 							alt=""
-							id="{persona.id}-image"
 							loading="lazy"
 						/>
 					</a>
@@ -83,16 +93,23 @@
 		position: relative;
 		height: min(49vw, 42.75rem);
 
-		.toggle-all-names {
+		.toggle-wrapper {
 			width: 100%;
 			max-width: var(--content-max-width);
+			padding-right: 2.25rem;
+			box-sizing: border-box;
 
 			display: flex;
-			justify-content: end;
 			align-items: center;
-			gap: 0.625rem;
+			justify-content: end;
 
-			padding-right: 2.25rem;
+			gap: 2rem;
+		}
+
+		.toggle {
+			display: flex;
+			gap: 0.5rem;
+
 			box-sizing: border-box;
 
 			input {
@@ -307,21 +324,40 @@
 
 						.persona-info {
 							background-color: var(--color-blue);
+							color: var(--color-white);
 
 							border-radius: 2.25rem;
 
 							width: 1.375rem;
 							height: 1.375rem;
 
+							max-width: 8.5rem;
+
 							margin-bottom: 0.375rem;
 
 							transition: all 0.2s ease-out;
 
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
+							gap: 0.125rem;
+
 							p {
-								margin: 0 0 0.25rem 0;
-								font-size: 1.25rem;
+								margin: 0;
 								opacity: 0%;
-								transform: scale(0);
+								// transform: scale(0);
+							}
+
+							p.persona-name {
+								font-size: 1.25rem;
+								line-height: 100%;
+							}
+
+							p.persona-disability {
+								font-size: 0.875rem;
+								text-align: center;
+								line-height: 120%;
 							}
 						}
 					}
@@ -330,27 +366,29 @@
 					&:focus,
 					&.show-all-names {
 						.persona-info {
-							opacity: 100%;
-
-							color: var(--color-white);
-
 							padding: 0.625rem 1rem;
-							border-radius: 2.25rem;
 
-							width: 6rem;
-							margin-bottom: 0;
+							// width: fit-content; 168
+							// height: auto; 76
 
-							transition: all 0.3s ease-out;
+							width: 10.5rem;
+							height: 2.75rem;
 
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							gap: 0.625rem;
+							margin-bottom: 0rem;
+
+							transition: all 0.3s ease-out 0.1s;
 
 							p {
-								transform: scale(1);
+								transition: opacity 0.5s ease-out 0.1s;
+							}
+
+							p.persona-name {
+								// transform: scale(1);
 								opacity: 100%;
-								transition: opacity 0.8s ease-out;
+							}
+
+							p.persona-disability {
+								opacity: 80%;
 							}
 						}
 					}

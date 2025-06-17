@@ -31,6 +31,7 @@ export interface Persona {
 	study: string;
 	pronouns: 'They / them' | 'Sie / ihr' | 'Er / ihm';
 	disability: string;
+	disablityCategory: string;
 	disabilityIcon: string;
 	week?: Week;
 	visualDescription: string;

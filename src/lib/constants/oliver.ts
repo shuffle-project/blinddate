@@ -14,6 +14,7 @@ export const OLIVER: Persona = {
 	study: 'Lebensmittelchemie im Master',
 	pronouns: 'Er / ihm',
 	disability: 'LRS & ADHS',
+	disablityCategory: 'Teilleistungsstörung',
 	disabilityIcon: 'lrs_adhs',
 	visualDescription:
 		'Hey, ich heiße Oliver. Meine dunkelblonden, langen Haare trage ich in einem lockeren Männerdutt, damit sie mich nicht stören. Um meinen Hals habe ich eine Kette, und an meinen Handgelenken mehrere Armbänder. Heute habe ich ein schlichtes braunes T-Shirt an, und darüber meinen Laborkittel. Der ist Pflicht, wenn ich im Uni-Chemielabor bin – und gehört inzwischen auch zu meinem Look.',
