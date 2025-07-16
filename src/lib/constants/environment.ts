@@ -49,12 +49,6 @@ export const ENVIRONMENT = {
 	showDevEnvInfo: true
 } as const satisfies Environment;
 
-// type AccessiblePersonas = typeof ENVIRONMENT.accessiblePersonas;
-// export type TagsOf<ID extends PersonaID> = Extract<
-// 	AccessiblePersonas[number],
-// 	{ id: ID }
-// >['tags'][number]['id'];
-
 type TagsOf<
 	Personas extends readonly Persona[],
 	Id extends Personas[number]['id']

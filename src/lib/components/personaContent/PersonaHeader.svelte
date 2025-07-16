@@ -12,6 +12,11 @@
 			const tagId = searchParams.split('#')[1];
 			const element = document.getElementById(tagId);
 
+			// So navigating through the table of contents does not highlight headings
+			if (element?.tagName === 'H1' || element?.tagName === 'H2') {
+				return;
+			}
+
 			persona.tags.forEach((tag) => {
 				if (tag.id !== tagId) {
 					const oldTagElement = document.getElementById(tag.id);
@@ -35,12 +40,12 @@
 <div class="background-black">
 	<div class="wrapper">
 		<div class="header-row" id="content">
-			<h1 class="heading" id="persona-name">{persona.name}</h1>
+			<h1 class="heading" id={persona.id}>{persona.name}</h1>
 
 			<div class="subheading-details">
 				<p class="subheading">{persona.subheading}</p>
 
-				<ul aria-label="Schlagwörter" class="tags">
+				<ul aria-label="Stichwörter" class="tags">
 					{#each persona.tags as tag}
 						<li>
 							<a lang={tag.lang} class="chip" href="#{tag.id}"> {tag.label}</a>

@@ -22,9 +22,9 @@
 		<div class="content-column">
 			<MobileCardWrapper {persona} />
 			<div class="general-info">
-				<h2 id="about-me" class="main-heading">Über mich</h2>
+				<h2 id="ueber-mich" class="main-heading">Über mich</h2>
 
-				<table aria-labelledby="about-me">
+				<table aria-labelledby="ueber-mich">
 					<tbody>
 						<tr>
 							<th scope="row">Alter</th>

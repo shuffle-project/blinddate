@@ -19,46 +19,47 @@
 
 	let { personaName, heading = '' }: Props = $props();
 
-	let id:
-		| 'tools'
-		| 'lectures'
-		| 'material'
-		| 'week'
-		| 'interaction'
-		| 'exams'
-		| 'tips'
-		| 'more-info'
-		| 'general'
-		| 'lrs-adhs'
-		| '' = $state('');
+	export type MainHeadingId =
+		| 'technologien-und-strategien'
+		| 'lehrveranstaltungen'
+		| 'lernmaterial'
+		| 'eine-woche-im-leben-von'
+		| 'interaktion-und-kommunikation'
+		| 'pruefungen'
+		| 'selbstcheck-barrierefreiheit'
+		| 'weitere-informationen'
+		| 'allgemeine-informationen'
+		| 'lrs-adhs';
+
+	let id: MainHeadingId | '' = $state('');
 
 	switch (heading) {
 		case 'Technologien und Strategien':
-			id = 'tools';
+			id = 'technologien-und-strategien';
 			break;
 		case 'Lehrveranstaltungen':
-			id = 'lectures';
+			id = 'lehrveranstaltungen';
 			break;
 		case 'Lernmaterial':
-			id = 'material';
+			id = 'lernmaterial';
 			break;
 		case 'Eine Woche im Leben von':
-			id = 'week';
+			id = 'eine-woche-im-leben-von';
 			break;
 		case 'Interaktion und Kommunikation':
-			id = 'interaction';
+			id = 'interaktion-und-kommunikation';
 			break;
 		case 'Prüfungen':
-			id = 'exams';
+			id = 'pruefungen';
 			break;
 		case 'Selbstcheck Barrierefreiheit':
-			id = 'tips';
+			id = 'selbstcheck-barrierefreiheit';
 			break;
 		case 'Weitere Informationen':
-			id = 'more-info';
+			id = 'weitere-informationen';
 			break;
 		case 'Allgemeine Informationen':
-			id = 'general';
+			id = 'allgemeine-informationen';
 			break;
 		case 'LRS und ADHS':
 			id = 'lrs-adhs';
@@ -67,7 +68,7 @@
 </script>
 
 <div class="wrapper">
-	{#if id === 'week'}
+	{#if id === 'eine-woche-im-leben-von' && personaName}
 		<h2 class="main-heading" {id}>{`${heading} ${personaName}`}</h2>
 	{:else}
 		<h2 class="main-heading" {id}>{heading}</h2>
