@@ -10,6 +10,7 @@
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { HANNAH } from '$lib/constants/hannah';
 	import { HOEREN_OFFLINE_TRANSKRIPT, HOEREN_ONLINE_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
@@ -119,6 +120,7 @@
 				und die Hörbahn intakt sind, kann ein</span
 			>
 			<InfoBox
+				id={personaTagIds.hannah['cochlea-implantat']}
 				term="Cochlea-Implantat (CI)"
 				sources={[
 					{
@@ -147,16 +149,20 @@
 		</ToolCard>
 
 		<ToolCard title="Gebärdensprache" image="{base}/tools/sign-language.svg">
-			Die Gebärdensprache ist eine natürliche Sprache, die ein vollwertiges Sprachsystem mit einer
-			eigenen Grammatik darstellt. Für gehörlose Menschen, die sie von Geburt an erlernen, ist sie
-			eine Muttersprache. Aber auch Menschen mit einer Hörbehinderung, die Hörhilfen verwenden,
-			erlernen und verwenden die Gebärdensprache.
+			<span id={personaTagIds.hannah.gebaerdensprache} tabindex="-1">
+				Die Gebärdensprache ist eine natürliche Sprache, die ein vollwertiges Sprachsystem mit einer
+				eigenen Grammatik darstellt.
+			</span>
+			Für gehörlose Menschen, die sie von Geburt an erlernen, ist sie eine Muttersprache. Aber auch Menschen
+			mit einer Hörbehinderung, die Hörhilfen verwenden, erlernen und verwenden die Gebärdensprache.
 		</ToolCard>
 
 		<ToolCard title="Untertitel" image="{base}/tools/subtitles.svg">
-			Videos, Filme und Serien können durch automatisch generierte oder manuell hinzugefügte
-			Untertitel zugänglich gemacht werden. Eine Übersetzung in Gebärdensprache ist für einige
-			Personen mit Hörbehinderung ebenso wichtig.
+			<span id={personaTagIds.hannah.untertitel} tabindex="-1">
+				Videos, Filme und Serien können durch automatisch generierte oder manuell hinzugefügte
+				Untertitel zugänglich gemacht werden.
+			</span>
+			Eine Übersetzung in Gebärdensprache ist für einige Personen mit Hörbehinderung ebenso wichtig.
 		</ToolCard>
 	</div>
 
@@ -221,10 +227,12 @@
 		</Text>
 
 		<Text>
-			Auch das Mundbild der dozierenden Person muss immer gut erkennbar sein, da das Menschen mit
-			Hörbehinderung beim Verstehen hilft. Allerdings können selbst unter den besten Bedingungen
-			(Lichtverhältnisse, nicht verdeckt, deutliche Aussprache) und von geübten „Lippenlesern“ nur
-			bis zu maximal 30% der Inhalte entnommen werden.
+			<span id={personaTagIds.hannah.mundbild} tabindex="-1">
+				Auch das Mundbild der dozierenden Person muss immer gut erkennbar sein, da das Menschen mit
+				Hörbehinderung beim Verstehen hilft. Allerdings können selbst unter den besten Bedingungen
+				(Lichtverhältnisse, nicht verdeckt, deutliche Aussprache) und von geübten „Lippenlesern“ nur
+				bis zu maximal 30% der Inhalte entnommen werden.
+			</span>
 		</Text>
 	</TextSection>
 

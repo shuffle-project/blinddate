@@ -4,6 +4,7 @@
 	interface Props {
 		title: string;
 		image: string;
+
 		langTitle?: string;
 		children?: Snippet;
 	}

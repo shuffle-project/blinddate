@@ -17,6 +17,7 @@
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import { ALEKSANDR } from '$lib/constants/aleksandr';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { VALENTIN } from '$lib/constants/valentin';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
@@ -83,7 +84,7 @@
 				„erstarren“ und wirken auf die Umwelt nicht ansprechbar, andere versuchen sich dieser
 				Situation schnell zu entziehen oder nutzen
 			</span>
-			<InfoBox term="Stimming" langTerm="en">
+			<InfoBox term="Stimming" langTerm="en" id={personaTagIds.aleksandr.stimming}>
 				<p>
 					Der Begriff <b lang="en">„Stimming“</b> kommt aus dem Englischen und ist eine Abkürzung
 					für
@@ -281,7 +282,7 @@
 
 	<FriendSpeechbubble {friendPersona}>
 		Sasha hat mir mal erklärt, dass das, was er performen nennt, auch
-		<InfoBox term="masking" langTerm="en" inSpeechBubble>
+		<InfoBox term="masking" langTerm="en" inSpeechBubble id={personaTagIds.aleksandr.masking}>
 			<p style="font-family: var(--font-sans-serif);">
 				<b lang="en">„Masking“ </b>ist eine Strategie, die Menschen auf dem Spektrum nutzen, um im
 				sozialen Miteinander nicht aufzufallen. Es ist eine Anpassungsleistung, die auch

@@ -1,8 +1,35 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import PersonaCard from './PersonaCard.svelte';
 
 	let { persona }: { persona: Persona } = $props();
+
+	let searchParams = $derived(page.url.hash);
+
+	$effect(() => {
+		if (searchParams) {
+			const tagId = searchParams.split('#')[1];
+			const element = document.getElementById(tagId);
+
+			persona.tags.forEach((tag) => {
+				if (tag.id !== tagId) {
+					const oldTagElement = document.getElementById(tag.id);
+					const oldMark = oldTagElement?.parentElement;
+
+					if (oldMark?.tagName.toLowerCase() === 'mark' && oldTagElement) {
+						oldMark.parentNode?.replaceChild(oldTagElement, oldMark);
+					}
+				}
+			});
+
+			if (element) {
+				const mark = document.createElement('mark');
+				element.parentNode?.replaceChild(mark, element);
+				mark.appendChild(element);
+			}
+		}
+	});
 </script>
 
 <div class="background-black">
@@ -12,15 +39,14 @@
 
 			<div class="subheading-details">
 				<p class="subheading">{persona.subheading}</p>
-				<section aria-label="Schlagwörter" class="tags">
-					<ul>
-						{#each persona.tags as tag}
-							<li lang={tag.lang} class="chip">
-								{tag.content}
-							</li>
-						{/each}
-					</ul>
-				</section>
+
+				<ul aria-label="Schlagwörter" class="tags">
+					{#each persona.tags as tag}
+						<li>
+							<a lang={tag.lang} class="chip" href="#{tag.id}"> {tag.label}</a>
+						</li>
+					{/each}
+				</ul>
 			</div>
 		</div>
 		<div class="persona-card">
@@ -60,21 +86,20 @@
 				}
 
 				.tags {
-					ul {
-						display: flex;
-						flex-wrap: wrap-reverse;
+					display: flex;
+					justify-content: flex-end;
 
-						list-style: none;
-						margin: 0;
-						gap: 0.625rem;
-					}
+					flex-wrap: wrap;
+
+					list-style: none;
+					margin: 0;
+					gap: 0.625rem;
 
 					.chip {
 						display: flex;
 						align-items: center;
-						color: rgba(var(--color-white-rgb), 0.8);
 						background-color: var(--color-black);
-						border: 1px solid rgba(var(--color-white-rgb), 0.5);
+						border: 1px solid rgba(var(--color-white-rgb), 0.7);
 
 						border-radius: 2rem;
 						height: 1.75rem;
@@ -82,6 +107,16 @@
 						padding: 0.25rem 0.625rem;
 						text-align: center;
 						margin: 0;
+
+						color: rgba(var(--color-white-rgb), 0.9);
+						text-decoration: none;
+
+						&:focus,
+						&:hover {
+							background-color: var(--color-white);
+							color: var(--color-black);
+							outline: none;
+						}
 					}
 				}
 			}

@@ -5,6 +5,7 @@
 	import Sources from './Sources.svelte';
 
 	interface Props {
+		id?: string;
 		term: string;
 		langTerm?: string;
 		inSpeechBubble?: boolean;
@@ -12,7 +13,14 @@
 		children?: Snippet;
 	}
 
-	let { term, langTerm = 'de', inSpeechBubble = false, sources = [], children }: Props = $props();
+	let {
+		id,
+		term,
+		langTerm = 'de',
+		inSpeechBubble = false,
+		sources = [],
+		children
+	}: Props = $props();
 
 	let modal: Modal | undefined = $state();
 
@@ -31,6 +39,7 @@
 </script>
 
 <span
+	{id}
 	class="term-btn"
 	lang={langTerm}
 	class:inSpeechBubble

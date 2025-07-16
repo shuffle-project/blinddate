@@ -25,7 +25,7 @@ export interface Persona {
 	id: PersonaID;
 	name: PersonaName;
 	subheading: string;
-	tags: { content: string; lang: string }[];
+	tags: { label: string; id: string; lang: string }[];
 	age: number;
 	hobbies: string;
 	study: string;

@@ -1,13 +1,14 @@
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-export const FAIZA: Persona = {
+export const FAIZA = {
 	id: 'faiza',
 	name: 'Faiza',
 	subheading: 'Studieren mit Pflegeverantwortung',
 	tags: [
-		{ content: 'Transparenz', lang: 'de' },
-		{ content: 'Nebenjob', lang: 'de' },
-		{ content: 'Familiäre Verpflichtung', lang: 'de' }
+		{ label: 'Transparenz', id: 'transparenz', lang: 'de' },
+		{ label: 'Beratung', id: 'beratung', lang: 'de' },
+		{ label: 'Flexibilität', id: 'flexibilitaet', lang: 'de' },
+		{ label: 'Familiäre Verpflichtung', id: 'familiaere-verpflichtung', lang: 'de' }
 	],
 	age: 32,
 	hobbies: 'Lesen und Eishockey',
@@ -72,4 +73,4 @@ export const FAIZA: Persona = {
 			}
 		}
 	]
-};
+} as const satisfies Persona;

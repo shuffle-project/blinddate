@@ -54,7 +54,7 @@
 						data-sveltekit-preload-data="hover"
 					>
 						<div class="persona-info-wrapper" aria-hidden="true">
-							<div class="persona-info">
+							<div class="persona-info" class:show-disability-info={toggleDisabilityInfo}>
 								<p class="persona-name">{persona.name}</p>
 								{#if toggleDisabilityInfo}
 									<p class="persona-disability">{persona.disablityCategory}</p>
@@ -154,6 +154,8 @@
 
 			label {
 				color: var(--color-white);
+				display: flex;
+				align-items: center;
 			}
 		}
 
@@ -368,22 +370,23 @@
 						.persona-info {
 							padding: 0.625rem 1rem;
 
-							// width: fit-content; 168
-							// height: auto; 76
+							width: 5rem;
+							height: 1.5rem;
 
-							width: 10.5rem;
-							height: 2.75rem;
+							&.show-disability-info {
+								width: 10.5rem;
+								height: 2.75rem;
+							}
 
 							margin-bottom: 0rem;
 
-							transition: all 0.3s ease-out 0.1s;
+							transition: all 0.2s ease-out 0.1s;
 
 							p {
-								transition: opacity 0.5s ease-out 0.1s;
+								transition: opacity 0.4s ease-out 0.1s;
 							}
 
 							p.persona-name {
-								// transform: scale(1);
 								opacity: 100%;
 							}
 

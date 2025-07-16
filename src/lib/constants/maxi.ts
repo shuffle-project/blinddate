@@ -1,14 +1,14 @@
-import type { Persona } from '../interfaces/persona.interfaces';
+import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-export const MAXI: Persona = {
+export const MAXI = {
 	id: 'maxi',
 	name: 'Maxi',
 	subheading: 'Studieren mit psychischer Erkrankung',
 	tags: [
-		{ content: 'Unsichtbare Beeinträchtigung', lang: 'de' },
-		{ content: 'Beratung', lang: 'de' },
-		{ content: 'Erschöpfung', lang: 'de' },
-		{ content: 'Trigger', lang: 'de' }
+		{ label: 'Erschöpfung', id: 'erschoepfung', lang: 'de' },
+		{ label: 'Trigger', id: 'trigger', lang: 'de' },
+		{ label: 'Unsichtbare Beeinträchtigung', id: 'unsichtbare-beeintraechtigung', lang: 'de' },
+		{ label: 'Beratung', id: 'beratung', lang: 'de' }
 	],
 	age: 29,
 	hobbies: 'Skaten und Naturfotografie',
@@ -23,4 +23,4 @@ export const MAXI: Persona = {
 		'Maxi zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit psychischen Erkrankungen gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, Trigger, Studium mit psychischer Krankheit, Depression, Barrierefreie Lehre'
-};
+} as const satisfies Persona;

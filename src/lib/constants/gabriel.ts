@@ -1,14 +1,14 @@
 import type { Persona } from '../interfaces/persona.interfaces';
 
-export const GABRIEL: Persona = {
+export const GABRIEL = {
 	id: 'gabriel',
 	name: 'Gabriel',
 	subheading: 'Studieren mit Sehbeeinträchtigung',
 	tags: [
-		{ content: 'Screenreader', lang: 'en' },
-		{ content: 'Vergrößerung', lang: 'de' },
-		{ content: 'Dokumentenstruktur', lang: 'de' },
-		{ content: 'Blindheit', lang: 'de' }
+		{ label: 'Screenreader', id: 'screenreader', lang: 'en' },
+		{ label: 'Vergrößerung', id: 'vergroesserung', lang: 'de' },
+		{ label: 'Dokumentenstruktur', id: 'dokumentenstruktur', lang: 'de' },
+		{ label: 'Alternativtext', id: 'alternativtext', lang: 'de' }
 	],
 	age: 27,
 	study: 'Soziale Arbeit im Master',
@@ -23,4 +23,4 @@ export const GABRIEL: Persona = {
 		'Gabriel zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit Sehbehinderung gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung, Didaktik, Screenreader, Studium mit Sehbehinderung, Barrierefreie Lehre, assistive Technologien'
-};
+} as const satisfies Persona;

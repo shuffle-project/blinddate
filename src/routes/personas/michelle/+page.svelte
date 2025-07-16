@@ -12,6 +12,7 @@
 	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { MICHELLE } from '$lib/constants/michelle';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import Week from '../../../lib/components/week/Week.svelte';
@@ -34,14 +35,16 @@
 	</SpeechBubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-02.mp3'}>
-		Als ich angefangen habe zu studieren, habe ich die Gruppe studiCED gefunden. Das ist eine
-		Selbsthilfevereinigung von Studierenden, die von CED betroffen sind. CED ist die Abkürzung für
-		chronisch entzündliche Darmerkrankungen. Bei mir wurde Morbus Crohn mit 15 Jahren nach einer
-		langen Odyssee durch Krankenhäuser und Spezialisten festgestellt. Wegen der ewigen Diagnose habe
-		ich fast ein ganzes Schuljahr verpasst. Die Kontakte in der Selbsthilfegruppe sind für mich ein
-		richtiger Anker – dort stärken wir uns gegenseitig, wenn es mal wieder einen Schub gibt oder man
-		dafür kämpfen muss, dass an der Uni Rücksicht genommen wird. Ihr seht unsere Einschränkung nicht
-		– trotzdem ist sie aber da und verursacht Barrieren.
+		<span id={personaTagIds.michelle.selbsthilfe} tabindex="-1">
+			Als ich angefangen habe zu studieren, habe ich die Gruppe studiCED gefunden. Das ist eine
+			Selbsthilfevereinigung von Studierenden, die von CED betroffen sind.
+		</span>
+		CED ist die Abkürzung für chronisch entzündliche Darmerkrankungen. Bei mir wurde Morbus Crohn mit
+		15 Jahren nach einer langen Odyssee durch Krankenhäuser und Spezialisten festgestellt. Wegen der
+		ewigen Diagnose habe ich fast ein ganzes Schuljahr verpasst. Die Kontakte in der Selbsthilfegruppe
+		sind für mich ein richtiger Anker – dort stärken wir uns gegenseitig, wenn es mal wieder einen Schub
+		gibt oder man dafür kämpfen muss, dass an der Uni Rücksicht genommen wird. Ihr seht unsere Einschränkung
+		nicht – trotzdem ist sie aber da und verursacht Barrieren.
 	</SpeechBubble>
 
 	<MainHeading heading="Allgemeine Informationen" />
@@ -67,25 +70,32 @@
 				psychische Belastungen.
 			</InfoBox>
 
-			<span
-				>kommen häufig in Schüben. Diese Schübe können auch stressbedingt auftreten, sich
-				verschlimmern und sind nicht selten mit starken Schmerzen verbunden. Krankenhausaufenthalte
-				und langfristigere Ausfälle sorgen dafür, dass Studierende Studieninhalte verpassen und
-				diese nachholen müssen. Es ist also nicht selten, dass Studienzeiten verlängert werden
-				müssen. Neben Bauchkrämpfen sind auch Durchfälle und Müdigkeit häufige Symptome von CED.
-				Deshalb sind Pausen entweder wichtig, um Energie zu tanken oder durch Schmerzen oder
-				Toilettengänge schlichtweg unumgänglich.
+			<span>
+				kommen häufig in Schüben.
+				<span id={personaTagIds.michelle.schmerzen} tabindex="-1">
+					Diese Schübe können auch stressbedingt auftreten, sich verschlimmern und sind nicht selten
+					mit starken Schmerzen verbunden.
+				</span>
+				Krankenhausaufenthalte und langfristigere Ausfälle sorgen dafür, dass Studierende Studieninhalte
+				verpassen und diese nachholen müssen. Es ist also nicht selten, dass Studienzeiten verlängert
+				werden müssen. Neben Bauchkrämpfen sind auch Durchfälle und Müdigkeit häufige Symptome von CED.
+				Deshalb sind Pausen entweder wichtig, um Energie zu tanken oder durch Schmerzen oder Toilettengänge
+				schlichtweg unumgänglich.
 			</span>
 		</Text>
 		<Text>
 			<span>
-				Chronische Erkrankungen und deren Symptome sind häufig für Außenstehende nicht sichtbar.
-				Daher reagieren Menschen teilweise mit Unverständnis, wenn Studierende mit chronischen
-				Erkrankungen beispielsweise einen Nachteilsausgleich (NTA) haben oder häufiger Pausen machen
-				müssen. Um dieses Haushalten mit Energie zu veranschaulichen und für nicht sichtbare
-				Beeinträchtigungen zu sensibilisieren, wird häufig die
+				<span id={personaTagIds.michelle['unsichtbare-beeintraechtigung']} tabindex="-1">
+					Chronische Erkrankungen und deren Symptome sind häufig für Außenstehende nicht sichtbar.
+					Daher reagieren Menschen teilweise mit Unverständnis, wenn Studierende mit chronischen
+					Erkrankungen beispielsweise einen Nachteilsausgleich (NTA) haben oder häufiger Pausen
+					machen müssen.
+				</span>
+				Um dieses Haushalten mit Energie zu veranschaulichen und für nicht sichtbare Beeinträchtigungen
+				zu sensibilisieren, wird häufig die
 			</span>
 			<InfoBox
+				id={personaTagIds.michelle['spoon-theory']}
 				term="„spoon-theory“"
 				langTerm="en"
 				sources={[

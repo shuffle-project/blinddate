@@ -12,6 +12,7 @@
 	import Puzzle from '$lib/components/Puzzle.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import { ALEX_FRIEND } from '$lib/constants/alex';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { PSYCHE_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
@@ -86,8 +87,11 @@
 			psychischer Erkrankungen – wie Konzentrations- und Schlafstörungen, oder auch soziale Ängste -
 			können sich erheblich auf den (Studien-)Alltag von Studierenden auswirken. Depressionen
 			beispielsweise können das Erinnerungsvermögen beeinträchtigen und somit die Lernleistung
-			beeinflussen. Eine Strategie, um Erschöpfung und Belastungsgefühlen entgegenzuwirken, ist,
-			regelmäßig Pausen einzubauen.
+			beeinflussen.
+			<span id={personaTagIds.maxi.erschoepfung} tabindex="-1">
+				Eine Strategie, um Erschöpfung und Belastungsgefühlen entgegenzuwirken, ist, regelmäßig
+				Pausen einzubauen.
+			</span>
 		</ToolCard>
 
 		<ToolCard title="Tagesplan" image="{base}/tools/day-plan.svg">
@@ -192,10 +196,12 @@
 			Klare Strukturen, sowohl auf Vorlesungsfolien, als auch im generellen Vorgehen während des
 			Semesters – wie beispielsweise verbindliche Zeiten, zu denen Inhalte auf Plattformen
 			hochgeladen werden (Infos zu Prüfungen, zu Teilnahme, ...) - geben Sicherheit und
-			Vorhersehbarkeit. Das Setzen von „Trigger-Warnungen“ in Vorlesungsinhalten wird viel
-			diskutiert. Generell gilt: Das Warnen vor Inhalten, die in dem Kontext eher nicht erwartet
-			werden und starke Emotionen auslösen können, kann vielen Studierenden helfen und Sicherheit
-			geben.
+			Vorhersehbarkeit.
+			<span id={personaTagIds.maxi.trigger} tabindex="-1">
+				Das Setzen von „Trigger-Warnungen“ in Vorlesungsinhalten wird viel diskutiert. Generell
+				gilt: Das Warnen vor Inhalten, die in dem Kontext eher nicht erwartet werden und starke
+				Emotionen auslösen können, kann vielen Studierenden helfen und Sicherheit geben.
+			</span>
 		</Text>
 
 		<Text>
@@ -263,12 +269,14 @@
 		<Text noTopMargin>
 			Lehrende sind in der Regel keine Therapeut*innen und sollten diese Rolle auch nicht
 			übernehmen. Umso wichtiger ist es, dass klar kommuniziert wird, an wen sich Studierende mit
-			psychischen Belastungen wenden können. So ist eine Auflistung von Kontaktpersonen – wie eine
-			psycho-soziale Beratungsstelle und die Beauftragten für Studierende mit Beeinträchtigungen der
-			Hochschule - beispielsweise auf der ersten Vorlesungsfolie oder an einem für alle zugänglichen
-			Ort eine sinnvolle Unterstützung. Der Hinweis auf Beratungsstellen zeigt, dass Lehrende sich
-			bewusst sind, dass es auch „unsichtbare“ Beeinträchtigungen gibt und diese genauso
-			Unterstützung erfahren, wie „sichtbare“ Beeinträchtigungen.
+			psychischen Belastungen wenden können.
+			<span id={personaTagIds.maxi.beratung} tabindex="-1">
+				So ist eine Auflistung von Kontaktpersonen – wie eine psycho-soziale Beratungsstelle und die
+				Beauftragten für Studierende mit Beeinträchtigungen der Hochschule - beispielsweise auf der
+				ersten Vorlesungsfolie oder an einem für alle zugänglichen Ort eine sinnvolle Unterstützung.
+			</span>
+			Der Hinweis auf Beratungsstellen zeigt, dass Lehrende sich bewusst sind, dass es auch „unsichtbare“
+			Beeinträchtigungen gibt und diese genauso Unterstützung erfahren, wie „sichtbare“ Beeinträchtigungen.
 		</Text>
 	</TextSection>
 

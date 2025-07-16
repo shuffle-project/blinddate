@@ -12,6 +12,7 @@
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import ToolCard from '$lib/components/ToolCard.svelte';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { KILIAN } from '$lib/constants/kilian';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
@@ -48,19 +49,26 @@
 			nutzen, sind stark von der Ausprägung der Beeinträchtigung abhängig. Bei verschiedenen
 			motorischen Beeinträchtigungen – wie beispielsweise einer Zerebralparese - kommt es zu einer
 			muskulären Spastik, die sich in erhöhter oder unkontrollierbarer Muskelspannung zeigt.
-			Außerdem können verschiedene Bereiche bzw. Extremitäten betroffen sein. Mithilfe von
-			angepassten Tastaturen, Computer-Mäusen und anderen Eingabegeräten sowie speziellen
-			Schreibtischstühlen können Arbeitsplätze so ausgestattet werden, dass die Muskelspannung und
-			chronische Schmerzen reduziert werden.
+			Außerdem können verschiedene Bereiche bzw. Extremitäten betroffen sein.
+			<span tabindex="-1" id={personaTagIds.kilian.eingabehilfen}>
+				Mithilfe von angepassten Tastaturen, Computer-Mäusen und anderen Eingabegeräten sowie
+				speziellen Schreibtischstühlen können Arbeitsplätze so ausgestattet werden, dass die
+				Muskelspannung und chronische Schmerzen reduziert werden.
+			</span>
 		</ToolCard>
 		<ToolCard title="Energie-Management" image="{base}/tools/calender.svg">
-			Die unkontrollierbaren Anspannungen der Muskulatur verbrauchen sehr viel Energie und sind
-			dadurch häufig sehr ermüdend. Regelmäßige Pausen, Aufteilen von Aufgaben in kleinere
-			„Häppchen“ und ein gutes Energie-Management sind daher wichtige Strategien.
+			<span tabindex="-1" id={personaTagIds.kilian.ermuedung}>
+				Die unkontrollierbaren Anspannungen der Muskulatur verbrauchen sehr viel Energie und sind
+				dadurch häufig sehr ermüdend.
+			</span>
+			Regelmäßige Pausen, Aufteilen von Aufgaben in kleinere „Häppchen“ und ein gutes Energie-Management
+			sind daher wichtige Strategien.
 		</ToolCard>
 		<ToolCard title="Muskelspannung reduzieren" image="{base}/tools/orthotic.svg">
-			Um die Muskelspannung und dadurch auftretende Schmerzen zu reduzieren, können eine passende
-			Medikation, Wärme, regelmäßige Physiotherapie und Orthesen helfen.
+			<span id={personaTagIds.kilian.orthesen} tabindex="-1">
+				Um die Muskelspannung und dadurch auftretende Schmerzen zu reduzieren, können eine passende
+				Medikation, Wärme, regelmäßige Physiotherapie und Orthesen helfen.
+			</span>
 		</ToolCard>
 	</div>
 	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-03.mp3'}>
@@ -160,11 +168,13 @@
 	<MainHeading heading="Interaktion und Kommunikation" />
 	<TextSection>
 		<Text noTopMargin>
-			Motorische Beeinträchtigungen können Lähmungen verschiedenster Muskeln im Körper bedeuten. Es
-			kann also auch die Stimmmuskulatur betroffen sein. Nicht selten wird einer langsameren und
-			verwaschenen Aussprache mit Ungeduld begegnet. Und wird eine Person mit motorischer
-			Beeinträchtigung durch eine Assistenzkraft begleitet und unterstützt, wird diese teilweise als
-			einzige Kommunikationsperson gesehen.
+			<span tabindex="-1" id={personaTagIds.kilian.aussprache}>
+				Motorische Beeinträchtigungen können Lähmungen verschiedenster Muskeln im Körper bedeuten.
+				Es kann also auch die Stimmmuskulatur betroffen sein. Nicht selten wird einer langsameren
+				und verwaschenen Aussprache mit Ungeduld begegnet.
+			</span>
+			Und wird eine Person mit motorischer Beeinträchtigung durch eine Assistenzkraft begleitet und unterstützt,
+			wird diese teilweise als einzige Kommunikationsperson gesehen.
 		</Text>
 	</TextSection>
 

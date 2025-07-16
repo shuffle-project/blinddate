@@ -1,14 +1,14 @@
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-export const KILIAN: Persona = {
+export const KILIAN = {
 	id: 'kilian',
 	name: 'Kilian',
 	subheading: 'Studieren mit motorischer Beeinträchtigung',
 	tags: [
-		{ content: 'Eingabehilfen', lang: 'de' },
-		{ content: 'Zeitmanagement', lang: 'de' },
-		{ content: 'Erschöpfung', lang: 'de' },
-		{ content: 'Orthesen', lang: 'de' }
+		{ label: 'Eingabehilfen', id: 'eingabehilfen', lang: 'de' },
+		{ label: 'Aussprache', id: 'aussprache', lang: 'de' },
+		{ label: 'Ermüdung', id: 'ermuedung', lang: 'de' },
+		{ label: 'Orthesen', id: 'orthesen', lang: 'de' }
 	],
 	age: 21,
 	hobbies: 'Blog über persönliche Reise-Erfahrungen',
@@ -23,4 +23,4 @@ export const KILIAN: Persona = {
 		'Kilian zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit Mobilitätseinschränkungen gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung, Studium mit Mobilitätseinschränkung, Zerebralparese, Rollstuhl, bauliche Barrierefreiheit, assistive Technologien'
-};
+} as const satisfies Persona;

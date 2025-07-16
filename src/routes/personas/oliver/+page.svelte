@@ -13,6 +13,7 @@
 	import SpeechBubble from '$lib/components/personaContent/SpeechBubble.svelte';
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { OLIVER } from '$lib/constants/oliver';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
@@ -71,11 +72,16 @@
 		<ToolCard title="Unterstützungssoftware: Schreiben" image="{base}/tools/voice-recording.svg">
 			Neben Schwierigkeiten beim sinnentnehmenden Lesen kann auch die Rechtschreibung, die
 			Zeichensetzung, das Anfertigen von schriftlichen Texten in kurzer Zeit oder auch das Eingeben
-			von Zahlen und Codes eine Hürde darstellen. Mithilfe von Schreibprogrammen mit automatischer
-			Rechtschreib- und Grammatikprüfung können Studierende mit LRS unterstützt werden, um sich auf
-			die inhaltliche Ebene konzentrieren zu können. Und mithilfe von Diktiersoftware (TTS) können
-			Notizen schnell verfasst werden, ohne selbst schreiben und sich auf Rechtschreibung
-			konzentrieren zu müssen.
+			von Zahlen und Codes eine Hürde darstellen.
+
+			<span tabindex="-1" id={personaTagIds.oliver.rechtschreibkorrektur}>
+				Mithilfe von Schreibprogrammen mit automatischer Rechtschreib- und Grammatikprüfung können
+				Studierende mit LRS unterstützt werden, um sich auf die inhaltliche Ebene konzentrieren zu
+				können.
+			</span>
+
+			Und mithilfe von Diktiersoftware (TTS) können Notizen schnell verfasst werden, ohne selbst
+			schreiben und sich auf Rechtschreibung konzentrieren zu müssen.
 		</ToolCard>
 
 		<ToolCard title="Energiemanagement" image="{base}/tools/regular-breaks.svg">
@@ -196,15 +202,18 @@
 	</TextSection>
 
 	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-07.mp3'}>
-		Ohje, ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von so
-		offensichtlichen Dingen wie Handyspielen! Es reicht schon, wenn ich meine Chemienotizen zum
-		Lernen aufschlage und sehe, dass ich dort etwas grün unterstrichen habe. Dann frage ich mich: Wo
-		ist eigentlich der grüne Stift? Also schaue ich in der Schublade nach, die klemmt, und ich
-		erinnere mich, dass ich sie schon so lange reparieren wollte. Dazu brauche ich Werkzeug aus der
-		Garage natürlich. Kaum dort angekommen, finde ich im Schrank eine Kiste mit Schrauben, die ich
-		dann erstmal sortiere und ... dann merke ich irgendwann: Ich wollte doch eigentlich lernen! Das
-		passiert mir ziemlich häufig. Deshalb brauche ich klare Vorgaben, die ich mir selbst setze, um
-		fokussiert zu bleiben.
+		<span tabindex="-1" id={personaTagIds.oliver.ablenkung}>
+			Ohje, ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von so
+			offensichtlichen Dingen wie Handyspielen!
+		</span>
+
+		Es reicht schon, wenn ich meine Chemienotizen zum Lernen aufschlage und sehe, dass ich dort
+		etwas grün unterstrichen habe. Dann frage ich mich: Wo ist eigentlich der grüne Stift? Also
+		schaue ich in der Schublade nach, die klemmt, und ich erinnere mich, dass ich sie schon so lange
+		reparieren wollte. Dazu brauche ich Werkzeug aus der Garage natürlich. Kaum dort angekommen,
+		finde ich im Schrank eine Kiste mit Schrauben, die ich dann erstmal sortiere und ... dann merke
+		ich irgendwann: Ich wollte doch eigentlich lernen! Das passiert mir ziemlich häufig. Deshalb
+		brauche ich klare Vorgaben, die ich mir selbst setze, um fokussiert zu bleiben.
 	</SpeechBubble>
 
 	<MainHeading heading="Interaktion und Kommunikation" />

@@ -68,15 +68,15 @@ const hannahsWeek: Week = {
 	]
 };
 
-export const HANNAH: Persona = {
+export const HANNAH = {
 	id: 'hannah',
 	name: 'Hannah',
 	subheading: 'Studieren mit Hörbehinderung',
 	tags: [
-		{ content: 'Cochlea-Implantat', lang: 'de' },
-		{ content: 'Untertitel', lang: 'de' },
-		{ content: 'Gebärdensprache', lang: 'de' },
-		{ content: 'Mundbild', lang: 'de' }
+		{ label: 'Cochlea-Implantat', id: 'cochlea-implantat', lang: 'de' },
+		{ label: 'Untertitel', id: 'untertitel', lang: 'de' },
+		{ label: 'Gebärdensprache', id: 'gebaerdensprache', lang: 'de' },
+		{ label: 'Mundbild', id: 'mundbild', lang: 'de' }
 	],
 	age: 25,
 	hobbies: 'Handball spielen, Essen gehen, Filme und Serien schauen',
@@ -92,4 +92,4 @@ export const HANNAH: Persona = {
 		'Hannah zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit Hörbehinderung gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung,  Hörbeeinträchtigung, Studium mit Hörbeeinträchtigung, Gebärdensprache, Cochlea-Implantat, Barrierefreie Lehre, assistive Technologien'
-};
+} as const satisfies Persona;

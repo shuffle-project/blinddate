@@ -1,6 +1,6 @@
 // only used for the meta tags, change to the correct URL before deploying
 
-// DEBUG: Remove '/blinddate' in variables.scss font urls before deploying
+// TODO: Remove '/blinddate' in variables.scss font urls before deploying
 export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
 // export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
 
@@ -31,7 +31,8 @@ interface Environment {
 	showDevEnvInfo: boolean;
 }
 
-export const ENVIRONMENT: Environment = {
+export const ENVIRONMENT = {
+	// accessiblePersonas: [MAXI, MICHELLE],
 	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA, OLIVER],
 	redirectToStartpage: false,
 	allowPrivacyPage: true,
@@ -46,4 +47,41 @@ export const ENVIRONMENT: Environment = {
 	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',
 	showNewContentAd: true,
 	showDevEnvInfo: true
-};
+} as const satisfies Environment;
+
+// type AccessiblePersonas = typeof ENVIRONMENT.accessiblePersonas;
+// export type TagsOf<ID extends PersonaID> = Extract<
+// 	AccessiblePersonas[number],
+// 	{ id: ID }
+// >['tags'][number]['id'];
+
+type TagsOf<
+	Personas extends readonly Persona[],
+	Id extends Personas[number]['id']
+> = Personas[number] extends infer P
+	? P extends { id: Id; tags: readonly { id: infer T }[] }
+		? T
+		: never
+	: never;
+
+function buildPersonaTags<const Personas extends readonly Persona[]>(personas: Personas) {
+	const result = {} as {
+		[K in Personas[number]['id']]?: Record<string, string>;
+	};
+
+	personas.forEach((persona) => {
+		const map = {} as Record<string, string>;
+
+		persona.tags.forEach((tag) => {
+			map[tag.id] = tag.id;
+		});
+
+		result[persona.id as keyof typeof result] = { ...map } as const;
+	});
+
+	return { ...result } as {
+		readonly [K in Personas[number]['id']]: { readonly [T in TagsOf<Personas, K>]: T };
+	};
+}
+
+export const personaTagIds = buildPersonaTags(ENVIRONMENT.accessiblePersonas);

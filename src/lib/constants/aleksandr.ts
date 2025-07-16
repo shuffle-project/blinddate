@@ -1,14 +1,14 @@
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-export const ALEKSANDR: Persona = {
+export const ALEKSANDR = {
 	id: 'aleksandr',
 	name: 'Aleksandr',
 	subheading: 'Studieren mit Autismus-Spektrum-Störung',
 	tags: [
-		{ content: 'Stimming', lang: 'en' },
-		{ content: 'Masking', lang: 'en' },
-		{ content: 'Reizregulation', lang: 'de' },
-		{ content: 'Neurodiversität', lang: 'de' }
+		{ label: 'Stimming', id: 'stimming', lang: 'en' },
+		{ label: 'Masking', id: 'masking', lang: 'en' },
+		{ label: 'Reizregulation', id: 'reizregulation', lang: 'de' },
+		{ label: 'Neurodiversität', id: 'neurodiversitaet', lang: 'de' }
 	],
 	age: 23,
 	hobbies: 'Joggen, Kraftsport und strategische Brettspiele',
@@ -23,4 +23,4 @@ export const ALEKSANDR: Persona = {
 		'Aleksandr zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen auf dem Autismus-Spektrum gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, Studium als Autist, Studium mit ASD, Neurodiversität, Autismus-Spektrum'
-};
+} as const satisfies Persona;

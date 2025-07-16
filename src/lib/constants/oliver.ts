@@ -1,13 +1,14 @@
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 
-export const OLIVER: Persona = {
+export const OLIVER = {
 	id: 'oliver',
 	name: 'Oliver',
 	subheading: 'Studieren mit Teilleistungsstörung',
 	tags: [
-		{ content: 'Unterstützungssoftware', lang: 'de' },
-		{ content: 'Konzentration', lang: 'de' },
-		{ content: 'Mitschreibassistenz', lang: 'de' }
+		{ label: 'Rechtschreibkorrektur', id: 'rechtschreibkorrektur', lang: 'de' },
+		{ label: 'Vorlesefunktion', id: 'vorlesefunktion', lang: 'de' },
+		{ label: 'Vorurteile', id: 'vorurteile', lang: 'de' },
+		{ label: 'Ablenkung', id: 'ablenkung', lang: 'de' }
 	],
 	age: 31,
 	hobbies: 'Musik jammen und mit Freunden kochen',
@@ -63,4 +64,4 @@ export const OLIVER: Persona = {
 			}
 		}
 	]
-};
+} as const satisfies Persona;

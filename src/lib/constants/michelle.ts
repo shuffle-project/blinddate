@@ -68,14 +68,15 @@ const michellesWeek: Week = {
 	]
 };
 
-export const MICHELLE: Persona = {
+export const MICHELLE = {
 	id: 'michelle',
 	name: 'Michelle',
 	subheading: 'Studieren mit chronischer Erkrankung',
 	tags: [
-		{ content: 'Selbsthilfe', lang: 'de' },
-		{ content: 'Spoon theory', lang: 'en' },
-		{ content: 'Unsichtbare Beeinträchtigung', lang: 'de' }
+		{ label: 'Unsichtbare Beeinträchtigung', id: 'unsichtbare-beeintraechtigung', lang: 'de' },
+		{ label: 'Selbsthilfe', id: 'selbsthilfe', lang: 'de' },
+		{ label: 'Spoon theory', id: 'spoon-theory', lang: 'en' },
+		{ label: 'Schmerzen', id: 'schmerzen', lang: 'de' }
 	],
 	age: 19,
 	hobbies: 'Schlagzeug spielen und Kleidung nähen',
@@ -91,4 +92,4 @@ export const MICHELLE: Persona = {
 		'Michelle zeigt Ihnen, wie man eine Vorlesung barrierefreier für Menschen mit chronischen Erkrankungen gestalten kann.',
 	metaKeywords:
 		'Barrierefreiheit, Inklusion, Vorlesung, Unsichtbare Beeinträchtigung, Studium mit chronischer Krankheit, Morbus Crohn, CED, Spoon Theory, Barrierefreie Lehre'
-};
+} as const satisfies Persona;

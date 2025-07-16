@@ -15,6 +15,13 @@
 	<div class="persona-wrapper">
 		{#each personas as persona}
 			<a href="{base}/personas/{persona.id}" data-sveltekit-preload-data="hover">
+				<img
+					class="background-image {persona.id}"
+					src="{base}/decorations/persona-background.svg"
+					aria-hidden="true"
+					alt=""
+				/>
+
 				<div class="info">
 					<p class="name">{persona.name}</p>
 					{#if toggleDisabilityInfo}
@@ -23,8 +30,9 @@
 				</div>
 
 				<img
-					class={persona.id}
+					class="persona-img {persona.id}"
 					src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
+					aria-hidden="true"
 					alt=""
 				/>
 			</a>
@@ -62,12 +70,16 @@
 				width: 100%;
 				max-width: clamp(7.5rem, 40vw + 0.125rem, 10rem);
 
-				background: linear-gradient(145deg, var(--color-turquoise), var(--color-green));
+				background:
+					// url('/static/decorations/persona-background.svg') no-repeat center,
+					linear-gradient(145deg, var(--color-turquoise), var(--color-green));
 
 				position: relative;
 
 				outline: 3px solid transparent;
 				outline-offset: 3px;
+
+				box-shadow: 0rem 0.25rem 0.625rem 0rem rgba(var(--color-black-rgb), 0.125);
 
 				&:hover,
 				&:focus {
@@ -97,12 +109,55 @@
 					}
 				}
 
-				img {
+				.background-image {
+					position: absolute;
+					left: 0.5rem;
+					right: 0.5rem;
+					bottom: -0.625rem;
+
+					width: 90%;
+					height: 90%;
+
+					&.maxi {
+						transform: rotate(0deg);
+					}
+
+					&.michelle {
+						transform: rotate(25deg);
+					}
+
+					&.aleksandr {
+						transform: rotate(-40deg);
+					}
+
+					&.hannah {
+						transform: rotate(80deg);
+					}
+
+					&.kilian {
+						transform: rotate(170deg);
+					}
+
+					&.gabriel {
+						transform: rotate(-90deg);
+					}
+
+					&.faiza {
+						transform: rotate(140deg);
+					}
+
+					&.oliver {
+						transform: rotate(-130deg);
+					}
+				}
+
+				.persona-img {
 					position: absolute;
 
 					&.maxi {
 						width: clamp(120%, 70vw + 0.125rem, 160%);
 						bottom: -2rem;
+						left: -1.5rem;
 					}
 
 					&.michelle {
@@ -201,6 +256,8 @@
 
 			label {
 				color: var(--color-black);
+				display: flex;
+				align-items: center;
 			}
 		}
 	}

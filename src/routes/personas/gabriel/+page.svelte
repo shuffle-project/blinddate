@@ -10,6 +10,7 @@
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { SEHEN_TRANSKRIPT } from '$lib/constants/transcripts';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
@@ -106,6 +107,7 @@
 				nutzen Studierende mit einer visuellen Einschränkung häufig einen sogenannten
 			</span>
 			<InfoBox
+				id={personaTagIds.gabriel.screenreader}
 				langTerm="en"
 				term="Screenreader"
 				sources={[
@@ -210,7 +212,8 @@
 	<TextSection>
 		<Text>
 			Sind die Veranstaltungsunterlagen in ihrer Grundstruktur immer gleich aufgebaut, erleichtert
-			das den Studierenden eine schnellere Orientierung und Bearbeitung.
+			das den Studierenden eine schnellere Orientierung und Bearbeitung. Gleichzeitig sollten die
+			richtigen Formatvorlagen wie bspw. Überschriftenebenen verwendet werden.
 		</Text>
 	</TextSection>
 
@@ -235,10 +238,12 @@
 
 	<TextSection>
 		<Text>
-			Für Diagramme oder Bilder, die in Lehrveranstaltungen genutzt werden, sind Alternativtexte
-			bzw. Bildbeschreibungen, die Screenreader vorlesen können, essentiell wichtig. Lehrpersonen
-			sollten zusätzlich beschreiben, was auf der Abbildung zu sehen ist. Die Beschriftung einzelner
-			Elemente innerhalb einer Abbildung sollte als Text vorhanden sein, dass die inhaltlichen
+			<span tabindex="-1" id={personaTagIds.gabriel.alternativtext}>
+				Für Diagramme oder Bilder, die in Lehrveranstaltungen genutzt werden, sind Alternativtexte
+				bzw. Bildbeschreibungen, die Screenreader vorlesen können, essentiell wichtig.
+			</span>
+			Lehrpersonen sollten zusätzlich beschreiben, was auf der Abbildung zu sehen ist. Die Beschriftung
+			einzelner Elemente innerhalb einer Abbildung sollte als Text vorhanden sein, dass die inhaltlichen
 			Informationen schneller entnommen werden.
 		</Text>
 		<Text>
