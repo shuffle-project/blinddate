@@ -63,10 +63,13 @@
 			<span
 				>kann es hilfreich sein, sich Texte vorlesen zu lassen, denn das sinnentnehmende Lesen kann
 				erschwert sein. Das Umwandeln von Buchstaben in sinnhaften Inhalt dauert unter Umständen
-				länger und kann mit viel Anstrengung verbunden sein. Um beispielsweise Texte zu lesen, die
-				als Foto gespeichert wurden, kann eine Bild-zu-Text-Software – sogenannte OCR-Software –
-				genutzt werden, um sich dann den Text vorlesen zu lassen.</span
-			>
+				länger und kann mit viel Anstrengung verbunden sein.
+				<span tabindex="-1" id={personaTagIds.oliver.vorlesefunktion}>
+					Um beispielsweise Texte zu lesen, die als Foto gespeichert wurden, kann eine
+					Bild-zu-Text-Software – sogenannte OCR-Software – genutzt werden, um sich dann den Text
+					vorlesen zu lassen.
+				</span>
+			</span>
 		</ToolCard>
 
 		<ToolCard title="Unterstützungssoftware: Schreiben" image="{base}/tools/voice-recording.svg">
@@ -74,7 +77,7 @@
 			Zeichensetzung, das Anfertigen von schriftlichen Texten in kurzer Zeit oder auch das Eingeben
 			von Zahlen und Codes eine Hürde darstellen.
 
-			<span tabindex="-1" id={personaTagIds.oliver.rechtschreibkorrektur}>
+			<span tabindex="-1" id={personaTagIds.oliver.rechtschreibpruefung}>
 				Mithilfe von Schreibprogrammen mit automatischer Rechtschreib- und Grammatikprüfung können
 				Studierende mit LRS unterstützt werden, um sich auf die inhaltliche Ebene konzentrieren zu
 				können.
@@ -223,11 +226,15 @@
 			häufig mit Vorurteilen zu kämpfen. Viele Studierende haben sich im Studium verschiedene
 			Strategien angeeignet, sodass die Auswirkungen von LRS oder ADHS für Außenstehende kaum oder
 			nicht sichtbar sind. Daher werden die Studierenden eventuell nicht ernst genommen, wenn sie
-			beispielsweise bei Kommiliton*innen oder ihren Dozierenden um Unterstützung bitten. Außerdem
-			scheinen Schwierigkeiten im Schreiben und Lesen oder im Strukturieren des (Studien-)Alltags
-			häufig mit dem Vorurteil von verminderten intellektuellen Fähigkeiten verbunden. Wie andere
-			Studierende mit „nicht sichtbaren“ Beeinträchtigungen ist daher viel Aufklärung des Umfelds
-			nötig.
+			beispielsweise bei Kommiliton*innen oder ihren Dozierenden um Unterstützung bitten.
+			<span tabindex="-1" id={personaTagIds.oliver.vorurteile}>
+				Außerdem werden Schwierigkeiten im Schreiben und Lesen oder im Strukturieren des
+				(Studien-)Alltags häufig mit dem Vorurteil von verminderten intellektuellen Fähigkeiten
+				verbunden.
+			</span>
+
+			Wie andere Studierende mit „nicht sichtbaren“ Beeinträchtigungen ist daher viel Aufklärung des
+			Umfelds nötig.
 		</Text>
 	</TextSection>
 

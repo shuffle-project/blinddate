@@ -82,11 +82,13 @@
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow: hidden;">
 		<ToolCard title="Regelmäßige Pausen" image="{base}/tools/regular-breaks.svg">
-			Psychische Erkrankungen sind Beeinträchtigungen, die oft als solche nicht wahrgenommen werden,
-			da Symptome für Außenstehende häufig nicht sichtbar sind. Die unterschiedlichen Symptome
-			psychischer Erkrankungen – wie Konzentrations- und Schlafstörungen, oder auch soziale Ängste -
-			können sich erheblich auf den (Studien-)Alltag von Studierenden auswirken. Depressionen
-			beispielsweise können das Erinnerungsvermögen beeinträchtigen und somit die Lernleistung
+			<span id={personaTagIds.maxi['unsichtbare-beeintraechtigung']} tabindex="-1">
+				Psychische Erkrankungen sind Beeinträchtigungen, die oft als solche nicht wahrgenommen
+				werden, da Symptome für Außenstehende häufig nicht sichtbar sind.
+			</span>
+			Die unterschiedlichen Symptome psychischer Erkrankungen – wie Konzentrations- und Schlafstörungen,
+			oder auch soziale Ängste - können sich erheblich auf den (Studien-)Alltag von Studierenden auswirken.
+			Depressionen beispielsweise können das Erinnerungsvermögen beeinträchtigen und somit die Lernleistung
 			beeinflussen.
 			<span id={personaTagIds.maxi.erschoepfung} tabindex="-1">
 				Eine Strategie, um Erschöpfung und Belastungsgefühlen entgegenzuwirken, ist, regelmäßig

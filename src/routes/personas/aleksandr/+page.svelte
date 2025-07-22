@@ -148,9 +148,12 @@
 	</FriendSpeechbubble>
 
 	<SpeechBubble {persona} audio={base + '/personas/aleksandr/audio/aleksandr-sb-04.mp3'}>
-		Wenn mir eine Situation zu viel wird – das heißt, wenn ich überstimuliert bin und deshalb einen
-		schnellen Puls, schnellen Atem und Angstgefühle bekomme... Dann habe ich Regulationsprobleme und
-		komme, wenn es nicht gut läuft, in einen Zustand, den man <span lang="en">„Meltdown“</span> nennt.
+		Wenn mir eine Situation zu viel wird –
+		<span id={personaTagIds.aleksandr.reizregulation} tabindex="-1">
+			das heißt, wenn ich überstimuliert bin und deshalb einen schnellen Puls, schnellen Atem und
+			Angstgefühle bekomme... Dann habe ich Regulationsprobleme und komme, wenn es nicht gut läuft,
+			in einen Zustand, den man <span lang="en">„Meltdown“</span> nennt.
+		</span>
 		Dann habe ich mein Verhalten nicht mehr unter Kontrolle. Als Kind hatte ich das oft. Da habe ich
 		geschrien und auch um mich getreten oder geschlagen. Heute beiße ich mir in die Hand. Das ist autoaggressives
 		Verhalten. Das tut weh, aber in der Situation hilft mir das. Am besten lässt man mich dann in Ruhe.
@@ -310,9 +313,11 @@
 
 	<TextSection>
 		<Text>
-			Für Studierende mit ASS kann das Lesen und Interpretieren von Mimik und Gestik erschwert sein.
-			Eine häufig genutzte Strategie ist das Auswendiglernen bekannter Mimiken. Dabei fällt das
-			Interpretieren der Gesichtszüge und Emotionen bei bekannten Personen leichter.
+			<span id={personaTagIds.aleksandr.mimik} tabindex="-1">
+				Für Studierende mit ASS kann das Lesen und Interpretieren von Mimik und Gestik erschwert
+				sein. Eine häufig genutzte Strategie ist das Auswendiglernen bekannter Mimiken. Dabei fällt
+				das Interpretieren der Gesichtszüge und Emotionen bei bekannten Personen leichter.
+			</span>
 		</Text>
 	</TextSection>
 

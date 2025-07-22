@@ -8,7 +8,7 @@ export const ALEKSANDR = {
 		{ label: 'Stimming', id: 'stimming', lang: 'en' },
 		{ label: 'Masking', id: 'masking', lang: 'en' },
 		{ label: 'Reizregulation', id: 'reizregulation', lang: 'de' },
-		{ label: 'Neurodiversität', id: 'neurodiversitaet', lang: 'de' }
+		{ label: 'Mimik', id: 'mimik', lang: 'de' }
 	],
 	age: 23,
 	hobbies: 'Joggen, Kraftsport und strategische Brettspiele',

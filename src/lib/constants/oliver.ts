@@ -5,7 +5,7 @@ export const OLIVER = {
 	name: 'Oliver',
 	subheading: 'Studieren mit Teilleistungsstörung',
 	tags: [
-		{ label: 'Rechtschreibkorrektur', id: 'rechtschreibkorrektur', lang: 'de' },
+		{ label: 'Rechtschreibprüfung', id: 'rechtschreibpruefung', lang: 'de' },
 		{ label: 'Vorlesefunktion', id: 'vorlesefunktion', lang: 'de' },
 		{ label: 'Vorurteile', id: 'vorurteile', lang: 'de' },
 		{ label: 'Ablenkung', id: 'ablenkung', lang: 'de' }

@@ -6,8 +6,8 @@ export const FAIZA = {
 	subheading: 'Studieren mit Pflegeverantwortung',
 	tags: [
 		{ label: 'Transparenz', id: 'transparenz', lang: 'de' },
-		{ label: 'Beratung', id: 'beratung', lang: 'de' },
-		{ label: 'Flexibilität', id: 'flexibilitaet', lang: 'de' },
+		{ label: 'Anlaufstelle', id: 'anlaufstelle', lang: 'de' },
+		{ label: 'Planbarkeit', id: 'planbarkeit', lang: 'de' },
 		{ label: 'Familiäre Verpflichtung', id: 'familiaere-verpflichtung', lang: 'de' }
 	],
 	age: 32,

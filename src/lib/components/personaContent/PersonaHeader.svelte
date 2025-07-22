@@ -92,12 +92,13 @@
 
 				.tags {
 					display: flex;
-					justify-content: flex-end;
+					justify-content: center;
 
 					flex-wrap: wrap;
 
 					list-style: none;
 					margin: 0;
+					padding: 0;
 					gap: 0.625rem;
 
 					.chip {
@@ -183,26 +184,10 @@
 		}
 
 		.wrapper {
-			.header-row {
-				.subheading-details {
-					.tags {
-						display: flex;
-						align-items: end;
-
-						ul {
-							justify-content: right;
-						}
-					}
-				}
-			}
-		}
-
-		.wrapper {
+			max-width: var(--content-max-width);
 			padding-inline: var(--outer-spacing);
 			margin-inline: auto;
 			padding-bottom: 2rem;
-
-			max-width: var(--content-max-width);
 
 			.header-row {
 				flex-direction: row;
@@ -210,10 +195,9 @@
 				padding-bottom: 4rem;
 
 				.tags {
-					max-width: 25rem;
-					justify-content: flex-start;
-					align-items: flex-start;
-					align-content: flex-start;
+					max-width: 23rem;
+					align-content: flex-end;
+					justify-content: flex-end !important;
 					margin-bottom: 0rem;
 				}
 			}

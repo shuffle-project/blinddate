@@ -81,10 +81,14 @@
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
 		<ToolCard title="Hardware" image="{base}/tools/tablet.svg">
-			<span
-				>Zum Arbeiten mit Texten, für Recherchen und um aufgenommene Veranstaltungen erneut
-				anzusehen, nutzen viele Studierende ein Tablet. Es bietet die Freiheit, Texte zu vergrößern
-				oder den Kontrast zu erhöhen und ermöglicht ein flexibles Arbeiten auch unterwegs.
+			<span>
+				<span tabindex="-1" id={personaTagIds.gabriel.vergroesserung}>
+					Zum Arbeiten mit Texten, für Recherchen und um aufgenommene Veranstaltungen erneut
+					anzusehen, nutzen viele Studierende ein Tablet. Es bietet die Freiheit, Texte zu
+					vergrößern oder den Kontrast zu erhöhen und ermöglicht ein flexibles Arbeiten auch
+					unterwegs.
+				</span>
+
 				Zusätzlich können große Bildschirme und ein gut beleuchteter Arbeitsplatz ohne blendende
 				Lampen sehr hilfreich sein, um die vorhandene Sehfähigkeit bestens nutzen zu können. Tablets
 				und Laptops mit neuster Software sind dabei hilfreich, jedoch können sich das nicht alle
@@ -211,9 +215,11 @@
 
 	<TextSection>
 		<Text>
-			Sind die Veranstaltungsunterlagen in ihrer Grundstruktur immer gleich aufgebaut, erleichtert
-			das den Studierenden eine schnellere Orientierung und Bearbeitung. Gleichzeitig sollten die
-			richtigen Formatvorlagen wie bspw. Überschriftenebenen verwendet werden.
+			<span tabindex="-1" id={personaTagIds.gabriel.dokumentenstruktur}>
+				Ist die Grundstruktur der Dokumente immer gleich aufgebaut, erleichtert das den Studierenden
+				eine schnellere Orientierung und Bearbeitung. Gleichzeitig sollten die richtigen
+				Formatvorlagen wie bspw. Überschriftenebenen verwendet werden.
+			</span>
 		</Text>
 	</TextSection>
 

@@ -6,7 +6,7 @@
 	const personas = ENVIRONMENT.accessiblePersonas;
 </script>
 
-<div id="lecture-room" class="lecture-room">
+<div id="studierende" class="lecture-room">
 	<div class="desktop">
 		<LectureRoomDesktop {personas} />
 	</div>

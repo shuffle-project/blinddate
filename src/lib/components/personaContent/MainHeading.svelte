@@ -85,9 +85,9 @@
 		}
 	}
 
-	#lectures,
-	#tips,
-	#interaction {
+	#lehrveranstaltungen,
+	#selbstcheck-barrierefreiheit,
+	#interaktion-und-kommunikation {
 		word-wrap: break-word;
 		overflow-wrap: break-word;
 		overflow-wrap: anywhere;

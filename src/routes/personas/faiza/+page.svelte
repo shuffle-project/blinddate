@@ -14,6 +14,7 @@
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import { CHRIS } from '$lib/constants/chris';
+	import { personaTagIds } from '$lib/constants/environment';
 	import { FAIZA } from '$lib/constants/faiza';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
@@ -43,15 +44,18 @@
 		<Text>
 			Ein Studium mit Pflegeverantwortung kann mit zahlreichen Barrieren verbunden sein. Einige
 			davon scheinen offensichtlich, wie beispielsweise Herausforderungen in der Zeitplanung.
-			Lösungen dafür finden sich nicht nur im analogen, sondern auch im digitalen Raum. Viele
-			Studierende, die familiäre Verpflichtungen haben – sie pflegen ein Kind oder eine angehörige
-			Person – profitieren beispielsweise von digitalen Studienangeboten. Je nach Alter des Kindes
-			und vorhandenen Unterstützungsstrukturen müssen Stundenpläne entsprechend belegt werden. Viele
-			Studien- und Prüfungsordnungen sehen hier schon einige Anpassungen vor. Außerdem bieten viele
-			Hochschulen die Möglichkeit eines Teilzeitstudiums (mit reduziertem Stundenumfang) an. Zur
-			Unterstützung in der Planung und Strukturierung des Studienalltags gibt es an Hochschulen
-			häufig verschiedene Beratungs- und Servicestellen. Auch Angebote zur Kinderbetreuung oder
-			Beratung zu finanzieller Unterstützung sind dort verortet.
+			Lösungen dafür finden sich nicht nur im analogen, sondern auch im digitalen Raum.
+
+			<span id={personaTagIds.faiza['familiaere-verpflichtung']} tabindex="-1">
+				Viele Studierende, die familiäre Verpflichtungen haben – sie pflegen ein Kind oder eine
+				angehörige Person – profitieren beispielsweise von digitalen Studienangeboten.
+			</span>
+			Je nach Alter des Kindes und vorhandenen Unterstützungsstrukturen müssen Stundenpläne entsprechend
+			belegt werden. Viele Studien- und Prüfungsordnungen sehen hier schon einige Anpassungen vor. Außerdem
+			bieten viele Hochschulen die Möglichkeit eines Teilzeitstudiums (mit reduziertem Stundenumfang)
+			an. Zur Unterstützung in der Planung und Strukturierung des Studienalltags gibt es an Hochschulen
+			häufig verschiedene Beratungs- und Servicestellen. Auch Angebote zur Kinderbetreuung oder Beratung
+			zu finanzieller Unterstützung sind dort verortet.
 		</Text>
 	</TextSection>
 
@@ -67,10 +71,12 @@
 	</div>
 	<TextSection>
 		<Text>
-			Planbarkeit ist mit familiärer Verantwortung sehr schwierig, da immer wieder unvorhersehbare
-			Dinge passieren – das Kind wird plötzlich krank, betreuende Personen fallen aus... offene
-			Aufgaben müssen daher immer dann erledigt werden, wenn gerade Zeit ist. Prokrastination kann
-			man sich nicht leisten! Das erfordert viel Selbstdisziplin.
+			<span id={personaTagIds.faiza.planbarkeit} tabindex="-1">
+				Planbarkeit ist mit familiärer Verantwortung sehr schwierig, da immer wieder unvorhersehbare
+				Dinge passieren – das Kind wird plötzlich krank, betreuende Personen fallen aus... offene
+				Aufgaben müssen daher immer dann erledigt werden, wenn gerade Zeit ist.
+			</span>
+			Prokrastination kann man sich nicht leisten! Das erfordert viel Selbstdisziplin.
 		</Text>
 
 		<Text>
@@ -144,9 +150,11 @@
 		</Text>
 
 		<Text>
-			Außerdem sind klare Absprachen und Transparenz zur Struktur und den Anforderungen einer
-			Veranstaltung zu Beginn eines Semesters sehr wichtig. Hier können auch alternative Prüfformate
-			und Regelungen zur Anwesenheit kommuniziert werden.
+			<span id={personaTagIds.faiza.transparenz} tabindex="-1">
+				Außerdem sind klare Absprachen und Transparenz zur Struktur und den Anforderungen einer
+				Veranstaltung zu Beginn eines Semesters sehr wichtig. Hier können auch alternative
+				Prüfformate und Regelungen zur Anwesenheit kommuniziert werden.
+			</span>
 		</Text>
 	</TextSection>
 
@@ -230,9 +238,12 @@
 		geholfen und tut es auch immer noch. Und es gibt tatsächlich auch einen Moodle-Kurs „Studieren
 		mit Kind“ mit wichtigen Informationen. Das war auch das Erste, was ich gemacht habe, als ich
 		schwanger war. Ich hab‘ nach allen Informationen und Möglichkeiten der Uni gesucht. Das würde
-		ich auch allen Studierenden mit Pflegeverantwortung empfehlen. Jede Hochschule hat eine
-		Anlaufstelle - ob das jetzt das Familienbüro, ein Gleichstellungsbüro oder die
-		Studienkoordinations&shy;stelle ist.
+		ich auch allen Studierenden mit Pflegeverantwortung empfehlen.
+
+		<span id={personaTagIds.faiza.anlaufstelle} tabindex="-1">
+			Jede Hochschule hat eine Anlaufstelle - ob das jetzt das Familienbüro, ein Gleichstellungsbüro
+			oder die Studienkoordinations&shy;stelle ist.
+		</span>
 	</SpeechBubble>
 
 	<Accordion personaName={persona.name} question="Frage">
