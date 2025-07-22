@@ -62,7 +62,7 @@
 						<Icon img="arrow-toright" size="tiny" />
 					</button>
 
-					<a href="#tips" class="second">
+					<a href="#selbstcheck-barrierefreiheit" class="second">
 						<Icon img="light-bulb" size="big" svg_color="white">Selbstcheck Barrierefreiheit</Icon>
 
 						<Icon img="arrow-down" svg_color="white" size="tiny" />

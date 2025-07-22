@@ -116,7 +116,11 @@
 						</button>
 					</li>
 					<li>
-						<a href="#tips" onclick={toggleDialog} class="tips-btn btn-with-arrow">
+						<a
+							href="#selbstcheck-barrierefreiheit"
+							onclick={toggleDialog}
+							class="tips-btn btn-with-arrow"
+						>
 							<Icon img="light-bulb" size="medium" svg_color="white"
 								>Selbstcheck Barrierefreiheit</Icon
 							>
