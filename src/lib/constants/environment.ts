@@ -45,7 +45,7 @@ export const ENVIRONMENT = {
 	allowFeedbackLink: false,
 	generalFeedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
 	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',
-	showNewContentAd: true,
+	showNewContentAd: false,
 	showDevEnvInfo: true
 } as const satisfies Environment;
 
