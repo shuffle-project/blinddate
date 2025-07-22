@@ -1,8 +1,8 @@
 // only used for the meta tags, change to the correct URL before deploying
 
 // TODO: Remove '/blinddate' in variables.scss font urls before deploying
-export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
-// export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
+// export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
+export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
 
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 import { ALEKSANDR } from './aleksandr';
@@ -32,9 +32,8 @@ interface Environment {
 }
 
 export const ENVIRONMENT = {
-	// accessiblePersonas: [MAXI, MICHELLE],
 	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA, OLIVER],
-	redirectToStartpage: false,
+	redirectToStartpage: true,
 	allowPrivacyPage: true,
 	allowImprintPage: true,
 	personaCardOtherPersonas: true,
@@ -45,8 +44,8 @@ export const ENVIRONMENT = {
 	allowFeedbackLink: false,
 	generalFeedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
 	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',
-	showNewContentAd: true,
-	showDevEnvInfo: true
+	showNewContentAd: false,
+	showDevEnvInfo: false
 } as const satisfies Environment;
 
 type TagsOf<

@@ -200,11 +200,8 @@
 
 			.title {
 				padding: 0;
-			}
-
-			h1 {
 				color: var(--color-white);
-				margin: 0;
+				margin: 2rem 0 2rem 0;
 			}
 
 			.subtitle,
