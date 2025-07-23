@@ -41,7 +41,7 @@ export const ENVIRONMENT = {
 	footerPersonas: true,
 	backLinkToStartpage: true,
 	displayLowerStartpageContent: true,
-	allowFeedbackLink: false,
+	allowFeedbackLink: true,
 	generalFeedbackLink: 'https://survey.hdm-stuttgart.de/464342?lang=de',
 	lecturerFeedbackLink: 'https://survey.hdm-stuttgart.de/521184?lang=de',
 	showNewContentAd: false,
