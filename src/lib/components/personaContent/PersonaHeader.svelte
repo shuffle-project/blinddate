@@ -13,7 +13,11 @@
 			const element = document.getElementById(tagId);
 
 			// So navigating through the table of contents does not highlight headings
-			if (element?.tagName === 'H1' || element?.tagName === 'H2') {
+			if (
+				element?.tagName === 'H1' ||
+				element?.tagName === 'H2' ||
+				element?.id.includes('simulation')
+			) {
 				return;
 			}
 
