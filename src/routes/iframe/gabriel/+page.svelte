@@ -1,8 +1,11 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 </script>
 
-<iframe src={base + '/games/gabriel'} frameborder="0" title="Gabriel Simulationsspiel"></iframe>
+<iframe
+	src="https://barrierefreies-blinddate.de/games/gabriel/"
+	frameborder="0"
+	title="Gabriel Simulationsspiel"
+></iframe>
 
 <style lang="scss">
 	iframe {
