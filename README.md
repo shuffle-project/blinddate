@@ -1,38 +1,17 @@
-# create-svelte
+# BlindDate
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[Visit the Website (only available in German)](https://barrierefreies-blinddate.de/)
 
-## Creating a project
+A university for everyone
 
-If you're seeing this, you've probably already done this step. Congrats!
+On BlindDate, students with disabilities offer insights into their everyday university life. Concrete recommendations for action help you reduce barriers in your own teaching.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+We use personas to portray students with disabilities. Personas are fictional characters that represent a target group with specific characteristics. In our case, they reflect the diverse realities of students with disabilities. These personas are not purely fictional; they are grounded in real data collected through surveys, personal stories, and feedback from students over the course of the SHUFFLE project.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+We have therefore chosen the CC BY-ND 4.0 Deed license to ensure that the real experiences and statements of the students are not altered or misrepresented.
 
-## Developing
+The project was implemented using SvelteKit ♥️
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
