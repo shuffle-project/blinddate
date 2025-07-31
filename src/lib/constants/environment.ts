@@ -1,6 +1,5 @@
 // only used for the meta tags, change to the correct URL before deploying
 
-// TODO: Remove '/blinddate' in variables.scss font urls before deploying
 // export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
 export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
 
