@@ -1,37 +1,9 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import type { Snippet } from 'svelte';
 	import { ENVIRONMENT } from '../lib/constants/environment';
 
 	let { children }: { children: Snippet } = $props();
 </script>
-
-<svelte:head>
-	<link
-		rel="preload"
-		href="{base}/fonts/source-sans-pro-latin-400-normal.woff2"
-		as="font"
-		type="font/woff2"
-		fetchPriority="high"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="{base}/fonts/source-sans-pro-latin-700-normal.woff2"
-		as="font"
-		type="font/woff2"
-		fetchPriority="high"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="{base}/fonts/comic-neue-latin-400-normal.woff2"
-		as="font"
-		type="font/woff2"
-		fetchPriority="high"
-		crossorigin="anonymous"
-	/>
-</svelte:head>
 
 {#if ENVIRONMENT.showDevEnvInfo}
 	<div class="dev-env-info">

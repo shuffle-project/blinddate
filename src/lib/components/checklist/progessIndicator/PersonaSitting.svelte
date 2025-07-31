@@ -17,6 +17,8 @@
 		<img
 			src="{base}/personas/{persona.id}/{persona.id}-sitting.svg"
 			alt=""
+			width="200"
+			height="220"
 			aria-hidden="true"
 			loading="lazy"
 		/>
