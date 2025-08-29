@@ -1,19 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { ENVIRONMENT } from '../lib/constants/environment';
 
 	let { children }: { children: Snippet } = $props();
 </script>
-
-{#if ENVIRONMENT.showDevEnvInfo}
-	<div class="dev-env-info">
-		<p>
-			<strong>Achtung:</strong>
-			Sie befinden sich auf der internen Entwicklungsseite. Die richtige Seite finden Sie unter
-			<a href="https://barrierefreies-blinddate.de/">www.barrierefreies-blinddate.de</a>.
-		</p>
-	</div>
-{/if}
 
 {@render children?.()}
 
