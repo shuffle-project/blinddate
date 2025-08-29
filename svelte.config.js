@@ -23,8 +23,7 @@ const config = {
 		}),
 		// trailingSlash: 'always',
 		//  add '/blinddate' for deploy on pages, add '' for local build
-		// paths: { base: process.env.NODE_ENV === 'pages' ? '/blinddate' : '' }
-		paths: { base: '' }
+		paths: { base: process.env.NODE_ENV === 'pages' ? '/blinddate' : '' }
 	}
 };
 export default config;

@@ -1,6 +1,7 @@
 // only used for the meta tags, change to the correct URL before deploying
 
-export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
+// export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
+export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
 
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 import { ALEKSANDR } from './aleksandr';
