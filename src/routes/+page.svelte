@@ -5,8 +5,29 @@
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import InfoGrid from '$lib/components/startpage/InfoGrid.svelte';
 	import { ENVIRONMENT, HOSTNAME } from '$lib/constants/environment';
+	import { onMount } from 'svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Footer from '../lib/components/Footer.svelte';
+
+	onMount(async () => {
+		try {
+			const url =
+				'https://melvin.shuffle-projekt.de/de-DE/view/1YCojv4kFatCaZNyDPNpqX2l3yjFO31qyipjsB926UdXFFWzmMVVrVqg4KkNn4Yh';
+			// const url = 'https://djkadsklasldka.de/';
+
+			const response = await fetch(url, { mode: 'no-cors' });
+
+			if (response.ok || response.type === 'opaque') {
+				console.log('works, finds something');
+			} else {
+				console.log('finds nothing');
+			}
+		} catch (error) {
+			console.log('---');
+			console.log(error);
+			console.log('---');
+		}
+	});
 </script>
 
 <svelte:head>
