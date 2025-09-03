@@ -143,9 +143,7 @@
 			class="focus-indicator"
 			href="https://juris.bundesgerichtshof.de/cgi-bin/rechtsprechung/document.py?Gericht=bgh&amp;Art=en&amp;Datum=Aktuell&amp;nr=78289&amp;linked=pm"
 			>BGH-Urteil v. 16. Mai 2017 - VI ZR 135/13</a
-		>). Derartige Logfiles (IP-Adresse, User Agent, Zielseite, Zeitpunkt, Browserdaten etc.) werden
-		auf Servern des Datenverantwortlichen erhoben und gespeichert. Sie sind alleine schon für eine
-		einfache und problemfreie Übertragung und Ausgabe der Website erforderlich.
+		>). Siehe Abschnitt „Hosting“ für weitere Informationen zu den Logfiles.
 	</p>
 	<p>
 		Technisch sichert eine dem Stand der Technik entsprechende Transportverschlüsselung (<a
@@ -187,6 +185,80 @@
 		>. Zudem kann sich ein öffentliches bzw. überwiegendes Interesse zur Datenverarbeitung ergeben,
 		insbesondere auch aus dem Forschungsprivileg (s.o. Ziff. 1).
 	</p>
+
+	<h5>Hosting</h5>
+
+	<p>Unser Hoster erhebt in sog. Logfiles folgende Daten, die Ihr Browser übermittelt:</p>
+
+	<p>
+		IP-Adresse, die Adresse der vorher besuchten Website (Referer Anfrage-Header), Datum und Uhrzeit
+		der Anfrage, Zeitzonendifferenz zur Greenwich Mean Time, Inhalt der Anforderung,
+		HTTP-Statuscode, übertragene Datenmenge, Website, von der die Anforderung kommt und
+		Informationen zu Browser und Betriebssystem.
+	</p>
+
+	<p>
+		Das ist erforderlich, um unsere Website anzuzeigen und die Stabilität und Sicherheit zu
+		gewährleisten. Dies entspricht unserem berechtigten Interesse im Sinne des Art. 6 Abs. 1 S. 1
+		lit. f DSGVO.
+	</p>
+
+	<p>Es erfolgt kein Tracking und wir haben auf diese Daten keinen direkten Zugriff.</p>
+
+	<p>Wir setzen für die Zurverfügungstellung unserer Website folgenden Hoster ein:</p>
+
+	<p>
+		GitHub Inc. <br />
+		88 Colin P Kelly Jr St <br />
+		San Francisco, CA 94107 <br />
+		United States
+	</p>
+
+	<p>
+		Dieser ist Empfänger Ihrer personenbezogenen Daten. Dies entspricht unserem berechtigten
+		Interesse im Sinne des Art. 6 Abs. 1 S. 1 lit. f DSGVO, selbst keinen Server in unseren
+		Räumlichkeiten vorhalten zu müssen. Serverstandort ist USA.
+	</p>
+
+	<p>
+		Weitere Informationen zu Widerspruchs- und Beseitigungsmöglichkeiten gegenüber GitHub finden Sie
+		unter:
+		<a
+			class="focus-indicator"
+			rel="noreferrer"
+			href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement#github-pages"
+			>GitHub General Privacy Statement</a
+		>
+	</p>
+
+	<p>
+		Sie haben das Recht der Verarbeitung zu widersprechen. Ob der Widerspruch erfolgreich ist, ist
+		im Rahmen einer Interessenabwägung zu ermitteln.
+	</p>
+
+	<p>Die Daten werden gelöscht, sobald der Zweck der Verarbeitung entfällt.</p>
+
+	<p>
+		Die Verarbeitung der unter diesem Abschnitt angegebenen Daten ist weder gesetzlich noch
+		vertraglich vorgeschrieben. Die Funktionsfähigkeit der Website ist ohne die Verarbeitung nicht
+		gewährleistet.
+	</p>
+
+	<p>
+		GitHub hat Compliance-Maßnahmen für internationale Datenübermittlungen umgesetzt. Diese gelten
+		für alle weltweiten Aktivitäten, bei denen GitHub personenbezogene Daten von natürlichen
+		Personen in der EU verarbeitet. Diese Maßnahmen basieren auf den EU-Standardvertragsklauseln
+		(SCCs). Weitere Informationen finden Sie unter:
+
+		<a
+			class="focus-indicator"
+			rel="noreferrer"
+			href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#international-data-transfers"
+		>
+			GitHub - International data transfers
+		</a>
+	</p>
+
 	<h5>Einbindung von Videoinhalten</h5>
 	<p>
 		In die Website wurden Videodarstellungen eingebunden bzw. es wird auf diese verlinkt. Dabei
@@ -198,6 +270,7 @@
 		Nach Aufruf findet eine entsprechende Datenverarbeitung durch YouTube statt. Insofern gilt die
 		Datenschutzerklärung des Mutterkonzerns Google: <a
 			class="focus-indicator"
+			rel="noreferrer"
 			href="https://policies.google.com/privacy">https://policies.google.com/privacy</a
 		>.
 	</p>
