@@ -1,7 +1,5 @@
-// only used for the meta tags, change to the correct URL before deploying
-
-// export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
-export const HOSTNAME = 'https://shuffle-project.github.io/blinddate/';
+// only used for the meta tags
+export const HOSTNAME = 'https://barrierefreies-blinddate.de/';
 
 import type { Persona } from '$lib/interfaces/persona.interfaces';
 import { ALEKSANDR } from './aleksandr';
@@ -30,7 +28,6 @@ interface Environment {
 }
 
 export const ENVIRONMENT = {
-	// accessiblePersonas: [MAXI, MICHELLE],
 	accessiblePersonas: [MAXI, MICHELLE, ALEKSANDR, HANNAH, KILIAN, GABRIEL, FAIZA, OLIVER],
 	redirectToStartpage: false,
 	allowPrivacyPage: true,
