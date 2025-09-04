@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
@@ -21,7 +21,7 @@
 </script>
 
 <PersonaWrapper {persona}>
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-01.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-01.mp3')}>
 		Servus, mein Name ist Oliver, ich bin 31 Jahre alt und studiere seit 4 Jahren in Würzburg. Ich
 		liebe es, zu kochen – am liebsten natürlich Mexikanisch - und Musik zu machen, vor allem für und
 		mit meinen Freunden. Ich habe mich für die Uni Würzburg entschieden, weil ich hier
@@ -29,7 +29,7 @@
 		Student mit LRS und ADHS ernst nimmt.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-02.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-02.mp3')}>
 		Man kann sich LRS so vorstellen: Wenn ich schreibe, ist es so, als ob ich jedes Wort das
 		allererste Mal in meinem Leben sehen und schreiben würde. Erinnere dich einfach mal an die Zeit,
 		als du Schreiben gelernt hast und wie lange es gedauert hat, um ein Wort aus deinem Kopf auf
@@ -39,7 +39,7 @@
 
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow: hidden;">
-		<ToolCard title="Unterstützungssoftware: Lesen" image="{base}/tools/screenreader.svg">
+		<ToolCard title="Unterstützungssoftware: Lesen" image={asset('/tools/screenreader.svg')}>
 			<span>Für Studierende mit</span>
 			<InfoBox
 				term="Lese-Rechtschreib-Störung"
@@ -72,7 +72,7 @@
 			</span>
 		</ToolCard>
 
-		<ToolCard title="Unterstützungssoftware: Schreiben" image="{base}/tools/voice-recording.svg">
+		<ToolCard title="Unterstützungssoftware: Schreiben" image={asset('/tools/voice-recording.svg')}>
 			Neben Schwierigkeiten beim sinnentnehmenden Lesen kann auch die Rechtschreibung, die
 			Zeichensetzung, das Anfertigen von schriftlichen Texten in kurzer Zeit oder auch das Eingeben
 			von Zahlen und Codes eine Hürde darstellen.
@@ -87,12 +87,12 @@
 			schreiben und sich auf Rechtschreibung konzentrieren zu müssen.
 		</ToolCard>
 
-		<ToolCard title="Energiemanagement" image="{base}/tools/regular-breaks.svg">
+		<ToolCard title="Energiemanagement" image={asset('/tools/regular-breaks.svg')}>
 			Auch das regelmäßige Einlegen von Pausen, um beispielsweise das visuelle „Verschwimmen“ von
 			Buchstaben zu vermeiden, kann eine Strategie für Studierende mit Legasthenie sein.
 		</ToolCard>
 
-		<ToolCard title="Studienorganisation" image="{base}/tools/day-plan.svg">
+		<ToolCard title="Studienorganisation" image={asset('/tools/day-plan.svg')}>
 			LRS und AD(H)S können sich auch auf die Selbstorganisation im Studium auswirken. Deshalb kann
 			eine Unterstützung durch Studienbüros, Support-Zentren oder <span lang="en">Study-Buddy</span
 			>-Programme an Hochschulen für Studierende mit ADHS eine sinnvolle Strategie zur Organisation
@@ -123,13 +123,13 @@
 		{/snippet}
 	</Recommendation>
 
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-03.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-03.mp3')}>
 		Ich stoße schon bei der Anmeldung auf der Homepage der Uni auf die erste Hürde. Das Einloggen
 		mit Codes oder Kennwörtern ist für mich richtig schwer, weil die Buchstaben immer wieder zu
 		einem Brei verschwimmen. Ehrlich gesagt, hab ich gar kein Plan mehr, wie oft ich schon diverse
 		Support-Center anrufen musste, weil ich meine Passwörter mehrfach falsch eingegeben habe.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-04.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-04.mp3')}>
 		Ich nutze eine App, die mich beim Zeitmanagement etwas unterstützt. Sie blockiert beispielsweise
 		für eine gewisse Zeit andere Apps auf meinem Handy, von denen ich mich leicht ablenken lasse.
 		Außerdem kann ich mir damit einen Zeitplan fürs Lernen machen, damit ich nicht in Zeitnot komme.
@@ -138,7 +138,7 @@
 		habe ich durch andere Studenten mit ADHS und LRS gelernt. Wir haben hier an der Uni Würzburg
 		eine kleine Gruppe, in der wir uns immer wieder austauschen können.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-05.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-05.mp3')}>
 		Ich nehme seit ein paar Jahren Medikamente, die mir helfen, mein ADHS-Gehirn etwas zu ordnen.
 		Das tun die auch echt gut. Aber sie haben halt trotzdem auch Nebenwirkungen und machen mich oft
 		recht müde. Zum Glück gibt es seit ein paar Semestern einen Ruheraum an der Uni mit bequemen
@@ -169,7 +169,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-06.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-06.mp3')}>
 		Mittlerweile komme ich ganz gut in den Vorlesungen mit. Das war leider nicht immer so und hat
 		mich schon extrem viele Nerven gekostet. Es fällt mir häufig sehr schwer, in Vorlesungen nicht
 		gedanklich abzuschweifen oder auch Anweisungen im Labor bis zum Ende zuzuhören. Ich glaube,
@@ -204,7 +204,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-07.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-07.mp3')}>
 		<span tabindex="-1" id={personaTagIds.oliver.ablenkung}>
 			Ohje, ich lasse mich ziemlich leicht von einer Aufgabe ablenken - aber nur selten von so
 			offensichtlichen Dingen wie Handyspielen!
@@ -238,7 +238,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/oliver/audio/oliver-sb-08.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/oliver/audio/oliver-sb-08.mp3')}>
 		Ich lerne gerne mit den anderen zusammen. Wir haben da eine feste Lerngruppe, die sich
 		regelmäßig trifft und die wissen auch alle über LRS und ADHS Bescheid. Am Anfang hatte ich etwas
 		Sorgen, dass ich nicht so viel in der Gruppe beisteuern kann, weil meine Notizen häufig sehr

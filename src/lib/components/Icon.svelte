@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 
 	interface Props {
 		img: string;
@@ -29,7 +29,7 @@
 
 <span class="icon-component">
 	<img
-		src={base + img}
+		src={asset(img)}
 		{alt}
 		aria-hidden={alt === '' || undefined}
 		class="icon-{size} {svg_color ? 'svg-' + svg_color : ''}"

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { Snippet } from 'svelte';
 
 	let { persona, children }: { persona: Persona; children: Snippet } = $props();
 
-	let personaImg = $state(`${base}/personas/${persona.id}/${persona.id}`);
+	let personaImg = $state(asset(`/personas/${persona.id}/${persona.id}`));
 
 	switch (persona.id) {
 		case 'kilian':

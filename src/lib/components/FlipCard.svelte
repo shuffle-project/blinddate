@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { PersonaName } from '$lib/interfaces/persona.interfaces';
 	import { detect } from 'detect-browser';
 	import { onMount } from 'svelte';
@@ -29,10 +29,10 @@
 
 <div class="speech-bubble-wrapper">
 	<div aria-hidden="true" class="decorative-figure">
-		<img src="{base}/decorations/decorative-figure.svg" alt="" />
+		<img src={asset('/decorations/decorative-figure.svg')} alt="" />
 	</div>
-	<div class="speech-bubble-indicator">
-		<img src="{base}/decorations/speech-bubble-indicator-green.svg" alt="" />
+	<div aria-hidden="true" class="speech-bubble-indicator">
+		<img src={asset('/decorations/speech-bubble-indicator-green.svg')} alt="" />
 	</div>
 	<div class="speech-bubble">
 		<p>

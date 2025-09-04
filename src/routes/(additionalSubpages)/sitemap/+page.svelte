@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import SubpageTitle from '$lib/components/SubpageTitle.svelte';
 </script>
 
@@ -12,90 +12,93 @@
 	<h2>Alle Persona-Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
-			<a href={base + '/personas/aleksandr'} class="focus-indicator"
+			<a href={resolve('/personas/aleksandr')} class="focus-indicator"
 				>Aleksandr ( Autismus-Spektrum-Störung)</a
 			>
 		</li>
 		<li>
-			<a href={base + '/personas/faiza'} class="focus-indicator">Faiza (Pflegeverantwortung)</a>
+			<a href={resolve('/personas/faiza')} class="focus-indicator">Faiza (Pflegeverantwortung)</a>
 		</li>
 		<li>
-			<a href={base + '/personas/gabriel'} class="focus-indicator">Gabriel (Sehbeeinträchtigung)</a>
+			<a href={resolve('/personas/gabriel')} class="focus-indicator"
+				>Gabriel (Sehbeeinträchtigung)</a
+			>
 		</li>
 		<li>
-			<a href={base + '/iframe/gabriel'} class="focus-indicator">Gabriel Simulationsspiel</a>
+			<a href={resolve('/iframe/gabriel')} class="focus-indicator">Gabriel Simulationsspiel</a>
 		</li>
 		<li>
-			<a href={base + '/personas/hannah'} class="focus-indicator">Hannah (Hörbehinderung)</a>
+			<a href={resolve('/personas/hannah')} class="focus-indicator">Hannah (Hörbehinderung)</a>
 		</li>
 		<li>
-			<a href={base + '/iframe/hannah'} class="focus-indicator">Hannah Simulationsspiel</a>
+			<a href={resolve('/iframe/hannah')} class="focus-indicator">Hannah Simulationsspiel</a>
 		</li>
 		<li>
-			<a href={base + '/personas/kilian'} class="focus-indicator"
+			<a href={resolve('/personas/kilian')} class="focus-indicator"
 				>Kilian (Motorische Beeinträchtigung)</a
 			>
 		</li>
 		<li>
-			<a href={base + '/personas/maxi'} class="focus-indicator">Maxi (Psychische Erkrankung)</a>
+			<a href={resolve('/personas/maxi')} class="focus-indicator">Maxi (Psychische Erkrankung)</a>
 		</li>
 		<li>
-			<a href={base + '/personas/michelle'} class="focus-indicator"
+			<a href={resolve('/personas/michelle')} class="focus-indicator"
 				>Michelle (Chronische Erkrankung)</a
 			>
 		</li>
 		<li>
-			<a href={base + '/personas/oliver'} class="focus-indicator">Oliver (Teilleistungsstörung)</a>
+			<a href={resolve('/personas/oliver')} class="focus-indicator">Oliver (Teilleistungsstörung)</a
+			>
 		</li>
 	</ul>
 
 	<h2>Alle anderen Seiten (alphabetisch)</h2>
 	<ul>
 		<li>
-			<a href={base + '/große-ganze'} class="focus-indicator">Das große Ganze</a>
+			<a href={resolve('/große-ganze')} class="focus-indicator">Das große Ganze</a>
 		</li>
 		<li>
-			<a href={base + '/datenschutz'} class="focus-indicator">Datenschutzerklärung</a>
+			<a href={resolve('/datenschutz')} class="focus-indicator">Datenschutzerklärung</a>
 		</li>
 
 		<li>
-			<a href={base + '/erklaerung-zur-barrierefreiheit'} class="focus-indicator"
+			<a href={resolve('/erklaerung-zur-barrierefreiheit')} class="focus-indicator"
 				>Erkärung zur Barrierefreiheit</a
 			>
 		</li>
 
 		<li>
-			<a href={base + '/fragen'} class="focus-indicator">Häufige Fragen</a>
+			<a href={resolve('/fragen')} class="focus-indicator">Häufige Fragen</a>
 		</li>
 
 		<li>
-			<a href={base + '/dgs'} class="focus-indicator">Gebärdensprache (DGS)</a>
+			<a href={resolve('/dgs')} class="focus-indicator">Gebärdensprache (DGS)</a>
 		</li>
 
 		<li>
-			<a href={base + '/impressum'} class="focus-indicator">Impressum</a>
+			<a href={resolve('/impressum')} class="focus-indicator">Impressum</a>
 		</li>
 
 		<li>
-			<a href={base + '/kontakt'} class="focus-indicator">Kontakt</a>
+			<a href={resolve('/kontakt')} class="focus-indicator">Kontakt</a>
 		</li>
 		<li>
-			<a href={base + '/leichte-sprache'} class="focus-indicator">Leichte Sprache</a>
+			<a href={resolve('/leichte-sprache')} class="focus-indicator">Leichte Sprache</a>
 		</li>
 		<li>
-			<a href={base + '/persona-entwicklung'} class="focus-indicator"
+			<a href={resolve('/persona-entwicklung')} class="focus-indicator"
 				>Persona-Entwicklung im Detail</a
 			>
 		</li>
 
 		<li>
-			<a href={base + '/so-funktioniert-es'} class="focus-indicator">So funktioniert's</a>
+			<a href={resolve('/so-funktioniert-es')} class="focus-indicator">So funktioniert's</a>
 		</li>
 		<li>
-			<a href={base + '/'} class="focus-indicator">Startseite</a>
+			<a href={resolve('/')} class="focus-indicator">Startseite</a>
 		</li>
 		<li>
-			<a href={base + '/wichtige-begriffe'} class="focus-indicator">Wichtige Begriffe</a>
+			<a href={resolve('/wichtige-begriffe')} class="focus-indicator">Wichtige Begriffe</a>
 		</li>
 	</ul>
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 
@@ -30,12 +30,16 @@
 
 <div class="wrapper">
 	<div class="other-personas">
-		<a href="{base}/personas/{previousPersona?.id}" data-sveltekit-preload-data="hover"
-			>{previousPersona?.name}</a
-		>
-		<a href="{base}/personas/{nextPersona?.id}" data-sveltekit-preload-data="hover"
-			>{nextPersona?.name}</a
-		>
+		{#if previousPersona}
+			<a href={resolve(`/personas/${previousPersona.id}`)} data-sveltekit-preload-data="hover">
+				{previousPersona?.name}
+			</a>
+		{/if}
+		{#if nextPersona}
+			<a href={resolve(`/personas/${nextPersona.id}`)} data-sveltekit-preload-data="hover">
+				{nextPersona?.name}
+			</a>
+		{/if}
 	</div>
 </div>
 

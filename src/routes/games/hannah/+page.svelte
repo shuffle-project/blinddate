@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	/* tasks */
 
 	const contentsArray = [
 		{
-			image: base + '/games/hannah/UI/Hannah-1.svg',
-			audio: base + '/games/hannah/Audio/task.mp3',
+			image: asset('/games/hannah/UI/Hannah-1.svg'),
+			audio: asset('/games/hannah/Audio/task.mp3'),
 			mood: '',
 			description:
 				'Hannah sieht sich die Aufnahme der letzten Vorlesung an, die sie wegen einer Erkältung verpasst hat. Sie möchte die Aufgaben, die die Dozentin gestellt hat, lösen, um die Inhalte zu vertiefen. Können Sie Hannah behilflich sein?',
@@ -17,8 +17,8 @@
 			/*vier plus fünf*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-2.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
+			image: asset('/games/hannah/UI/Hannah-2.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
 			mood: '',
 			description:
 				'Hannah kann den Ton aufgrund ihrer Hörbeeinträchtigung nicht richtig wahrnehmen. Ohne die Tonspur des Videos ist es jedoch unmöglich, den Worten der Dozentin zu folgen.',
@@ -28,9 +28,9 @@
 			/*NONE*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-3.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-explaining.svg',
+			image: asset('/games/hannah/UI/Hannah-3.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-explaining.svg'),
 			description:
 				'“Gib’s zu, das hast Du geraten! Aber keine Sorge: Moderne Techniken bergen viele Hilfsmittel. Für dieses Video beispielsweise stehen automatische Untertitel zur Verfügung. Auf die greife ich auch häufig zurück, denn sie sind mittlerweile super weit verbreitet. Ich schalte sie Dir ein!”',
 			btnA: { answer: 7, correct: false },
@@ -39,9 +39,9 @@
 			/*ei fluss nacht*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-4.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-neutral.svg',
+			image: asset('/games/hannah/UI/Hannah-4.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-neutral.svg'),
 			description:
 				'“Schon etwas besser, oder? Automatische Untertitel sind leider oft nicht besonders gut, da die Spracherkennungssoftware viele Wörter nicht richtig versteht und deshalb falsch wiedergibt.”',
 			btnA: { answer: 4, correct: true },
@@ -50,9 +50,9 @@
 			/*sieb und virusbrei*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-5.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-sad.svg',
+			image: asset('/games/hannah/UI/Hannah-5.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-sad.svg'),
 			description:
 				'“Es würde mir viel Raterei ersparen, wenn die Dozentin die Untertitel manuell korrigieren würde, bevor sie ihre Videos online stellt. Ich schreibe ihr gleich eine E-Mail und bitte sie, das noch nachzuholen.”',
 			btnA: { answer: 1, correct: false },
@@ -61,9 +61,9 @@
 			/*zehenfurcht zweig*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-6.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-happy.svg',
+			image: asset('/games/hannah/UI/Hannah-6.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-happy.svg'),
 			description:
 				'“Die Dozentin hat auf meine Bitte reagiert und die Untertitel der restlichen Aufgaben mit einem Programm manuell korrigiert! Du wirst gleich merken, dass Du deutlich besser arbeiten kannst, wenn du dabei nicht auch noch ‚Quizduell‘ spielen musst.”',
 			btnA: { answer: 24, correct: false },
@@ -72,9 +72,9 @@
 			/*drei mal neun*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-7.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-explaining.svg',
+			image: asset('/games/hannah/UI/Hannah-7.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-explaining.svg'),
 			description:
 				'“Meistens komme ich im Studium gut zurecht, da ich beidseitig Hörhilfen trage und meine Strategien habe. Aber mit ein wenig Unterstützung kann ich meine Vorlesungen noch effizienter meistern.”',
 			btnA: { answer: 5, correct: false },
@@ -83,9 +83,9 @@
 			/*acht durch vier*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-8.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-neutral.svg',
+			image: asset('/games/hannah/UI/Hannah-8.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-neutral.svg'),
 			description:
 				'“Übrigens: Ein eingeschränktes Hörvermögen bedeutet nicht wirklich, dass ich nur Rauschen höre. Ich muss mich sehr konzentrieren, um kleinen Satzfetzen einen Sinn zu entnehmen. Aber die Strategien, die ich Dir gezeigt habe, sind die gleichen!”',
 			btnA: { answer: 9, correct: true },
@@ -94,9 +94,9 @@
 			/*elf minus zwei*/
 		},
 		{
-			image: base + '/games/hannah/UI/Hannah-9.svg',
-			audio: base + '/games/hannah/Audio/static.mp3',
-			mood: base + '/personas/hannah/hannah-explaining.svg',
+			image: asset('/games/hannah/UI/Hannah-9.svg'),
+			audio: asset('/games/hannah/Audio/static.mp3'),
+			mood: asset('/personas/hannah/hannah-explaining.svg'),
 			description:
 				'“Vielen Dank für Deine Hilfe! Studierende mit Beeinträchtigungen haben verschiedene Strategien, die ihnen in unterschiedlichen Situationen helfen. Wenn Lehrende bei der Konzeption ihrer Vorlesungen aber generell schon auf Barrierearmut achten, sind manche zeitaufwendigen Strategien gar nicht nötig.”',
 			btnA: { answer: 0, correct: false },

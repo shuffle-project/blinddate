@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import Icon from './Icon.svelte';
 
@@ -21,7 +21,7 @@
 			link: 'dgs',
 			disabled: false
 		}
-	];
+	] as const;
 
 	const legalLinks = [
 		{
@@ -44,7 +44,7 @@
 			link: 'kontakt',
 			disabled: false
 		}
-	];
+	] as const;
 </script>
 
 <footer class="wrapper">
@@ -53,7 +53,7 @@
 			<ul>
 				{#each personas as persona}
 					<li>
-						<a href="{base}/personas/{persona.id}" class="persona-chip">
+						<a href={resolve(`/personas/${persona.id}`)} class="persona-chip">
 							<Icon size="smedium" img={persona.disabilityIcon} />
 							{persona.name}
 						</a>
@@ -74,7 +74,7 @@
 						{#each accessibilityLinks as accessibilityLink}
 							{#if !accessibilityLink.disabled}
 								<li>
-									<a href="{base}/{accessibilityLink.link}">{accessibilityLink.name}</a>
+									<a href={resolve(`/${accessibilityLink.link}`)}>{accessibilityLink.name}</a>
 								</li>
 							{/if}
 						{/each}
@@ -105,7 +105,7 @@
 						{#each legalLinks as legalLink}
 							{#if !legalLink.disabled}
 								<li>
-									<a href="{base}/{legalLink.link}">{legalLink.name}</a>
+									<a href={resolve(`/${legalLink.link}`)}>{legalLink.name}</a>
 								</li>
 							{/if}
 						{/each}

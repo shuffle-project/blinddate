@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import Icon from '$lib/components/Icon.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
@@ -69,7 +69,7 @@
 <header>
 	<div class="content">
 		<div class="logo">
-			<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+			<img src={asset('/icons/logo.svg')} alt="" aria-hidden="true" />
 			<span>BlindDate</span>
 		</div>
 		<ShareButton />
@@ -81,7 +81,7 @@
 		<h1 class="title">Eine Hochschule für alle</h1>
 
 		{#if ENVIRONMENT.showNewContentAd}
-			<a class="new-content-ad" href="{base}/personas/oliver"> Neu! Oliver ist da! </a>
+			<a class="new-content-ad" href={resolve('/personas/oliver')}> Neu! Oliver ist da! </a>
 		{/if}
 		<p class="subtitle">
 			Auf BlindDate geben Ihnen Studierende mit Beeinträchtigungen einen Einblick in ihren

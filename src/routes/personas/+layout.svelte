@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import { ENVIRONMENT } from '$lib/constants/environment';
 	import type { Snippet } from 'svelte';
@@ -12,8 +12,12 @@
 	<header>
 		<div class="row">
 			{#if ENVIRONMENT.backLinkToStartpage}
-				<a href="{base}/#studierende" class="back-to-startpage" data-sveltekit-preload-data="hover">
-					<img src="{base}/icons/logo.svg" alt="" aria-hidden="true" />
+				<a
+					href={resolve('/') + '#studierende'}
+					class="back-to-startpage"
+					data-sveltekit-preload-data="hover"
+				>
+					<img src={asset('/icons/logo.svg')} alt="" aria-hidden="true" />
 					<span>Zur Startseite</span>
 				</a>
 			{:else}

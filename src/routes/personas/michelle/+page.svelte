@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
@@ -21,7 +21,7 @@
 </script>
 
 <PersonaWrapper {persona}>
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-01.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-01.mp3')}>
 		Hi, mein Name ist Chelle – eigentlich Michelle. Ich studiere Popmusikdesign an der Popakademie
 		in Mannheim. Ich spiele Schlagzeug in einer Band – also ihr könnt mich oft im Proberaum finden.
 		Alternativ falle ich euch aber auch in der Mensa auf, weil ich wahrscheinlich die einzige Person
@@ -34,7 +34,7 @@
 		mich.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-02.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-02.mp3')}>
 		<span id={personaTagIds.michelle.selbsthilfe} tabindex="-1">
 			Als ich angefangen habe zu studieren, habe ich die Gruppe studiCED gefunden. Das ist eine
 			Selbsthilfevereinigung von Studierenden, die von CED betroffen sind.
@@ -123,7 +123,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-03.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-03.mp3')}>
 		Ich muss mit meiner Energie immer haushalten. Das wird schwierig, wenn viele Sachen an einem Tag
 		anstehen oder ich mehrere Tage hintereinander funktionieren muss. Am besten kann ich das mir –
 		und auch anderen – mit der <span lang="en">Spoon</span> Theorie erklären. An guten Tagen hab ich
@@ -132,7 +132,7 @@
 		dann wird auch kochen, einkaufen oder einfache Tätigkeiten zu viel.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-04.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-04.mp3')}>
 		Ich plane meine Tage immer im Voraus – Katastrophen-Planung quasi. Wenn ich das Haus verlasse,
 		muss ich vorher wissen, wo ich hingehe und ob dort eine Toilette in der Nähe ist. In Vorlesungen
 		sitze ich immer am Rand, damit ich notfalls schnell raus kann. Und in meinem Kopf kalkuliere ich
@@ -157,7 +157,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-05.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-05.mp3')}>
 		Ich bin richtig frustriert, wenn ich mitbekomme, dass Leute hinter meinem Rücken Kommentare
 		darüber machen, dass ich schon wieder den Raum verlasse oder ja kaum da bin. Oder noch besser:
 		Wenn mich Leute davon abhalten wollen, die barrierefreie Toilette zu benutzen. Aber es gibt auch
@@ -182,7 +182,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-06.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-06.mp3')}>
 		Ja, Morbus Crohn ist körperlich belastend. Aber es geht auch auf die Psyche – ich habe oft
 		Angst, einen Schub zu bekommen und dann in einer unangenehmen Situation zu sein. Es stresst
 		mich, wenn ich aus einer Veranstaltung renne und mich alle anschauen. Dazu kommt ein permanent
@@ -214,13 +214,13 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-07.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-07.mp3')}>
 		Die Medikamente, die ich nehmen muss, machen mich oft sehr müde. Außerdem ist mein Körper durch
 		die Krämpfe und Schmerzen geschlaucht. Ich muss viele Pausen einlegen und mit meinen Ressourcen
 		gut haushalten.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-08.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-08.mp3')}>
 		Ich bin immer saufroh, wenn irgendein Lernmaterial online verfügbar ist. Ich kann nicht immer
 		vor Ort sein, auch wenn ich es gerne wäre. Ich muss oft zum Arzt. Ich muss immer wieder ins
 		Krankenhaus. Deshalb verpasse ich Veranstaltungen. Digitales Lernmaterial bedeutet für mich,
@@ -271,7 +271,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-09.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-09.mp3')}>
 		Mittlerweile spreche ich sehr offen über meine Erkrankung und die Symptome. Ich will, dass die
 		Menschen sensibler für unsichtbare Beeinträchtigungen werden. Und das geht nur, wenn man darüber
 		aufklärt.
@@ -285,7 +285,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-10.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-10.mp3')}>
 		Kontakt zu Mitstudierenden ist für mich recht schwierig. Das liegt daran, dass ich einfach
 		unzuverlässig bin – aber halt nicht mit Absicht. Ich bin nicht jeden Tag an der Uni, ich kann
 		nicht fest zusagen, ob ich zu einer Party komme und bei Gruppenarbeiten werde ich nicht zu jedem
@@ -312,7 +312,7 @@
 	<Week {persona} />
 
 	<MainHeading heading="Prüfungen" />
-	<SpeechBubble {persona} audio={base + '/personas/michelle/audio/chelle-sb-11.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/michelle/audio/chelle-sb-11.mp3')}>
 		Obwohl ich einen Nachteilsausgleich habe, muss ich trotzdem immer wieder mit Lehrenden
 		diskutieren und mich erklären. Das nervt. Es wäre viel konstruktiver, wenn wir darüber reden
 		könnten, wie man meinen NTA sinnvoll umsetzt, anstatt darüber, ob ich den jetzt auch wirklich

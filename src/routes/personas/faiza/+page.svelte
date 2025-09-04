@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
@@ -24,7 +24,7 @@
 </script>
 
 <PersonaWrapper {persona}>
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-01.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-01.mp3')}>
 		Hey, mein Name ist Faiza, ich bin 32 Jahre alt und studiere Informatik an der TU Darmstadt. Ich
 		wohne mit meinem Partner Chris und unserem 1 1/2 Jahre alten Sohn Jonas in Griesheim. Auch Chris
 		studiert in Darmstadt und wir arbeiten beide als wissenschaftliche Hilfskräfte an der Uni. Das
@@ -59,7 +59,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-02.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-02.mp3')}>
 		Als Jonas ein halbes Jahr alt war und weil wir die Unterstützung meiner Schwiegereltern hatten,
 		habe ich mein Studium als Teilzeitstudium wieder aufgenommen. Mittlerweile studiere ich wieder
 		in Vollzeit, da man im Teilzeitstudium keinen Anspruch auf BAföG hat. Das wurde finanziell dann
@@ -85,7 +85,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-03.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-03.mp3')}>
 		Natürlich schaue ich schon bei der Semesterplanung, welche Kurse ich überhaupt belegen kann.
 		Kurse mit Anwesenheitspflicht in Präsenz sind für mich eigentlich nicht möglich. Gerade in der
 		Winterzeit ist Jonas häufiger erkältet und ich muss mit ihm zuhause bleiben. Wenn Anwesenheit
@@ -106,7 +106,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-04.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-04.mp3')}>
 		Manchmal komme ich mir vor wie eine Eventplanerin. Eine Familie mit kleinem Kind zu
 		organisieren, erfordert schon ein gewisses Organisationstalent. Aber das dann auch noch parallel
 		mit zwei studierenden Elternteilen – das ist ne Herausforderung. Selbst gewählt, ja, aber es
@@ -121,7 +121,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-05.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-05.mp3')}>
 		Manchmal lässt es sich nicht vermeiden und Chris oder ich müssen Jonas mit an die Uni nehmen, da
 		wir keine Betreuung für ihn haben. Alleine die Wege hin und von der Uni sind für mich sehr
 		anstrengend. Natürlich brauche ich mit Jonas länger und muss viel Zeit einplanen. Zum Glück gibt
@@ -136,7 +136,7 @@
 		auch immer abgelenkt und kann nur mit einem Ohr zuhören.
 	</FriendBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-06.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-06.mp3')}>
 		Und das geht mit einem Kind ab und an mal. Aber mit Pflegeverantwortung für ein älteres
 		Familienmitglied zum Beispiel wird es schwierig. Eine Freundin von mir pflegt ihre kranke Oma.
 		Es ist sozial akzeptiert, dass man mal Kinder mit zur Arbeit oder an die Uni bringt – aber nicht
@@ -158,7 +158,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-07.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-07.mp3')}>
 		Ehrlich gesagt, ist das immer das Erste, was ich mir in der Veranstaltungs&shy;beschreibung
 		anschaue: Gibt es eine Anwesenheitspflicht? Wie oft darf ich maximal fehlen? Gibt es die
 		Möglichkeit, online teilzunehmen oder asynchron zu arbeiten? Ich muss einfach wissen, welche
@@ -195,7 +195,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-08.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-08.mp3')}>
 		Ich bin immer sehr froh, wenn ich Videos oder Podcasts zu einem Thema finde oder es sogar von
 		Lehrenden zur Verfügung gestellt wird, da ich mir dann die Inhalte flexibel anhören oder
 		anschauen kann. Und wenn es dann kein 90 minütiges Video ist, sondern Kurzvideos zu
@@ -204,7 +204,7 @@
 
 	<MainHeading heading="Interaktion und Kommunikation" />
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-09.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-09.mp3')}>
 		Wir sind darauf angewiesen, dass Lehrende ihre Vorlesungen entweder asynchron zur Verfügung
 		stellen, oder dass wir auf Verständnis bei ihnen stoßen, wenn wir spontan an Veranstaltungen
 		nicht teilnehmen können. Das ist leider nicht immer der Fall, da häufig noch das Idealbild von
@@ -232,7 +232,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-10.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-10.mp3')}>
 		An der Uni gibt es ein Vernetzungstreffen für Studierende mit Pflegeverantwortung. Da werden
 		neue Regelungen kommuniziert und man hat die Möglichkeit, sich auszutauschen. Das hat mir sehr
 		geholfen und tut es auch immer noch. Und es gibt tatsächlich auch einen Moodle-Kurs „Studieren
@@ -292,7 +292,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/faiza/audio/faiza-sb-11.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/faiza/audio/faiza-sb-11.mp3')}>
 		Letztes Semester hatten wir beide zur gleichen Zeit unsere Prüfungswoche mit jeweils 3 Prüfungen
 		in Präsenz. Da sind wir beide, Jonas und meine Schwiegereltern auf dem Zahnfleisch gegangen.
 	</SpeechBubble>

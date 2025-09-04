@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 
 	let { position }: { position: 'desktop' | 'mobile' } = $props();
 </script>
 
 <img
 	class="sun sun--{position}"
-	src="{base}/decorations/checkList/sun.svg"
+	src={asset('/decorations/checkList/sun.svg')}
 	alt=""
 	aria-hidden="true"
 />

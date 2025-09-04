@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { Day } from '$lib/interfaces/week.interfaces';
 
@@ -19,7 +19,7 @@
 						? 'hidden'
 						: ''}"
 					aria-hidden={days.filter((obj) => obj.smiley === 'happy').length < 3}
-					src="{base}/personas/{persona.id}/{persona.id}-happy.svg"
+					src={asset(`/personas/${persona.id}/${persona.id}-happy.svg`)}
 					alt="{persona.name} ist zufrieden, da {days.filter((obj) => obj.smiley === 'happy')
 						.length} von 5 Tagen in dieser Woche gut verliefen."
 					loading="lazy"
@@ -31,7 +31,7 @@
 				<img
 					class="week-figure"
 					aria-hidden={days.filter((obj) => obj.smiley === 'sad').length < 3}
-					src="{base}/personas/{persona.id}/{persona.id}-sad.svg"
+					src={asset(`/personas/${persona.id}/${persona.id}-sad.svg`)}
 					alt="{persona.name} steht in einer erschöpften Pose da, da {days.filter(
 						(obj) => obj.smiley === 'sad'
 					).length} von 5 Tagen in dieser Woche schlecht verliefen"

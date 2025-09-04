@@ -1,20 +1,24 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { onMount, type Snippet } from 'svelte';
 	import Icon from '../../lib/components/Icon.svelte';
 
 	let { children }: { children: Snippet } = $props();
 
-	let persona: 'gabriel' | 'hannah' | null = $state(null);
+	// let persona: 'gabriel' | 'hannah' | null = $state(null);
+	let link: string | undefined = $state();
 	let personaName: string = $state('');
 
-	if (page.url.pathname.includes('gabriel')) persona = 'gabriel';
-	if (page.url.pathname.includes('hannah')) persona = 'hannah';
-
 	onMount(() => {
-		if (persona !== null) {
-			personaName = persona.charAt(0).toUpperCase() + persona.slice(1, persona.length);
+		if (page.url.pathname.includes('gabriel')) {
+			personaName = 'Gabriel';
+			link = resolve('/personas/gabriel/');
+		}
+
+		if (page.url.pathname.includes('hannah')) {
+			personaName = 'Hannah';
+			link = resolve('/personas/hannah/');
 		}
 
 		window.document.body.classList.toggle('full-height');
@@ -33,9 +37,12 @@
 
 <div class="wrapper">
 	<header>
-		<a class="back-link" href="{base}/personas/{persona}/#simulation-link-{persona}" autofocus>
-			<Icon svg_color={'white'} img="back">Zurück zu {personaName}</Icon>
-		</a>
+		{#if link && personaName}
+			<a class="back-link" href={link} autofocus>
+				<Icon svg_color={'white'} img="back">Zurück zu {personaName}</Icon>
+			</a>
+		{/if}
+
 		<div class="logo">
 			<div class="img">
 				<Icon size="parent" alt="BlindDate Logo" img="logo" />

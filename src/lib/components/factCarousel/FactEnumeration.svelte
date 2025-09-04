@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 
 	let { total = 0, amount = 0 }: { total?: number; amount?: number } = $props();
 
@@ -9,18 +9,18 @@
 
 <div class="wrapper">
 	{#each { length: amount }, i}
-		<img class="amount" src="{base}/icons/person-fill.svg" alt="" aria-hidden="true" />
+		<img class="amount" src={asset('/icons/person-fill.svg')} alt="" aria-hidden="true" />
 	{/each}
 	{#each { length: total - amount }, i}
-		<img class="total" src="{base}/icons/person-stroke.svg" alt="" aria-hidden="true" />
+		<img class="total" src={asset('/icons/person-stroke.svg')} alt="" aria-hidden="true" />
 	{/each}
 </div>
 <div class="mobile-wrapper">
 	{#each { length: responsiveAmount }, i}
-		<img class="amount" src="{base}/icons/person-fill.svg" alt="" aria-hidden="true" />
+		<img class="amount" src={asset('/icons/person-fill.svg')} alt="" aria-hidden="true" />
 	{/each}
 	{#each { length: responsiveTotal - responsiveAmount }, i}
-		<img class="total" src="{base}/icons/person-stroke.svg" alt="" aria-hidden="true" />
+		<img class="total" src={asset('/icons/person-stroke.svg')} alt="" aria-hidden="true" />
 	{/each}
 </div>
 

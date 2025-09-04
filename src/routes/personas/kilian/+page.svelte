@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import Accordion from '$lib/components/accordion/Accordion.svelte';
 	import AccordionItem from '$lib/components/accordion/AccordionItem.svelte';
 	import PersonaAnswer from '$lib/components/accordion/PersonaAnswer.svelte';
@@ -20,7 +20,7 @@
 </script>
 
 <PersonaWrapper {persona}>
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-01.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-01.mp3')}>
 		Hallo und Guten Tag. Mein Name ist Kilian, ich bin 21 Jahre alt und wohne, nicht ganz
 		freiwillig, mit meinen Eltern und vielen Kühen in einem Vorort von Oldenburg. An der Uni
 		Oldenburg studiere ich im 2. Semester Anglistik. Eine brotlose Kunst, aber ich liebe eben
@@ -29,7 +29,7 @@
 		barrierefreie Appartements vom Studierendenwerk. Da bin ich nun auf der Warteliste für eine
 		rollstuhlgerechte Behausung.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-02.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-02.mp3')}>
 		Ach so, ich nutze einen Rollstuhl, Orthesen und noch ein paar andere Geräte aus dem Rehabedarf.
 		Ich habe eine Zerebralparese und dadurch eine Spastik in der rechten Körperhälfte. Eine
 		Zerebralparese ist eine angeborene Beeinträchtigung der Nerven. Die schlägt mir auch auf‘s
@@ -44,7 +44,7 @@
 	</SpeechBubble>
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow:hidden;">
-		<ToolCard title="Eingabehilfen" image="{base}/tools/trackball.svg">
+		<ToolCard title="Eingabehilfen" image={asset('/tools/trackball.svg')}>
 			Die benötigten Hilfsmittel und Strategien, die Personen mit motorischen Beeinträchtigungen
 			nutzen, sind stark von der Ausprägung der Beeinträchtigung abhängig. Bei verschiedenen
 			motorischen Beeinträchtigungen – wie beispielsweise einer Zerebralparese - kommt es zu einer
@@ -56,7 +56,7 @@
 				Muskelspannung und chronische Schmerzen reduziert werden.
 			</span>
 		</ToolCard>
-		<ToolCard title="Energie-Management" image="{base}/tools/calender.svg">
+		<ToolCard title="Energie-Management" image={asset('/tools/calender.svg')}>
 			<span tabindex="-1" id={personaTagIds.kilian.ermuedung}>
 				Die unkontrollierbaren Anspannungen der Muskulatur verbrauchen sehr viel Energie und sind
 				dadurch häufig sehr ermüdend.
@@ -64,21 +64,21 @@
 			Regelmäßige Pausen, Aufteilen von Aufgaben in kleinere „Häppchen“ und ein gutes Energie-Management
 			sind daher wichtige Strategien.
 		</ToolCard>
-		<ToolCard title="Muskelspannung reduzieren" image="{base}/tools/orthotic.svg">
+		<ToolCard title="Muskelspannung reduzieren" image={asset('/tools/orthotic.svg')}>
 			<span id={personaTagIds.kilian.orthesen} tabindex="-1">
 				Um die Muskelspannung und dadurch auftretende Schmerzen zu reduzieren, können eine passende
 				Medikation, Wärme, regelmäßige Physiotherapie und Orthesen helfen.
 			</span>
 		</ToolCard>
 	</div>
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-03.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-03.mp3')}>
 		Zu Hause habe ich einen Trackball und eine Großfeldtastatur. Die sieht halt aus wie für Omas.
 		Aber so schaffe ich es, zuverlässig die richtige Taste zu treffen, was auf einer normalen
 		Tastatur wegen der Spastik eher ein Glücksspiel ist. Häufig nutze ich auch die Spracheingabe.
 		Das geht manchmal einfach schneller - oder auch nicht, je nachdem, was meine Sprachmuskulatur
 		gerade so macht.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-04.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-04.mp3')}>
 		Da die Lähmung meiner rechten Körperhälfte nicht zu stark ausgeprägt ist, kann ich kurze
 		Strecken laufen. Ich wackel dabei aber ziemlich viel und laufe mit einem Spitzfuß. Und langsam
 		bin ich auch noch. Laufen ist für mich einfach sehr anstrengend. Wenn ich mich schnell und
@@ -100,7 +100,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-05.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-05.mp3')}>
 		Wenn ich Präsenzveranstaltungen habe, dann fahre ich oft mit einem Taxi an die Uni. Das ist eine
 		Leistung, die ich bekomme, weil wir nicht gut angebunden sind. Mit dem Aufzug, der in der
 		hintersten Ecke des Gebäudes ist, muss ich zur richtigen Etage fahren und dann noch zum
@@ -122,7 +122,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-06.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-06.mp3')}>
 		Viele Gebäude und Räume der Uni sind offiziell barrierefrei zugänglich. Das ist aber irgendwie
 		Interpretationssache. Bei uns gibt es zum Beispiel eine Rampe, die so steil ist, dass ich
 		rückwärts runterrollen würde, wenn niemand hinter mir ist. Die Tür zum Gebäude geht dann auch
@@ -155,7 +155,7 @@
 			wichtig.
 		</Text>
 	</TextSection>
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-07.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-07.mp3')}>
 		Ich gehe sehr gerne in die Bibliothek. Nicht nur zum Lernen, auch einfach um Bücher zu schmökern
 		oder mir Inspiration zu holen. Allerdings kann ich mich nicht nur in den Büchern verlieren –
 		mein Orientierungssinn ist so schlecht, dass ich mich in der großen Bib nicht zurecht finde.
@@ -178,7 +178,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-08.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-08.mp3')}>
 		Die Zerebralparese ist mit einer erhöhten Muskelspannung verbunden. Die betrifft auch meine
 		Stimmbänder und daher spreche ich etwas langsamer. Anstrengender ist es auch noch. Manchmal
 		haben es Menschen beim Zuhören eilig. Dann vervollständigen sie schnell meine Sätze oder hören
@@ -216,7 +216,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-09.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-09.mp3')}>
 		Ich bin schon vor Beginn des Studiums zum Beauftragten für Studierende mit Beeinträchtigungen
 		gegangen. Dort wurde mir gesagt, was ich alles besorgen muss, damit ich <span lang="en"
 			>accommodations</span
@@ -227,7 +227,7 @@
 		allerdings nervt, ist, dass alle Wege bei mir liegen. Ich muss bei jeder Prüfung zum Prüfungsamt.
 		Wenn Räume nicht barrierefrei sind, muss ich das melden.
 	</SpeechBubble>
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-10.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-10.mp3')}>
 		Mir wurden nicht alle Hilfsmittel, die ich für‘s Studium brauche, sofort oder überhaupt
 		bewilligt. Den Fahrdienst muss ich auch jeden Monat planen und mir einteilen, da der ja nicht
 		unbegrenzt zur Verfügung steht. Die ständige Organisation ist eigentlich ein kompletter
@@ -245,7 +245,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/kilian/audio/kilian-sb-11.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/kilian/audio/kilian-sb-11.mp3')}>
 		Mein Motto ist: <span lang="en">be prepared</span>. So versuche ich im Voraus Stress zu
 		vermeiden. Oder improvisierte Lösungen, die vor allem für mich schlecht sind - und unter
 		Umständen unangenehm oder sogar gefährlich sein könnten. Dazu gehört zum Beispiel, mich in

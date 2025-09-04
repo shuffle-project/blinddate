@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import {
 		BIG_PICTURE_STUDENTS,
 		SUPPORT_OPTIONS,
@@ -258,7 +258,7 @@
 									<div class="name-icon-wrapper">
 										{#if student.icon}
 											<img
-												src={base + '/icons/' + student.icon + '.svg'}
+												src={asset('/icons/' + student.icon + '.svg')}
 												alt=""
 												aria-hidden="true"
 											/>
@@ -286,7 +286,7 @@
 		<div class="student-detail">
 			<div class="student-image">
 				<img
-					src="{base}/personas/{selectedStudentId}/{selectedStudentId}-lecture.svg"
+					src={asset(`/personas/${selectedStudentId}/${selectedStudentId}-lecture.svg`)}
 					alt=""
 					aria-hidden="true"
 				/>

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 </script>
 
 <main>
 	<h1>404</h1>
 	<p>Oops! Diese Seite gibt es nicht.</p>
-	<a href="{base}/">Zurück zur Startseite</a>
+	<a href={resolve('/')}>Zurück zur Startseite</a>
 </main>
 
 <style>

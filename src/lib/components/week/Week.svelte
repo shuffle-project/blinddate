@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { Day } from '$lib/interfaces/week.interfaces';
 	import { MediaQuery } from 'svelte/reactivity';
@@ -118,7 +118,7 @@
 			<img
 				class="week-day-indicator"
 				style="left:{weekdayIndicatorStyleValue}%"
-				src="{base}/decorations/week-day-indicator.svg"
+				src={asset('/decorations/week-day-indicator.svg')}
 				alt=""
 				aria-hidden="true"
 			/>

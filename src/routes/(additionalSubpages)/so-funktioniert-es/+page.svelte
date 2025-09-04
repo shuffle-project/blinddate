@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
@@ -55,7 +55,7 @@
 	<p>
 		Sie haben gerade keine Zeit, alle Personas kennenzulernen? Besuchen Sie für den Anfang <a
 			class="focus-indicator"
-			href={base + '/große-ganze'}>"das große Ganze"</a
+			href={resolve('/große-ganze')}>"das große Ganze"</a
 		> und sehen Sie, welche Maßnahmen für viele Studierende gleichzeitig hilfreich sind!
 	</p>
 

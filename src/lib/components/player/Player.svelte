@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import { onMount } from 'svelte';
 	import type { Video } from '../../interfaces/player.interfaces';
 	import Icon from '../Icon.svelte';
@@ -173,7 +173,7 @@
 	<!-- svelte-ignore a11y_media_has_caption -->
 
 	<video
-		poster={base + videoData.poster}
+		poster={asset(videoData.poster)}
 		id="video-{randomId}"
 		controls={useNativeControls || isiOSDevice}
 		preload="metadata"
@@ -195,16 +195,15 @@
 		tabindex="0"
 		aria-label="Videospieler anklickbar"
 	>
-		<source type="video/mp4" src={base + videoData.videoPathMp4} />
+		<source type="video/mp4" src={asset(videoData.videoPathMp4)} />
 		{#each videoData.captionsArray as captionPath}
 			<track
 				kind="captions"
-				src={base + captionPath.path}
+				src={asset(captionPath.path)}
 				label={captionPath.label}
 				srclang={captionPath.lang}
 			/>
 		{/each}
-		<!-- <track kind="subtitles" src="{base}/media/subtitles2.vtt" label="deutsche subtitles" srclang="de" /> -->
 		Ihr Browser unterstützt das Video Element nicht. Falls möglich, können Sie es mit einem anderen Internetbrowser
 		probieren, oder gegebenenfalls diesen Browser aktualisieren.
 	</video>
