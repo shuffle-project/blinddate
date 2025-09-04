@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import Checklist from '$lib/components/checklist/Checklist.svelte';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import FriendSpeechbubble from '$lib/components/friend/FriendSpeechbubble.svelte';
@@ -56,7 +56,7 @@
 </script>
 
 <PersonaWrapper {persona}>
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-01.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-01.mp3')}>
 		Hallo, mein Name ist Maxi und ich bin 29 Jahre alt. Ich studiere Architektur in Mannheim – und
 		bin endlich auch im Master angekommen. Das war ein steiniger Weg. Ich wohne im Wohnheim in einer
 		4er WG, im Zimmer direkt neben Alex. Mit dem studier‘ ich auch.... In guten wie in schlechten
@@ -68,7 +68,7 @@
 		draußen in der Natur unterwegs. Und das tut mir sehr gut.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-02.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-02.mp3')}>
 		Mein Studium ist nicht gerade sehr gradlinig verlaufen. Ich habe Depressionen und
 		Angststörungen. Deshalb habe ich so lange gebraucht. Viele Zweitversuche, viele Semester mit nur
 		zwei Kursen, die Frist für meine Bachelorarbeit musste ich auch verlängern. Zwischendrin war es
@@ -81,7 +81,7 @@
 
 	<MainHeading heading="Technologien und Strategien" />
 	<div style="overflow: hidden;">
-		<ToolCard title="Regelmäßige Pausen" image="{base}/tools/regular-breaks.svg">
+		<ToolCard title="Regelmäßige Pausen" image={asset('/tools/regular-breaks.svg')}>
 			<span id={personaTagIds.maxi['unsichtbare-beeintraechtigung']} tabindex="-1">
 				Psychische Erkrankungen sind Beeinträchtigungen, die oft als solche nicht wahrgenommen
 				werden, da Symptome für Außenstehende häufig nicht sichtbar sind.
@@ -96,20 +96,20 @@
 			</span>
 		</ToolCard>
 
-		<ToolCard title="Tagesplan" image="{base}/tools/day-plan.svg">
+		<ToolCard title="Tagesplan" image={asset('/tools/day-plan.svg')}>
 			Ein anderes Symptom von psychischen Erkrankungen, unter anderem auch bei Depressionen, kann
 			eine Art „Lähmung“ sein. Die Person liegt beispielsweise im Bett und fühlt sich nicht in der
 			Lage, aufzustehen und Zähne zu putzen oder andere alltägliche Aufgaben zu erledigen. Ein
 			fester Tagesplan kann hier manchmal helfen.
 		</ToolCard>
 
-		<ToolCard title="Remote-Studium" image="{base}/tools/remote-study.svg">
+		<ToolCard title="Remote-Studium" image={asset('/tools/remote-study.svg')}>
 			Zudem kann es hilfreich sein, von zu Hause arbeiten oder studieren zu können. Die
 			Einstiegshürde kann hier als geringer empfunden werden. Unter Umständen bringt das digitale
 			Studieren aber auch eine unfreiwillige Isolation mit sich.
 		</ToolCard>
 
-		<ToolCard title="Probleme erkennen" image="{base}/tools/identify-problem.svg">
+		<ToolCard title="Probleme erkennen" image={asset('/tools/identify-problem.svg')}>
 			Eine mögliche Strategie kann sein, sich die Krankheit einzugestehen und sich therapeutisch
 			beraten zu lassen. Strategien können bei Therapeut*innen erlernt werden, sie sind sehr
 			persönlich und schwer zu generalisieren. Termine bei Therapeut*innen sind schwer zu bekommen
@@ -118,7 +118,7 @@
 		</ToolCard>
 	</div>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-03.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-03.mp3')}>
 		Ich habe herausgefunden, dass es mir hilft, dass ich für Vorlesungen zwar an die Hochschule
 		gehe, aber Projektarbeiten mache ich dann doch lieber von zu Hause aus. Wenn andere dabei
 		sind... Dann habe ich ganz oft komische Gedanken: Die können alles besser, die sind viel
@@ -141,7 +141,7 @@
 		und idealerweise kann ich mich so selbst beruhigen.
 	</FriendSpeechbubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-04.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-04.mp3')}>
 		Ja, solche Übungen kenn' ich auch. Ok, mittlerweile kennen die alle. Achtsamkeit ist ja
 		Mainstream. Die Übungen helfen mir aber nicht. Wenn ich in einer depressiven Phase bin, schaffe
 		ich das nicht... Oder die Übungen haben dann gar keinen Effekt. Es wäre ja auch ein bisschen
@@ -172,7 +172,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-05.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-05.mp3')}>
 		Manchmal schaffe ich es einfach nicht, einer Vorlesung zu folgen. Es ist egal ob online oder in
 		Präsenz. Ich kann mich dann einfach schlecht konzentrieren – Ich bemühe mich, aber das
 		Gedankenkarussell kommt direkt dazwischen: Oh, jetzt hab ich die vorherige Folie verpasst, jetzt
@@ -214,7 +214,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-06.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-06.mp3')}>
 		Letzte Woche erst hatte ich wieder so eine Situation. Ich hab meine Kamera dann einfach
 		eingeschaltet. Gleichzeitig hab ich mir dann aber gedacht - Oh, jetzt können ja die anderen
 		einfach das Bild von mir groß stellen. Oder Screenshots machen. Da hab ich mich direkt unwohl
@@ -282,7 +282,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-07.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-07.mp3')}>
 		Wenn ich mich... oder wenn ich meine Krankheit erklären will, dann mache ich mich ja quasi
 		nackt. Das will keiner hören. Niemand will hören, dass ich in eine Klinik musste. Oder dass ich
 		in einer depressiven Phase mehrere Tage nicht mal duschen oder das Haus verlassen konnte. Wie
@@ -301,7 +301,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-08.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-08.mp3')}>
 		Ich finde es wichtig, dass bei Gruppenarbeiten von den Lehrenden geschaut wird, dass alle einen
 		Platz finden. Mich kostet es sehr viel Überwindung, mich bei jemanden zu melden oder in eine
 		feste Gruppe zu gehen, die immer zusammen arbeiten. Mir würde es helfen, einfach zugeteilt zu
@@ -318,7 +318,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-09.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-09.mp3')}>
 		Wenn es mir schlecht geht, ist es einfach eine zu große Aufgabe, noch Kontakt mit Lehrenden
 		aufzunehmen. Dann geht es halt wieder los: Die denken, du bist dumm. Das muss man doch schaffen.
 		Die anderen fragen das auch nicht. Man muss auch Leistung bringen, um zu studieren. Deshalb hab
@@ -342,7 +342,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/maxi/audio/sb-10.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/maxi/audio/sb-10.mp3')}>
 		Ich habe genau sechs Semester gebraucht, bis ich mich getraut habe, mich an die Beauftragte für
 		Studierende mit Behinderung zu wenden. Am Anfang dachte ich, dass die wegen des Namens.... also
 		Behinderung... gar nicht für mich zuständig ist. Ich habe ja eine psychische Krankheit. Das ist

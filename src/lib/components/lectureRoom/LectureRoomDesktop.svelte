@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import { onMount } from 'svelte';
 	import Icon from '../Icon.svelte';
@@ -48,7 +48,7 @@
 					style="transition-duration: {durations[randomIntFromInterval()]}"
 				>
 					<a
-						href="{base}/personas/{persona.id}"
+						href={resolve(`/personas/${persona.id}`)}
 						aria-label={persona.name + (toggleDisabilityInfo ? ` (${persona.disability})` : '')}
 						class:show-all-names={toggleAllNames}
 						data-sveltekit-preload-data="hover"
@@ -63,7 +63,7 @@
 						</div>
 						<img
 							class="persona-img"
-							src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
+							src={asset(`/personas/${persona.id}/${persona.id}-lecture.svg`)}
 							alt=""
 							loading="lazy"
 						/>
@@ -73,7 +73,7 @@
 		</ul>
 		<img
 			class="lecture-room-img"
-			src={base + '/decorations/lecture-room.svg'}
+			src={asset('/decorations/lecture-room.svg')}
 			aria-hidden="true"
 			alt=""
 			height="680"

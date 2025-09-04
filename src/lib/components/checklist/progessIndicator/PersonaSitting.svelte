@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import Sun from './Sun.svelte';
 
@@ -15,7 +15,7 @@
 <li class="human human--{position}">
 	<div class="img-container" class:itemAdded>
 		<img
-			src="{base}/personas/{persona.id}/{persona.id}-sitting.svg"
+			src={asset(`/personas/${persona.id}/${persona.id}-sitting.svg`)}
 			alt=""
 			width="200"
 			height="220"

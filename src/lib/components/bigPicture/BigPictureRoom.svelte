@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import {
 		BIG_PICTURE_STUDENTS,
 		type BigPictureStudent,
@@ -130,14 +130,14 @@
 						<div class="student-info-wrapper" aria-hidden="true">
 							<div class="student-info">
 								{#if student.icon}
-									<img src={base + '/icons/' + student.icon + '.svg'} alt="" aria-hidden="true" />
+									<img src={asset('/icons/' + student.icon + '.svg')} alt="" aria-hidden="true" />
 								{/if}
 								<span class="persona-name">{student.name}</span>
 							</div>
 						</div>
 						<img
 							class="persona-img"
-							src="{base}/personas/{student.id}/{student.id}-lecture.svg"
+							src={asset(`/personas/${student.id}/${student.id}-lecture.svg`)}
 							alt=""
 							loading="lazy"
 						/>
@@ -152,7 +152,7 @@
 				{:else}
 					<img
 						class="persona-img"
-						src="{base}/personas/{student.id}/{student.id}-lecture.svg"
+						src={asset(`/personas/${student.id}/${student.id}-lecture.svg`)}
 						alt=""
 						loading="lazy"
 					/>
@@ -163,7 +163,7 @@
 
 	<img
 		class="big-picture-room"
-		src="{base}/decorations/big-picture-room.svg"
+		src={asset('/decorations/big-picture-room.svg')}
 		alt=""
 		aria-hidden={highlightedStudents || mobileView}
 		width="1350"
@@ -316,7 +316,7 @@
 			}
 
 			li.michelle {
-				bottom: calc(51.3% - 0.2675em);
+				bottom: calc(51% - 0.2675em);
 				right: 21%;
 
 				img {

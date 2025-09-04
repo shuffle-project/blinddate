@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 </script>
 
 <div class="wrapper">
@@ -13,7 +13,7 @@
 				können viel zur Barrierefreiheit an der Hochschule beitragen. Erfahren Sie mehr darüber, wie
 				Sie BlindDate nutzen können.
 			</p>
-			<a href="{base}/so-funktioniert-es" class="focus-indicator">So funktioniert's</a>
+			<a href={resolve('/so-funktioniert-es')} class="focus-indicator">So funktioniert's</a>
 		</div>
 		<div class="big-picture">
 			<h2>Das große Ganze</h2>
@@ -22,7 +22,7 @@
 				lernen und lehren können. Hier geben wir Ihnen einen Einblick in Maßnahmen zur Gestaltung
 				Ihrer Lehre, die vielen Lernenden gleichzeitig zugutekommen.
 			</p>
-			<a href="{base}/große-ganze" class="focus-indicator">Zum großen Ganzen</a>
+			<a href={resolve('/große-ganze')} class="focus-indicator">Zum großen Ganzen</a>
 		</div>
 		<div class="personas">
 			<h2>Personas?</h2>
@@ -33,7 +33,9 @@
 				Erfahrungsberichte und Feedback von Studierenden mit Beeinträchtigungen im Laufe des SHUFFLE
 				Projekts gesammelt.
 			</p>
-			<a href="{base}/persona-entwicklung" class="focus-indicator">Persona-Entwicklung im Detail</a>
+			<a href={resolve('/persona-entwicklung')} class="focus-indicator"
+				>Persona-Entwicklung im Detail</a
+			>
 		</div>
 
 		<div class="questions">
@@ -44,10 +46,10 @@
 				Beeinträchtigung?
 			</p>
 			<p>In dieser Sektion finden Sie Antworten auf häufig gestellte Fragen zu BlindDate.</p>
-			<a href="{base}/fragen" class="focus-indicator">Zu den häufigen Fragen</a>
+			<a href={resolve('/fragen')} class="focus-indicator">Zu den häufigen Fragen</a>
 		</div>
 		<div class="decorative-image">
-			<img src="{base}/tools/remote-study.svg" alt="" aria-hidden="true" />
+			<img src={asset('/tools/remote-study.svg')} alt="" aria-hidden="true" />
 		</div>
 		<div class="concepts">
 			<h2>Wichtige Begriffe</h2>
@@ -55,10 +57,10 @@
 				Barrierefreiheit? Behinderung? Assistive Technologien? best3 Studie? – auf dieser Seite
 				werden verschiedene Begriffe kurz und verständlich definiert.
 			</p>
-			<a href="{base}/wichtige-begriffe" class="focus-indicator">Zu den wichtigen Begriffen</a>
+			<a href={resolve('/wichtige-begriffe')} class="focus-indicator">Zu den wichtigen Begriffen</a>
 		</div>
 		<div class="decorative-persona">
-			<img src="{base}/personas/maxi/maxi-happy.svg" alt="" aria-hidden="true" loading="lazy" />
+			<img src={asset('/personas/maxi/maxi-happy.svg')} alt="" aria-hidden="true" loading="lazy" />
 		</div>
 	</div>
 </div>

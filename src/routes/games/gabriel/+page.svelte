@@ -1,69 +1,69 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	/* tasks */
 
 	const contentsArray = [
 		{
-			image: base + '/games/gabriel/UI/moodle-01-sl.svg',
+			image: asset('/games/gabriel/UI/moodle-01-sl.svg'),
 			mood: '',
 			description:
 				'Gabriel möchte sich notieren, auf welchen Seiten im Lehrwerk er weiterführende Informationen zu den Inhalten der Folien findet. Der Professor hat diese Verweise geschickt als kleine, rote Infokästen in den Folien integriert. Können Sie Gabriel dabei behilflich sein?',
 			solution: 12
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-02-nl.svg',
+			image: asset('/games/gabriel/UI/moodle-02-nl.svg'),
 			mood: '',
 			description:
 				'Die Aufgabe ist gar nicht mehr so leicht, wenn das eigene Gesichtsfeld eingeschränkt ist. Das ist bei Gabriel durch sein Glaukom der Fall. Das bedeutet, dass es ihm nicht möglich ist, das, was vor ihm liegt, ganz zu überblicken.',
 			solution: 'NONE'
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-03-el-01.svg',
-			mood: base + '/personas/gabriel/gabriel-explaining.svg',
+			image: asset('/games/gabriel/UI/moodle-03-el-01.svg'),
+			mood: asset('/personas/gabriel/gabriel-explaining.svg'),
 			description:
 				'“Keine Sorge: Mit der Zeit entwickelt man Strategien, um mit einer Sehbeeinträchtigung zurecht zu kommen. Mir hilft es, den Kopf viel hin und her zu bewegen, um mich in einem Dokument zurechtzufinden. Das mag für Außenstehende zunächst seltsam wirken, aber es funktioniert. Versuch‘s mal!”',
 			solution: 19
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-04-el-02.svg',
-			mood: base + '/personas/gabriel/gabriel-neutral.svg',
+			image: asset('/games/gabriel/UI/moodle-04-el-02.svg'),
+			mood: asset('/personas/gabriel/gabriel-neutral.svg'),
 			description:
 				'“Wie läuft´s? Zugegeben: Ich brauche mehr Zeit als ein Mensch ohne Sehbehinderung, um mit dieser Methode Stück für Stück alle Inhalte in einem Dokument zu erfassen. Außerdem belastet das ständige Bewegen des Kopfes meinen Nacken auf Dauer.”',
 			solution: 22
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-05-el-03.svg',
-			mood: base + '/personas/gabriel/gabriel-sad.svg',
+			image: asset('/games/gabriel/UI/moodle-05-el-03.svg'),
+			mood: asset('/personas/gabriel/gabriel-sad.svg'),
 			description:
 				'“Es wäre einfacher für mich, die Quellen zu überblicken, wenn der Infokasten sich immer an derselben Stelle auf einer Folie befinden würde. Ich werde meinem Dozenten gleich eine E-Mail schreiben und nachfragen, ob er das ändern kann.”',
 			solution: 24
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-06-ll-01.svg',
-			mood: base + '/personas/gabriel/gabriel-happy.svg',
+			image: asset('/games/gabriel/UI/moodle-06-ll-01.svg'),
+			mood: asset('/personas/gabriel/gabriel-happy.svg'),
 			description:
 				'“Der Dozent hat die Folien angepasst! In seiner E-Mail teilt er mit, dass die Quelle nun immer rechts neben dem Titel zu finden ist. Du wirst gleich feststellen, wie viel schneller Du jetzt mit den Aufgaben vorankommst.”',
 			solution: 28
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-07-ll-02.svg',
-			mood: base + '/personas/gabriel/gabriel-shrug.svg',
+			image: asset('/games/gabriel/UI/moodle-07-ll-02.svg'),
+			mood: asset('/personas/gabriel/gabriel-shrug.svg'),
 			description:
 				'“In der Regel komme ich im Studium gut zurecht, da ich mich über die Jahre an die eingeschränkte Sicht gewöhnt habe. Aber mit etwas Unterstützung kann ich in den Veranstaltungen noch effizienter lernen.”',
 			solution: 29
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-08-ll-03.svg',
-			mood: base + '/personas/gabriel/gabriel-neutral.svg',
+			image: asset('/games/gabriel/UI/moodle-08-ll-03.svg'),
+			mood: asset('/personas/gabriel/gabriel-neutral.svg'),
 			description:
 				'“Übrigens ist mein Gesichtsfeld am Rand nicht wirklich schwarz. Mein Gehirn ergänzt die Stellen, die mein Auge nicht erfasst, mit dem, was es zu sehen erwartet, und fügt das  zu einem Bild zusammen. Daher  übersehe ich häufig Dinge. Aber das Grundproblem und die Strategien sind die gleichen!”',
 			solution: 31
 		},
 		{
-			image: base + '/games/gabriel/UI/moodle-09-ende.svg',
-			mood: base + '/personas/gabriel/gabriel-explaining.svg',
+			image: asset('/games/gabriel/UI/moodle-09-ende.svg'),
+			mood: asset('/personas/gabriel/gabriel-explaining.svg'),
 			description:
 				'“Vielen Dank für Deine Hilfe! Studierende mit Beeinträchtigungen haben verschiedene Strategien, die ihnen in unterschiedlichen Situationen helfen. Werden manche Aspekte jedoch schon von Seiten der Lehrenden beachtet, sind zeitaufwändige Strategien oft gar nicht mehr nötig!”',
 			solution: 'FIN'
@@ -199,7 +199,7 @@
 		</div>
 		<div class="notebook" class:mobileVisibility={smallScreen}>
 			<!-- svelte-ignore a11y_missing_attribute -->
-			<img class="notebook-image" src={base + '/games/gabriel/notepad.svg'} />
+			<img class="notebook-image" src={asset('/games/gabriel/notepad.svg')} />
 
 			<div class="error-message">
 				{#if !inputIsNumber}
@@ -215,9 +215,9 @@
 						<span>Artikel {checkmark.index} - Seite </span>
 						<span>{checkmark.userAnswer}</span>
 						{#if checkmark.correct}
-							<img src={base + '/games/gabriel/UI/check-true.png'} alt="Korrekte Antwort" />
+							<img src={asset('/games/gabriel/UI/check-true.png')} alt="Korrekte Antwort" />
 						{:else}
-							<img src={base + '/games/gabriel/UI/check-false.png'} alt="Falsche Antwort" />
+							<img src={asset('/games/gabriel/UI/check-false.png')} alt="Falsche Antwort" />
 						{/if}
 					</div>
 				{/each}
@@ -418,8 +418,6 @@
 		font-family: var(--font-persona);
 	}
 
-	/* 		'<div style="display: flex; align-items: center; height: 1.8vw;">  <p style="font-size: 1.6vw; display: inline-block;">Artikel {index} - Seite </p><p  style="font-size: 1.6vw; display: inline-block; margin-left: 3vw;"> {input}</p><img src="{base}/games/gabriel/check-true.png" width="5%" style="margin-left: auto; margin-right: 10vw;" /></div>';
- */
 	.checkmark {
 		max-width: 21vw;
 		display: flex;

@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import Sources from '$lib/components/Sources.svelte';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
@@ -8,11 +8,11 @@
 	<SubpageTitle>Die Persona-Entwicklung im Detail</SubpageTitle>
 	<div class="persona-progress-wrapper" aria-hidden="true">
 		<div class="persona-progress">
-			<img class="progress-1" src="{base}/personas/aleksandr/aleksandr-progress-1.png" alt="" />
-			<img class="progress-2" src="{base}/personas/aleksandr/aleksandr-progress-2.png" alt="" />
-			<img class="progress-3" src="{base}/personas/aleksandr/aleksandr-progress-3.png" alt="" />
-			<img class="progress-4" src="{base}/personas/aleksandr/aleksandr-progress-4.png" alt="" />
-			<img class="progress-5" src="{base}/personas/aleksandr/aleksandr-neutral.svg" alt="" />
+			<img class="progress-1" src={asset('/personas/aleksandr/aleksandr-progress-1.png')} alt="" />
+			<img class="progress-2" src={asset('/personas/aleksandr/aleksandr-progress-2.png')} alt="" />
+			<img class="progress-3" src={asset('/personas/aleksandr/aleksandr-progress-3.png')} alt="" />
+			<img class="progress-4" src={asset('/personas/aleksandr/aleksandr-progress-4.png')} alt="" />
+			<img class="progress-5" src={asset('/personas/aleksandr/aleksandr-neutral.svg')} alt="" />
 		</div>
 	</div>
 	<div class="content-wrapper">
@@ -92,16 +92,17 @@
 
 		<p>
 			Haben Sie Fragen zu BlindDate oder wollen sich weiter informieren? Hier finden Sie <a
-				href="{base}/wichtige-begriffe"
+				href={resolve('/wichtige-begriffe')}
 				class="focus-indicator">wichtige Begriffe</a
 			>
-			und Antworten auf <a href="{base}/fragen" class="focus-indicator">häufig gestellte Fragen</a>.
+			und Antworten auf
+			<a href={resolve('/fragen')} class="focus-indicator">häufig gestellte Fragen</a>.
 		</p>
 
 		<p>
 			Auch das BlindDate-Team ist nicht unfehlbar: Sollten Ihnen Fehler begegnen oder Sie weitere
 			Anregungen haben, melden Sie sich gerne bei uns: <a
-				href="{base}/kontakt"
+				href={resolve('/kontakt')}
 				class="focus-indicator">Kontakt</a
 			>.
 		</p>

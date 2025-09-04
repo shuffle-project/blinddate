@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { PersonaID } from '$lib/interfaces/persona.interfaces';
 	import Icon from './Icon.svelte';
 	import Modal from './Modal.svelte';
@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="sl-container" id="simulation-link-{personaID}">
+<div class="sl-container">
 	<div class="sl-content">
 		<img class="sl-img" src={image} alt="" role="presentation" />
 		<div class="text-container">
@@ -65,7 +65,7 @@
 				<img
 					alt="Screenshot aus Gabriels Simulationsspiel"
 					aria-describedby="game-explained"
-					src={base + '/personas/gabriel/gabriel-simgame-teaser.jpg'}
+					src={asset('/personas/gabriel/gabriel-simgame-teaser.jpg')}
 					loading="lazy"
 				/>
 
@@ -98,7 +98,7 @@
 				<img
 					alt="Screenshot aus Hannahs Simulationsspiel"
 					aria-describedby="game-explained"
-					src={base + '/personas/hannah/hannah-simgame-teaser.jpg'}
+					src={asset('/personas/hannah/hannah-simgame-teaser.jpg')}
 					loading="lazy"
 				/>
 

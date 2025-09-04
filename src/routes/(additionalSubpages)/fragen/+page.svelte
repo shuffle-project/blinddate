@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
@@ -107,7 +107,7 @@
 
 	<p>
 		Wie Sie Ihre Lehre für viele Studierende barrierefrei gestalten können, ohne deren Bedarfe zu
-		kennen, zeigen wir Ihnen auf <a class="focus-indicator" href={base + '/große-ganze/'}
+		kennen, zeigen wir Ihnen auf <a class="focus-indicator" href={resolve('/große-ganze/')}
 			>"das große Ganze"</a
 		> .
 	</p>
@@ -133,7 +133,7 @@
 	</p>
 
 	<img
-		src="{base}/media/faq/best3-students-impairment.png"
+		src={asset('/media/faq/best3-students-impairment.png')}
 		alt="Angaben von 179.908 Studierenden werden in einem Kuchendiagramm dargestellt. 84,1% sind Studierende ohne studienerschwerende Beeinträchtigung. 15,9% geben an, eine studienerschwerende Beeinträchtigung zu haben. Innerhalb dieser 15,9% wird auch nach Beeinträchtigungsart unterschieden. Die Ergebnisse zu den Beeinträchtigungsarten basieren auf Angaben von 26.264 Studierenden: 65,2% psychische Erkrankung, 13.2% chronische Erkrankung, 7,2% gleich schwere Mehrfachbeeinträchtigung und 14,3% andere Beeinträchtigung."
 	/>
 	<p>
@@ -155,7 +155,7 @@
 	</p>
 
 	<img
-		src="{base}/media/faq/best3-students-impairment-detail.png"
+		src={asset('/media/faq/best3-students-impairment-detail.png')}
 		alt="Die Angaben von 26.264 Studierenden mit studienerschwerenden Beeinträchtigungen sind in einem Balkendiagramm dargestellt: 65,2% psychische Erkrankung, 13,2% chronische Erkrankung, 7,2% gleich schwere Mehrfachbeeinträchtigung, 5,1% andere Beeinträchtigung, 3,7% Teilleistungsstörungen, 2,5% Bewegungsbeeinträchtigung, 1,9% Sehbeeinträchtigung, 1,1% Hörbeeinträchtigung."
 	/>
 
@@ -367,7 +367,8 @@
 	<p>
 		Um weitere Informationen zur Barrierefreiheit von BlindDate zu erhalten, werden Sie hier zur
 
-		<a href="{base}/barrierefreiheit" class="focus-indicator">Erklärung zur Barrierefreiheit</a>
+		<a href={resolve('/barrierefreiheit')} class="focus-indicator">Erklärung zur Barrierefreiheit</a
+		>
 		weitergeleitet.
 	</p>
 

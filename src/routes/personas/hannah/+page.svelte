@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import InfoBox from '$lib/components/InfoBox.svelte';
 	import Recommendation from '$lib/components/Recommendation.svelte';
 	import SimulationLink from '$lib/components/SimulationLink.svelte';
@@ -82,7 +82,7 @@
 </script>
 
 <PersonaWrapper {persona}>
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-01.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-01.mp3')}>
 		Hallo, ich bin Hannah. Ich bin 25 Jahre alt und studiere Mathematik auf Lehramt im Bachelor in
 		Dortmund. Ich wohne gemeinsam mit meinen zwei Mitbewohnern, Till und Simon, in einer WG und
 		fühle mich hier richtig wohl. Eigentlich komm ich vom Dorf, aber hier in der Stadt gefällt es
@@ -96,7 +96,7 @@
 		wichtig – besonders aber die Qualität der Untertitel.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-02.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-02.mp3')}>
 		Ich bin nämlich von Geburt an hörbehindert auf beiden Ohren. Ich trage links ein Hörgerät und
 		rechts ein Cochlea-Implantat... wenn ich die Haare offen trage, sieht man davon allerdings kaum
 		was. Ich verwende sowohl die Lautsprache als auch die deutsche Gebärdensprache. Dadurch, dass
@@ -109,12 +109,12 @@
 	<MainHeading heading="Technologien und Strategien" />
 
 	<div style="overflow:hidden;">
-		<ToolCard title="Hörgeräte" image="{base}/tools/hearing-aid.svg">
+		<ToolCard title="Hörgeräte" image={asset('/tools/hearing-aid.svg')}>
 			Bei einigen Hörschädigungen können Hörgeräte eingesetzt werden. Diese verstärken Schallwellen
 			und lenken sie ins Innenohr.
 		</ToolCard>
 
-		<ToolCard title="Cochlea-Implantat (CI)" image="{base}/tools/cochlea-implant.svg">
+		<ToolCard title="Cochlea-Implantat (CI)" image={asset('/tools/cochlea-implant.svg')}>
 			<span
 				>Bei bestimmten Hörschädigungen (z.B. einer Innenohrschwerhörigkeit) und wenn der Hörnerv
 				und die Hörbahn intakt sind, kann ein</span
@@ -148,7 +148,7 @@
 			</span>
 		</ToolCard>
 
-		<ToolCard title="Gebärdensprache" image="{base}/tools/sign-language.svg">
+		<ToolCard title="Gebärdensprache" image={asset('/tools/sign-language.svg')}>
 			<span id={personaTagIds.hannah.gebaerdensprache} tabindex="-1">
 				Die Gebärdensprache ist eine natürliche Sprache, die ein vollwertiges Sprachsystem mit einer
 				eigenen Grammatik darstellt.
@@ -157,7 +157,7 @@
 			mit einer Hörbehinderung, die Hörhilfen verwenden, erlernen und verwenden die Gebärdensprache.
 		</ToolCard>
 
-		<ToolCard title="Untertitel" image="{base}/tools/subtitles.svg">
+		<ToolCard title="Untertitel" image={asset('/tools/subtitles.svg')}>
 			<span id={personaTagIds.hannah.untertitel} tabindex="-1">
 				Videos, Filme und Serien können durch automatisch generierte oder manuell hinzugefügte
 				Untertitel zugänglich gemacht werden.
@@ -166,7 +166,7 @@
 		</ToolCard>
 	</div>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-03.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-03.mp3')}>
 		Dass gehörlose Menschen nur Gebärdensprache benutzen, ist ein Irrtum. Manche hörbehinderte
 		Menschen gebärden und nutzen auch die Lautsprache – sie entscheiden dann situationsabhängig. Und
 		natürlich kommt es auch auf die Gesprächspartner an. Leider ist es so, dass auch nicht alle
@@ -188,7 +188,7 @@
 		{/snippet}
 	</Recommendation>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-04.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-04.mp3')}>
 		Und viele Menschen denken, dass ich – da ich Hörhilfen trage – alles genauso höre, wie sie. Das
 		stimmt aber nicht. Viele Hintergrundgeräusche, wie Vogelgezwitscher oder das sich nähernde Auto,
 		nehme ich nicht oder sehr spät wahr. Auch ist es für mich schwierig, selektiv zu hören, also
@@ -236,7 +236,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-05.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-05.mp3')}>
 		Manche Lehrende verstehen nicht, dass ihr Mundbild für mich sehr wichtig ist. Weil ich eben
 		nicht gut höre, brauche ich Zusatzinformationen, die ich durch das Ablesen von Mund und Lippen
 		bekomme. Wenn Lehrende sich wegdrehen und sprechen, ihren Mund verdecken oder zu weit weg sind,
@@ -254,7 +254,7 @@
 		</Text>
 	</TextSection>
 
-	<Recommendation link="{base}/media/Infografik_Roger_Hoeranlage.pdf" marginBottom>
+	<Recommendation link={asset('/media/Infografik_Roger_Hoeranlage.pdf')} marginBottom>
 		{#snippet linkText()}
 			Infografik Roger Höranlage (PDF, nicht barrierefrei)
 		{/snippet}
@@ -297,7 +297,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-06.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-06.mp3')}>
 		Ich wünsche mir überall Untertitel, ohne dass ich extra danach fragen muss! Das sollte Standard
 		sein, weil alle Menschen einen Anspruch auf barrierefrei zugängliche Informationen haben.
 		Mittlerweile kann man die doch automatisch erstellen lassen. Das kostet nichts. Nur etwas Zeit,
@@ -314,7 +314,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-07.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-07.mp3')}>
 		Ein 90-minütiger Vortrag, der für mich akustisch schlecht zu verstehen ist, ist anstrengend. Die
 		ganze Zeit habe ich quasi Ausfälle, wenn ich Wörter nicht verstehe oder die von anderen
 		Geräuschen überdeckt werden. Ich bin dann die ganze Zeit hochkonzentriert und versuche, immer
@@ -322,7 +322,7 @@
 		Pause. Dazu schalte ich dann auch meine Hörhilfen ab.
 	</SpeechBubble>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-08.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-08.mp3')}>
 		Ich studiere zwar Mathematik, aber manche Vorlesungsaufnahmen sind auch für mich unberechenbar.
 		Wortwitze beiseite: Das ist tatsächlich nicht nur für mich so, sondern auch für die anderen im
 		Kurs ohne Behinderung. Manchmal gibt es einfach gewisse Audio-Probleme. Die folgende Simulation
@@ -330,8 +330,8 @@
 	</SpeechBubble>
 
 	<SimulationLink
-		image="{base}/personas/hannah/hannah-explaining-circle.svg"
-		pathtext={base + '/iframe/hannah'}
+		image={asset('/personas/hannah/hannah-explaining-circle.svg')}
+		pathtext={resolve('/iframe/hannah')}
 		personaID={persona.id}
 	/>
 
@@ -358,7 +358,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-09.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-09.mp3')}>
 		Es ist mir manchmal unangenehm, dass meine Aussprache von Anderen nicht verstanden wird. Ich
 		kann mich selbst kaum hören und merke daher häufig nur an den fragenden Gesichtern, dass meine
 		Aussprache verwaschen war.
@@ -381,7 +381,7 @@
 		</Text>
 	</TextSection>
 
-	<SpeechBubble {persona} audio={base + '/personas/hannah/audio/hannah-sb-10.mp3'}>
+	<SpeechBubble {persona} audio={asset('/personas/hannah/audio/hannah-sb-10.mp3')}>
 		Mit meinen Kommiliton*innen aus dem Gebärdensprachkurs kommuniziere ich mit der Gebärdensprache.
 		Ich werde immer besser. Mittlerweile kann ich auch anderen etwas beibringen. Mich interessiert
 		auch, wie neue Gebärden entstehen, zum Beispiel für neue Technologien oder Ausdrücke aus der

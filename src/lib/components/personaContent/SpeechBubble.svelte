@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import { onDestroy, onMount, type Snippet } from 'svelte';
 	import type { Persona } from '../../interfaces/persona.interfaces';
 	import Icon from '../Icon.svelte';
@@ -78,7 +78,7 @@
 
 	<div class="decorative-outline">
 		<div aria-hidden="true" class="speech-bubble-indicator">
-			<img src="{base}/decorations/speech-bubble-indicator.svg" alt="" />
+			<img src={asset('/decorations/speech-bubble-indicator.svg')} alt="" />
 		</div>
 	</div>
 

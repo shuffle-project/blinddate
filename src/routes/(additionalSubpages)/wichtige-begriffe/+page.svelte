@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import Sources from '../../../lib/components/Sources.svelte';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
@@ -186,7 +186,7 @@
 
 	<p>
 		Mehr Informationen zu Personas finden Sie hier: <a
-			href="{base}/persona-entwicklung"
+			href={resolve('/persona-entwicklung')}
 			class="focus-indicator">Die Persona-Entwicklung im Detail</a
 		>
 	</p>
@@ -329,7 +329,7 @@
 	</p>
 
 	<p>
-		Auf <a class="focus-indicator" href={base + '/große-ganze/'}>"das große Ganze"</a> haben wir den
+		Auf <a class="focus-indicator" href={resolve('/große-ganze/')}> "das große Ganze"</a> haben wir den
 		UDL-Ansatz noch einmal veranschaulicht.
 	</p>
 

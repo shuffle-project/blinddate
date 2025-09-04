@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Snippet } from 'svelte';
 	import FriendCard from './FriendCard.svelte';
@@ -35,7 +35,7 @@
 		</p>
 		<div class="decorative-outline">
 			<div aria-hidden="true" class="speech-bubble-indicator">
-				<img src="{base}/decorations/friend-bubble-indicator.svg" alt="" />
+				<img src={asset('/decorations/friend-bubble-indicator.svg')} alt="" />
 			</div>
 		</div>
 	</div>

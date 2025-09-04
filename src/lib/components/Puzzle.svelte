@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import { onDestroy, onMount } from 'svelte';
 	import Icon from './Icon.svelte';
 
@@ -170,7 +170,7 @@
 					class:active={selectedPiece === i}
 					class="drop-shadow"
 					role="presentation"
-					src="{base}/decorations/puzzlePieces/puzzle-{puzzlePieces[i]}.svg"
+					src={asset('/decorations/puzzlePieces/puzzle-' + puzzlePieces[i] + '.svg')}
 					alt=""
 				/>
 			</div>

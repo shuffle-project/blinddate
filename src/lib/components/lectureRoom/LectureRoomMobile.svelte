@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 
 	let { personas }: { personas: Persona[] } = $props();
@@ -14,10 +14,10 @@
 
 	<div class="persona-wrapper">
 		{#each personas as persona}
-			<a href="{base}/personas/{persona.id}" data-sveltekit-preload-data="hover">
+			<a href={resolve(`/personas/${persona.id}`)} data-sveltekit-preload-data="hover">
 				<img
 					class="background-image {persona.id}"
-					src="{base}/decorations/persona-background.svg"
+					src={asset(`/decorations/persona-background.svg`)}
 					aria-hidden="true"
 					alt=""
 				/>
@@ -31,7 +31,7 @@
 
 				<img
 					class="persona-img {persona.id}"
-					src="{base}/personas/{persona.id}/{persona.id}-lecture.svg"
+					src={asset(`/personas/${persona.id}/${persona.id}-lecture.svg`)}
 					aria-hidden="true"
 					alt=""
 				/>

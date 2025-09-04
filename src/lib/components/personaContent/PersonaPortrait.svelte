@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import type { FriendPersona } from '$lib/interfaces/friendPersona.interfaces';
 	import type { Persona } from '../../interfaces/persona.interfaces';
 
@@ -7,13 +7,13 @@
 </script>
 
 <div class="wrapper">
-	<img class="frame-img" src="{base}/decorations/persona-background.svg" alt="" />
+	<img class="frame-img" src={asset('/decorations/persona-background.svg')} alt="" />
 	<img
 		class="persona-img"
-		src="{base}/personas/{persona.id}/{persona.id}.svg"
+		src={asset(`/personas/${persona.id}/${persona.id}.svg`)}
 		alt={'visualDescription' in persona ? persona.visualDescription : ''}
 	/>
-	<img class="name-img" src="{base}/decorations/persona-name.svg" alt="" />
+	<img class="name-img" src={asset('/decorations/persona-name.svg')} alt="" />
 
 	<span class="name-text"
 		>{persona.name}

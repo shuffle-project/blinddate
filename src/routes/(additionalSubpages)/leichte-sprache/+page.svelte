@@ -1,5 +1,5 @@
 <script>
-	import { base } from '$app/paths';
+	import { asset } from '$app/paths';
 	import SubpageTitle from '../../../lib/components/SubpageTitle.svelte';
 </script>
 
@@ -10,7 +10,7 @@
 <SubpageTitle>Leichte Sprache</SubpageTitle>
 
 <div class="wrapper">
-	<img src="{base}/leichte-sprache/studieren.png" alt="" aria-hidden="true" />
+	<img src={asset('/leichte-sprache/studieren.png')} alt="" aria-hidden="true" />
 
 	<p>
 		BlindDate ist eine Internet·seite <br />
@@ -46,7 +46,7 @@
 	</p>
 
 	<h2>Wie BlindDate funktioniert:</h2>
-	<img src="{base}/leichte-sprache/erzaehlen.png" alt="" aria-hidden="true" />
+	<img src={asset('/leichte-sprache/erzaehlen.png')} alt="" aria-hidden="true" />
 
 	<p>
 		Viele Studenten mit Behinderung <br />
@@ -66,7 +66,7 @@
 		Das bleibt geheim.
 	</p>
 
-	<img src="{base}/leichte-sprache/leute.png" alt="" aria-hidden="true" />
+	<img src={asset('/leichte-sprache/leute.png')} alt="" aria-hidden="true" />
 
 	<p>
 		Deshalb denken wir uns Studenten und Namen aus. <br />
@@ -121,7 +121,7 @@
 	</ul>
 
 	<h2>Erklärung zur Barriere·freiheit und Melde·stelle</h2>
-	<img src="{base}/leichte-sprache/barrierefrei.png" alt="" aria-hidden="true" />
+	<img src={asset('/leichte-sprache/barrierefrei.png')} alt="" aria-hidden="true" />
 
 	<p>
 		Wir versuchen <br />
@@ -166,7 +166,7 @@
 	</p>
 
 	<p>Ihr Recht:</p>
-	<img src="{base}/leichte-sprache/beschweren.png" alt="" aria-hidden="true" />
+	<img src={asset('/leichte-sprache/beschweren.png')} alt="" aria-hidden="true" />
 	<p>
 		Wenn wir nach 4 Wochen nicht antworten <br />
 		können Sie sich beschweren.
