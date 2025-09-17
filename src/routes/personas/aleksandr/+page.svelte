@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { asset } from '$app/paths';
+	import { asset, resolve } from '$app/paths';
 	import FlipCard from '$lib/components/FlipCard.svelte';
 	import ImportantNotice from '$lib/components/ImportantNotice.svelte';
 	import InfoBox from '$lib/components/InfoBox.svelte';
@@ -246,6 +246,15 @@
 					Als ob ich konstant auf einem Fischmarkt stehen würde. Und ich spüre die Welt sehr stark.
 					Als ob ich permanent einen sehr kratzigen Pullover tragen würde.
 				</PersonaAnswer>
+
+				<p>
+					Wichtige Begriffe:
+					<a
+						class="focus-indicator"
+						href={resolve('/(additionalSubpages)/wichtige-begriffe') + '#neurodiversity'}
+						>Mehr Informationen zu Neurodiversität
+					</a>
+				</p>
 			{/snippet}
 		</AccordionItem>
 
