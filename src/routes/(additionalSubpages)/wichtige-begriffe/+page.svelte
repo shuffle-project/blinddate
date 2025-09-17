@@ -194,6 +194,17 @@
 		>
 	</p>
 
+	<div class="sources-wrapper">
+		<Sources
+			sources={[
+				{
+					title:
+						'Lepzien, Josefine/Lewerenz, Michael (2017): Persona Methode. Eine Illustrierung von Bildungsbedarfen. In: Team der Wissenschaftlichen Weiterbildung der Universität Rostock: Weiterbildungsmanagement professionalisieren. Rostock: Universität Rostock, S. 22-31.'
+				}
+			]}
+		/>
+	</div>
+
 	<h2 id="best3">5. best3 Studie</h2>
 
 	<p>
@@ -377,8 +388,8 @@
 		<Sources
 			sources={[
 				{
-					title:
-						'Lepzien, Josefine/Lewerenz, Michael (2017): Persona Methode. Eine Illustrierung von Bildungsbedarfen. In: Team der Wissenschaftlichen Weiterbildung der Universität Rostock: Weiterbildungsmanagement professionalisieren. Rostock: Universität Rostock, S. 22-31.'
+					title: '"Warum wir Neurovarianz toll finden" von Neurodinge',
+					url: 'https://neurodinge.de/neurodivergenz'
 				}
 			]}
 		/>

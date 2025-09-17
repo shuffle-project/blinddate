@@ -13,7 +13,7 @@
 	<p>
 		Diese Erklärung zur Barrierefreiheit bezieht sich auf das <a
 			target="_blank"
-			rel="noopener"
+			rel="noopener noreferrer"
 			href="https://www.landesrecht-bw.de/perma?j=BehGleichStG_BW"
 			>Landesgesetz zur Gleichstellung von Menschen mit Behinderungen
 			(Landes-Behindertengleichstellungsgesetz – L-BGG) vom 17. Dezember 2014, in der aktuell

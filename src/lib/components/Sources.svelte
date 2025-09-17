@@ -18,6 +18,7 @@
 						class="source__link text-size focus-indicator"
 						href={source.url}
 						lang={source.titleLang}
+						rel="noreferrer"
 					>
 						{source.title}
 					</a>

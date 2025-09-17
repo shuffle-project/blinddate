@@ -395,6 +395,17 @@
 	<MainHeading heading="Weitere Informationen" />
 	<ul class="more-info-list">
 		<li>
+			<Recommendation link="https://www.th-koeln.de/hochschule/beyond-the-chalkboard_127947.php">
+				{#snippet linkText()}
+					Spielen Sie ein Serious Game zu psychischen Herausforderungen im Studium: Beyond the
+					Chalkboard
+				{/snippet}
+				{#snippet textAfter()}
+					von der TH Köln
+				{/snippet}
+			</Recommendation>
+		</li>
+		<li>
 			<Recommendation
 				link="https://www.deutsche-depressionshilfe.de/depression-infos-und-hilfe/was-ist-eine-depression/diagnose-der-depression"
 			>

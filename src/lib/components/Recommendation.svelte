@@ -25,6 +25,7 @@
 				<a
 					class="link focus-indicator"
 					href={link}
+					rel="noopener noreferrer"
 					aria-describedby="text-before-{randomId} text-after-{randomId}"
 				>
 					{@render linkText?.()}
