@@ -1,3 +1,7 @@
+<script>
+	import { resolve } from '$app/paths';
+</script>
+
 <div>
 	<p>
 		Mit Inkrafttreten der ICD-11 am 01.01.2022 gibt es die Formen der Autismus-Diagnose (Asperger,
@@ -8,5 +12,14 @@
 		beispielsweise leichter fallen, sich in sozialen Situationen den gesellschaftlichen Normen und
 		Regeln anzupassen, als anderen. Autistische (neurodivergente) Menschen nehmen ihre Umwelt häufig
 		anders wahr, als neurotypische Menschen.
+	</p>
+
+	<p>
+		Wichtige Begriffe:
+		<a
+			class="focus-indicator"
+			href={resolve('/(additionalSubpages)/wichtige-begriffe') + '#neurodiversity'}
+			>Mehr Informationen zu Neurodiversität
+		</a>
 	</p>
 </div>

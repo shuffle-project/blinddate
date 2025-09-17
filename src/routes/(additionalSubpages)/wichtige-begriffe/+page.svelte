@@ -40,6 +40,9 @@
 				>8. Universal Design (for learning)</a
 			>
 		</li>
+		<li>
+			<a href="#neurodiversity" class="focus-indicator">9. Neurodiversität</a>
+		</li>
 	</ol>
 	<h2 id="accessibility">1. Barrierefreiheit</h2>
 	<p>
@@ -346,6 +349,28 @@
 			>Lernen für Alle - Barrierefreie Einführung in das Universal Design for Learning auf Deutsch
 			(YouTube)</a
 		>
+	</p>
+
+	<h2 id="neurodiversity">9. Neurodiversität</h2>
+
+	<p>
+		Neurodiversität bezeichnet die Vielfalt neurologischer Funktionsweisen und geht davon aus, dass
+		Unterschiede im Denken, Fühlen und Wahrnehmen Teil der natürlichen menschlichen Variation sind,
+		nicht etwa Defizite. Der Begriff "Neurodivergenz" beschreibt Abweichungen von üblichen
+		neurologischen Funktionsweisen und ist weniger eine neue Entdeckung als vielmehr eine neue
+		Perspektive auf eine bekannte Tatsache: Menschen nehmen ihre Umwelt unterschiedlich wahr, denken
+		verschieden und verarbeiten Reize auf individuelle Weise. Geprägt wurde der Begriff in den
+		1990er-Jahren von der australischen Soziologin Judy Singer, die eine wertschätzende Sprache für
+		neurologische Unterschiede wie Autismus schaffen wollte.
+	</p>
+
+	<p>
+		Zu den Formen von Neurodivergenz zählen unter anderem Autismus, ADHS, Legasthenie, Dyskalkulie
+		oder das Tourette-Syndrom – also Varianten des Denkens und Wahrnehmens, die sich von der
+		sogenannten Norm unterscheiden. Als Gegenteil gilt der Begriff neurotypisch, der Menschen
+		beschreibt, deren neurologische Muster mehrheitlichen Erwartungen entsprechen. Das Konzept der
+		Neurodiversität soll also die Grundlage für mehr Akzeptanz, Inklusion und einen respektvollen
+		Umgang mit den vielfältigen Formen menschlicher Wahrnehmung und Kommunikation.
 	</p>
 
 	<div class="sources-wrapper">
