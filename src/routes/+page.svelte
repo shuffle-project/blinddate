@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { asset, resolve } from '$app/paths';
-	import Icon from '$lib/components/Icon.svelte';
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import InfoGrid from '$lib/components/startpage/InfoGrid.svelte';
@@ -44,27 +43,6 @@
 		image: `${HOSTNAME}decorations/mainpage-teaser.jpg`
 	}}
 />
-
-{#if ENVIRONMENT.allowFeedbackLink}
-	<div class="feedback">
-		<div class="link-wrapper">
-			<p>Wir brauchen Sie!</p>
-			<a href={ENVIRONMENT.lecturerFeedbackLink} target="_blank" rel="noopener noreferrer">
-				<span aria-hidden="true"> Feedback von Lehrenden </span>
-				<span class="sr-only"> Feedback von Lehrenden (Öffnet neues Fenster) </span>
-				<Icon img="open-in-new" size="medium"></Icon>
-			</a>
-		</div>
-		<div class="link-wrapper">
-			<p>Offen für Alle</p>
-			<a href={ENVIRONMENT.generalFeedbackLink} target="_blank" rel="noopener noreferrer">
-				<span aria-hidden="true">Allgemeines Feedback</span>
-				<span class="sr-only">Allgemeines Feedback (öffnet neues Fenster)</span>
-				<Icon img="open-in-new" size="medium"></Icon>
-			</a>
-		</div>
-	</div>
-{/if}
 
 <header>
 	<div class="content">

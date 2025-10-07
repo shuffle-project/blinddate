@@ -99,14 +99,6 @@
 			<a href={resolve('/fragen')} class="focus-indicator">häufig gestellte Fragen</a>.
 		</p>
 
-		<p>
-			Auch das BlindDate-Team ist nicht unfehlbar: Sollten Ihnen Fehler begegnen oder Sie weitere
-			Anregungen haben, melden Sie sich gerne bei uns: <a
-				href={resolve('/kontakt')}
-				class="focus-indicator">Kontakt</a
-			>.
-		</p>
-
 		<div class="sources-wrapper">
 			<Sources
 				sources={[

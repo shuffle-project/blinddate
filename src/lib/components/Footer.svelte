@@ -38,11 +38,6 @@
 			name: 'Datenschutzerklärung',
 			link: 'datenschutz',
 			disabled: false
-		},
-		{
-			name: 'Kontakt',
-			link: 'kontakt',
-			disabled: false
 		}
 	] as const;
 </script>
@@ -64,12 +59,7 @@
 
 		<div class="last-row">
 			<div class="nav-wrapper">
-				<nav
-					class="accessibility-nav"
-					aria-label={ENVIRONMENT.allowFeedbackLink
-						? 'Barrierefreiheit und Feedback'
-						: 'Barrierefreiheit'}
-				>
+				<nav class="accessibility-nav" aria-label="Barrierefreiheit">
 					<ul>
 						{#each accessibilityLinks as accessibilityLink}
 							{#if !accessibilityLink.disabled}
@@ -78,29 +68,9 @@
 								</li>
 							{/if}
 						{/each}
-						{#if ENVIRONMENT.allowFeedbackLink}
-							<li class="feedback-link">
-								<a
-									href={ENVIRONMENT.lecturerFeedbackLink}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<span aria-hidden="true"> Feedback von Lehrenden </span>
-									<span class="sr-only"> Feedback von Lehrenden (Öffnet neues Fenster) </span>
-									<Icon img="open-in-new" size="medium"></Icon>
-								</a>
-							</li>
-							<li class="feedback-link">
-								<a href={ENVIRONMENT.generalFeedbackLink} target="_blank" rel="noopener noreferrer">
-									<span aria-hidden="true">Allgemeines Feedback</span>
-									<span class="sr-only">Allgemeines Feedback (öffnet neues Fenster)</span>
-									<Icon img="open-in-new" size="medium"></Icon>
-								</a>
-							</li>
-						{/if}
 					</ul>
 				</nav>
-				<nav class="legal-nav" aria-label="Kontakt, Info und Rechtliches">
+				<nav class="legal-nav" aria-label="Rechtliches">
 					<ul>
 						{#each legalLinks as legalLink}
 							{#if !legalLink.disabled}
@@ -249,28 +219,6 @@
 	.padding-bottom {
 		height: 2.5rem;
 		background-color: var(--color-background-body);
-	}
-
-	.feedback-link {
-		background-color: var(--color-white);
-		font-weight: bold;
-		border-radius: 2rem;
-		cursor: pointer;
-
-		a:hover,
-		a:focus {
-			outline: 2px solid var(--color-white);
-			outline-offset: 2px;
-		}
-
-		a {
-			color: var(--color-black) !important;
-			text-decoration: none !important;
-
-			display: flex;
-			align-items: center;
-			gap: 0.25rem;
-		}
 	}
 
 	@media (max-width: 59.3125rem) {
