@@ -88,7 +88,7 @@
 	};
 
 	const extendedPlayerConfigDGS: ExtendedPlayerConfig = {
-		title: 'Platzhaltertitel',
+		title: 'Hinweise zur Lehre mit Gebärdensprachdolmetschung',
 		melvinVideos: [
 			{
 				title: 'Melvin-Player Video',
