@@ -16,8 +16,14 @@ export interface Transcript {
 	body: string;
 }
 
+export interface MelvinVideo {
+	title: string;
+	url: string;
+}
+
 export interface ExtendedPlayerConfig {
 	title: string;
+	melvinVideos: MelvinVideo[];
 	videos: Video[];
 	transcripts: Transcript[];
 }

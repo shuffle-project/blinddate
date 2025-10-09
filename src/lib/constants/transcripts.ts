@@ -90,3 +90,7 @@ export const PSYCHE_TRANSKRIPT = `
 <p> So "Hey, hier ist die Telefonnummer. Es gibt extrem viele Telefonhotlines, ruft da mal an". Und das wünsche ich mir von Dozierenden.</p>
 
 `;
+
+export const DGS_TRANSKRIPT = `
+
+`;

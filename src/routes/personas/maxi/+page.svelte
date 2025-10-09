@@ -26,6 +26,7 @@
 
 	const extendedPlayerConfig: ExtendedPlayerConfig = {
 		title: 'Erfahrungsbericht einer Studentin mit psychischer Erkrankung',
+		melvinVideos: [],
 		videos: [
 			{
 				title: 'Video',
