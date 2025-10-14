@@ -49,7 +49,7 @@
 
 	{#if 'url' in selectedContent}
 		<iframe
-			width="650"
+			width="100%"
 			height="400"
 			src={selectedContent.url}
 			title={selectedContent.title}
@@ -170,6 +170,16 @@
 				margin-left: 1.5rem;
 				padding: 0;
 				margin-top: 0;
+			}
+		}
+	}
+
+	@media (max-width: 37.75rem) {
+		.wrapper {
+			iframe {
+				border-radius: 0;
+				border-left-width: 0;
+				border-right-width: 0;
 			}
 		}
 	}
