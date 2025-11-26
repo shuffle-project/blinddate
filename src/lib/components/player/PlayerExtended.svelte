@@ -1,78 +1,65 @@
 <script lang="ts">
-	import type { ExtendedPlayerConfig, Transcript, Video } from '../../interfaces/player.interfaces';
+	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Player from './Player.svelte';
 
 	const randomId = $props.id();
 
-	let { extendedPlayerConfig }: { extendedPlayerConfig: ExtendedPlayerConfig } = $props();
+	let { extendedPlayerConfig: config }: { extendedPlayerConfig: ExtendedPlayerConfig } = $props();
 
-	let tabcount = extendedPlayerConfig.videos.length + extendedPlayerConfig.transcripts.length;
-	let selectedTab: number = $state(1);
+	const tabs = [...config.melvinVideos, ...config.videos, ...config.transcripts];
 
-	let selectedContent: Video | Transcript = $state(extendedPlayerConfig.videos[0]);
+	let tabcount = tabs.length;
+	let selectedTab: number = $state(0);
+	let selectedContent = $derived(tabs[selectedTab]);
 
 	function onSelectTab(index: number) {
 		if (selectedTab === index) return;
 		selectedTab = index;
-
-		if (index <= extendedPlayerConfig.videos.length) {
-			selectedContent = extendedPlayerConfig.videos[index - 1];
-		} else {
-			const transcriptIndex = index - extendedPlayerConfig.videos.length - 1;
-			selectedContent = extendedPlayerConfig.transcripts[transcriptIndex];
-		}
 	}
 
 	function onKeydownTab(event: KeyboardEvent) {
 		if (event.key === 'ArrowRight') {
 			event.preventDefault();
-			onSelectTab(selectedTab === tabcount ? 1 : selectedTab + 1);
+			onSelectTab(selectedTab === tabcount - 1 ? 0 : selectedTab + 1);
 			document.getElementById(`playertab-${selectedTab}-${randomId}`)?.focus();
 		} else if (event.key === 'ArrowLeft') {
 			event.preventDefault();
-			onSelectTab(selectedTab === 1 ? tabcount : selectedTab - 1);
+			onSelectTab(selectedTab === 0 ? tabcount - 1 : selectedTab - 1);
 			document.getElementById(`playertab-${selectedTab}-${randomId}`)?.focus();
 		}
 	}
 </script>
 
 <div class="wrapper">
-	<h3>{extendedPlayerConfig.title}</h3>
-	<div role="tablist" class="buttonslist" aria-label="Video alternativen">
-		{#each extendedPlayerConfig.videos as video, i}
-			{@const index = i + 1}
+	<h3>{config.title}</h3>
+	<div role="tablist" class="buttonslist" aria-label="Videoauswahl">
+		{#each tabs as tab, i}
 			<button
-				id="playertab-{index}-{randomId}"
+				id="playertab-{i}-{randomId}"
 				role="tab"
-				aria-selected={selectedTab === index}
-				tabindex={selectedTab === index ? 0 : -1}
-				onclick={() => onSelectTab(index)}
+				aria-selected={selectedTab === i}
+				tabindex={selectedTab === i ? 0 : -1}
+				onclick={() => onSelectTab(i)}
 				onkeydown={onKeydownTab}
 			>
-				{video.title}
-			</button>
-		{/each}
-
-		{#each extendedPlayerConfig.transcripts as transcript, i}
-			{@const index = extendedPlayerConfig.videos.length + i + 1}
-			<button
-				id="playertab-{index}-{randomId}"
-				role="tab"
-				aria-selected={selectedTab === index}
-				tabindex={selectedTab === index ? 0 : -1}
-				onclick={() => onSelectTab(index)}
-				onkeydown={onKeydownTab}
-			>
-				{transcript.title}
+				{tab.title}
 			</button>
 		{/each}
 	</div>
 
-	{#if 'videoPathMp4' in selectedContent}
-		<!-- {#key selectedContent} -->
+	{#if 'url' in selectedContent}
+		<iframe
+			width="100%"
+			height="400"
+			src={selectedContent.url}
+			title={selectedContent.title}
+			frameborder="0"
+			allowfullscreen
+			referrerpolicy="strict-origin-when-cross-origin"
+		></iframe>
+	{:else if 'videoPathMp4' in selectedContent}
 		<Player videoData={selectedContent} />
-		<!-- {/key} -->
-	{:else}
+	{:else if 'body' in selectedContent}
 		<div class="transcript">
 			{@html selectedContent.body}
 		</div>
@@ -134,6 +121,17 @@
 				}
 			}
 		}
+
+		iframe {
+			border: 1px solid var(--color-lavender);
+			border-radius: 1.25rem;
+			box-sizing: border-box;
+
+			&:fullscreen {
+				border: none;
+				border-radius: 0;
+			}
+		}
 	}
 
 	@media (max-width: 59.3125rem) {
@@ -172,6 +170,16 @@
 				margin-left: 1.5rem;
 				padding: 0;
 				margin-top: 0;
+			}
+		}
+	}
+
+	@media (max-width: 37.75rem) {
+		.wrapper {
+			iframe {
+				border-radius: 0;
+				border-left-width: 0;
+				border-right-width: 0;
 			}
 		}
 	}

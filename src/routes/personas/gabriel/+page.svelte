@@ -27,6 +27,7 @@
 
 	const extendedPlayerConfig: ExtendedPlayerConfig = {
 		title: 'Erfahrungsbericht einer Studentin mit visueller Beeinträchtigung',
+		melvinVideos: [],
 		videos: [
 			{
 				title: 'Video',

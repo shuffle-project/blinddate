@@ -10,9 +10,14 @@
 	import Text from '$lib/components/personaContent/Text.svelte';
 	import TextSection from '$lib/components/personaContent/TextSection.svelte';
 	import PlayerExtended from '$lib/components/player/PlayerExtended.svelte';
+
 	import { personaTagIds } from '$lib/constants/environment';
 	import { HANNAH } from '$lib/constants/hannah';
-	import { HOEREN_OFFLINE_TRANSKRIPT, HOEREN_ONLINE_TRANSKRIPT } from '$lib/constants/transcripts';
+	import {
+		DGS_TRANSKRIPT,
+		HOEREN_OFFLINE_TRANSKRIPT,
+		HOEREN_ONLINE_TRANSKRIPT
+	} from '$lib/constants/transcripts';
 	import type { Persona } from '$lib/interfaces/persona.interfaces';
 	import type { ExtendedPlayerConfig } from '$lib/interfaces/player.interfaces';
 	import Checklist from '../../../lib/components/checklist/Checklist.svelte';
@@ -22,6 +27,7 @@
 
 	const extendedPlayerConfigOffline: ExtendedPlayerConfig = {
 		title: 'Studierende erklären den Umgang mit Höranlagen in Präsenzveranstaltungen',
+		melvinVideos: [],
 		videos: [
 			{
 				title: 'Video',
@@ -52,6 +58,7 @@
 
 	const extendedPlayerConfigOnline: ExtendedPlayerConfig = {
 		title: 'Studierende geben Hinweise zu online Veranstaltungen',
+		melvinVideos: [],
 		videos: [
 			{
 				title: 'Video',
@@ -79,6 +86,33 @@
 			}
 		]
 	};
+
+	const extendedPlayerConfigDGS: ExtendedPlayerConfig = {
+        title: 'Hinweise zur Lehre mit Gebärdensprachdolmetschung',
+        melvinVideos: [
+            {
+                title: 'Video mit DGS',
+                url: 'https://melvin.shuffle-projekt.de/view/s7RkwMWW4OooFhpBFZPMMYCYdEih2LLS7YlpCElS0RXKI8QxKZ08kkMjFsdVOKKC?embed=true'
+            }
+        ],
+        videos: [
+            {
+                title: 'Video',
+                videoPathMp4: '/media/dolmetschung-video.mp4',
+                poster: '/media/dolmetschung-preview-image.jpg',
+                captionsArray: [
+                    { path: '/media/dolmetschung-untertitel.vtt', lang: 'de', label: 'Deutsche Untertitel' }
+                ]
+            }
+        ],
+        transcripts: [
+            {
+                title: 'Transkript',
+                body: DGS_TRANSKRIPT
+            }
+        ]
+    };
+
 </script>
 
 <PersonaWrapper {persona}>
@@ -273,6 +307,8 @@
 		</Text>
 	</TextSection>
 
+	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigDGS} />
+
 	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOffline} />
 
 	<MainHeading heading="Lernmaterial" />
@@ -462,3 +498,4 @@
 		padding: 0;
 	}
 </style>
+
