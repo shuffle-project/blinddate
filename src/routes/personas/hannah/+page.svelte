@@ -88,28 +88,31 @@
 	};
 
 	const extendedPlayerConfigDGS: ExtendedPlayerConfig = {
-		title: 'Hinweise zur Lehre mit Gebärdensprachdolmetschung',
-		melvinVideos: [
-			{
-				title: 'Melvin-Player Video',
-				url: ''
-			}
-		],
-		videos: [
-			{
-				title: 'Video',
-				videoPathMp4: '',
-				poster: '',
-				captionsArray: []
-			}
-		],
-		transcripts: [
-			{
-				title: 'Transkript',
-				body: DGS_TRANSKRIPT
-			}
-		]
-	};
+        title: 'Hinweise zur Lehre mit Gebärdensprachdolmetschung',
+        melvinVideos: [
+            {
+                title: 'Video mit DGS',
+                url: 'https://melvin.shuffle-projekt.de/view/s7RkwMWW4OooFhpBFZPMMYCYdEih2LLS7YlpCElS0RXKI8QxKZ08kkMjFsdVOKKC?embed=true'
+            }
+        ],
+        videos: [
+            {
+                title: 'Video',
+                videoPathMp4: '/media/dolmetschung-video.mp4',
+                poster: '/media/dolmetschung-preview-image.jpg',
+                captionsArray: [
+                    { path: '/media/dolmetschung-untertitel.vtt', lang: 'de', label: 'Deutsche Untertitel' }
+                ]
+            }
+        ],
+        transcripts: [
+            {
+                title: 'Transkript',
+                body: DGS_TRANSKRIPT
+            }
+        ]
+    };
+
 </script>
 
 <PersonaWrapper {persona}>
@@ -304,6 +307,8 @@
 		</Text>
 	</TextSection>
 
+	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigDGS} />
+
 	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigOffline} />
 
 	<MainHeading heading="Lernmaterial" />
@@ -420,8 +425,6 @@
 		habe auch gemerkt, dass mich dann andere, hörende Leute eher nicht ansprechen.
 	</SpeechBubble>
 
-	<PlayerExtended extendedPlayerConfig={extendedPlayerConfigDGS} />
-
 	<MainHeading heading="Prüfungen" />
 	<TextSection>
 		<Text noTopMargin>
@@ -495,3 +498,4 @@
 		padding: 0;
 	}
 </style>
+
