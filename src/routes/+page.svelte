@@ -4,6 +4,7 @@
 	import ShareButton from '$lib/components/ShareButton.svelte';
 	import LectureRoom from '$lib/components/lectureRoom/index.svelte';
 	import InfoGrid from '$lib/components/startpage/InfoGrid.svelte';
+	import PromoVideo from '$lib/components/startpage/PromoVideo.svelte';
 	import { ENVIRONMENT, HOSTNAME } from '$lib/constants/environment';
 	import { MetaTags } from 'svelte-meta-tags';
 	import Footer from '../lib/components/Footer.svelte';
@@ -95,6 +96,7 @@
 
 	{#if ENVIRONMENT.displayLowerStartpageContent}
 		<InfoGrid />
+		<PromoVideo />
 	{/if}
 </main>
 
