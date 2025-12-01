@@ -101,3 +101,28 @@ export const DGS_TRANSKRIPT = `
 <p>Kommunikation: Sprechen Sie nicht gleichzeitig zur Tafel oder zum Bildschirm und richten Sie die Worte direkt an die studierende Person und nicht an die Dolmetschende. Lassen Sie Beiträge mit Handzeichen nacheinander zu. Geben Sie den Studierenden die Freiheit, selbst zu bestimmen, ob sie ihre Hörbehinderung im Lehrkontext thematisieren möchten. </p>
 <p>Digitale Settings: Zuletzt noch, worauf Sie hier achten sollen. Sorgen Sie dafür, dass die Dolmetschenden im Videocall immer sichtbar bleiben, etwa durch das Anpinnen oder Spotlighten ihrer Kachel. Ermöglichen Sie dies, indem Sie Studierenden bei Bedarf entsprechende Rechte, z.B. die Co-Host-Rechte, einräumen. Achten Sie zudem darauf, dass bei Gruppenarbeiten die Dolmetschenden gemeinsam mit den Studierenden mit Hörbehinderung in einen Breakout-Room geschickt werden.</p>
 `;
+
+export const BLINDDATE_PROMO_TRANSKRIPT = `
+<p>Rund 16 Prozent der Studierenden an deutschen Hochschulen haben eine gesundheitliche Beeinträchtigung, die ihr Studium erschwert.</p>
+<p>Mehr als die Hälfte davon sind für Außenstehende nicht sichtbar.</p>
+<p>Neben der Gesundheit können aber auch andere Aspekte das Studium beeinträchtigen, beispielsweise eine Pflegeverantwortung.</p>
+<p>Es stellt sich also die Frage, wie Lehrende ihre Lehre auf die Bedarfe der Studierenden ausrichten können, sodass alle teilhaben können.</p>
+<p>Wir haben da eine Idee für den einfachen Einstieg.</p> 
+<p>Auf der Begegnungsplattform BlindDate geben acht virtuelle Studierende mit verschiedenen Beeinträchtigungen einen Einblick in ihren Studienalltag.</p>
+<p>"Hey!", "Hallo", "Und guten Tag!"</p>
+<p>Werfen wir also einen Blick auf eine der Unterseiten.</p>
+<p>Die Studierenden stellen sich vor, teilen ihre Erfahrungen und berichten von Barrieren, denen sie in der digitalen Lehre begegnen.</p>
+<p>Aber auch von ihren genutzten Strategien und assistiven Technologien.</p>
+<p>Dabei sensibilisieren sie nicht nur, sondern geben Lehrenden auch konkrete Handlungsempfehlungen, um Barrieren in der eigenen Lehre abzubauen.</p>
+<p>Ob Videos, Puzzles, Kalender oder andere interaktive Elemente: BlindDate bietet eine Vielzahl an Möglichkeiten, um in die Perspektive der Studierenden einzutauchen.</p>
+<p>In den Sprechblasen kommen sie selbst zu Wort.</p>
+<p>"Habe ich die Vorlesungsunterlagen bereits vor der Vorlesung kann ich sie im Vorfeld für mich anpassen und der Veranstaltung dann besser folgen."</p>
+<p>"Ich will, dass die Menschen sensibler für unsichtbare Beeinträchtigungen werden."</p>
+<p>"Und deshalb kann und darf ich auch die Hilfen der Hochschulen in Anspruch nehmen."</p>
+<p>Die Studierenden auf BlindDate sind nicht ausgedacht.</p> 
+<p>Sie wurden wissenschaftlich entwickelt und bringen reale Erfahrungen von Studierenden zusammen.</p>
+<p>Auf der Webseite findet man zudem weiterführende Informationen zur rechtlichen Rahmenbedingungen, häufigen Fragen und wichtigen Begriffen der digitalen Barrierefreiheit.</p>
+<p>Manchmal hilft auch der Blick aufs große Ganze, denn einzelne Maßnahmen der Barrierefreiheit kommen oft mehr Studierenden zugute, als vielleicht zunächst vermutet.</p>
+<p>Jetzt loslegen und die Studierenden kennenlernen!</p>
+<p>Für eine Hochschule für alle. Barrierefreies-BlindDate.de. Gefördert von der Stiftung Innovation in der Hochschullehre.</p>
+`;
