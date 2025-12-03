@@ -49,10 +49,6 @@
 		padding-inline: var(--outer-spacing);
 		margin-inline: auto;
 		margin-top: 2.5rem;
-
-		li {
-			margin: 0.625rem 0rem;
-		}
 	}
 
 	// WIP: was genau macht der query hier?
