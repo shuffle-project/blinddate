@@ -19,20 +19,25 @@
 		<li>
 			<a href={resolve('/personas/faiza')} class="focus-indicator">Faiza (Pflegeverantwortung)</a>
 		</li>
+
 		<li>
 			<a href={resolve('/personas/gabriel')} class="focus-indicator"
 				>Gabriel (Sehbeeinträchtigung)</a
 			>
 		</li>
-		<li>
-			<a href={resolve('/iframe/gabriel')} class="focus-indicator">Gabriel Simulationsspiel</a>
-		</li>
+		<ul>
+			<li>
+				<a href={resolve('/iframe/gabriel')} class="focus-indicator">Gabriel Simulationsspiel</a>
+			</li>
+		</ul>
 		<li>
 			<a href={resolve('/personas/hannah')} class="focus-indicator">Hannah (Hörbehinderung)</a>
 		</li>
-		<li>
-			<a href={resolve('/iframe/hannah')} class="focus-indicator">Hannah Simulationsspiel</a>
-		</li>
+		<ul>
+			<li>
+				<a href={resolve('/iframe/hannah')} class="focus-indicator">Hannah Simulationsspiel</a>
+			</li>
+		</ul>
 		<li>
 			<a href={resolve('/personas/kilian')} class="focus-indicator"
 				>Kilian (Motorische Beeinträchtigung)</a
@@ -59,6 +64,9 @@
 		</li>
 		<li>
 			<a href={resolve('/datenschutz')} class="focus-indicator">Datenschutzerklärung</a>
+		</li>
+		<li>
+			<a href={resolve('/downloads')} class="focus-indicator">Downloads</a>
 		</li>
 
 		<li>
