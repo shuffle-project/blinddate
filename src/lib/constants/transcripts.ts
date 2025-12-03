@@ -90,3 +90,39 @@ export const PSYCHE_TRANSKRIPT = `
 <p> So "Hey, hier ist die Telefonnummer. Es gibt extrem viele Telefonhotlines, ruft da mal an". Und das wünsche ich mir von Dozierenden.</p>
 
 `;
+
+export const DGS_TRANSKRIPT = `
+<p>Hinweise zur Lehre mit Gebärdensprachdolmetschung.</p>
+<p>Für Studierende mit Hörbehinderung, die in der deutschen Gebärdensprache kommunizieren, ist die Organisation einer Verdolmetschung in Lehrveranstaltungen mit hohem Aufwand verbunden. Wir haben hier einige Informationen zusammengefasst, die Sie für eine barrierefreie Gestaltung Ihrer Lehre beachten können. Achten Sie bitte darauf, dass die Bedarfe der Studierenden natürlich individuell verschieden sein können. Gehen Sie daher ins Gespräch mit den Studierenden, um die entsprechenden Maßnahmen gemeinsam planen zu können. </p>
+<p>Unterstützung und Nachteilsausgleich: Informieren Sie sich über Beratungs- und Supportstrukturen an Ihrer Hochschule und verweisen Sie Studierende aktiv auf die Angebote durch beispielsweise Beauftragte. Es kann sein, dass Studierende Nachteilsausgleiche mit alternativen Prüfungsformen und Zeiten haben. Planen Sie daher verlängerte Prüfungszeiten oder alternative Prüfungsformen mit Verdolmetschung in Ihre Prüfungsplanung mit ein. </p>
+<p>Hoher Organisationsaufwand: Die Beantragung einer Verdolmetschung muss in der Regel durch die Studierenden selbst getragen werden, ist aufwendig und erfordert eine frühzeitige Planung, oft mehrere Wochen im Voraus. Materialbereitstellung: Relevante Unterlagen wie Präsentationen oder Skripte sollten Sie idealerweise mehrere Tage vorab zur Verfügung stellen, damit Dolmetschende sich auf die Fachsprache, die Inhalte und die Abläufe vorbereiten können. Dolmetschende sind zur Verschwiegenheit verpflichtet und leiten keine Dokumente weiter. </p>
+<p>Zeitplanung und Struktur: Für gebärdensprachlich orientierte Studierende ist es nicht möglich, gleichzeitig die Informationen einer Präsentation zu entnehmen und zu der dolmetschenden Person zu schauen. Bitte planen Sie daher ausreichend Pausen und ein moderates Sprechtempo ein. Eine klare Struktur der Präsentation und prägnante Informationen ermöglichen ein schnelleres visuelles Wahrnehmen und Verarbeiten. </p>
+<p>Interaktion: Ermöglichen Sie Rückfragen. Aufgrund der zeitlichen Verzögerung beim Verdolmetschen planen Sie bitte aktiv Raum für Nachfragen ein und gehen nicht zu schnell zum nächsten Punkt weiter. Auch visuelle Zugänglichkeit sollte gegeben sein. Bitte beachten Sie, dass die Sicht auf Dolmetschende im Raum, in der Regel neben der Lehrperson, jederzeit gewährleistet ist. </p>
+<p>Kommunikation: Sprechen Sie nicht gleichzeitig zur Tafel oder zum Bildschirm und richten Sie die Worte direkt an die studierende Person und nicht an die Dolmetschende. Lassen Sie Beiträge mit Handzeichen nacheinander zu. Geben Sie den Studierenden die Freiheit, selbst zu bestimmen, ob sie ihre Hörbehinderung im Lehrkontext thematisieren möchten. </p>
+<p>Digitale Settings: Zuletzt noch, worauf Sie hier achten sollen. Sorgen Sie dafür, dass die Dolmetschenden im Videocall immer sichtbar bleiben, etwa durch das Anpinnen oder Spotlighten ihrer Kachel. Ermöglichen Sie dies, indem Sie Studierenden bei Bedarf entsprechende Rechte, z.B. die Co-Host-Rechte, einräumen. Achten Sie zudem darauf, dass bei Gruppenarbeiten die Dolmetschenden gemeinsam mit den Studierenden mit Hörbehinderung in einen Breakout-Room geschickt werden.</p>
+`;
+
+export const BLINDDATE_PROMO_TRANSKRIPT = `
+<p>Rund 16 Prozent der Studierenden an deutschen Hochschulen haben eine gesundheitliche Beeinträchtigung, die ihr Studium erschwert.</p>
+<p>Mehr als die Hälfte davon sind für Außenstehende nicht sichtbar.</p>
+<p>Neben der Gesundheit können aber auch andere Aspekte das Studium beeinträchtigen, beispielsweise eine Pflegeverantwortung.</p>
+<p>Es stellt sich also die Frage, wie Lehrende ihre Lehre auf die Bedarfe der Studierenden ausrichten können, sodass alle teilhaben können.</p>
+<p>Wir haben da eine Idee für den einfachen Einstieg.</p> 
+<p>Auf der Begegnungsplattform BlindDate geben acht virtuelle Studierende mit verschiedenen Beeinträchtigungen einen Einblick in ihren Studienalltag.</p>
+<p>"Hey!", "Hallo", "Und guten Tag!"</p>
+<p>Werfen wir also einen Blick auf eine der Unterseiten.</p>
+<p>Die Studierenden stellen sich vor, teilen ihre Erfahrungen und berichten von Barrieren, denen sie in der digitalen Lehre begegnen.</p>
+<p>Aber auch von ihren genutzten Strategien und assistiven Technologien.</p>
+<p>Dabei sensibilisieren sie nicht nur, sondern geben Lehrenden auch konkrete Handlungsempfehlungen, um Barrieren in der eigenen Lehre abzubauen.</p>
+<p>Ob Videos, Puzzles, Kalender oder andere interaktive Elemente: BlindDate bietet eine Vielzahl an Möglichkeiten, um in die Perspektive der Studierenden einzutauchen.</p>
+<p>In den Sprechblasen kommen sie selbst zu Wort.</p>
+<p>"Habe ich die Vorlesungsunterlagen bereits vor der Vorlesung kann ich sie im Vorfeld für mich anpassen und der Veranstaltung dann besser folgen."</p>
+<p>"Ich will, dass die Menschen sensibler für unsichtbare Beeinträchtigungen werden."</p>
+<p>"Und deshalb kann und darf ich auch die Hilfen der Hochschulen in Anspruch nehmen."</p>
+<p>Die Studierenden auf BlindDate sind nicht ausgedacht.</p> 
+<p>Sie wurden wissenschaftlich entwickelt und bringen reale Erfahrungen von Studierenden zusammen.</p>
+<p>Auf der Webseite findet man zudem weiterführende Informationen zur rechtlichen Rahmenbedingungen, häufigen Fragen und wichtigen Begriffen der digitalen Barrierefreiheit.</p>
+<p>Manchmal hilft auch der Blick aufs große Ganze, denn einzelne Maßnahmen der Barrierefreiheit kommen oft mehr Studierenden zugute, als vielleicht zunächst vermutet.</p>
+<p>Jetzt loslegen und die Studierenden kennenlernen!</p>
+<p>Für eine Hochschule für alle. Barrierefreies-BlindDate.de. Gefördert von der Stiftung Innovation in der Hochschullehre.</p>
+`;
