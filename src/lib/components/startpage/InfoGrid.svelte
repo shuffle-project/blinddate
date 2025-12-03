@@ -62,6 +62,20 @@
 		<div class="decorative-persona">
 			<img src={asset('/personas/maxi/maxi-happy.svg')} alt="" aria-hidden="true" loading="lazy" />
 		</div>
+
+		<div class="promo-material">
+			<section>
+				<h2>Poster und Postkarten</h2>
+				<p>
+					Sie wollen BlindDate bewerben und wichtige Informationen zu Barrierefreiheit verbreiten?
+					Auf dieser Seite können Sie zahlreiche Postkarten und Poster mit den Personas von
+					BlindDate herunterladen oder bestellen, um Sie an ihrer Institution aufzuhängen oder zu
+					verteilen.
+				</p>
+				<a href={resolve('/downloads')} class="focus-indicator">Zu den Postern und Postkarten</a>
+			</section>
+			<img src={asset('/decorations/promo-preview.svg')} alt="" aria-hidden="true" />
+		</div>
 	</div>
 </div>
 
@@ -93,7 +107,8 @@
 				'four'
 				'five'
 				'six'
-				'seven';
+				'seven'
+				'eight';
 
 			div {
 				border-radius: 1.25rem;
@@ -163,6 +178,22 @@
 				grid-area: two;
 				background-color: var(--color-lavender);
 			}
+
+			.promo-material {
+				grid-area: eight;
+				background-color: var(--color-white);
+				border: 1px solid var(--color-lavender);
+
+				display: flex;
+				flex-direction: row;
+				align-items: flex-end; /*bild klebt unten */
+
+				img {
+					margin-bottom: -1.25rem;
+					margin-left: 3rem;
+					max-height: 15rem;
+				}
+			}
 		}
 	}
 
@@ -174,7 +205,25 @@
 					'one two three'
 					'one five three'
 					'four five seven'
-					'four six seven';
+					'four six seven'
+					'eight eight eight';
+			}
+		}
+	}
+
+	@media (max-width: 72rem) {
+		.wrapper {
+			.content {
+				.promo-material {
+					flex-direction: column;
+					align-items: center;
+					img {
+						margin-left: 0rem;
+						margin-top: 2rem;
+						max-width: 100%;
+						height: auto;
+					}
+				}
 			}
 		}
 	}
@@ -186,8 +235,11 @@
 				grid-template-areas:
 					'one two'
 					'three four'
-					'five six'
-					'seven eight';
+					'seven six'
+					'eight eight';
+				.decorative-image {
+					display: none;
+				}
 			}
 		}
 	}
@@ -201,7 +253,8 @@
 					'two two two'
 					'three three seven'
 					'four four four'
-					'five six six';
+					'five six six'
+					'eight eight eight';
 			}
 		}
 	}

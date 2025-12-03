@@ -58,7 +58,13 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: linear-gradient(to bottom, white 0%, transparent 20%, transparent 80%, white 100%);
+		background: linear-gradient(
+			to bottom,
+			var(--color-background-body) 0%,
+			transparent 20%,
+			transparent 80%,
+			var(--color-background-body) 100%
+		);
 		pointer-events: none; /*klicks werden nicht blockiert*/
 		z-index: 0;
 	}
@@ -72,6 +78,7 @@
 		max-width: var(--content-max-width);
 		width: 100%;
 		padding-bottom: 3rem;
+		margin: 1.25rem;
 		display: flex;
 		justify-content: center;
 		z-index: 1;
