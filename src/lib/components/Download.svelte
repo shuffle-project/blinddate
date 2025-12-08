@@ -17,7 +17,14 @@
 			<h3 class="title">{@html download.title}</h3>
 			<p class="description">{@html download.description}</p>
 			<div class="download-button-wrapper">
-				<a class="download-button" href={download.downloadLink}> Herunterladen </a>
+				<a
+					class="download-button"
+					href={download.downloadLink}
+					download
+					aria-label="Datei {download.title} als PDF herunterladen."
+				>
+					Herunterladen
+				</a>
 				{#if download.sendable == true}
 					<div class="shipping-indicator">Vorrat</div>
 				{/if}
