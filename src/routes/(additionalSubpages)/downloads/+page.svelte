@@ -37,11 +37,9 @@
 	</p>
 </div>
 
-<!--
 <div class="grid">
 	<DownloadComponent {download} />
 </div>
--->
 
 <style lang="scss">
 	.wrapper {
@@ -51,7 +49,33 @@
 		margin-top: 2.5rem;
 	}
 
-	// WIP: was genau macht der query hier?
+	.grid {
+		max-width: var(--content-max-width);
+		padding: 3rem 1.25rem 1.25rem;
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.875rem;
+	}
+
+	@media (max-width: 75rem) {
+		.grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 55rem) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 35rem) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
 
 	@media (max-width: 21.25rem) {
 		h2 {
@@ -63,16 +87,5 @@
 			-moz-hyphens: auto;
 			hyphens: auto;
 		}
-	}
-
-	.grid {
-		max-width: var(--content-max-width);
-
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-
-		align-items: center; /*horizontal*/
-		justify-content: center; /*vertikal*/
 	}
 </style>
