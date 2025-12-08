@@ -18,30 +18,26 @@
 	<h2>Werbematerialien für BlindDate</h2>
 
 	<p>
-		Auf dieser Seite finden Sie demnächst verschiedene Werbematerialien, mit denen Sie BlindDate an
-		Ihrer Hochschule oder in Ihrem Netzwerk bekannt machen können. Wir werden Postkarten- und
-		Posterdesigns zum Download bereitstellen, die Sie direkt digital verwenden oder selbst
-		ausdrucken können.
+		Auf dieser Seite finden Sie verschiedene Werbematerialien, mit denen Sie BlindDate an Ihrer
+		Hochschule oder in Ihrem Netzwerk bekannt machen können. Wir stellen Postkarten- und demnächst
+		auch Posterdesigns zum Download bereit, die Sie direkt digital verwenden oder ausdrucken können.
 	</p>
 	<p>
-		Wenn Sie physische Ausdrucke benötigen, wenden Sie sich gerne - schon jetzt! - unter der
-		E-Mail-Adresse
+		Wenn Sie physische Ausdrucke benötigen, wenden Sie sich gerne unter der E-Mail-Adresse
 		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
 			>kontakt@barrierefreies-blinddate.de</a
-		> an das BlindDate-Team. Solange der Vorrat reicht, senden wir Ihnen die gewünschten Materialien
-		gerne zu.
+		> an das BlindDate-Team. Alle Materialien, die als vorrätig gekennzeichnet sind, senden wir Ihnen
+		gerne zu. Geben Sie dafür einfach die gewünschten Materialien und die Stückzahl an.
 	</p>
 	<p>
 		Helfen Sie mit, BlindDate und somit wichtige Informationen zu Barrierefreiheit auch in Ihrer
-		Nähe zu verbreiten. <br />Wir freuen uns auf Ihre Anfrage!
+		Nähe zu verbreiten!
 	</p>
 </div>
 
-<!--
 <div class="grid">
 	<DownloadComponent {download} />
 </div>
--->
 
 <style lang="scss">
 	.wrapper {
@@ -51,7 +47,33 @@
 		margin-top: 2.5rem;
 	}
 
-	// WIP: was genau macht der query hier?
+	.grid {
+		max-width: var(--content-max-width);
+		padding: 3rem 1.25rem 1.25rem;
+		margin: 0 auto;
+
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.875rem;
+	}
+
+	@media (max-width: 75rem) {
+		.grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 55rem) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 35rem) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
 
 	@media (max-width: 21.25rem) {
 		h2 {
@@ -63,16 +85,5 @@
 			-moz-hyphens: auto;
 			hyphens: auto;
 		}
-	}
-
-	.grid {
-		max-width: var(--content-max-width);
-
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-
-		align-items: center; /*horizontal*/
-		justify-content: center; /*vertikal*/
 	}
 </style>
