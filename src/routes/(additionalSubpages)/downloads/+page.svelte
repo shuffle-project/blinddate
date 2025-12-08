@@ -18,22 +18,20 @@
 	<h2>Werbematerialien für BlindDate</h2>
 
 	<p>
-		Auf dieser Seite finden Sie demnächst verschiedene Werbematerialien, mit denen Sie BlindDate an
-		Ihrer Hochschule oder in Ihrem Netzwerk bekannt machen können. Wir werden Postkarten- und
-		Posterdesigns zum Download bereitstellen, die Sie direkt digital verwenden oder selbst
-		ausdrucken können.
+		Auf dieser Seite finden Sie verschiedene Werbematerialien, mit denen Sie BlindDate an Ihrer
+		Hochschule oder in Ihrem Netzwerk bekannt machen können. Wir stellen Postkarten- und demnächst
+		auch Posterdesigns zum Download bereit, die Sie direkt digital verwenden oder ausdrucken können.
 	</p>
 	<p>
-		Wenn Sie physische Ausdrucke benötigen, wenden Sie sich gerne - schon jetzt! - unter der
-		E-Mail-Adresse
+		Wenn Sie physische Ausdrucke benötigen, wenden Sie sich gerne unter der E-Mail-Adresse
 		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
 			>kontakt@barrierefreies-blinddate.de</a
-		> an das BlindDate-Team. Solange der Vorrat reicht, senden wir Ihnen die gewünschten Materialien
-		gerne zu.
+		> an das BlindDate-Team. Alle Materialien, die als vorrätig gekennzeichnet sind, senden wir Ihnen
+		gerne zu. Geben Sie dafür einfach die gewünschten Materialien und die Stückzahl an.
 	</p>
 	<p>
 		Helfen Sie mit, BlindDate und somit wichtige Informationen zu Barrierefreiheit auch in Ihrer
-		Nähe zu verbreiten. <br />Wir freuen uns auf Ihre Anfrage!
+		Nähe zu verbreiten!
 	</p>
 </div>
 
