@@ -224,6 +224,28 @@ export const DownloadConstant: DownloadInterface[] =
             downloadLink: "Postkarte-Puzzle-Oliver.pdf"
         },
         {
+            id: 15,
+
+            title: "Gefühlspuzzle<br>Ausfüllbar",
+            description: "Doppelseitige Postkarte (DIN A6) zum Ausfüllen - ein Platz für die Gefühle und Gedanken Ihrer Studierenden.",
+
+            type: 'Postkarte',
+            // persona: '',
+            sendable: false,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Puzzle-Ausfuellbar.jpg",
+                imageAlt: "Vorschau der Postkarte über Gefühle der ausfüllenden Person"
+            },
+
+            downloadLink: "Postkarte-Puzzle-Ausfuellbar.pdf"
+        },
+        {
             id: 11,
 
             title: "Fragen und Antworten<br>Chronische Erkrankung",
@@ -310,6 +332,28 @@ export const DownloadConstant: DownloadInterface[] =
             },
 
             downloadLink: "Postkarte-Fragen-Faiza.pdf"
+        },
+        {
+            id: 16,
+
+            title: "Fragen und Antworten<br>Ausfüllbar",
+            description: "Doppelseitige Postkarte (DIN A6) zum Ausfüllen - ein Platz für die Fragen und Antworten Ihrer Studierenden.",
+
+            type: 'Postkarte',
+            // persona: '',
+            sendable: false,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Fragen-Ausfuellbar.jpg",
+                imageAlt: "Vorschau der Postkarte über Fragen an die ausfüllende Person"
+            },
+
+            downloadLink: "Postkarte-Fragen-Ausfuellbar.pdf"
         }
 
     ] as const satisfies DownloadInterface[];
