@@ -19,8 +19,9 @@
 
 	<p>
 		Auf dieser Seite finden Sie verschiedene Werbematerialien, mit denen Sie BlindDate an Ihrer
-		Hochschule oder in Ihrem Netzwerk bekannt machen können. Wir stellen Postkarten- und demnächst
-		auch Posterdesigns zum Download bereit, die Sie direkt digital verwenden oder ausdrucken können.
+		Hochschule oder in Ihrem Netzwerk bekannt machen können. Wir stellen Postkarten- und
+		Posterdesigns als PDFs zum Download bereit, die Sie direkt digital verwenden oder ausdrucken
+		können.
 	</p>
 	<p>
 		Wenn Sie physische Ausdrucke benötigen, wenden Sie sich gerne unter der E-Mail-Adresse
