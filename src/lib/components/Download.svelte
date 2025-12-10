@@ -102,7 +102,7 @@
 	.title {
 		line-height: 1.29;
 		margin-top: 0.9rem;
-		font-size: 1.29rem;
+		font-size: 1.24rem;
 	}
 
 	.description {

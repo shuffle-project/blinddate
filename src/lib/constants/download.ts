@@ -354,6 +354,182 @@ export const DownloadConstant: DownloadInterface[] =
             },
 
             downloadLink: "Postkarte-Fragen-Ausfuellbar.pdf"
+        },
+        {
+            id: 17,
+
+            title: "Studieren mit<br>psychischer Erkrankung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Maxi” und Informationen zum Studium mit psychischer Erkrankung.",
+
+            type: 'Poster',
+            persona: 'Maxi',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Maxi.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Maxi"
+            },
+
+            downloadLink: "Poster-Maxi.pdf"
+        },
+        {
+            id: 18,
+
+            title: "Studieren mit<br>chronischer Erkrankung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Michelle” und Informationen zum Studium mit chronischer Erkrankung.",
+
+            type: 'Poster',
+            persona: 'Michelle',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Michelle.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Michelle"
+            },
+
+            downloadLink: "Poster-Michelle.pdf"
+        },
+        {
+            id: 19,
+
+            title: "Studieren mit<br>Autismus Spektrum Störung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Aleksandr” und Informationen zum Studium mit Autismus Spektrum Störung.",
+
+            type: 'Poster',
+            persona: 'Aleksandr',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Aleksandr.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Aleksandr"
+            },
+
+            downloadLink: "Poster-Aleksandr.pdf"
+        },
+        {
+            id: 20,
+
+            title: "Studieren mit<br>Hörbeeinträchtigung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Hannah” und Informationen zum Studium mit Hörbeeinträchtigung.",
+
+            type: 'Poster',
+            persona: 'Hannah',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Hannah.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Hannah"
+            },
+
+            downloadLink: "Poster-Hannah.pdf"
+        },
+        {
+            id: 21,
+
+            title: "Studieren mit<br>motorischer Beeinträchtigung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Kilian” und Informationen zum Studium mit motorischer Beeinträchtigung.",
+
+            type: 'Poster',
+            persona: 'Kilian',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Kilian.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Kilian"
+            },
+
+            downloadLink: "Poster-Kilian.pdf"
+        },
+        {
+            id: 22,
+
+            title: "Studieren mit<br>Sehbeeinträchtigung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Gabriel” und Informationen zum Studium mit Sehbeeinträchtigung.",
+
+            type: 'Poster',
+            persona: 'Gabriel',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Gabriel.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Gabriel"
+            },
+
+            downloadLink: "Poster-Gabriel.pdf"
+        },
+        {
+            id: 23,
+
+            title: "Studieren mit<br>Pflegeverantwortung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Faiza” und Informationen zum Studium mit Pflegeverantwortung.",
+
+            type: 'Poster',
+            persona: 'Faiza',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Faiza.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Faiza"
+            },
+
+            downloadLink: "Poster-Faiza.pdf"
+        },
+        {
+            id: 24,
+
+            title: "Studieren mit<br>Teilleistungsstörung",
+            description: "Einseitiges Poster (DIN A2) mit der Persona “Oliver” und Informationen zum Studium mit Teilleistungsstörung.",
+
+            type: 'Poster',
+            persona: 'Oliver',
+            sendable: false,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Poster-Oliver.jpg",
+                imageAlt: "Vorschau des Posters über die Persona Oliver"
+            },
+
+            downloadLink: "Poster-Oliver.pdf"
         }
 
     ] as const satisfies DownloadInterface[];
