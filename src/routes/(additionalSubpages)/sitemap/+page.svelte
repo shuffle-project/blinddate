@@ -88,9 +88,6 @@
 		</li>
 
 		<li>
-			<a href={resolve('/kontakt')} class="focus-indicator">Kontakt</a>
-		</li>
-		<li>
 			<a href={resolve('/leichte-sprache')} class="focus-indicator">Leichte Sprache</a>
 		</li>
 		<li>

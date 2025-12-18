@@ -23,7 +23,6 @@ export const load = async (event) => {
 		if (!allowedSubpath) {
 			allowedSubpath =
 				pathname.includes('sitemap') ||
-				pathname.includes('kontakt') ||
 				pathname.includes('so-funktioniert-es') ||
 				pathname.includes('ganze') ||
 				pathname.includes('fragen') ||

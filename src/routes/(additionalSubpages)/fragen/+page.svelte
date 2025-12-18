@@ -49,11 +49,6 @@
 				>8. Ist BlindDate selbst auch barrierefrei?</a
 			>
 		</li>
-		<li>
-			<a href="#blinddate-contact" class="focus-indicator"
-				>9. Ich habe Fragen oder Anmerkungen, an wen kann ich mich wenden?</a
-			>
-		</li>
 	</ol>
 
 	<h2 id="accessibility-necessary">
@@ -371,18 +366,6 @@
 		>
 		weitergeleitet.
 	</p>
-
-	<h2 id="blinddate-contact">9. Ich habe Fragen oder Anmerkungen, an wen kann ich mich wenden?</h2>
-
-	<p>
-		Sollten Sie auf Fehler stoßen oder dem Entwicklungsteam von BlindDate Rückmeldungen zu den
-		Inhalten oder dem Aufbau der Webseite geben wollen, können Sie dies über folgende E-Mail-Adresse
-		tun:
-		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
-			>kontakt@barrierefreies-blinddate.de</a
-		>
-	</p>
-	<p>Wir freuen uns auf Ihr Feedback!</p>
 </div>
 
 <style lang="scss">

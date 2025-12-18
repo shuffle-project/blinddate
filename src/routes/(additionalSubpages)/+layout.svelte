@@ -72,6 +72,7 @@
 
 	main {
 		padding-bottom: 3.125rem;
+		height: 100%;
 	}
 
 	header {
