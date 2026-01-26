@@ -10,7 +10,7 @@
 			{
 				title: 'Video',
 				videoPathMp4: '/media/Barrierefreies-BlindDate.mp4',
-				poster: '/media/barrierefreies-blinddate-preview-image.jpg',
+				poster: '/media/barrierefreies-blinddate-preview-image.JPG',
 				captionsArray: [
 					{
 						path: '/media/barrierefreies-blinddate-untertitel.vtt',

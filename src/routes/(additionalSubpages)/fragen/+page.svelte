@@ -49,6 +49,11 @@
 				>8. Ist BlindDate selbst auch barrierefrei?</a
 			>
 		</li>
+		<li>
+			<a href="#blinddate-licence" class="focus-indicator"
+				>9. Unter welcher Lizenz steht BlindDate?</a
+			>
+		</li>
 	</ol>
 
 	<h2 id="accessibility-necessary">
@@ -339,11 +344,11 @@
 
 	<p>
 		Grundlage der Personas ist unter anderem die Bedarfsanalyse des Forschungsprojekts SHUFFLE. Die
-		Analyse wurde im Januar und Februar 2022 durch qualitative Interviews und einen umfassenden
-		Fragebogen durchgeführt. Die Texte in den Sprechblasen der Personas sind paraphrasierte Aussagen
-		der Studierenden aus dieser Bedarfsanalyse. Die allgemeinen Textpassagen und Verlinkungen sind
-		im Zeitraum von Herbst 2022 bis März 2024 entstanden. Es kann also sein, dass Daten,
-		Verlinkungen oder Aussagen nicht mehr dem aktuellen Diskurs entsprechen.
+		Analyse wurde im Januar und Februar 2022 durch einen umfassenden quantitativen Fragebogen und
+		ergänzende qualitative Interviews und durchgeführt. Die Texte in den Sprechblasen der Personas
+		sind paraphrasierte Aussagen der Studierenden aus dieser Bedarfsanalyse. Die weiteren
+		Textpassagen und Verlinkungen sind im Zeitraum von Herbst 2022 bis Mai 2025 entstanden. Es kann
+		also sein, dass Daten, Verlinkungen oder Aussagen nicht mehr dem aktuellen Diskurs entsprechen.
 	</p>
 
 	<h2 id="blinddate-accessible">8. Ist BlindDate selbst auch barrierefrei?</h2>
@@ -365,6 +370,21 @@
 		<a href={resolve('/barrierefreiheit')} class="focus-indicator">Erklärung zur Barrierefreiheit</a
 		>
 		weitergeleitet.
+	</p>
+
+	<h2 id="blinddate-licence">9. Unter welcher Lizenz steht BlindDate?</h2>
+
+	<p>
+		Wir freuen uns über jeder Form der Verbreitung der Plattform, sowohl in digitaler als auch in
+		analoger Form. Hierfür stehen unsere
+		<a href={resolve('/downloads')} class="focus-indicator">Poster und Postkarten</a> zur Verfügung.
+		Auch die Texte und Bilder von BlindDate können Sie zu diesem Zweck gerne verwenden. Allerdings
+		ist uns wichtig, dass die Inhalte nicht verändert oder aus ihrem ursprünglichen Kontext gelöst
+		werden. Die Personas basieren auf realen Erfahrungen und Daten, deren Authentizität gewahrt
+		bleiben soll. Daher steht BlindDate unter der
+		<a href="https://creativecommons.org/licenses/by-nd/4.0/deed.de" class="focus-indicator"
+			>Lizenz CC BY-ND 4.0</a
+		>.
 	</p>
 </div>
 

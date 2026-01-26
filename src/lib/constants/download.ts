@@ -70,182 +70,6 @@ export const DownloadConstant: DownloadInterface[] =
             downloadLink: "Postkarte-Statistik-Faiza.pdf"
         },
         {
-            id: 9,
-
-            title: "Vorurteile<br>Psychische Erkrankung",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Maxi” und einem Vorurteil gegenüber Studierenden mit psychischer Erkrankung.",
-
-            type: 'Postkarte',
-            persona: 'Maxi',
-            sendable: false,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Vorurteil-Maxi.jpg",
-                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Maxi"
-            },
-
-            downloadLink: "Postkarte-Vorurteil-Maxi.pdf"
-        },
-        {
-            id: 4,
-
-            title: "Vorurteile<br>Chronische Erkrankung",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Michelle” und einem Vorurteil gegenüber Studierenden mit chronischer Erkrankung.",
-
-            type: 'Postkarte',
-            persona: 'Michelle',
-            sendable: true,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Vorurteil-Michelle.jpg",
-                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Michelle"
-            },
-
-            downloadLink: "Postkarte-Vorurteil-Michelle.pdf"
-        },
-        {
-            id: 5,
-
-            title: "Vorurteile<br>Autismus Spektrum",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Aleksandr” und einem Vorurteil gegenüber Studierenden auf dem Autismus Spektrum.",
-
-            type: 'Postkarte',
-            persona: 'Aleksandr',
-            sendable: true,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Vorurteil-Aleksandr.jpg",
-                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Aleksandr"
-            },
-
-            downloadLink: "Postkarte-Vorurteil-Aleksandr.pdf"
-        },
-        {
-            id: 6,
-
-            title: "Vorurteile<br>Motorische Beeinträchtigung",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Kilian” und einem Vorurteil gegenüber Studierenden mit motorischer Beeinträchtigung.",
-
-            type: 'Postkarte',
-            persona: 'Kilian',
-            sendable: true,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Vorurteil-Kilian.jpg",
-                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Kilian"
-            },
-
-            downloadLink: "Postkarte-Vorurteil-Kilian.pdf"
-        },
-        {
-            id: 7,
-
-            title: "Gefühlspuzzle<br>Psychische Erkrankung",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Maxi” und den Gefühlen von Studierenden mit psychischer Erkrankung.",
-
-            type: 'Postkarte',
-            persona: 'Maxi',
-            sendable: true,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Puzzle-Maxi.jpg",
-                imageAlt: "Vorschau der Postkarte über Gefühle der Persona Maxi"
-            },
-
-            downloadLink: "Postkarte-Puzzle-Maxi.pdf"
-        },
-        {
-            id: 10,
-
-            title: "Gefühlspuzzle<br>Autismus Spektrum",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Aleksandr” und den Gefühlen von Studierenden auf dem Autismus Spektrum.",
-
-            type: 'Postkarte',
-            persona: 'Aleksandr',
-            sendable: false,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Puzzle-Aleksandr.jpg",
-                imageAlt: "Vorschau der Postkarte über Gefühle der Persona Aleksandr"
-            },
-
-            downloadLink: "Postkarte-Puzzle-Aleksandr.pdf"
-        },
-        {
-            id: 8,
-
-            title: "Gefühlspuzzle<br>Teilleistungsstörung",
-            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Oliver” und den Gefühlen von Studierenden mit Teilleistungsstörung.",
-
-            type: 'Postkarte',
-            persona: 'Oliver',
-            sendable: true,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Puzzle-Oliver.jpg",
-                imageAlt: "Vorschau der Postkarte über Gefühle der Persona Oliver"
-            },
-
-            downloadLink: "Postkarte-Puzzle-Oliver.pdf"
-        },
-        {
-            id: 15,
-
-            title: "Gefühlspuzzle<br>Ausfüllbar",
-            description: "Doppelseitige Postkarte (DIN A6) zum Ausfüllen - ein Platz für die Gefühle und Gedanken Ihrer Studierenden.",
-
-            type: 'Postkarte',
-            // persona: '',
-            sendable: false,
-
-            previewImage: {
-                imageLink: "",
-                imageAlt: ""
-            },
-
-            backgroundImage: {
-                imageLink: "backgrounds/Background-Puzzle-Ausfuellbar.jpg",
-                imageAlt: "Vorschau der Postkarte über Gefühle der ausfüllenden Person"
-            },
-
-            downloadLink: "Postkarte-Puzzle-Ausfuellbar.pdf"
-        },
-        {
             id: 11,
 
             title: "Fragen und Antworten<br>Chronische Erkrankung",
@@ -354,6 +178,182 @@ export const DownloadConstant: DownloadInterface[] =
             },
 
             downloadLink: "Postkarte-Fragen-Ausfuellbar.pdf"
+        },
+        {
+            id: 7,
+
+            title: "Gefühlspuzzle<br>Psychische Erkrankung",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Maxi” und den Gefühlen von Studierenden mit psychischer Erkrankung.",
+
+            type: 'Postkarte',
+            persona: 'Maxi',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Puzzle-Maxi.jpg",
+                imageAlt: "Vorschau der Postkarte über Gefühle der Persona Maxi"
+            },
+
+            downloadLink: "Postkarte-Puzzle-Maxi.pdf"
+        },
+        {
+            id: 10,
+
+            title: "Gefühlspuzzle<br>Autismus Spektrum",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Aleksandr” und den Gefühlen von Studierenden auf dem Autismus Spektrum.",
+
+            type: 'Postkarte',
+            persona: 'Aleksandr',
+            sendable: false,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Puzzle-Aleksandr.jpg",
+                imageAlt: "Vorschau der Postkarte über Gefühle der Persona Aleksandr"
+            },
+
+            downloadLink: "Postkarte-Puzzle-Aleksandr.pdf"
+        },
+        {
+            id: 8,
+
+            title: "Gefühlspuzzle<br>Teilleistungsstörung",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Oliver” und den Gefühlen von Studierenden mit Teilleistungsstörung.",
+
+            type: 'Postkarte',
+            persona: 'Oliver',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Puzzle-Oliver.jpg",
+                imageAlt: "Vorschau der Postkarte über Gefühle der Persona Oliver"
+            },
+
+            downloadLink: "Postkarte-Puzzle-Oliver.pdf"
+        },
+        {
+            id: 15,
+
+            title: "Gefühlspuzzle<br>Ausfüllbar",
+            description: "Doppelseitige Postkarte (DIN A6) zum Ausfüllen - ein Platz für die Gefühle und Gedanken Ihrer Studierenden.",
+
+            type: 'Postkarte',
+            // persona: '',
+            sendable: false,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Puzzle-Ausfuellbar.jpg",
+                imageAlt: "Vorschau der Postkarte über Gefühle der ausfüllenden Person"
+            },
+
+            downloadLink: "Postkarte-Puzzle-Ausfuellbar.pdf"
+        },
+        {
+            id: 9,
+
+            title: "Vorurteile<br>Psychische Erkrankung",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Maxi” und einem Vorurteil gegenüber Studierenden mit psychischer Erkrankung.",
+
+            type: 'Postkarte',
+            persona: 'Maxi',
+            sendable: false,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Vorurteil-Maxi.jpg",
+                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Maxi"
+            },
+
+            downloadLink: "Postkarte-Vorurteil-Maxi.pdf"
+        },
+        {
+            id: 4,
+
+            title: "Vorurteile<br>Chronische Erkrankung",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Michelle” und einem Vorurteil gegenüber Studierenden mit chronischer Erkrankung.",
+
+            type: 'Postkarte',
+            persona: 'Michelle',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Vorurteil-Michelle.jpg",
+                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Michelle"
+            },
+
+            downloadLink: "Postkarte-Vorurteil-Michelle.pdf"
+        },
+        {
+            id: 5,
+
+            title: "Vorurteile<br>Autismus Spektrum",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Aleksandr” und einem Vorurteil gegenüber Studierenden auf dem Autismus Spektrum.",
+
+            type: 'Postkarte',
+            persona: 'Aleksandr',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Vorurteil-Aleksandr.jpg",
+                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Aleksandr"
+            },
+
+            downloadLink: "Postkarte-Vorurteil-Aleksandr.pdf"
+        },
+        {
+            id: 6,
+
+            title: "Vorurteile<br>Motorische Beeinträchtigung",
+            description: "Doppelseitige Postkarte (DIN A6) mit der Persona “Kilian” und einem Vorurteil gegenüber Studierenden mit motorischer Beeinträchtigung.",
+
+            type: 'Postkarte',
+            persona: 'Kilian',
+            sendable: true,
+
+            previewImage: {
+                imageLink: "",
+                imageAlt: ""
+            },
+
+            backgroundImage: {
+                imageLink: "backgrounds/Background-Vorurteil-Kilian.jpg",
+                imageAlt: "Vorschau der Postkarte über Vorurteile gegenüber der Persona Kilian"
+            },
+
+            downloadLink: "Postkarte-Vorurteil-Kilian.pdf"
         },
         {
             id: 17,

@@ -82,6 +82,7 @@
 						<li>
 							<a href="https://shuffle-projekt.de/">Ein Projekt von SHUFFLE</a>
 						</li>
+						<li><span class="footer-text">CC BY-ND 4.0</span></li>
 					</ul>
 				</nav>
 			</div>
@@ -185,16 +186,16 @@
 			padding: 0;
 			margin: 0;
 
-			a {
+			a,
+			.footer-text {
 				color: rgba(var(--color-white-rgb), 0.8);
 				text-decoration: none;
 				font-size: 1rem;
 				padding: 0.25rem;
-
-				&:hover,
-				&:focus {
-					text-decoration: underline;
-				}
+			}
+			a:hover,
+			a:focus {
+				text-decoration: underline;
 			}
 		}
 	}

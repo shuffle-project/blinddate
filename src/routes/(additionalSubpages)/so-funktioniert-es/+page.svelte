@@ -100,10 +100,6 @@
 			href="https://shuffle-projekt.de/">zur SHUFFLE Seite</a
 		>.
 	</p>
-
-	<h2>Ich habe das Gefühl, alleine dazustehen. Wie geht es anderen Lehrenden?</h2>
-
-	<p>Inhalt folgt. Schauen Sie gerne ein anderes Mal nochmal vorbei.</p>
 </div>
 
 <style lang="scss">
