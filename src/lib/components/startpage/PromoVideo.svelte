@@ -18,6 +18,18 @@
 						label: 'Deutsche Untertitel'
 					}
 				]
+			},
+			{
+				title: 'Audioreduziertes Video',
+				videoPathMp4: '/media/Barrierefreies-BlindDate_Audioreduziert.mp4',
+				poster: '/media/barrierefreies-blinddate-preview-image.JPG',
+				captionsArray: [
+					{
+						path: '/media/barrierefreies-blinddate-untertitel.vtt',
+						lang: 'de',
+						label: 'Deutsche Untertitel'
+					}
+				]
 			}
 		],
 		transcripts: [
