@@ -297,7 +297,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Michelle',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",

@@ -28,7 +28,7 @@
 		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
 			>kontakt@barrierefreies-blinddate.de</a
 		> an das BlindDate-Team. Alle Materialien, die als vorrätig gekennzeichnet sind, senden wir Ihnen
-		gerne zu. Geben Sie dafür einfach die gewünschten Materialien und die Stückzahl an.
+		gerne kostenfrei zu. Geben Sie dafür einfach die gewünschten Materialien und die Stückzahl an.
 	</p>
 	<p>
 		Helfen Sie mit, BlindDate und somit wichtige Informationen zu Barrierefreiheit auch in Ihrer
