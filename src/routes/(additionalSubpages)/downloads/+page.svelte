@@ -24,13 +24,6 @@
 		können.
 	</p>
 	<p>
-		Wenn Sie physische Ausdrucke benötigen, wenden Sie sich gerne unter der E-Mail-Adresse
-		<a href="mailto:kontakt@barrierefreies-blinddate.de" class="focus-indicator"
-			>kontakt@barrierefreies-blinddate.de</a
-		> an das BlindDate-Team. Alle Materialien, die als vorrätig gekennzeichnet sind, senden wir Ihnen
-		gerne kostenfrei zu. Geben Sie dafür einfach die gewünschten Materialien und die Stückzahl an.
-	</p>
-	<p>
 		Helfen Sie mit, BlindDate und somit wichtige Informationen zu Barrierefreiheit auch in Ihrer
 		Nähe zu verbreiten!
 	</p>

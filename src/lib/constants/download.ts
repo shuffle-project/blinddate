@@ -11,7 +11,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             // persona: '',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -33,7 +33,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Maxi',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -55,7 +55,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Faiza',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -187,7 +187,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Maxi',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -231,7 +231,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Oliver',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -319,7 +319,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Aleksandr',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -341,7 +341,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Postkarte',
             persona: 'Kilian',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -363,7 +363,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Maxi',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -385,7 +385,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Michelle',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -407,7 +407,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Aleksandr',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -429,7 +429,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Hannah',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -451,7 +451,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Kilian',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -473,7 +473,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Gabriel',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",
@@ -495,7 +495,7 @@ export const DownloadConstant: DownloadInterface[] =
 
             type: 'Poster',
             persona: 'Faiza',
-            sendable: true,
+            sendable: false,
 
             previewImage: {
                 imageLink: "",

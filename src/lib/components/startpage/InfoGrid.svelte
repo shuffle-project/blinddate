@@ -69,7 +69,7 @@
 				<p>
 					Sie wollen BlindDate bewerben und wichtige Informationen zu Barrierefreiheit verbreiten?
 					Auf dieser Seite können Sie zahlreiche Postkarten und Poster mit den Personas von
-					BlindDate herunterladen oder bestellen, um Sie an ihrer Institution aufzuhängen oder zu
+					BlindDate herunterladen und ausdrucken, um Sie an ihrer Institution aufzuhängen oder zu
 					verteilen.
 				</p>
 				<a href={resolve('/downloads')} class="focus-indicator">Zu den Postern und Postkarten</a>
